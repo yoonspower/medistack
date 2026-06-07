@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "version": "0.3",
+    "kind": "alias_operational",
+    "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
+    "relation_source": "medistack_v0.2_beta_export.json",
+    "alias_count": 53
+  },
+  "ingredient_aliases": [
+    {
+      "alias": "levofloxacin",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "레보플록사신수화물",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "ciprofloxacin",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "시프로플록사신염산염",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "씨프로플록사신",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "doxycycline",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "doxycycline hyclate",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "독시사이클린하이클레이트",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "levothyroxine",
+      "canonical_ingredient": "레보티록신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "levothyroxine sodium",
+      "canonical_ingredient": "레보티록신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "레보티록신나트륨",
+      "canonical_ingredient": "레보티록신",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "metformin",
+      "canonical_ingredient": "메트포르민",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "메트포르민염산염",
+      "canonical_ingredient": "메트포르민",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "omeprazole",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "furosemide",
+      "canonical_ingredient": "푸로세미드",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "frusemide",
+      "canonical_ingredient": "푸로세미드",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "hydrochlorothiazide",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "HCTZ",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "하이드로클로로티아지드",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "ofloxacin",
+      "canonical_ingredient": "오플록사신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "moxifloxacin",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "목시플록사신염산염",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "minocycline",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "미노사이클린염산염",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "alendronate",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "alendronic acid",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "알렌드론산나트륨",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "torasemide",
+      "canonical_ingredient": "토라세미드",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "torsemide",
+      "canonical_ingredient": "토라세미드",
+      "kind": "ingredient",
+      "lang": "en"
+    }
+  ],
+  "product_aliases": [
+    {
+      "alias": "레보플록사신수화물정",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199900886",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "시프로민정250밀리그램",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199901094",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "시프로민",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199901094",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "국제독시사이클린하이클레이트수화물캡슐100mg",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198000105",
+      "source_relation_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "alias": "씬지로이드정",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903264",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "씬지로이드",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903264",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "바이포민서방정500mg",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200709701",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "바이포민",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200709701",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "오메라졸캡슐",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200411095",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메라졸",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200411095",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "라식스정",
+      "canonical_ingredient": "푸로세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "196400037",
+      "source_relation_ids": [
+        17,
+        18
+      ]
+    },
+    {
+      "alias": "라식스",
+      "canonical_ingredient": "푸로세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "196400037",
+      "source_relation_ids": [
+        17,
+        18
+      ]
+    },
+    {
+      "alias": "다이크로짇정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "196000008",
+      "source_relation_ids": [
+        19,
+        20
+      ]
+    },
+    {
+      "alias": "다이크로짇",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "196000008",
+      "source_relation_ids": [
+        19,
+        20
+      ]
+    },
+    {
+      "alias": "제일타리비드정",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198600307",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "타리비드",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198600307",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "리목스정400mg",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201402438",
+      "source_relation_ids": [
+        24,
+        25
+      ]
+    },
+    {
+      "alias": "리목스",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201402438",
+      "source_relation_ids": [
+        24,
+        25
+      ]
+    },
+    {
+      "alias": "미노씬캡슐50mg",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198501028",
+      "source_relation_ids": [
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "alias": "미노씬",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198501028",
+      "source_relation_ids": [
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "alias": "포사맥스70밀리그램정",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200009061",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "포사맥스",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200009061",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "토렘정5밀리그람",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611522",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "alias": "토렘",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611522",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    }
+  ]
+}
