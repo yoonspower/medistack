@@ -1,6 +1,6 @@
 // data.js — JSON 로딩 + shape 가드. 실패 시 throw → app.js 가 error state 로 처리.
 
-const DATA_URL = './data/medistack_v0.1_beta_export.json';
+const DATA_URL = './data/medistack_v0.2_beta_export.json';
 
 export async function loadData() {
   let res;

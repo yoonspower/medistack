@@ -47,3 +47,35 @@ export function potassiumNotice(data) {
 export function findRelation(data, id) {
   return getRenderableRelations(data).find((r) => r.id === id) || null;
 }
+
+// ---- Phase 1: 검색/필터 (순수 함수, relations 소스만) ----
+const SEARCH_FIELDS = ['ingredient', 'nutrient'];
+
+function norm(s) {
+  return String(s == null ? '' : s).normalize('NFC').trim().toLowerCase();
+}
+
+// facet 동적 도출 (하드코딩 금지 → 확장 자동 대응)
+export function getFacets(rels) {
+  const uniq = (arr) => [...new Set(arr.filter((v) => v !== undefined && v !== null && String(v).length > 0))];
+  return {
+    nutrients: uniq(rels.map((r) => r.nutrient)),
+    actions: uniq(rels.map((r) => r.recommended_action)),
+    evidences: uniq(rels.map((r) => r.evidence_level)),
+  };
+}
+
+// state: { query, nutrients:[], actions:[], evidences:[] }
+// facet 내부 OR(includes), facet 간 AND, 검색과도 AND. 입력은 반드시 getRenderableRelations 결과.
+export function filterRelations(rels, state) {
+  const s = state || {};
+  const q = norm(s.query);
+  const inSel = (val, sel) => !sel || sel.length === 0 || sel.includes(val);
+  return rels.filter((r) => {
+    if (!inSel(r.nutrient, s.nutrients)) return false;
+    if (!inSel(r.recommended_action, s.actions)) return false;
+    if (!inSel(r.evidence_level, s.evidences)) return false;
+    if (q && !SEARCH_FIELDS.some((f) => norm(r[f]).includes(q))) return false;
+    return true;
+  });
+}

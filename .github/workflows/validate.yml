@@ -1,8 +1,8 @@
 name: validate-export
 
-# PR 검증 전용: data/·scripts/ 변경 PR에서 export 컨트랙트 12항목 검사.
+# PR 검증 전용: data/·scripts/ 변경 PR에서 v0.1·v0.2 export 컨트랙트 검사.
 # 브랜치 보호의 required status check 로 사용 가능.
-# main push 시 배포 게이트는 deploy.yml 의 validate job 이 담당(중복 실행 방지).
+# main push 시 배포 게이트(라이브=v0.1)는 deploy.yml 의 validate job 이 담당.
 on:
   pull_request:
     paths:
@@ -14,9 +14,11 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.x"
-      - name: Validate v0.1 export contract
+      - name: Validate v0.1 export
         run: python3 scripts/validate_medistack_v0_1_export.py data/medistack_v0.1_beta_export.json
+      - name: Validate v0.2 export
+        run: python3 scripts/validate_medistack_v0_2_export.py data/medistack_v0.2_beta_export.json
