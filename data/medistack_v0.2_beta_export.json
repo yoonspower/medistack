@@ -5,11 +5,11 @@
     "generated_at": "2026-06-07",
     "source_basis": "식약처 의약품통합정보시스템(nedrug) 허가사항 원문",
     "lifecycle_status_included": "verified_reference",
-    "relation_count": 19,
+    "relation_count": 30,
     "excluded_count": 1,
     "published": false,
     "clinical_reviewed": false,
-    "note": "v0.2 baseline: v0.1 verified_reference 19건을 재버전한 시작점. Phase 2에서 15행 재검토·확장 반영 예정. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음."
+    "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음."
   },
   "disclaimers": {
     "common": "이 정보는 식약처 허가사항 등을 바탕으로 정리한 참고 정보입니다. 진단, 처방, 복약 지시가 아니며, 실제 복용 여부나 시간 간격은 의사 또는 약사와 상담하세요.",
@@ -359,6 +359,204 @@
         "type": "허가사항",
         "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000008",
         "pointer": "식약처 허가사항(nedrug) / 다이크로짇정(히드로클로로티아지드, itemSeq 196000008) / 이상반응(대사) / 저마그네슘혈증 등 전해질평형실조 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 21,
+      "ingredient": "오플록사신",
+      "nutrient": "칼슘",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "오플록사신과(와) 칼슘이(가) 함유된 제품을 같은 시간에 복용하면 오플록사신의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198600307",
+        "pointer": "식약처 허가사항(nedrug) / 제일타리비드정(오플록사신, itemSeq 198600307) / 사용상의 주의사항-상호작용 11) / 칼슘 함유 제제 병용 시 흡수 저하·투여 전후 2시간 이내 병용 회피 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 22,
+      "ingredient": "오플록사신",
+      "nutrient": "철분",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "오플록사신과(와) 철분이(가) 함유된 제품을 같은 시간에 복용하면 오플록사신의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198600307",
+        "pointer": "식약처 허가사항(nedrug) / 제일타리비드정(오플록사신, itemSeq 198600307) / 사용상의 주의사항-상호작용 11) / 철분 함유 제제 병용 시 흡수 저하·투여 전후 2시간 이내 병용 회피 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 23,
+      "ingredient": "오플록사신",
+      "nutrient": "마그네슘",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "오플록사신과(와) 마그네슘이(가) 함유된 제품을 같은 시간에 복용하면 오플록사신의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198600307",
+        "pointer": "식약처 허가사항(nedrug) / 제일타리비드정(오플록사신, itemSeq 198600307) / 사용상의 주의사항-상호작용 11) / 마그네슘 함유 제산제 병용 시 흡수 저하·투여 전후 2시간 이내 병용 회피 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 24,
+      "ingredient": "목시플록사신",
+      "nutrient": "철분",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "목시플록사신과(와) 철분이(가) 함유된 제품을 같은 시간에 복용하면 목시플록사신의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201402438",
+        "pointer": "식약처 허가사항(nedrug) / 리목스정400mg(목시플록사신염산염, itemSeq 201402438) / 사용상의 주의사항-상호작용 5) / 철 함유 제제 병용 시 다가양이온 킬레이트로 흡수 감소·투여 4시간 전 또는 8시간 후 복용 / 확인일 2026-06-07 / 대표 제네릭 사용(오리지널 아벨록스 경구정 itemSeq 미확보), 목시플로정400mg(itemSeq 201403419) 교차확인 동일"
+      }
+    },
+    {
+      "id": 25,
+      "ingredient": "목시플록사신",
+      "nutrient": "마그네슘",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "목시플록사신과(와) 마그네슘이(가) 함유된 제품을 같은 시간에 복용하면 목시플록사신의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201402438",
+        "pointer": "식약처 허가사항(nedrug) / 리목스정400mg(목시플록사신염산염, itemSeq 201402438) / 사용상의 주의사항-상호작용 5) / 마그네슘 함유 제제 병용 시 다가양이온 킬레이트로 흡수 감소·투여 4시간 전 또는 8시간 후 복용 / 확인일 2026-06-07 / 대표 제네릭 사용(오리지널 아벨록스 경구정 itemSeq 미확보), 목시플로정400mg(itemSeq 201403419) 교차확인 동일"
+      }
+    },
+    {
+      "id": 26,
+      "ingredient": "미노사이클린",
+      "nutrient": "칼슘",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "미노사이클린과(와) 칼슘이(가) 함유된 제품을 같은 시간에 복용하면 미노사이클린의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198501028",
+        "pointer": "식약처 허가사항(nedrug) / 미노씬캡슐50mg(미노사이클린염산염, itemSeq 198501028) / 사용상의 주의사항 4) / 칼슘 함유 제산제 등 양이온 함유 약물 병용 시 흡수 저하·2시간 이상 간격 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 27,
+      "ingredient": "미노사이클린",
+      "nutrient": "철분",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "미노사이클린과(와) 철분이(가) 함유된 제품을 같은 시간에 복용하면 미노사이클린의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198501028",
+        "pointer": "식약처 허가사항(nedrug) / 미노씬캡슐50mg(미노사이클린염산염, itemSeq 198501028) / 사용상의 주의사항 4) / 철·아연 함유 제제 병용 시 흡수 저하·2시간 이상 간격 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 28,
+      "ingredient": "미노사이클린",
+      "nutrient": "마그네슘",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "미노사이클린과(와) 마그네슘이(가) 함유된 제품을 같은 시간에 복용하면 미노사이클린의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198501028",
+        "pointer": "식약처 허가사항(nedrug) / 미노씬캡슐50mg(미노사이클린염산염, itemSeq 198501028) / 사용상의 주의사항 4) / 마그네슘·알루미늄 함유 제산제 병용 시 흡수 저하·2시간 이상 간격 / 확인일 2026-06-07"
+      }
+    },
+    {
+      "id": 29,
+      "ingredient": "알렌드론산",
+      "nutrient": "칼슘",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "알렌드론산과(와) 칼슘이(가) 함유된 제품을 같은 시간에 복용하면 알렌드론산의 흡수가 줄어들 수 있습니다.",
+      "management_ko": "같은 시간대 복용은 피하고, 시간 간격을 두는 것이 권장될 수 있습니다. 구체적인 간격은 약사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200009061",
+        "pointer": "식약처 허가사항(nedrug) / 포사맥스70밀리그램정(알렌드론산나트륨수화물, itemSeq 200009061) / 사용상의 주의사항-상호작용 2) / 칼슘보충제·제산제 병용 시 흡수 방해·이 약 복용 후 최소 30분 간격 / 확인일 2026-06-07 / 대웅알렌드로네이트정70mg(itemSeq 200500547) 교차확인 동일"
+      }
+    },
+    {
+      "id": 30,
+      "ingredient": "토라세미드",
+      "nutrient": "칼륨",
+      "mechanism": "depletion",
+      "recommended_action": "monitoring",
+      "evidence_level": "high",
+      "display_text_ko": "토라세미드 같은 이뇨제를 복용하는 경우 칼륨 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다.",
+      "management_ko": "칼륨은 임의로 보충하면 위험할 수 있으므로, 보충 여부는 반드시 의사 또는 약사와 상담하세요.",
+      "product_link_allowed": false,
+      "potassium_safety_card": true,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200611522",
+        "pointer": "식약처 허가사항(nedrug) / 토렘정5밀리그람(토라세미드, itemSeq 200611522) / 이상반응·일반적 주의 / 수분·전해질 불균형(칼륨)·나트륨/칼륨/BUN/크레아티닌/요산 정기 검사 / 확인일 2026-06-07 / 세토람정5mg(itemSeq 200600084) 교차확인 동일"
+      }
+    },
+    {
+      "id": 31,
+      "ingredient": "토라세미드",
+      "nutrient": "마그네슘",
+      "mechanism": "depletion",
+      "recommended_action": "monitoring",
+      "evidence_level": "moderate",
+      "display_text_ko": "토라세미드 같은 이뇨제를 복용하는 경우 마그네슘 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다.",
+      "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200611522",
+        "pointer": "식약처 허가사항(nedrug) / 토렘정5밀리그람(토라세미드, itemSeq 200611522) / 사용상의 주의사항-상호작용 2) / 이 약 투여로 인한 칼륨 및/또는 마그네슘 결핍 / 확인일 2026-06-07 / 세토람정5mg(itemSeq 200600084) 교차확인 동일"
       }
     }
   ],
