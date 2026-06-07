@@ -1,0 +1,43 @@
+name: deploy-pages
+
+# 프로덕션 배포(게이트 포함): main push 시 validate 통과 후에만 GitHub Pages 배포.
+# 사전: Settings → Pages → Source = "GitHub Actions"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate v0.1 export contract
+        run: python3 scripts/validate_medistack_v0_1_export.py data/medistack_v0.1_beta_export.json
+
+  deploy:
+    needs: validate          # validate 성공 시에만 배포
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+      - id: deployment
+        uses: actions/deploy-pages@v4
