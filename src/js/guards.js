@@ -65,17 +65,67 @@ export function getFacets(rels) {
   };
 }
 
+// ---- v0.3: alias 검색 보조 (순수 함수, relation 풀 확장 안 함) ----
+// alias 데이터 → 런타임 인덱스 [{ alias(정규화), canonical(정규화) }]. malformed 엔트리는 skip.
+export function buildAliasIndex(aliasData) {
+  const out = [];
+  if (!aliasData || typeof aliasData !== 'object') return out;
+  for (const list of [aliasData.ingredient_aliases, aliasData.product_aliases]) {
+    if (!Array.isArray(list)) continue;
+    for (const e of list) {
+      if (!e || typeof e !== 'object') continue;
+      const a = e.alias, ci = e.canonical_ingredient;
+      if (typeof a !== 'string' || !a.trim()) continue;
+      if (typeof ci !== 'string' || !ci.trim()) continue;
+      out.push({ alias: norm(a), canonical: norm(ci) });
+    }
+  }
+  return out;
+}
+
+// 질의 q 의 alias 해석 → canonical_ingredient(정규화) Set.
+// alias 표면형은 prefix(startsWith) 매칭: 짧은 INN이 긴 INN의 접미사로 끼는 약물간 오매칭 차단
+// (예: "ofloxacin"이 levo/ciprofloxacin에 substring으로 걸리는 문제). canonical 은 정확일치로 relation 매칭.
+export function resolveAliasIngredients(query, aliasIndex) {
+  const nq = norm(query);
+  const set = new Set();
+  if (!nq || !Array.isArray(aliasIndex)) return set;
+  for (const e of aliasIndex) if (e.alias.startsWith(nq)) set.add(e.canonical);
+  return set;
+}
+
 // state: { query, nutrients:[], actions:[], evidences:[] }
 // facet 내부 OR(includes), facet 간 AND, 검색과도 AND. 입력은 반드시 getRenderableRelations 결과.
-export function filterRelations(rels, state) {
+// aliasIndex(옵션): 검색은 직접매칭(ingredient/nutrient substring) OR alias매칭(ingredient 정확일치). 풀은 안 넓힘.
+export function filterRelations(rels, state, aliasIndex) {
   const s = state || {};
   const q = norm(s.query);
+  const aliasIngs = q ? resolveAliasIngredients(s.query, aliasIndex) : null;
   const inSel = (val, sel) => !sel || sel.length === 0 || sel.includes(val);
   return rels.filter((r) => {
     if (!inSel(r.nutrient, s.nutrients)) return false;
     if (!inSel(r.recommended_action, s.actions)) return false;
     if (!inSel(r.evidence_level, s.evidences)) return false;
-    if (q && !SEARCH_FIELDS.some((f) => norm(r[f]).includes(q))) return false;
+    if (q) {
+      const direct = SEARCH_FIELDS.some((f) => norm(r[f]).includes(q));
+      const viaAlias = !!aliasIngs && aliasIngs.has(norm(r.ingredient));
+      if (!direct && !viaAlias) return false;
+    }
     return true;
   });
+}
+
+// alias 안내 1줄 판정. 직접 성분/영양소 매칭이 결과에 있으면 안내 안 함(PM 규칙).
+// 입력 filteredRels = 이미 filterRelations 거친 결과. 반환 null 또는 { query, ingredients:[raw...] }.
+export function aliasHint(filteredRels, state, aliasIndex) {
+  const s = state || {};
+  const q = norm(s.query);
+  if (!q || !Array.isArray(filteredRels) || filteredRels.length === 0) return null;
+  const directInFiltered = filteredRels.some((r) => SEARCH_FIELDS.some((f) => norm(r[f]).includes(q)));
+  if (directInFiltered) return null;
+  const aliasIngs = resolveAliasIngredients(s.query, aliasIndex);
+  if (!aliasIngs.size) return null;
+  const ings = [...new Set(filteredRels.filter((r) => aliasIngs.has(norm(r.ingredient))).map((r) => r.ingredient))];
+  if (!ings.length) return null;
+  return { query: s.query, ingredients: ings };
 }

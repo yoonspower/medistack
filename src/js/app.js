@@ -1,7 +1,7 @@
 // app.js — entry + 해시 라우터 + 검색/필터(인메모리 state). 실패/0건/누락 시 안전 state.
-import { loadData } from './data.js';
-import { getRenderableRelations, findRelation, commonDisclaimer, getFacets, filterRelations } from './guards.js';
-import { renderListControls, renderListResults, renderDetail, esc } from './render.js';
+import { loadData, loadAliases } from './data.js';
+import { getRenderableRelations, findRelation, commonDisclaimer, getFacets, filterRelations, buildAliasIndex, aliasHint } from './guards.js';
+import { renderListControls, renderListResults, renderDetail, renderAliasHint, esc } from './render.js';
 import { renderEmpty, renderError, renderNoResults } from './states.js';
 
 const appbar = () => document.getElementById('appbar');
@@ -9,6 +9,7 @@ const body = () => document.getElementById('appbody');
 
 const state = { data: null, error: false };
 const filterState = { query: '', nutrients: [], actions: [], evidences: [] };
+let aliasIndex = []; // alias 부재/실패 시 빈 배열 → relation-only 검색
 
 const BETA_TAG = '<span class="beta">베타 · 참고 정보</span>';
 function setAppbar(detail) {
@@ -28,10 +29,11 @@ function mountDetail(id) {
 
 function renderResults() {
   const rels = getRenderableRelations(state.data);
-  const filtered = filterRelations(rels, filterState);
+  const filtered = filterRelations(rels, filterState, aliasIndex);
   const el = document.getElementById('ms-results');
   if (!el) return;
-  let html = renderListResults(filtered, rels.length);
+  let html = renderAliasHint(aliasHint(filtered, filterState, aliasIndex));
+  html += renderListResults(filtered, rels.length);
   if (filtered.length === 0) html += renderNoResults();
   el.innerHTML = html;
   const reset = document.getElementById('ms-reset');
@@ -94,6 +96,12 @@ function onClick(e) {
 async function init() {
   try { state.data = await loadData(); }
   catch (e) { state.error = true; if (window.console) console.error('[MediStack] load failed:', e.message); }
+  // alias 는 부가기능: 실패해도 앱 정상(relation-only 검색). 치명 아님.
+  try {
+    const aliasData = await loadAliases();
+    aliasIndex = buildAliasIndex(aliasData);
+    if (!aliasData && window.console) console.warn('[MediStack] alias load skipped (search uses relations only)');
+  } catch (e) { aliasIndex = []; }
   body().addEventListener('input', onInput);
   body().addEventListener('click', onClick);
   route();

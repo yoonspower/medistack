@@ -1,6 +1,8 @@
 // data.js — JSON 로딩 + shape 가드. 실패 시 throw → app.js 가 error state 로 처리.
 
 const DATA_URL = './data/medistack_v0.2_beta_export.json';
+// alias 는 relation 과 독립된 별도 파일. 검색 보조 전용. DATA_URL 과 분리.
+const ALIAS_URL = './data/medistack_v0.3_aliases.json';
 
 export async function loadData() {
   let res;
@@ -20,6 +22,21 @@ export async function loadData() {
 
   assertShape(data);
   return data;
+}
+
+// alias 로딩 (fail-soft): 실패/HTTP≠200/파싱오류/shape 불일치 → null 반환(앱은 relation-only 검색 유지).
+// relation 로드와 달리 alias 실패는 치명 아님 → throw 하지 않는다.
+export async function loadAliases() {
+  try {
+    const res = await fetch(ALIAS_URL, { cache: 'no-store' });
+    if (!res.ok) return null;
+    const d = await res.json();
+    if (!d || typeof d !== 'object' || Array.isArray(d)) return null;
+    if (!Array.isArray(d.ingredient_aliases) && !Array.isArray(d.product_aliases)) return null;
+    return d;
+  } catch (e) {
+    return null;
+  }
 }
 
 // 최소 구조 검증. 더 엄격한 12항목 검사는 scripts/validate_medistack_v0_1_export.* (배포 전 CI).

@@ -55,6 +55,13 @@ export function renderListControls(facets, state) {
   return h;
 }
 
+// alias 안내 1줄 (검색 보조 안내. 제품 정보/추천 아님). info = { query, ingredients:[...] }
+export function renderAliasHint(info) {
+  if (!info || !info.query || !Array.isArray(info.ingredients) || info.ingredients.length === 0) return '';
+  const ing = info.ingredients.join(', ');
+  return '<div class="aliashint">' + esc('‘' + info.query + '’ 검색어는 ' + ing + ' 관련 정보로 연결됩니다.') + '</div>';
+}
+
 // 결과 카운트 + 카드 (0건이면 카운트만; no-results 는 states.renderNoResults)
 export function renderListResults(filtered, total) {
   const head = filtered.length === total
