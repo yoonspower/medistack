@@ -22,3 +22,16 @@ export function renderError() {
     '<button class="retry" onclick="location.reload()">다시 시도</button></div>'
   );
 }
+
+const NO_RESULTS_COPY = '검색·필터 조건에 맞는 참고 정보가 없습니다. 검색어나 필터를 바꾸거나 ‘필터 초기화’를 눌러 보세요.';
+
+// 검색/필터 무매치 — 데이터 0건(renderEmpty)과 별개 상태. ‘안전’ 의미 아님.
+export function renderNoResults() {
+  return (
+    '<div class="state state-inline">' +
+    '<svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>' +
+    '<p>' + esc(NO_RESULTS_COPY) + '</p>' +
+    '<button class="retry" type="button" data-action="reset">필터 초기화</button>' +
+    '</div>'
+  );
+}

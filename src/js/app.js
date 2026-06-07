@@ -1,59 +1,101 @@
-// app.js — entry. 데이터 로드 → 해시 라우팅. 실패/0건/누락 시 안전 state.
+// app.js — entry + 해시 라우터 + 검색/필터(인메모리 state). 실패/0건/누락 시 안전 state.
 import { loadData } from './data.js';
-import { getRenderableRelations, findRelation, commonDisclaimer } from './guards.js';
-import { renderList, renderDetail } from './render.js';
-import { renderEmpty, renderError } from './states.js';
+import { getRenderableRelations, findRelation, commonDisclaimer, getFacets, filterRelations } from './guards.js';
+import { renderListControls, renderListResults, renderDetail, esc } from './render.js';
+import { renderEmpty, renderError, renderNoResults } from './states.js';
 
 const appbar = () => document.getElementById('appbar');
 const body = () => document.getElementById('appbody');
 
 const state = { data: null, error: false };
+const filterState = { query: '', nutrients: [], actions: [], evidences: [] };
 
 const BETA_TAG = '<span class="beta">베타 · 참고 정보</span>';
 function setAppbar(detail) {
-  appbar().innerHTML = detail
-    ? '<a class="back" href="#/">‹ 목록</a>' + BETA_TAG
-    : '<span class="brand">MediStack</span>' + BETA_TAG;
+  appbar().innerHTML = detail ? '<a class="back" href="#/">‹ 목록</a>' + BETA_TAG : '<span class="brand">MediStack</span>' + BETA_TAG;
 }
 
-function mountError() {
-  setAppbar(false);
-  body().innerHTML = renderError();
-}
-function mountEmpty() {
-  setAppbar(false);
-  body().innerHTML = renderEmpty(state.data);
-}
-function mountList() {
-  setAppbar(false);
-  body().innerHTML = renderList(state.data);
-  body().scrollTop = 0;
-}
+function resetFilter() { filterState.query = ''; filterState.nutrients = []; filterState.actions = []; filterState.evidences = []; }
+function hasActiveFilter() { return !!filterState.query || filterState.nutrients.length > 0 || filterState.actions.length > 0 || filterState.evidences.length > 0; }
+
+function mountError() { setAppbar(false); body().innerHTML = renderError(); }
+function mountEmpty() { setAppbar(false); body().innerHTML = renderEmpty(state.data); }
 function mountDetail(id) {
   const rel = findRelation(state.data, id);
-  // fail-safe: 관계 없음(또는 excluded/15행/누락) 또는 공통 면책문구 없음 → error
-  if (!rel || !commonDisclaimer(state.data)) return mountError();
-  setAppbar(true);
-  body().innerHTML = renderDetail(rel, state.data);
+  if (!rel || !commonDisclaimer(state.data)) return mountError(); // fail-safe
+  setAppbar(true); body().innerHTML = renderDetail(rel, state.data); body().scrollTop = 0;
+}
+
+function renderResults() {
+  const rels = getRenderableRelations(state.data);
+  const filtered = filterRelations(rels, filterState);
+  const el = document.getElementById('ms-results');
+  if (!el) return;
+  let html = renderListResults(filtered, rels.length);
+  if (filtered.length === 0) html += renderNoResults();
+  el.innerHTML = html;
+  const reset = document.getElementById('ms-reset');
+  if (reset) reset.hidden = !hasActiveFilter();
+}
+
+function mountList() {
+  setAppbar(false);
+  const rels = getRenderableRelations(state.data);
+  const facets = getFacets(rels);
+  body().innerHTML = '<div id="ms-controls"></div><div id="ms-results"></div><div id="ms-footer"></div>';
+  document.getElementById('ms-controls').innerHTML = renderListControls(facets, filterState);
+  const cf = state.data.disclaimers && state.data.disclaimers.card_footer;
+  if (cf) document.getElementById('ms-footer').innerHTML = '<div class="listfooter">' + esc(cf) + '</div>';
+  renderResults();
   body().scrollTop = 0;
 }
 
 function route() {
   if (state.error || !state.data) return mountError();
   if (getRenderableRelations(state.data).length === 0) return mountEmpty();
-
   const m = location.hash.match(/^#\/r\/(\d+)$/);
   if (m) return mountDetail(Number(m[1]));
   return mountList();
 }
 
-async function init() {
-  try {
-    state.data = await loadData();
-  } catch (e) {
-    state.error = true;
-    if (window.console) console.error('[MediStack] load failed:', e.message);
+// ---- 이벤트 (appbody 위임; 검색 debounce / 칩 토글 / 초기화) ----
+let searchTimer = null;
+function onInput(e) {
+  if (e.target && e.target.id === 'ms-search') {
+    const val = e.target.value;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { filterState.query = val; renderResults(); }, 180);
   }
+}
+function toggleChip(el) {
+  const facet = el.dataset.facet, value = el.dataset.value;
+  if (!filterState[facet]) return;
+  const i = filterState[facet].indexOf(value);
+  if (i >= 0) filterState[facet].splice(i, 1); else filterState[facet].push(value);
+  const on = filterState[facet].includes(value);
+  el.classList.toggle('active', on);
+  el.setAttribute('aria-pressed', on ? 'true' : 'false');
+  renderResults();
+}
+function doReset() {
+  clearTimeout(searchTimer);
+  resetFilter();
+  const s = document.getElementById('ms-search'); if (s) s.value = '';
+  document.querySelectorAll('#ms-controls .fchip.active').forEach((c) => { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
+  renderResults();
+}
+function onClick(e) {
+  const chip = e.target.closest && e.target.closest('[data-facet]');
+  if (chip) return toggleChip(chip);
+  const reset = e.target.closest && e.target.closest('[data-action="reset"]');
+  if (reset) return doReset();
+}
+
+async function init() {
+  try { state.data = await loadData(); }
+  catch (e) { state.error = true; if (window.console) console.error('[MediStack] load failed:', e.message); }
+  body().addEventListener('input', onInput);
+  body().addEventListener('click', onClick);
   route();
   window.addEventListener('hashchange', route);
 }
