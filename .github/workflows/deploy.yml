@@ -24,8 +24,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.x"
-      - name: Validate v0.1 export contract
+      - name: Validate v0.1 export contract (archived integrity)
         run: python3 scripts/validate_medistack_v0_1_export.py data/medistack_v0.1_beta_export.json
+      - name: Validate v0.2 export contract (live)
+        run: python3 scripts/validate_medistack_v0_2_export.py data/medistack_v0.2_beta_export.json
 
   deploy:
     needs: validate          # validate 성공 시에만 배포
