@@ -302,8 +302,9 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF
         ar2 = (ar2_data or {}).get("approved_ready") if isinstance(ar2_data, dict) else None
         if isinstance(ar2, list):
             v.check(len(ar2) <= 30, 53, "batch2 approved-ready ≤ 30건", f"count={len(ar2)}")
-            inc_true = [e.get("candidate_alias") for e in ar2 if str(e.get("incorporated", "")).strip().lower() == "true"]
-            v.check(not inc_true, 54, "batch2 approved-ready 는 incorporated=false(미반영)", f"viol={inc_true}")
+            # (Phase 6 옵션 A) 반영 전=false / 반영 후=true 둘 다 정합. incorporated=true 의 실제 반영 검증은 #52.
+            bad_inc = [e.get("candidate_alias") for e in ar2 if str(e.get("incorporated", "")).strip().lower() not in ("false", "true")]
+            v.check(not bad_inc, 54, "batch2 approved-ready incorporated ∈ {false(미반영),true(반영)} 정합(true는 #52에서 실제 반영 검증)", f"viol={bad_inc}")
             no_inc = [e.get("candidate_alias") for e in ar2 if "incorporated" not in e]
             v.check(not no_inc, 55, "batch2 approved-ready 는 incorporated 필드 보유", f"viol={no_inc}")
 
