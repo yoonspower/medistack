@@ -1,8 +1,9 @@
 # MediStack v0.5 — Phase 12 batch 5 incorporation 계획 (⚠️ 계획만, 실제 반영 금지)
 
-작성일: **2026-06-11** / 상태: **계획(반영 전 — PM 승인 대기)** / 상위: `..._bulk_alias_pipeline_plan.md`, `..._phase11_report.md`, `..._phase10_report.md`
+작성일: **2026-06-11** / 상태: **✅ 반영 완료 (PM 승인, alias 176→206 — 🎯 v0.5 목표 200 도달)** — 실행 결과는 `..._phase12_report.md` 참조 / 상위: `..._bulk_alias_pipeline_plan.md`, `..._phase11_report.md`, `..._phase10_report.md`
 
-> Phase 10(batch 4, alias 153→176)와 **동일한 incorporation 패턴**을 batch 5(30건, alias 176→206)에 적용하기 위한 사전 계획. **🎯 batch 5 반영 시 alias 206 = v0.5 목표 200 도달.** **이 문서는 계획만 — 실제 alias 반영은 다음 PM 게이트(Phase 12).**
+> **(갱신) 이 계획은 PM 승인 후 실행 완료됨**: batch 5 30건 alias JSON 반영(product +30·verified +30·alias_count 176→206, **append only·verified canonicals 12 유지**), validator #114 옵션 A 갱신. **🎯 alias 206 = v0.5 목표 200 도달.** 상세=`MediStack_v0.5_bulk_alias_phase12_report.md`. 아래는 실행 전 계획 원문(참고용 보존).
+> Phase 10(batch 4, alias 153→176)와 **동일한 incorporation 패턴**을 batch 5(30건, alias 176→206)에 적용하기 위한 사전 계획.
 
 ---
 
