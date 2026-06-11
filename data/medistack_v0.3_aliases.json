@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 53
+    "alias_count": 62
   },
   "ingredient_aliases": [
     {
@@ -180,6 +180,60 @@
       "canonical_ingredient": "토라세미드",
       "kind": "ingredient",
       "lang": "en"
+    },
+    {
+      "alias": "ciprofloxacin hydrochloride",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "metformin hydrochloride",
+      "canonical_ingredient": "메트포르민",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "moxifloxacin hydrochloride",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "minocycline hydrochloride",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "alendronate sodium",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "ingredient",
+      "lang": "en"
+    },
+    {
+      "alias": "알렌드론산나트륨수화물",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "레보티록신나트륨수화물",
+      "canonical_ingredient": "레보티록신",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "독시사이클린하이클레이트수화물",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "ingredient",
+      "lang": "ko"
+    },
+    {
+      "alias": "토르세미드",
+      "canonical_ingredient": "토라세미드",
+      "kind": "ingredient",
+      "lang": "ko"
     }
   ],
   "product_aliases": [
