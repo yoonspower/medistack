@@ -70,5 +70,9 @@
 - **Phase 14 — batch6 실제 반영**: **PM 명시 승인 게이트** → ephemeral incorporate(product +50 · verified +50 동반확장 · alias_count 206→256) → validator base_no 120 + option A + smoke. queue status→approved, AR incorporated=true.
 - **목표: 206 → 250~260** (batch6 +50 = 256, PM 목표 구간 내). 이후 batch7~ 심층 재수집으로 500 진행.
 
+## 진행 메모 (2026-06-12)
+- **✅ Phase 13 완료**: batch6 approved-ready **50건 생성**(held 51 pickable → balanced 50, 1 held over), **네트워크 0·alias 무반영**(incorporated=false). canonical 레보17·시프로19·알렌6·오플8. validator **107/107**(batch6 블록 base_no=120)·v0.1 12·v0.2 15·v0.3 13·TypeB 7·회귀 smoke 5/5 ALL PASS. alias_count 206·product 168·verified 144·relation 30·DATA_URL 불변(alias md5 동일). 상세=`MediStack_v0.6_phase13_batch6_candidate_report.md`.
+- **▶ Phase 14 대기**: PM 승인 시 206→256 반영(product +50·verified +50 동반확장·#134 옵션 A 갱신). 계획=`MediStack_v0.6_phase14_batch6_incorporation_plan.md`.
+
 ---
 > 안전 원칙(불변): 원문에 없으면 노출 금지 / 원문보다 강하면 금지 / 복용량·제품추천이면 금지 / 칼륨 제품링크 금지 / clinical 검수 전 published 금지 / validator PASS 없으면 배포 금지 / alias는 검색 보조이지 의학정보 아님 / alias로 relation 신규생성·풀확장 금지 / 15행·excluded·에스오메프라졸 alias 우회 금지 / 미검증·복합제·brand_core·동일 itemSeq 중복 alias 금지 / **이 문서는 계획만 — 후보 재수집·반영·코드 변경은 다음 PM 게이트.**

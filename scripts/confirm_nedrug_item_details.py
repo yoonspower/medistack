@@ -282,6 +282,7 @@ def main():
     ap.add_argument("--ar-only-batch", default=None, help="approved-ready 를 이 batch_id 후보로만 구성")
     ap.add_argument("--ar-balanced", action="store_true", help="approved-ready 를 canonical 라운드로빈으로 균등 분산")
     ap.add_argument("--phase", type=int, default=3, help="단계 번호(meta phaseN_confirmation 키)")
+    ap.add_argument("--ar-version", default="v0.5", help="approved-ready meta version 라벨(예: v0.6)")
     args = ap.parse_args()
 
     qdata = load(args.input_json, "queue")
@@ -353,7 +354,7 @@ def main():
             w.writerow({k: c.get(k, "") for k in q_csv_fields})
 
     ar_meta = {
-        "schema": "bulk_alias_approved_ready", "version": "v0.5", "phase": args.phase,
+        "schema": "bulk_alias_approved_ready", "version": args.ar_version, "phase": args.phase,
         "generated_at": args.checked_at, "generator": "scripts/confirm_nedrug_item_details.py",
         "alias_source": "data/medistack_v0.3_aliases.json",
         "queue_source": "data/candidates/bulk_alias_review_queue_v0_5.json",

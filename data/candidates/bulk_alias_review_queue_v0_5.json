@@ -10,7 +10,8 @@
       5,
       7,
       9,
-      11
+      11,
+      13
     ],
     "generated_at": "2026-06-11",
     "generators": [
@@ -95,7 +96,7 @@
       "skipped_detail": {},
       "no_network": false
     },
-    "note": "Phase 11 상세확정. pending product_full_name 을 getItemDetail 원문으로 확인 — 품목명·단일주성분 일치 시 detail_confirmed=true(status=pending 유지, source_method=nedrug.getItemDetail, confidence=high). 복합제·성분불일치는 deferred 강등, 품목명불일치/실패는 pending 유지. approved 0·alias JSON 미수정. approved-ready 는 별도 파일(approved_ready=true·incorporated=false), 실제 반영은 다음 PM 게이트. 기존 phase 이력 보존. 칼륨 행 구매/제품링크 금지 불변.",
+    "note": "Phase 13 상세확정. pending product_full_name 을 getItemDetail 원문으로 확인 — 품목명·단일주성분 일치 시 detail_confirmed=true(status=pending 유지, source_method=nedrug.getItemDetail, confidence=high). 복합제·성분불일치는 deferred 강등, 품목명불일치/실패는 pending 유지. approved 0·alias JSON 미수정. approved-ready 는 별도 파일(approved_ready=true·incorporated=false), 실제 반영은 다음 PM 게이트. 기존 phase 이력 보존. 칼륨 행 구매/제품링크 금지 불변.",
     "phase3_todo": [
       "pending product_full_name 후보 getItemDetail 원문 확인(주성분·품목명·성분코드) → confidence 상향",
       "사람 검토 → approved(reviewer·source 채움), brand_core tier 결정",
@@ -285,6 +286,26 @@
       "incorporated": 30,
       "alias_count_after": 206,
       "note": "batch5 approved-ready 30건 alias JSON 반영(product+verified 동반확장), queue status pending→approved. alias 206 = v0.5 목표 200 도달."
+    },
+    "phase13_confirmation": {
+      "checked_at": "2026-06-11",
+      "targets_pending": 58,
+      "target_batch": null,
+      "results": {
+        "confirmed": 0,
+        "combo_detected": 0,
+        "ingredient_mismatch": 0,
+        "name_mismatch": 0,
+        "surface_form_whitespace": 0,
+        "fetch_failed": 0,
+        "parse_failed": 0,
+        "esomeprazole_block": 0
+      },
+      "approved_ready": 50,
+      "approved_ready_held_over_limit": 1,
+      "approved_ready_file_batch_id": "v0.6-batch-6",
+      "no_network": true,
+      "detail_source_method": "nedrug.getItemDetail"
     }
   },
   "candidates": [
