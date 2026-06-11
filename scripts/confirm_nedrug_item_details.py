@@ -65,7 +65,7 @@ QUEUE_CSV_FIELDS = [
 AR_FIELDS = [
     "candidate_alias", "canonical_ingredient", "item_seq", "item_name", "ingr_name",
     "source_url", "source_method", "source_checked_at", "detail_source_method", "detail_checked_at",
-    "confidence", "risk_level", "batch_id", "approved_ready", "reason", "reviewer_required",
+    "confidence", "risk_level", "batch_id", "approved_ready", "incorporated", "reason", "reviewer_required",
 ]
 STATUS_VALUES = ["pending", "approved", "rejected", "deferred"]
 
@@ -207,10 +207,19 @@ def ensure_fields(c):
     return c
 
 
-def build_approved_ready(cands, checked_at, existing_seqs):
-    out = []
+def build_approved_ready(cands, checked_at, existing_seqs, ar_batch_id=None,
+                         incorporated_value="false", limit=None, only_batch=None, balanced=False):
+    """detail_confirmed=true 후보로 approved-ready 목록 구성. (out, held_over_limit) 반환.
+    - ar_batch_id: 지정 시 출력 batch_id override(예: v0.5-batch-2).
+    - incorporated_value: 출력 incorporated 필드 값(기본 'false' = 미반영).
+    - only_batch: 지정 시 해당 batch_id 후보만 포함(신규 batch 분리).
+    - limit: 초과분은 held 로 보류(queue 에는 pending 유지, 다음 batch 회수).
+    - balanced: limit 적용 시 canonical 간 라운드로빈(성분당 균등 분산, 검색 커버리지 다양화)."""
+    out, held = [], 0
     for c in cands:
         if c.get("detail_confirmed") != "true":
+            continue
+        if only_batch and c.get("batch_id") != only_batch:
             continue
         # 기존 alias 가 동일 itemSeq(동일 제품) 보유 → 중복 제품, approved-ready 제외(queue 는 pending 유지).
         if (c.get("item_seq") or "").strip() in existing_seqs:
@@ -225,13 +234,32 @@ def build_approved_ready(cands, checked_at, existing_seqs):
             "source_checked_at": c.get("source_checked_at", checked_at),
             "detail_source_method": c.get("detail_source_method", DETAIL_SOURCE_METHOD),
             "detail_checked_at": c.get("detail_checked_at", checked_at),
-            "confidence": "high", "risk_level": c.get("risk_level", "low"), "batch_id": c.get("batch_id", ""),
-            "approved_ready": "true",
+            "confidence": "high", "risk_level": c.get("risk_level", "low"),
+            "batch_id": ar_batch_id or c.get("batch_id", ""),
+            "approved_ready": "true", "incorporated": incorporated_value,
             "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
             "reviewer_required": "true",
         })
     out.sort(key=lambda r: (r["canonical_ingredient"], r["candidate_alias"]))
-    return out
+    if limit is not None and len(out) > limit:
+        if balanced:
+            # canonical 간 라운드로빈으로 성분당 균등 선택(특정 성분 dose 변이가 batch 를 독식하지 않게).
+            groups = {}  # out 이 canonical 정렬이라 삽입순=알파벳순 보존(py3.7+ dict)
+            for r in out:
+                groups.setdefault(r["canonical_ingredient"], []).append(r)
+            picked = []
+            while len(picked) < limit and any(groups.values()):
+                for canon in list(groups.keys()):
+                    if groups[canon]:
+                        picked.append(groups[canon].pop(0))
+                        if len(picked) >= limit:
+                            break
+            held = len(out) - len(picked)
+            out = sorted(picked, key=lambda r: (r["canonical_ingredient"], r["candidate_alias"]))
+        else:
+            held = len(out) - limit
+            out = out[:limit]
+    return out, held
 
 
 def main():
@@ -245,13 +273,21 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--no-network", action="store_true")
     ap.add_argument("--checked-at", default=DEFAULT_CHECKED_AT)
+    ap.add_argument("--target-batch", default=None, help="이 batch_id 후보만 상세확정(신규만 처리)")
+    ap.add_argument("--ar-batch-id", default=None, help="approved-ready batch_id override (예: v0.5-batch-2)")
+    ap.add_argument("--ar-incorporated", default="false", help="approved-ready incorporated 값(기본 false=미반영)")
+    ap.add_argument("--ar-limit", type=int, default=None, help="approved-ready 최대 건수(초과분 보류)")
+    ap.add_argument("--ar-only-batch", default=None, help="approved-ready 를 이 batch_id 후보로만 구성")
+    ap.add_argument("--ar-balanced", action="store_true", help="approved-ready 를 canonical 라운드로빈으로 균등 분산")
+    ap.add_argument("--phase", type=int, default=3, help="단계 번호(meta phaseN_confirmation 키)")
     args = ap.parse_args()
 
     qdata = load(args.input_json, "queue")
     cands = [ensure_fields(dict(c)) for c in qdata.get("candidates", [])]
 
     targets = [c for c in cands if c.get("status") == "pending"
-               and c.get("candidate_type") == "product_full_name" and (c.get("item_seq") or "").strip()]
+               and c.get("candidate_type") == "product_full_name" and (c.get("item_seq") or "").strip()
+               and (not args.target_batch or c.get("batch_id") == args.target_batch)]
     if args.limit:
         targets = targets[:args.limit]
 
@@ -263,47 +299,65 @@ def main():
     else:
         opener = make_opener()
         for c in targets:
+            # 같은 checked_at 으로 이미 상세확정된 후보는 재네트워크 생략(idempotent 재실행).
+            if str(c.get("detail_confirmed", "")).strip().lower() == "true" and c.get("detail_checked_at") == args.checked_at:
+                results["confirmed"] = results.get("confirmed", 0) + 1
+                continue
             r = confirm_one(opener, c, args.checked_at)
             results[r] = results.get(r, 0) + 1
             print(f"  [{r}] {c['candidate_alias']} (seq {c['item_seq']})")
 
-    approved_ready = build_approved_ready(cands, args.checked_at, existing_alias_itemseqs())
+    approved_ready, ar_held = build_approved_ready(
+        cands, args.checked_at, existing_alias_itemseqs(),
+        ar_batch_id=args.ar_batch_id, incorporated_value=args.ar_incorporated,
+        limit=args.ar_limit, only_batch=args.ar_only_batch, balanced=args.ar_balanced)
     counts = {s: 0 for s in STATUS_VALUES}
     for c in cands:
         counts[c["status"]] = counts.get(c["status"], 0) + 1
 
-    # queue meta 갱신(기존 meta 보존 + phase3 추가)
+    # queue meta 갱신(기존 meta·이력 보존 + 이번 phase 확정 정보만 추가)
     meta = dict(qdata.get("meta", {}))
-    meta["phases"] = sorted(set((meta.get("phases") or []) + [3]))
+    meta["phases"] = sorted(set((meta.get("phases") or []) + [args.phase]))
     meta["counts"] = {"total": len(cands), **counts}
-    meta["phase3_confirmation"] = {
+    meta[f"phase{args.phase}_confirmation"] = {
         "checked_at": args.checked_at, "targets_pending": len(targets),
+        "target_batch": args.target_batch,
         "results": results, "approved_ready": len(approved_ready),
+        "approved_ready_held_over_limit": ar_held,
+        "approved_ready_file_batch_id": args.ar_batch_id,
         "no_network": args.no_network,
         "detail_source_method": DETAIL_SOURCE_METHOD,
     }
-    meta["note"] = ("Phase 3 상세확정. pending product_full_name 을 getItemDetail 원문으로 확인 — 품목명·단일주성분 일치 시 "
+    meta["note"] = (f"Phase {args.phase} 상세확정. pending product_full_name 을 getItemDetail 원문으로 확인 — 품목명·단일주성분 일치 시 "
                     "detail_confirmed=true(status=pending 유지, source_method=nedrug.getItemDetail, confidence=high). "
                     "복합제·성분불일치는 deferred 강등, 품목명불일치/실패는 pending 유지. approved 0·alias JSON 미수정. "
-                    "approved-ready 는 별도 파일(approved_ready=true), 실제 반영은 다음 PM 게이트. 칼륨 행 구매/제품링크 금지 불변.")
+                    "approved-ready 는 별도 파일(approved_ready=true·incorporated=false), 실제 반영은 다음 PM 게이트. 기존 phase 이력 보존. "
+                    "칼륨 행 구매/제품링크 금지 불변.")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(args.out_json, "w", encoding="utf-8") as f:
         json.dump({"meta": meta, "candidates": cands}, f, ensure_ascii=False, indent=2)
         f.write("\n")
+    # queue CSV 는 기존 컬럼(detail/incorporated_at 등)을 잃지 않도록 동적 superset 으로 기록.
+    q_csv_fields = list(QUEUE_CSV_FIELDS)
+    for c in cands:
+        for k in c:
+            if k not in q_csv_fields:
+                q_csv_fields.append(k)
     with open(args.out_csv, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=QUEUE_CSV_FIELDS)
+        w = csv.DictWriter(f, fieldnames=q_csv_fields)
         w.writeheader()
         for c in cands:
-            w.writerow({k: c.get(k, "") for k in QUEUE_CSV_FIELDS})
+            w.writerow({k: c.get(k, "") for k in q_csv_fields})
 
     ar_meta = {
-        "schema": "bulk_alias_approved_ready", "version": "v0.5", "phase": 3,
+        "schema": "bulk_alias_approved_ready", "version": "v0.5", "phase": args.phase,
         "generated_at": args.checked_at, "generator": "scripts/confirm_nedrug_item_details.py",
         "alias_source": "data/medistack_v0.3_aliases.json",
         "queue_source": "data/candidates/bulk_alias_review_queue_v0_5.json",
-        "count": len(approved_ready),
-        "note": ("getItemDetail 상세확정 통과 후보(품목명·단일주성분 일치). approved_ready=true 이나 status 는 queue 에서 pending 유지. "
+        "batch_id": args.ar_batch_id, "incorporated": args.ar_incorporated,
+        "count": len(approved_ready), "held_over_limit": ar_held, "ar_limit": args.ar_limit,
+        "note": ("getItemDetail 상세확정 통과 후보(품목명·단일주성분 일치). approved_ready=true·incorporated=false 이나 status 는 queue 에서 pending 유지. "
                  "실제 approved 전환·alias JSON 반영은 다음 PM 게이트(reviewer_required=true). brand_core/복합제/에스오메프라졸 제외."),
     }
     with open(args.approved_ready_json, "w", encoding="utf-8") as f:
@@ -320,7 +374,7 @@ def main():
     print("=" * 64)
     print(f"대상 pending: {len(targets)} | 결과: {results}")
     print(f"queue counts: {meta['counts']}  (approved={counts['approved']})")
-    print(f"approved-ready: {len(approved_ready)}")
+    print(f"approved-ready: {len(approved_ready)} (limit={args.ar_limit}, held={ar_held}, batch_id={args.ar_batch_id})")
     print(f"queue JSON: {os.path.relpath(args.out_json, REPO)}")
     print(f"approved-ready JSON: {os.path.relpath(args.approved_ready_json, REPO)}")
     return 0

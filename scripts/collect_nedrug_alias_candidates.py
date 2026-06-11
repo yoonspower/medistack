@@ -49,6 +49,7 @@ DEF_QUEUE_CSV = os.path.join(OUT_DIR, "bulk_alias_review_queue_v0_5.csv")
 
 DEFAULT_CHECKED_AT = "2026-06-11"  # 실행일(환경 기준). --checked-at 로 override.
 PHASE2_BATCH_ID = "v0.5-002"
+PHASE5_BATCH_ID = "v0.5-005"  # Phase 5 재수집(max-per-ingredient 상향) 신규 후보 batch_id
 EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"
 FORBIDDEN_ITEMSEQS = {"201600209"}
 SOURCE_METHOD = "nedrug.searchDrug"
@@ -108,6 +109,10 @@ def build_context():
                 wl_seqs.add(ent["item_seq"].strip())
             if ent.get("item_name"):
                 wl_names.add(norm(ent["item_name"]))
+    # 기존 product_aliases 가 대표하는 itemSeq 도 중복 기준에 포함(동일 제품 재수집 방지)
+    for p in (adata.get("product_aliases") or []):
+        if (p.get("item_seq") or "").strip():
+            wl_seqs.add(p["item_seq"].strip())
     existing = {norm(a["alias"]) for a in
                 (adata.get("ingredient_aliases") or []) + (adata.get("product_aliases") or []) if a.get("alias")}
     return {
@@ -122,10 +127,10 @@ def make_opener():
     return urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
 
-def nedrug_search(opener, ingredient, timeout=25):
-    """searchDrug 주성분 검색. (html, url) 반환. 실패 시 예외."""
+def nedrug_search(opener, ingredient, page=1, timeout=25):
+    """searchDrug 주성분 검색(page). (html, url) 반환. 실패 시 예외."""
     enc = urllib.parse.quote(ingredient)
-    url = f"https://nedrug.mfds.go.kr/searchDrug?searchYn=Y&ingrName1={enc}"
+    url = f"https://nedrug.mfds.go.kr/searchDrug?searchYn=Y&ingrName1={enc}&page={page}"
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ko,en;q=0.8"})
     with opener.open(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "replace"), url
@@ -165,57 +170,66 @@ def make_row(**kw):
     return row
 
 
-def collect_for_ingredient(opener, ing, ctx, seen_alias, max_n, checked_at):
-    """한 성분 수집 → (rows, status) status ∈ {success, skipped:reason}."""
-    try:
-        html_text, _ = nedrug_search(opener, ing)
-    except Exception as e:
-        return [], f"skipped:network({type(e).__name__})"
-    parsed = parse_rows(html_text)
-    if not parsed:
-        return [], "skipped:no-rows"
-    rows, picked = [], 0
-    for p in sorted(parsed, key=lambda x: int(x["item_seq"])):
+def collect_for_ingredient(opener, ing, ctx, seen_alias, max_n, checked_at, batch_id, max_pages=1):
+    """한 성분 수집(최대 max_pages 페이지) → (rows, status). status ∈ {success, skipped:reason}.
+    searchDrug 페이지당 15행(수출/원료/주사 노이즈 다수)이라, 적격 경구단일을 max_n 까지 모으려면 페이지 순회."""
+    rows, picked, pages_ok = [], 0, 0
+    for page in range(1, max_pages + 1):
+        try:
+            html_text, _ = nedrug_search(opener, ing, page=page)
+        except Exception as e:
+            if page == 1:
+                return [], f"skipped:network({type(e).__name__})"
+            break  # 이후 페이지 네트워크 실패 → 지금까지 수집분 유지하고 종료
+        parsed = parse_rows(html_text)
+        if not parsed:
+            break  # 결과 끝(빈 페이지)
+        pages_ok += 1
+        for p in sorted(parsed, key=lambda x: int(x["item_seq"])):
+            if picked >= max_n:
+                break
+            name, seq, ingr = p["item_name"], p["item_seq"], p["ingr_name"]
+            nkey = norm(name)
+            # 1) 봉인/금지 우선 차단
+            if seq in FORBIDDEN_ITEMSEQS or ESO_HINT_RE.search(name) or (ingr and ESO_HINT_RE.search(ingr)):
+                continue
+            # 2) 중복 제외(기존 alias · 현재 queue · 이번 수집 · verified/product itemSeq)
+            if nkey in ctx["existing"] or nkey in seen_alias or nkey in ctx["wl_names"] or seq in ctx["wl_seqs"]:
+                continue
+            # 3) 완제·정상·경구고형·비수출 필터
+            if "원료" in p["finished"] or (p["finished"] and "완제" not in p["finished"]):
+                continue
+            if p["status_cancel"] and p["status_cancel"] != "정상":
+                continue
+            if EXPORT_RE.search(name) or NONORAL_RE.search(name) or not ORAL_RE.search(name):
+                continue
+            # 4) 보수적 성분 매칭: 행 주성분에 canonical 포함(없으면 채택 안 함)
+            if not ingr or ing not in ingr:
+                continue
+            seen_alias.add(nkey)
+            # 복합제(다성분 주성분, '/') 는 단일성분 아님 → pending 금지, deferred(사람 검토). 단일성분만 pending.
+            is_combo = "/" in ingr
+            if is_combo:
+                status, conf, exr = "deferred", "low", "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요"
+                reason = (f"nedrug searchDrug(ingrName1={ing}) 결과 복합제 주성분 '{ingr}'(canonical {ing} 포함). "
+                          f"단일성분 아님 → deferred, 사람 검토")
+            else:
+                status, conf, exr = "pending", "medium", ""
+                reason = (f"nedrug searchDrug(ingrName1={ing}) 결과 단일 주성분 '{ingr}' 확인(완제·경구·정상). "
+                          f"getItemDetail 상세 미실행 → 승인 전 원문 확인 필요")
+            rows.append(make_row(
+                candidate_alias=name, candidate_type="product_full_name", canonical_ingredient=ing,
+                item_seq=seq, item_name=name, ingr_name=ingr,
+                source_url=f"https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq={seq}",
+                source_method=SOURCE_METHOD, source_checked_at=checked_at,
+                confidence=conf, risk_level="low", reason=reason,
+                status=status, exclusion_reason=exr, batch_id=batch_id,
+            ))
+            picked += 1
         if picked >= max_n:
             break
-        name, seq, ingr = p["item_name"], p["item_seq"], p["ingr_name"]
-        nkey = norm(name)
-        # 1) 봉인/금지 우선 차단
-        if seq in FORBIDDEN_ITEMSEQS or ESO_HINT_RE.search(name) or (ingr and ESO_HINT_RE.search(ingr)):
-            continue
-        # 2) 중복 제외(기존 66 · 현재 queue · 이번 수집 · verified 4건)
-        if nkey in ctx["existing"] or nkey in seen_alias or nkey in ctx["wl_names"] or seq in ctx["wl_seqs"]:
-            continue
-        # 3) 완제·정상·경구고형·비수출 필터
-        if "원료" in p["finished"] or (p["finished"] and "완제" not in p["finished"]):
-            continue
-        if p["status_cancel"] and p["status_cancel"] != "정상":
-            continue
-        if EXPORT_RE.search(name) or NONORAL_RE.search(name) or not ORAL_RE.search(name):
-            continue
-        # 4) 보수적 성분 매칭: 행 주성분에 canonical 포함(없으면 채택 안 함)
-        if not ingr or ing not in ingr:
-            continue
-        seen_alias.add(nkey)
-        # 복합제(다성분 주성분, '/') 는 단일성분 아님 → pending 금지, deferred(사람 검토). 단일성분만 pending.
-        is_combo = "/" in ingr
-        if is_combo:
-            status, conf, exr = "deferred", "low", "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요"
-            reason = (f"nedrug searchDrug(ingrName1={ing}) 결과 복합제 주성분 '{ingr}'(canonical {ing} 포함). "
-                      f"단일성분 아님 → deferred, 사람 검토")
-        else:
-            status, conf, exr = "pending", "medium", ""
-            reason = (f"nedrug searchDrug(ingrName1={ing}) 결과 단일 주성분 '{ingr}' 확인(완제·경구·정상). "
-                      f"getItemDetail 상세 미실행 → 승인 전 원문 확인 필요")
-        rows.append(make_row(
-            candidate_alias=name, candidate_type="product_full_name", canonical_ingredient=ing,
-            item_seq=seq, item_name=name, ingr_name=ingr,
-            source_url=f"https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq={seq}",
-            source_method=SOURCE_METHOD, source_checked_at=checked_at,
-            confidence=conf, risk_level="low", reason=reason,
-            status=status, exclusion_reason=exr, batch_id=PHASE2_BATCH_ID,
-        ))
-        picked += 1
+    if pages_ok == 0:
+        return [], "skipped:no-rows"
     return rows, "success"
 
 
@@ -236,18 +250,22 @@ def normalize_existing(cands):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-per-ingredient", type=int, default=5)
+    ap.add_argument("--max-pages", type=int, default=1, help="성분당 searchDrug 페이지 순회 상한(페이지당 15행)")
     ap.add_argument("--limit-ingredients", type=int, default=None)
     ap.add_argument("--no-network", action="store_true", help="네트워크 호출 없이 병합/정규화만")
     ap.add_argument("--dry-run", action="store_true", default=True, help="dry-run(기본). alias JSON 미수정·approved 미생성")
     ap.add_argument("--checked-at", default=DEFAULT_CHECKED_AT)
+    ap.add_argument("--batch-id", default=PHASE2_BATCH_ID, help="신규 수집 후보 batch_id (예: phase5 = v0.5-005)")
+    ap.add_argument("--phase", type=int, default=2, help="수집 단계 번호(meta phaseN_collection 키)")
     ap.add_argument("--queue-in", default=DEF_QUEUE_JSON)
     ap.add_argument("--out-json", default=DEF_QUEUE_JSON)
     ap.add_argument("--out-csv", default=DEF_QUEUE_CSV)
     args = ap.parse_args()
 
     ctx = build_context()
-    if ctx["alias_count"] != 66 or ctx["relation_count"] != 30:
-        print(f"[WARN] 입력 불변식: alias_count={ctx['alias_count']} relation={ctx['relation_count']}")
+    # (Phase 4+) batch 반영으로 alias_count 는 단조 증가(≥66). relation 은 항상 30. 그 외만 경고.
+    if not (isinstance(ctx["alias_count"], int) and ctx["alias_count"] >= 66) or ctx["relation_count"] != 30:
+        print(f"[WARN] 입력 불변식: alias_count={ctx['alias_count']}(≥66 기대) relation={ctx['relation_count']}(30 기대)")
 
     base = load(args.queue_in, "queue-in")
     existing_cands = normalize_existing(base.get("candidates", []))
@@ -261,7 +279,7 @@ def main():
     else:
         opener = make_opener()
         for ing in targets:
-            rows, st = collect_for_ingredient(opener, ing, ctx, seen_alias, args.max_per_ingredient, args.checked_at)
+            rows, st = collect_for_ingredient(opener, ing, ctx, seen_alias, args.max_per_ingredient, args.checked_at, args.batch_id, args.max_pages)
             new_rows.extend(rows)
             if st == "success":
                 success.append((ing, len(rows)))
@@ -277,51 +295,66 @@ def main():
     for r in merged:
         counts[r["status"]] = counts.get(r["status"], 0) + 1
 
-    meta = {
-        "schema": "bulk_alias_review_queue", "version": "v0.5", "phases": [1, 2],
-        "generated_at": args.checked_at,
-        "generators": ["scripts/generate_bulk_alias_candidates.py", "scripts/collect_nedrug_alias_candidates.py"],
-        "relation_source": "data/medistack_v0.2_beta_export.json",
-        "alias_source": "data/medistack_v0.3_aliases.json",
-        "alias_count_at_generation": ctx["alias_count"], "relation_count": ctx["relation_count"],
-        "allowed_canonical": ctx["allowed"], "allowed_canonical_count": len(ctx["allowed"]),
-        "external_api_used": (not args.no_network) and bool(success),
-        "source_methods_allowed": sorted(ALLOWED_SOURCE_METHODS),
-        "status_values": STATUS_VALUES, "candidate_types": CANDIDATE_TYPES,
-        "batches": {
-            "v0.5-001": "phase1 internal(brand_core/rejected)",
-            "v0.5-002": "phase2 nedrug.searchDrug dry-run(product_full_name pending)",
-        },
-        "counts": {"total": len(merged), **counts},
-        "phase2_collection": {
-            "checked_at": args.checked_at, "max_per_ingredient": args.max_per_ingredient,
-            "ingredients_targeted": len(targets),
-            "ingredients_success": len(success), "ingredients_skipped": len(skipped),
-            "new_candidates": len(new_rows),
-            "success_detail": {i: n for i, n in success}, "skipped_detail": skipped,
-            "no_network": args.no_network,
-        },
-        "note": ("Phase 2 dry-run. nedrug searchDrug 만 사용(상세 getItemDetail 미실행 → confidence≤medium). "
-                 "수집 후보=status pending product_full_name(완제·경구·정상·주성분 일치). approved 0건·alias JSON 미수정. "
-                 "Phase 1 brand_core/rejected 보존(source_method internal.phase1 정규화). "
-                 "칼륨 행은 검색→안전카드 노출만, 구매/제품 추천 링크 금지(불변)."),
-        "phase3_todo": [
-            "pending product_full_name 후보 getItemDetail 원문 확인(주성분·품목명·성분코드) → confidence 상향",
-            "사람 검토 → approved(reviewer·source 채움), brand_core tier 결정",
-            "approved batch(30) → alias JSON 반영(별도 PM 게이트, validator 전종 재통과)",
-            "data.go.kr OpenAPI 보강(선택)",
-        ],
+    # 기존 meta 보존(phase2_collection / phase3_confirmation / phase4_incorporation 등 이력 유지) + 이번 phase 정보만 갱신.
+    meta = dict(base.get("meta", {}))
+    meta["schema"] = "bulk_alias_review_queue"
+    meta["version"] = "v0.5"
+    meta["phases"] = sorted(set((meta.get("phases") or [1, 2]) + [args.phase]))
+    meta["generators"] = sorted(set((meta.get("generators") or []) + [
+        "scripts/generate_bulk_alias_candidates.py", "scripts/collect_nedrug_alias_candidates.py"]))
+    meta["relation_source"] = "data/medistack_v0.2_beta_export.json"
+    meta["alias_source"] = "data/medistack_v0.3_aliases.json"
+    meta["alias_count_at_generation"] = ctx["alias_count"]
+    meta["relation_count"] = ctx["relation_count"]
+    meta["allowed_canonical"] = ctx["allowed"]
+    meta["allowed_canonical_count"] = len(ctx["allowed"])
+    meta["external_api_used"] = bool(meta.get("external_api_used")) or ((not args.no_network) and bool(success))
+    meta["source_methods_allowed"] = sorted(ALLOWED_SOURCE_METHODS)
+    meta["status_values"] = STATUS_VALUES
+    meta["candidate_types"] = CANDIDATE_TYPES
+    batches = dict(meta.get("batches") or {})
+    batches.setdefault("v0.5-001", "phase1 internal(brand_core/rejected)")
+    batches.setdefault("v0.5-002", "phase2 nedrug.searchDrug dry-run(product_full_name pending)")
+    batches[args.batch_id] = (f"phase{args.phase} nedrug.searchDrug dry-run"
+                              f"(max {args.max_per_ingredient}/성분, product_full_name pending)")
+    meta["batches"] = batches
+    meta["counts"] = {"total": len(merged), **counts}
+    meta[f"phase{args.phase}_collection"] = {
+        "checked_at": args.checked_at, "max_per_ingredient": args.max_per_ingredient,
+        "max_pages": args.max_pages,
+        "batch_id": args.batch_id, "alias_count_at_collection": ctx["alias_count"],
+        "ingredients_targeted": len(targets),
+        "ingredients_success": len(success), "ingredients_skipped": len(skipped),
+        "new_candidates": len(new_rows),
+        "success_detail": {i: n for i, n in success}, "skipped_detail": skipped,
+        "no_network": args.no_network,
     }
+    meta["note"] = (f"Phase {args.phase} dry-run 재수집(max {args.max_per_ingredient}/성분). nedrug searchDrug 만 사용"
+                    "(상세 getItemDetail 미실행 → confidence≤medium). 신규 후보=status pending product_full_name"
+                    "(완제·경구·정상·주성분 일치) 또는 복합제 deferred. approved 0건·alias JSON 미수정. "
+                    "기존 후보/이력(phase1~4) 보존. 칼륨 행은 검색→안전카드 노출만, 구매/제품 추천 링크 금지(불변).")
+    meta.setdefault("phase3_todo", [
+        "pending product_full_name 후보 getItemDetail 원문 확인(주성분·품목명·성분코드) → confidence 상향",
+        "사람 검토 → approved(reviewer·source 채움), brand_core tier 결정",
+        "approved batch(30) → alias JSON 반영(별도 PM 게이트, validator 전종 재통과)",
+        "data.go.kr OpenAPI 보강(선택)",
+    ])
 
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(args.out_json, "w", encoding="utf-8") as f:
         json.dump({"meta": meta, "candidates": merged}, f, ensure_ascii=False, indent=2)
         f.write("\n")
+    # CSV 는 기존 컬럼(detail/incorporated_at 등)을 잃지 않도록 동적 superset 으로 기록.
+    csv_fields = list(CSV_FIELDS)
+    for r in merged:
+        for k in r:
+            if k not in csv_fields:
+                csv_fields.append(k)
     with open(args.out_csv, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=CSV_FIELDS)
+        w = csv.DictWriter(f, fieldnames=csv_fields)
         w.writeheader()
         for r in merged:
-            w.writerow({k: r.get(k, "") for k in CSV_FIELDS})
+            w.writerow({k: r.get(k, "") for k in csv_fields})
 
     print("=" * 64)
     print("MediStack v0.5 Phase 2 nedrug 수집(dry-run)")
