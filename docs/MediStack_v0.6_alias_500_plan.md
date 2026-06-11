@@ -1,6 +1,6 @@
 # MediStack v0.6 — alias 500 확장 계획 (계획 문서 · 실행 전)
 
-작성일: **2026-06-11** / 상태: **계획만 — 후보 재수집·alias 반영·코드 변경 미실행** / 상위: `MediStack_v0.5_release_notes.md`, `MediStack_v0.5_handoff.md` / 시작점: **v0.5-beta(alias 206, commit `9dae621`)**
+작성일: **2026-06-11** (마감 갱신 **2026-06-12**) / 상태: **✅ v0.6 마감 — 단일성분 트랙 천장 alias 382 도달·옵션 A(382 마감) 채택** / 상위: `MediStack_v0.6_release_notes.md`, `MediStack_v0.6_handoff.md` / 시작점: **v0.5-beta(alias 206, commit `9dae621`)** / 종료점: **alias 382 도달 commit `67724a4` → `v0.6-beta` 마감 태그(릴리스노트 포함 스냅샷)**
 
 > v0.6 의 목표는 검색 보조 alias 를 **206 → 500** 으로 확장하는 것뿐이다. **relation(약-영양소 의료 데이터)·DATA_URL·앱 UI 는 v0.6 에서도 불변**이며, alias 는 검색 보조일 뿐 의학정보가 아니다. 이 문서는 설계·근거·게이트만 정의하고, **이 단계에서 nedrug 후보 재수집도 alias JSON 반영도 코드/validator 수정도 하지 않는다.** 수치는 현재 repo 데이터에서 실측한 ground truth이며, 심층 재수집 수율만 추정(별도 recon dry-run으로 실측 예정)이다.
 
@@ -83,6 +83,7 @@
 - **잔여(미사용 예비)**: deferred 복합제 **236**(HCTZ112·메트77·알렌30·오메6·기타) — `복합제 금지` 불변규칙으로 차단. 미확정 pending 7(엣지). brand_core 14.
 - **500 도달은 단일성분 기준 불가**(천장 382). 잔여 118은 **복합제 tier 개방(옵션 B·PM 정책 결정)** 으로만 가능. v0.5 plan의 "단일성분 +~240 추정"은 과대평가(실측 +176).
 - **파이프라인 자산 보존**: collect/confirm/validate 스크립트 · batch1~9 approved-ready · incorporation-aware validator(base_no 20~180·옵션 A) 전부 repo 유지 — 복합제 tier 또는 신규 relation 확장 시 재사용 가능.
+- **PM 결정: 옵션 A(382 마감) 채택**(2026-06-12) — v0.6 종료. 릴리스 노트 `MediStack_v0.6_release_notes.md` + 핸드오프 `MediStack_v0.6_handoff.md` 작성, **`v0.6-beta` 태그**(alias 382 동결 스냅샷, lightweight). 코드/데이터/alias 무변경(문서 전용 커밋). 500(옵션 B·복합제 tier)·brand_core(옵션 C)는 v0.7 정책 결정 사항.
 
 ---
 > 안전 원칙(불변): 원문에 없으면 노출 금지 / 원문보다 강하면 금지 / 복용량·제품추천이면 금지 / 칼륨 제품링크 금지 / clinical 검수 전 published 금지 / validator PASS 없으면 배포 금지 / alias는 검색 보조이지 의학정보 아님 / alias로 relation 신규생성·풀확장 금지 / 15행·excluded·에스오메프라졸 alias 우회 금지 / 미검증·복합제·brand_core·동일 itemSeq 중복 alias 금지 / **이 문서는 계획만 — 후보 재수집·반영·코드 변경은 다음 PM 게이트.**
