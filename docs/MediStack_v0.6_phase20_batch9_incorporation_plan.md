@@ -1,8 +1,8 @@
 # MediStack v0.6 — Phase 20 batch9 incorporation 계획 (⚠️ 계획만, 실제 반영 금지)
 
-작성일: **2026-06-12** / 상태: **계획만 — PM 승인 전 실제 반영 금지** / 상위: `MediStack_v0.6_alias_500_plan.md`, `MediStack_v0.6_phase19_batch9_recollect_report.md`
+작성일: **2026-06-12** / 상태: **✅ 반영 완료 (PM 승인, alias 356→382, 2026-06-12) — 🏁 단일성분 트랙 마감** / 상위: `MediStack_v0.6_alias_500_plan.md`, `MediStack_v0.6_phase19_batch9_recollect_report.md`
 
-> Phase 18(batch8, 306→356)와 **동일한 incorporation 패턴**을 batch9(26건, **356→382**)에 적용하기 위한 사전 계획. **단일성분 트랙의 최종 batch**(잔여 단일성분 전량). **이 문서 단계에서는 반영하지 않는다.** alias_count 356 유지.
+> **(갱신) PM 승인 후 실행 완료**: batch9 26건 alias 반영 — product_aliases +26(318→**344**) · verified_item_seqs +26(294→**320**, 4성분 append·canonicals 12 유지) · alias_count 356→**382**. validator **#194 옵션 A** 갱신. 5 validator(bulk 152·v0.1 12·v0.2 15·v0.3 13·TypeB 7) + smoke **9/9** ALL PASS·무손실(356⊆382). relation 30·DATA_URL·export 불변. 반영 = ephemeral `/tmp/ms_incorporate_v0_6_batch9.py`(미커밋). **🏁 batch9는 단일성분 트랙의 최종 batch — 13 relation 약물 단일성분 완제 풀 소진(천장 382). 이후 단일성분 batch 없음.** 500은 복합제 tier(PM 정책 결정) 필요 — Phase 19 §5 참조.
 
 ---
 
