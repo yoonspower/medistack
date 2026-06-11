@@ -7,6 +7,8 @@
 > 실제 수집기/검증기/export 스크립트 구현, candidate JSON/CSV 생성, alias JSON 대량 수정은 **PM 판정 후 별도 단계**.
 > 현 라이브(v0.3-beta): alias 66 · relation 30 · DATA_URL=`./data/medistack_v0.2_beta_export.json` — **이 문서로 변경 없음**.
 
+> **진행(2026-06-11)**: Phase 1(skeleton) 완료 — 생성기/검증기(16체크)/review queue/`phase1_report`(커밋 431d545). Phase 2(nedrug 수집 dry-run) 완료 — `scripts/collect_nedrug_alias_candidates.py`(searchDrug 단독)로 13성분 dry-run 수집, **queue 16→62**(pending 32 단일성분 + deferred 28[brand_core 14+복합제 14] + rejected 2, **approved 0**), 검증기 18체크로 보강, `phase2_report` 작성. **alias JSON·relation·DATA_URL 불변.** 다음=Phase 3(pending getItemDetail 확정 → 사람 승인 → batch 30 반영, 별도 PM 게이트).
+
 ---
 
 ## 1. 목표

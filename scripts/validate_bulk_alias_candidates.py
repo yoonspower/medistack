@@ -39,6 +39,9 @@ REQUIRED_FIELDS = [
 STATUS_VALUES = {"pending", "approved", "rejected", "deferred"}
 CANDIDATE_TYPES = {"ingredient", "product_full_name", "brand_core", "rejected"}
 ALWAYS_NONEMPTY = {"candidate_alias", "candidate_type", "canonical_ingredient", "status", "batch_id"}
+# (v0.5 Phase 2) source_method 화이트리스트
+ALLOWED_SOURCE_METHODS = {"manual.nedrug", "nedrug.searchDrug", "nedrug.getItemDetail",
+                          "internal.phase1", "phase1.seed"}
 
 EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"
 FORBIDDEN_ITEMSEQS = {"201600209"}  # 에스오메프라졸 대표 itemSeq
@@ -216,6 +219,24 @@ def main(json_path, csv_path, alias_path, rel_path):
     v.check(ac == 66 and n_alias == 66 and n_rel == 30, 16,
             "alias JSON 무변경(alias_count 66·항목 66·relation 30)",
             f"alias_count={ac} 항목={n_alias} relation={n_rel}")
+
+    # 17) source_method ∈ 허용 목록(provenance enum)
+    bad_sm = sorted({f"{c.get('candidate_alias')!r}:{c.get('source_method')!r}" for c in cands
+                     if c.get("source_method") not in ALLOWED_SOURCE_METHODS})
+    v.check(not bad_sm, 17, "source_method ∈ {manual.nedrug,nedrug.searchDrug,nedrug.getItemDetail,internal.phase1,phase1.seed}", f"viol={bad_sm}")
+
+    # 18) product_full_name(pending/approved)은 item_seq·source_method·source_checked_at 필수
+    pfn_src = []
+    for c in cands:
+        if c.get("candidate_type") != "product_full_name" or c.get("status") not in {"pending", "approved"}:
+            continue
+        seq = (c.get("item_seq") or "").strip()
+        for fld, ok in (("item_seq", bool(NUMERIC_RE.match(seq))),
+                        ("source_method", bool(str(c.get("source_method", "")).strip())),
+                        ("source_checked_at", bool(str(c.get("source_checked_at", "")).strip()))):
+            if not ok:
+                pfn_src.append(f"{c.get('candidate_alias')!r}:{fld}")
+    v.check(not pfn_src, 18, "product_full_name(pending/approved)은 item_seq·source_method·source_checked_at 필수", f"viol={pfn_src}")
 
     return _report(v, json_path)
 
