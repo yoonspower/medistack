@@ -223,8 +223,10 @@ def build_approved_ready(cands, checked_at, existing_seqs, ar_batch_id=None,
             continue
         # 기존 alias 가 동일 itemSeq(동일 제품) 보유 → 중복 제품, approved-ready 제외(queue 는 pending 유지).
         if (c.get("item_seq") or "").strip() in existing_seqs:
-            c["detail_match_result"] = "confirmed_redundant_itemseq"
-            c["reason"] = c.get("reason", "") + " | 기존 alias가 동일 itemSeq(동일 제품) 보유 → approved-ready 제외(중복)"
+            # 이미 반영(approved)된 후보는 자기 자신이 alias 출처 → redundant 오라벨 금지(held 후보만 표시, 재실행 멱등).
+            if c.get("status") != "approved":
+                c["detail_match_result"] = "confirmed_redundant_itemseq"
+                c["reason"] = c.get("reason", "") + " | 기존 alias가 동일 itemSeq(동일 제품) 보유 → approved-ready 제외(중복)"
             continue
         out.append({
             "candidate_alias": c["candidate_alias"], "canonical_ingredient": c["canonical_ingredient"],
