@@ -13,6 +13,7 @@
 - **relation = 30**(v0.2 export, 불변). DATA_URL = `./data/medistack_v0.2_beta_export.json`(불변).
 - **validator #8 일반화 완료**(189b401): `item_seq ∈ (성분 relation itemSeq ∪ 검증 화이트리스트 itemSeq)`. 화이트리스트 가드 #12(성분 키 정당성)·#13(엔트리 위생) 추가. 실제 파일 **13/13 PASS**, 유형 B test suite **7/7 PASS**.
 - **유형 B 실제 데이터 미추가**: `verified_item_seqs` 섹션은 라이브 alias 파일에 **없음**(빈 집합 → 기존 동작과 동일). 이 문서로 후보만 확정.
+- **A군 4성분 itemSeq 원문 확인 완료(2026-06-11, 4/4)**: §5-A 표 verified. 채록 로그 = `MediStack_v0.4_typeB_itemseq_verification_log.md`. (alias JSON·`verified_item_seqs` 편입은 PM 판정 후 별도 단계.)
 
 ## 2. 유형 B alias 정의
 - **같은 canonical_ingredient에 귀속되는 2번째(이후) 공식 품목명/제품명 alias** (`kind: product`).
@@ -47,14 +48,17 @@
 
 > `expected_item_seq`/`expected_item_name`/`candidate_alias`(품목명)는 **browse 확정 전 미확정 = TBD**. 현행 대표 itemSeq는 대조용 참고. status: `needs_verification`(browse 채록 대기) / `needs_PM_decision`(브랜드코어 등) / `deferred`(v0.5) / `excluded`.
 
-### 5-A. 즉시 검토 가능 (성분당 정식 품목명 1, 검증 통과분만 편입)
+### 5-A. 즉시 검토 가능 — ✅ **원문 확인 완료(2026-06-11, 4/4)**
+
+> itemSeq·품목명은 nedrug `getItemDetail` 상세 원문에서 직접 확인(주성분·제형·용량 일치). 상세: `MediStack_v0.4_typeB_itemseq_verification_log.md`.
+> candidate_alias 표면형(전체 품목명 vs 브랜드코어)은 PM 판정(§9-3). 표는 전체 품목명 기준.
 
 | candidate_alias | canonical_ingredient | expected_item_seq | expected_item_name | source_to_verify | reason | risk | status |
 |---|---|---|---|---|---|---|---|
-| (2nd 정식 품목명 — browse 확정) | 알렌드론산 | TBD | TBD(동일 성분 2nd 품목) | nedrug 성분명 "알렌드론산" 검색 → 현행 대표 itemSeq 200009061 외 동일 성분 품목 1건 itemSeq·품목명 채록 | 비스포스포네이트, v0.2 교차확인 수행 성분. 포사맥스 외 정식 품목 검색 보조 | low | needs_verification |
-| (2nd 정식 품목명 — browse 확정) | 토라세미드 | TBD | TBD(동일 성분 2nd 품목) | nedrug "토라세미드" 검색 → 대표 itemSeq 200611522 외 1건 채록 | 칼륨 안전민감(행 30). 검색→안전카드 노출만, **구매/링크 금지** | med(칼륨 행) | needs_verification |
-| (2nd 정식 품목명 — browse 확정) | 목시플록사신 | TBD | TBD(동일 성분 2nd 품목) | nedrug "목시플록사신" 검색 → 대표 itemSeq 201402438 외 1건 채록 | 플루오로퀴놀론, v0.2 교차확인 수행 성분 | low | needs_verification |
-| (2nd 정식 품목명 — browse 확정) | 미노사이클린 | TBD | TBD(동일 성분 2nd 품목) | nedrug "미노사이클린" 검색 → 대표 itemSeq 198501028 외 1건 채록 | 테트라사이클린계, v0.2 교차확인 수행 성분 | low | needs_verification |
+| 라이트알렌드론정70mg | 알렌드론산 | **201902246** | 라이트알렌드론정70mg(알렌드론산나트륨수화물) | nedrug getItemDetail 201902246 확인(ingrCode M222873=포사맥스와 동일) | 비스포스포네이트, 대표 200009061 외 경구정 70mg 단일성분 | low | **verified** |
+| 세토람정5밀리그람 | 토라세미드 | **200600084** | 세토람정5밀리그람(토라세미드) | nedrug getItemDetail 200600084 확인(ingrName 토라세미드) | 칼륨 안전민감(행 30). 검색→안전카드만, **구매/링크 금지** | med(칼륨 행) | **verified** |
+| 모록사신정400밀리그램 | 목시플록사신 | **201309618** | 모록사신정400밀리그램(목시플록사신염산염) | nedrug getItemDetail 201309618 확인(ingrName 목시플록사신염산염) | 플루오로퀴놀론, 대표 201402438 외 경구정 400mg 단일성분 | low | **verified** |
+| 미노젠캡슐50밀리그램 | 미노사이클린 | **202500078** | 미노젠캡슐50밀리그램(미노사이클린염산염) | nedrug getItemDetail 202500078 확인(ingrName 미노사이클린염산염) | 테트라사이클린계, 대표 198501028 외 경구캡슐 50mg 단일성분 | low | **verified** |
 
 ### 5-B. 추가 원문 확인 필요 (검색 가치·실재 확인 후 편입 여부 판정)
 
