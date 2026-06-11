@@ -1,19 +1,19 @@
 # MediStack v0.4 — 유형 B(교차확인 2번째 품목) alias 편입 후보안
 
-작성 기준일: 2026-06-11 / 단계: **후보안(분류)만** (alias JSON·데이터·DATA_URL·코드·deploy 미변경)
+작성 기준일: 2026-06-11 / 최종 갱신: 2026-06-11 / 단계: **A군 4종 편입·라이브 완료** + B군 후보 분류
 상위: `MediStack_v0.4_alias_expansion_candidates.md`(§3 유형 B 정의), `MediStack_v0.4_validator8_typeB_design.md`(validator #8 일반화 — **구현·배포 완료**, 커밋 189b401).
 
-> 이 문서는 유형 B alias로 **추가할 후보를 분류·정의**만 한다. 실제 itemSeq 원문 확인·alias JSON 편입·검증·배포는 PM 판정 후 별도 단계.
-> **itemSeq는 이 단계에서 채록하지 않는다**(원문 browse 확인 = 편입 전 게이트, §7). 표의 `expected_item_seq`는 미검증 추정값을 박지 않고 `TBD`로 둔다.
+> **A군 4종은 itemSeq 원문 확인 → alias JSON 편입 → 라이브 반영 완료**(2026-06-11, 커밋 9fdf97b, Actions run 27321963167 success). B군 이하는 후보 분류 단계로 유지.
+> B군의 `expected_item_seq`는 미검증 추정값을 박지 않고 `TBD`로 둔다(원문 browse 확인 = 편입 전 게이트, §7).
 
 ---
 
 ## 1. 현재 상태 요약
-- **alias_count = 62**(성분 38 + 제품 24). 라이브 v0.3-beta.
+- **alias_count = 66**(성분 38 + 제품 28). 라이브 v0.3-beta. (A군 Type B product alias 4건 편입, 62→66.)
 - **relation = 30**(v0.2 export, 불변). DATA_URL = `./data/medistack_v0.2_beta_export.json`(불변).
 - **validator #8 일반화 완료**(189b401): `item_seq ∈ (성분 relation itemSeq ∪ 검증 화이트리스트 itemSeq)`. 화이트리스트 가드 #12(성분 키 정당성)·#13(엔트리 위생) 추가. 실제 파일 **13/13 PASS**, 유형 B test suite **7/7 PASS**.
-- **유형 B 실제 데이터 미추가**: `verified_item_seqs` 섹션은 라이브 alias 파일에 **없음**(빈 집합 → 기존 동작과 동일). 이 문서로 후보만 확정.
-- **A군 4성분 itemSeq 원문 확인 완료(2026-06-11, 4/4)**: §5-A 표 verified. 채록 로그 = `MediStack_v0.4_typeB_itemseq_verification_log.md`. (alias JSON·`verified_item_seqs` 편입은 PM 판정 후 별도 단계.)
+- **✅ A군 4종 편입·라이브 완료(2026-06-11, 커밋 9fdf97b, Actions run 27321963167 success, deploy success)**: `verified_item_seqs` 섹션 4성분 + product_alias 4건 라이브 반영. §5-A 표 incorporated. 채록 로그 = `MediStack_v0.4_typeB_itemseq_verification_log.md`.
+- **에스오메프라졸/15행 제외 유지**, relation 30·DATA_URL 불변.
 
 ## 2. 유형 B alias 정의
 - **같은 canonical_ingredient에 귀속되는 2번째(이후) 공식 품목명/제품명 alias** (`kind: product`).
@@ -46,19 +46,19 @@
 
 ## 5. 후보 표
 
-> `expected_item_seq`/`expected_item_name`/`candidate_alias`(품목명)는 **browse 확정 전 미확정 = TBD**. 현행 대표 itemSeq는 대조용 참고. status: `needs_verification`(browse 채록 대기) / `needs_PM_decision`(브랜드코어 등) / `deferred`(v0.5) / `excluded`.
+> status: `incorporated`(라이브 반영 완료) / `needs_verification`(browse 채록 대기) / `needs_PM_decision`(브랜드코어 등) / `deferred`(v0.5) / `excluded`. B군 이하의 `expected_item_seq`/`candidate_alias`는 **browse 확정 전 미확정 = TBD**.
 
-### 5-A. 즉시 검토 가능 — ✅ **원문 확인 완료(2026-06-11, 4/4)**
+### 5-A. ✅ **편입·라이브 완료(2026-06-11, 4/4, 커밋 9fdf97b)**
 
-> itemSeq·품목명은 nedrug `getItemDetail` 상세 원문에서 직접 확인(주성분·제형·용량 일치). 상세: `MediStack_v0.4_typeB_itemseq_verification_log.md`.
-> candidate_alias 표면형(전체 품목명 vs 브랜드코어)은 PM 판정(§9-3). 표는 전체 품목명 기준.
+> itemSeq·품목명은 nedrug `getItemDetail` 상세 원문에서 직접 확인(주성분·제형·용량 일치) 후 alias JSON 편입. 채록 상세: `MediStack_v0.4_typeB_itemseq_verification_log.md`.
+> PM 판정: 표면형 = **전체 품목명**, verified_item_seqs = **alias JSON 파일 내 섹션**, A군 4종 **일괄 편입**. `incorporated` = 라이브 반영 완료.
 
 | candidate_alias | canonical_ingredient | expected_item_seq | expected_item_name | source_to_verify | reason | risk | status |
 |---|---|---|---|---|---|---|---|
-| 라이트알렌드론정70mg | 알렌드론산 | **201902246** | 라이트알렌드론정70mg(알렌드론산나트륨수화물) | nedrug getItemDetail 201902246 확인(ingrCode M222873=포사맥스와 동일) | 비스포스포네이트, 대표 200009061 외 경구정 70mg 단일성분 | low | **verified** |
-| 세토람정5밀리그람 | 토라세미드 | **200600084** | 세토람정5밀리그람(토라세미드) | nedrug getItemDetail 200600084 확인(ingrName 토라세미드) | 칼륨 안전민감(행 30). 검색→안전카드만, **구매/링크 금지** | med(칼륨 행) | **verified** |
-| 모록사신정400밀리그램 | 목시플록사신 | **201309618** | 모록사신정400밀리그램(목시플록사신염산염) | nedrug getItemDetail 201309618 확인(ingrName 목시플록사신염산염) | 플루오로퀴놀론, 대표 201402438 외 경구정 400mg 단일성분 | low | **verified** |
-| 미노젠캡슐50밀리그램 | 미노사이클린 | **202500078** | 미노젠캡슐50밀리그램(미노사이클린염산염) | nedrug getItemDetail 202500078 확인(ingrName 미노사이클린염산염) | 테트라사이클린계, 대표 198501028 외 경구캡슐 50mg 단일성분 | low | **verified** |
+| 라이트알렌드론정70mg | 알렌드론산 | **201902246** | 라이트알렌드론정70mg(알렌드론산나트륨수화물) | nedrug getItemDetail 201902246 확인(ingrCode M222873=포사맥스와 동일) | 비스포스포네이트, 대표 200009061 외 경구정 70mg 단일성분 | low | **incorporated** |
+| 세토람정5밀리그람 | 토라세미드 | **200600084** | 세토람정5밀리그람(토라세미드) | nedrug getItemDetail 200600084 확인(ingrName 토라세미드) | 칼륨 안전민감(행 30). 검색→안전카드만, **구매/링크 금지** | med(칼륨 행) | **incorporated** |
+| 모록사신정400밀리그램 | 목시플록사신 | **201309618** | 모록사신정400밀리그램(목시플록사신염산염) | nedrug getItemDetail 201309618 확인(ingrName 목시플록사신염산염) | 플루오로퀴놀론, 대표 201402438 외 경구정 400mg 단일성분 | low | **incorporated** |
+| 미노젠캡슐50밀리그램 | 미노사이클린 | **202500078** | 미노젠캡슐50밀리그램(미노사이클린염산염) | nedrug getItemDetail 202500078 확인(ingrName 미노사이클린염산염) | 테트라사이클린계, 대표 198501028 외 경구캡슐 50mg 단일성분 | low | **incorporated** |
 
 ### 5-B. 추가 원문 확인 필요 (검색 가치·실재 확인 후 편입 여부 판정)
 
@@ -83,20 +83,21 @@
 | (임의 품목/추정) | 에스오메프라졸 | — | — | — | 15행/보류, alias 금지(#9·#12) | high | excluded |
 | 용량/제형/띄어쓰기 변형 | (전반) | — | — | — | 런타임 정규화로 흡수, entry 금지 | — | excluded |
 
-## 6. v0.4 현실적 유형 B 순증 목표
-- **검증 통과분만 반영. 무리한 80~100 채우기 금지**(미검증/순열 alias 금지 — 안전 원칙).
-- **현실 순증: +5~10** (A군 4성분 정식명 1 + B군 검증 통과분 일부). 브랜드코어 허용 시 +10~15까지(§9 PM 판정).
-- 반영 후 예상 총계: **약 67~72**(브랜드코어 미포함). 80대 도달은 브랜드 트랙 결정에 종속 → 숫자 자체를 목표로 삼지 않는다.
+## 6. v0.4 유형 B 순증 현황/목표
+- **✅ A군 4종 편입 완료 → alias_count 62 → 66**(검증 통과분만 반영, 미검증/순열 금지).
+- 추가 순증 후보: B군(추가확인 9성분) 검증 통과분 + 브랜드코어(§9 PM 판정). 브랜드코어 허용 시 70대 후반~80대.
+- **숫자 자체를 목표로 삼지 않는다** — 원문 검증 통과분만. 80~100 무리한 채우기 금지.
 
-## 7. 실제 편입 전 필요한 작업 (편입 단계 체크리스트)
-1. **item_seq 원문 확인**: 각 후보를 nedrug에서 browse → 품목명 실재 + 동일 성분 + itemSeq 채록 + 확인일 기록. 미확인 드롭.
-2. **`verified_item_seqs` 위치/메타 확정**(§9 PM): 파일 내 섹션(권고) vs 별도 파일 / 필수 메타(item_seq·item_name·verified_at·method).
-3. **product_alias 추가**: 검증된 품목명 → `kind=product`, canonical=성분, item_seq=채록값, source_relation_ids=해당 성분 라이브 relation id.
+## 7. 편입 단계 체크리스트 (A군 ✅ 완료 / B군은 동일 절차 재사용)
+A군은 아래를 전부 통과해 라이브 반영(커밋 9fdf97b). B군 편입 시 동일 절차 반복:
+1. **item_seq 원문 확인**: nedrug browse → 품목명 실재 + 동일 성분 + itemSeq 채록 + 확인일 기록. 미확인 드롭. (A군: §5-A·로그문서 완료)
+2. **`verified_item_seqs` 위치/메타**: PM 확정 = **alias JSON 파일 내 섹션**, 메타 item_seq·item_name·verified_at·method.
+3. **product_alias 추가**: 전체 품목명 → `kind=product`, canonical=성분, item_seq=채록값, source_relation_ids=라이브 relation id.
 4. **validator 13/13 PASS**(v0.1 12/12·v0.2 15/15·v0.3 alias 13/13).
-5. **유형 B test suite PASS**(`scripts/test_validate_v0_3_typeB.py`).
-6. **smoke test**: 신규 alias → 해당 성분 relation만 매칭(건수 명시), prefix 오매칭 없음. 회귀(타리비드/포사맥스/토렘/넥시움0/#r15 fail-safe).
-7. **alias_count 증가 확인**(62 → 62+N).
-8. **relation 30 유지 확인**. **DATA_URL 유지 확인**.
+5. **유형 B test suite 7/7 PASS**(`scripts/test_validate_v0_3_typeB.py`).
+6. **smoke test**: 신규 alias → 해당 성분 relation만 매칭(건수), prefix 오매칭 없음. 회귀(타리비드/포사맥스/토렘/넥시움0/#r15 fail-safe).
+7. **alias_count 증가 확인**(A군: 62 → 66).
+8. **relation 30 유지·DATA_URL 유지 확인**.
 
 ## 8. 아직 하지 않을 것 (이 단계 금지)
 - alias JSON 수정 / 유형 B alias 실제 추가.
@@ -105,12 +106,15 @@
 - 제품/구매/제휴 UI 추가, published/clinical_reviewed 전환.
 - itemSeq 미검증 추정값 기록(표의 TBD를 임의 숫자로 채우지 않음).
 
-## 9. PM 판정 필요사항
-1. **`verified_item_seqs` 위치**: 파일 내 `verified_item_seqs` 섹션(validator 구현 = 이 형태) vs 별도 파일.
-2. **유형 B 후보 몇 개까지 v0.4에 넣을지**: A군 4성분만(+~4) / A+B 검증분(+~5~10).
-3. **브랜드코어 허용 여부**: 1차 정식 품목명만 / 검증된 브랜드코어까지(+5~15, 80대 가능).
-4. **item_seq 검증 출처 기준**: nedrug 단독 / 추가 출처 요구 / 확인일·method 필수 메타.
-5. **v0.4 alias 목표**: 70대(정식명 위주) vs 80대(브랜드코어 포함) — 어디까지로 볼지.
+## 9. PM 판정 — 진행 현황
+**A군 관련(✅ 판정·반영 완료):**
+1. `verified_item_seqs` 위치 → **alias JSON 파일 내 섹션**.
+2. A군 4종 → **일괄 편입 완료**(전체 품목명).
+4. item_seq 검증 출처 → **nedrug getItemDetail 원문**(확인일·method 메타 기록).
+
+**B군 이후(판정 대기):**
+3. **브랜드코어 허용 여부**: 1차 정식 품목명만 / 검증된 브랜드코어까지(80대 가능).
+5. **B군 편입 범위·v0.4 alias 목표**: 70대(정식명 위주) vs 80대(브랜드코어 포함).
 
 ---
 > 안전 원칙(불변): 원문에 없으면 노출 금지 / 원문보다 강하면 금지 / 복용량·제품추천이면 금지 / 칼륨 제품링크 금지 / clinical 검수 전 published 금지 / validator PASS 없으면 배포 금지 / alias는 검색 보조이지 의학정보 아님 / alias로 relation 신규생성·풀확장 금지 / 15행·excluded·에스오메프라졸 alias 우회 금지 / 숫자 위해 미검증·순열 alias 금지.

@@ -1,10 +1,12 @@
 # MediStack v0.4 — 범위 및 착수 계획서
 
-작성 기준일: 2026-06-08 / 단계: **계획만** (코드·데이터·alias·DATA_URL·deploy 전부 미변경)
-직전: v0.3-beta 라이브(`c1c681e`). relation 30건(DATA_URL=v0.2) + 운영 alias 53개 + alias 검색 + CI 3종 게이트 + Node24.
+작성 기준일: 2026-06-08 / 최종 갱신: 2026-06-11 / 단계: **진행 중**(alias 트랙 실행 개시 — 아래 진행 현황)
+직전: v0.3-beta 라이브(`c1c681e`). relation 30건(DATA_URL=v0.2) + alias 검색 + CI 3종 게이트 + Node24.
 상위 참고: v0.3 roadmap / alias 설계·seed·운영seed / 검색합류 / 릴리즈노트.
 
 > 이 문서는 방향·우선순위·게이트만 정의한다. 실제 데이터/alias/코드 변경·배포는 각 트랙별 PM 판정 후 별도.
+
+> **진행 현황(2026-06-11)**: 운영 alias **53 → 66 라이브**(유형 A 성분 9건 `4e90143` + 유형 B A군 제품 4건 `9fdf97b`). validator #8 일반화(`verified_item_seqs` 화이트리스트, 13/13)·유형 B test suite 7/7. relation 30·DATA_URL=v0.2·에스오메프라졸/15행 제외 불변. 다음 트랙 = B군(추가확인 9성분)·브랜드코어. 상세: `MediStack_v0.4_typeB_alias_candidates.md`.
 
 ---
 

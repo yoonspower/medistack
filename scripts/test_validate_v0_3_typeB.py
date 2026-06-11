@@ -26,7 +26,7 @@ FIX = os.path.join(HERE, "fixtures", "v0_4_typeB")
 #   expect_pass=True  -> rc 0 (실패 check 없음)
 #   expect_pass=False -> rc 1 이고 실패 check 집합 == expected_failing_checks
 CASES = [
-    ("P1 하위호환: 라이브 62개 alias(화이트리스트 없음)", REAL_ALIASES, True, set()),
+    ("P1 현행 라이브 alias 파일(verified_item_seqs 포함) 전체 PASS", REAL_ALIASES, True, set()),
     ("P3/P4/P5 유형 B 허용(화이트리스트+제품 alias)", os.path.join(FIX, "allow_typeB.json"), True, set()),
     ("F1 item_seq 가 relation·화이트리스트 모두에 없음", os.path.join(FIX, "reject_F1_itemseq_unknown.json"), False, {8}),
     ("F2 화이트리스트 성분 키 비라이브", os.path.join(FIX, "reject_F2_whitelist_ingredient_not_live.json"), False, {12}),

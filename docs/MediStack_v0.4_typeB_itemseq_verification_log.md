@@ -1,11 +1,11 @@
 # MediStack v0.4 — 유형 B(A군) itemSeq 원문 확인 로그
 
-작성/확인일: **2026-06-11** / 단계: **원문 확인 로그만** (alias JSON·`verified_item_seqs`·데이터·코드·deploy 미변경)
+작성/확인일: **2026-06-11** / 단계: **원문 확인 + alias JSON 편입·라이브 반영 완료**(커밋 9fdf97b, Actions run 27321963167 success)
 상위: `MediStack_v0.4_typeB_alias_candidates.md`(A군 후보), `MediStack_v0.4_validator8_typeB_design.md`(validator #8 일반화).
 
-> A군 4성분의 **2번째 공식 품목(itemSeq·품목명)** 을 식약처 nedrug 원문에서 직접 확인한 기록.
+> A군 4성분의 **2번째 공식 품목(itemSeq·품목명)** 을 식약처 nedrug 원문에서 직접 확인한 기록 + **편입 결과**.
 > **확정 itemSeq는 추정 아님** — 각 품목의 `getItemDetail` 상세 원문에서 주성분(ingrName)·품목명을 직접 확인.
-> 이 문서는 **로그/초안만**. alias JSON 편입은 PM 판정 후 별도 단계.
+> ✅ **alias JSON 편입 완료**: `verified_item_seqs` 섹션 4성분 + product_alias 4건(전체 품목명) 라이브 반영. alias_count 62→66. relation 30·DATA_URL 불변.
 
 ---
 
@@ -34,9 +34,9 @@
 - 목시플록사신 2nd: `https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201309618` (검색: ingrName1=목시플록사신)
 - 미노사이클린 2nd: `https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202500078` (검색: ingrName1=미노사이클린)
 
-## 3. 편입 단계용 `verified_item_seqs` 초안 (⚠️ 아직 alias JSON 미반영 — 초안만)
+## 3. `verified_item_seqs` 섹션 (✅ alias JSON 편입 완료 — 커밋 9fdf97b)
 
-> validator #8 일반화(#12 성분 키 라이브 실재·#13 엔트리 위생) 기준에 맞춘 구조. **이 단계에서 alias JSON에 넣지 않는다.** PM 판정(위치·메타) 후 편입.
+> validator #8 일반화(#12 성분 키 라이브 실재·#13 엔트리 위생) 기준 구조. **`data/medistack_v0.3_aliases.json` 파일 내 섹션으로 반영 완료**(PM 판정: 파일 내 섹션). 아래는 반영된 내용.
 
 ```json
 "verified_item_seqs": {
@@ -58,10 +58,10 @@
 - 키 = canonical_ingredient(라이브 relation 성분 단축형) → validator #12 통과(4종 모두 live_ings, excluded·에스오메프라졸 아님).
 - item_seq 숫자형·성분내 단일·금지필드 없음 → validator #13 통과.
 
-## 4. 동반 product_alias 후보 (편입 단계 결정, ⚠️ 아직 미반영)
-편입 시 각 2번째 품목을 `kind=product` alias로 추가할 수 있다. **alias 표면형(전체 품목명 vs 브랜드코어)은 PM 판정(브랜드코어 허용 §9-3)**.
+## 4. 동반 product_alias (✅ 편입 완료 — PM 판정: 전체 품목명)
+각 2번째 품목을 `kind=product` alias로 추가 완료. **표면형 = 전체 품목명**(PM 판정). 브랜드코어 축약형은 미반영(B군 이후 §9-3 판정).
 
-| canonical_ingredient | item_seq | 전체 품목명(alias 후보) | 브랜드코어(축약 후보) | source_relation_ids |
+| canonical_ingredient | item_seq | 편입한 alias(전체 품목명) | (참고) 브랜드코어 미반영 | source_relation_ids |
 |---|---|---|---|---|
 | 알렌드론산 | 201902246 | 라이트알렌드론정70mg | 라이트알렌드론정 | [29] |
 | 토라세미드 | 200600084 | 세토람정5밀리그람 | 세토람정 | [30, 31] |
@@ -69,12 +69,13 @@
 | 미노사이클린 | 202500078 | 미노젠캡슐50밀리그램 | 미노젠캡슐 | [26, 27, 28] |
 
 - 토라세미드(relation 30, `product_link_allowed=false`)는 **검색→칼륨 안전카드 노출만**, 구매/링크 금지(필드 없음).
-- source_relation_ids 는 해당 성분 라이브 relation id(편입 시 validator #6·#7 정합).
+- source_relation_ids 는 해당 성분 라이브 relation id(validator #6·#7 정합 — 편입 후 13/13 PASS 확인).
 
-## 5. 다음 단계 (편입 가능 여부)
-- **4종 원문 확인 완료 → 편입 기술적으로 가능**(validator #8 일반화 완료·검증 데이터 확보).
-- **PM 판정 대기**: ① `verified_item_seqs` 위치(파일 내 섹션 = validator 구현 형태 / 별도 파일) ② alias 표면형(전체 품목명 / 브랜드코어) ③ A군 4종 일괄 vs 단계 편입.
-- 판정 후 편입 단계: `verified_item_seqs`(위 초안) + product_alias N건 추가 → validator 13/13 + test suite + smoke + 회귀 → alias_count 62→62+N → 커밋·push·deploy.
+## 5. 편입 결과
+- **✅ A군 4종 편입·라이브 반영 완료**(2026-06-11, 커밋 9fdf97b, Actions run 27321963167 success, deploy success).
+- 검증 통과: validator v0.1 12/12·v0.2 15/15·v0.3 alias **13/13**, 유형 B test suite **7/7**. smoke(신규 1/2/2/3건 + 회귀 타리비드/포사맥스/토렘/넥시움0/#r15 fail-safe) ALL PASS.
+- alias_count **62 → 66**. relation 30·DATA_URL·export 불변. 라이브 66 확인.
+- **다음 트랙**: B군(추가확인 9성분)·브랜드코어(§9-3 PM 판정)·v0.5 제네릭. 에스오메프라졸/15행 제외 유지.
 
 ---
 > 안전 원칙(불변): 원문에 없으면 노출 금지 / 원문보다 강하면 금지 / 복용량·제품추천이면 금지 / 칼륨 제품링크 금지 / clinical 검수 전 published 금지 / validator PASS 없으면 배포 금지 / alias는 검색 보조이지 의학정보 아님 / alias로 relation 신규생성·풀확장 금지 / 15행·excluded·에스오메프라졸 alias 우회 금지 / 숫자 위해 미검증·순열 alias 금지.
