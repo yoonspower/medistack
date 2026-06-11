@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 206
+    "alias_count": 256
   },
   "ingredient_aliases": [
     {
@@ -2144,6 +2144,594 @@
         22,
         23
       ]
+    },
+    {
+      "alias": "레보에이블정500밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201902167",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보에프정500밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201701554",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보카신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199800454",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보카신정750밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201406037",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보타신정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201801895",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보탐정(레보플록사신)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199801012",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보투정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201901897",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보투정500밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201901896",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보트라정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201401334",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보펙신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199400369",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보푸라신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199903254",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보푸라신정250밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201701601",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보프사정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202003099",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보플라정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201906311",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보플라정500밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201906213",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보플러스정750밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201406125",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보플로정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201403940",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "시플록신정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200404700",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "시플록큐정250mg(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201604019",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이러스정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201309509",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이로칸정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199401754",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이스펙정250밀리그램(시프로플록사신염산염)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199202497",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이신정250밀리그램(시프로플록사신염산염)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199000362",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이신정500밀리그램(시프로플록사신염산염)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199000363",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이프로신정250mg(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201403459",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이프로정(시프로플록사신염산염)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199300927",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이플록신정100밀리그람(염산시프로플록사신)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200201509",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이플록신정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199601533",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "싸이플록정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903428",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨록사신정(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201600601",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨록신정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199201214",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨록정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199001346",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨에프정250mg(시프로플록사신염산염)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199900995",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨큐로베이정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201500661",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨트로정(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200707894",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨팍신정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201403586",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "애드본정70밀리그램(알렌드론산나트륨삼수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200501583",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "타이본위클리정(알렌드론산나트륨삼수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200502771",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "파렌드정70밀리그램(알렌드론산나트륨삼수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200604294",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "포사렌드정(알렌드론산나트륨수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200502154",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "포사로닌정70밀리그람(알렌드론산나트륨수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200605491",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "포사롱정70밀리그램(알렌드론산나트륨수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200500070",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "타록시드정100밀리그램(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199200490",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "텔비트정100밀리그람(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199200705",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "투록신정(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198701772",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "투프로정100밀리그램(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201904339",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "파비드정(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198700537",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "파비스오플록사신정",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199401661",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "팜젠오플록사신정",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200402467",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "프락신정100밀리그람(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199300815",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
     }
   ],
   "verified_item_seqs": {
@@ -2300,6 +2888,66 @@
         "verified_at": "2026-06-11",
         "method": "nedrug searchDrug+getItemDetail Phase11 batch v0.5-batch-5 ingrName=알렌드론산나트륨수화물",
         "batch_id": "v0.5-batch-5",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200501583",
+        "item_name": "애드본정70밀리그램(알렌드론산나트륨삼수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=알렌드론산나트륨삼수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200502771",
+        "item_name": "타이본위클리정(알렌드론산나트륨삼수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=알렌드론산나트륨삼수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200604294",
+        "item_name": "파렌드정70밀리그램(알렌드론산나트륨삼수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=알렌드론산나트륨삼수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200502154",
+        "item_name": "포사렌드정(알렌드론산나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=알렌드론산나트륨수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200605491",
+        "item_name": "포사로닌정70밀리그람(알렌드론산나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=알렌드론산나트륨수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200500070",
+        "item_name": "포사롱정70밀리그램(알렌드론산나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=알렌드론산나트륨수화물",
+        "batch_id": "v0.6-batch-6",
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
@@ -2923,6 +3571,176 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201902167",
+        "item_name": "레보에이블정500밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201701554",
+        "item_name": "레보에프정500밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199800454",
+        "item_name": "레보카신정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201406037",
+        "item_name": "레보카신정750밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201801895",
+        "item_name": "레보타신정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199801012",
+        "item_name": "레보탐정(레보플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201901897",
+        "item_name": "레보투정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201901896",
+        "item_name": "레보투정500밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201401334",
+        "item_name": "레보트라정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199400369",
+        "item_name": "레보펙신정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199903254",
+        "item_name": "레보푸라신정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201701601",
+        "item_name": "레보푸라신정250밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "202003099",
+        "item_name": "레보프사정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201906311",
+        "item_name": "레보플라정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201906213",
+        "item_name": "레보플라정500밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201406125",
+        "item_name": "레보플러스정750밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201403940",
+        "item_name": "레보플로정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
       }
     ],
     "메트포르민": [
@@ -3247,6 +4065,196 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200404700",
+        "item_name": "시플록신정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201604019",
+        "item_name": "시플록큐정250mg(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201309509",
+        "item_name": "싸이러스정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199401754",
+        "item_name": "싸이로칸정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199202497",
+        "item_name": "싸이스펙정250밀리그램(시프로플록사신염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199000362",
+        "item_name": "싸이신정250밀리그램(시프로플록사신염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199000363",
+        "item_name": "싸이신정500밀리그램(시프로플록사신염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201403459",
+        "item_name": "싸이프로신정250mg(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199300927",
+        "item_name": "싸이프로정(시프로플록사신염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200201509",
+        "item_name": "싸이플록신정100밀리그람(염산시프로플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=염산시프로플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199601533",
+        "item_name": "싸이플록신정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201903428",
+        "item_name": "싸이플록정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201600601",
+        "item_name": "씨록사신정(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199201214",
+        "item_name": "씨록신정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199001346",
+        "item_name": "씨록정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199900995",
+        "item_name": "씨에프정250mg(시프로플록사신염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201500661",
+        "item_name": "씨큐로베이정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200707894",
+        "item_name": "씨트로정(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201403586",
+        "item_name": "씨팍신정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
       }
     ],
     "오플록사신": [
@@ -3486,6 +4494,86 @@
         "verified_at": "2026-06-11",
         "method": "nedrug searchDrug+getItemDetail Phase11 batch v0.5-batch-5 ingrName=오플록사신",
         "batch_id": "v0.5-batch-5",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199200490",
+        "item_name": "타록시드정100밀리그램(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199200705",
+        "item_name": "텔비트정100밀리그람(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "198701772",
+        "item_name": "투록신정(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201904339",
+        "item_name": "투프로정100밀리그램(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "198700537",
+        "item_name": "파비드정(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199401661",
+        "item_name": "파비스오플록사신정",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200402467",
+        "item_name": "팜젠오플록사신정",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199300815",
+        "item_name": "프락신정100밀리그람(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase13 batch v0.6-batch-6 ingrName=오플록사신",
+        "batch_id": "v0.6-batch-6",
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"

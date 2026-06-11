@@ -362,9 +362,9 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF
         ar6 = ar6_data.get("approved_ready") if isinstance(ar6_data, dict) else None
         if isinstance(ar6, list):
             v.check(len(ar6) <= 50, 133, "batch6 approved-ready ≤ 50건(v0.6 +50 전략)", f"count={len(ar6)}")
-            # (Phase 13 생성 단계) batch6 는 미반영 — incorporated 전부 false(반영은 Phase 14 별도 PM 게이트).
-            bad_inc6 = [e.get("candidate_alias") for e in ar6 if str(e.get("incorporated", "")).strip().lower() != "false"]
-            v.check(not bad_inc6, 134, "batch6 approved-ready incorporated=false(Phase 13 생성·미반영)", f"viol={bad_inc6}")
+            # (Phase 14 옵션 A) 반영 전=false / 반영 후=true 둘 다 정합. incorporated=true 의 실제 반영 검증은 base+12(#132).
+            bad_inc6 = [e.get("candidate_alias") for e in ar6 if str(e.get("incorporated", "")).strip().lower() not in ("false", "true")]
+            v.check(not bad_inc6, 134, "batch6 approved-ready incorporated ∈ {false(미반영),true(반영)} 정합(true는 #132에서 실제 반영 검증)", f"viol={bad_inc6}")
             no_inc6 = [e.get("candidate_alias") for e in ar6 if "incorporated" not in e]
             v.check(not no_inc6, 135, "batch6 approved-ready 는 incorporated 필드 보유", f"viol={no_inc6}")
 
