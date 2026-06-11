@@ -34,6 +34,7 @@ DEF_AR = os.path.join(REPO, "data", "candidates", "bulk_alias_approved_ready_v0_
 DEF_AR2 = os.path.join(REPO, "data", "candidates", "bulk_alias_approved_ready_batch2_v0_5.json")  # (Phase 5) 있으면 검증
 DEF_AR3 = os.path.join(REPO, "data", "candidates", "bulk_alias_approved_ready_batch3_v0_5.json")  # (Phase 7) 있으면 검증
 DEF_AR4 = os.path.join(REPO, "data", "candidates", "bulk_alias_approved_ready_batch4_v0_5.json")  # (Phase 9) 있으면 검증
+DEF_AR5 = os.path.join(REPO, "data", "candidates", "bulk_alias_approved_ready_batch5_v0_5.json")  # (Phase 11) 있으면 검증
 
 DETAIL_FIELDS = ["detail_confirmed", "detail_source_method", "detail_checked_at",
                  "detail_item_seq", "detail_item_name", "detail_ingr_name", "detail_match_result"]
@@ -94,7 +95,7 @@ def build_allowed(rdata):
     return live, excluded_only, allowed
 
 
-def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF_AR2, ar3_path=DEF_AR3, ar4_path=DEF_AR4):
+def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF_AR2, ar3_path=DEF_AR3, ar4_path=DEF_AR4, ar5_path=DEF_AR5):
     v = V()
     qdata, err = load_json(json_path, "queue JSON")
     if err:
@@ -338,6 +339,20 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF
             no_inc4 = [e.get("candidate_alias") for e in ar4 if "incorporated" not in e]
             v.check(not no_inc4, 95, "batch4 approved-ready 는 incorporated 필드 보유", f"viol={no_inc4}")
 
+    # --- approved-ready batch5 검증(있을 때, Phase 11, 번호 100~112): 미반영(incorporated=false) 전제 + ≤30 ---
+    if ar5_path and os.path.exists(ar5_path):
+        _validate_approved_ready(v, ar5_path, cands, existing, allowed, excluded_only, alias_seqs, wl_by_canon,
+                                 base_no=100, tag="batch5")
+        ar5_data, _e5 = load_json(ar5_path, "approved-ready batch5")
+        ar5 = (ar5_data or {}).get("approved_ready") if isinstance(ar5_data, dict) else None
+        if isinstance(ar5, list):
+            v.check(len(ar5) <= 30, 113, "batch5 approved-ready ≤ 30건", f"count={len(ar5)}")
+            # Phase 11 은 반영 전 단계 → batch5 는 incorporated=false 강제(반영은 Phase 12 PM 게이트, 그때 #114 옵션 A 갱신).
+            inc_true5 = [e.get("candidate_alias") for e in ar5 if str(e.get("incorporated", "")).strip().lower() != "false"]
+            v.check(not inc_true5, 114, "batch5 approved-ready 는 incorporated=false(미반영, Phase 12 반영 전)", f"viol={inc_true5}")
+            no_inc5 = [e.get("candidate_alias") for e in ar5 if "incorporated" not in e]
+            v.check(not no_inc5, 115, "batch5 approved-ready 는 incorporated 필드 보유", f"viol={no_inc5}")
+
     return _report(v, json_path)
 
 
@@ -441,4 +456,5 @@ if __name__ == "__main__":
     arp2 = sys.argv[6] if len(sys.argv) > 6 else DEF_AR2
     arp3 = sys.argv[7] if len(sys.argv) > 7 else DEF_AR3
     arp4 = sys.argv[8] if len(sys.argv) > 8 else DEF_AR4
-    sys.exit(main(jp, cp, ap, rp, arp, arp2, arp3, arp4))
+    arp5 = sys.argv[9] if len(sys.argv) > 9 else DEF_AR5
+    sys.exit(main(jp, cp, ap, rp, arp, arp2, arp3, arp4, arp5))
