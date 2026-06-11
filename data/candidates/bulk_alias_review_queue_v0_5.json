@@ -5,7 +5,8 @@
     "phases": [
       1,
       2,
-      3
+      3,
+      4
     ],
     "generated_at": "2026-06-11",
     "generators": [
@@ -58,8 +59,8 @@
     },
     "counts": {
       "total": 62,
-      "pending": 32,
-      "approved": 0,
+      "pending": 5,
+      "approved": 27,
       "rejected": 2,
       "deferred": 28
     },
@@ -111,6 +112,13 @@
       "approved_ready": 27,
       "no_network": false,
       "detail_source_method": "nedrug.getItemDetail"
+    },
+    "phase4_incorporation": {
+      "batch": "v0.5-batch1",
+      "incorporated": 27,
+      "incorporated_at": "2026-06-11",
+      "alias_count_after": 93,
+      "note": "approved=incorporated(alias JSON 반영 완료). queue는 이력. 실제 alias는 medistack_v0.3_aliases.json."
     }
   },
   "candidates": [
@@ -137,7 +145,8 @@
       "detail_item_seq": "198000105",
       "detail_item_name": "국제독시사이클린하이클레이트수화물캡슐100밀리그램",
       "detail_ingr_name": "독시사이클린하이클레이트수화물",
-      "detail_match_result": "confirmed_redundant_itemseq"
+      "detail_match_result": "confirmed_redundant_itemseq",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "덴티스타캡슐(독시사이클린하이클레이트수화물)",
@@ -151,10 +160,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '덴티스타캡슐(독시사이클린하이클레이트수화물)' · 단일 주성분 '독시사이클린하이클레이트수화물'(canonical 독시사이클린 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '덴티스타캡슐(독시사이클린하이클레이트수화물)' · 단일 주성분 '독시사이클린하이클레이트수화물'(canonical 독시사이클린 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -162,7 +171,8 @@
       "detail_item_seq": "200002882",
       "detail_item_name": "덴티스타캡슐(독시사이클린하이클레이트수화물)",
       "detail_ingr_name": "독시사이클린하이클레이트수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "독시정(독시사이클린수화물)",
@@ -176,10 +186,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '독시정(독시사이클린수화물)' · 단일 주성분 '독시사이클린수화물'(canonical 독시사이클린 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '독시정(독시사이클린수화물)' · 단일 주성분 '독시사이클린수화물'(canonical 독시사이클린 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -187,7 +197,8 @@
       "detail_item_seq": "201403031",
       "detail_item_name": "독시정(독시사이클린수화물)",
       "detail_ingr_name": "독시사이클린수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "모노신정(독시사이클린하이클레이트수화물)",
@@ -201,10 +212,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '모노신정(독시사이클린하이클레이트수화물)' · 단일 주성분 '독시사이클린하이클레이트수화물'(canonical 독시사이클린 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '모노신정(독시사이클린하이클레이트수화물)' · 단일 주성분 '독시사이클린하이클레이트수화물'(canonical 독시사이클린 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -212,7 +223,8 @@
       "detail_item_seq": "198300718",
       "detail_item_name": "모노신정(독시사이클린하이클레이트수화물)",
       "detail_ingr_name": "독시사이클린하이클레이트수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "신일모노독시엠캡슐\n(독시사이클린수화물)",
@@ -237,7 +249,8 @@
       "detail_item_seq": "199602155",
       "detail_item_name": "신일모노독시엠캡슐 (독시사이클린수화물)",
       "detail_ingr_name": "독시사이클린수화물",
-      "detail_match_result": "surface_form_whitespace"
+      "detail_match_result": "surface_form_whitespace",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "국제독시사이클린하이클레이트수화물",
@@ -262,7 +275,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "국제독시사이클린하이클레이트수화물캡슐",
@@ -287,7 +301,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "씬지로이드정0.05밀리그램(레보티록신나트륨수화물)",
@@ -301,10 +316,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지로이드정0.05밀리그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지로이드정0.05밀리그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -312,7 +327,8 @@
       "detail_item_seq": "200401821",
       "detail_item_name": "씬지로이드정0.05밀리그램(레보티록신나트륨수화물)",
       "detail_ingr_name": "레보티록신나트륨수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "씬지로이드정0.15밀리그램(레보티록신나트륨수화물)",
@@ -326,10 +342,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지로이드정0.15밀리그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지로이드정0.15밀리그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -337,7 +353,8 @@
       "detail_item_seq": "200501664",
       "detail_item_name": "씬지로이드정0.15밀리그램(레보티록신나트륨수화물)",
       "detail_ingr_name": "레보티록신나트륨수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
@@ -351,10 +368,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지로이드정0.1밀리그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지로이드정0.1밀리그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -362,7 +379,8 @@
       "detail_item_seq": "197400278",
       "detail_item_name": "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
       "detail_ingr_name": "레보티록신나트륨수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "씬지록신정100마이크로그램(레보티록신나트륨수화물)",
@@ -376,10 +394,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지록신정100마이크로그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지록신정100마이크로그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -387,7 +405,8 @@
       "detail_item_seq": "200301116",
       "detail_item_name": "씬지록신정100마이크로그램(레보티록신나트륨수화물)",
       "detail_ingr_name": "레보티록신나트륨수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "씬지록신정150마이크로그램(레보티록신나트륨수화물)",
@@ -401,10 +420,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지록신정150마이크로그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씬지록신정150마이크로그램(레보티록신나트륨수화물)' · 단일 주성분 '레보티록신나트륨수화물'(canonical 레보티록신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -412,7 +431,8 @@
       "detail_item_seq": "201604650",
       "detail_item_name": "씬지록신정150마이크로그램(레보티록신나트륨수화물)",
       "detail_ingr_name": "레보티록신나트륨수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "글로비트정(레보플록사신수화물)",
@@ -426,10 +446,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글로비트정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글로비트정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -437,7 +457,8 @@
       "detail_item_seq": "201207060",
       "detail_item_name": "글로비트정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "네보락신정(레보플록사신수화물)",
@@ -451,10 +472,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '네보락신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '네보락신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -462,7 +483,8 @@
       "detail_item_seq": "199901759",
       "detail_item_name": "네보락신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "노팍신정(레보플록사신수화물)",
@@ -476,10 +498,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '노팍신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '노팍신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -487,7 +509,8 @@
       "detail_item_seq": "200001521",
       "detail_item_name": "노팍신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "대웅레보플록사신정100밀리그램(레보플록사신수화물)",
@@ -501,10 +524,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '대웅레보플록사신정100밀리그램(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '대웅레보플록사신정100밀리그램(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -512,7 +535,8 @@
       "detail_item_seq": "201309425",
       "detail_item_name": "대웅레보플록사신정100밀리그램(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "바이포민서방정",
@@ -537,7 +561,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "가브스메트정50/1000밀리그램",
@@ -562,7 +587,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "가브스메트정50/850밀리그램",
@@ -587,7 +613,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "게리드엠정",
@@ -612,7 +639,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "게리메트정2/500밀리그램",
@@ -637,7 +665,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "구루메포민정500mg(메트포르민염산염)",
@@ -651,10 +680,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '구루메포민정500mg(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '구루메포민정500mg(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -662,7 +691,8 @@
       "detail_item_seq": "199502215",
       "detail_item_name": "구루메포민정500mg(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "리목스정",
@@ -687,7 +717,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "모록사신",
@@ -712,7 +743,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "모록사신정",
@@ -737,7 +769,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "모벨록신정400밀리그램(목시플록사신염산염)",
@@ -751,10 +784,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '모벨록신정400밀리그램(목시플록사신염산염)' · 단일 주성분 '목시플록사신염산염'(canonical 목시플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '모벨록신정400밀리그램(목시플록사신염산염)' · 단일 주성분 '목시플록사신염산염'(canonical 목시플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -762,7 +795,8 @@
       "detail_item_seq": "201310000",
       "detail_item_name": "모벨록신정400밀리그램(목시플록사신염산염)",
       "detail_ingr_name": "목시플록사신염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "미노씬캡슐",
@@ -787,7 +821,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "미노젠",
@@ -812,7 +847,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "미노젠캡슐",
@@ -837,7 +873,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "미노씬캡슐50mg(미노사이클린염산염)",
@@ -862,7 +899,8 @@
       "detail_item_seq": "198501028",
       "detail_item_name": "미노씬캡슐50mg(미노사이클린염산염)",
       "detail_ingr_name": "미노사이클린염산염",
-      "detail_match_result": "confirmed_redundant_itemseq"
+      "detail_match_result": "confirmed_redundant_itemseq",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "미노클캡슐50밀리그램(미노사이클린염산염)",
@@ -876,10 +914,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '미노클캡슐50밀리그램(미노사이클린염산염)' · 단일 주성분 '미노사이클린염산염'(canonical 미노사이클린 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '미노클캡슐50밀리그램(미노사이클린염산염)' · 단일 주성분 '미노사이클린염산염'(canonical 미노사이클린 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -887,7 +925,8 @@
       "detail_item_seq": "202203142",
       "detail_item_name": "미노클캡슐50밀리그램(미노사이클린염산염)",
       "detail_ingr_name": "미노사이클린염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "시프로민정",
@@ -912,7 +951,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "뉴록사신정(시프로플록사신염산염수화물)",
@@ -926,10 +966,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '뉴록사신정(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '뉴록사신정(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -937,7 +977,8 @@
       "detail_item_seq": "200403053",
       "detail_item_name": "뉴록사신정(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "로프신정250mg(시프로플록사신염산염수화물)",
@@ -951,10 +992,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '로프신정250mg(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '로프신정250mg(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -962,7 +1003,8 @@
       "detail_item_seq": "199400540",
       "detail_item_name": "로프신정250mg(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "라이트알렌드론",
@@ -987,7 +1029,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "라이트알렌드론정",
@@ -1012,7 +1055,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "대웅알렌드로네이트디정",
@@ -1037,7 +1081,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "마빌더블유플러스정",
@@ -1062,7 +1107,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "맥스마빌장용정",
@@ -1087,7 +1133,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "보나드론정70밀리그램(알렌드론산나트륨수화물)",
@@ -1101,10 +1148,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '보나드론정70밀리그램(알렌드론산나트륨수화물)' · 단일 주성분 '알렌드론산나트륨수화물'(canonical 알렌드론산 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '보나드론정70밀리그램(알렌드론산나트륨수화물)' · 단일 주성분 '알렌드론산나트륨수화물'(canonical 알렌드론산 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1112,7 +1159,8 @@
       "detail_item_seq": "200500488",
       "detail_item_name": "보나드론정70밀리그램(알렌드론산나트륨수화물)",
       "detail_ingr_name": "알렌드론산나트륨수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "가나플럭스정20/1100밀리그램(오메프라졸,탄산수소나트륨)",
@@ -1137,7 +1185,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "가나플럭스정40/1100밀리그램(오메프라졸,탄산수소나트륨)",
@@ -1162,7 +1211,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "제일타리비드",
@@ -1187,7 +1237,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "넬슨오플록사신정100밀리그램(오플록사신)",
@@ -1201,10 +1252,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '넬슨오플록사신정100밀리그램(오플록사신)' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '넬슨오플록사신정100밀리그램(오플록사신)' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1212,7 +1263,8 @@
       "detail_item_seq": "199602013",
       "detail_item_name": "넬슨오플록사신정100밀리그램(오플록사신)",
       "detail_ingr_name": "오플록사신",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "다비드정100밀리그램(오플록사신)",
@@ -1226,10 +1278,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '다비드정100밀리그램(오플록사신)' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '다비드정100밀리그램(오플록사신)' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1237,7 +1289,8 @@
       "detail_item_seq": "199301429",
       "detail_item_name": "다비드정100밀리그램(오플록사신)",
       "detail_ingr_name": "오플록사신",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "동광오플록사신정",
@@ -1251,10 +1304,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '동광오플록사신정' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '동광오플록사신정' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1262,7 +1315,8 @@
       "detail_item_seq": "199400179",
       "detail_item_name": "동광오플록사신정",
       "detail_ingr_name": "오플록사신",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "동화오플록사신정",
@@ -1276,10 +1330,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '동화오플록사신정' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '동화오플록사신정' · 단일 주성분 '오플록사신'(canonical 오플록사신 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1287,7 +1341,8 @@
       "detail_item_seq": "198900665",
       "detail_item_name": "동화오플록사신정",
       "detail_ingr_name": "오플록사신",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "세토람",
@@ -1312,7 +1367,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "세토람정",
@@ -1337,7 +1393,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "토렘정",
@@ -1362,7 +1419,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "세토람정10밀리그람(토라세미드)",
@@ -1376,10 +1434,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '세토람정10밀리그람(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '세토람정10밀리그람(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1387,7 +1445,8 @@
       "detail_item_seq": "200500439",
       "detail_item_name": "세토람정10밀리그람(토라세미드)",
       "detail_ingr_name": "토라세미드",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "세토람정2.5밀리그램(토라세미드)",
@@ -1401,10 +1460,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '세토람정2.5밀리그램(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '세토람정2.5밀리그램(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1412,7 +1471,8 @@
       "detail_item_seq": "200604198",
       "detail_item_name": "세토람정2.5밀리그램(토라세미드)",
       "detail_ingr_name": "토라세미드",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "토렘정10밀리그람(토라세미드)",
@@ -1426,10 +1486,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '토렘정10밀리그람(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '토렘정10밀리그람(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1437,7 +1497,8 @@
       "detail_item_seq": "200611521",
       "detail_item_name": "토렘정10밀리그람(토라세미드)",
       "detail_ingr_name": "토라세미드",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "토렘정2.5밀리그람(토라세미드)",
@@ -1451,10 +1512,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '토렘정2.5밀리그람(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '토렘정2.5밀리그람(토라세미드)' · 단일 주성분 '토라세미드'(canonical 토라세미드 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1462,7 +1523,8 @@
       "detail_item_seq": "200611523",
       "detail_item_name": "토렘정2.5밀리그람(토라세미드)",
       "detail_ingr_name": "토라세미드",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "토렘정5밀리그람(토라세미드)",
@@ -1487,7 +1549,8 @@
       "detail_item_seq": "200611522",
       "detail_item_name": "토렘정5밀리그람(토라세미드)",
       "detail_ingr_name": "토라세미드",
-      "detail_match_result": "confirmed_redundant_itemseq"
+      "detail_match_result": "confirmed_redundant_itemseq",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "라식스정(푸로세미드)",
@@ -1512,7 +1575,8 @@
       "detail_item_seq": "196400037",
       "detail_item_name": "라식스정(푸로세미드)",
       "detail_ingr_name": "푸로세미드",
-      "detail_match_result": "confirmed_redundant_itemseq"
+      "detail_match_result": "confirmed_redundant_itemseq",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "후릭스정(푸로세미드)",
@@ -1526,10 +1590,10 @@
       "source_checked_at": "2026-06-11",
       "confidence": "high",
       "risk_level": "low",
-      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '후릭스정(푸로세미드)' · 단일 주성분 '푸로세미드'(canonical 푸로세미드 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '후릭스정(푸로세미드)' · 단일 주성분 '푸로세미드'(canonical 푸로세미드 포함). 사람 검토 후 batch 반영 대상 | Phase4 batch1 alias 반영(2026-06-11)",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.5-phase4-batch1",
       "batch_id": "v0.5-002",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -1537,7 +1601,8 @@
       "detail_item_seq": "197200160",
       "detail_item_name": "후릭스정(푸로세미드)",
       "detail_ingr_name": "푸로세미드",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-11"
     },
     {
       "candidate_alias": "국제로잘탄플러스에프정",
@@ -1562,7 +1627,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "국제로잘탄플러스정",
@@ -1587,7 +1653,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "네오반플러스정",
@@ -1612,7 +1679,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "뉴로탄플러스에프정",
@@ -1637,7 +1705,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     },
     {
       "candidate_alias": "뉴로탄플러스정",
@@ -1662,7 +1731,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": ""
     }
   ]
 }

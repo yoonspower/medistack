@@ -163,8 +163,10 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR):
     existing = {norm(a.get("alias")) for a in
                 (adata.get("ingredient_aliases") or []) + (adata.get("product_aliases") or [])
                 if a.get("alias")}
-    coll = sorted({norm(c.get("candidate_alias")) for c in cands if norm(c.get("candidate_alias")) in existing})
-    v.check(not coll, 7, "기존 alias(66)와 중복 금지", f"collide={coll}")
+    # incorporated(status=approved) 후보는 이미 alias 로 graduate → 기존 alias 와 '같아야' 정상이므로 제외
+    coll = sorted({norm(c.get("candidate_alias")) for c in cands
+                   if c.get("status") != "approved" and norm(c.get("candidate_alias")) in existing})
+    v.check(not coll, 7, "기존 alias와 중복 금지(incorporated/approved 제외)", f"collide={coll}")
 
     # 8) canonical_ingredient ∈ 허용 canonical(라이브−에스오메프라졸−excluded전용)
     bad_ci = [f"{c.get('candidate_alias')!r}->{c.get('canonical_ingredient')!r}" for c in cands
@@ -223,11 +225,12 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR):
     v.check(json_pairs == csv_pairs, 15, "JSON↔CSV (alias,status) 정합", f"json!=csv (json {len(json_pairs)} / csv {len(csv_pairs)})")
 
     # 16) alias JSON 무변경 점검(alias_count 66 + 실제 항목수 66 + relation 30)
+    # (Phase 4) batch 반영으로 alias_count 는 증가 가능 → 하드코딩 대신 내부 정합 + relation 30 + 단조(≥66) 검사.
     ac = adata.get("meta", {}).get("alias_count")
     n_alias = len(adata.get("ingredient_aliases") or []) + len(adata.get("product_aliases") or [])
     n_rel = len(rdata.get("relations") or [])
-    v.check(ac == 66 and n_alias == 66 and n_rel == 30, 16,
-            "alias JSON 무변경(alias_count 66·항목 66·relation 30)",
+    v.check(isinstance(ac, int) and ac == n_alias and n_rel == 30 and ac >= 66, 16,
+            "alias 정합(alias_count==항목수·relation 30·≥66 단조)",
             f"alias_count={ac} 항목={n_alias} relation={n_rel}")
 
     # 17) source_method ∈ 허용 목록(provenance enum)
@@ -265,20 +268,34 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR):
             dc_bad.append(f"{c.get('candidate_alias')!r}:canonical∉detail_ingr")
     v.check(not dc_bad, 19, "detail_confirmed=true 무결성(detail 필드·itemSeq 일치·단일주성분·canonical 포함)", f"viol={dc_bad[:8]}")
 
+    # 화이트리스트(canonical→itemSeq) + 전체 alias itemSeq (incorporated 검증·#30~#32 용)
+    wl_by_canon = {}
+    for ing, lst in (adata.get("verified_item_seqs") or {}).items():
+        wl_by_canon[ing] = {(e.get("item_seq") or "").strip() for e in (lst or []) if (e.get("item_seq") or "").strip()}
+    alias_seqs = {(p.get("item_seq") or "").strip() for p in (adata.get("product_aliases") or [])
+                  if (p.get("item_seq") or "").strip()}
+    for s in wl_by_canon.values():
+        alias_seqs |= s
+
+    # 30) queue approved 후보는 alias JSON 에 실제 반영(alias∈aliases · itemSeq∈whitelist[canonical])
+    inc_bad = []
+    for c in cands:
+        if c.get("status") != "approved":
+            continue
+        if norm(c.get("candidate_alias")) not in existing:
+            inc_bad.append(f"{c.get('candidate_alias')!r}:alias미반영")
+        if (c.get("item_seq") or "").strip() not in wl_by_canon.get(c.get("canonical_ingredient"), set()):
+            inc_bad.append(f"{c.get('candidate_alias')!r}:itemSeq미화이트리스트")
+    v.check(not inc_bad, 30, "queue approved 후보는 alias JSON 반영됨(alias∈aliases·itemSeq∈whitelist)", f"viol={inc_bad[:8]}")
+
     # --- approved-ready 별도 파일 검증(있을 때) ---
     if ar_path and os.path.exists(ar_path):
-        alias_seqs = {(p.get("item_seq") or "").strip() for p in (adata.get("product_aliases") or [])
-                      if (p.get("item_seq") or "").strip()}
-        for lst in (adata.get("verified_item_seqs") or {}).values():
-            for e in (lst or []):
-                if (e.get("item_seq") or "").strip():
-                    alias_seqs.add(e["item_seq"].strip())
-        _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only, alias_seqs)
+        _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only, alias_seqs, wl_by_canon)
 
     return _report(v, json_path)
 
 
-def _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only, alias_seqs):
+def _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only, alias_seqs, wl_by_canon):
     ar_data, err = load_json(ar_path, "approved-ready")
     if err:
         v.check(False, 20, "approved-ready 로드", err); return
@@ -298,15 +315,17 @@ def _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only
         c = qby.get(k)
         if not c:
             not_in_q.append(e.get("candidate_alias")); continue
-        if c.get("status") != "pending" or c.get("candidate_type") != "product_full_name":
+        # incorporated 후보는 status=approved 로 graduate → pending/approved 둘 다 허용
+        if c.get("status") not in ("pending", "approved") or c.get("candidate_type") != "product_full_name":
             bad.append(f"{e.get('candidate_alias')!r}:queue status/type({c.get('status')}/{c.get('candidate_type')})")
         if str(c.get("detail_confirmed", "")).strip().lower() != "true":
             bad.append(f"{e.get('candidate_alias')!r}:detail_confirmed≠true")
     v.check(not not_in_q, 22, "approved-ready 후보는 queue 에 존재", f"missing={not_in_q}")
-    v.check(not bad, 23, "approved-ready 의 queue 후보는 pending·product_full_name·detail_confirmed", f"viol={bad[:8]}")
+    v.check(not bad, 23, "approved-ready 의 queue 후보는 pending/approved·product_full_name·detail_confirmed", f"viol={bad[:8]}")
 
-    coll = sorted({e.get("candidate_alias") for e in ar if norm(e.get("candidate_alias")) in existing})
-    v.check(not coll, 24, "approved-ready 기존 alias(66) 중복 금지", f"collide={coll}")
+    coll = sorted({e.get("candidate_alias") for e in ar
+                   if str(e.get("incorporated", "")).strip().lower() != "true" and norm(e.get("candidate_alias")) in existing})
+    v.check(not coll, 24, "approved-ready 기존 alias 중복 금지(incorporated 제외)", f"collide={coll}")
 
     ci_bad = [f"{e.get('candidate_alias')!r}->{e.get('canonical_ingredient')!r}" for e in ar
               if e.get("canonical_ingredient") not in allowed]
@@ -331,13 +350,22 @@ def _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only
     ar_flag = [e.get("candidate_alias") for e in ar if str(e.get("approved_ready", "")).strip().lower() != "true"]
     v.check(not ar_flag, 29, "approved-ready 는 approved_ready=true", f"viol={ar_flag}")
 
-    n_appr = sum(1 for c in cands if c.get("status") == "approved")
-    v.check(n_appr == 0, 30, "approved status 0 유지(approved-ready 는 status 아님)", f"approved={n_appr}")
-
-    # 31) approved-ready item_seq ∉ 기존 alias itemSeq(동일 제품 중복 금지 — 신규 제품만)
+    # 31) approved-ready item_seq ∉ 기존 alias itemSeq(미반영 후보만 — incorporated 는 반영됐으므로 제외)
     seq_dup = sorted({f"{e.get('candidate_alias')!r}:{(e.get('item_seq') or '').strip()}" for e in ar
-                      if (e.get("item_seq") or "").strip() in alias_seqs})
-    v.check(not seq_dup, 31, "approved-ready item_seq ∉ 기존 alias itemSeq(동일 제품 중복 금지)", f"viol={seq_dup}")
+                      if str(e.get("incorporated", "")).strip().lower() != "true"
+                      and (e.get("item_seq") or "").strip() in alias_seqs})
+    v.check(not seq_dup, 31, "approved-ready item_seq ∉ 기존 alias itemSeq(incorporated 제외)", f"viol={seq_dup}")
+
+    # 32) incorporated=true approved-ready 후보는 alias JSON 에 실제 반영(alias∈aliases·itemSeq∈whitelist[canonical])
+    inc_bad = []
+    for e in ar:
+        if str(e.get("incorporated", "")).strip().lower() != "true":
+            continue
+        if norm(e.get("candidate_alias")) not in existing:
+            inc_bad.append(f"{e.get('candidate_alias')!r}:alias미반영")
+        if (e.get("item_seq") or "").strip() not in wl_by_canon.get(e.get("canonical_ingredient"), set()):
+            inc_bad.append(f"{e.get('candidate_alias')!r}:itemSeq미화이트리스트")
+    v.check(not inc_bad, 32, "approved-ready incorporated 후보는 alias JSON 반영됨(alias∈aliases·itemSeq∈whitelist)", f"viol={inc_bad[:8]}")
 
 
 def _report(v, json_path):

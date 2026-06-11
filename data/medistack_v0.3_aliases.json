@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 66
+    "alias_count": 93
   },
   "ingredient_aliases": [
     {
@@ -548,6 +548,315 @@
         27,
         28
       ]
+    },
+    {
+      "alias": "덴티스타캡슐(독시사이클린하이클레이트수화물)",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200002882",
+      "source_relation_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "alias": "독시정(독시사이클린수화물)",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201403031",
+      "source_relation_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "alias": "모노신정(독시사이클린하이클레이트수화물)",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198300718",
+      "source_relation_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "alias": "씬지로이드정0.05밀리그램(레보티록신나트륨수화물)",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200401821",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "씬지로이드정0.15밀리그램(레보티록신나트륨수화물)",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200501664",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "197400278",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "씬지록신정100마이크로그램(레보티록신나트륨수화물)",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200301116",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "씬지록신정150마이크로그램(레보티록신나트륨수화물)",
+      "canonical_ingredient": "레보티록신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201604650",
+      "source_relation_ids": [
+        10,
+        11
+      ]
+    },
+    {
+      "alias": "글로비트정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201207060",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "네보락신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199901759",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "노팍신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200001521",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "대웅레보플록사신정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201309425",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "구루메포민정500mg(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199502215",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "모벨록신정400밀리그램(목시플록사신염산염)",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201310000",
+      "source_relation_ids": [
+        24,
+        25
+      ]
+    },
+    {
+      "alias": "미노클캡슐50밀리그램(미노사이클린염산염)",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202203142",
+      "source_relation_ids": [
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "alias": "뉴록사신정(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200403053",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "로프신정250mg(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199400540",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "보나드론정70밀리그램(알렌드론산나트륨수화물)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200500488",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "넬슨오플록사신정100밀리그램(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199602013",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "다비드정100밀리그램(오플록사신)",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199301429",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "동광오플록사신정",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199400179",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "동화오플록사신정",
+      "canonical_ingredient": "오플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198900665",
+      "source_relation_ids": [
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "alias": "세토람정10밀리그람(토라세미드)",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200500439",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "alias": "세토람정2.5밀리그램(토라세미드)",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200604198",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "alias": "토렘정10밀리그람(토라세미드)",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611521",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "alias": "토렘정2.5밀리그람(토라세미드)",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611523",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "alias": "후릭스정(푸로세미드)",
+      "canonical_ingredient": "푸로세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "197200160",
+      "source_relation_ids": [
+        17,
+        18
+      ]
     }
   ],
   "verified_item_seqs": {
@@ -557,6 +866,16 @@
         "item_name": "라이트알렌드론정70mg",
         "verified_at": "2026-06-11",
         "method": "nedrug getItemDetail ingrName=알렌드론산나트륨수화물(M222873)"
+      },
+      {
+        "item_seq": "200500488",
+        "item_name": "보나드론정70밀리그램(알렌드론산나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=알렌드론산나트륨수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
       }
     ],
     "토라세미드": [
@@ -565,6 +884,46 @@
         "item_name": "세토람정5밀리그람",
         "verified_at": "2026-06-11",
         "method": "nedrug getItemDetail ingrName=토라세미드(M087101)"
+      },
+      {
+        "item_seq": "200500439",
+        "item_name": "세토람정10밀리그람(토라세미드)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=토라세미드",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200604198",
+        "item_name": "세토람정2.5밀리그램(토라세미드)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=토라세미드",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200611521",
+        "item_name": "토렘정10밀리그람(토라세미드)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=토라세미드",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200611523",
+        "item_name": "토렘정2.5밀리그람(토라세미드)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=토라세미드",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
       }
     ],
     "목시플록사신": [
@@ -573,6 +932,16 @@
         "item_name": "모록사신정400밀리그램",
         "verified_at": "2026-06-11",
         "method": "nedrug getItemDetail ingrName=목시플록사신염산염(M247915)"
+      },
+      {
+        "item_seq": "201310000",
+        "item_name": "모벨록신정400밀리그램(목시플록사신염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=목시플록사신염산염",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
       }
     ],
     "미노사이클린": [
@@ -581,6 +950,230 @@
         "item_name": "미노젠캡슐50밀리그램",
         "verified_at": "2026-06-11",
         "method": "nedrug getItemDetail ingrName=미노사이클린염산염(M223036)"
+      },
+      {
+        "item_seq": "202203142",
+        "item_name": "미노클캡슐50밀리그램(미노사이클린염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=미노사이클린염산염",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "독시사이클린": [
+      {
+        "item_seq": "200002882",
+        "item_name": "덴티스타캡슐(독시사이클린하이클레이트수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=독시사이클린하이클레이트수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201403031",
+        "item_name": "독시정(독시사이클린수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=독시사이클린수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "198300718",
+        "item_name": "모노신정(독시사이클린하이클레이트수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=독시사이클린하이클레이트수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "레보티록신": [
+      {
+        "item_seq": "200401821",
+        "item_name": "씬지로이드정0.05밀리그램(레보티록신나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보티록신나트륨수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200501664",
+        "item_name": "씬지로이드정0.15밀리그램(레보티록신나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보티록신나트륨수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "197400278",
+        "item_name": "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보티록신나트륨수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200301116",
+        "item_name": "씬지록신정100마이크로그램(레보티록신나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보티록신나트륨수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201604650",
+        "item_name": "씬지록신정150마이크로그램(레보티록신나트륨수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보티록신나트륨수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "레보플록사신": [
+      {
+        "item_seq": "201207060",
+        "item_name": "글로비트정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보플록사신수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199901759",
+        "item_name": "네보락신정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보플록사신수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200001521",
+        "item_name": "노팍신정(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보플록사신수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201309425",
+        "item_name": "대웅레보플록사신정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=레보플록사신수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "메트포르민": [
+      {
+        "item_seq": "199502215",
+        "item_name": "구루메포민정500mg(메트포르민염산염)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=메트포르민염산염",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "시프로플록사신": [
+      {
+        "item_seq": "200403053",
+        "item_name": "뉴록사신정(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199400540",
+        "item_name": "로프신정250mg(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "오플록사신": [
+      {
+        "item_seq": "199602013",
+        "item_name": "넬슨오플록사신정100밀리그램(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=오플록사신",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199301429",
+        "item_name": "다비드정100밀리그램(오플록사신)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=오플록사신",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199400179",
+        "item_name": "동광오플록사신정",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=오플록사신",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "198900665",
+        "item_name": "동화오플록사신정",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=오플록사신",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
+      }
+    ],
+    "푸로세미드": [
+      {
+        "item_seq": "197200160",
+        "item_name": "후릭스정(푸로세미드)",
+        "verified_at": "2026-06-11",
+        "method": "nedrug searchDrug+getItemDetail Phase3 batch v0.5-002 ingrName=푸로세미드",
+        "batch_id": "v0.5-002",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-11",
+        "detail_checked_at": "2026-06-11"
       }
     ]
   }
