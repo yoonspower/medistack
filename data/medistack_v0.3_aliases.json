@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 62
+    "alias_count": 66
   },
   "ingredient_aliases": [
     {
@@ -504,6 +504,84 @@
         30,
         31
       ]
+    },
+    {
+      "alias": "라이트알렌드론정70mg",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201902246",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "세토람정5밀리그람",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200600084",
+      "source_relation_ids": [
+        30,
+        31
+      ]
+    },
+    {
+      "alias": "모록사신정400밀리그램",
+      "canonical_ingredient": "목시플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201309618",
+      "source_relation_ids": [
+        24,
+        25
+      ]
+    },
+    {
+      "alias": "미노젠캡슐50밀리그램",
+      "canonical_ingredient": "미노사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202500078",
+      "source_relation_ids": [
+        26,
+        27,
+        28
+      ]
     }
-  ]
+  ],
+  "verified_item_seqs": {
+    "알렌드론산": [
+      {
+        "item_seq": "201902246",
+        "item_name": "라이트알렌드론정70mg",
+        "verified_at": "2026-06-11",
+        "method": "nedrug getItemDetail ingrName=알렌드론산나트륨수화물(M222873)"
+      }
+    ],
+    "토라세미드": [
+      {
+        "item_seq": "200600084",
+        "item_name": "세토람정5밀리그람",
+        "verified_at": "2026-06-11",
+        "method": "nedrug getItemDetail ingrName=토라세미드(M087101)"
+      }
+    ],
+    "목시플록사신": [
+      {
+        "item_seq": "201309618",
+        "item_name": "모록사신정400밀리그램",
+        "verified_at": "2026-06-11",
+        "method": "nedrug getItemDetail ingrName=목시플록사신염산염(M247915)"
+      }
+    ],
+    "미노사이클린": [
+      {
+        "item_seq": "202500078",
+        "item_name": "미노젠캡슐50밀리그램",
+        "verified_at": "2026-06-11",
+        "method": "nedrug getItemDetail ingrName=미노사이클린염산염(M223036)"
+      }
+    ]
+  }
 }
