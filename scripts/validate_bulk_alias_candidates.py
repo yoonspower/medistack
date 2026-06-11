@@ -332,9 +332,9 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF
         ar4 = (ar4_data or {}).get("approved_ready") if isinstance(ar4_data, dict) else None
         if isinstance(ar4, list):
             v.check(len(ar4) <= 30, 93, "batch4 approved-ready ≤ 30건", f"count={len(ar4)}")
-            # Phase 9 은 반영 전 단계 → batch4 는 incorporated=false 강제(반영은 Phase 10 PM 게이트, 그때 #94 옵션 A 갱신).
-            inc_true4 = [e.get("candidate_alias") for e in ar4 if str(e.get("incorporated", "")).strip().lower() != "false"]
-            v.check(not inc_true4, 94, "batch4 approved-ready 는 incorporated=false(미반영, Phase 10 반영 전)", f"viol={inc_true4}")
+            # (Phase 10 옵션 A) 반영 전=false / 반영 후=true 둘 다 정합. incorporated=true 의 실제 반영 검증은 base+12(#92).
+            bad_inc4 = [e.get("candidate_alias") for e in ar4 if str(e.get("incorporated", "")).strip().lower() not in ("false", "true")]
+            v.check(not bad_inc4, 94, "batch4 approved-ready incorporated ∈ {false(미반영),true(반영)} 정합(true는 #92에서 실제 반영 검증)", f"viol={bad_inc4}")
             no_inc4 = [e.get("candidate_alias") for e in ar4 if "incorporated" not in e]
             v.check(not no_inc4, 95, "batch4 approved-ready 는 incorporated 필드 보유", f"viol={no_inc4}")
 

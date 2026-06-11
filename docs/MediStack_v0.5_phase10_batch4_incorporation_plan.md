@@ -1,8 +1,9 @@
 # MediStack v0.5 — Phase 10 batch 4 incorporation 계획 (⚠️ 계획만, 실제 반영 금지)
 
-작성일: **2026-06-11** / 상태: **계획(반영 전 — PM 승인 대기)** / 상위: `..._bulk_alias_pipeline_plan.md`, `..._phase9_report.md`, `..._phase8_report.md`
+작성일: **2026-06-11** / 상태: **✅ 반영 완료 (PM 승인, alias 153→176)** — 실행 결과는 `..._phase10_report.md` 참조 / 상위: `..._bulk_alias_pipeline_plan.md`, `..._phase9_report.md`, `..._phase8_report.md`
 
-> Phase 8(batch 3, alias 123→153)와 **동일한 incorporation 패턴**을 batch 4(23건, alias 153→176)에 적용하기 위한 사전 계획. **이 문서는 계획만 — 실제 alias 반영은 다음 PM 게이트(Phase 10).**
+> **(갱신) 이 계획은 PM 승인 후 실행 완료됨**: batch 4 23건 alias JSON 반영(product +23·verified +23·alias_count 153→176, **append only·verified canonicals 12 유지**), validator #94 옵션 A 갱신. 상세=`MediStack_v0.5_bulk_alias_phase10_report.md`. 아래는 실행 전 계획 원문(참고용 보존).
+> Phase 8(batch 3, alias 123→153)와 **동일한 incorporation 패턴**을 batch 4(23건, alias 153→176)에 적용하기 위한 사전 계획.
 
 ---
 
