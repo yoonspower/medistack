@@ -1,8 +1,8 @@
 # MediStack v0.6 — Phase 16 batch7 incorporation 계획 (⚠️ 계획만, 실제 반영 금지)
 
-작성일: **2026-06-12** / 상태: **계획만 — PM 승인 전 실제 반영 금지** / 상위: `MediStack_v0.6_alias_500_plan.md`, `MediStack_v0.6_phase15_batch7_candidate_report.md`
+작성일: **2026-06-12** / 상태: **✅ 반영 완료 (PM 승인, alias 256→306, 2026-06-12)** / 상위: `MediStack_v0.6_alias_500_plan.md`, `MediStack_v0.6_phase15_batch7_candidate_report.md`
 
-> Phase 14(batch6, 206→256)와 **동일한 incorporation 패턴**을 batch7(50건, **256→306**)에 적용하기 위한 사전 계획. **이 문서 단계에서는 반영하지 않는다.** alias_count 256 유지, alias JSON 무변경.
+> **(갱신) PM 승인 후 실행 완료**: batch7 50건 alias 반영 — product_aliases +50(218→**268**) · verified_item_seqs +50(194→**244**, 5성분 append·canonicals 12 유지) · alias_count 256→**306**. validator **#154 옵션 A** 갱신. 5 validator(bulk 122·v0.1 12·v0.2 15·v0.3 13·TypeB 7) + smoke **10/10** ALL PASS. relation 30·DATA_URL·export 불변. 반영 = ephemeral `/tmp/ms_incorporate_v0_6_batch7.py`(미커밋). 아래는 실행 전 계획 원문(참고 보존). v0.5 Phase 14 패턴 동일 적용.
 
 ---
 

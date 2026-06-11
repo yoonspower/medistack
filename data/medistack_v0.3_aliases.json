@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 256
+    "alias_count": 306
   },
   "ingredient_aliases": [
     {
@@ -2732,6 +2732,568 @@
         22,
         23
       ]
+    },
+    {
+      "alias": "레복사신정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200202193",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레복사신정250밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200905938",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레복사신정500밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200805811",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레브록신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199801473",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레비신정100mg(레보플록사신)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199803884",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레비신정500mg(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201708021",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레사크라정100밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201502450",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레크로신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201404678",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레펙신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199900121",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레포신정100밀리그램(레보플록사신)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200806028",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레폭신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199806978",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레프렉스정100mg(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201506122",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레프로신정(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200202476",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "글루세라서방정500mg(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201400115",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루엠서방정(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201402909",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코닐정(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "198500241",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코다운정1000밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201604291",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코다운정250밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201604290",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코다운정500밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200400361",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코젠정500밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200301345",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코파지엑스알1000밀리그램서방정(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201002150",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코파지엑스알서방정(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200511029",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코파지정1000밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200807809",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코파지정250밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200401014",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "글루코파지정500밀리그램(메트포르민염산염)",
+      "canonical_ingredient": "메트포르민",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200401015",
+      "source_relation_ids": [
+        12
+      ]
+    },
+    {
+      "alias": "씨록탄정500밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201602319",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨큐로바이정(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201908109",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨티신정(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201801841",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨프로바이정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201905731",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨프록정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201900299",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨프록탄정250밀리그램(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199602021",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨프록탄정500mg(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199602022",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨프론정250mg(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201208643",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨플로정(시프로플록사신염산염)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201802241",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨플록스정(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903855",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "씨플록정250mg(시프로플록사신염산염수화물)",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201800299",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "알리코염산시프로플록사신정250밀리그람",
+      "canonical_ingredient": "시프로플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199800906",
+      "source_relation_ids": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "alias": "포사퀸정70밀리그람(알렌드론산나트륨)",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200500125",
+      "source_relation_ids": [
+        29
+      ]
+    },
+    {
+      "alias": "오라섹캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200707212",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메그린캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202003930",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메다캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903858",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메드정10밀리그램(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199902308",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메드정20밀리그램(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199302187",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메딘캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200402023",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메라핀캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201505489",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메존캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200402694",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메졸캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201405114",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메큐캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199700548",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메타졸캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201502449",
+      "source_relation_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "alias": "오메톤캡슐(오메프라졸)",
+      "canonical_ingredient": "오메프라졸",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200401456",
+      "source_relation_ids": [
+        13,
+        14
+      ]
     }
   ],
   "verified_item_seqs": {
@@ -2951,6 +3513,16 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200500125",
+        "item_name": "포사퀸정70밀리그람(알렌드론산나트륨)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=알렌드론산나트륨",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
       }
     ],
     "토라세미드": [
@@ -3741,6 +4313,136 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200202193",
+        "item_name": "레복사신정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200905938",
+        "item_name": "레복사신정250밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200805811",
+        "item_name": "레복사신정500밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199801473",
+        "item_name": "레브록신정(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199803884",
+        "item_name": "레비신정100mg(레보플록사신)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201708021",
+        "item_name": "레비신정500mg(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201502450",
+        "item_name": "레사크라정100밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201404678",
+        "item_name": "레크로신정(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199900121",
+        "item_name": "레펙신정(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200806028",
+        "item_name": "레포신정100밀리그램(레보플록사신)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199806978",
+        "item_name": "레폭신정(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201506122",
+        "item_name": "레프렉스정100mg(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200202476",
+        "item_name": "레프로신정(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=레보플록사신수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
       }
     ],
     "메트포르민": [
@@ -3843,6 +4545,126 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201400115",
+        "item_name": "글루세라서방정500mg(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201402909",
+        "item_name": "글루엠서방정(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "198500241",
+        "item_name": "글루코닐정(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201604291",
+        "item_name": "글루코다운정1000밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201604290",
+        "item_name": "글루코다운정250밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200400361",
+        "item_name": "글루코다운정500밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200301345",
+        "item_name": "글루코젠정500밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201002150",
+        "item_name": "글루코파지엑스알1000밀리그램서방정(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200511029",
+        "item_name": "글루코파지엑스알서방정(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200807809",
+        "item_name": "글루코파지정1000밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200401014",
+        "item_name": "글루코파지정250밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200401015",
+        "item_name": "글루코파지정500밀리그램(메트포르민염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=메트포르민염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
       }
     ],
     "시프로플록사신": [
@@ -4255,6 +5077,126 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "201602319",
+        "item_name": "씨록탄정500밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201908109",
+        "item_name": "씨큐로바이정(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201801841",
+        "item_name": "씨티신정(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201905731",
+        "item_name": "씨프로바이정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201900299",
+        "item_name": "씨프록정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199602021",
+        "item_name": "씨프록탄정250밀리그램(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199602022",
+        "item_name": "씨프록탄정500mg(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201208643",
+        "item_name": "씨프론정250mg(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201802241",
+        "item_name": "씨플로정(시프로플록사신염산염)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201903855",
+        "item_name": "씨플록스정(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201800299",
+        "item_name": "씨플록정250mg(시프로플록사신염산염수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199800906",
+        "item_name": "알리코염산시프로플록사신정250밀리그람",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=시프로플록사신염산염수화물",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
       }
     ],
     "오플록사신": [
@@ -4681,6 +5623,126 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "200707212",
+        "item_name": "오라섹캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202003930",
+        "item_name": "오메그린캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201903858",
+        "item_name": "오메다캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸 장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199902308",
+        "item_name": "오메드정10밀리그램(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199302187",
+        "item_name": "오메드정20밀리그램(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200402023",
+        "item_name": "오메딘캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201505489",
+        "item_name": "오메라핀캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200402694",
+        "item_name": "오메존캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201405114",
+        "item_name": "오메졸캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "199700548",
+        "item_name": "오메큐캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201502449",
+        "item_name": "오메타졸캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200401456",
+        "item_name": "오메톤캡슐(오메프라졸)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug searchDrug+getItemDetail Phase15 batch v0.6-batch-7 ingrName=오메프라졸장용성과립",
+        "batch_id": "v0.6-batch-7",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
       }
     ]
   }

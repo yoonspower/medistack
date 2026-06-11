@@ -68,8 +68,8 @@
     },
     "counts": {
       "total": 477,
-      "pending": 115,
-      "approved": 190,
+      "pending": 65,
+      "approved": 240,
       "rejected": 2,
       "deferred": 170
     },
@@ -364,6 +364,14 @@
       "approved_ready_file_batch_id": "v0.6-batch-7",
       "no_network": false,
       "detail_source_method": "nedrug.getItemDetail"
+    },
+    "phase16_incorporation": {
+      "incorporated_at": "2026-06-12",
+      "batch_id": "v0.6-batch-7",
+      "incorporated": 50,
+      "alias_count": 306,
+      "reviewer": "v0.6-phase16-batch7",
+      "note": "batch7 50건 alias 반영(product+50→268·verified+50→244·alias_count 256→306). status pending→approved."
     }
   },
   "candidates": [
@@ -2276,9 +2284,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레복사신정100밀리그램(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2286,7 +2294,8 @@
       "detail_item_seq": "200202193",
       "detail_item_name": "레복사신정100밀리그램(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레복사신정250밀리그램(레보플록사신수화물)",
@@ -2301,9 +2310,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레복사신정250밀리그램(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2311,7 +2320,8 @@
       "detail_item_seq": "200905938",
       "detail_item_name": "레복사신정250밀리그램(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레복사신정500밀리그램(레보플록사신수화물)",
@@ -2326,9 +2336,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레복사신정500밀리그램(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2336,7 +2346,8 @@
       "detail_item_seq": "200805811",
       "detail_item_name": "레복사신정500밀리그램(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레브록신정(레보플록사신수화물)",
@@ -2351,9 +2362,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레브록신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2361,7 +2372,8 @@
       "detail_item_seq": "199801473",
       "detail_item_name": "레브록신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레비신정100mg(레보플록사신)",
@@ -2376,9 +2388,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레비신정100mg(레보플록사신)' · 단일 주성분 '레보플록사신'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2386,7 +2398,8 @@
       "detail_item_seq": "199803884",
       "detail_item_name": "레비신정100mg(레보플록사신)",
       "detail_ingr_name": "레보플록사신",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레비신정500mg(레보플록사신수화물)",
@@ -2401,9 +2414,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레비신정500mg(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2411,7 +2424,8 @@
       "detail_item_seq": "201708021",
       "detail_item_name": "레비신정500mg(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레사크라정100밀리그램(레보플록사신수화물)",
@@ -2426,9 +2440,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레사크라정100밀리그램(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2436,7 +2450,8 @@
       "detail_item_seq": "201502450",
       "detail_item_name": "레사크라정100밀리그램(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레크로신정(레보플록사신수화물)",
@@ -2451,9 +2466,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레크로신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2461,7 +2476,8 @@
       "detail_item_seq": "201404678",
       "detail_item_name": "레크로신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레펙신정(레보플록사신수화물)",
@@ -2476,9 +2492,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레펙신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2486,7 +2502,8 @@
       "detail_item_seq": "199900121",
       "detail_item_name": "레펙신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레포신정100밀리그램(레보플록사신)",
@@ -2501,9 +2518,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레포신정100밀리그램(레보플록사신)' · 단일 주성분 '레보플록사신'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2511,7 +2528,8 @@
       "detail_item_seq": "200806028",
       "detail_item_name": "레포신정100밀리그램(레보플록사신)",
       "detail_ingr_name": "레보플록사신",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레폭신정(레보플록사신수화물)",
@@ -2526,9 +2544,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레폭신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2536,7 +2554,8 @@
       "detail_item_seq": "199806978",
       "detail_item_name": "레폭신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레프렉스정100mg(레보플록사신수화물)",
@@ -2551,9 +2570,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레프렉스정100mg(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2561,7 +2580,8 @@
       "detail_item_seq": "201506122",
       "detail_item_name": "레프렉스정100mg(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레프로신정(레보플록사신수화물)",
@@ -2576,9 +2596,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '레프로신정(레보플록사신수화물)' · 단일 주성분 '레보플록사신수화물'(canonical 레보플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -2586,7 +2606,8 @@
       "detail_item_seq": "200202476",
       "detail_item_name": "레프로신정(레보플록사신수화물)",
       "detail_ingr_name": "레보플록사신수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레플로신정100밀리그램(레보플록사신수화물)",
@@ -4265,9 +4286,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루세라서방정500mg(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4275,7 +4296,8 @@
       "detail_item_seq": "201400115",
       "detail_item_name": "글루세라서방정500mg(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루세라정500밀리그램(메트포르민염산염)",
@@ -4466,9 +4488,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루엠서방정(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4476,7 +4498,8 @@
       "detail_item_seq": "201402909",
       "detail_item_name": "글루엠서방정(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코닐정(메트포르민염산염)",
@@ -4491,9 +4514,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코닐정(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4501,7 +4524,8 @@
       "detail_item_seq": "198500241",
       "detail_item_name": "글루코닐정(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코다운정1000밀리그램(메트포르민염산염)",
@@ -4516,9 +4540,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코다운정1000밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4526,7 +4550,8 @@
       "detail_item_seq": "201604291",
       "detail_item_name": "글루코다운정1000밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코다운정250밀리그램(메트포르민염산염)",
@@ -4541,9 +4566,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코다운정250밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4551,7 +4576,8 @@
       "detail_item_seq": "201604290",
       "detail_item_name": "글루코다운정250밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코다운정500밀리그램(메트포르민염산염)",
@@ -4566,9 +4592,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코다운정500밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4576,7 +4602,8 @@
       "detail_item_seq": "200400361",
       "detail_item_name": "글루코다운정500밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코반스정500/2.5밀리그램",
@@ -4641,9 +4668,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코젠정500밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4651,7 +4678,8 @@
       "detail_item_seq": "200301345",
       "detail_item_name": "글루코젠정500밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코파지엑스알1000밀리그램서방정(메트포르민염산염)",
@@ -4666,9 +4694,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코파지엑스알1000밀리그램서방정(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4676,7 +4704,8 @@
       "detail_item_seq": "201002150",
       "detail_item_name": "글루코파지엑스알1000밀리그램서방정(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코파지엑스알서방정(메트포르민염산염)",
@@ -4691,9 +4720,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코파지엑스알서방정(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4701,7 +4730,8 @@
       "detail_item_seq": "200511029",
       "detail_item_name": "글루코파지엑스알서방정(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코파지정1000밀리그램(메트포르민염산염)",
@@ -4716,9 +4746,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코파지정1000밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4726,7 +4756,8 @@
       "detail_item_seq": "200807809",
       "detail_item_name": "글루코파지정1000밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코파지정250밀리그램(메트포르민염산염)",
@@ -4741,9 +4772,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코파지정250밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4751,7 +4782,8 @@
       "detail_item_seq": "200401014",
       "detail_item_name": "글루코파지정250밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코파지정500밀리그램(메트포르민염산염)",
@@ -4766,9 +4798,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '글루코파지정500밀리그램(메트포르민염산염)' · 단일 주성분 '메트포르민염산염'(canonical 메트포르민 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -4776,7 +4808,8 @@
       "detail_item_seq": "200401015",
       "detail_item_name": "글루코파지정500밀리그램(메트포르민염산염)",
       "detail_ingr_name": "메트포르민염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코프리서방정1000밀리그램(메트포르민염산염)",
@@ -6341,9 +6374,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨록탄정500밀리그램(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6351,7 +6384,8 @@
       "detail_item_seq": "201602319",
       "detail_item_name": "씨록탄정500밀리그램(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨에프정250mg(시프로플록사신염산염)",
@@ -6392,9 +6426,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨큐로바이정(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6402,7 +6436,8 @@
       "detail_item_seq": "201908109",
       "detail_item_name": "씨큐로바이정(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨큐로베이정250밀리그램(시프로플록사신염산염수화물)",
@@ -6469,9 +6504,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨티신정(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6479,7 +6514,8 @@
       "detail_item_seq": "201801841",
       "detail_item_name": "씨티신정(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨팍신정250밀리그램(시프로플록사신염산염수화물)",
@@ -6545,9 +6581,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨프로바이정250밀리그램(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6555,7 +6591,8 @@
       "detail_item_seq": "201905731",
       "detail_item_name": "씨프로바이정250밀리그램(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨프록정250밀리그램(시프로플록사신염산염수화물)",
@@ -6570,9 +6607,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨프록정250밀리그램(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6580,7 +6617,8 @@
       "detail_item_seq": "201900299",
       "detail_item_name": "씨프록정250밀리그램(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨프록탄정250밀리그램(시프로플록사신염산염수화물)",
@@ -6595,9 +6633,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨프록탄정250밀리그램(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6605,7 +6643,8 @@
       "detail_item_seq": "199602021",
       "detail_item_name": "씨프록탄정250밀리그램(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨프록탄정500mg(시프로플록사신염산염수화물)",
@@ -6620,9 +6659,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨프록탄정500mg(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6630,7 +6669,8 @@
       "detail_item_seq": "199602022",
       "detail_item_name": "씨프록탄정500mg(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨프론정250mg(시프로플록사신염산염수화물)",
@@ -6645,9 +6685,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨프론정250mg(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6655,7 +6695,8 @@
       "detail_item_seq": "201208643",
       "detail_item_name": "씨프론정250mg(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨플로정(시프로플록사신염산염)",
@@ -6670,9 +6711,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨플로정(시프로플록사신염산염)' · 단일 주성분 '시프로플록사신염산염'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6680,7 +6721,8 @@
       "detail_item_seq": "201802241",
       "detail_item_name": "씨플로정(시프로플록사신염산염)",
       "detail_ingr_name": "시프로플록사신염산염",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨플록스정(시프로플록사신염산염수화물)",
@@ -6695,9 +6737,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨플록스정(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6705,7 +6747,8 @@
       "detail_item_seq": "201903855",
       "detail_item_name": "씨플록스정(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "씨플록정250mg(시프로플록사신염산염수화물)",
@@ -6720,9 +6763,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '씨플록정250mg(시프로플록사신염산염수화물)' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6730,7 +6773,8 @@
       "detail_item_seq": "201800299",
       "detail_item_name": "씨플록정250mg(시프로플록사신염산염수화물)",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알리코염산시프로플록사신정250밀리그람",
@@ -6745,9 +6789,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '알리코염산시프로플록사신정250밀리그람' · 단일 주성분 '시프로플록사신염산염수화물'(canonical 시프로플록사신 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -6755,7 +6799,8 @@
       "detail_item_seq": "199800906",
       "detail_item_name": "알리코염산시프로플록사신정250밀리그람",
       "detail_ingr_name": "시프로플록사신염산염수화물",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알피시프록정250mg(시프로플록사신염산염수화물)",
@@ -8396,9 +8441,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '포사퀸정70밀리그람(알렌드론산나트륨)' · 단일 주성분 '알렌드론산나트륨'(canonical 알렌드론산 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8406,7 +8451,8 @@
       "detail_item_seq": "200500125",
       "detail_item_name": "포사퀸정70밀리그람(알렌드론산나트륨)",
       "detail_ingr_name": "알렌드론산나트륨",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "플러스디알레드론정",
@@ -8732,9 +8778,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오라섹캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8742,7 +8788,8 @@
       "detail_item_seq": "200707212",
       "detail_item_name": "오라섹캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메그린캡슐(오메프라졸)",
@@ -8757,9 +8804,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메그린캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8767,7 +8814,8 @@
       "detail_item_seq": "202003930",
       "detail_item_name": "오메그린캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메다캡슐(오메프라졸)",
@@ -8782,9 +8830,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메다캡슐(오메프라졸)' · 단일 주성분 '오메프라졸 장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8792,7 +8840,8 @@
       "detail_item_seq": "201903858",
       "detail_item_name": "오메다캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸 장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메드정10밀리그램(오메프라졸)",
@@ -8807,9 +8856,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메드정10밀리그램(오메프라졸)' · 단일 주성분 '오메프라졸'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8817,7 +8866,8 @@
       "detail_item_seq": "199902308",
       "detail_item_name": "오메드정10밀리그램(오메프라졸)",
       "detail_ingr_name": "오메프라졸",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메드정20밀리그램(오메프라졸)",
@@ -8832,9 +8882,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메드정20밀리그램(오메프라졸)' · 단일 주성분 '오메프라졸'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8842,7 +8892,8 @@
       "detail_item_seq": "199302187",
       "detail_item_name": "오메드정20밀리그램(오메프라졸)",
       "detail_ingr_name": "오메프라졸",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메드플러스정10/300mg(오메프라졸,침강탄산칼슘)",
@@ -8907,9 +8958,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메딘캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8917,7 +8968,8 @@
       "detail_item_seq": "200402023",
       "detail_item_name": "오메딘캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메라핀캡슐(오메프라졸)",
@@ -8932,9 +8984,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메라핀캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8942,7 +8994,8 @@
       "detail_item_seq": "201505489",
       "detail_item_name": "오메라핀캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메존캡슐(오메프라졸)",
@@ -8957,9 +9010,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메존캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8967,7 +9020,8 @@
       "detail_item_seq": "200402694",
       "detail_item_name": "오메존캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메졸캡슐(오메프라졸)",
@@ -8982,9 +9036,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메졸캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -8992,7 +9046,8 @@
       "detail_item_seq": "201405114",
       "detail_item_name": "오메졸캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메큐캡슐(오메프라졸)",
@@ -9007,9 +9062,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메큐캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -9017,7 +9072,8 @@
       "detail_item_seq": "199700548",
       "detail_item_name": "오메큐캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메타졸캡슐(오메프라졸)",
@@ -9032,9 +9088,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메타졸캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -9042,7 +9098,8 @@
       "detail_item_seq": "201502449",
       "detail_item_name": "오메타졸캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메톤캡슐(오메프라졸)",
@@ -9057,9 +9114,9 @@
       "confidence": "high",
       "risk_level": "low",
       "reason": "nedrug searchDrug 발견 → getItemDetail 상세확정: 품목명 '오메톤캡슐(오메프라졸)' · 단일 주성분 '오메프라졸장용성과립'(canonical 오메프라졸 포함). 사람 검토 후 batch 반영 대상",
-      "status": "pending",
+      "status": "approved",
       "exclusion_reason": "",
-      "reviewer": "",
+      "reviewer": "v0.6-phase16-batch7",
       "batch_id": "v0.6-007",
       "detail_confirmed": "true",
       "detail_source_method": "nedrug.getItemDetail",
@@ -9067,7 +9124,8 @@
       "detail_item_seq": "200401456",
       "detail_item_name": "오메톤캡슐(오메프라졸)",
       "detail_ingr_name": "오메프라졸장용성과립",
-      "detail_match_result": "confirmed"
+      "detail_match_result": "confirmed",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메푸졸캡슐(오메프라졸)",
