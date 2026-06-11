@@ -8,7 +8,7 @@
     "alias_source": "data/medistack_v0.3_aliases.json",
     "queue_source": "data/candidates/bulk_alias_review_queue_v0_5.json",
     "batch_id": "v0.6-batch-8",
-    "incorporated": "false",
+    "incorporated": "true",
     "count": 50,
     "held_over_limit": 7,
     "ar_limit": 50,
@@ -30,9 +30,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "레플록신정500mg(레보플록사신)",
@@ -49,9 +51,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "렉타신정250밀리그램(레보플록사신수화물)",
@@ -68,9 +72,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "리플록신정100밀리그램(레보플록사신수화물)",
@@ -87,9 +93,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "리플록신정250밀리그램(레보플록사신수화물)",
@@ -106,9 +114,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "리플록신정500밀리그램(레보플록사신수화물)",
@@ -125,9 +135,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "셀트리온레보플록사신정100밀리그램(레보플록사신수화물)",
@@ -144,9 +156,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알피레보플록사신정100밀리그램(레보플록사신수화물)",
@@ -163,9 +177,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알피레보플록사신정250mg(레보플록사신수화물)",
@@ -182,9 +198,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "원플록신정(레보플록사신수화물)",
@@ -201,9 +219,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "위더스레보플록사신정100밀리그램(레보플록사신수화물)",
@@ -220,9 +240,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "위더스레보플록사신정500밀리그램(레보플록사신수화물)",
@@ -239,9 +261,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "유니레보정(레보플록사신수화물)",
@@ -258,9 +282,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "유로레보정250mg(레보플록사신수화물)",
@@ -277,9 +303,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코프리서방정1000밀리그램(메트포르민염산염)",
@@ -296,9 +324,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코프리서방정500밀리그램(메트포르민염산염)",
@@ -315,9 +345,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코프리서방정750밀리그램(메트포르민염산염)",
@@ -334,9 +366,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루테니어정500mg(메트포르민염산염)",
@@ -353,9 +387,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파민서방정500밀리그램(메트포르민염산염)",
@@ -372,9 +408,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파엑스알서방정1000밀리그램(메트포르민염산염)",
@@ -391,9 +429,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파엑스알서방정500밀리그램(메트포르민염산염)",
@@ -410,9 +450,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파엑스알서방정850밀리그램(메트포르민염산염)",
@@ -429,9 +471,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파정1,000㎎(메트포르민염산염)",
@@ -448,9 +492,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파정250mg(메트포르민염산염)",
@@ -467,9 +513,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알피시프록정250mg(시프로플록사신염산염수화물)",
@@ -486,9 +534,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "에프로신정(시프로플록사신염산염수화물)",
@@ -505,9 +555,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "일양바이오염산시프로플록사신정",
@@ -524,9 +576,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "참염산시프로플록사신정",
@@ -543,9 +597,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "케이사신정250밀리그램(시프로플록사신염산염수화물)",
@@ -562,9 +618,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "큐프론정(시프로플록사신염산염수화물)",
@@ -581,9 +639,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "키포신정(시프로플록사신염산염수화물)",
@@ -600,9 +660,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "파마시프로플록사신정250mg(시프로플록사신염산염수화물)",
@@ -619,9 +681,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "팜젠시프로플록사신정250mg(시프로플록사신염산염)",
@@ -638,9 +702,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "푸로포신정250밀리그램(시프로플록사신염산염수화물)",
@@ -657,9 +723,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "프로딘정250mg(시프로플록사신염산염수화물)",
@@ -676,9 +744,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "프록사신바이정(시프로플록사신염산염수화물)",
@@ -695,9 +765,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "프록스코정(시프로플록사신염산염)",
@@ -714,9 +786,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메푸졸캡슐(오메프라졸)",
@@ -733,9 +807,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메프라존캡슐(오메프라졸)",
@@ -752,9 +828,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메프란캡슐20밀리그램(오메프라졸)",
@@ -771,9 +849,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메프투캡슐(오메프라졸)",
@@ -790,9 +870,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오멕스캡슐(오메프라졸)",
@@ -809,9 +891,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오엠피정20밀리그램(오메프라졸)",
@@ -828,9 +912,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오엠피정40밀리그램(오메프라졸)",
@@ -847,9 +933,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오큐졸캡슐(오메프라졸)",
@@ -866,9 +954,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오프라졸캡슐(오메프라졸)",
@@ -885,9 +975,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오프라캡슐(오메프라졸)",
@@ -904,9 +996,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오프졸캡슐(오메프라졸)",
@@ -923,9 +1017,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오피라졸캡슐(오메프라졸)",
@@ -942,9 +1038,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "이연오메프라졸캡슐",
@@ -961,9 +1059,11 @@
       "risk_level": "low",
       "batch_id": "v0.6-batch-8",
       "approved_ready": "true",
-      "incorporated": "false",
+      "incorporated": "true",
       "reason": "getItemDetail 상세확정(품목명·단일주성분 일치). 사람 검토 후 다음 batch 반영 대상",
-      "reviewer_required": "true"
+      "reviewer_required": "true",
+      "incorporated_alias_batch": "v0.6-batch8",
+      "incorporated_at": "2026-06-12"
     }
   ]
 }
