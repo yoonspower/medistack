@@ -7,7 +7,7 @@
 > 실제 수집기/검증기/export 스크립트 구현, candidate JSON/CSV 생성, alias JSON 대량 수정은 **PM 판정 후 별도 단계**.
 > 현 라이브(v0.3-beta): alias 66 · relation 30 · DATA_URL=`./data/medistack_v0.2_beta_export.json` — **이 문서로 변경 없음**.
 
-> **진행(2026-06-11)**: Phase 1(skeleton) 완료 — 생성기/검증기(16체크)/review queue/`phase1_report`(커밋 431d545). Phase 2(nedrug 수집 dry-run) 완료 — `scripts/collect_nedrug_alias_candidates.py`(searchDrug 단독)로 13성분 dry-run 수집, **queue 16→62**(pending 32 단일성분 + deferred 28[brand_core 14+복합제 14] + rejected 2, **approved 0**), 검증기 18체크로 보강, `phase2_report` 작성. **alias JSON·relation·DATA_URL 불변.** 다음=Phase 3(pending getItemDetail 확정 → 사람 승인 → batch 30 반영, 별도 PM 게이트).
+> **진행(2026-06-11)**: Phase 1(skeleton) 완료 — 생성기/검증기(16체크)/review queue/`phase1_report`(커밋 431d545). Phase 2(nedrug 수집 dry-run) 완료 — `scripts/collect_nedrug_alias_candidates.py`(searchDrug 단독)로 13성분 dry-run 수집, **queue 16→62**(pending 32 단일성분 + deferred 28[brand_core 14+복합제 14] + rejected 2, **approved 0**), 검증기 18체크로 보강, `phase2_report` 작성. Phase 3(getItemDetail 상세확정 dry-run) 완료 — `scripts/confirm_nedrug_item_details.py`로 pending 32 원문 확인(**confirmed 31** + 표면형개행 1), 검증기 **31체크**로 보강(#19 detail 무결성·#20~#31 approved-ready 검증), queue에 detail 필드 추가, **approved-ready 별도 파일 27건**(`bulk_alias_approved_ready_v0_5.json/csv`, itemSeq 중복 4 제외) 생성, `phase3_report` 작성. queue status 불변(pending 32·deferred 28·rejected 2·**approved 0**). **alias JSON·relation·DATA_URL 불변.** 다음=Phase 4(approved-ready 27 사람 승인 → verified_item_seqs 동반 확장 → batch 30 alias 반영, 별도 PM 게이트) / 상한 상향 재수집으로 200.
 
 ---
 

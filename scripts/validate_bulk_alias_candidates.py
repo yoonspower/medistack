@@ -30,6 +30,16 @@ DEF_JSON = os.path.join(REPO, "data", "candidates", "bulk_alias_review_queue_v0_
 DEF_CSV = os.path.join(REPO, "data", "candidates", "bulk_alias_review_queue_v0_5.csv")
 DEF_ALIAS = os.path.join(REPO, "data", "medistack_v0.3_aliases.json")
 DEF_REL = os.path.join(REPO, "data", "medistack_v0.2_beta_export.json")
+DEF_AR = os.path.join(REPO, "data", "candidates", "bulk_alias_approved_ready_v0_5.json")  # (Phase 3) 있으면 검증
+
+DETAIL_FIELDS = ["detail_confirmed", "detail_source_method", "detail_checked_at",
+                 "detail_item_seq", "detail_item_name", "detail_ingr_name", "detail_match_result"]
+AR_REQUIRED = ["candidate_alias", "canonical_ingredient", "item_seq", "item_name", "ingr_name",
+               "source_url", "source_method", "source_checked_at", "detail_source_method",
+               "detail_checked_at", "confidence", "risk_level", "batch_id", "approved_ready",
+               "reason", "reviewer_required"]
+EXCLUDED_BYPASS_INGREDIENT_NAME = "에스오메프라졸"
+FORBIDDEN_ITEMSEQS = {"201600209"}
 
 REQUIRED_FIELDS = [
     "candidate_alias", "candidate_type", "canonical_ingredient", "item_seq", "item_name",
@@ -81,7 +91,7 @@ def build_allowed(rdata):
     return live, excluded_only, allowed
 
 
-def main(json_path, csv_path, alias_path, rel_path):
+def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR):
     v = V()
     qdata, err = load_json(json_path, "queue JSON")
     if err:
@@ -238,7 +248,96 @@ def main(json_path, csv_path, alias_path, rel_path):
                 pfn_src.append(f"{c.get('candidate_alias')!r}:{fld}")
     v.check(not pfn_src, 18, "product_full_name(pending/approved)은 item_seq·source_method·source_checked_at 필수", f"viol={pfn_src}")
 
+    # 19) detail_confirmed=true 후보 무결성: detail 필드 완비 + itemSeq 일치 + 단일주성분 + canonical 포함
+    dc_bad = []
+    for c in cands:
+        if str(c.get("detail_confirmed", "")).strip().lower() != "true":
+            continue
+        for fld in DETAIL_FIELDS:
+            if not str(c.get(fld, "")).strip():
+                dc_bad.append(f"{c.get('candidate_alias')!r}:{fld}빈값")
+        if (c.get("detail_item_seq") or "").strip() != (c.get("item_seq") or "").strip():
+            dc_bad.append(f"{c.get('candidate_alias')!r}:detail_item_seq≠item_seq")
+        din = c.get("detail_ingr_name") or ""
+        if "/" in din:
+            dc_bad.append(f"{c.get('candidate_alias')!r}:detail_ingr 복합제")
+        if c.get("canonical_ingredient", "") not in din:
+            dc_bad.append(f"{c.get('candidate_alias')!r}:canonical∉detail_ingr")
+    v.check(not dc_bad, 19, "detail_confirmed=true 무결성(detail 필드·itemSeq 일치·단일주성분·canonical 포함)", f"viol={dc_bad[:8]}")
+
+    # --- approved-ready 별도 파일 검증(있을 때) ---
+    if ar_path and os.path.exists(ar_path):
+        alias_seqs = {(p.get("item_seq") or "").strip() for p in (adata.get("product_aliases") or [])
+                      if (p.get("item_seq") or "").strip()}
+        for lst in (adata.get("verified_item_seqs") or {}).values():
+            for e in (lst or []):
+                if (e.get("item_seq") or "").strip():
+                    alias_seqs.add(e["item_seq"].strip())
+        _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only, alias_seqs)
+
     return _report(v, json_path)
+
+
+def _validate_approved_ready(v, ar_path, cands, existing, allowed, excluded_only, alias_seqs):
+    ar_data, err = load_json(ar_path, "approved-ready")
+    if err:
+        v.check(False, 20, "approved-ready 로드", err); return
+    ar = ar_data.get("approved_ready") if isinstance(ar_data, dict) else None
+    if not isinstance(ar, list):
+        v.check(False, 20, "approved-ready 구조(approved_ready 리스트)", f"type={type(ar).__name__}"); return
+    v.check(True, 20, "approved-ready 구조(approved_ready 리스트)")
+    qby = {norm(c.get("candidate_alias")): c for c in cands}
+
+    miss = [f"row{i}:{f}" for i, e in enumerate(ar) for f in AR_REQUIRED
+            if not str(e.get(f, "")).strip()]
+    v.check(not miss, 21, "approved-ready 필수 16필드 비어있지 않음", f"viol={miss[:8]}")
+
+    not_in_q, bad = [], []
+    for e in ar:
+        k = norm(e.get("candidate_alias"))
+        c = qby.get(k)
+        if not c:
+            not_in_q.append(e.get("candidate_alias")); continue
+        if c.get("status") != "pending" or c.get("candidate_type") != "product_full_name":
+            bad.append(f"{e.get('candidate_alias')!r}:queue status/type({c.get('status')}/{c.get('candidate_type')})")
+        if str(c.get("detail_confirmed", "")).strip().lower() != "true":
+            bad.append(f"{e.get('candidate_alias')!r}:detail_confirmed≠true")
+    v.check(not not_in_q, 22, "approved-ready 후보는 queue 에 존재", f"missing={not_in_q}")
+    v.check(not bad, 23, "approved-ready 의 queue 후보는 pending·product_full_name·detail_confirmed", f"viol={bad[:8]}")
+
+    coll = sorted({e.get("candidate_alias") for e in ar if norm(e.get("candidate_alias")) in existing})
+    v.check(not coll, 24, "approved-ready 기존 alias(66) 중복 금지", f"collide={coll}")
+
+    ci_bad = [f"{e.get('candidate_alias')!r}->{e.get('canonical_ingredient')!r}" for e in ar
+              if e.get("canonical_ingredient") not in allowed]
+    v.check(not ci_bad, 25, "approved-ready canonical ∈ 허용", f"viol={ci_bad}")
+
+    eso, combo, seqbad = [], [], []
+    for e in ar:
+        ci, seq, ingr = e.get("canonical_ingredient"), (e.get("item_seq") or "").strip(), e.get("ingr_name") or ""
+        if ci == EXCLUDED_BYPASS_INGREDIENT_NAME or ci in excluded_only or seq in FORBIDDEN_ITEMSEQS \
+                or "에스오메프라졸" in ingr or "넥시움" in str(e.get("candidate_alias", "")):
+            eso.append(e.get("candidate_alias"))
+        if "/" in ingr:
+            combo.append(e.get("candidate_alias"))
+        c = qby.get(norm(e.get("candidate_alias")))
+        if not NUMERIC_RE.match(seq) or (c and seq != (c.get("item_seq") or "").strip()) \
+                or (c and seq != (c.get("detail_item_seq") or "").strip()):
+            seqbad.append(f"{e.get('candidate_alias')!r}:item_seq")
+    v.check(not eso, 26, "approved-ready 에스오메프라졸/15행 금지", f"viol={eso}")
+    v.check(not combo, 27, "approved-ready 복합제 금지(ingr_name '/')", f"viol={combo}")
+    v.check(not seqbad, 28, "approved-ready item_seq 숫자형·queue/detail itemSeq 일치", f"viol={seqbad}")
+
+    ar_flag = [e.get("candidate_alias") for e in ar if str(e.get("approved_ready", "")).strip().lower() != "true"]
+    v.check(not ar_flag, 29, "approved-ready 는 approved_ready=true", f"viol={ar_flag}")
+
+    n_appr = sum(1 for c in cands if c.get("status") == "approved")
+    v.check(n_appr == 0, 30, "approved status 0 유지(approved-ready 는 status 아님)", f"approved={n_appr}")
+
+    # 31) approved-ready item_seq ∉ 기존 alias itemSeq(동일 제품 중복 금지 — 신규 제품만)
+    seq_dup = sorted({f"{e.get('candidate_alias')!r}:{(e.get('item_seq') or '').strip()}" for e in ar
+                      if (e.get("item_seq") or "").strip() in alias_seqs})
+    v.check(not seq_dup, 31, "approved-ready item_seq ∉ 기존 alias itemSeq(동일 제품 중복 금지)", f"viol={seq_dup}")
 
 
 def _report(v, json_path):
@@ -261,4 +360,5 @@ if __name__ == "__main__":
     cp = sys.argv[2] if len(sys.argv) > 2 else DEF_CSV
     ap = sys.argv[3] if len(sys.argv) > 3 else DEF_ALIAS
     rp = sys.argv[4] if len(sys.argv) > 4 else DEF_REL
-    sys.exit(main(jp, cp, ap, rp))
+    arp = sys.argv[5] if len(sys.argv) > 5 else DEF_AR
+    sys.exit(main(jp, cp, ap, rp, arp))
