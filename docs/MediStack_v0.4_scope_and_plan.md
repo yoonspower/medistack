@@ -7,6 +7,7 @@
 > 이 문서는 방향·우선순위·게이트만 정의한다. 실제 데이터/alias/코드 변경·배포는 각 트랙별 PM 판정 후 별도.
 
 > **진행 현황(2026-06-11)**: 운영 alias **53 → 66 라이브**(유형 A 성분 9건 `4e90143` + 유형 B A군 제품 4건 `9fdf97b`). validator #8 일반화(`verified_item_seqs` 화이트리스트, 13/13)·유형 B test suite 7/7. relation 30·DATA_URL=v0.2·에스오메프라졸/15행 제외 불변. 다음 트랙 = B군(추가확인 9성분)·브랜드코어. 상세: `MediStack_v0.4_typeB_alias_candidates.md`.
+> **v0.5 이관**: 200~300(v0.5)/500~1,000(v0.6) 대량 alias 확장은 수작업이 비현실적 → **자동 후보 생성 + 자동 검증 + 사람 승인 + batch 반영** pipeline으로 전환. 설계: `MediStack_v0.5_bulk_alias_pipeline_plan.md`.
 
 ---
 
