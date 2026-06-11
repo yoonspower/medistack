@@ -102,5 +102,20 @@
 4. **브랜드코어 포함 여부**: 1차는 정식 품목명만 / 브랜드코어(검증분)까지.
 5. **진행 순서 승인**: (a) validator 일반화+픽스처 검증 단계 → PM 판정 → (b) 유형 B 데이터 편입 단계, 2단계 분리로 진행.
 
+## 11. 구현 결과 메모 (2026-06-11)
+
+설계 §5 대로 **validator #8만 일반화 구현 완료**(유형 B alias 데이터는 아직 미추가).
+
+- **수정**: `scripts/validate_medistack_v0_3_aliases.py` 단일.
+  - `verified_item_seqs` 화이트리스트 파싱 추가(섹션 부재 시 빈 집합 → 하위호환).
+  - **#8 확장**: `item_seq ∈ (성분 relation itemSeq ∪ 검증 화이트리스트 itemSeq)`. 같은 canonical 이면 product alias 복수 허용.
+  - **#12 신규**: 화이트리스트 성분 키 정당성 — 라이브 relation 성분 실재 + excluded-only·에스오메프라졸 금지(에스오메프라졸은 라이브이므로 #9처럼 명시 가드).
+  - **#13 신규**: 화이트리스트 엔트리 위생 — item_seq 숫자형 + 성분내 중복 금지 + 제품/구매/제휴 필드 금지. 정당성·위생 통과분만 #8 union 에 등록(부정 화이트리스트가 #8 우회 불가).
+  - 검사 11 → **13**개. **하위호환**: 위치 선택지(§10-1)는 PM 미확정이나, 권고안(파일 내 `verified_item_seqs` 섹션) 리더만 구현 — 실제 alias 파일엔 섹션 미추가라 빈 집합 → 라이브 62개 **13/13 PASS**(기존 11/11과 동일 결과).
+- **테스트**: `scripts/test_validate_v0_3_typeB.py` + `scripts/fixtures/v0_4_typeB/`(허용 1 + 거부 5). 라이브 relations(읽기 전용)에 대해 실행, 거부는 실패 check 번호까지 단언.
+  - 결과 **7/7 PASS**: P1 하위호환·P3/P4/P5 허용 / F1→#8·F2→#12·F6→#12·F7→#13·F9→#13.
+- **불변 확인**: alias_count 62 / relation 30 / DATA_URL=`./data/medistack_v0.2_beta_export.json` 그대로, data·alias JSON 무변경.
+- **다음(별도 PM 판정)**: §10 위치/메타 확정 → 유형 B alias 실제 편입(검증된 itemSeq browse 채록 + 화이트리스트 + product alias).
+
 ---
 > 안전 원칙(불변): 원문에 없으면 노출 금지 / 원문보다 강하면 금지 / 복용량·제품추천이면 금지 / 칼륨 제품링크 금지 / clinical 검수 전 published 금지 / validator PASS 없으면 배포 금지 / alias는 검색 보조이지 의학정보 아님 / alias로 relation 신규생성·풀확장 금지 / 15행·excluded·에스오메프라졸 alias 우회 금지 / 숫자 위해 미검증·순열 alias 금지.

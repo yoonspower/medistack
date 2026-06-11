@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "note": "FIXTURE(테스트 전용). F7: verified_item_seqs 엔트리에 제품/구매 필드(buy_link) -> #13 FAIL.",
+    "kind": "fixture_typeB_reject"
+  },
+  "ingredient_aliases": [],
+  "product_aliases": [],
+  "verified_item_seqs": {
+    "알렌드론산": [
+      {"item_seq": "200009062", "item_name": "테스트정", "verified_at": "2026-06-11", "method": "fixture", "buy_link": "http://shop.example/x"}
+    ]
+  }
+}

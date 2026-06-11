@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "note": "FIXTURE(테스트 전용). F1: product alias item_seq 가 relation 인용분에도 화이트리스트에도 없음 -> #8 FAIL.",
+    "kind": "fixture_typeB_reject"
+  },
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {
+      "alias": "테스트미지품목정",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "999999999",
+      "source_relation_ids": [29]
+    }
+  ]
+}

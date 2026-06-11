@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "note": "FIXTURE(테스트 전용). F6: verified_item_seqs 에 에스오메프라졸 키(15행 우회 시도) -> #12 FAIL.",
+    "kind": "fixture_typeB_reject"
+  },
+  "ingredient_aliases": [],
+  "product_aliases": [],
+  "verified_item_seqs": {
+    "에스오메프라졸": [
+      {"item_seq": "201600209", "item_name": "에스오메프라졸 품목", "verified_at": "2026-06-11", "method": "fixture"}
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "note": "FIXTURE(테스트 전용). F2: verified_item_seqs 성분 키가 라이브 relation 에 없음(신규 relation 시도) -> #12 FAIL.",
+    "kind": "fixture_typeB_reject"
+  },
+  "ingredient_aliases": [],
+  "product_aliases": [],
+  "verified_item_seqs": {
+    "존재하지않는성분": [
+      {"item_seq": "123456789", "item_name": "가상품목", "verified_at": "2026-06-11", "method": "fixture"}
+    ]
+  }
+}

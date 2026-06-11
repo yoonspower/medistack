@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "note": "FIXTURE(테스트 전용). F9: verified_item_seqs item_seq 가 숫자형 아님 -> #13 FAIL.",
+    "kind": "fixture_typeB_reject"
+  },
+  "ingredient_aliases": [],
+  "product_aliases": [],
+  "verified_item_seqs": {
+    "알렌드론산": [
+      {"item_seq": "20060ABC", "item_name": "테스트정", "verified_at": "2026-06-11", "method": "fixture"}
+    ]
+  }
+}

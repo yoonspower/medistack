@@ -11,6 +11,9 @@ alias = 검색 보조 인덱스. 새 의학정보 아님. alias 만으로 relati
   - alias 중복 금지 / 빈 alias 금지.
   - 제품/구매/제휴 필드 금지(검색 보조만, 제품 UI 데이터 없음).
   - nutrient(영양소) 로 매핑되는 alias 금지(제품추천 오인 방지).
+  - (v0.4 유형 B) verified_item_seqs 화이트리스트: 동일 성분의 검증된 2번째 itemSeq 만 #8 허용집합에 추가.
+    성분 키는 라이브 실재 + excluded·에스오메프라졸 금지(#12), 엔트리는 숫자형 itemSeq·중복·필드 위생(#13).
+    섹션 부재 시 빈 집합 → 기존(relation 인용분만) 동작과 동일(하위호환).
 
 사용:
     python3 validate_medistack_v0_3_aliases.py <aliases.json> [relations_export.json]
@@ -29,6 +32,7 @@ EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"  # 제품 alias 금지 대�
 # 제품/제휴 의심 필드명(전면 금지). item_seq/source_relation_ids 는 추적 메타라 허용.
 PRODUCT_FIELD_HINT = re.compile(r"(affiliate|shop|buy|store|purchase|cart|price|link|coupon|deal)", re.IGNORECASE)
 ITEMSEQ_RE = re.compile(r"itemSeq=(\d+)")
+NUMERIC_RE = re.compile(r"^\d+$")  # item_seq 는 숫자 문자열만 (식약처 itemSeq)
 
 
 class V:
@@ -181,17 +185,57 @@ def main(alias_path, rel_path):
                 mism.append(f"{e.get('alias')!r}:id{rid}({ing}!={ci})")
     v.check(not mism, 7, "source_relation_ids 의 relation 성분 == canonical_ingredient", f"mismatch={mism}")
 
-    # 8) product alias: item_seq 가 해당 성분 relation 의 itemSeq 집합에 속함
+    # --- v0.4 유형 B: 검증된 교차확인 itemSeq 화이트리스트 ---
+    # verified_item_seqs: { canonical_ingredient: [ {item_seq, item_name, verified_at, method}, ... ] }
+    # relation 원문이 인용한 대표 itemSeq 1개 외에, 동일 성분의 검증된 2번째 품목 itemSeq 를 #8 허용집합에 추가.
+    # 섹션 부재 시 빈 화이트리스트 → #8 동작은 기존(relation 인용분만)과 동일(하위호환).
+    # 정당성(#12)/위생(#13)을 통과한 itemSeq 만 #8 union 에 등록(부정 화이트리스트가 #8 우회 못 함).
+    wl_raw = adata.get("verified_item_seqs", {})
+    ing_to_wl_seqs = {}   # ing -> set(item_seq), #8 union 용(검증 통과분만)
+    wl_bad_ing = []       # #12 위반 누적
+    wl_bad_entry = []     # #13 위반 누적
+    if not isinstance(wl_raw, dict):
+        wl_bad_ing.append(f"verified_item_seqs!=object({type(wl_raw).__name__})")
+        wl_raw = {}
+    for ing, lst in wl_raw.items():
+        ing_ok = True
+        if ing == EXCLUDED_BYPASS_INGREDIENT:
+            wl_bad_ing.append(f"{ing!r}:에스오메프라졸-금지(15행 우회)"); ing_ok = False
+        elif ing in excluded_only_ings:
+            wl_bad_ing.append(f"{ing!r}:excluded-only-매핑금지"); ing_ok = False
+        elif not nonempty_str(ing) or ing not in live_ings:
+            wl_bad_ing.append(f"{ing!r}:비라이브성분(신규 relation 금지)"); ing_ok = False
+        if not isinstance(lst, list):
+            wl_bad_entry.append(f"{ing!r}:entries!=list"); continue
+        seen_seq = set()
+        for ent in lst:
+            if not isinstance(ent, dict):
+                wl_bad_entry.append(f"{ing!r}:entry!=object"); continue
+            seq = ent.get("item_seq")
+            if not nonempty_str(seq) or not NUMERIC_RE.match(seq.strip()):
+                wl_bad_entry.append(f"{ing!r}:item_seq={seq!r}(숫자형 아님)")
+            else:
+                s = seq.strip()
+                if s in seen_seq:
+                    wl_bad_entry.append(f"{ing!r}:item_seq={s}(성분내 중복)")
+                seen_seq.add(s)
+                if ing_ok:
+                    ing_to_wl_seqs.setdefault(ing, set()).add(s)
+            for k in ent.keys():
+                if PRODUCT_FIELD_HINT.search(k):
+                    wl_bad_entry.append(f"{ing!r}:'{k}'(제품/구매 필드 금지)")
+
+    # 8) product alias: item_seq ∈ (해당 성분 relation itemSeq ∪ 검증 화이트리스트 itemSeq)
     seq_bad = []
     for _, e in dict_entries:
         if e.get("kind") != "product":
             continue
         ci = e.get("canonical_ingredient")
         seq = e.get("item_seq")
-        valid_seqs = ing_to_seqs.get(ci, set())
+        valid_seqs = ing_to_seqs.get(ci, set()) | ing_to_wl_seqs.get(ci, set())
         if not nonempty_str(seq) or seq not in valid_seqs:
             seq_bad.append(f"{e.get('alias')!r}:item_seq={seq} (성분 {ci} 유효={sorted(valid_seqs)})")
-    v.check(not seq_bad, 8, "product alias item_seq 가 해당 성분 relation itemSeq 에 속함", f"viol={seq_bad}")
+    v.check(not seq_bad, 8, "product alias item_seq ∈ 성분 relation itemSeq ∪ 검증 화이트리스트", f"viol={seq_bad}")
 
     # 9) 에스오메프라졸 제품 alias 금지(15행 우회 가드)
     eso = [f"{e.get('alias')!r}" for _, e in dict_entries
@@ -212,6 +256,14 @@ def main(alias_path, rel_path):
                 for _, e in dict_entries
                 if e.get("canonical_ingredient") in nutrients and e.get("canonical_ingredient") not in live_ings]
     v.check(not nut_viol, 11, "nutrient(영양소) 매핑 alias 금지", f"viol={nut_viol}")
+
+    # 12) verified_item_seqs 성분 키 정당성: 라이브 relation 성분 실재 + excluded·에스오메프라졸 금지
+    #     (화이트리스트가 신규 relation/봉인 항목으로 우회 연결되는 것을 차단)
+    v.check(not wl_bad_ing, 12,
+            "verified_item_seqs 성분 키 라이브 실재(excluded·에스오메프라졸 금지)", f"viol={wl_bad_ing}")
+    # 13) verified_item_seqs 엔트리 위생: item_seq 숫자형 + 성분내 중복 금지 + 제품/구매/제휴 필드 금지
+    v.check(not wl_bad_entry, 13,
+            "verified_item_seqs 엔트리 위생(item_seq 형식·중복·금지필드)", f"viol={wl_bad_entry}")
 
     total = len(v.passes) + len(v.fails)
     overall = "PASS" if not v.fails else "FAIL"

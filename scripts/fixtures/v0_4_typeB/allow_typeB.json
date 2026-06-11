@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "note": "FIXTURE(테스트 전용, 라이브 아님). 유형 B 허용 케이스 P3/P4/P5. relations 기준=medistack_v0.2_beta_export.json. 라이브 alias/데이터 아님.",
+    "kind": "fixture_typeB_allow"
+  },
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {
+      "alias": "테스트알렌드론산제2정",
+      "canonical_ingredient": "알렌드론산",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200009062",
+      "source_relation_ids": [29]
+    },
+    {
+      "alias": "테스트토라세미드대표정",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611522",
+      "source_relation_ids": [30, 31]
+    },
+    {
+      "alias": "테스트토라세미드제2정",
+      "canonical_ingredient": "토라세미드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611523",
+      "source_relation_ids": [30, 31]
+    }
+  ],
+  "verified_item_seqs": {
+    "알렌드론산": [
+      {"item_seq": "200009062", "item_name": "테스트알렌드론산제2정", "verified_at": "2026-06-11", "method": "browse-fixture"}
+    ],
+    "토라세미드": [
+      {"item_seq": "200611523", "item_name": "테스트토라세미드제2정", "verified_at": "2026-06-11", "method": "browse-fixture"}
+    ]
+  }
+}
