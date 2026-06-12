@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 506
+    "alias_count": 618
   },
   "ingredient_aliases": [
     {
@@ -5756,6 +5756,1574 @@
         30,
         31
       ]
+    },
+    {
+      "alias": "미카르디스플러스정40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200209850",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카르디스플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200209851",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자살탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200600123",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로제트플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607657",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자칼플러스정(로사르탄칼륨, 히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607668",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자칼플러스에프정(로사르탄칼륨,히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607669",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "국제로잘탄플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607692",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "국제로잘탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607693",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로살탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607707",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자타플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607776",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자타플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607777",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로핀플러스정(로사르탄칼륨, 히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607818",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "뉴로탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607907",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "뉴로탄플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607908",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로잘플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607930",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607941",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사플러스-에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607942",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자틴플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607957",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자틴플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200607958",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로더플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200608192",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사트플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200608219",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사닌플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200608254",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사닌플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200608255",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "대한뉴팜로잘탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200611369",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로지텐플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200700234",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자살탄플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200700468",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "루자탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200700470",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사맥스플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200701917",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사타플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200703169",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사타플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200703170",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로제틴플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200707373",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자신플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200708264",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "맥스디오플러스정160/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200805901",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "맥스디오플러스정80/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200805919",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "네오반플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200806640",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "디로탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200807090",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀오살탄정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200807430",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀오살탄정160/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200807431",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀오탄정80/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200808244",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀오탄정160/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200808245",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "디로탄플러스정160/12.5mg(발사르탄, 히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200808247",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자살탄플러스프로정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200808248",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자탐플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200809464",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자탐플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200809791",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "고려칸데사르탄플러스정(칸데사르탄실렉세틸,히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200904344",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "데잘탄플러스정16/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200906926",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카탄플러스정40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201000877",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카탄플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201000878",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카탄플러스정80/25밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201005059",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "디발탄플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201203611",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카테르플러스정80/25밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201207594",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "글로아타플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201208433",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카테르플러스정40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201208653",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카테르플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201208654",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "라코르정60/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201307931",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로우텍플러스정20/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201308504",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "라코르정120/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201309443",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201310295",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자플엠정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201310333",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로카탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201400053",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로카탄플러스프로정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201400438",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로카탄플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201400931",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "바사탄플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201403269",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "바사탄플러스정160/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201403270",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201404809",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로잘핀플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201405989",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "네오칸데플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201500210",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "대화로자탄플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201500534",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카르텔미플러스정40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201503630",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미카르텔미플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201503631",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "바레탄플러스정80/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201507998",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "바레탄플러스정160/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201507999",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자인플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201508003",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자인플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201508004",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "바르반플러스정80/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201602890",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "디오브이플러스정160/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201603746",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "디오브이플러스정80/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201603747",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로우탄플러스정(올메사르탄메독소밀, 히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201603967",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미르토플러스정80/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201605524",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미르텔플러스정40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201701098",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미르텔플러스정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201701099",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사르플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201705814",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자탈플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201708478",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미르토플러스정40/12.5mg",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201802209",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사틴플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201802623",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사윈플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201804954",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "뉴비카플러스정5/40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201805261",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "뉴비카플러스정5/20/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201805262",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "뉴비카플러스정10/40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201805263",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로우비카에이치씨티정5/40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201900767",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로우비카에이치씨티정5/20/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201900768",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로우비카에이치씨티정10/40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201900774",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로코탄플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903555",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미살탄플러스정80/12.5밀리그램(텔미사르탄, 히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903559",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "미살탄플러스정40/12.5밀리그램(텔미사르탄, 히드로클로로티아지드)",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201903560",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사탈플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201904374",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사르플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201906270",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사텍플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201906383",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "뉴코사르플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "201907293",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사크로디정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202000328",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로자딘플러스정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202000847",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "메가텔미클정40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202001518",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로사텍플러스에프정",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202001999",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로메탄에이치씨티정10/40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202002694",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로메탄에이치씨티정5/40/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202002697",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "로메탄에이치씨티정5/20/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202002698",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "메가텔미클정80/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202003085",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀카브플러스정60/10/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202201263",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀카브플러스정60/5/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202201264",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀카브플러스정30/5/12.5밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202201265",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀카브플러스정60/10/25밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202201266",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
+    },
+    {
+      "alias": "듀카브플러스정60/5/25밀리그램",
+      "canonical_ingredient": "히드로클로로티아지드",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "202202455",
+      "source_relation_ids": [
+        19,
+        20
+      ],
+      "is_combination": true,
+      "combination_basis_ingredient": "히드로클로로티아지드",
+      "combination_notice_required": true
     }
   ],
   "verified_item_seqs": {
@@ -10062,6 +11630,1128 @@
         "verified_at": "2026-06-12",
         "method": "nedrug getItemDetail v0.7 G3 combo batch v0.7-combo-1 ingrName=오메프라졸 / 탄산수소나트륨",
         "batch_id": "v0.7-combo-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      }
+    ],
+    "히드로클로로티아지드": [
+      {
+        "item_seq": "200209850",
+        "item_name": "미카르디스플러스정40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200209851",
+        "item_name": "미카르디스플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200600123",
+        "item_name": "로자살탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607657",
+        "item_name": "로제트플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607668",
+        "item_name": "로자칼플러스정(로사르탄칼륨, 히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607669",
+        "item_name": "로자칼플러스에프정(로사르탄칼륨,히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607692",
+        "item_name": "국제로잘탄플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607693",
+        "item_name": "국제로잘탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607707",
+        "item_name": "로살탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607776",
+        "item_name": "로자타플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607777",
+        "item_name": "로자타플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607818",
+        "item_name": "로핀플러스정(로사르탄칼륨, 히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607907",
+        "item_name": "뉴로탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607908",
+        "item_name": "뉴로탄플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607930",
+        "item_name": "로잘플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607941",
+        "item_name": "로사플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607942",
+        "item_name": "로사플러스-에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607957",
+        "item_name": "로자틴플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200607958",
+        "item_name": "로자틴플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200608192",
+        "item_name": "로더플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200608219",
+        "item_name": "로사트플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200608254",
+        "item_name": "로사닌플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200608255",
+        "item_name": "로사닌플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200611369",
+        "item_name": "대한뉴팜로잘탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200700234",
+        "item_name": "로지텐플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200700468",
+        "item_name": "로자살탄플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200700470",
+        "item_name": "루자탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200701917",
+        "item_name": "로사맥스플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200703169",
+        "item_name": "로사타플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200703170",
+        "item_name": "로사타플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200707373",
+        "item_name": "로제틴플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200708264",
+        "item_name": "로자신플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200805901",
+        "item_name": "맥스디오플러스정160/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200805919",
+        "item_name": "맥스디오플러스정80/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200806640",
+        "item_name": "네오반플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200807090",
+        "item_name": "디로탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200807430",
+        "item_name": "듀오살탄정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200807431",
+        "item_name": "듀오살탄정160/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200808244",
+        "item_name": "듀오탄정80/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200808245",
+        "item_name": "듀오탄정160/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200808247",
+        "item_name": "디로탄플러스정160/12.5mg(발사르탄, 히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200808248",
+        "item_name": "로자살탄플러스프로정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200809464",
+        "item_name": "로자탐플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200809791",
+        "item_name": "로자탐플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200904344",
+        "item_name": "고려칸데사르탄플러스정(칸데사르탄실렉세틸,히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=칸데사르탄실렉세틸 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200906926",
+        "item_name": "데잘탄플러스정16/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=칸데사르탄실렉세틸 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201000877",
+        "item_name": "미카탄플러스정40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201000878",
+        "item_name": "미카탄플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201005059",
+        "item_name": "미카탄플러스정80/25밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201203611",
+        "item_name": "디발탄플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201207594",
+        "item_name": "미카테르플러스정80/25밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201208433",
+        "item_name": "글로아타플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=칸데사르탄실렉세틸 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201208653",
+        "item_name": "미카테르플러스정40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201208654",
+        "item_name": "미카테르플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201307931",
+        "item_name": "라코르정60/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=피마사르탄칼륨삼수화물 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201308504",
+        "item_name": "로우텍플러스정20/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=올메사탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201309443",
+        "item_name": "라코르정120/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=피마사르탄칼륨삼수화물 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201310295",
+        "item_name": "로사탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201310333",
+        "item_name": "로자플엠정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201400053",
+        "item_name": "로카탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201400438",
+        "item_name": "로카탄플러스프로정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201400931",
+        "item_name": "로카탄플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201403269",
+        "item_name": "바사탄플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201403270",
+        "item_name": "바사탄플러스정160/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201404809",
+        "item_name": "로탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201405989",
+        "item_name": "로잘핀플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201500210",
+        "item_name": "네오칸데플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=칸데사르탄실렉세틸 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201500534",
+        "item_name": "대화로자탄플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201503630",
+        "item_name": "미카르텔미플러스정40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201503631",
+        "item_name": "미카르텔미플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201507998",
+        "item_name": "바레탄플러스정80/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201507999",
+        "item_name": "바레탄플러스정160/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201508003",
+        "item_name": "로자인플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201508004",
+        "item_name": "로자인플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201602890",
+        "item_name": "바르반플러스정80/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201603746",
+        "item_name": "디오브이플러스정160/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201603747",
+        "item_name": "디오브이플러스정80/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=발사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201603967",
+        "item_name": "로우탄플러스정(올메사르탄메독소밀, 히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201605524",
+        "item_name": "미르토플러스정80/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201701098",
+        "item_name": "미르텔플러스정40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201701099",
+        "item_name": "미르텔플러스정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201705814",
+        "item_name": "로사르플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201708478",
+        "item_name": "로자탈플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201802209",
+        "item_name": "미르토플러스정40/12.5mg",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201802623",
+        "item_name": "로사틴플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201804954",
+        "item_name": "로사윈플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201805261",
+        "item_name": "뉴비카플러스정5/40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201805262",
+        "item_name": "뉴비카플러스정5/20/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201805263",
+        "item_name": "뉴비카플러스정10/40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201900767",
+        "item_name": "로우비카에이치씨티정5/40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201900768",
+        "item_name": "로우비카에이치씨티정5/20/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201900774",
+        "item_name": "로우비카에이치씨티정10/40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201903555",
+        "item_name": "로코탄플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201903559",
+        "item_name": "미살탄플러스정80/12.5밀리그램(텔미사르탄, 히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201903560",
+        "item_name": "미살탄플러스정40/12.5밀리그램(텔미사르탄, 히드로클로로티아지드)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201904374",
+        "item_name": "로사탈플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201906270",
+        "item_name": "로사르플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201906383",
+        "item_name": "로사텍플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "201907293",
+        "item_name": "뉴코사르플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202000328",
+        "item_name": "로사크로디정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202000847",
+        "item_name": "로자딘플러스정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202001518",
+        "item_name": "메가텔미클정40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202001999",
+        "item_name": "로사텍플러스에프정",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=로사르탄칼륨 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202002694",
+        "item_name": "로메탄에이치씨티정10/40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202002697",
+        "item_name": "로메탄에이치씨티정5/40/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202002698",
+        "item_name": "로메탄에이치씨티정5/20/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 올메사르탄메독소밀 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202003085",
+        "item_name": "메가텔미클정80/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=텔미사르탄 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202201263",
+        "item_name": "듀카브플러스정60/10/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 피마사르탄칼륨삼수화물 과립 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202201264",
+        "item_name": "듀카브플러스정60/5/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 피마사르탄칼륨삼수화물 과립 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202201265",
+        "item_name": "듀카브플러스정30/5/12.5밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 피마사르탄칼륨삼수화물 과립 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202201266",
+        "item_name": "듀카브플러스정60/10/25밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 피마사르탄칼륨삼수화물 과립 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "202202455",
+        "item_name": "듀카브플러스정60/5/25밀리그램",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.8 H-G4 combo batch v0.8-hctz-1 ingrName=암로디핀베실산염 / 피마사르탄칼륨삼수화물 과립 / 히드로클로로티아지드",
+        "batch_id": "v0.8-hctz-1",
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-12",
         "detail_checked_at": "2026-06-12"

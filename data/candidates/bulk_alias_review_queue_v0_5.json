@@ -12177,9 +12177,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '칸데사르탄실렉세틸/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12187,7 +12187,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "국제로잘탄플러스에프정",
@@ -12202,9 +12203,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-002",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12213,7 +12214,7 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "국제로잘탄플러스정",
@@ -12228,9 +12229,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-002",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12239,7 +12240,7 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로아타플러스정",
@@ -12254,9 +12255,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '칸데사르탄실렉세틸/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12264,7 +12265,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "네오반플러스정",
@@ -12279,9 +12281,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-002",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12290,7 +12292,7 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "네오칸데플러스정",
@@ -12305,9 +12307,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '칸데사르탄실렉세틸/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12315,7 +12317,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "뉴로탄플러스에프정",
@@ -12330,9 +12333,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-002",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12341,7 +12344,7 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "뉴로탄플러스정",
@@ -12356,9 +12359,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-002",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12367,7 +12370,7 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "뉴비카플러스정10/40/12.5밀리그램",
@@ -12382,9 +12385,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사탄메독소밀/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12392,7 +12395,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "뉴비카플러스정5/20/12.5밀리그램",
@@ -12407,9 +12411,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사탄메독소밀/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12417,7 +12421,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "뉴비카플러스정5/40/12.5밀리그램",
@@ -12432,9 +12437,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사탄메독소밀/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12442,7 +12447,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "뉴코사르플러스정",
@@ -12457,9 +12463,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12467,7 +12473,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "대한뉴팜로잘탄플러스정",
@@ -12482,9 +12489,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12492,7 +12499,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "대화로자탄플러스에프정",
@@ -12507,9 +12515,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12517,7 +12525,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "데잘탄플러스정16/12.5밀리그램",
@@ -12532,9 +12541,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '칸데사르탄실렉세틸/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12542,7 +12551,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀오살탄정160/12.5밀리그램",
@@ -12557,9 +12567,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12567,7 +12577,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀오살탄정80/12.5밀리그램",
@@ -12582,9 +12593,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12592,7 +12603,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀오탄정160/12.5mg",
@@ -12607,9 +12619,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12617,7 +12629,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀오탄정80/12.5mg",
@@ -12632,9 +12645,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12642,7 +12655,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀카브플러스정30/5/12.5밀리그램",
@@ -12657,9 +12671,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물 과립/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12667,7 +12681,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀카브플러스정60/10/12.5밀리그램",
@@ -12682,9 +12697,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물 과립/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12692,7 +12707,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀카브플러스정60/10/25밀리그램",
@@ -12707,9 +12723,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물 과립/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12717,7 +12733,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀카브플러스정60/5/12.5밀리그램",
@@ -12732,9 +12749,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물 과립/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12742,7 +12759,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "듀카브플러스정60/5/25밀리그램",
@@ -12757,9 +12775,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물 과립/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12767,7 +12785,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "디로탄플러스정",
@@ -12782,9 +12801,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12792,7 +12811,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "디로탄플러스정160/12.5mg(발사르탄, 히드로클로로티아지드)",
@@ -12807,9 +12827,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12817,7 +12837,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "디발탄플러스정80/12.5밀리그램",
@@ -12832,9 +12853,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12842,7 +12863,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "디오브이플러스정160/12.5mg",
@@ -12857,9 +12879,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12867,7 +12889,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "디오브이플러스정80/12.5mg",
@@ -12882,9 +12905,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12892,7 +12915,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "라코르정120/12.5밀리그램",
@@ -12907,9 +12931,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12917,7 +12941,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "라코르정60/12.5밀리그램",
@@ -12932,9 +12957,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '피마사르탄칼륨삼수화물/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12942,7 +12967,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로더플러스정",
@@ -12957,9 +12983,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-005",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12967,7 +12993,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로메탄에이치씨티정10/40/12.5밀리그램",
@@ -12982,9 +13009,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사르탄메독소밀/히드로클로로티아지드/암로디핀베실산염'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -12992,7 +13019,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로메탄에이치씨티정5/20/12.5밀리그램",
@@ -13007,9 +13035,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사르탄메독소밀/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13017,7 +13045,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로메탄에이치씨티정5/40/12.5밀리그램",
@@ -13032,9 +13061,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사르탄메독소밀/암로디핀베실산염/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13042,7 +13071,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사닌플러스에프정",
@@ -13057,9 +13087,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13067,7 +13097,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사닌플러스정",
@@ -13082,9 +13113,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13092,7 +13123,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사르플러스에프정",
@@ -13107,9 +13139,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13117,7 +13149,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사르플러스정",
@@ -13132,9 +13165,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13142,7 +13175,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사맥스플러스정",
@@ -13157,9 +13191,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13167,7 +13201,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사윈플러스정",
@@ -13182,9 +13217,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13192,7 +13227,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사크로디정",
@@ -13207,9 +13243,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13217,7 +13253,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사타플러스에프정",
@@ -13232,9 +13269,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13242,7 +13279,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사타플러스정",
@@ -13257,9 +13295,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13267,7 +13305,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사탄플러스정",
@@ -13282,9 +13321,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13292,7 +13331,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사탈플러스정",
@@ -13307,9 +13347,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13317,7 +13357,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사텍플러스에프정",
@@ -13332,9 +13373,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13342,7 +13383,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사텍플러스정",
@@ -13357,9 +13399,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13367,7 +13409,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사트플러스정",
@@ -13382,9 +13425,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13392,7 +13435,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사틴플러스에프정",
@@ -13407,9 +13451,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13417,7 +13461,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사플러스-에프정",
@@ -13432,9 +13477,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13442,7 +13487,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로사플러스정",
@@ -13457,9 +13503,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13467,7 +13513,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로살탄플러스정",
@@ -13482,9 +13529,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.5-006",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13492,7 +13539,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로우비카에이치씨티정10/40/12.5밀리그램",
@@ -13507,9 +13555,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '암로디핀베실산염/올메사르탄메독소밀/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13517,7 +13565,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로우비카에이치씨티정5/20/12.5밀리그램",
@@ -13532,9 +13581,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '암로디핀베실산염/올메사르탄메독소밀/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13542,7 +13591,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로우비카에이치씨티정5/40/12.5밀리그램",
@@ -13557,9 +13607,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '암로디핀베실산염/올메사르탄메독소밀/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13567,7 +13617,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로우탄플러스정(올메사르탄메독소밀, 히드로클로로티아지드)",
@@ -13582,9 +13633,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사르탄메독소밀/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13592,7 +13643,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로우텍플러스정20/12.5밀리그램",
@@ -13607,9 +13659,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '올메사탄메독소밀/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13617,7 +13669,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자딘플러스정",
@@ -13632,9 +13685,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13642,7 +13695,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자살탄플러스에프정",
@@ -13657,9 +13711,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13667,7 +13721,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자살탄플러스정",
@@ -13682,9 +13737,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13692,7 +13747,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자살탄플러스프로정",
@@ -13707,9 +13763,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13717,7 +13773,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자신플러스정",
@@ -13732,9 +13789,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13742,7 +13799,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자인플러스에프정",
@@ -13757,9 +13815,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13767,7 +13825,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자인플러스정",
@@ -13782,9 +13841,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13792,7 +13851,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자칼플러스에프정(로사르탄칼륨,히드로클로로티아지드)",
@@ -13807,9 +13867,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13817,7 +13877,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자칼플러스정(로사르탄칼륨, 히드로클로로티아지드)",
@@ -13832,9 +13893,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13842,7 +13903,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자타플러스에프정",
@@ -13857,9 +13919,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13867,7 +13929,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자타플러스정",
@@ -13882,9 +13945,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13892,7 +13955,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자탈플러스정",
@@ -13907,9 +13971,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13917,7 +13981,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자탐플러스에프정",
@@ -13932,9 +13997,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13942,7 +14007,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자탐플러스정",
@@ -13957,9 +14023,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13967,7 +14033,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자틴플러스에프정",
@@ -13982,9 +14049,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -13992,7 +14059,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자틴플러스정",
@@ -14007,9 +14075,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14017,7 +14085,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로자플엠정",
@@ -14032,9 +14101,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14042,7 +14111,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로잘플러스정",
@@ -14057,9 +14127,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14067,7 +14137,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로잘핀플러스정",
@@ -14082,9 +14153,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14092,7 +14163,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로제트플러스정",
@@ -14107,9 +14179,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-007",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14117,7 +14189,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로제틴플러스정",
@@ -14132,9 +14205,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14142,7 +14215,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로지텐플러스정",
@@ -14157,9 +14231,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14167,7 +14241,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로카탄플러스에프정",
@@ -14182,9 +14257,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14192,7 +14267,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로카탄플러스정",
@@ -14207,9 +14283,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14217,7 +14293,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로카탄플러스프로정",
@@ -14232,9 +14309,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14242,7 +14319,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로코탄플러스정",
@@ -14257,9 +14335,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14267,7 +14345,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로탄플러스정",
@@ -14282,9 +14361,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14292,7 +14371,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "로핀플러스정(로사르탄칼륨, 히드로클로로티아지드)",
@@ -14307,9 +14387,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14317,7 +14397,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "루자탄플러스정",
@@ -14332,9 +14413,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '로사르탄칼륨/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14342,7 +14423,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "맥스디오플러스정160/12.5mg",
@@ -14357,9 +14439,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14367,7 +14449,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "맥스디오플러스정80/12.5mg",
@@ -14382,9 +14465,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14392,7 +14475,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "메가텔미클정40/12.5밀리그램",
@@ -14407,9 +14491,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14417,7 +14501,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "메가텔미클정80/12.5밀리그램",
@@ -14432,9 +14517,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14442,7 +14527,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미르텔플러스정40/12.5밀리그램",
@@ -14457,9 +14543,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14467,7 +14553,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미르텔플러스정80/12.5밀리그램",
@@ -14482,9 +14569,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14492,7 +14579,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미르토플러스정40/12.5mg",
@@ -14507,9 +14595,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14517,7 +14605,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미르토플러스정80/12.5mg",
@@ -14532,9 +14621,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14542,7 +14631,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미살탄플러스정40/12.5밀리그램(텔미사르탄, 히드로클로로티아지드)",
@@ -14557,9 +14647,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14567,7 +14657,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미살탄플러스정80/12.5밀리그램(텔미사르탄, 히드로클로로티아지드)",
@@ -14582,9 +14673,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14592,7 +14683,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카르디스플러스정40/12.5밀리그램",
@@ -14607,9 +14699,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14617,7 +14709,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카르디스플러스정80/12.5밀리그램",
@@ -14632,9 +14725,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14642,7 +14735,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카르텔미플러스정40/12.5밀리그램",
@@ -14657,9 +14751,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14667,7 +14761,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카르텔미플러스정80/12.5밀리그램",
@@ -14682,9 +14777,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14692,7 +14787,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카탄플러스정40/12.5밀리그램",
@@ -14707,9 +14803,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14717,7 +14813,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카탄플러스정80/12.5밀리그램",
@@ -14732,9 +14829,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14742,7 +14839,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카탄플러스정80/25밀리그램",
@@ -14757,9 +14855,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14767,7 +14865,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카테르플러스정40/12.5밀리그램",
@@ -14782,9 +14881,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14792,7 +14891,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카테르플러스정80/12.5밀리그램",
@@ -14807,9 +14907,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14817,7 +14917,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "미카테르플러스정80/25밀리그램",
@@ -14832,9 +14933,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '텔미사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14842,7 +14943,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "바레탄플러스정160/12.5mg",
@@ -14857,9 +14959,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14867,7 +14969,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "바레탄플러스정80/12.5mg",
@@ -14882,9 +14985,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14892,7 +14995,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "바르반플러스정80/12.5mg",
@@ -14907,9 +15011,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14917,7 +15021,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "바사탄플러스정160/12.5밀리그램",
@@ -14932,9 +15037,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14942,7 +15047,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "바사탄플러스정80/12.5밀리그램",
@@ -14957,9 +15063,9 @@
       "confidence": "low",
       "risk_level": "low",
       "reason": "nedrug searchDrug(ingrName1=히드로클로로티아지드) 결과 복합제 주성분 '발사르탄/히드로클로로티아지드'(canonical 히드로클로로티아지드 포함). 단일성분 아님 → deferred, 사람 검토",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "복합제(다성분 주성분) — 단일성분 아님, 사람 검토 필요",
-      "reviewer": "",
+      "reviewer": "v0.8-hctz-g4",
       "batch_id": "v0.6-009",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -14967,7 +15073,8 @@
       "detail_item_seq": "",
       "detail_item_name": "",
       "detail_ingr_name": "",
-      "detail_match_result": ""
+      "detail_match_result": "",
+      "incorporated_at": "2026-06-12"
     }
   ]
 }

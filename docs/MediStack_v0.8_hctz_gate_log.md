@@ -83,3 +83,31 @@
 **검증(전체 회귀):** v0.1 12/12 · v0.2 15/15 · v0.3 **16/16** · bulk 152/152 · typeB 7/7 · combo 가드 9/9 · combo AR 테스트 13/13 · **AR(v0.8 HCTZ) 13/13** · AR(v0.7) 13/13 · smoke 10/10 — ALL PASS.
 
 **STOP 가드(전부 충족):** queue 추적파일 diff 0(**flip 없음** — 여전히 deferred 112) · alias JSON diff 0 · **alias_count 506 유지** · relation 30 · DATA_URL 불변 · incorporated=true 0건. 신규 파일은 combo AR(json/csv)뿐.
+
+---
+
+## H-G4 — HCTZ 복합제 112건 alias 반영 (PM 명시 승인 2026-06-12) ✅
+
+**승인:** PM "v0.8 H-G4 반영 승인…전제/사후 assert 통과 시에만 커밋·deploy."
+
+**반영 방식:** ephemeral `/tmp/ms_incorporate_hctz.py`(전제/사후 assert 내장·**미커밋**) — v0.7 G4 패턴 승계(생성↔반영 분리).
+
+**5개 변경(전제 assert 통과 후 적용):**
+1. product_aliases +112 (alias=getItemDetail 품목명·canonical=HCTZ·is_combination·basis=HCTZ·notice·source_relation_ids=[19,20] = HCTZ 칼륨/마그네슘).
+2. verified_item_seqs["히드로클로로티아지드"] 신규 +112 (430→542·12→13).
+3. meta.alias_count 506→618.
+4. queue flip 112 deferred→approved(reviewer=v0.8-hctz-g4·incorporated_at·**detail_confirmed 미설정**=bulk#19 회피) — JSON+CSV 동기(CSV 112행만).
+5. combo AR incorporated=true ×112 + meta.incorporated=true(옵션 A #11 실반영 검증 대상화).
+
+**델타(전제→사후 assert 둘 다 통과):**
+| 항목 | 전 | 후 |
+|---|---|---|
+| alias_count | 506 | **618** |
+| product_aliases | 468 | **580** |
+| verified_item_seqs | 430/12 | **542/13** (HCTZ 112 신규) |
+| queue | deferred 112 | **approved 552**(deferred 0) |
+| ingredient_aliases · relation · DATA_URL | 38 · 30 · 불변 | **38 · 30 · 불변** |
+
+**검증(반영 후 전체):** v0.1 12/12 · v0.2 15/15 · v0.3 **16/16** · bulk **152/152** · combo AR(v0.8 HCTZ) **13/13**(incorporated=true·#11 실반영) · typeB 7/7 · combo 가드 9/9 · combo AR 테스트 13/13 · smoke 10/10 — ALL PASS.
+
+**diff 무결성:** alias JSON 은 `json.dump(indent=2·ensure_ascii=False)` 와 원본 byte-identical 확인 → 변경은 **순수 추가**(기존 468 product·430 verified·38 ingredient byte 동일·verified 기존키 동일). 큰 라인수는 반복 JSON git 정렬 artifact(데이터 동일성·validator 입증). CSV 112행만. 금지불변: 에스오메/15행 0·K보존 파트너 0·제품/구매 필드 0·relation/DATA_URL/export 불변.
