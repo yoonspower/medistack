@@ -12,7 +12,10 @@
     "alias_count_at_generation": 618,
     "approved_ready_count": 3,
     "deferred_count": 0,
-    "deferred": []
+    "deferred": [],
+    "incorporated_count": 3,
+    "incorporated_at": "2026-06-12",
+    "incorporated_alias_batch": "v0.9-batch-surface"
   },
   "approved_ready": [
     {
@@ -32,7 +35,9 @@
       "approved_ready": "true",
       "reason": "getItemDetail 재채록: 개행만 제거→공식 '{브랜드}(주성분)' 동형·단일성분·canonical 포함. 사람 검토 후 다음 batch 반영 대상",
       "reviewer_required": "true",
-      "incorporated": "false"
+      "incorporated": "true",
+      "incorporated_at": "2026-06-12",
+      "incorporated_alias_batch": "v0.9-batch-surface"
     },
     {
       "candidate_alias": "레보펙신정250밀리그램(레보플록사신수화물)",
@@ -51,7 +56,9 @@
       "approved_ready": "true",
       "reason": "getItemDetail 재채록: 개행만 제거→공식 '{브랜드}(주성분)' 동형·단일성분·canonical 포함. 사람 검토 후 다음 batch 반영 대상",
       "reviewer_required": "true",
-      "incorporated": "false"
+      "incorporated": "true",
+      "incorporated_at": "2026-06-12",
+      "incorporated_alias_batch": "v0.9-batch-surface"
     },
     {
       "candidate_alias": "레보펙신정500밀리그램(레보플록사신수화물)",
@@ -70,7 +77,9 @@
       "approved_ready": "true",
       "reason": "getItemDetail 재채록: 개행만 제거→공식 '{브랜드}(주성분)' 동형·단일성분·canonical 포함. 사람 검토 후 다음 batch 반영 대상",
       "reviewer_required": "true",
-      "incorporated": "false"
+      "incorporated": "true",
+      "incorporated_at": "2026-06-12",
+      "incorporated_alias_batch": "v0.9-batch-surface"
     }
   ]
 }

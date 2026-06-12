@@ -88,10 +88,14 @@ test v0_3_combo·test v0_3_typeB·smoke HCTZ·smoke regression·surface forms(li
 | relation / DATA_URL | 30 / `./data/medistack_v0.2_beta_export.json` | 불변 |
 | queue 파일 | 무변경(3건 여전히 pending) | git diff 0 |
 
-## 8. 다음 단계 — 실제 alias 반영(PM 승인 필요)
+## 8. 실제 alias 반영 — ✅ 완료 (PM 승인 2026-06-12)
 
-approved-ready 3건을 alias JSON 에 반영하면: **product_aliases +3(580→583)** +
-**verified_item_seqs +3**(독시사이클린·레보플록사신 — 둘 다 기존 verified 키 append, 13성분 유지) +
-**alias_count 618→621**. source_relation_ids = canonical 별 라이브 relation id(독시사이클린 [7,8,9]·
-레보플록사신 [1,2,3]). 반영은 **PM 명시 승인 후 별도 단계**(ephemeral 반영 스크립트 + #필요시 validator 갱신 + smoke).
-→ 재개 트리거 "메디스택 v0.9 반영".
+approved-ready 3건을 alias JSON 에 반영: **product_aliases +3(580→583)** +
+**verified_item_seqs +3**(독시사이클린 +1·레보플록사신 +2 — 둘 다 기존 verified 키 append, 13성분 유지) +
+**alias_count 618→621**. source_relation_ids = 독시사이클린 [7,8,9]·레보플록사신 [1,2,3].
+- 반영 = ephemeral `/tmp/ms_incorporate_v0_9_surface.py`(전제/사후 assert 내장·**미커밋**, alias md5 250c25b8→03fb2137).
+- queue 3건 status pending→approved(reviewer `v0.9-surface-1`·incorporated_at·candidate_alias 개행 제거)·AR `incorporated="true"`.
+- **validator `recollect_surface_candidates_v0_9.py --validate` incorporation-aware 갱신**(incorporated∈{false,true},
+  true→라이브 실제 반영[alias∈live·itemSeq∈verified] 검증 — Phase4 #16·Phase6 #54 패턴).
+- **무결성: 기존 product 580·ingredient 38·verified 542 전부 byte 보존**(HEAD 대조), alias diff 삭제줄=`alias_count` 1줄뿐, queue 정확히 3건만 변경.
+- 검증 ALL PASS(13/13)·relation 30·DATA_URL·export·src·v0.1/v0.2 불변. 라이브 alias **621**.

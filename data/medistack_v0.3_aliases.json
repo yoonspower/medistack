@@ -4,7 +4,7 @@
     "kind": "alias_operational",
     "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
     "relation_source": "medistack_v0.2_beta_export.json",
-    "alias_count": 618
+    "alias_count": 621
   },
   "ingredient_aliases": [
     {
@@ -7324,6 +7324,42 @@
       "is_combination": true,
       "combination_basis_ingredient": "히드로클로로티아지드",
       "combination_notice_required": true
+    },
+    {
+      "alias": "신일모노독시엠캡슐(독시사이클린수화물)",
+      "canonical_ingredient": "독시사이클린",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "199602155",
+      "source_relation_ids": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "alias": "레보펙신정250밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200710882",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alias": "레보펙신정500밀리그램(레보플록사신수화물)",
+      "canonical_ingredient": "레보플록사신",
+      "kind": "product",
+      "lang": "ko",
+      "item_seq": "200703280",
+      "source_relation_ids": [
+        1,
+        2,
+        3
+      ]
     }
   ],
   "verified_item_seqs": {
@@ -8039,6 +8075,16 @@
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-11",
         "detail_checked_at": "2026-06-11"
+      },
+      {
+        "item_seq": "199602155",
+        "item_name": "신일모노독시엠캡슐(독시사이클린수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.9 surface re-record batch v0.9-surface-1 ingrName=독시사이클린수화물",
+        "batch_id": "v0.9-surface-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
       }
     ],
     "레보티록신": [
@@ -9080,6 +9126,26 @@
         "verified_at": "2026-06-12",
         "method": "nedrug searchDrug+getItemDetail Phase19 batch v0.6-batch-9 ingrName=레보플록사신수화물",
         "batch_id": "v0.6-batch-9",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200710882",
+        "item_name": "레보펙신정250밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.9 surface re-record batch v0.9-surface-1 ingrName=레보플록사신수화물",
+        "batch_id": "v0.9-surface-1",
+        "source_method": "nedrug.getItemDetail",
+        "source_checked_at": "2026-06-12",
+        "detail_checked_at": "2026-06-12"
+      },
+      {
+        "item_seq": "200703280",
+        "item_name": "레보펙신정500밀리그램(레보플록사신수화물)",
+        "verified_at": "2026-06-12",
+        "method": "nedrug getItemDetail v0.9 surface re-record batch v0.9-surface-1 ingrName=레보플록사신수화물",
+        "batch_id": "v0.9-surface-1",
         "source_method": "nedrug.getItemDetail",
         "source_checked_at": "2026-06-12",
         "detail_checked_at": "2026-06-12"

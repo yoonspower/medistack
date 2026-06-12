@@ -197,8 +197,9 @@ def run_validate(ar_path=AR_JSON):
                 fails.append(f"{tag}: 필수필드 누락 {k}")
         if str(e.get("approved_ready")).lower() != "true":
             fails.append(f"{tag}: approved_ready!=true")
-        if str(e.get("incorporated")).lower() != "false":
-            fails.append(f"{tag}: incorporated!=false (이 단계는 미반영만)")
+        inc = str(e.get("incorporated", "")).lower()  # incorporation-aware: 반영 전 false / 반영 후 true
+        if inc not in ("false", "true"):
+            fails.append(f"{tag}: incorporated ∉ {{false,true}}")
         if str(e.get("reviewer_required")).lower() != "true":
             fails.append(f"{tag}: reviewer_required!=true")
         if str(e.get("confidence")) != "high":
@@ -217,15 +218,21 @@ def run_validate(ar_path=AR_JSON):
         if seq in seen_seq:
             fails.append(f"{tag}: itemSeq 파일내 중복")
         seen_seq.add(seq)
-        if seq in existing_seqs:
-            fails.append(f"{tag}: itemSeq 이미 라이브 alias 보유(미반영 단계 위반)")
+        seq_in, alias_in = seq in existing_seqs, nfc(a) in live_surfaces
+        # incorporated=false → 라이브 미반영이어야(반영 직전), incorporated=true → 라이브 실제 반영 검증
+        if inc == "false" and seq_in:
+            fails.append(f"{tag}: incorporated=false인데 itemSeq 이미 라이브 보유")
+        if inc == "true" and not seq_in:
+            fails.append(f"{tag}: incorporated=true인데 itemSeq 라이브 미반영")
+        if inc == "false" and alias_in:
+            fails.append(f"{tag}: incorporated=false인데 표면형 이미 라이브 중복")
+        if inc == "true" and not alias_in:
+            fails.append(f"{tag}: incorporated=true인데 표면형 라이브 미반영")
         canon = e.get("canonical_ingredient")
         if canon == C.EXCLUDED_BYPASS_INGREDIENT or canon not in allowed:
             fails.append(f"{tag}: canonical '{canon}' 허용집합 밖/에스오메프라졸")
         if canon and canon not in str(e.get("ingr_name", "")):
             fails.append(f"{tag}: canonical '{canon}' ⊄ ingr_name")
-        if nfc(a) in live_surfaces:
-            fails.append(f"{tag}: 표면형 이미 라이브 alias 중복")
         if C.ESO_HINT_RE.search(str(a)) or C.ESO_HINT_RE.search(str(e.get("ingr_name", ""))):
             fails.append(f"{tag}: 에스오메프라졸/넥시움 신호")
 
@@ -236,7 +243,8 @@ def run_validate(ar_path=AR_JSON):
         for x in fails[:30]:
             print("  X", x)
         print(f"\nRESULT: FAIL"); print(bar); return 1
-    print(f"\n모든 안전기준 통과 ({len(ents)} approved-ready·incorporated=false·라이브 미반영).")
+    inc_states = sorted({str(e.get("incorporated", "")).lower() for e in ents})
+    print(f"\n모든 안전기준 통과 ({len(ents)} approved-ready·incorporation-aware·incorporated={inc_states}).")
     print(f"RESULT: PASS"); print(bar); return 0
 
 
