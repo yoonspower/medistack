@@ -28,3 +28,7 @@ jobs:
         run: python3 scripts/validate_alias_surface_forms.py data/medistack_v0.3_aliases.json
       - name: Validate full drug name index (v1.0 name_only data integrity)
         run: python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sample_v1_0.json
+      - name: Validate potassium name_only policy (standalone-supplement blocklist)
+        run: python3 scripts/validate_potassium_name_only_policy.py data/full_drug_name_index_sample_v1_0.json
+      - name: Selftest potassium name_only policy (allowlist/blocklist non-no-op)
+        run: python3 scripts/validate_potassium_name_only_policy.py --selftest

@@ -149,9 +149,12 @@ name_only의 "정보 없음" 원칙을 지키는 한, salt-form 표시 자체는
 
 ---
 
-## 7. validator 제안 (설계만 — 이번 작업에서 구현하지 않음)
+## 7. validator 제안 (✅ 구현 완료 — 2026-06-13, PM 승인)
 
-> ⚠️ 실제 차단 validator 구현·배선은 **다음 PM 승인 후** 진행한다. 본 절은 **설계 명세**다.
+> ✅ 본 절의 설계는 **구현·CI 배선까지 완료**되었다: `scripts/validate_potassium_name_only_policy.py`
+> (+ fixture `scripts/fixtures/potassium_name_only_policy.json`, 리포트
+> `docs/MediStack_v1.0_potassium_salt_form_validator_report.md`). 데이터는 **수정하지 않았다**(위반 보고만).
+> 현재 데이터 PASS(8/8, blocked 0, manual-review 1) · selftest PASS(0 failures). 아래는 그 설계 명세다.
 
 **분류 규칙**: name_only 항목의 `item_name` 또는 `ingredient_name`에 "칼륨"이 포함되면 분류한다.
 

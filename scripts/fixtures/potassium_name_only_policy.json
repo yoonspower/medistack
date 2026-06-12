@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "name": "potassium_name_only_policy",
+    "purpose": "standalone potassium blocklist validator 의 positive(salt-form 허용)·negative(standalone 보충제 차단)·manual-review(문맥 의존)·forbidden-field 고정 fixture. 실제 full index 데이터는 수정하지 않는다.",
+    "policy_doc": "docs/MediStack_v1.0_potassium_salt_form_policy.md",
+    "classify_contract": "classify_potassium(item_name, ingredient_name) → allowed_saltform | blocked_standalone | manual_review | not_subject",
+    "safety_note": "blocklist 는 단어 포함만으로 차단하지 않는다. ingredient_name(주성분) 기준 단일/복합 + 보충 목적 키워드로 판정한다. 예: '로사르탄칼륨정'(품목명에 '칼륨정')은 ARB 염 → 허용."
+  },
+  "positive_saltform": [
+    { "item_name": "국제로잘탄정50밀리그램(로사르탄칼륨)", "ingredient_name": "로사르탄칼륨", "note": "ARB 염, 단일 주성분이어도 보충제 아님 → 허용" },
+    { "item_name": "건카브정60/5밀리그램", "ingredient_name": "피마사르탄칼륨삼수화물/에스암로디핀베실산염2.5수화물", "note": "ARB 염 복합" },
+    { "item_name": "이달비정40밀리그램(아질사르탄메독소밀칼륨)", "ingredient_name": "아질사르탄메독소밀칼륨", "note": "ARB 염" },
+    { "item_name": "구멘틴375밀리그램정", "ingredient_name": "아목시실린수화물/묽은클라불란산칼륨", "note": "아목시실린+클라불란산 복합 항생제(품목명에 칼륨 미노출)" },
+    { "item_name": "가티스정", "ingredient_name": "라니티딘염산염/수크랄페이트수화물/비스무트시트르산염칼륨", "note": "위장약 복합, 비스무트시트르산염칼륨 co-ingredient" },
+    { "item_name": "노즈벨정", "ingredient_name": "메퀴타진/벨라돈나총알칼로이드/글리시리진산이칼륨/슈도에페드린염산염/카페인무수물", "note": "비염 복합, 글리시리진산이칼륨 항염 co-ingredient" },
+    { "item_name": "노즈케어점비액", "ingredient_name": "나파졸린염산염/클로르페니라민말레산염/글리시리진산디칼륨", "note": "글리시리진산디칼륨" },
+    { "item_name": "네오콜코프캡슐", "ingredient_name": "덱스트로메토르판브롬화수소산염수화물/dl-메틸에페드린염산염/노스카핀/구아야콜설폰산칼륨/카르비녹사민말레산염/감초", "note": "진해거담 복합, 구아야콜설폰산칼륨" },
+    { "item_name": "나인나인정", "ingredient_name": "무수인산수소칼슘/시아노코발라민/요오드화칼륨/몰리브덴산나트륨/폴산/레티놀아세테이트", "note": "종합비타민, 요오드화칼륨(활성=요오드)" },
+    { "item_name": "라라팡정", "ingredient_name": "피코설페이트나트륨수화물/황산칼륨/황산마그네슘수화물/시메티콘", "note": "장정결 복합, 황산칼륨" }
+  ],
+  "negative_standalone": [
+    { "item_name": "염화칼륨서방정600밀리그램", "ingredient_name": "염화칼륨", "note": "KCl 서방정 단일 주성분 = standalone 보충제 → 차단" },
+    { "item_name": "케이듀어정", "ingredient_name": "염화칼륨", "note": "브랜드명이 칼륨 미노출이어도 주성분이 염화칼륨 단일 → 차단" },
+    { "item_name": "유로시트라케이정", "ingredient_name": "구연산칼륨", "note": "구연산칼륨 단일 = 보충/요로 알칼리화 칼륨 보충 → 차단" },
+    { "item_name": "글루콘산칼륨캡슐", "ingredient_name": "글루콘산칼륨", "note": "글루콘산칼륨 단일 → 차단" },
+    { "item_name": "엘아스파라진칼륨정", "ingredient_name": "L-아스파르트산칼륨", "note": "아스파르트산칼륨 단일 = 전해질 보충 → 차단(req 9: standalone 이면 FAIL)" },
+    { "item_name": "포타슘보충캡슐", "ingredient_name": "글루콘산칼륨", "note": "‘포타슘보충’ 키워드 → 차단" },
+    { "item_name": "전해질보충산", "ingredient_name": "염화칼륨/포도당수화물/염화나트륨", "note": "복합이지만 ‘전해질보충’ 목적 키워드 → 차단" },
+    { "item_name": "저칼륨혈증보충정", "ingredient_name": "염화칼륨", "note": "‘저칼륨혈증’ 보충 목적 키워드 → 차단" },
+    { "item_name": "케이씨엘정", "ingredient_name": "KCl", "note": "KCl 라틴 토큰 단일 → 차단" }
+  ],
+  "manual_review": [
+    { "item_name": "뉴브이로토이엑스점안액", "ingredient_name": "D-판테놀/피리독신염산염/클로르페니라민말레산염/글리시리진산이칼륨/네오스티그민메틸황산염/테트라히드로졸린염산염/콘드로이틴설페이트나트륨/L-아스파르트산칼륨", "note": "8성분 복합 점안액의 미량 co-ingredient = L-아스파르트산칼륨 → 보충제 아님, 비차단 manual-review(req 9)" },
+    { "item_name": "테스트복합수액", "ingredient_name": "포도당수화물/염화나트륨/염화칼륨", "note": "보충염이 복합제 co-ingredient + 보충 목적 키워드 없음 → 자동 차단 금지, manual-review" }
+  ],
+  "forbidden_field": [
+    { "item_name": "로사르탄칼륨정", "ingredient_name": "로사르탄칼륨", "nutrient": "칼륨", "note": "name_only 칼륨 항목에 nutrient 필드 = 금지(영양소 정보 부착) → field violation" },
+    { "item_name": "피마사르탄칼륨정", "ingredient_name": "피마사르탄칼륨", "product_links": ["http://example/buy"], "note": "제품/구매 링크 = 금지 → field violation" }
+  ]
+}
