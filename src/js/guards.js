@@ -168,3 +168,39 @@ function comboBasesFor(nq, ings, aliasIndex) {
     return !!rec && rec.combo && !rec.single;
   });
 }
+
+// ---- v1.0 Phase 3: full drug name index (relation 없는 약의 '품목명 확인'). 의학정보 미부착 ----
+// full index 데이터 → name_only 런타임 인덱스. relation_card 항목은 제외(relation 검색이 이미 커버).
+// item_seq/item_name/normalized/company_name 만 복사 → 상호작용/영양소/제품 필드는 구조적으로 미반입(있어도 버려짐).
+export function buildNameOnlyIndex(fullData) {
+  const out = [];
+  if (!fullData || typeof fullData !== 'object' || !Array.isArray(fullData.entries)) return out;
+  for (const e of fullData.entries) {
+    if (!e || typeof e !== 'object') continue;
+    if (e.display_mode !== 'name_only' || e.covered_by_relation === true) continue;
+    const name = e.item_name;
+    if (typeof name !== 'string' || !name.trim()) continue;
+    out.push({
+      item_seq: String(e.item_seq == null ? '' : e.item_seq),
+      item_name: name,
+      normalized: norm(e.normalized_item_name || name),
+      company_name: typeof e.company_name === 'string' ? e.company_name : null,
+    });
+  }
+  return out;
+}
+
+// 질의 q 의 품목명(정규화) 부분일치 → name_only 항목 리스트(최대 limit). relation 풀과 무관·확장 안 함.
+export function searchNameOnly(query, nameOnlyIndex, limit) {
+  const nq = norm(query);
+  const out = [];
+  if (!nq || !Array.isArray(nameOnlyIndex)) return out;
+  const cap = typeof limit === 'number' && limit > 0 ? limit : nameOnlyIndex.length;
+  for (const e of nameOnlyIndex) {
+    if (e.normalized.includes(nq)) {
+      out.push(e);
+      if (out.length >= cap) break;
+    }
+  }
+  return out;
+}

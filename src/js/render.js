@@ -79,6 +79,22 @@ export function renderAliasHint(info) {
   return h;
 }
 
+// v1.0 name_only: relation 없는 약의 '품목명 확인' 결과. 비클릭 정보 카드(상세 없음).
+// 상호작용/영양소/제품/구매 일절 없음. notice = full index meta.name_only_notice(없으면 fallback).
+const NAME_ONLY_FALLBACK_NOTICE =
+  '이 약은 MediStack의 약-영양소 참고정보 DB에 아직 등록된 항목이 없습니다. 현재는 품목명 확인만 가능합니다. 복용 판단은 약사 또는 의사와 상담하세요.';
+export function renderNameOnlyResults(matches, notice) {
+  if (!Array.isArray(matches) || matches.length === 0) return '';
+  const text = (typeof notice === 'string' && notice.trim()) ? notice : NAME_ONLY_FALLBACK_NOTICE;
+  let h = '<div class="nameonly-notice" role="note"><span class="nobadge">참고 정보 없음</span><p>' + esc(text) + '</p></div>';
+  h += '<div class="listhead">' + esc('품목명 확인 ' + matches.length + '건') + '</div>';
+  for (const e of matches) {
+    h += '<div class="norow"><span class="noname">' + esc(e.item_name) + '</span>' +
+      (e.company_name ? '<span class="nocompany">' + esc(e.company_name) + '</span>' : '') + '</div>';
+  }
+  return h;
+}
+
 // 결과 카운트 + 카드 (0건이면 카운트만; no-results 는 states.renderNoResults)
 export function renderListResults(filtered, total) {
   const head = filtered.length === total

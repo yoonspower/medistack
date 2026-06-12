@@ -44,5 +44,19 @@
   "degrade": [
     { "query": "오플록사신", "emptyIndexCount": 3, "kind": "direct", "note": "직접검색 — alias 인덱스 무관, 불변" },
     { "query": "타리비드", "emptyIndexCount": 0, "kind": "alias-only", "note": "브랜드 alias 전용 — 인덱스 부재 시 브리지 소멸 → 0(정상 degrade)" }
+  ],
+  "name_only_index_size": 442,
+  "name_only": [
+    { "group": "covered_now", "query": "게보린", "minCount": 1, "note": "relation 0 → name_only 가 커버(브랜드 품목명)" },
+    { "group": "covered_now", "query": "이부프로펜", "minCount": 1 },
+    { "group": "covered_now", "query": "아세트아미노펜", "minCount": 1 },
+    { "group": "covered_now", "query": "암로디핀", "minCount": 1 },
+    { "group": "still_empty", "query": "asdfqwer", "count": 0, "note": "relation/name_only 둘 다 0 → empty 유지" },
+    { "group": "still_empty", "query": "넥시움", "count": 0, "note": "에스오메프라졸 index 제외 → name_only 0(empty 유지)" },
+    { "group": "still_empty", "query": "에스오메프라졸", "count": 0 },
+    { "group": "still_empty", "query": "타이레놀", "count": 0, "note": "샘플 1000 에 미포함 → 0(샘플 한계, 확장 시 변동 가능)" }
+  ],
+  "name_only_render": [
+    { "group": "nameonly_card", "query": "게보린", "contains": ["참고 정보 없음", "품목명 확인", "상담", "class=\"norow\""], "notContains": ["복합제", "칼륨 주의", "class=\"row\"", "href="] }
   ]
 }

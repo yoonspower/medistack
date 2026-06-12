@@ -46,6 +46,16 @@ body{
 .combonotice .kbadge{ display:inline-block; font-size:10.5px; font-weight:700; color:#fff; background:var(--clay-deep);
   border-radius:999px; padding:2px 8px; letter-spacing:.2px; margin-bottom:6px }
 .combonotice p{ font-size:12px; line-height:1.55; color:#6E3B22 }
+/* v1.0 name_only: relation 없는 약의 '품목명 확인'(정보 없음 안내. 경고/상호작용/제품 아님) */
+.nameonly-notice{ margin:12px 6px 2px; padding:10px 12px; background:var(--paper);
+  border:1px solid var(--line); border-left:4px solid var(--ink-faint); border-radius:10px }
+.nameonly-notice .nobadge{ display:inline-block; font-size:10.5px; font-weight:700; color:#fff; background:var(--ink-faint);
+  border-radius:999px; padding:2px 8px; letter-spacing:.2px; margin-bottom:6px }
+.nameonly-notice p{ font-size:12px; line-height:1.55; color:var(--ink-soft) }
+.norow{ background:#fff; border:1px solid var(--line-soft); border-radius:12px;
+  padding:12px 14px; margin-bottom:8px; display:flex; align-items:baseline; gap:10px }
+.norow .noname{ font-weight:600; font-size:14.5px; flex:1; min-width:0 }
+.norow .nocompany{ font-size:11.5px; color:var(--ink-faint); white-space:nowrap }
 .listhead{ font-size:11.5px; color:var(--ink-faint); padding:14px 6px 8px; letter-spacing:.3px }
 .row{ width:100%; text-align:left; background:#fff; border:1px solid var(--line-soft); border-radius:14px;
   padding:14px; margin-bottom:9px; cursor:pointer; display:flex; align-items:center; gap:12px;

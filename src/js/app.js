@@ -1,7 +1,7 @@
 // app.js — entry + 해시 라우터 + 검색/필터(인메모리 state). 실패/0건/누락 시 안전 state.
-import { loadData, loadAliases } from './data.js';
-import { getRenderableRelations, findRelation, commonDisclaimer, getFacets, filterRelations, buildAliasIndex, aliasHint } from './guards.js';
-import { renderListControls, renderListResults, renderDetail, renderAliasHint, esc } from './render.js';
+import { loadData, loadAliases, loadFullIndex } from './data.js';
+import { getRenderableRelations, findRelation, commonDisclaimer, getFacets, filterRelations, buildAliasIndex, aliasHint, buildNameOnlyIndex, searchNameOnly } from './guards.js';
+import { renderListControls, renderListResults, renderDetail, renderAliasHint, renderNameOnlyResults, esc } from './render.js';
 import { renderEmpty, renderError, renderNoResults } from './states.js';
 
 const appbar = () => document.getElementById('appbar');
@@ -10,6 +10,9 @@ const body = () => document.getElementById('appbody');
 const state = { data: null, error: false };
 const filterState = { query: '', nutrients: [], actions: [], evidences: [] };
 let aliasIndex = []; // alias 부재/실패 시 빈 배열 → relation-only 검색
+let nameOnlyIndex = []; // full index 부재/실패 시 빈 배열 → name_only 미표시(현행 동작 degrade)
+let nameOnlyNotice = ''; // full index meta.name_only_notice (render fallback 있음)
+const NAME_ONLY_LIMIT = 30; // 품목명 확인 결과 표시 상한
 
 const BETA_TAG = '<span class="beta">베타 · 참고 정보</span>';
 function setAppbar(detail) {
@@ -32,9 +35,15 @@ function renderResults() {
   const filtered = filterRelations(rels, filterState, aliasIndex);
   const el = document.getElementById('ms-results');
   if (!el) return;
-  let html = renderAliasHint(aliasHint(filtered, filterState, aliasIndex));
-  html += renderListResults(filtered, rels.length);
-  if (filtered.length === 0) html += renderNoResults();
+  let html;
+  if (filtered.length > 0) {
+    html = renderAliasHint(aliasHint(filtered, filterState, aliasIndex)) + renderListResults(filtered, rels.length);
+  } else {
+    // relation 무매치 → full index name_only 폴백(텍스트 검색어만 있고 facet 미적용 시). relation 풀 확장 아님.
+    const facetsActive = filterState.nutrients.length || filterState.actions.length || filterState.evidences.length;
+    const matches = (filterState.query && !facetsActive) ? searchNameOnly(filterState.query, nameOnlyIndex, NAME_ONLY_LIMIT) : [];
+    html = matches.length > 0 ? renderNameOnlyResults(matches, nameOnlyNotice) : renderNoResults();
+  }
   el.innerHTML = html;
   const reset = document.getElementById('ms-reset');
   if (reset) reset.hidden = !hasActiveFilter();
@@ -102,6 +111,13 @@ async function init() {
     aliasIndex = buildAliasIndex(aliasData);
     if (!aliasData && window.console) console.warn('[MediStack] alias load skipped (search uses relations only)');
   } catch (e) { aliasIndex = []; }
+  // full drug index 도 부가기능: 실패해도 앱 정상(name_only 미표시로 degrade). 치명 아님.
+  try {
+    const fullData = await loadFullIndex();
+    nameOnlyIndex = buildNameOnlyIndex(fullData);
+    nameOnlyNotice = (fullData && fullData.meta && typeof fullData.meta.name_only_notice === 'string') ? fullData.meta.name_only_notice : '';
+    if (!fullData && window.console) console.warn('[MediStack] full index load skipped (name_only disabled)');
+  } catch (e) { nameOnlyIndex = []; }
   body().addEventListener('input', onInput);
   body().addEventListener('click', onClick);
   route();
