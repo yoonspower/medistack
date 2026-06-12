@@ -9,7 +9,7 @@ MediStack v1.0-C — 검색/고지/empty/error 회귀 기준선 smoke (라이브
   이 smoke 가 FAIL 하여 회귀를 잡는다.
 
 테스트 레이어(전부 라이브 데이터 기준 ground-truth):
-  E. 기준선     : full drug index 데이터 파일 미존재 + data.js 에 name_only/full index 미배선
+  E. 기준선     : data.js 에 name_only/full index 미배선(검색 relation-only). full drug index 샘플 데이터는 Phase 2 에서 존재 가능
   A. behavior   : filterRelations 결과 수 + aliasHint 플래그(ingredients/comboBases/hctzPotassiumNotice)
   B. render     : renderAliasHint HTML(복합제 배지 / 칼륨 주의 / alias 안내 / empty)
   C. list       : renderListResults HTML(0건 → 카드 없음 / N건 → 카드 존재)
@@ -25,7 +25,6 @@ guards.js/render.js 는 ES module 이고 repo 에 package.json 이 없으므로,
 사용: python3 scripts/smoke_search_regression_v1_0.py
 종료 코드: 0 PASS, 1 FAIL
 """
-import glob
 import json
 import os
 import shutil
@@ -109,7 +108,11 @@ console.log('NODE SECTION (A~D,F): PASS');
 
 
 def baseline_checks():
-    """E. full index 미도입 기준선 (Python: 파일/배선 레벨)."""
+    """E. name_only UX 미배선 기준선 (Python: 파일/배선 레벨).
+
+    Phase 2 에서 full drug index 샘플 데이터는 존재할 수 있다(정상). 핵심 가드는
+    'data.js 가 name_only/full index 를 배선하지 않았다' = 검색이 여전히 relation-only 라는 것.
+    """
     fails = 0
 
     def chk(name, cond, extra=""):
@@ -118,17 +121,17 @@ def baseline_checks():
         if not cond:
             fails += 1
 
-    hits = [
-        os.path.basename(p)
-        for p in glob.glob(os.path.join(DATA, "*.json"))
-        if "full" in os.path.basename(p).lower() and "drug" in os.path.basename(p).lower()
-    ]
-    chk("E[baseline] full drug index 데이터 파일 미존재(설계만)", len(hits) == 0, ",".join(hits))
-
+    # 의미있는 가드 = data.js 가 full index / name_only 를 배선하지 않음 → 검색은 여전히 relation-only.
+    # (Phase 2 에서 full drug index 샘플 데이터는 존재할 수 있다. 검색 동작 불변은 behavior 케이스가 고정한다.)
     with open(os.path.join(SRC, "data.js"), encoding="utf-8") as f:
         djs = f.read().lower()
     for tok in ("full_index", "full_drug", "name_only"):
-        chk(f'E[baseline] data.js 에 "{tok}" 미배선(name_only UX 미활성)', tok not in djs)
+        chk(f'E[baseline] data.js 에 "{tok}" 미배선(name_only UX 미활성·검색 relation-only)', tok not in djs)
+
+    # full drug index 샘플 데이터: 존재하면 Phase 2 정상(앱이 읽지 않는 별도 파일). name_only UX 는 Phase 3.
+    sample = os.path.join(DATA, "full_drug_name_index_sample_v1_0.json")
+    if os.path.exists(sample):
+        print("[INFO] E[baseline] full drug index Phase 2 샘플 존재 — 앱 미배선(검색 동작은 behavior 케이스로 고정)")
 
     return fails
 
