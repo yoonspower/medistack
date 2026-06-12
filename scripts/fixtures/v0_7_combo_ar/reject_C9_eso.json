@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: 에스오메프라졸 신호 -> #9(및 substring으로 #4)"},
+ "approved_ready": [
+   {"candidate_alias": "테스트에스오메정", "canonical_ingredient": "오메프라졸", "item_seq": "999999003", "item_name": "테스트에스오메정", "ingr_name": "에스오메프라졸마그네슘 / 탄산수소나트륨", "is_combination": true, "combination_basis_ingredient": "오메프라졸", "combination_notice_required": true, "approved_ready": true, "incorporated": false}
+ ]}

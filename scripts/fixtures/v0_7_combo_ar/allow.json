@@ -1,0 +1,4 @@
+{"meta": {"schema": "bulk_alias_approved_ready_combo", "note": "valid 메트포르민 복합제(허용)"},
+ "approved_ready": [
+   {"candidate_alias": "테스트메트복합정", "canonical_ingredient": "메트포르민", "item_seq": "999999001", "item_name": "테스트메트복합정", "ingr_name": "메트포르민염산염 / 아나글립틴", "is_combination": true, "combination_basis_ingredient": "메트포르민", "combination_notice_required": true, "combo_relation_ingredient_count": 1, "approved_ready": true, "incorporated": false}
+ ]}

@@ -42,11 +42,23 @@ DEF_QUEUE_JSON = os.path.join(OUT_DIR, "bulk_alias_review_queue_v0_5.json")
 DEF_QUEUE_CSV = os.path.join(OUT_DIR, "bulk_alias_review_queue_v0_5.csv")
 DEF_AR_JSON = os.path.join(OUT_DIR, "bulk_alias_approved_ready_v0_5.json")
 DEF_AR_CSV = os.path.join(OUT_DIR, "bulk_alias_approved_ready_v0_5.csv")
+# v0.7 G3 복합제(combo) 상세확정 산출물(별도 파일 — 단일성분 AR 과 분리).
+DEF_COMBO_AR_JSON = os.path.join(OUT_DIR, "bulk_alias_approved_ready_combo_v0_7.json")
+DEF_COMBO_AR_CSV = os.path.join(OUT_DIR, "bulk_alias_approved_ready_combo_v0_7.csv")
 
 DEFAULT_CHECKED_AT = "2026-06-11"
 DETAIL_SOURCE_METHOD = "nedrug.getItemDetail"
 EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"
 FORBIDDEN_ITEMSEQS = {"201600209"}
+# v0.7 B1 복합제 basis allowlist(히드로클로로티아지드·에스오메프라졸 제외). validator COMBO_ALLOWED_BASIS 와 일치.
+COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸"}
+COMBO_AR_FIELDS = [
+    "candidate_alias", "canonical_ingredient", "item_seq", "item_name", "ingr_name",
+    "is_combination", "combination_basis_ingredient", "combination_notice_required",
+    "combo_relation_ingredient_count", "source_url", "source_method", "source_checked_at",
+    "detail_source_method", "detail_checked_at", "confidence", "risk_level", "batch_id",
+    "approved_ready", "incorporated", "reason", "reviewer_required",
+]
 ESO_HINT_RE = re.compile(r"(에스오메프라졸|esomeprazole|넥시움|nexium)", re.IGNORECASE)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16 Safari/605.1.15"
 
@@ -264,6 +276,119 @@ def build_approved_ready(cands, checked_at, existing_seqs, ar_batch_id=None,
     return out, held
 
 
+# ---------- v0.7 G3 복합제(combo) 상세확정 (opt-in --combo; 단일 흐름과 분리) ----------
+def relation_ingredients():
+    """relation 보유 성분 전체(14종, HCTZ·에스오메 포함). combo 의 relation 성분 카운트용."""
+    rdata = load(RELATIONS_PATH, "relations")
+    return sorted({r.get("ingredient") for r in (rdata.get("relations") or []) if r.get("ingredient")})
+
+
+def classify_combo(opener, c, checked_at, rel_ings, no_network):
+    """deferred 복합제 후보 1건 분류. (result, detail|None) 반환. c(큐) 미변경.
+    combo_confirmed 조건: distinct≥2 + relation 보유 성분 정확히 1개(=canonical, ∈allowlist) + 에스오메/15행/개행 아님."""
+    seq = (c.get("item_seq") or "").strip()
+    canonical = c.get("canonical_ingredient", "")
+    if canonical not in COMBO_ALLOWED_BASIS:
+        return "canonical_not_allowed", None
+    if no_network:
+        return "skipped_no_network", None
+    try:
+        html_text, _ = get_item_detail(opener, seq)
+    except Exception as e:
+        return "fetch_failed", None
+    title, distinct = parse_detail(html_text)
+    if not title or not distinct:
+        return "parse_failed", None
+    if CTRL_WS_RE.search(c.get("candidate_alias", "")) or CTRL_WS_RE.search(title):
+        return "surface_form_whitespace", None
+    if ESO_HINT_RE.search(title) or any(ESO_HINT_RE.search(x) for x in distinct) or seq in FORBIDDEN_ITEMSEQS:
+        return "esomeprazole_block", None
+    if len(distinct) < 2:
+        return "not_combo", None  # 단일성분 — combo 모드 대상 아님(단일 트랙에서 처리)
+    matched = sorted({ri for ri in rel_ings if any(ri in comp for comp in distinct)})
+    if len(matched) == 0:
+        return "combo_zero_relation", None      # relation 보유 성분 0 → 보여줄 데이터 없음
+    if len(matched) >= 2:
+        return "combo_multi_relation", None      # relation 성분 2개↑ → 단일 매핑 불가(범위밖)
+    basis = matched[0]
+    if basis != canonical:
+        return "basis_mismatch", None
+    return "combo_confirmed", {"title": " ".join(title.split()), "distinct": distinct, "basis": basis}
+
+
+def run_combo_mode(args):
+    """deferred 복합제 → getItemDetail 상세확정 → relation 1개 후보만 combo approved-ready 파일로 분리.
+    큐/alias JSON 미수정(combo AR 파일만 생성)."""
+    qdata = load(args.input_json, "queue")
+    cands = qdata.get("candidates", [])
+    rel_ings = relation_ingredients()
+    existing_seqs = existing_alias_itemseqs()
+    targets = [c for c in cands
+               if c.get("status") == "deferred"
+               and "/" in (c.get("ingr_name") or "")
+               and c.get("canonical_ingredient") in COMBO_ALLOWED_BASIS
+               and (c.get("item_seq") or "").strip()
+               and (c.get("item_seq") or "").strip() not in existing_seqs]
+    if args.limit:
+        targets = targets[:args.limit]  # 증분 테스트용 target 캡(전체 실행은 미지정)
+    opener = None if args.no_network else make_opener()
+    results, ar, seen = {}, [], set()
+    for c in targets:
+        r, detail = classify_combo(opener, c, args.checked_at, rel_ings, args.no_network)
+        results[r] = results.get(r, 0) + 1
+        if r == "combo_confirmed":
+            seq = c["item_seq"].strip()
+            if seq in seen:
+                results["dup_itemseq_skipped"] = results.get("dup_itemseq_skipped", 0) + 1
+                continue
+            seen.add(seq)
+            canonical = c["canonical_ingredient"]
+            ar.append({
+                "candidate_alias": c["candidate_alias"], "canonical_ingredient": canonical,
+                "item_seq": seq, "item_name": detail["title"], "ingr_name": " / ".join(detail["distinct"]),
+                "is_combination": True, "combination_basis_ingredient": canonical, "combination_notice_required": True,
+                "combo_relation_ingredient_count": 1,
+                "source_url": c.get("source_url", ""), "source_method": c.get("source_method", ""),
+                "source_checked_at": c.get("source_checked_at", args.checked_at),
+                "detail_source_method": DETAIL_SOURCE_METHOD, "detail_checked_at": args.checked_at,
+                "confidence": "high", "risk_level": c.get("risk_level", "low"),
+                "batch_id": args.ar_batch_id or "v0.7-combo-1",
+                "approved_ready": True, "incorporated": False,
+                "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
+                "reviewer_required": True,
+            })
+        print(f"  [{r}] {c.get('candidate_alias')} (seq {c.get('item_seq')})")
+    ar.sort(key=lambda x: (x["canonical_ingredient"], x["candidate_alias"]))
+    if args.ar_limit is not None and len(ar) > args.ar_limit:
+        ar = ar[:args.ar_limit]  # 단순 컷(배치 균등 분배는 G4 게이트에서)
+    os.makedirs(OUT_DIR, exist_ok=True)
+    ar_meta = {
+        "schema": "bulk_alias_approved_ready_combo", "version": "v0.7", "track": "B1-combo",
+        "generated_at": args.checked_at, "generator": "scripts/confirm_nedrug_item_details.py --combo",
+        "alias_source": "data/medistack_v0.3_aliases.json", "queue_source": os.path.relpath(args.input_json, REPO),
+        "batch_id": args.ar_batch_id or "v0.7-combo-1", "incorporated": False,
+        "allowed_basis": sorted(COMBO_ALLOWED_BASIS), "targets": len(targets), "results": results, "count": len(ar),
+        "note": ("deferred 복합제를 getItemDetail 상세확정 → relation 보유 성분 정확히 1개(=canonical·∈allowlist)인 후보만 "
+                 "is_combination=true 로 combo approved-ready 분리. HCTZ·에스오메프라졸·15행·다중relation·단일성분·개행 제외. "
+                 "큐/alias JSON 미수정. 실제 반영은 G4 PM 게이트(복합제 고지 렌더는 G2 완료)."),
+    }
+    with open(args.combo_ar_json, "w", encoding="utf-8") as f:
+        json.dump({"meta": ar_meta, "approved_ready": ar}, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    with open(args.combo_ar_csv, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=COMBO_AR_FIELDS)
+        w.writeheader()
+        for x in ar:
+            w.writerow({k: x.get(k, "") for k in COMBO_AR_FIELDS})
+    print("=" * 64)
+    print("MediStack v0.7 G3 복합제 상세확정(--combo)")
+    print("=" * 64)
+    print(f"대상 deferred combo: {len(targets)} | 결과: {results}")
+    print(f"combo approved-ready: {len(ar)} → {os.path.relpath(args.combo_ar_json, REPO)}")
+    print("큐/alias JSON 미수정(combo AR 파일만 생성).")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input-json", default=DEF_QUEUE_JSON)
@@ -283,7 +408,15 @@ def main():
     ap.add_argument("--ar-balanced", action="store_true", help="approved-ready 를 canonical 라운드로빈으로 균등 분산")
     ap.add_argument("--phase", type=int, default=3, help="단계 번호(meta phaseN_confirmation 키)")
     ap.add_argument("--ar-version", default="v0.5", help="approved-ready meta version 라벨(예: v0.6)")
+    ap.add_argument("--combo", action="store_true",
+                    help="v0.7 G3 복합제 상세확정 모드(큐/alias 미수정·combo AR 파일만 생성)")
+    ap.add_argument("--combo-ar-json", default=DEF_COMBO_AR_JSON)
+    ap.add_argument("--combo-ar-csv", default=DEF_COMBO_AR_CSV)
     args = ap.parse_args()
+
+    # v0.7 G3: 복합제 모드는 self-contained(큐/단일 AR 미작성). 단일성분 흐름은 아래 그대로.
+    if args.combo:
+        return run_combo_mode(args)
 
     qdata = load(args.input_json, "queue")
     cands = [ensure_fields(dict(c)) for c in qdata.get("candidates", [])]

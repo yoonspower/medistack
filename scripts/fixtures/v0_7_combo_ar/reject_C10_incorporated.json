@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: incorporated=true(이미 반영 주장) -> #10"},
+ "approved_ready": [
+   {"candidate_alias": "테스트반영정", "canonical_ingredient": "메트포르민", "item_seq": "999999001", "item_name": "테스트반영정", "ingr_name": "메트포르민염산염 / 아나글립틴", "is_combination": true, "combination_basis_ingredient": "메트포르민", "combination_notice_required": true, "approved_ready": true, "incorporated": true}
+ ]}

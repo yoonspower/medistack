@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: basis=HCTZ(allowlist 외) -> #6"},
+ "approved_ready": [
+   {"candidate_alias": "테스트HCTZ복합정", "canonical_ingredient": "히드로클로로티아지드", "item_seq": "999999002", "item_name": "테스트HCTZ복합정", "ingr_name": "로사르탄칼륨 / 히드로클로로티아지드", "is_combination": true, "combination_basis_ingredient": "히드로클로로티아지드", "combination_notice_required": true, "approved_ready": true, "incorporated": false}
+ ]}

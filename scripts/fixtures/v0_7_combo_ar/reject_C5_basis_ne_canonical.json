@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: basis != canonical -> #5"},
+ "approved_ready": [
+   {"candidate_alias": "테스트불일치정", "canonical_ingredient": "메트포르민", "item_seq": "999999001", "item_name": "테스트불일치정", "ingr_name": "오메프라졸 / 탄산수소나트륨", "is_combination": true, "combination_basis_ingredient": "오메프라졸", "combination_notice_required": true, "approved_ready": true, "incorporated": false}
+ ]}

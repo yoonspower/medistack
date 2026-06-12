@@ -1,0 +1,5 @@
+{"meta": {"note": "reject: 동일 item_seq 2건 -> #8"},
+ "approved_ready": [
+   {"candidate_alias": "테스트A", "canonical_ingredient": "메트포르민", "item_seq": "999999001", "item_name": "테스트A", "ingr_name": "메트포르민염산염 / 아나글립틴", "is_combination": true, "combination_basis_ingredient": "메트포르민", "combination_notice_required": true, "approved_ready": true, "incorporated": false},
+   {"candidate_alias": "테스트B", "canonical_ingredient": "메트포르민", "item_seq": "999999001", "item_name": "테스트B", "ingr_name": "메트포르민염산염 / 빌다글립틴", "is_combination": true, "combination_basis_ingredient": "메트포르민", "combination_notice_required": true, "approved_ready": true, "incorporated": false}
+ ]}
