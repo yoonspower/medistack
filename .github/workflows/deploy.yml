@@ -30,6 +30,8 @@ jobs:
         run: python3 scripts/validate_medistack_v0_2_export.py data/medistack_v0.2_beta_export.json
       - name: Validate v0.3 operational aliases (search index integrity, app-unwired)
         run: python3 scripts/validate_medistack_v0_3_aliases.py data/medistack_v0.3_aliases.json data/medistack_v0.2_beta_export.json
+      - name: Validate alias surface forms (v0.9 newline/whitespace hygiene gate)
+        run: python3 scripts/validate_alias_surface_forms.py data/medistack_v0.3_aliases.json
 
   deploy:
     needs: validate          # validate 성공 시에만 배포
