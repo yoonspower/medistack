@@ -58,3 +58,28 @@
 | **합계** | **SMOKE PASS 10/10** |
 
 **라이브 화면 회귀:** HCTZ 복합제 0건 → `hctzPotassiumNotice` 항상 미설정 → `renderAliasHint` 출력 라이브 동일(신규 코드 경로 휴면). `.combonotice` CSS 는 라이브에서 매칭 엘리먼트 0 → 시각 동일. data/validator 무변경.
+
+---
+
+## H-G3 — HCTZ combo confirm + approved-ready (큐/alias 무변경·incorporated=false) ✅
+
+**변경 파일:**
+- `scripts/confirm_nedrug_item_details.py` — `COMBO_ALLOWED_BASIS` 에 히드로클로로티아지드 추가 + `classify_combo` 에 **칼륨보존이뇨제 파트너 필터**(`KSPARING_RE`, distinct 성분 등장 시 `potassium_sparing_partner` 로 제외). AR meta version/note 를 v0.8·K보존 제외로 갱신.
+- 신규 산출물(approved-ready 후보 풀, **alias 아님·incorporated=false**): `data/candidates/bulk_alias_approved_ready_combo_v0_8_hctz.json` · `.csv`.
+
+**실행:** `confirm --combo --combo-ar-json …combo_v0_8_hctz.json --ar-batch-id v0.8-hctz-1 --ar-version v0.8 --checked-at 2026-06-12` (getItemDetail 실네트워크 112건).
+
+**결과:**
+| 항목 | 값 |
+|---|---|
+| 대상 deferred combo | 112 (전량 HCTZ·메트/알렌/오메는 v0.7 반영완료라 비대상) |
+| getItemDetail 결과 | **combo_confirmed 112/112** (fetch/parse 실패 0·basis_mismatch 0·multi_relation 0) |
+| **potassium-sparing partner** | **0** (KSPARING_RE 매칭 0 — 진짜 역전 위험군 없음 재확인) |
+| 염이름 칼륨 오인 | 0 (로사르탄칼륨·피마사르탄칼륨 → relation 성분 매칭은 HCTZ 정확히 1개, 칼륨 미오인) |
+| 구조 | 2성분 ARB+HCTZ **98** · 3성분 ARB+CCB+HCTZ **14** = 112 |
+| AR 항목 | 112 · incorporated 전부 false · is_combination true · basis=HCTZ · notice=true · itemSeq 112/112 고유 |
+| meta | version v0.8 · incorporated false |
+
+**검증(전체 회귀):** v0.1 12/12 · v0.2 15/15 · v0.3 **16/16** · bulk 152/152 · typeB 7/7 · combo 가드 9/9 · combo AR 테스트 13/13 · **AR(v0.8 HCTZ) 13/13** · AR(v0.7) 13/13 · smoke 10/10 — ALL PASS.
+
+**STOP 가드(전부 충족):** queue 추적파일 diff 0(**flip 없음** — 여전히 deferred 112) · alias JSON diff 0 · **alias_count 506 유지** · relation 30 · DATA_URL 불변 · incorporated=true 0건. 신규 파일은 combo AR(json/csv)뿐.

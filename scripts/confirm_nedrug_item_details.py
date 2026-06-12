@@ -50,8 +50,14 @@ DEFAULT_CHECKED_AT = "2026-06-11"
 DETAIL_SOURCE_METHOD = "nedrug.getItemDetail"
 EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"
 FORBIDDEN_ITEMSEQS = {"201600209"}
-# v0.7 B1 복합제 basis allowlist(히드로클로로티아지드·에스오메프라졸 제외). validator COMBO_ALLOWED_BASIS 와 일치.
-COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸"}
+# v0.7 B1 + v0.8 H-G3 복합제 basis allowlist. v0.8: HCTZ 개방(ARB+HCTZ). 에스오메프라졸 계속 차단.
+# validator COMBO_ALLOWED_BASIS(combo AR·v0_3 aliases) 와 일치 유지.
+COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸", "히드로클로로티아지드"}
+# v0.8 H-G3 V2: 칼륨보존이뇨제 파트너 영구 하드차단(distinct 성분에 등장 시 후보 제외).
+# 특정 약물명 토큰만 → 'XX칼륨'(로사르탄칼륨/피마사르탄칼륨) 염 이름의 '칼륨'은 매칭 안 됨(V5 염이름 분리).
+KSPARING_RE = re.compile(
+    r"(트리암테렌|아밀로라이드|아밀로리드|스피로노락톤|에플레레논|칸레논|"
+    r"triamterene|amiloride|spironolactone|eplerenone|canrenone)", re.IGNORECASE)
 COMBO_AR_FIELDS = [
     "candidate_alias", "canonical_ingredient", "item_seq", "item_name", "ingr_name",
     "is_combination", "combination_basis_ingredient", "combination_notice_required",
@@ -305,6 +311,8 @@ def classify_combo(opener, c, checked_at, rel_ings, no_network):
         return "esomeprazole_block", None
     if len(distinct) < 2:
         return "not_combo", None  # 단일성분 — combo 모드 대상 아님(단일 트랙에서 처리)
+    if any(KSPARING_RE.search(comp) for comp in distinct):
+        return "potassium_sparing_partner", None  # V2: 칼륨보존이뇨제 파트너 → 영구 차단(반전 위험)
     matched = sorted({ri for ri in rel_ings if any(ri in comp for comp in distinct)})
     if len(matched) == 0:
         return "combo_zero_relation", None      # relation 보유 성분 0 → 보여줄 데이터 없음
@@ -363,13 +371,13 @@ def run_combo_mode(args):
         ar = ar[:args.ar_limit]  # 단순 컷(배치 균등 분배는 G4 게이트에서)
     os.makedirs(OUT_DIR, exist_ok=True)
     ar_meta = {
-        "schema": "bulk_alias_approved_ready_combo", "version": "v0.7", "track": "B1-combo",
+        "schema": "bulk_alias_approved_ready_combo", "version": args.ar_version, "track": "combo",
         "generated_at": args.checked_at, "generator": "scripts/confirm_nedrug_item_details.py --combo",
         "alias_source": "data/medistack_v0.3_aliases.json", "queue_source": os.path.relpath(args.input_json, REPO),
-        "batch_id": args.ar_batch_id or "v0.7-combo-1", "incorporated": False,
+        "batch_id": args.ar_batch_id or "combo-1", "incorporated": False,
         "allowed_basis": sorted(COMBO_ALLOWED_BASIS), "targets": len(targets), "results": results, "count": len(ar),
         "note": ("deferred 복합제를 getItemDetail 상세확정 → relation 보유 성분 정확히 1개(=canonical·∈allowlist)인 후보만 "
-                 "is_combination=true 로 combo approved-ready 분리. HCTZ·에스오메프라졸·15행·다중relation·단일성분·개행 제외. "
+                 "is_combination=true 로 combo approved-ready 분리. 칼륨보존이뇨제 파트너·에스오메프라졸·15행·다중relation·단일성분·개행 제외. "
                  "큐/alias JSON 미수정. 실제 반영은 G4 PM 게이트(복합제 고지 렌더는 G2 완료)."),
     }
     with open(args.combo_ar_json, "w", encoding="utf-8") as f:
