@@ -81,6 +81,69 @@ DIVERSE_INGREDIENTS = [
     "콜키신", "베타히스틴", "실데나필", "타다라필",
 ]
 
+# v1.0 Phase 4 확장: 검색 "안 나오는 약" 체감 축소용 다양 클래스 상용 경구약 성분.
+# 제외 유지(안전): 13 canonical · 에스오메프라졸 · 칼륨/칼륨보존이뇨제 · 와파린 · 비타민/미네랄(relation 얽힘).
+DIVERSE_INGREDIENTS_EXT = [
+    # 진통·소염·근이완·스테로이드
+    "피록시캄", "잘토프로펜", "나부메톤", "펠루비프로펜", "폴마콕시브", "탈니플루메이트",
+    "플루르비프로펜", "에페리손", "클로르족사존", "티자니딘", "바클로펜", "데플라자코트",
+    "프레드니솔론", "메틸프레드니솔론", "덱사메타손", "트리암시놀론",
+    # 항생제(13 canonical 제외)
+    "세팔렉신", "세프포독심", "세프카펜피복실", "세프디토렌", "암피실린", "술타미실린",
+    "세프록사딘", "세픽심", "플로목세프", "노르플록사신", "세프라딘", "반코마이신",
+    "테이코플라닌", "리네졸리드", "포스포마이신", "니트로푸란토인", "테트라사이클린",
+    "에리트로마이신", "트리메토프림", "세프타지딤", "클로람페니콜",
+    # 항진균·항바이러스
+    "테르비나핀", "케토코나졸", "보리코나졸", "그리세오풀빈", "미코나졸", "클로트리마졸",
+    "팜시클로버", "오셀타미비르", "엔테카비르", "테노포비르",
+    # 심혈관(칼륨/칼륨보존이뇨제·와파린 제외)
+    "니페디핀", "펠로디핀", "레르카니디핀", "실니디핀", "바르니디핀", "에날라프릴",
+    "리시노프릴", "포시노프릴", "이미다프릴", "아테놀롤", "메토프롤롤", "프로프라놀롤",
+    "라베탈롤", "아질사르탄", "피마사르탄", "니카르디핀", "트리메타지딘", "이바브라딘",
+    "라놀라진", "니코란딜", "몰시도민", "이소소르비드", "인다파미드", "클로르탈리돈",
+    "콜레스티라민", "베자피브레이트", "겜피브로질",
+    # 당뇨(메트포르민 제외)
+    "보글리보스", "아카보스", "미글리톨", "알로글립틴", "제미글립틴", "테네리글립틴",
+    "에보글립틴", "빌다글립틴", "삭사글립틴", "카나글리플로진", "이프라글리플로진",
+    "레파글리니드", "나테글리니드", "글리벤클라미드", "글리피지드",
+    # 갑상선(레보티록신 제외)
+    "메티마졸", "프로필티오우라실",
+    # 소화기(에스오메프라졸·오메프라졸 제외)
+    "데노프라졸", "일라프라졸", "테고프라잔", "보노프라잔", "알마게이트", "마그알드레이트",
+    "수크랄페이트", "트리메부틴", "시메티딘", "니자티딘", "라푸티딘", "로페라미드",
+    "디오스멕타이트", "리팍시민", "메베베린", "시메티콘", "우르소데옥시콜산",
+    "비페닐디메칠디카르복실레이트", "락툴로오스", "비사코딜", "온단세트론", "메토클로프라미드",
+    # 알레르기·항히스타민
+    "데슬로라타딘", "빌라스틴", "루파타딘", "올로파타딘", "케토티펜", "클로르페니라민",
+    "하이드록시진", "프란루카스트", "자피르루카스트",
+    # 호흡기
+    "카르보시스테인", "브롬헥신", "구아이페네신", "덱스트로메토르판", "테오필린", "독소필린",
+    "밤부테롤", "살부타몰", "포르모테롤", "살메테롤", "인다카테롤", "부데소니드",
+    # 정신·신경
+    "시탈로프람", "파록세틴", "플루옥세틴", "플루복사민", "벤라팍신", "데스벤라팍신",
+    "보티옥세틴", "미르타자핀", "부프로피온", "아미트리프틸린", "노르트립틸린", "이미프라민",
+    "트라조돈", "아고멜라틴", "발프로산", "토피라메이트", "레베티라세탐", "옥스카르바제핀",
+    "카르바마제핀", "페니토인", "라코사미드", "클로나제팜", "디아제팜", "로라제팜",
+    "에티졸람", "부스피론", "리스페리돈", "올란자핀", "아리피프라졸", "팔리페리돈",
+    "아미설프리드", "할로페리돌", "멜라토닌", "라멜테온", "트리아졸람", "조피클론",
+    # 비뇨·전립선
+    "실로도신", "알푸조신", "테라조신", "독사조신", "나프토피딜", "미라베그론", "톨테로딘",
+    "페소테로딘", "트로스피움", "옥시부티닌", "프로피베린", "데스모프레신",
+    # 통풍·골대사(알렌드론산 제외)
+    "페북소스타트", "벤즈브로마론", "리세드론산", "이반드론산", "랄록시펜", "바제독시펜",
+    # 인지·치매
+    "콜린알포세레이트", "니세르골린", "옥시라세탐", "시티콜린", "메만틴", "리바스티그민", "갈란타민",
+    # 항혈전(와파린 제외)
+    "리바록사반", "아픽사반", "다비가트란", "에독사반", "티카그렐러", "프라수그렐",
+    "사르포그렐레이트", "베라프로스트", "트리플루살",
+    # 안과(점안 — 품목명 확인용)
+    "라타노프로스트", "브리모니딘", "도르졸아미드", "브린졸아미드", "티몰롤", "트라보프로스트", "비마토프로스트",
+    # 기타
+    "디멘히드리네이트", "메클리진", "레보카르니틴", "은행엽엑스",
+]
+# 중복 제거(순서 보존). base 94 + ext → 확장 검색 성분 풀.
+DIVERSE_INGREDIENTS = list(dict.fromkeys(DIVERSE_INGREDIENTS + DIVERSE_INGREDIENTS_EXT))
+
 
 def norm_name(s):
     return " ".join(unicodedata.normalize("NFC", str(s or "")).split()).strip().lower()
@@ -145,9 +208,20 @@ def build_relation_card_seed(checked_at):
     return entries, set(seed.keys())
 
 
-def collect_name_only(pool_seqs, cap, checked_at, max_pages, timeout, sleep):
+def load_existing_entries(path):
+    """Phase 4 augment: 기존 출력의 entries 를 그대로 보존(원본 itemSeq/이름/날짜 불변)."""
+    if not os.path.exists(path):
+        return None
+    d = json.load(open(path, encoding="utf-8"))
+    ents = d.get("entries")
+    if not isinstance(ents, list):
+        return None
+    return [e for e in ents if isinstance(e, dict)]
+
+
+def collect_name_only(pre_seen, pool_seqs, cap, per_cap, checked_at, max_pages, timeout, sleep):
     op = make_opener()
-    out, seen = [], set(pool_seqs)
+    out, seen = [], set(pre_seen) | set(pool_seqs)
     st = {"ingredients_searched": 0, "ing_fail": 0, "rows_seen": 0,
           "excl_export": 0, "excl_raw": 0, "excl_cancel": 0, "excl_eso": 0,
           "excl_13": 0, "excl_dup": 0, "excl_pool": 0, "kept": 0, "fails": []}
@@ -157,7 +231,7 @@ def collect_name_only(pool_seqs, cap, checked_at, max_pages, timeout, sleep):
         st["ingredients_searched"] += 1
         got = 0
         for page in range(1, max_pages + 1):
-            if len(out) >= cap or got >= PER_INGREDIENT_CAP:
+            if len(out) >= cap or got >= per_cap:
                 break
             try:
                 html_text, _ = nedrug_search(op, ing, page=page, timeout=timeout)
@@ -167,7 +241,7 @@ def collect_name_only(pool_seqs, cap, checked_at, max_pages, timeout, sleep):
                 break
             time.sleep(sleep)
             for r in parse_full(html_text):
-                if len(out) >= cap or got >= PER_INGREDIENT_CAP:
+                if len(out) >= cap or got >= per_cap:
                     break
                 st["rows_seen"] += 1
                 seq, name, ingr = str(r["item_seq"]).strip(), r["item_name"].strip(), (r["ingr_name"] or "").strip()
@@ -210,26 +284,51 @@ def main():
     ap.add_argument("--checked-at", default=DEFAULT_CHECKED_AT)
     ap.add_argument("--timeout", type=int, default=15)
     ap.add_argument("--sleep", type=float, default=0.15)
+    ap.add_argument("--per-cap", type=int, default=PER_INGREDIENT_CAP, help="성분별 name_only 상한(편중 방지)")
     ap.add_argument("--no-network", action="store_true", help="relation_card seed 만(name_only 수집 생략)")
+    ap.add_argument("--augment", action="store_true",
+                    help="기존 출력을 seed로 보존하고 신규 name_only만 추가(Phase 4 확장)")
     args = ap.parse_args()
 
-    rc, pool = build_relation_card_seed(args.checked_at)
-    print(f"[seed] relation_card(covered_by_relation=true) = {len(rc)}  (relation-covered pool itemSeqs)")
+    rc_seed, pool = build_relation_card_seed(args.checked_at)
 
-    name_cap = max(0, args.target - len(rc))
-    if args.no_network:
-        no, st = [], {"note": "no-network: name_only 수집 생략"}
-        print("[name_only] --no-network → 생략")
+    if args.augment:
+        existing = load_existing_entries(OUT_JSON)
+        if not existing:
+            print("[augment] 기존 출력 없음 — 일반 모드로 실행하세요(--augment 제거).", file=sys.stderr)
+            return 1
+        rc = [e for e in existing if e.get("display_mode") == "relation_card"]
+        base_no = [e for e in existing if e.get("display_mode") == "name_only"]
+        existing_seqs = {str(e.get("item_seq") or "").strip() for e in existing}
+        print(f"[augment] 기존 {len(existing)} 보존 (relation_card {len(rc)} + name_only {len(base_no)})")
+        name_cap = max(0, args.target - len(existing))
+        if args.no_network:
+            new_no, st = [], {"note": "no-network: name_only 신규 수집 생략"}
+        else:
+            print(f"[name_only] 신규 수집 (cap {name_cap}, per-cap {args.per_cap}, max-pages {args.max_pages}, {len(DIVERSE_INGREDIENTS)} 성분)")
+            new_no, st = collect_name_only(existing_seqs, pool, name_cap, args.per_cap,
+                                           args.checked_at, args.max_pages, args.timeout, args.sleep)
+            print(f"[name_only] 신규 {len(new_no)} 추가 / cap {name_cap} (rows {st.get('rows_seen')})")
+        st["augment"] = {"existing": len(existing), "base_name_only": len(base_no), "new_name_only": len(new_no)}
+        no = base_no + new_no
+        entries = rc + no
     else:
-        print(f"[name_only] 수집 시작 (cap {name_cap}, max-pages {args.max_pages}, {len(DIVERSE_INGREDIENTS)} 성분)")
-        no, st = collect_name_only(pool, name_cap, args.checked_at, args.max_pages, args.timeout, args.sleep)
-        print(f"[name_only] kept {len(no)} / cap {name_cap}  (ingredients {st['ingredients_searched']}, rows {st['rows_seen']})")
-
-    entries = rc + no
+        rc = rc_seed
+        print(f"[seed] relation_card(covered_by_relation=true) = {len(rc)}  (relation-covered pool itemSeqs)")
+        name_cap = max(0, args.target - len(rc))
+        if args.no_network:
+            no, st = [], {"note": "no-network: name_only 수집 생략"}
+            print("[name_only] --no-network → 생략")
+        else:
+            print(f"[name_only] 수집 시작 (cap {name_cap}, per-cap {args.per_cap}, max-pages {args.max_pages}, {len(DIVERSE_INGREDIENTS)} 성분)")
+            no, st = collect_name_only(set(), pool, name_cap, args.per_cap,
+                                       args.checked_at, args.max_pages, args.timeout, args.sleep)
+            print(f"[name_only] kept {len(no)} / cap {name_cap}  (ingredients {st['ingredients_searched']}, rows {st['rows_seen']})")
+        entries = rc + no
     meta = {
         "name": "full_drug_name_index_sample_v1_0",
         "schema_version": "1.0",
-        "purpose": "검색 커버리지 확장용 전체 품목명 인덱스 샘플(v1.0-B 설계 Phase 2). relation/alias 와 분리. name_only 는 '품목명 확인만 가능'. 앱 미배선(Phase 3).",
+        "purpose": "검색 커버리지 확장용 전체 품목명 인덱스(v1.0-B 설계 · Phase 2 1,000 → Phase 4 확장). relation/alias 와 분리. name_only 는 '품목명 확인만 가능'. 앱 배선됨(Phase 3 name_only UX).",
         "source_basis": "MFDS nedrug (식약처 의약품통합정보)",
         "generated_checked_at": args.checked_at,
         "target_total": args.target,

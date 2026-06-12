@@ -157,6 +157,11 @@ def validate(doc, pool, inv):
     ck("meta.counts.relation_card == 실제", counts.get("relation_card") == len(rc))
     ck("meta.counts.name_only == 실제", counts.get("name_only") == len(no))
 
+    # v1.0 Phase 4 확장 목표(meta.target_total>=5000 일 때만 게이트). 검색 "안 나오는 약" 체감 축소.
+    tt = (meta or {}).get("target_total", 0)
+    if isinstance(tt, int) and tt >= 5000:
+        ck("Phase 4: total >= 5,000 (검색 커버리지 확장)", len(entries) >= 5000, f"total {len(entries)}")
+
     # 교차 불변(다른 트랙 회귀 감지)
     ck("불변: alias_count 621", inv["alias_count"] == 621, str(inv["alias_count"]))
     ck("불변: product_aliases 583", inv["product"] == 583, str(inv["product"]))

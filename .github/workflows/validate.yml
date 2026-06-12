@@ -26,3 +26,5 @@ jobs:
         run: python3 scripts/validate_medistack_v0_3_aliases.py data/medistack_v0.3_aliases.json data/medistack_v0.2_beta_export.json
       - name: Validate alias surface forms (v0.9 newline/whitespace hygiene)
         run: python3 scripts/validate_alias_surface_forms.py data/medistack_v0.3_aliases.json
+      - name: Validate full drug name index (v1.0 name_only data integrity)
+        run: python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sample_v1_0.json
