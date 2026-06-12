@@ -1,0 +1,10 @@
+{
+  "meta": {"note": "reject: combination_notice_required 누락 -> #14"},
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {"alias": "테스트메트복합정", "canonical_ingredient": "메트포르민", "kind": "product", "lang": "ko", "item_seq": "999999001", "source_relation_ids": [12], "is_combination": true, "combination_basis_ingredient": "메트포르민"}
+  ],
+  "verified_item_seqs": {
+    "메트포르민": [{"item_seq": "999999001", "item_name": "테스트메트복합정", "verified_at": "2026-06-12", "method": "fixture"}]
+  }
+}

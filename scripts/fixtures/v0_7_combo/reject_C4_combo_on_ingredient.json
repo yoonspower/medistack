@@ -1,0 +1,8 @@
+{
+  "meta": {"note": "reject: is_combination 플래그가 ingredient alias 에 -> #14(복합제는 product만)"},
+  "ingredient_aliases": [
+    {"alias": "테스트성분복합", "canonical_ingredient": "메트포르민", "kind": "ingredient", "is_combination": true, "combination_basis_ingredient": "메트포르민", "combination_notice_required": true}
+  ],
+  "product_aliases": [],
+  "verified_item_seqs": {}
+}

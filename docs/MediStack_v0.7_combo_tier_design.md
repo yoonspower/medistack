@@ -62,7 +62,7 @@
 - fail-safe: `is_combination` 인데 basis성분 미상이면 **상세 렌더 차단**(안전쪽).
 
 ### 2-4. 데이터 스키마 (append-only 설계 — 지금 적용 안 함)
-- product_alias 항목에 **append-only 필드 추가**: `is_combination: true` (필수), `basis_ingredient`(= canonical, 재사용 가능하면 생략), `combo_partner_ingredients: [...]`(선택, 고지 상세용).
+- product_alias 항목에 **append-only 필드 3종 추가(PM 확정 2026-06-12)**: `is_combination: true` · `combination_basis_ingredient`(= canonical) · `combination_notice_required: true`. 파트너 성분 **미표기** 결정 → `combo_partner_ingredients` 필드 없음.
 - 기존 단일성분/brand_core alias 는 필드 부재 = `is_combination` 미존재 → 기존 동작 불변(하위호환).
 - ⚠️ **이 스키마는 앱 `render`/`guards` 가 새 필드를 읽어야 하므로 `앱 UI 금지` 불변규칙 완화를 수반** — 정책 문서 §4 에서 식별, PM 이 §2-2 고지 추가를 승인함으로써 본 완화에 동의한 것으로 간주(구현 게이트에서 재확인).
 
@@ -111,15 +111,15 @@
 - ✅ **하위호환**: `is_combination` 미존재 alias 는 기존 동작 100% 유지.
 - ⚠️ **앱 UI 변경 수반**: §2 고지 렌더는 `render`/스키마 변경 필요(`앱 UI 금지` 완화) — 구현 게이트에서 최소 변경·fail-safe 로.
 
-## 5. PM 결정 필요사항 (이 게이트)
-1. **복합제 고지 문구 확정**(§2-2 초안 채택/수정) — 연결 안내 + 상세 배너 + 배지 라벨.
-2. **파트너 성분 노출 여부**: 고지에 다른 성분명 표기할지(기본 미표기) / `combo_partner_ingredients` 필드 둘지.
-3. **스키마 필드 확정**(§2-4): `is_combination` 단독 vs +`basis_ingredient`/`combo_partner_ingredients`.
-4. **앱 UI 고지 렌더 완화 승인 재확인**(§2-4·§4) — B1 전제.
-5. **brand_core 14 동시 진행** 확정(§1-2, BC 규칙).
+## 5. PM 결정 (2026-06-12 확정)
+1. ✅ **고지 문구 = §2-2 초안 채택**(연결 안내 + 상세 배너 + `복합제` 배지).
+2. ✅ **파트너 성분 = 기본 미표기**(고지에 다른 성분명 나열 안 함).
+3. ✅ **스키마 = `is_combination` + `combination_basis_ingredient` + `combination_notice_required`**(3필드, §2-4).
+4. ✅ **앱 UI 고지 렌더 = 허용**(`앱 UI 금지` 완화 승인 — B1 전제 충족).
+5. ✅ **brand_core 14 = 동시 진행 허용**(§1-2, BC 규칙).
 
 ## 6. 다음 단계 (본 문서 승인 후 · 구현 게이트, 여전히 단계별 PM 승인)
-1. **구현 G1 — validator**: CMB/BC 코드 추가 + 음성테스트 + 회귀 0 확인. (data/alias 무변경, 검증기만.)
+1. ✅ **구현 G1 완료(2026-06-12)** — combo **라이브 ship-gate** 를 v0.3 alias validator 에 추가: **#14**(is_combination 메타 정합: product 한정·basis==canonical·notice_required·orphan 금지) + **#15**(basis ∈ {메트포르민,알렌드론산,오메프라졸} → **HCTZ·에스오메프라졸 하드 차단**), `COMBO_ALLOWED_BASIS` 상수. fixture 6종 + `test_validate_v0_3_combo.py`(7/7: 정상 PASS·C1 HCTZ→#15·C2~C5→#14). 회귀 0(v0.1 12·v0.2 15·v0.3 **15**·TypeB 7·bulk 152). **data/alias/앱 무변경**(검증기·테스트만). ⚠️ **CMB-2(relation 성분 정확히 1개)·CMB-5~7·BC-1~4 는 ingr_name·getItemDetail 필요 → G3 confirm combo 모드에서 구현**(라이브 alias엔 ingr_name 없음). brand_core 라이브 검증은 기존 #1~#13 으로 커버.
 2. **구현 G2 — 앱 고지 렌더 + 스키마**: `render`/`guards` 최소 변경(복합제 배지·배너·연결 안내 변형) + append-only 필드 + fail-safe. 헤드리스 smoke.
 3. **구현 G3 — confirm combo 모드**: deferred 110 getItemDetail 확정(distinct·relation 1개).
 4. **구현 G4 — batch 반영**: 단일성분과 동일 생성↔반영 분리 + PM 명시 승인 batch.

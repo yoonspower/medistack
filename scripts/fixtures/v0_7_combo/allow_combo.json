@@ -1,0 +1,10 @@
+{
+  "meta": {"alias_count": 1, "note": "v0.7 combo fixture: 정상 메트포르민 복합제(허용)"},
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {"alias": "테스트메트복합정", "canonical_ingredient": "메트포르민", "kind": "product", "lang": "ko", "item_seq": "999999001", "source_relation_ids": [12], "is_combination": true, "combination_basis_ingredient": "메트포르민", "combination_notice_required": true}
+  ],
+  "verified_item_seqs": {
+    "메트포르민": [{"item_seq": "999999001", "item_name": "테스트메트복합정(아나글립틴/메트포르민)", "verified_at": "2026-06-12", "method": "fixture"}]
+  }
+}

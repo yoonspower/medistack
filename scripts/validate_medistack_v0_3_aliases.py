@@ -14,6 +14,10 @@ alias = 검색 보조 인덱스. 새 의학정보 아님. alias 만으로 relati
   - (v0.4 유형 B) verified_item_seqs 화이트리스트: 동일 성분의 검증된 2번째 itemSeq 만 #8 허용집합에 추가.
     성분 키는 라이브 실재 + excluded·에스오메프라졸 금지(#12), 엔트리는 숫자형 itemSeq·중복·필드 위생(#13).
     섹션 부재 시 빈 집합 → 기존(relation 인용분만) 동작과 동일(하위호환).
+  - (v0.7 복합제 tier) 복합제 alias 라이브 가드: is_combination=true 인 product alias 는 고지 메타가 정합해야 하고
+    (#14: product 한정·basis==canonical·notice_required=true·orphan 고지필드 금지), basis 성분은 허용 allowlist
+    안이어야 한다(#15: 메트포르민/알렌드론산/오메프라졸만 — 히드로클로로티아지드·에스오메프라졸 하드 차단).
+    복합제 entry 부재 시 두 검사 모두 빈 집합 → 기존 동작과 동일(하위호환).
 
 사용:
     python3 validate_medistack_v0_3_aliases.py <aliases.json> [relations_export.json]
@@ -29,6 +33,9 @@ DEFAULT_RELATIONS_PATH = "data/medistack_v0.2_beta_export.json"
 ALLOWED_KIND = {"product", "ingredient"}
 FORBIDDEN_RELATION_ID = 15  # excluded_v0_1 (에스오메프라졸×B12)
 EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"  # 제품 alias 금지 대상(15행 관련)
+# v0.7 B1 복합제 basis allowlist: 이 성분들만 복합제 basis 로 허용.
+# 히드로클로로티아지드(칼륨 오도)·에스오메프라졸은 의도적으로 제외(하드 차단).
+COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸"}
 # 제품/제휴 의심 필드명(전면 금지). item_seq/source_relation_ids 는 추적 메타라 허용.
 PRODUCT_FIELD_HINT = re.compile(r"(affiliate|shop|buy|store|purchase|cart|price|link|coupon|deal)", re.IGNORECASE)
 ITEMSEQ_RE = re.compile(r"itemSeq=(\d+)")
@@ -264,6 +271,44 @@ def main(alias_path, rel_path):
     # 13) verified_item_seqs 엔트리 위생: item_seq 숫자형 + 성분내 중복 금지 + 제품/구매/제휴 필드 금지
     v.check(not wl_bad_entry, 13,
             "verified_item_seqs 엔트리 위생(item_seq 형식·중복·금지필드)", f"viol={wl_bad_entry}")
+
+    # --- v0.7 복합제(combo) tier 라이브 가드 ---
+    # 복합제 alias 는 product 한정 + 고지 메타(is_combination/basis/notice_required) 정합 필요.
+    # 복합제 entry 부재 시 빈 집합 → 기존 동작과 동일(하위호환).
+    # 14) is_combination 메타 정합성
+    combo_bad = []
+    for src, e in dict_entries:
+        isc = e.get("is_combination")
+        basis = e.get("combination_basis_ingredient")
+        notice = e.get("combination_notice_required")
+        if isc is True:
+            if src != "product_aliases" or e.get("kind") != "product":
+                combo_bad.append(f"{e.get('alias')!r}:복합제는 product alias만")
+            if not nonempty_str(basis):
+                combo_bad.append(f"{e.get('alias')!r}:combination_basis_ingredient 누락")
+            elif basis != e.get("canonical_ingredient"):
+                combo_bad.append(f"{e.get('alias')!r}:basis({basis})!=canonical({e.get('canonical_ingredient')})")
+            if notice is not True:
+                combo_bad.append(f"{e.get('alias')!r}:combination_notice_required!=true")
+        else:
+            if isc not in (None, False):
+                combo_bad.append(f"{e.get('alias')!r}:is_combination={isc!r}(bool 아님)")
+            if notice is True or nonempty_str(basis):
+                combo_bad.append(f"{e.get('alias')!r}:비복합제인데 복합제 고지필드 존재(orphan)")
+    v.check(not combo_bad, 14,
+            "is_combination 메타 정합(product 한정·basis==canonical·notice_required=true·orphan 금지)",
+            f"viol={combo_bad}")
+
+    # 15) 복합제 basis 성분 allowlist(히드로클로로티아지드·에스오메프라졸·범위밖 하드 차단)
+    combo_basis_bad = []
+    for _, e in dict_entries:
+        if e.get("is_combination") is True:
+            basis = e.get("combination_basis_ingredient")
+            if basis not in COMBO_ALLOWED_BASIS:
+                combo_basis_bad.append(f"{e.get('alias')!r}:basis={basis!r}(allowlist 외 차단)")
+    v.check(not combo_basis_bad, 15,
+            f"복합제 basis ∈ {sorted(COMBO_ALLOWED_BASIS)}(HCTZ·에스오메프라졸 하드 차단)",
+            f"viol={combo_basis_bad}")
 
     total = len(v.passes) + len(v.fails)
     overall = "PASS" if not v.fails else "FAIL"
