@@ -59,7 +59,16 @@ export function renderListControls(facets, state) {
 export function renderAliasHint(info) {
   if (!info || !info.query || !Array.isArray(info.ingredients) || info.ingredients.length === 0) return '';
   const ing = info.ingredients.join(', ');
-  return '<div class="aliashint">' + esc('‘' + info.query + '’ 검색어는 ' + ing + ' 관련 정보로 연결됩니다.') + '</div>';
+  let h = '<div class="aliashint">' + esc('‘' + info.query + '’ 검색어는 ' + ing + ' 관련 정보로 연결됩니다.') + '</div>';
+  // v0.7 복합제 고지(검색 보조 안내. 제품 추천/구매 아님). info.comboBases 부재 시 미표시 → 기존과 동일.
+  if (Array.isArray(info.comboBases) && info.comboBases.length > 0) {
+    const basis = info.comboBases.join(', ');
+    h += '<div class="combobox" role="note"><span class="combobadge">복합제</span><p>' +
+      esc('이 제품은 둘 이상의 성분을 가진 복합제입니다. 표시된 약-영양소 참고 정보는 ' + basis +
+          ' 성분을 기준으로 하며, 함께 포함된 다른 성분에 대한 정보는 포함하지 않습니다. 전체 성분은 의약품 허가사항(첨부문서)을 확인하세요.') +
+      '</p></div>';
+  }
+  return h;
 }
 
 // 결과 카운트 + 카드 (0건이면 카운트만; no-results 는 states.renderNoResults)

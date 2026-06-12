@@ -77,7 +77,14 @@ export function buildAliasIndex(aliasData) {
       const a = e.alias, ci = e.canonical_ingredient;
       if (typeof a !== 'string' || !a.trim()) continue;
       if (typeof ci !== 'string' || !ci.trim()) continue;
-      out.push({ alias: norm(a), canonical: norm(ci) });
+      const rec = { alias: norm(a), canonical: norm(ci) };
+      // v0.7 복합제: is_combination=true 항목만 combo 메타 부착(나머지 항목엔 미부착 → 하위호환).
+      if (e.is_combination === true) {
+        rec.isCombo = true;
+        const b = e.combination_basis_ingredient;
+        rec.basis = norm(typeof b === 'string' && b.trim() ? b : ci);
+      }
+      out.push(rec);
     }
   }
   return out;
@@ -127,5 +134,27 @@ export function aliasHint(filteredRels, state, aliasIndex) {
   if (!aliasIngs.size) return null;
   const ings = [...new Set(filteredRels.filter((r) => aliasIngs.has(norm(r.ingredient))).map((r) => r.ingredient))];
   if (!ings.length) return null;
-  return { query: s.query, ingredients: ings };
+  const out = { query: s.query, ingredients: ings };
+  // v0.7 복합제: 'combo alias 로만' 도달한 성분은 복합제 고지 대상으로 표시.
+  const comboBases = comboBasesFor(q, ings, aliasIndex);
+  if (comboBases.length) out.comboBases = comboBases;
+  return out;
+}
+
+// 질의 prefix 로 매칭된 alias 중, 해당 성분이 combo alias 로만 도달되면 복합제 고지 대상.
+// 같은 성분에 단일성분 alias 도 매칭되면 제외 → 단일 제품 오고지 방지. ings = 표시 성분 raw.
+// combo 항목이 전혀 없으면(현 라이브 0건) 항상 [] → 기존 동작과 동일.
+function comboBasesFor(nq, ings, aliasIndex) {
+  if (!nq || !Array.isArray(aliasIndex)) return [];
+  const flag = new Map(); // canonical(norm) -> { combo, single }
+  for (const e of aliasIndex) {
+    if (!e.alias.startsWith(nq)) continue;
+    const rec = flag.get(e.canonical) || { combo: false, single: false };
+    if (e.isCombo) rec.combo = true; else rec.single = true;
+    flag.set(e.canonical, rec);
+  }
+  return ings.filter((ing) => {
+    const rec = flag.get(norm(ing));
+    return !!rec && rec.combo && !rec.single;
+  });
 }
