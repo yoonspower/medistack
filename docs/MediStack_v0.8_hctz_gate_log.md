@@ -34,3 +34,27 @@
 **불변(무변경) 확인:** alias_count 506 · product_aliases 468 · verified_item_seqs 430/12 · relations 30 · DATA_URL `./data/medistack_v0.2_beta_export.json`. data/ src/ 추적파일 diff 0.
 
 **회귀:** 기존 combo 110·brand_core 14 라이브 — 새 검사(#12/#13/#16)는 HCTZ-canonical/K보존 토큰이 없어 모두 inert → PASS 유지(회귀 0).
+
+---
+
+## H-G2 — HCTZ 칼륨 반전 고지 render (src 최소 수정·app.js 무변경) ✅
+
+**설계 결정:** 상세뷰(`renderDetail`)는 alias 맥락이 없어 단일 HCTZ 와 복합제를 구분 못 함(단일 HCTZ 에 반전 고지를 띄우면 오고지). 복합제 맥락(`comboBases`)을 가진 **`renderAliasHint`(목록/검색뷰)** 가 정확한 위치 → app.js 라우팅 변경 불요.
+
+**변경 파일(src 3개·app.js 무변경):**
+- `src/js/guards.js` — `aliasHint()` 에 `hctzPotassiumNotice` 플래그 추가. 조건: `comboBases` 에 히드로클로로티아지드 포함 **AND** 결과에 HCTZ 의 `potassium_safety_card===true` 행 존재(= 칼륨 행). **nutrient 문자열 매칭 금지 원칙 → 플래그로 판정.**
+- `src/js/render.js` — `renderAliasHint()` 에 `info.hctzPotassiumNotice` 시 `.combonotice` 1줄(설계 §2-2 문구: "…ARB 계열 등은 칼륨을 반대 방향(보존)으로… 임의보충 위험·상담"). 기존 combo 배너 유지.
+- `src/css/styles.css` — `.combonotice`/`.kbadge`(기존 clay 팔레트 재사용).
+
+**트리거(데이터 파생, append-only 플래그 무):** `is_combination` + `combination_basis_ingredient=히드로클로로티아지드` (기존 스키마) → `comboBases` 도출 → 칼륨 행 동반 시에만 표시.
+
+**smoke 결과(`scripts/smoke_hctz_disclosure.py`, ES module /tmp 복사 + node):**
+| 시나리오 | 결과 |
+|---|---|
+| A 라이브 메트 복합제 → combobox O·반전고지 X(inert) | PASS 3/3 |
+| B 합성 HCTZ+ARB → combobox O·반전고지 O('반대 방향') | PASS 3/3 |
+| C HCTZ 복합제+마그네슘 필터 → 반전고지 X(칼륨 행 없음) | PASS 2/2 |
+| D 단일 HCTZ(비복합제) → 배지·반전고지 X | PASS 2/2 |
+| **합계** | **SMOKE PASS 10/10** |
+
+**라이브 화면 회귀:** HCTZ 복합제 0건 → `hctzPotassiumNotice` 항상 미설정 → `renderAliasHint` 출력 라이브 동일(신규 코드 경로 휴면). `.combonotice` CSS 는 라이브에서 매칭 엘리먼트 0 → 시각 동일. data/validator 무변경.

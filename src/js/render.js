@@ -68,6 +68,14 @@ export function renderAliasHint(info) {
           ' 성분을 기준으로 하며, 함께 포함된 다른 성분에 대한 정보는 포함하지 않습니다. 전체 성분은 의약품 허가사항(첨부문서)을 확인하세요.') +
       '</p></div>';
   }
+  // v0.8 HCTZ 칼륨 반전 고지(복합제 basis=HCTZ + 칼륨 행). info.hctzPotassiumNotice 부재 시 미표시 → 기존과 동일.
+  if (info.hctzPotassiumNotice) {
+    h += '<div class="combonotice" role="note"><span class="kbadge">칼륨 주의</span><p>' +
+      esc('이 제품은 복합제입니다. 위 칼륨 관련 정보는 히드로클로로티아지드 성분 기준이며, 함께 든 성분(ARB 계열 등)은 ' +
+          '칼륨을 반대 방향(보존)으로 움직일 수 있습니다. 칼륨은 임의로 보충하면 위험하므로, ' +
+          '보충·검사 여부는 반드시 의사·약사와 상담하세요.') +
+      '</p></div>';
+  }
   return h;
 }
 

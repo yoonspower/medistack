@@ -50,6 +50,8 @@ export function findRelation(data, id) {
 
 // ---- Phase 1: 검색/필터 (순수 함수, relations 소스만) ----
 const SEARCH_FIELDS = ['ingredient', 'nutrient'];
+// v0.8: HCTZ 복합제 칼륨 반전 고지 basis(ARB 파트너가 칼륨을 반대 방향으로 움직임).
+const HCTZ_BASIS = '히드로클로로티아지드';
 
 function norm(s) {
   return String(s == null ? '' : s).normalize('NFC').trim().toLowerCase();
@@ -138,6 +140,14 @@ export function aliasHint(filteredRels, state, aliasIndex) {
   // v0.7 복합제: 'combo alias 로만' 도달한 성분은 복합제 고지 대상으로 표시.
   const comboBases = comboBasesFor(q, ings, aliasIndex);
   if (comboBases.length) out.comboBases = comboBases;
+  // v0.8 HCTZ: 복합제 basis 가 히드로클로로티아지드이고 칼륨 행(potassium_safety_card 플래그)이
+  // 결과에 있을 때만 칼륨 반전 고지 대상. nutrient 문자열 매칭 금지 원칙 → 플래그로 판정.
+  // 라이브엔 HCTZ 복합제 0건 → comboBases 에 HCTZ 부재 → 항상 미설정(기존 동작과 동일).
+  const hctzN = norm(HCTZ_BASIS);
+  if (comboBases.some((b) => norm(b) === hctzN) &&
+      filteredRels.some((r) => norm(r.ingredient) === hctzN && showPotassiumNotice(r))) {
+    out.hctzPotassiumNotice = true;
+  }
   return out;
 }
 
