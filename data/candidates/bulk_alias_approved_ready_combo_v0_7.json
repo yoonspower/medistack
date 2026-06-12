@@ -8,7 +8,7 @@
     "alias_source": "data/medistack_v0.3_aliases.json",
     "queue_source": "data/candidates/bulk_alias_review_queue_v0_5.json",
     "batch_id": "v0.7-combo-1",
-    "incorporated": false,
+    "incorporated": true,
     "allowed_basis": [
       "메트포르민",
       "알렌드론산",
@@ -19,7 +19,8 @@
       "combo_confirmed": 110
     },
     "count": 110,
-    "note": "deferred 복합제를 getItemDetail 상세확정 → relation 보유 성분 정확히 1개(=canonical·∈allowlist)인 후보만 is_combination=true 로 combo approved-ready 분리. HCTZ·에스오메프라졸·15행·다중relation·단일성분·개행 제외. 큐/alias JSON 미수정. 실제 반영은 G4 PM 게이트(복합제 고지 렌더는 G2 완료)."
+    "note": "deferred 복합제를 getItemDetail 상세확정 → relation 보유 성분 정확히 1개(=canonical·∈allowlist)인 후보만 is_combination=true 로 combo approved-ready 분리. HCTZ·에스오메프라졸·15행·다중relation·단일성분·개행 제외. 큐/alias JSON 미수정. 실제 반영은 G4 PM 게이트(복합제 고지 렌더는 G2 완료).",
+    "incorporated_at": "2026-06-12"
   },
   "approved_ready": [
     {
@@ -41,9 +42,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가드메트정100/500밀리그램",
@@ -64,9 +67,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가드메트정100/850밀리그램(아나글립틴, 메트포르민)",
@@ -87,9 +92,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가브스메트정50/1000밀리그램",
@@ -110,9 +117,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가브스메트정50/500밀리그램",
@@ -133,9 +142,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가브스메트정50/850밀리그램",
@@ -156,9 +167,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가블리메트정",
@@ -179,9 +192,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "게리드엠정",
@@ -202,9 +217,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "게리메트정2/500밀리그램",
@@ -225,9 +242,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "광동메포시타정50/1000밀리그램",
@@ -248,9 +267,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "광동메포시타정50/500밀리그램",
@@ -271,9 +292,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "광동메포시타정50/850밀리그램",
@@ -294,9 +317,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "그루리스엠정(글리메피리드,메트포르민염산염)",
@@ -317,9 +342,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "그리마린엠정2/500밀리그램",
@@ -340,9 +367,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "그리메폴서방정2/500밀리그램",
@@ -363,9 +392,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글라포민엠정1/250 밀리그램",
@@ -386,9 +417,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글라포민엠정1/500밀리그램",
@@ -409,9 +442,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글라포민엠정2/500밀리그램",
@@ -432,9 +467,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글레딘엠정2/500밀리그램",
@@ -455,9 +492,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글레린듀오서방정2.5/1000밀리그램(리나글립틴,메트포르민)",
@@ -478,9 +517,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글레린듀오서방정5/1000밀리그램(리나글립틴,메트포르민)",
@@ -501,9 +542,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글레아정2/500밀리그램",
@@ -524,9 +567,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로시타포민서방정100/1000밀리그램",
@@ -547,9 +592,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로시타포민서방정50/1000밀리그램",
@@ -570,9 +617,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로시타포민서방정50/500밀리그램",
@@ -593,9 +642,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로시타포민정50/1000밀리그램",
@@ -616,9 +667,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로시타포민정50/500밀리그램",
@@ -639,9 +692,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로시타포민정50/850밀리그램",
@@ -662,9 +717,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로엠정",
@@ -685,9 +742,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로틴듀오정2.5/1000mg(리나글립틴, 메트포르민염산염)",
@@ -708,9 +767,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로틴듀오정2.5/500mg(리나글립틴, 메트포르민염산염)",
@@ -731,9 +792,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글로틴듀오정2.5/850mg(리나글립틴, 메트포르민염산염)",
@@ -754,9 +817,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루리아드정500/2.5밀리그람",
@@ -777,9 +842,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루리아드정500/5밀리그람",
@@ -800,9 +867,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루립틴듀오엑스알서방정2.5/1000밀리그램(리나글립틴,메트포르민염산염)",
@@ -823,9 +892,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루립틴듀오엑스알서방정5/1000밀리그램(리나글립틴,메트포르민염산염)",
@@ -846,9 +917,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루비엠정2/500밀리그램",
@@ -869,9 +942,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루시타듀오서방정100/1000밀리그램",
@@ -892,9 +967,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루시타듀오서방정50/1000밀리그램",
@@ -915,9 +992,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루시타듀오서방정50/500밀리그램",
@@ -938,9 +1017,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루시타듀오정50/1000밀리그램",
@@ -961,9 +1042,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루시타듀오정50/500밀리그램",
@@ -984,9 +1067,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루시타듀오정50/850밀리그램",
@@ -1007,9 +1092,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코반스정500/2.5밀리그램",
@@ -1030,9 +1117,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루코반스정500/5밀리그램",
@@ -1053,9 +1142,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루파콤비정500/80mg",
@@ -1076,9 +1167,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루펜엠정",
@@ -1099,9 +1192,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글루폴민정2/500밀리그램(글리메피리드, 메트포르민염산염)",
@@ -1122,9 +1217,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리마릴엠정2/500밀리그램",
@@ -1145,9 +1242,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리매핀엠정2/500밀리그램",
@@ -1168,9 +1267,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메드엠정2/500밀리그램",
@@ -1191,9 +1292,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메론정",
@@ -1214,9 +1317,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메릴엠정",
@@ -1237,9 +1342,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메엠정1/250밀리그램",
@@ -1260,9 +1367,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메엠정2/500밀리그램",
@@ -1283,9 +1392,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메윈플러스정",
@@ -1306,9 +1417,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메자큐정50/1000밀리그램(시타글립틴,메트포르민)",
@@ -1329,9 +1442,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메자큐정50/500밀리그램(시타글립틴,메트포르민)",
@@ -1352,9 +1467,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리메자큐정50/850밀리그램(시타글립틴,메트포르민)",
@@ -1375,9 +1492,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리멜엠정1/250밀리그램",
@@ -1398,9 +1517,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리멜엠정2/500밀리그램",
@@ -1421,9 +1542,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리미드엠정",
@@ -1444,9 +1567,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리밀엠정2/500mg",
@@ -1467,9 +1592,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리베타엠정",
@@ -1490,9 +1617,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리스타엠정",
@@ -1513,9 +1642,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리시타메트엑스알서방정100/1000밀리그램",
@@ -1536,9 +1667,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리시타메트엑스알서방정50/1000밀리그램",
@@ -1559,9 +1692,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리시타메트엑스알서방정50/500밀리그램",
@@ -1582,9 +1717,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리시타메트정50/1000밀리그램",
@@ -1605,9 +1742,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리시타메트정50/500밀리그램",
@@ -1628,9 +1767,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리시타메트정50/850밀리그램",
@@ -1651,9 +1792,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리앙듀오정5/1000밀리그램(엠파글리플로진, 메트포르민염산염)",
@@ -1674,9 +1817,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리앙듀오정5/500밀리그램(엠파글리플로진, 메트포르민염산염)",
@@ -1697,9 +1842,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리앙듀오정5/850밀리그램(엠파글리플로진, 메트포르민염산염)",
@@ -1720,9 +1867,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리엠정2/500밀리그램",
@@ -1743,9 +1892,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "글리젠타듀오정2.5/850밀리그램",
@@ -1766,9 +1917,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "대웅알렌드로네이트디정",
@@ -1789,9 +1942,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "마빌더블유플러스정",
@@ -1812,9 +1967,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "맥스마빌장용정",
@@ -1835,9 +1992,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "보나맥스플러스디정",
@@ -1858,9 +2017,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "보노맥스플러스디정",
@@ -1881,9 +2042,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "본필플러스디정",
@@ -1904,9 +2067,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알드맥플러스디정",
@@ -1927,9 +2092,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알레론플러스디정",
@@ -1950,9 +2117,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌드로스플러스디정",
@@ -1973,9 +2142,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌드로플러스디정",
@@ -1996,9 +2167,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌드론플러스디정",
@@ -2019,9 +2192,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌드본플러스디정",
@@ -2042,9 +2217,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌드플러스디정",
@@ -2065,9 +2242,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌맥스플러스디정",
@@ -2088,9 +2267,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌탑플러스디정",
@@ -2111,9 +2292,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌트플러스디정(알렌드론산나트륨삼수화물,콜레칼시페롤농축분말)",
@@ -2134,9 +2317,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알렌포스플러스디정",
@@ -2157,9 +2342,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알로네이트플러스정",
@@ -2180,9 +2367,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "알로본플러스디정",
@@ -2203,9 +2392,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "애드본플러스디정",
@@ -2226,9 +2417,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오스플러스디정",
@@ -2249,9 +2442,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "지노드론플러스디정",
@@ -2272,9 +2467,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "포렌드플러스디정",
@@ -2295,9 +2492,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "포사롱플러스디정",
@@ -2318,9 +2517,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "포사맥스플러스디정",
@@ -2341,9 +2542,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "포사맥스플러스정",
@@ -2364,9 +2567,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "포사제닉플러스디정",
@@ -2387,9 +2592,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "플러스디알레드론정",
@@ -2410,9 +2617,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가나플럭스정20/1100밀리그램(오메프라졸,탄산수소나트륨)",
@@ -2433,9 +2642,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "가나플럭스정40/1100밀리그램(오메프라졸,탄산수소나트륨)",
@@ -2456,9 +2667,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메드플러스정10/300mg(오메프라졸,침강탄산칼슘)",
@@ -2479,9 +2692,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "오메드플러스정20/600mg(오메프라졸,침강탄산칼슘)",
@@ -2502,9 +2717,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "제로시드정20/1100밀리그램",
@@ -2525,9 +2742,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     },
     {
       "candidate_alias": "제로시드정40/1100밀리그램",
@@ -2548,9 +2767,11 @@
       "risk_level": "low",
       "batch_id": "v0.7-combo-1",
       "approved_ready": true,
-      "incorporated": false,
+      "incorporated": true,
       "reason": "getItemDetail 상세확정: 복합제 주성분 중 relation 보유 성분 정확히 1개(=canonical). 복합제 고지 필요. G4 반영 대상",
-      "reviewer_required": true
+      "reviewer_required": true,
+      "incorporated_alias_batch": "v0.7-combo-1",
+      "incorporated_at": "2026-06-12"
     }
   ]
 }

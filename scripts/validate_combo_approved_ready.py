@@ -17,9 +17,10 @@ CMB 규칙(코드 강제):
   #7 combination_notice_required===true
   #8 item_seq 숫자형·forbidden 아님·전역 중복 0
   #9 ingr_name/item_name 에 에스오메프라졸/넥시움 신호 금지
-  #10 approved_ready===true AND incorporated===false(미반영)
+  #10 approved_ready===true AND incorporated ∈ {false,true}(옵션 A: 반영 전/후 정합)
+  #11 incorporated===true → alias JSON 에 실제 반영(item_seq→is_combination product alias·basis 일치)
 
-사용: python3 validate_combo_approved_ready.py <combo_ar.json> [relations_export.json]
+사용: python3 validate_combo_approved_ready.py <combo_ar.json> [relations_export.json] [aliases.json]
 종료 코드: 0 PASS, 1 FAIL
 """
 import sys
@@ -27,6 +28,7 @@ import json
 import re
 
 DEFAULT_RELATIONS_PATH = "data/medistack_v0.2_beta_export.json"
+DEFAULT_ALIAS_PATH = "data/medistack_v0.3_aliases.json"
 COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸"}
 FORBIDDEN_ITEMSEQS = {"201600209"}
 ESO_HINT_RE = re.compile(r"(에스오메프라졸|esomeprazole|넥시움|nexium)", re.IGNORECASE)
@@ -65,10 +67,11 @@ def matched_relation_ings(ingr_name, rel_ings):
     return sorted({ri for ri in rel_ings if any(ri in comp for comp in comps)})
 
 
-def main(ar_path, rel_path):
+def main(ar_path, rel_path, alias_path=None):
     v = V()
     ardata = load(ar_path, "combo_ar")
     rdata = load(rel_path, "relations")
+    alias_data = load(alias_path, "alias") if alias_path else None
     rel_ings = relation_ings(rdata)
 
     entries = ardata.get("approved_ready") if isinstance(ardata, dict) else None
@@ -135,10 +138,26 @@ def main(ar_path, rel_path):
           if ESO_HINT_RE.search(str(e.get("ingr_name") or "")) or ESO_HINT_RE.search(str(e.get("item_name") or ""))]
     v.check(not c9, 9, "ingr_name/item_name 에 에스오메프라졸/넥시움 금지", f"viol={c9[:8]}")
 
-    # 10) approved_ready===true AND incorporated===false
+    # 10) approved_ready===true AND incorporated ∈ {false,true} (옵션 A: 반영 전/후 모두 정합)
     c10 = [f"{e.get('candidate_alias')!r}" for e in ents
-           if e.get("approved_ready") is not True or e.get("incorporated") is not False]
-    v.check(not c10, 10, "approved_ready===true AND incorporated===false(미반영)", f"viol={c10[:8]}")
+           if e.get("approved_ready") is not True or e.get("incorporated") not in (False, True)]
+    v.check(not c10, 10, "approved_ready===true AND incorporated ∈ {false,true}", f"viol={c10[:8]}")
+
+    # 11) incorporated===true → alias JSON 에 실제 반영(item_seq→is_combination product alias·basis 일치). 옵션 A.
+    c11 = []
+    if alias_data is not None:
+        seq_combo = {}
+        for p in (alias_data.get("product_aliases") or []):
+            if p.get("is_combination") is True and str(p.get("item_seq") or "").strip():
+                seq_combo[str(p["item_seq"]).strip()] = p
+        for e in ents:
+            if e.get("incorporated") is True:
+                p = seq_combo.get(str(e.get("item_seq") or "").strip())
+                if not p:
+                    c11.append(f"{e.get('candidate_alias')!r}:alias 미반영")
+                elif p.get("combination_basis_ingredient") != e.get("combination_basis_ingredient"):
+                    c11.append(f"{e.get('candidate_alias')!r}:basis 불일치")
+    v.check(not c11, 11, "incorporated=true → alias JSON 실제 반영(is_combination·basis 일치)", f"viol={c11[:8]}")
 
     total = len(v.passes) + len(v.fails)
     overall = "PASS" if not v.fails else "FAIL"
@@ -157,4 +176,5 @@ def main(ar_path, rel_path):
 if __name__ == "__main__":
     a = sys.argv[1] if len(sys.argv) > 1 else "data/candidates/bulk_alias_approved_ready_combo_v0_7.json"
     r = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_RELATIONS_PATH
-    sys.exit(main(a, r))
+    al = sys.argv[3] if len(sys.argv) > 3 else DEFAULT_ALIAS_PATH
+    sys.exit(main(a, r, al))

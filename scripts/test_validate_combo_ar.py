@@ -17,6 +17,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 VALIDATOR = os.path.join(HERE, "validate_combo_approved_ready.py")
 RELATIONS = os.path.join(REPO, "data", "medistack_v0.2_beta_export.json")
+REAL_ALIASES = os.path.join(REPO, "data", "medistack_v0.3_aliases.json")
 FIX = os.path.join(HERE, "fixtures", "v0_7_combo_ar")
 
 CASES = [
@@ -28,14 +29,14 @@ CASES = [
     ("C7 notice_required=false", "reject_C7_notice_false.json", False, {7}),
     ("C8 동일 item_seq 2건", "reject_C8_dup_itemseq.json", False, {8}),
     ("C9 에스오메프라졸 신호(+substring #4)", "reject_C9_eso.json", False, {4, 9}),
-    ("C10 incorporated=true", "reject_C10_incorporated.json", False, {10}),
+    ("C11 incorporated=true 인데 alias 미반영(옵션A)", "reject_C10_incorporated.json", False, {11}),
 ]
 
 CHECK_RE = re.compile(r"X #(\d+)")
 
 
 def run(path):
-    p = subprocess.run([sys.executable, VALIDATOR, path, RELATIONS], capture_output=True, text=True)
+    p = subprocess.run([sys.executable, VALIDATOR, path, RELATIONS, REAL_ALIASES], capture_output=True, text=True)
     return p.returncode, p.stdout + p.stderr
 
 
