@@ -8,7 +8,7 @@ review queue(JSON 정본 + CSV 보조)가 안전 게이트를 지키는지 검�
   - 후보는 라이브 relation 성분에만 귀속(에스오메프라졸/15행/excluded 차단).
   - 기존 alias(현재 66개)와 중복 금지, 큐 내부 중복 금지.
   - status/candidate_type enum, 필수 필드, batch_id 존재.
-  - brand_core 는 approved 금지(별도 tier, PM v0.5 #6).
+  - brand_core 는 approved 금지(별도 tier, PM v0.5 #6) — 단 v0.7 G5: incorporated=true·alias 실제 반영분만 예외.
   - rejected/deferred 가 approved 처럼 export 금지.
   - source(method/checked_at)·reviewer 없으면 approved 금지(pending 까지만).
   - item_seq 없는 product_full_name 은 approved 금지.
@@ -194,15 +194,36 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF
             eso.append(f"{c.get('candidate_alias')!r}:금지itemSeq{seq}")
     v.check(not eso, 9, "에스오메프라졸/15행/excluded 후보 차단", f"viol={eso}")
 
-    # 10) brand_core 는 approved 금지
-    bc_appr = [f"{c.get('candidate_alias')!r}" for c in cands
-               if c.get("candidate_type") == "brand_core" and c.get("status") == "approved"]
-    v.check(not bc_appr, 10, "brand_core approved 금지(별도 tier, PM v0.5 #6)", f"viol={bc_appr}")
+    # (v0.7 G5) brand_core incorporation-aware 판정 보조:
+    #   prod_by_norm=alias 반영 맵 / rel_cited_by_canon=relation 원문 인용 itemSeq 집합(성분별).
+    #   _bc_incorporated: G5 승인 brand_core 가 incorporated=true 이고 동일 canonical 로 live alias 에 실제 반영됐는가.
+    prod_by_norm = {norm(p.get("alias")): p for p in (adata.get("product_aliases") or []) if p.get("alias")}
+    rel_cited_by_canon = {}
+    for r in (rdata.get("relations") or []):
+        if not isinstance(r, dict):
+            continue
+        ing = r.get("ingredient")
+        m = ITEMSEQ_RE.search(((r.get("source") or {}).get("url")) or "")
+        if ing and m:
+            rel_cited_by_canon.setdefault(ing, set()).add(m.group(1))
 
-    # 11) rejected/deferred 가 approved 처럼 export 금지(approved ⇒ type∈{ingredient,product_full_name})
+    def _bc_incorporated(c):
+        if str(c.get("incorporated", "")).strip().lower() != "true":
+            return False
+        p = prod_by_norm.get(norm(c.get("candidate_alias")))
+        return p is not None and p.get("canonical_ingredient") == c.get("canonical_ingredient")
+
+    # 10) brand_core 는 approved 금지 — (v0.7 G5) incorporated=true·alias 실제 반영된 brand_core 만 예외 허용
+    bc_appr = [f"{c.get('candidate_alias')!r}" for c in cands
+               if c.get("candidate_type") == "brand_core" and c.get("status") == "approved"
+               and not _bc_incorporated(c)]
+    v.check(not bc_appr, 10, "brand_core approved 금지(incorporated=true·alias 반영 시에만 허용, PM v0.5 #6/v0.7 G5)", f"viol={bc_appr}")
+
+    # 11) rejected/deferred 가 approved 처럼 export 금지(approved ⇒ type∈{ingredient,product_full_name}, 또는 graduate된 brand_core)
     rd_appr = [f"{c.get('candidate_alias')!r}:{c.get('candidate_type')}" for c in cands
-               if c.get("status") == "approved" and c.get("candidate_type") not in {"ingredient", "product_full_name"}]
-    v.check(not rd_appr, 11, "approved 후보는 ingredient/product_full_name 만(rejected/brand_core approved 금지)", f"viol={rd_appr}")
+               if c.get("status") == "approved" and c.get("candidate_type") not in {"ingredient", "product_full_name"}
+               and not (c.get("candidate_type") == "brand_core" and _bc_incorporated(c))]
+    v.check(not rd_appr, 11, "approved 후보는 ingredient/product_full_name 또는 incorporated brand_core(alias 반영)만", f"viol={rd_appr}")
 
     # 12) approved 완전성: source_method·source_checked_at·reviewer 없으면 approved 금지(pending 까지만)
     incomplete = []
@@ -285,16 +306,21 @@ def main(json_path, csv_path, alias_path, rel_path, ar_path=DEF_AR, ar2_path=DEF
     for s in wl_by_canon.values():
         alias_seqs |= s
 
-    # 30) queue approved 후보는 alias JSON 에 실제 반영(alias∈aliases · itemSeq∈whitelist[canonical])
+    # 30) queue approved 후보는 alias JSON 에 실제 반영(alias∈aliases · itemSeq∈whitelist[canonical]).
+    #     (v0.7 G5) brand_core graduate 는 검증된 제품의 relation-cited itemSeq 재사용(verified 미확장)
+    #     → brand_core 에 한해 itemSeq ∈ whitelist ∪ relation-cited 허용. 그 외 타입은 whitelist 엄격 유지.
     inc_bad = []
     for c in cands:
         if c.get("status") != "approved":
             continue
         if norm(c.get("candidate_alias")) not in existing:
             inc_bad.append(f"{c.get('candidate_alias')!r}:alias미반영")
-        if (c.get("item_seq") or "").strip() not in wl_by_canon.get(c.get("canonical_ingredient"), set()):
-            inc_bad.append(f"{c.get('candidate_alias')!r}:itemSeq미화이트리스트")
-    v.check(not inc_bad, 30, "queue approved 후보는 alias JSON 반영됨(alias∈aliases·itemSeq∈whitelist)", f"viol={inc_bad[:8]}")
+        allowed_seqs = wl_by_canon.get(c.get("canonical_ingredient"), set())
+        if c.get("candidate_type") == "brand_core":
+            allowed_seqs = allowed_seqs | rel_cited_by_canon.get(c.get("canonical_ingredient"), set())
+        if (c.get("item_seq") or "").strip() not in allowed_seqs:
+            inc_bad.append(f"{c.get('candidate_alias')!r}:itemSeq미허용집합")
+    v.check(not inc_bad, 30, "queue approved 후보는 alias JSON 반영됨(alias∈aliases·itemSeq∈whitelist; brand_core는 ∪relation-cited)", f"viol={inc_bad[:8]}")
 
     # --- approved-ready batch1 검증(있을 때, 번호 20~32) ---
     if ar_path and os.path.exists(ar_path):

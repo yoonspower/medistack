@@ -72,9 +72,9 @@
     "counts": {
       "total": 561,
       "pending": 7,
-      "approved": 426,
+      "approved": 440,
       "rejected": 2,
-      "deferred": 126
+      "deferred": 112
     },
     "phase2_collection": {
       "checked_at": "2026-06-11",
@@ -467,6 +467,14 @@
       "reviewer": "v0.7-combo-g4",
       "alias_count": 492,
       "note": "combo AR 110 alias 반영(product+110→454·verified+110→430·alias 382→492). 큐 110 deferred→approved(combo graduate)."
+    },
+    "v0_7_brand_core_incorporation": {
+      "incorporated_at": "2026-06-12",
+      "batch_id": "v0.7-brand-core-g5",
+      "incorporated": 14,
+      "reviewer": "v0.7-brand-core-g5",
+      "alias_count": 506,
+      "note": "brand_core 14 어간 alias 반영(product 454→468·verified 430 불변·alias 492→506). queue 14 deferred→approved+incorporated=true. incorporation-aware bulk #10/#11/#30."
     }
   },
   "candidates": [
@@ -3575,9 +3583,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '바이포민서방정500mg'(itemSeq 200709701)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -3586,7 +3594,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "가드메트정100/1000밀리그램(아나글립틴, 메트포르민)",
@@ -6513,9 +6522,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '리목스정400mg'(itemSeq 201402438)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6524,7 +6533,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "모록사신",
@@ -6539,9 +6549,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '모록사신정400밀리그램'(itemSeq 201309618)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6550,7 +6560,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "모록사신정",
@@ -6565,9 +6576,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '모록사신정400밀리그램'(itemSeq 201309618)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6576,7 +6587,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "모벨록신정400밀리그램(목시플록사신염산염)",
@@ -6695,9 +6707,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '미노씬캡슐50mg'(itemSeq 198501028)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6706,7 +6718,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "미노젠",
@@ -6721,9 +6734,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '미노젠캡슐50밀리그램'(itemSeq 202500078)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6732,7 +6745,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "미노젠캡슐",
@@ -6747,9 +6761,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '미노젠캡슐50밀리그램'(itemSeq 202500078)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6758,7 +6772,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "미노씬캡슐50mg(미노사이클린염산염)",
@@ -6825,9 +6840,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '시프로민정250밀리그램'(itemSeq 199901094)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -6836,7 +6851,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "뉴록사신정(시프로플록사신염산염수화물)",
@@ -8619,9 +8635,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '라이트알렌드론정70mg'(itemSeq 201902246)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -8630,7 +8646,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "라이트알렌드론정",
@@ -8645,9 +8662,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '라이트알렌드론정70mg'(itemSeq 201902246)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -8656,7 +8673,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "대웅알렌드로네이트디정",
@@ -11037,9 +11055,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '제일타리비드정'(itemSeq 198600307)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -11048,7 +11066,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "넬슨오플록사신정100밀리그램(오플록사신)",
@@ -11895,9 +11914,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '세토람정5밀리그람'(itemSeq 200600084)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -11906,7 +11925,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "세토람정",
@@ -11921,9 +11941,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '세토람정5밀리그람'(itemSeq 200600084)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -11932,7 +11952,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "토렘정",
@@ -11947,9 +11968,9 @@
       "confidence": "low",
       "risk_level": "medium",
       "reason": "검증된 제품 '토렘정5밀리그람'(itemSeq 200611522)에서 추출한 브랜드 코어. 승인 전 사람 검토 필요",
-      "status": "deferred",
+      "status": "approved",
       "exclusion_reason": "brand_core tier deferred (PM v0.5 #6: 자동 편입 금지)",
-      "reviewer": "",
+      "reviewer": "v0.7-brand-core-g5",
       "batch_id": "v0.5-001",
       "detail_confirmed": "",
       "detail_source_method": "",
@@ -11958,7 +11979,8 @@
       "detail_item_name": "",
       "detail_ingr_name": "",
       "detail_match_result": "",
-      "incorporated_at": ""
+      "incorporated_at": "2026-06-12",
+      "incorporated": true
     },
     {
       "candidate_alias": "세토람정10밀리그람(토라세미드)",
