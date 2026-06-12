@@ -13,12 +13,14 @@ CMB 규칙(코드 강제):
   #3 is_combination===true(bool) AND ingr_name 에 '/'(실제 복합제)
   #4 ingr_name 구성 중 relation 보유 성분 정확히 1개 AND == combination_basis_ingredient
   #5 combination_basis_ingredient == canonical_ingredient
-  #6 basis ∈ {메트포르민,알렌드론산,오메프라졸} (히드로클로로티아지드·에스오메프라졸 하드 차단)
+  #6 basis ∈ {메트포르민,알렌드론산,오메프라졸,히드로클로로티아지드} (v0.8 HCTZ 개방·에스오메프라졸 하드 차단)
   #7 combination_notice_required===true
   #8 item_seq 숫자형·forbidden 아님·전역 중복 0
   #9 ingr_name/item_name 에 에스오메프라졸/넥시움 신호 금지
   #10 approved_ready===true AND incorporated ∈ {false,true}(옵션 A: 반영 전/후 정합)
   #11 incorporated===true → alias JSON 에 실제 반영(item_seq→is_combination product alias·basis 일치)
+  #12 (v0.8 V2) 칼륨보존이뇨제 파트너 하드차단(트리암테렌/아밀로라이드/스피로노락톤/에플레레논/칸레논). 염이름 '칼륨'은 미매칭.
+  #13 (v0.8 V4) canonical=HCTZ 면 칼륨 반전 고지 파생조건 정합(is_combination·basis=HCTZ·notice=true) — render 트리거 보장.
 
 사용: python3 validate_combo_approved_ready.py <combo_ar.json> [relations_export.json] [aliases.json]
 종료 코드: 0 PASS, 1 FAIL
@@ -29,9 +31,17 @@ import re
 
 DEFAULT_RELATIONS_PATH = "data/medistack_v0.2_beta_export.json"
 DEFAULT_ALIAS_PATH = "data/medistack_v0.3_aliases.json"
-COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸"}
+# v0.8 H-G1: HCTZ(히드로클로로티아지드) basis 허용 추가(ARB+HCTZ 고혈압 복합제 개방).
+# 에스오메프라졸은 계속 하드 차단(allowlist 미포함 + #9 신호 차단).
+COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸", "히드로클로로티아지드"}
+HCTZ_BASIS = "히드로클로로티아지드"
 FORBIDDEN_ITEMSEQS = {"201600209"}
 ESO_HINT_RE = re.compile(r"(에스오메프라졸|esomeprazole|넥시움|nexium)", re.IGNORECASE)
+# v0.8 H-G1 V2: 칼륨보존이뇨제(potassium-sparing diuretic) 파트너 영구 하드차단.
+# 특정 약물명 토큰만 매칭 → 'XX칼륨'(로사르탄칼륨/피마사르탄칼륨) 염 이름의 '칼륨'은 매칭 안 됨(V5 염이름 분리).
+KSPARING_RE = re.compile(
+    r"(트리암테렌|아밀로라이드|아밀로리드|스피로노락톤|에플레레논|칸레논|"
+    r"triamterene|amiloride|spironolactone|eplerenone|canrenone)", re.IGNORECASE)
 NUMERIC_RE = re.compile(r"^\d+$")
 REQUIRED = ["candidate_alias", "canonical_ingredient", "item_seq", "ingr_name",
             "is_combination", "combination_basis_ingredient", "combination_notice_required"]
@@ -158,6 +168,27 @@ def main(ar_path, rel_path, alias_path=None):
                 elif p.get("combination_basis_ingredient") != e.get("combination_basis_ingredient"):
                     c11.append(f"{e.get('candidate_alias')!r}:basis 불일치")
     v.check(not c11, 11, "incorporated=true → alias JSON 실제 반영(is_combination·basis 일치)", f"viol={c11[:8]}")
+
+    # 12) (v0.8 V2) 칼륨보존이뇨제 파트너 하드차단. ingr_name 성분 토큰에 K보존 약물명 등장 시 FAIL.
+    #     'XX칼륨'(로사르탄칼륨/피마사르탄칼륨) 염이름은 KSPARING_RE 에 없으므로 매칭 안 됨(V5 염이름 분리).
+    c12 = []
+    for e in ents:
+        comps = [p.strip() for p in str(e.get("ingr_name") or "").split("/") if p.strip()]
+        hits = sorted({p for p in comps if KSPARING_RE.search(p)})
+        if hits:
+            c12.append(f"{e.get('candidate_alias')!r}:K보존파트너={hits}")
+    v.check(not c12, 12, "칼륨보존이뇨제 파트너 하드차단(트리암테렌/아밀로라이드/스피로노락톤/에플레레논/칸레논)", f"viol={c12[:8]}")
+
+    # 13) (v0.8 V4) canonical=HCTZ → 칼륨 반전 고지 파생조건 정합(is_combination·basis=HCTZ·notice=true).
+    #     render 는 is_combination && basis==HCTZ && nutrient==칼륨 에서 반전 고지를 띄움 → 데이터가 그 트리거를 보장.
+    c13 = []
+    for e in ents:
+        if e.get("canonical_ingredient") == HCTZ_BASIS:
+            if (e.get("is_combination") is not True
+                    or e.get("combination_basis_ingredient") != HCTZ_BASIS
+                    or e.get("combination_notice_required") is not True):
+                c13.append(f"{e.get('candidate_alias')!r}:HCTZ 반전고지 트리거 불완전")
+    v.check(not c13, 13, "HCTZ combo 칼륨 반전 고지 파생조건(is_combination·basis=HCTZ·notice 정합)", f"viol={c13[:8]}")
 
     total = len(v.passes) + len(v.fails)
     overall = "PASS" if not v.fails else "FAIL"

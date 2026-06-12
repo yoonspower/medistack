@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: 칼륨보존이뇨제(스피로노락톤) 파트너 -> #12. 실제 알닥타자이드류는 112 deferred 에 0건이나 future-proof 차단"},
+ "approved_ready": [
+   {"candidate_alias": "테스트알닥타자이드정", "canonical_ingredient": "히드로클로로티아지드", "item_seq": "999900112", "item_name": "테스트알닥타자이드정", "ingr_name": "히드로클로로티아지드 / 스피로노락톤", "is_combination": true, "combination_basis_ingredient": "히드로클로로티아지드", "combination_notice_required": true, "combo_relation_ingredient_count": 1, "approved_ready": true, "incorporated": false}
+ ]}

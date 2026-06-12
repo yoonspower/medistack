@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: HCTZ canonical 인데 notice=false -> #7 + #13(칼륨 반전고지 파생 트리거 불완전)"},
+ "approved_ready": [
+   {"candidate_alias": "테스트HCTZ고지없음정", "canonical_ingredient": "히드로클로로티아지드", "item_seq": "999900113", "item_name": "테스트HCTZ고지없음정", "ingr_name": "로사르탄칼륨 / 히드로클로로티아지드", "is_combination": true, "combination_basis_ingredient": "히드로클로로티아지드", "combination_notice_required": false, "combo_relation_ingredient_count": 1, "approved_ready": true, "incorporated": false}
+ ]}

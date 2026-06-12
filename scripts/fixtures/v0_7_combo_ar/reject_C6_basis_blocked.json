@@ -1,0 +1,4 @@
+{"meta": {"note": "reject: basis=토라세미드(allowlist 외) -> #6"},
+ "approved_ready": [
+   {"candidate_alias": "테스트토라복합정", "canonical_ingredient": "토라세미드", "item_seq": "999900106", "item_name": "테스트토라복합정", "ingr_name": "토라세미드 / 암로디핀베실산염", "is_combination": true, "combination_basis_ingredient": "토라세미드", "combination_notice_required": true, "combo_relation_ingredient_count": 1, "approved_ready": true, "incorporated": false}
+ ]}

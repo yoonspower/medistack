@@ -22,14 +22,18 @@ FIX = os.path.join(HERE, "fixtures", "v0_7_combo_ar")
 
 CASES = [
     ("P 정상 메트포르민 복합제 PASS", "allow.json", True, set()),
+    ("P HCTZ+ARB 복합제 PASS(v0.8 개방·염이름 칼륨 통과)", "allow_hctz_arb.json", True, set()),
+    ("P HCTZ+ARB+CCB 3성분 PASS", "allow_hctz_arb_ccb.json", True, set()),
     ("C3 is_combination=false/단일 ingr", "reject_C3_not_combo.json", False, {3}),
     ("C4 relation 성분 2개", "reject_C4_multi_relation.json", False, {4}),
     ("C5 basis != canonical", "reject_C5_basis_ne_canonical.json", False, {5}),
-    ("C6 HCTZ basis(allowlist 외)", "reject_C6_hctz.json", False, {6}),
-    ("C7 notice_required=false", "reject_C7_notice_false.json", False, {7}),
+    ("C6 basis allowlist 외(토라세미드)", "reject_C6_basis_blocked.json", False, {6}),
+    ("C7 notice_required=false(메트)", "reject_C7_notice_false.json", False, {7}),
     ("C8 동일 item_seq 2건", "reject_C8_dup_itemseq.json", False, {8}),
     ("C9 에스오메프라졸 신호(+substring #4)", "reject_C9_eso.json", False, {4, 9}),
     ("C11 incorporated=true 인데 alias 미반영(옵션A)", "reject_C10_incorporated.json", False, {11}),
+    ("C12 칼륨보존이뇨제 파트너(스피로노락톤)", "reject_C12_kspare.json", False, {12}),
+    ("C13 HCTZ notice=false(반전고지 트리거 불완전)", "reject_C13_hctz_notice.json", False, {7, 13}),
 ]
 
 CHECK_RE = re.compile(r"X #(\d+)")

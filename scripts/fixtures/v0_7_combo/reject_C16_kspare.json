@@ -1,0 +1,8 @@
+{
+  "meta": {"note": "reject: 복합제 alias 표시 문자열에 칼륨보존이뇨제(스피로노락톤) 토큰 -> #16"},
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {"alias": "테스트알닥타자이드정(스피로노락톤/히드로클로로티아지드)", "canonical_ingredient": "히드로클로로티아지드", "kind": "product", "lang": "ko", "item_seq": "196000008", "source_relation_ids": [19], "is_combination": true, "combination_basis_ingredient": "히드로클로로티아지드", "combination_notice_required": true}
+  ],
+  "verified_item_seqs": {}
+}

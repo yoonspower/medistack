@@ -26,11 +26,13 @@ FIX = os.path.join(HERE, "fixtures", "v0_7_combo")
 CASES = [
     ("P0 현행 라이브 alias(복합제 entry 0건) 전체 PASS", REAL_ALIASES, True, set()),
     ("P1 정상 메트포르민 복합제(고지 메타 정합) PASS", os.path.join(FIX, "allow_combo.json"), True, set()),
-    ("C1 HCTZ basis 차단(allowlist 외)", os.path.join(FIX, "reject_C1_hctz_combo.json"), False, {15}),
+    ("P2 HCTZ+ARB 복합제 PASS(v0.8 개방·염이름 칼륨 통과)", os.path.join(FIX, "allow_hctz_combo.json"), True, set()),
+    ("C15 basis allowlist 외(토라세미드) 차단", os.path.join(FIX, "reject_C15_basis_blocked.json"), False, {15}),
     ("C2 combination_notice_required 누락", os.path.join(FIX, "reject_C2_missing_notice.json"), False, {14}),
     ("C3 basis != canonical", os.path.join(FIX, "reject_C3_basis_ne_canonical.json"), False, {14}),
     ("C4 is_combination 플래그가 ingredient alias", os.path.join(FIX, "reject_C4_combo_on_ingredient.json"), False, {14}),
     ("C5 orphan 고지필드(is_combination 없음)", os.path.join(FIX, "reject_C5_orphan_notice.json"), False, {14}),
+    ("C16 칼륨보존이뇨제 토큰(스피로노락톤) alias 차단", os.path.join(FIX, "reject_C16_kspare.json"), False, {16}),
 ]
 
 CHECK_RE = re.compile(r"X #(\d+)")

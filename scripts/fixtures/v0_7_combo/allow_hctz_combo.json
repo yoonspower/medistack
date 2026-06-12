@@ -1,0 +1,8 @@
+{
+  "meta": {"alias_count": 1, "note": "v0.8: HCTZ+ARB 복합제 허용(라이브 가드). 염이름 로사르탄'칼륨'은 #16 통과(V5)"},
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {"alias": "코자플러스정(로사르탄칼륨/히드로클로로티아지드)", "canonical_ingredient": "히드로클로로티아지드", "kind": "product", "lang": "ko", "item_seq": "196000008", "source_relation_ids": [19], "is_combination": true, "combination_basis_ingredient": "히드로클로로티아지드", "combination_notice_required": true}
+  ],
+  "verified_item_seqs": {}
+}

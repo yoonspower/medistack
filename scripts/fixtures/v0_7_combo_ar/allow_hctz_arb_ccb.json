@@ -1,0 +1,4 @@
+{"meta": {"note": "v0.8: HCTZ+ARB+CCB 3성분 복합제 허용(relation 보유 성분 HCTZ 정확히 1개)"},
+ "approved_ready": [
+   {"candidate_alias": "세비카HCT정", "canonical_ingredient": "히드로클로로티아지드", "item_seq": "999900102", "item_name": "세비카HCT정", "ingr_name": "올메사르탄메독소밀 / 암로디핀베실산염 / 히드로클로로티아지드", "is_combination": true, "combination_basis_ingredient": "히드로클로로티아지드", "combination_notice_required": true, "combo_relation_ingredient_count": 1, "approved_ready": true, "incorporated": false}
+ ]}

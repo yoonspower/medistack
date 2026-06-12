@@ -1,0 +1,8 @@
+{
+  "meta": {"note": "reject: basis=토라세미드(allowlist 외) -> #15"},
+  "ingredient_aliases": [],
+  "product_aliases": [
+    {"alias": "테스트토라복합정", "canonical_ingredient": "토라세미드", "kind": "product", "lang": "ko", "item_seq": "200611522", "source_relation_ids": [30], "is_combination": true, "combination_basis_ingredient": "토라세미드", "combination_notice_required": true}
+  ],
+  "verified_item_seqs": {}
+}
