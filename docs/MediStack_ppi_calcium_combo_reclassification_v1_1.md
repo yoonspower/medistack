@@ -1,5 +1,7 @@
 # MediStack — 케이스 C(PPI+침강탄산칼슘 18건) 재분류 + 향후 배너 설계 정책 v1.1
 
+> **⏩ 후속(2026-06-14): 본 문서의 §3 "향후 flip" 이 PM 승인으로 실행됨 → C 18건 relation_card flip 완료. 통합 내역·검증은 `MediStack_combo_banner_c_integration_v1_1.md` 참조.** 본 문서는 재분류 *결정* 기록(아래 §0~§5 는 결정 당시 "flip 0" 기준 원문 보존).
+
 > 작성일: 2026-06-14. **문서/CSV/정책 정리 전용 — 라이브 데이터 무변경.** PM 결정(옵션 나): C 18건을 *PPI×칼슘 relation_card 후보*가 아니라 **"칼슘 완충/제산 성분이 포함된 복합제(buffer_combo)" 트랙**으로 재분류한다. **단 이번 단계는 flip 금지·name_only 유지**, 향후 combo banner/notice 설계 필요 여부만 문서화.
 >
 > 선행 근거: `MediStack_ppi_calcium_combo_review_v1_1.md`(source 확인 — PPI×칼슘 흡수 신호 0/22, 칼슘=완충제 18/18). 산출물 = 본 문서 + `data/ppi_calcium_combo_reclassification_v1_1.csv`(18행). **export/full index/alias/relation/src/DATA_URL 수정 0. flip 0. published/clinical_reviewed false 유지.**

@@ -4,7 +4,7 @@
   "kind": "alias_operational",
   "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
   "relation_source": "medistack_v0.2_beta_export.json",
-  "alias_count": 699
+  "alias_count": 717
  },
  "ingredient_aliases": [
   {
@@ -8452,6 +8452,276 @@
    "combination_basis_ingredient": "리세드론산",
    "combination_notice_required": true,
    "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "란소앤정30/600밀리그램",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202300167",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란탄듀오정30/600밀리그램",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202300168",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란사톤듀오정30/600밀리그램(란소프라졸, 침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202300169",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란소듀오정30/600밀리그램",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202300170",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "뉴란소엑스정30/600밀리그램",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202300171",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란스타정30/600밀리그램",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202300177",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "라베가드정20/600밀리그램(라베프라졸나트륨,침강탄산칼슘)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202301789",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "라베가드정10/600밀리그램(라베프라졸나트륨,침강탄산칼슘)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202400481",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "라베드온정10/600mg(라베프라졸나트륨, 침강탄산칼슘)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202401498",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "라베드온정20/600mg(라베프라졸나트륨, 침강탄산칼슘)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202401499",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란소앤정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500561",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란탄듀오정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500562",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란사톤듀오정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500563",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란스타정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500564",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "란소듀오정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500565",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "뉴란소엑스정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+   "canonical_ingredient": "란소프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500566",
+   "source_relation_ids": [
+    36,
+    37
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "란소프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "라베피드정20/600밀리그램(라베프라졸나트륨, 침강탄산칼슘)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202600357",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
+  },
+  {
+   "alias": "라베피드정10/600밀리그램(라베프라졸나트륨, 침강탄산칼슘)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202600358",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true,
+   "combination_other_label": "위산 중화 완충 성분(침강탄산칼슘)"
   }
  ],
  "verified_item_seqs": {
@@ -14471,6 +14741,78 @@
     "item_name": "휴프졸캡슐30밀리그램(란소프라졸과립)",
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (relation expansion v1.1)"
+   },
+   {
+    "item_seq": "202300167",
+    "item_name": "란소앤정30/600밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202300168",
+    "item_name": "란탄듀오정30/600밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202300169",
+    "item_name": "란사톤듀오정30/600밀리그램(란소프라졸, 침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202300170",
+    "item_name": "란소듀오정30/600밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202300171",
+    "item_name": "뉴란소엑스정30/600밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202300177",
+    "item_name": "란스타정30/600밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202500561",
+    "item_name": "란소앤정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202500562",
+    "item_name": "란탄듀오정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202500563",
+    "item_name": "란사톤듀오정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202500564",
+    "item_name": "란스타정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202500565",
+    "item_name": "란소듀오정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202500566",
+    "item_name": "뉴란소엑스정15/600밀리그램(란소프라졸,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
    }
   ],
   "덱스란소프라졸": [
@@ -15753,6 +16095,42 @@
     "item_name": "라비에트듀오정20/500밀리그램",
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202301789",
+    "item_name": "라베가드정20/600밀리그램(라베프라졸나트륨,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202400481",
+    "item_name": "라베가드정10/600밀리그램(라베프라졸나트륨,침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202401498",
+    "item_name": "라베드온정10/600mg(라베프라졸나트륨, 침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202401499",
+    "item_name": "라베드온정20/600mg(라베프라졸나트륨, 침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202600357",
+    "item_name": "라베피드정20/600밀리그램(라베프라졸나트륨, 침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
+   },
+   {
+    "item_seq": "202600358",
+    "item_name": "라베피드정10/600밀리그램(라베프라졸나트륨, 침강탄산칼슘)",
+    "verified_at": "2026-06-13",
+    "method": "nedrug 허가사항 침강탄산칼슘=위산중화 완충성분 확인 (buffer_combo C v1.1)"
    }
   ],
   "리세드론산": [

@@ -184,8 +184,8 @@ def validate(doc):
     ck("full index total == 17,580", len(entries) == 17580, f"total {len(entries)}")
     no = [e for e in entries if not e.get("covered_by_relation")]
     rc = [e for e in entries if e.get("covered_by_relation")]
-    ck("name_only == 16,526 (복합제 B/D 16,569 → A 16,526·43 flip)", len(no) == 16526, f"name_only {len(no)}")
-    ck("relation_card == 1,054 (복합제 B/D 1,011 → A 1,054·+43)", len(rc) == 1054, f"relation_card {len(rc)}")
+    ck("name_only == 16,508 (B/D 16,569 → A 16,526 → C buffer_combo 16,508·18 flip)", len(no) == 16508, f"name_only {len(no)}")
+    ck("relation_card == 1,072 (B/D 1,011 → A 1,054 → C +18)", len(rc) == 1072, f"relation_card {len(rc)}")
 
     # 칼륨 검사 대상 카운트(리포트용).
     ck("칼륨 검사 대상 존재(item_name>=1, ingredient>=1)",

@@ -176,11 +176,11 @@ def validate(doc, pool, inv):
         ck("Phase 6: total >= 20,000 (검색 커버리지 확장)", len(entries) >= 20000, f"total {len(entries)}")
 
     # 교차 불변(다른 트랙 회귀 감지)
-    ck("불변: alias_count 699 (복합제 B/D +35 → A +43 product alias)", inv["alias_count"] == 699, str(inv["alias_count"]))
-    ck("불변: product_aliases 661 (복합제 B/D +35 → A +43)", inv["product"] == 661, str(inv["product"]))
+    ck("불변: alias_count 717 (B/D +35 → A +43 → C buffer_combo +18 product alias)", inv["alias_count"] == 717, str(inv["alias_count"]))
+    ck("불변: product_aliases 679 (B/D +35 → A +43 → C +18)", inv["product"] == 679, str(inv["product"]))
     ck("불변: ingredient_aliases 38", inv["ingredient"] == 38, str(inv["ingredient"]))
-    ck("불변: verified_item_seqs 1041/20 (B/D +35 → A +43/리세드론산·이반드론산)",
-       inv["vis_total"] == 1041 and inv["vis_ing"] == 20, f"{inv['vis_total']}/{inv['vis_ing']}")
+    ck("불변: verified_item_seqs 1059/20 (B/D +35 → A +43 → C +18/란소프라졸·라베프라졸)",
+       inv["vis_total"] == 1059 and inv["vis_ing"] == 20, f"{inv['vis_total']}/{inv['vis_ing']}")
     ck("불변: relations 41 (v1.1 relation 확장 30→41)", inv["relations"] == 41, str(inv["relations"]))
     ck("불변: DATA_URL", inv["data_url"] == EXPECT_DATA_URL, str(inv["data_url"]))
     ck("불변: published=false", inv["published"] is False, str(inv["published"]))

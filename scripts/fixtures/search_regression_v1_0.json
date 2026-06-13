@@ -2,7 +2,7 @@
   "meta": {
     "name": "search_regression_v1_0",
     "purpose": "v1.0-C 검색/고지/empty/error 회귀 기준선. full drug name index / name_only UX 도입 전 현행 동작을 실제 guards.js + render.js 로 고정한다.",
-    "data_basis": "live: medistack_v0.2_beta_export.json (relation 41 — v1.1 relation 확장 30→41) + medistack_v0.3_aliases.json (alias 699·verified 1041/20 — 복합제 B/D +35·A +43 배너) + full_drug_name_index_sample_v1_0.json (name_only 16,526 / relation_card 1,054 / total 17,580)",
+    "data_basis": "live: medistack_v0.2_beta_export.json (relation 41 — v1.1 relation 확장 30→41) + medistack_v0.3_aliases.json (alias 717·verified 1059/20 — 복합제 B/D +35·A +43·C buffer_combo +18 배너) + full_drug_name_index_sample_v1_0.json (name_only 16,508 / relation_card 1,072 / total 17,580)",
     "ground_truth": "기대값은 실제 guards.js 측정값(추측 아님). name_only 미도입 — relation 없는 약은 count 0(empty).",
     "future_note": "full_index_future_baseline 그룹은 name_only UX 도입 시 기대값이 바뀌는 미래 신호. 그 전까지 relation-only degrade(count 0)."
   },
@@ -42,6 +42,9 @@
     { "group": "relation_expansion_v1_1", "query": "이반드론산", "count": 1, "note": "신규 id41 (×칼슘)" },
     { "group": "relation_expansion_v1_1", "query": "세프디니르", "count": 1, "note": "신규 id42 (×철분)" },
 
+    { "group": "combo_notice_c", "query": "란소앤정30/600밀리그램", "count": 2, "ingredients": ["란소프라졸"], "comboBases": ["란소프라졸"], "hctzPotassiumNotice": false, "note": "buffer_combo C(PPI+침강탄산칼슘) 배너 — id36/37 PPI×B12·×Mg + 복합제 고지(칼슘=완충제)" },
+    { "group": "combo_notice_c", "query": "라베가드정20/600밀리그램(라베프라졸나트륨,침강탄산칼슘)", "count": 2, "ingredients": ["라베프라졸"], "comboBases": ["라베프라졸"], "hctzPotassiumNotice": false, "note": "buffer_combo C(PPI+침강탄산칼슘) 배너 — id32/33 라베프라졸×B12·×Mg + 복합제 고지" },
+
     { "group": "missing_excluded", "query": "파모티딘", "count": 0, "hintNull": true, "note": "H2×B12 missing — relation 미승격 확인(count 0)" },
     { "group": "missing_excluded", "query": "라푸티딘", "count": 0, "hintNull": true, "note": "H2×B12 missing — 미승격" },
     { "group": "missing_excluded", "query": "니자티딘", "count": 0, "hintNull": true, "note": "H2×B12 missing — 미승격" }
@@ -51,6 +54,8 @@
     { "group": "combo_render", "query": "가드메트정100/1000밀리그램(아나글립틴, 메트포르민)", "contains": ["검색어는", "복합제"], "notContains": ["칼륨 주의"] },
     { "group": "combo_render_bd", "query": "라베뉴정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)", "contains": ["검색어는", "복합제", "라베프라졸 성분을 기준"], "notContains": ["칼륨 주의", "구매", "제품 추천"] },
     { "group": "combo_render_a", "query": "리센플러스정(리세드론산나트륨,콜레칼시페롤)", "contains": ["검색어는", "복합제", "리세드론산 성분을 기준", "비타민D 성분에 대한 정보는 포함하지 않습니다"], "notContains": ["칼륨 주의", "구매", "제품 추천", "함께 포함된 다른 성분"] },
+    { "group": "combo_render_c", "query": "란소앤정30/600밀리그램", "contains": ["검색어는", "복합제", "란소프라졸 성분을 기준", "위산 중화 완충 성분(침강탄산칼슘) 성분에 대한 정보는 포함하지 않습니다"], "notContains": ["칼륨 주의", "구매", "제품 추천", "함께 포함된 다른 성분", "칼슘 보충"] },
+    { "group": "combo_render_c", "query": "라베가드정20/600밀리그램(라베프라졸나트륨,침강탄산칼슘)", "contains": ["검색어는", "복합제", "라베프라졸 성분을 기준", "위산 중화 완충 성분(침강탄산칼슘) 성분에 대한 정보는 포함하지 않습니다"], "notContains": ["칼륨 주의", "구매", "제품 추천", "칼슘 보충"] },
     { "group": "relation_card_render", "query": "타리비드", "contains": ["검색어는"], "notContains": ["복합제", "칼륨 주의"] },
     { "group": "empty_render", "query": "넥시움", "contains": [], "notContains": ["검색어는", "복합제", "칼륨 주의"] },
     { "group": "empty_render", "query": "asdfqwer", "contains": [], "notContains": ["검색어는", "복합제", "칼륨 주의"] }
@@ -64,7 +69,7 @@
     { "query": "오플록사신", "emptyIndexCount": 3, "kind": "direct", "note": "직접검색 — alias 인덱스 무관, 불변" },
     { "query": "타리비드", "emptyIndexCount": 0, "kind": "alias-only", "note": "브랜드 alias 전용 — 인덱스 부재 시 브리지 소멸 → 0(정상 degrade)" }
   ],
-  "name_only_index_size": 16526,
+  "name_only_index_size": 16508,
   "name_only": [
     { "group": "covered_now", "query": "게보린", "minCount": 1, "note": "relation 0 → name_only 가 커버(브랜드 품목명)" },
     { "group": "covered_now", "query": "이부프로펜", "minCount": 5, "note": "Phase 5 10k 실측 30(상한 30)" },
