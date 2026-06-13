@@ -119,6 +119,8 @@ CLAUDE.md/제품원칙상 민감하거나 임상판단이 개입하는 약군은
 
 다음 단계 후보(택1 또는 순차). **전부 PM 승인 후 별도 단계.**
 
+> **✅ 옵션 2(A티어 Top10 출처 확인) 완료(2026-06-13)**: `MediStack_relation_source_verification_atier.md` + `data/relation_source_verification_atier_v1_1.csv`. 결과 — **source_confirmed 7후보(E01–E06·E08)**, missing 3(E07·E09·E10 H2×B12=허가사항 미기재·승격 부적격). 다음은 source_confirmed 7후보의 relation 실제 작성(옵션 3, PM 승인·데이터 변경).
+
 ```
 [옵션 1] external popular drug 실데이터 입력 후 재매칭
   - data/external_popular_drugs_top100.csv (rank,query_name,source,note) 수집/배치
