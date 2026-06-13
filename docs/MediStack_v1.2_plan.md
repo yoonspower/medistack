@@ -30,6 +30,23 @@ MediStack 은 **식약처 허가사항 기반 약-영양소 참고정보 베타*
 
 ---
 
+## 1.5 v1.2 준비 라운드2 진행 (2026-06-14 · 분석/문서/draft 전용 · 라이브 무변경)
+
+이 라운드는 **PM 승인 전 준비 작업**으로, 라이브 relation 추가/flip/데이터 변경 없이 5개 병렬 트랙으로 진행했다. relations 41·relation_card 1,072·DATA_URL v0.2·published/clinical false **전부 불변**.
+
+| 트랙 | 산출물 | 결과 요약 |
+|---|---|---|
+| 목표2 source Top10 확인 | `MediStack_source_queue_top10_verification_v1_2.md` + `data/source_queue_top10_verification_v1_2.csv`(18행) + `scripts/verify_source_queue_top10_v1_2.py` | **허가사항 재fetch 검증**: source_confirmed **6**(Q06·Q07·Q02·Q04·Q10·Q11) / needs_review 5 / reject 2 / hold 5. 전건 `do_not_implement_yet=true`. |
+| 목표1 draft relation | `data/relation_expansion_draft_v1_2.json`(**14건**) + `MediStack_relation_expansion_draft_v1_2.md` | source_confirmed 중 신규/enrichment **14 draft**(전건 published=false·review_required=true·do_not_implement_yet=true). 신규=퀴놀론×아연(4)·테트라사이클린×아연(2)·치아지드유사×K/Mg(4); enrichment=비스포×철/Mg(4). **알렌드론산(라벨 다가양이온 미기재)·오메프라졸(기존 relation 13/14 존재)은 정직 제외.** 칼륨 행(D11·D13)은 `product_link_allowed=false`+`potassium_safety_card=true`. |
+| 목표3 내 약 목록 MVP | `MediStack_saved_stack_mvp_design_v1_2.md` | localStorage 로컬전용·무서버·무계정·민감정보 0(약명/품목식별자만)·데이터모델 10필드·삭제/내보내기·약사 질문 연결. |
+| 목표4 Free/Plus | `MediStack_free_plus_plan_v1_2.md` | 정보 접근 항상 Free·Plus=정리/보관/상담준비·평생구매 4,900/9,900 후보·"수익화 안 함" 경계·Plus 의학 경계. |
+| 목표5·8 source UI / name_only UX | `MediStack_relation_source_ui_design_v1_2.md` + `MediStack_name_only_ux_improvement_v1_2.md` | relation(41) 단위 source 상속·fail-closed 공개 gate·과신 문구 금지 / name_only "품목명 확인" 가치 강화·의학정보 미부착·개인정보 수집 0. |
+| 목표9·10·11 분리전략/next prompts | `MediStack_supplement_app_separation_strategy.md`(보강 §5.4 크로스오버 예시) + `MediStack_next_work_prompts.md`(A~H 정비) | 분리 경계계약 심화 + 다음 라운드 실행 프롬프트 8종(승격·MVP구현·플래그·UI·UX·영양제앱·릴리스 readiness·버퍼콤보 회귀). |
+
+> **검증**: 모든 source_confirmed 는 실제 nedrug itemSeq + 상호작용/주의 문맥 스니펫(첨가제 배제) 보유. draft 14건은 메인 플로우에서 **적대적 재fetch 검증 PASS**(퀴놀론/테트라 "아연…흡수 저하", 비스포 "다가 양이온…흡수 방해", 치아지드 "저칼륨혈증/저마그네슘혈증" 전부 라벨 실재 확인). 이번 라운드 통합 0건(전부 PM 승인 대기). 다음 승격은 `next_work_prompts.md` 프롬프트 A.
+
+---
+
 ## 2. v1.2 목표 (우선순위 순)
 
 > 우선순위: ①C buffer_combo 최종화(거의 완료) → ②source queue Top10 확인 → ③내 약 목록 저장 MVP 설계 → ④Free/Plus 기능 분리 → ⑤relation source 표시 UI 설계 → ⑥영양제 앱 분리 기획. 나머지(coverage 확장·인기약 gap·name_only UX·법적 링크 정리)는 동반 트랙.
@@ -141,12 +158,12 @@ MediStack 은 **식약처 허가사항 기반 약-영양소 참고정보 베타*
 | 순위 | 항목 | 상태 | 비고 |
 |---|---|---|---|
 | 1 | 목표7 C buffer_combo 최종화 | **완료/유지** | flip 라이브 반영(relations 41·rc 1,072). 잔여 = 향후 버퍼콤보 동일 패턴 |
-| 2 | 목표2 source queue Top10 확인 | 다음 | 확인만(통합 아님) · source-policy 결정 입력 |
-| 3 | 목표3 내 약 목록 저장 MVP 설계 | 설계 | 로컬·무계정·개인정보 0 |
-| 4 | 목표4 Free/Plus 기능 분리 | 설계 | 정보 접근 항상 Free · 결제 별도 라운드 |
-| 5 | 목표5 relation source 표시 UI 설계 | 설계 | 상속 표시 + 공개 강등 UX(배선 0) |
-| 6 | 목표10 영양제 앱 분리 기획 | 기획 | 본체 제품 0 · 별도 앱 트랙 |
-| 동반 | 목표1 coverage 확장 / 목표6 인기약 gap / 목표8 name_only UX / 목표9 법적 링크 | 동반 | 전부 게이트·smoke 안에서만 |
+| 2 | 목표2 source queue Top10 확인 | **확인 완료(통합 대기)** | source_confirmed 6·draft 14건(라운드2 §1.5). 승격은 PM 승인(next prompts A) |
+| 3 | 목표3 내 약 목록 저장 MVP 설계 | **설계 완료** | `saved_stack_mvp_design_v1_2.md` · 로컬·무계정·개인정보 0 |
+| 4 | 목표4 Free/Plus 기능 분리 | **설계 완료** | `free_plus_plan_v1_2.md` · 정보 접근 항상 Free · 결제 별도 라운드 |
+| 5 | 목표5 relation source 표시 UI 설계 | **설계 완료** | `relation_source_ui_design_v1_2.md` · 상속 표시 + 공개 강등 UX(배선 0) |
+| 6 | 목표10 영양제 앱 분리 기획 | **보강 완료** | `supplement_app_separation_strategy.md` §5.4 크로스오버 가드 · 본체 제품 0 |
+| 동반 | 목표1 coverage(draft 14·통합 대기) / 목표6 인기약 gap / 목표8 name_only UX(설계 완료) / 목표9 법적 링크 | 동반 | 전부 게이트·smoke 안에서만 |
 
 > 설계/기획 항목(3·4·5·10·8·9)은 **문서·스펙까지만**. 데이터/렌더 변경(1·2·7 의 통합)은 항목별 **별도 PM 승인 + 데이터-only 배치**로만 수행한다.
 
