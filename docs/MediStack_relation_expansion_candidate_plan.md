@@ -2,6 +2,7 @@
 
 > 작성일: 2026-06-13. 기준 HEAD `a0b9430`. **이 문서·후보 CSV 는 "검토 후보(candidate only)"일 뿐, 실제 relation 이 아니다. 이번 단계에서 relation/데이터는 한 줄도 추가·수정하지 않는다.**
 > 동반: 현황 분석 `MediStack_relation_card_coverage_analysis.md`. 후보 초안 CSV: `data/relation_expansion_candidates_v1_1_draft.csv`.
+> **후속(2026-06-13): 인기약 커버리지 매칭으로 본 7종 후보(C01–C07)를 20건 우선순위 후보로 확장 → `MediStack_relation_expansion_priority_plan.md` + `data/relation_expansion_priority_candidates_v1_1.csv`. 매칭 근거는 `MediStack_popular_drug_coverage_match.md`.**
 
 ---
 
