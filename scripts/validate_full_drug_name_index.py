@@ -161,6 +161,9 @@ def validate(doc, pool, inv):
     tt = (meta or {}).get("target_total", 0)
     if isinstance(tt, int) and tt >= 5000:
         ck("Phase 4: total >= 5,000 (검색 커버리지 확장)", len(entries) >= 5000, f"total {len(entries)}")
+    # v1.0 Phase 5 확장 목표(meta.target_total>=10000 일 때만 게이트). Phase 4 게이트와 동형·조건부.
+    if isinstance(tt, int) and tt >= 10000:
+        ck("Phase 5: total >= 10,000 (검색 커버리지 확장)", len(entries) >= 10000, f"total {len(entries)}")
 
     # 교차 불변(다른 트랙 회귀 감지)
     ck("불변: alias_count 621", inv["alias_count"] == 621, str(inv["alias_count"]))
