@@ -34,6 +34,11 @@ ALIAS_PATH = os.path.join(REPO, "data", "medistack_v0.3_aliases.json")
 RELATIONS_PATH = os.path.join(REPO, "data", "medistack_v0.2_beta_export.json")
 DATA_JS = os.path.join(REPO, "src", "js", "data.js")
 
+# name_only 에 (substring으로도) 나타나면 안 되는 성분 — 전 품목(단일+복합)이 relation_card 인 13성분.
+# ⚠️ v1.1 relation 확장 7성분(라베/판토/란소/덱스란소프라졸·리세드론산·이반드론산·세프디니르)은 여기에
+#    포함하지 않는다: **단일성분 품목만** relation_card 로 flip 했고, **복합제는 보수적으로 name_only 유지**
+#    (라베+산화Mg/PPI+칼슘/비스포+비타민D 등 nutrient 혼재 카드 혼란 방지)이라 name_only 에 7성분 substring 잔존이
+#    정상이다. 복합 통합은 후속 라운드. (relation_card 행은 'itemSeq ∈ pool' 로만 검증되므로 이 목록과 무관.)
 CANONICAL_13 = [
     "독시사이클린", "레보티록신", "레보플록사신", "메트포르민", "목시플록사신",
     "미노사이클린", "시프로플록사신", "알렌드론산", "오메프라졸", "오플록사신",
@@ -172,9 +177,9 @@ def validate(doc, pool, inv):
     ck("불변: alias_count 621", inv["alias_count"] == 621, str(inv["alias_count"]))
     ck("불변: product_aliases 583", inv["product"] == 583, str(inv["product"]))
     ck("불변: ingredient_aliases 38", inv["ingredient"] == 38, str(inv["ingredient"]))
-    ck("불변: verified_item_seqs 545/13", inv["vis_total"] == 545 and inv["vis_ing"] == 13,
-       f"{inv['vis_total']}/{inv['vis_ing']}")
-    ck("불변: relations 30", inv["relations"] == 30, str(inv["relations"]))
+    ck("불변: verified_item_seqs 963/20 (v1.1 relation 확장 +418/+7성분)",
+       inv["vis_total"] == 963 and inv["vis_ing"] == 20, f"{inv['vis_total']}/{inv['vis_ing']}")
+    ck("불변: relations 41 (v1.1 relation 확장 30→41)", inv["relations"] == 41, str(inv["relations"]))
     ck("불변: DATA_URL", inv["data_url"] == EXPECT_DATA_URL, str(inv["data_url"]))
     ck("불변: published=false", inv["published"] is False, str(inv["published"]))
     ck("불변: clinical_reviewed=false", inv["clinical_reviewed"] is False, str(inv["clinical_reviewed"]))

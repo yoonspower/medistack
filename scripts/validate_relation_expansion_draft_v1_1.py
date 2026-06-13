@@ -66,8 +66,9 @@ def main():
        meta.get("relation_count") == len(rels) == 41, f"meta={meta.get('relation_count')} len={len(rels)}")
     ck("id 유니크", len(by_id) == len(rels))
 
-    # 기존 30 불변(dict-equal v0.2)
-    base_ids = sorted(v02_by_id.keys())
+    # 기존 30 불변(dict-equal v0.2). v1.1 라이브 통합 후 v0.2 가 41이 되어도, 비교는 **고정 base 30**
+    # (ids 1-14,16-31)으로만 한다 — draft 의 base 30 이 v0.2 의 base 30 과 동일한지(핵심자산 불변) 검증.
+    base_ids = [i for i in range(1, 32) if i != 15]  # 1-14, 16-31 = 30개
     mismatch = [i for i in base_ids if by_id.get(i) != v02_by_id.get(i)]
     ck("기존 relation 30 v0.2와 dict-equal(핵심자산 불변)", not mismatch, f"불일치 id={mismatch[:5]}")
     ck("기존 30 id 집합 보존", set(base_ids).issubset(set(by_id.keys())))
