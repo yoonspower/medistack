@@ -4,7 +4,7 @@
   "kind": "alias_operational",
   "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
   "relation_source": "medistack_v0.2_beta_export.json",
-  "alias_count": 621
+  "alias_count": 656
  },
  "ingredient_aliases": [
   {
@@ -7360,6 +7360,496 @@
     2,
     3
    ]
+  },
+  {
+   "alias": "라베트릭스캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402464",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베피린캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202401364",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라스피린캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202303032",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "아라텍트캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402338",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "아스라베캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402347",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "아스라졸캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402348",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "아스베린캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202500715",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베뉴정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202108204",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베뉴정20/500밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200467",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베듀엣정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202108210",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베듀엣정20/500밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200475",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베듀오정20/800밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200514",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "아스프라졸캡슐100/5밀리그램(아스피린,라베프라졸)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202401369",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베라듀오정10/700밀리그램(라베프라졸나트륨, 탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202501367",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베라듀오정20/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402103",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베모어정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202108209",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베모어정20/500밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200470",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베미니정(라베프라졸,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202302938",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베비카정10/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402102",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베비카정20/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402101",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베비카정20/800밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202202964",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베올듀오정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202108208",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베올듀오정20/500밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200472",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베움듀오정20/800밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202202876",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베칸듀오정10/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402100",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베칸듀오정20/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202402099",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베콤비정",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200655",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베탄정20/800밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202202686",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베프탑정10/400밀리그램(라베프라졸,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202302940",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베프탑정20/800밀리그램(라베프라졸나트륨, 탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200614",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라베하프정(라베프라졸,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202302939",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라비듀오정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202108211",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라비듀오정20/500밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200476",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라비에트듀오정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202108207",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
+  },
+  {
+   "alias": "라비에트듀오정20/500밀리그램",
+   "canonical_ingredient": "라베프라졸",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202200474",
+   "source_relation_ids": [
+    32,
+    33
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "라베프라졸",
+   "combination_notice_required": true
   }
  ],
  "verified_item_seqs": {
@@ -14451,6 +14941,216 @@
     "item_name": "에스프라정10mg(라베프라졸나트륨)",
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (relation expansion v1.1)"
+   },
+   {
+    "item_seq": "202402464",
+    "item_name": "라베트릭스캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202401364",
+    "item_name": "라베피린캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202303032",
+    "item_name": "라스피린캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402338",
+    "item_name": "아라텍트캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402347",
+    "item_name": "아스라베캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402348",
+    "item_name": "아스라졸캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202500715",
+    "item_name": "아스베린캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202108204",
+    "item_name": "라베뉴정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200467",
+    "item_name": "라베뉴정20/500밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202108210",
+    "item_name": "라베듀엣정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200475",
+    "item_name": "라베듀엣정20/500밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200514",
+    "item_name": "라베듀오정20/800밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202401369",
+    "item_name": "아스프라졸캡슐100/5밀리그램(아스피린,라베프라졸)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202501367",
+    "item_name": "라베라듀오정10/700밀리그램(라베프라졸나트륨, 탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402103",
+    "item_name": "라베라듀오정20/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202108209",
+    "item_name": "라베모어정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200470",
+    "item_name": "라베모어정20/500밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202302938",
+    "item_name": "라베미니정(라베프라졸,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402102",
+    "item_name": "라베비카정10/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402101",
+    "item_name": "라베비카정20/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202202964",
+    "item_name": "라베비카정20/800밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202108208",
+    "item_name": "라베올듀오정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200472",
+    "item_name": "라베올듀오정20/500밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202202876",
+    "item_name": "라베움듀오정20/800밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402100",
+    "item_name": "라베칸듀오정10/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202402099",
+    "item_name": "라베칸듀오정20/700밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200655",
+    "item_name": "라베콤비정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202202686",
+    "item_name": "라베탄정20/800밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202302940",
+    "item_name": "라베프탑정10/400밀리그램(라베프라졸,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200614",
+    "item_name": "라베프탑정20/800밀리그램(라베프라졸나트륨, 탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202302939",
+    "item_name": "라베하프정(라베프라졸,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202108211",
+    "item_name": "라비듀오정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200476",
+    "item_name": "라비듀오정20/500밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202108207",
+    "item_name": "라비에트듀오정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
+   },
+   {
+    "item_seq": "202200474",
+    "item_name": "라비에트듀오정20/500밀리그램",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner B/D v1.1)"
    }
   ],
   "리세드론산": [
