@@ -128,7 +128,9 @@ def main():
             seq = str(e["item_seq"])
             if seq in existing_seqs:
                 continue
-            existing.append({"item_seq": seq, "item_name": e["item_name"],
+            # item_name 표면형 위생: nedrug 공식명 개행/다중공백 → 단일공백(surface_forms validator 호환).
+            clean_name = re.sub(r"\s+", " ", e["item_name"]).strip()
+            existing.append({"item_seq": seq, "item_name": clean_name,
                              "verified_at": CHECKED, "method": VERIFY_METHOD})
             existing_seqs.add(seq)
             added_vis += 1

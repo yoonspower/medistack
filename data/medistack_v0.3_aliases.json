@@ -15232,7 +15232,7 @@
    },
    {
     "item_seq": "201205830",
-    "item_name": "이반드론정\n(이반드론산나트륨일수화물)",
+    "item_name": "이반드론정 (이반드론산나트륨일수화물)",
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (relation expansion v1.1)"
    },
