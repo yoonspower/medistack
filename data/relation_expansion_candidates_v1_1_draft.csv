@@ -1,0 +1,8 @@
+candidate_id,candidate_ingredient,drug_class,related_existing_relation,name_only_product_count,proposed_nutrient_theme_hypothesis,rationale,status,confirmed,source_required,review_required,clinical_reviewed
+C01,판토프라졸,PPI(위산분비억제),오메프라졸,45,마그네슘·비타민B12 (오메프라졸 관계와 동일 계열 가설·미확정),"기존 오메프라졸 PPI relation 과 동일 약효군, 허가사항 출처 확인 가능성 높음, 만성 복용 흔함",candidate_for_review,false,true,true,false
+C02,란소프라졸,PPI(위산분비억제),오메프라졸,55,마그네슘·비타민B12 (오메프라졸 관계와 동일 계열 가설·미확정),"PPI 동일 계열, name_only 다수 존재, 출처 확인 가능성 높음",candidate_for_review,false,true,true,false
+C03,라베프라졸,PPI(위산분비억제),오메프라졸,216,마그네슘·비타민B12 (오메프라졸 관계와 동일 계열 가설·미확정),"PPI 동일 계열, name_only 최다 PPI, 검색 빈도 높을 것으로 추정",candidate_for_review,false,true,true,false
+C04,클로르탈리돈,치아지드계 이뇨제,히드로클로로티아지드,64,전해질(칼륨 등) 참고 (HCTZ 관계와 동일 계열 가설·미확정),"HCTZ 와 동일 치아지드 계열, 단 칼륨 안전 정책(product_link 금지·potassium_safety) 승계 필요",candidate_for_review,false,true,true,false
+C05,인다파미드,치아지드계(유사) 이뇨제,히드로클로로티아지드,16,전해질(칼륨 등) 참고 (HCTZ 관계와 동일 계열 가설·미확정),"치아지드 유사 이뇨제, 칼륨 안전 정책 승계 검토 필요",candidate_for_review,false,true,true,false
+C06,로수바스타틴,스타틴(고지혈증),(신규 계열),472,코엔자임Q10 (문헌 보고 가설·미확정),"name_only 최대 단일군, 대중 인지도 높음. 단 신규 계열→출처/문구 신중 검토 필요",candidate_for_review,false,true,true,false
+C07,아토르바스타틴,스타틴(고지혈증),(신규 계열),267,코엔자임Q10 (문헌 보고 가설·미확정),"name_only 다수, 대중 인지도 높음. 신규 계열→출처/문구 신중 검토 필요",candidate_for_review,false,true,true,false
