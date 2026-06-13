@@ -191,9 +191,73 @@ DIVERSE_INGREDIENTS_EXT2 = [
     "날록손", "날트렉손", "아캄프로세이트", "바레니클린", "우데나필", "미로데나필", "아바나필",
     "신나리진", "플루나리진", "실리마린", "콜레스티미드",
 ]
-# 중복 제거(순서 보존). ext2(신규 niche) 우선 → 기존(base+ext) 보강.
+
+# v1.1 Phase 6 확장(10,000 → 20,000): 성분 풀 485 → ~700. 미수록·저빈도 치료군 추가 보강
+# (지혈·항섬유소용해·편두통/triptan·구충/항원충·종양 경구·HIV/HCV/CMV 항바이러스·마취/근이완·
+#  내분비/호르몬·추가 외용/점안/이비인후·추가 정신/신경·항부정맥·면역/류마티스·추가 NSAID). 검색 커버리지 확장 목적.
+# 제외 유지(안전): 13 canonical · 에스오메프라졸 · 칼륨/칼륨보존이뇨제(칼륨염·스피로노락톤·에플레레논·
+#  아밀로라이드·트리암테렌 미포함) · 와파린 · 비타민/미네랄(콜레칼시페롤·칼시트리올·철·엽산 미포함).
+DIVERSE_INGREDIENTS_EXT3 = [
+    # 지혈·항섬유소용해
+    "트라넥삼산", "카르바조크롬", "에탐실레이트", "아미노카프로산", "나파모스타트", "가벡세이트",
+    # 편두통·triptan·ergot
+    "수마트립탄", "졸미트립탄", "나라트립탄", "리자트립탄", "알모트립탄", "프로바트립탄",
+    "에르고타민", "디히드로에르고타민", "라스미디탄",
+    # 구충·항원충·항말라리아
+    "알벤다졸", "메벤다졸", "플루벤다졸", "피란텔", "프라지콴텔", "이버멕틴",
+    "니클로사미드", "프리마퀸", "메플로퀸", "아토바쿠온", "티니다졸", "오르니다졸",
+    # 종양 경구(호르몬·표적·세포독성)
+    "비칼루타미드", "플루타미드", "엔잘루타미드", "아비라테론", "엑세메스탄", "메게스트롤",
+    "사이프로테론", "이매티닙", "게피티닙", "엘로티닙", "라파티닙", "수니티닙",
+    "소라페닙", "파조파닙", "다사티닙", "닐로티닙", "카페시타빈", "테가푸르",
+    "하이드록시우레아", "머캅토퓨린", "아나그렐리드", "룩솔리티닙", "레날리도마이드", "이브루티닙",
+    "팔보시클립", "올라파립", "에베로리무스",
+    # 항바이러스(HIV/HCV/CMV/HBV)
+    "라미부딘", "아바카비르", "돌루테그라비르", "엠트리시타빈", "에파비렌즈", "릴피비린",
+    "랄테그라비르", "다루나비르", "리토나비르", "로피나비르", "소포스부비르", "레디파스비르",
+    "다클라타스비르", "글레카프레비르", "벨파타스비르", "간시클로버", "발간시클로버", "아데포비르",
+    # 마취·근이완·수술전후
+    "프로포폴", "케타민", "미다졸람", "로쿠로늄", "베쿠로늄", "시사트라쿠륨",
+    "수가마덱스", "네오스티그민", "피리도스티그민", "덱스메데토미딘", "레미펜타닐", "펜타닐",
+    "부피바카인", "로피바카인", "메피바카인", "세보플루란", "데스플루란", "날부핀", "페티딘",
+    # 내분비·호르몬·골대사
+    "카베르골린", "브로모크립틴", "퀴나골리드", "옥트레오타이드", "란레오타이드", "소마트로핀",
+    "칼시토닌", "테리파라타이드", "데노수맙", "고세렐린", "류프로렐린", "트립토렐린",
+    "다나졸", "티볼론", "프로게스테론", "에스트라디올", "에스트리올", "노레티스테론",
+    # 당뇨/비만
+    "리라글루타이드", "둘라글루타이드", "세마글루타이드", "엑세나타이드", "오를리스타트",
+    # 추가 외용(피부·항진균·여드름·건선·미백)
+    "나디플록사신", "오제녹사신", "세르타코나졸", "루리코나졸", "라노코나졸", "플루트리마졸",
+    "크리사보롤", "디트라놀", "타자로텐", "크로타미톤", "페르메트린", "벤질벤조에이트",
+    "히드로퀴논", "독세핀", "칸타리딘", "포도필록스", "타칼시톨", "막사칼시톨",
+    # 추가 점안·안과
+    "베탁솔롤", "카르테올롤", "레보부놀롤", "우노프로스톤", "네타르수딜", "리파수딜",
+    "알카프타딘", "디플루프레드네이트",
+    # 추가 이비인후·비염·흡입
+    "플루티카손", "트라마졸린", "나파졸린", "트라닐라스트", "페미로라스트", "수플라타스트", "암렉사녹스",
+    # 추가 호흡·PAH·폐섬유
+    "로플루밀라스트", "트레프로스티닐", "셀렉시팍", "일로프로스트", "피르페니돈", "닌테다닙", "도르나제알파",
+    # 추가 소화기(IBS·변비·담즙·IBD)
+    "프루칼로프리드", "리나클로타이드", "루비프로스톤", "알로세트론", "오베티콜산", "엘로비식시바트",
+    # 추가 정신·신경
+    "브렉스피프라졸", "카리프라진", "일로페리돈", "발베나진", "테트라베나진", "피모지드",
+    "플루펜틱솔", "주클로펜틱솔", "마프로틸린", "미안세린", "클로미프라민", "데시프라민",
+    "아토목세틴", "메틸페니데이트", "구안파신", "리스덱스암페타민",
+    "프리미돈", "루피나미드", "스티리펜톨", "칸나비디올", "리루졸", "에다라본", "핌반세린",
+    # 추가 항부정맥·심혈관·이뇨(비칼륨)
+    "디소피라미드", "프로카인아미드", "퀴니딘", "도페틸리드", "아데노신", "알리스키렌",
+    "메토라존", "부메타니드", "베라파밀", "아세타졸라마이드", "트리클로르메티아지드",
+    # 항히스타민·알레르기 추가
+    "트리프롤리딘", "메브하이드롤린", "독실아민", "사이프로헵타딘", "프로메타진", "안타졸린",
+    # 면역·류마티스·통풍 추가
+    "페니실라민", "부실라민", "이구라티모드", "라스부리카제",
+    # 추가 NSAID·진통
+    "메페남산", "플루페남산", "톨페남산", "옥사프로진", "이소프로필안티피린", "에텐자미드", "플루피르틴",
+]
+# 중복 제거(순서 보존). ext3(신규 niche)·ext2 우선 → 기존(base+ext) 보강.
 # 신규 성분을 앞에 둬 미수록 약 우선 충당(다양성·균형) + 기존 깊은 페이지로 잔여 보강.
-DIVERSE_INGREDIENTS = list(dict.fromkeys(DIVERSE_INGREDIENTS_EXT2 + DIVERSE_INGREDIENTS + DIVERSE_INGREDIENTS_EXT))
+DIVERSE_INGREDIENTS = list(dict.fromkeys(
+    DIVERSE_INGREDIENTS_EXT3 + DIVERSE_INGREDIENTS_EXT2 + DIVERSE_INGREDIENTS + DIVERSE_INGREDIENTS_EXT))
 
 
 def norm_name(s):
@@ -270,6 +334,9 @@ def load_existing_entries(path):
     return [e for e in ents if isinstance(e, dict)]
 
 
+PROGRESS_PATH = None
+
+
 def collect_name_only(pre_seen, pool_seqs, cap, per_cap, checked_at, max_pages, timeout, sleep):
     op = make_opener()
     out, seen = [], set(pre_seen) | set(pool_seqs)
@@ -280,6 +347,12 @@ def collect_name_only(pre_seen, pool_seqs, cap, per_cap, checked_at, max_pages, 
         if len(out) >= cap:
             break
         st["ingredients_searched"] += 1
+        if PROGRESS_PATH:
+            try:
+                with open(PROGRESS_PATH, "w", encoding="utf-8") as _pf:
+                    _pf.write(f"{st['ingredients_searched']}/{len(DIVERSE_INGREDIENTS)} cur={ing} kept={len(out)} rows={st['rows_seen']} fail={st['ing_fail']}")
+            except Exception:
+                pass
         got = 0
         for page in range(1, max_pages + 1):
             if len(out) >= cap or got >= per_cap:
@@ -339,12 +412,26 @@ def main():
     ap.add_argument("--no-network", action="store_true", help="relation_card seed 만(name_only 수집 생략)")
     ap.add_argument("--augment", action="store_true",
                     help="기존 출력을 seed로 보존하고 신규 name_only만 추가(Phase 4 확장)")
+    ap.add_argument("--out", default=None, help="출력 JSON 경로 override(병렬 shard용). 미지정=기본 OUT_JSON")
+    ap.add_argument("--seed", default=None, help="augment seed JSON 경로(병렬 shard는 공통 seed). 미지정=OUT_JSON")
+    ap.add_argument("--shard", default=None, help="'I/K' — 성분 풀을 K등분 중 I번째(stride)만 수집(병렬 분할)")
+    ap.add_argument("--progress", default=None, help="진행 상태(성분별)를 기록할 파일 경로(실시간 표시용)")
     args = ap.parse_args()
+
+    global DIVERSE_INGREDIENTS, PROGRESS_PATH
+    PROGRESS_PATH = args.progress
+    if args.shard:
+        i, k = (int(x) for x in args.shard.split("/"))
+        DIVERSE_INGREDIENTS = DIVERSE_INGREDIENTS[i::k]
+        print(f"[shard] {args.shard} → {len(DIVERSE_INGREDIENTS)} 성분(stride)")
+    out_json = args.out or OUT_JSON
+    out_csv = (args.out[:-5] + ".csv") if (args.out and args.out.endswith(".json")) else OUT_CSV
+    seed_json = args.seed or OUT_JSON
 
     rc_seed, pool = build_relation_card_seed(args.checked_at)
 
     if args.augment:
-        existing = load_existing_entries(OUT_JSON)
+        existing = load_existing_entries(seed_json)
         if not existing:
             print("[augment] 기존 출력 없음 — 일반 모드로 실행하세요(--augment 제거).", file=sys.stderr)
             return 1
@@ -393,18 +480,18 @@ def main():
         "collection_stats": st,
     }
     doc = {"meta": meta, "entries": entries}
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
+    with open(out_json, "w", encoding="utf-8") as f:
         json.dump(doc, f, ensure_ascii=False, indent=1)
     csv_fields = ["item_seq", "item_name", "normalized_item_name", "ingredient_name",
                   "company_name", "covered_by_relation", "display_mode",
                   "no_relation_notice_required", "source", "source_method", "source_checked_at"]
-    with open(OUT_CSV, "w", encoding="utf-8", newline="") as f:
+    with open(out_csv, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=csv_fields, extrasaction="ignore")
         w.writeheader()
         for e in entries:
             w.writerow(e)
 
-    print(f"[out] {OUT_JSON}  total={len(entries)} (relation_card {len(rc)} + name_only {len(no)})")
+    print(f"[out] {out_json}  total={len(entries)} (relation_card {len(rc)} + name_only {len(no)})")
     print("[stats] " + json.dumps(st, ensure_ascii=False))
     return 0
 

@@ -180,11 +180,11 @@ def validate(doc):
     stats = check_potassium_policy(entries)
 
     ck("구조: entries(list)", isinstance(entries, list) and len(entries) > 0)
-    # STOP 가드 — 현재 데이터 규모 sanity(v1.0 Phase 5: 5,500 → 10,000 확장).
-    ck("full index total == 10,000", len(entries) == 10000, f"total {len(entries)}")
+    # STOP 가드 — 현재 데이터 규모 sanity(v1.1 Phase 6: 10,000 → 17,580, 20k 시도 후 공급 천장).
+    ck("full index total == 17,580", len(entries) == 17580, f"total {len(entries)}")
     no = [e for e in entries if not e.get("covered_by_relation")]
     rc = [e for e in entries if e.get("covered_by_relation")]
-    ck("name_only == 9,442", len(no) == 9442, f"name_only {len(no)}")
+    ck("name_only == 17,022", len(no) == 17022, f"name_only {len(no)}")
     ck("relation_card == 558", len(rc) == 558, f"relation_card {len(rc)}")
 
     # 칼륨 검사 대상 카운트(리포트용).

@@ -11,9 +11,9 @@
 | 항목 | 값 |
 |---|---|
 | HEAD | `6fb8046` (Document v1.0 full index 10k stability) |
-| full drug name index | **10,000** |
+| full drug name index | **17,580** (v1.1 Phase 6 — 10,000 → 17,580, 20k 시도 후 공급 천장) |
 | relation_card | **558** (고정) |
-| name_only | **9,442** |
+| name_only | **17,022** |
 | alias_count | **621** (product 583 + ingredient 38) |
 | product_aliases | 583 |
 | verified_item_seqs | 545 / 13성분 |
