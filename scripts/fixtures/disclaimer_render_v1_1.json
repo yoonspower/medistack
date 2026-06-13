@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "name": "disclaimer_render_v1_1",
+    "purpose": "공개 전 법적 안전장치: 상태별 필수 면책/고지 문구가 실제 렌더 함수 반환 HTML에 포함되는지 고정. 소스 문자열 grep 아님 — render.js/states.js 함수를 node 에서 직접 호출해 반환 HTML 을 검사한다.",
+    "ground_truth": "기대 면책 문구는 라이브 데이터(medistack_v0.2_beta_export.json disclaimers + full index meta.name_only_notice)에서 런타임 로드 → 렌더 함수가 그 문구를 실제로 출력하는지 확인(데이터-구동). 깨지면 FAIL.",
+    "states_covered": [
+      "relation_card (renderDetail) → disclaimers.common 전 30 renderable 렌더 + 출처 상속 + (칼륨행) potassium_notice",
+      "name_only (renderNameOnlyResults) → name_only_notice + '참고 정보 없음' 배지, 의학/상호작용/영양소/제품/링크 0",
+      "empty (renderEmpty) → disclaimers.empty_state",
+      "no_results (renderNoResults) → '참고 정보가 없습니다' 안내",
+      "error (renderError) → 재시도 안내"
+    ]
+  },
+  "name_only_query_covered": "게보린",
+  "name_only_query_empty": "asdfqwer",
+  "name_only_required": ["참고 정보 없음", "상담"],
+  "_name_only_forbidden_note": "name_only 카드에 끼면 안 되는 relation/제품 구조 마커. 의학적 영양소/상호작용 '정보' 부재는 full-index validator 금지필드 0(데이터 레벨)이 담보 — 여기선 렌더 chrome 누출만 본다. 단순 명사 '영양소'는 고지문 자체('약-영양소 참고정보 DB')에 들어가므로 금지 토큰으로 부적합.",
+  "name_only_forbidden": ["복합제", "칼륨 주의", "href=", "class=\"row\"", "출처", "구매", "product", "복용 간격", "상태 모니터링"],
+  "reassurance_forbidden": ["안전합니다", "안심", "복용하세요"]
+}
