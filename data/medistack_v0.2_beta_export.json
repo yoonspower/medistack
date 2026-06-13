@@ -5,11 +5,11 @@
   "generated_at": "2026-06-07",
   "source_basis": "식약처 의약품통합정보시스템(nedrug) 허가사항 원문",
   "lifecycle_status_included": "verified_reference",
-  "relation_count": 41,
+  "relation_count": 55,
   "excluded_count": 1,
   "published": false,
   "clinical_reviewed": false,
-  "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음. | v1.1 relation 확장 통합(2026-06-13): source_confirmed 7후보 11건(ids 32-42, 허가사항 출처) 추가. relation 30→41."
+  "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음. | v1.1 relation 확장 통합(2026-06-13): source_confirmed 7후보 11건(ids 32-42, 허가사항 출처) 추가. relation 30→41. | v1.2 draft relation 통합(2026-06-14): source_confirmed 14건(ids 43-56, 허가사항 출처) 추가. FQ/테트라×아연·비스포×철/Mg enrichment + 치아지드유사(클로르탈리돈·인다파미드)×칼륨/Mg. relation 41→55."
  },
  "disclaimers": {
   "common": "이 정보는 식약처 허가사항 등을 바탕으로 정리한 참고 정보입니다. 진단, 처방, 복약 지시가 아니며, 실제 복용 여부나 시간 간격은 의사 또는 약사와 상담하세요.",
@@ -755,6 +755,258 @@
     "type": "허가사항",
     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200711458",
     "pointer": "식약처 허가사항(nedrug) / 세프다나캡슐100밀리그램(세프디니르)(itemSeq 200711458) / 상호작용 / 철분제제와 병용 시 이 약 흡수를 약 1/10까지 저해 → 동시 복용 회피·부득이 시 3시간 이상 간격 / 확인일 2026-06-13"
+   }
+  },
+  {
+   "id": 43,
+   "ingredient": "레보플록사신",
+   "nutrient": "아연",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "레보플록사신과(와) 아연이(가) 함유된 제품을 같은 시간에 복용하면 레보플록사신의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201207060",
+    "pointer": "식약처 허가사항(nedrug) / 글로비트정(레보플록사신, itemSeq 201207060) / 상호작용 / '아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하' → 투여 전후 2시간 이내 병용 회피 / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 44,
+   "ingredient": "시프로플록사신",
+   "nutrient": "아연",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "시프로플록사신과(와) 아연이(가) 함유된 제품을 같은 시간에 복용하면 시프로플록사신의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200403053",
+    "pointer": "식약처 허가사항(nedrug) / 뉴록사신정(시프로플록사신염산염수화물, itemSeq 200403053) / 상호작용 / '아연 또는 철분이 함유된 종합비타민제제…와의 병용에 의해 이 약[흡수 저하]' (양이온 제제 병용 주의) / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 45,
+   "ingredient": "오플록사신",
+   "nutrient": "아연",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "오플록사신과(와) 아연이(가) 함유된 제품을 같은 시간에 복용하면 오플록사신의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199602013",
+    "pointer": "식약처 허가사항(nedrug) / 넬슨오플록사신정100밀리그램(오플록사신, itemSeq 199602013) / 일반적 주의·상호작용 / '아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하' → 투여 전후 2시간 이내 병용 회피 / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 46,
+   "ingredient": "목시플록사신",
+   "nutrient": "아연",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "목시플록사신과(와) 아연이(가) 함유된 제품을 같은 시간에 복용하면 목시플록사신의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201309618",
+    "pointer": "식약처 허가사항(nedrug) / 모록사신정400밀리그램(목시플록사신염산염, itemSeq 201309618) / 상호작용 / '철 또는 아연을 포함하는 제제는 이 약의 흡수를 감소시키므로' → 투여 4시간 전 또는 8시간 후 복용 / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 47,
+   "ingredient": "독시사이클린",
+   "nutrient": "아연",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "독시사이클린과(와) 아연이(가) 함유된 제품을 같은 시간에 복용하면 독시사이클린의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201403031",
+    "pointer": "식약처 허가사항(nedrug) / 독시정(독시사이클린수화물, itemSeq 201403031) / 상호작용 / '철·아연을 함유하고 있는 제제…에 의해 테트라사이클린계 약물의 흡수가 저하' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 48,
+   "ingredient": "미노사이클린",
+   "nutrient": "아연",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "미노사이클린과(와) 아연이(가) 함유된 제품을 같은 시간에 복용하면 미노사이클린의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202500078",
+    "pointer": "식약처 허가사항(nedrug) / 미노젠캡슐50밀리그램(미노사이클린염산염, itemSeq 202500078) / 상호작용 / '철ㆍ아연을 함유하고 있는 제제…에 의해 테트라사이클린계 약물의 흡수가 저하' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 49,
+   "ingredient": "리세드론산",
+   "nutrient": "철분",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "리세드론산과(와) 철분이(가) 함유된 제품을 같은 시간에 복용하면 리세드론산의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201903166",
+    "pointer": "식약처 허가사항(nedrug) / 건토넬정35밀리그램(무수리세드론산나트륨, itemSeq 201903166) / 상호작용·환자 정보 / '다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 약물…은 이 약의 흡수를 방해' → 동시 투여 회피 / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 50,
+   "ingredient": "리세드론산",
+   "nutrient": "마그네슘",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "리세드론산과(와) 마그네슘이(가) 함유된 제품을 같은 시간에 복용하면 리세드론산의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201903166",
+    "pointer": "식약처 허가사항(nedrug) / 건토넬정35밀리그램(무수리세드론산나트륨, itemSeq 201903166) / 상호작용·환자 정보 / '다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 약물…은 이 약의 흡수를 방해' → 동시 투여 회피 / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 51,
+   "ingredient": "이반드론산",
+   "nutrient": "철분",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "이반드론산과(와) 철분이(가) 함유된 제품을 같은 시간에 복용하면 이반드론산의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201306285",
+    "pointer": "식약처 허가사항(nedrug) / 경보이반드로네이트정(이반드론산나트륨일수화물, itemSeq 201306285) / 5.상호작용 / '우유, 음식물, 칼슘, 다가 양이온(예, 알루미늄, 마그네슘, 철)들을 포함한 제품들은 이 약의 흡수를 저해' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 52,
+   "ingredient": "이반드론산",
+   "nutrient": "마그네슘",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "이반드론산과(와) 마그네슘이(가) 함유된 제품을 같은 시간에 복용하면 이반드론산의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201306285",
+    "pointer": "식약처 허가사항(nedrug) / 경보이반드로네이트정(이반드론산나트륨일수화물, itemSeq 201306285) / 5.상호작용 / '우유, 음식물, 칼슘, 다가 양이온(예, 알루미늄, 마그네슘, 철)들을 포함한 제품들은 이 약의 흡수를 저해' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 53,
+   "ingredient": "클로르탈리돈",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "high",
+   "display_text_ko": "클로르탈리돈 같은 이뇨제를 복용하는 경우 칼륨 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다.",
+   "management_ko": "칼륨은 임의로 보충하면 위험할 수 있으므로, 보충 여부는 반드시 의사 또는 약사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202500118",
+    "pointer": "식약처 허가사항(nedrug) / 클로베네정25밀리그램(클로르탈리돈, itemSeq 202500118) / 이상반응(전해질과 대사) / '주로 고용량에서의 저칼륨혈증' + 금기 '불응성 저칼륨혈증 환자' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 54,
+   "ingredient": "클로르탈리돈",
+   "nutrient": "마그네슘",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "클로르탈리돈 같은 이뇨제를 복용하는 경우 마그네슘 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다.",
+   "management_ko": "마그네슘 보충 여부는 의사 또는 약사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202500118",
+    "pointer": "식약처 허가사항(nedrug) / 클로베네정25밀리그램(클로르탈리돈, itemSeq 202500118) / 이상반응(전해질과 대사) / '자주 저나트륨혈증, 저마그네슘혈증' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 55,
+   "ingredient": "인다파미드",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "high",
+   "display_text_ko": "인다파미드 같은 이뇨제를 복용하는 경우 칼륨 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다.",
+   "management_ko": "칼륨은 임의로 보충하면 위험할 수 있으므로, 보충 여부는 반드시 의사 또는 약사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900835",
+    "pointer": "식약처 허가사항(nedrug) / 나트릭스서방정(인다파미드, itemSeq 199900835) / 이상반응 / '임상시험동안, 저칼륨혈증(혈장칼륨<3.4mmol/l)이 환자의 10%에서 나타났으며' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 56,
+   "ingredient": "인다파미드",
+   "nutrient": "마그네슘",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "인다파미드 같은 이뇨제를 복용하는 경우 마그네슘 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다.",
+   "management_ko": "마그네슘 보충 여부는 의사 또는 약사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900835",
+    "pointer": "식약처 허가사항(nedrug) / 나트릭스서방정(인다파미드, itemSeq 199900835) / 이상반응(대사 및 영양계) / '흔하게 저칼륨혈증 … 드물게 저염소혈증 저마그네슘혈증' / 확인일 2026-06-14"
    }
   }
  ],

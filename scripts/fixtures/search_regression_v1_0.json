@@ -2,12 +2,12 @@
   "meta": {
     "name": "search_regression_v1_0",
     "purpose": "v1.0-C 검색/고지/empty/error 회귀 기준선. full drug name index / name_only UX 도입 전 현행 동작을 실제 guards.js + render.js 로 고정한다.",
-    "data_basis": "live: medistack_v0.2_beta_export.json (relation 41 — v1.1 relation 확장 30→41) + medistack_v0.3_aliases.json (alias 717·verified 1059/20 — 복합제 B/D +35·A +43·C buffer_combo +18 배너) + full_drug_name_index_sample_v1_0.json (name_only 16,508 / relation_card 1,072 / total 17,580)",
+    "data_basis": "live: medistack_v0.2_beta_export.json (relation 55 — v1.2 draft 14건 통합 41→55) + medistack_v0.3_aliases.json (alias 717·verified 1064/22 — v1.2 클로르탈리돈·인다파미드 +5) + full_drug_name_index_sample_v1_0.json (name_only 16,503 / relation_card 1,077 / total 17,580)",
     "ground_truth": "기대값은 실제 guards.js 측정값(추측 아님). name_only 미도입 — relation 없는 약은 count 0(empty).",
     "future_note": "full_index_future_baseline 그룹은 name_only UX 도입 시 기대값이 바뀌는 미래 신호. 그 전까지 relation-only degrade(count 0)."
   },
   "behavior": [
-    { "group": "relation_card", "query": "타리비드", "count": 3, "ingredients": ["오플록사신"], "hctzPotassiumNotice": false },
+    { "group": "relation_card", "query": "타리비드", "count": 4, "ingredients": ["오플록사신"], "hctzPotassiumNotice": false, "note": "v1.2: id45 오플록사신×아연 추가 → 3→4" },
     { "group": "relation_card", "query": "포사맥스", "count": 1, "ingredients": ["알렌드론산"], "hctzPotassiumNotice": false },
     { "group": "relation_card", "query": "토렘", "count": 2, "ingredients": ["토라세미드"], "hctzPotassiumNotice": false },
 
@@ -19,7 +19,7 @@
     { "group": "combo_notice_bd", "query": "라베뉴정10/500밀리그램(라베프라졸나트륨,탄산수소나트륨)", "count": 2, "ingredients": ["라베프라졸"], "comboBases": ["라베프라졸"], "hctzPotassiumNotice": false, "note": "복합제 B(라베+탄산수소나트륨) 배너 — id32/33 + 복합제 고지" },
     { "group": "combo_notice_bd", "query": "라스피린캡슐100/5밀리그램(아스피린,라베프라졸)", "count": 2, "ingredients": ["라베프라졸"], "comboBases": ["라베프라졸"], "hctzPotassiumNotice": false, "note": "복합제 D(라베+아스피린) 배너 — id32/33 + 복합제 고지" },
 
-    { "group": "combo_notice_a", "query": "리센플러스정(리세드론산나트륨,콜레칼시페롤)", "count": 1, "ingredients": ["리세드론산"], "comboBases": ["리세드론산"], "hctzPotassiumNotice": false, "note": "복합제 A(비스포+비타민D3) 배너 — id40 칼슘 카드 + 공존성분 '비타민D' 명시 고지" },
+    { "group": "combo_notice_a", "query": "리센플러스정(리세드론산나트륨,콜레칼시페롤)", "count": 3, "ingredients": ["리세드론산"], "comboBases": ["리세드론산"], "hctzPotassiumNotice": false, "note": "복합제 A(비스포+비타민D3) 배너 — id40 칼슘 + v1.2 id49 철·id50 Mg enrichment(1→3) + 공존성분 '비타민D' 명시 고지" },
 
     { "group": "hctz_potassium", "query": "미카르디스플러스정40/12.5밀리그램", "count": 2, "ingredients": ["히드로클로로티아지드"], "comboBases": ["히드로클로로티아지드"], "hctzPotassiumNotice": true },
     { "group": "hctz_potassium", "query": "히드로클로로티아지드", "count": 2, "hintNull": true, "hctzPotassiumNotice": false },
@@ -27,9 +27,9 @@
     { "group": "empty", "query": "존재하지않는약물xyz", "count": 0, "hintNull": true },
     { "group": "empty", "query": "asdfqwer", "count": 0, "hintNull": true },
 
-    { "group": "alias_surface", "query": "신일모노독시엠캡슐", "count": 3, "ingredients": ["독시사이클린"] },
-    { "group": "alias_surface", "query": "레보펙신정250밀리그램", "count": 3, "ingredients": ["레보플록사신"] },
-    { "group": "alias_surface", "query": "레보펙신정500밀리그램", "count": 3, "ingredients": ["레보플록사신"] },
+    { "group": "alias_surface", "query": "신일모노독시엠캡슐", "count": 4, "ingredients": ["독시사이클린"], "note": "v1.2: id47 독시사이클린×아연 → 3→4" },
+    { "group": "alias_surface", "query": "레보펙신정250밀리그램", "count": 4, "ingredients": ["레보플록사신"], "note": "v1.2: id43 레보플록사신×아연 → 3→4" },
+    { "group": "alias_surface", "query": "레보펙신정500밀리그램", "count": 4, "ingredients": ["레보플록사신"], "note": "v1.2: id43 레보플록사신×아연 → 3→4" },
 
     { "group": "full_index_future_baseline", "query": "아세트아미노펜", "count": 0, "hintNull": true },
     { "group": "full_index_future_baseline", "query": "타이레놀", "count": 0, "hintNull": true },
@@ -38,9 +38,15 @@
     { "group": "relation_expansion_v1_1", "query": "판토프라졸", "count": 2, "note": "신규 id34/35" },
     { "group": "relation_expansion_v1_1", "query": "란소프라졸", "count": 4, "note": "신규 id36/37 + 덱스란소프라졸 id38/39(substring 중복)" },
     { "group": "relation_expansion_v1_1", "query": "덱스란소프라졸", "count": 2, "note": "신규 id38/39" },
-    { "group": "relation_expansion_v1_1", "query": "리세드론산", "count": 1, "note": "신규 id40 (×칼슘)" },
-    { "group": "relation_expansion_v1_1", "query": "이반드론산", "count": 1, "note": "신규 id41 (×칼슘)" },
+    { "group": "relation_expansion_v1_1", "query": "리세드론산", "count": 3, "note": "id40(×칼슘) + v1.2 id49(×철)·id50(×Mg) → 1→3" },
+    { "group": "relation_expansion_v1_1", "query": "이반드론산", "count": 3, "note": "id41(×칼슘) + v1.2 id51(×철)·id52(×Mg) → 1→3" },
     { "group": "relation_expansion_v1_1", "query": "세프디니르", "count": 1, "note": "신규 id42 (×철분)" },
+
+    { "group": "relation_draft_v1_2", "query": "클로르탈리돈", "count": 2, "hintNull": true, "hctzPotassiumNotice": false, "note": "신규 성분 — id53(×칼륨·potassium_safety_card)·id54(×Mg). 직접검색이라 hint=null(HCTZ 동형)" },
+    { "group": "relation_draft_v1_2", "query": "인다파미드", "count": 2, "hintNull": true, "hctzPotassiumNotice": false, "note": "신규 성분 — id55(×칼륨)·id56(×Mg)" },
+    { "group": "relation_draft_v1_2", "query": "시프로플록사신", "count": 4, "note": "id4/5/6(칼슘/철/Mg) + v1.2 id44(×아연) → 4" },
+    { "group": "relation_draft_v1_2", "query": "목시플록사신", "count": 3, "note": "id24/25(철/Mg) + v1.2 id46(×아연) → 3" },
+    { "group": "relation_draft_v1_2", "query": "미노사이클린", "count": 4, "note": "id26/27/28(칼슘/철/Mg) + v1.2 id48(×아연) → 4" },
 
     { "group": "combo_notice_c", "query": "란소앤정30/600밀리그램", "count": 2, "ingredients": ["란소프라졸"], "comboBases": ["란소프라졸"], "hctzPotassiumNotice": false, "note": "buffer_combo C(PPI+침강탄산칼슘) 배너 — id36/37 PPI×B12·×Mg + 복합제 고지(칼슘=완충제)" },
     { "group": "combo_notice_c", "query": "라베가드정20/600밀리그램(라베프라졸나트륨,침강탄산칼슘)", "count": 2, "ingredients": ["라베프라졸"], "comboBases": ["라베프라졸"], "hctzPotassiumNotice": false, "note": "buffer_combo C(PPI+침강탄산칼슘) 배너 — id32/33 라베프라졸×B12·×Mg + 복합제 고지" },
@@ -62,14 +68,14 @@
   ],
   "list_results": [
     { "group": "empty_list", "query": "asdfqwer", "filteredCount": 0, "contains": ["0건"], "notContains": ["class=\"row\""] },
-    { "group": "card_list", "query": "타리비드", "filteredCount": 3, "contains": ["3건", "class=\"row\""], "notContains": [] }
+    { "group": "card_list", "query": "타리비드", "filteredCount": 4, "contains": ["4건", "class=\"row\""], "notContains": [] }
   ],
   "id15_failsafe": { "description": "relation id 15(에스오메프라졸×B12)는 렌더 풀에 없어야 함(excluded_v0_1)", "expectPresent": false },
   "degrade": [
-    { "query": "오플록사신", "emptyIndexCount": 3, "kind": "direct", "note": "직접검색 — alias 인덱스 무관, 불변" },
+    { "query": "오플록사신", "emptyIndexCount": 4, "kind": "direct", "note": "직접검색 — alias 인덱스 무관(v1.2 id45 아연 추가 → 4)" },
     { "query": "타리비드", "emptyIndexCount": 0, "kind": "alias-only", "note": "브랜드 alias 전용 — 인덱스 부재 시 브리지 소멸 → 0(정상 degrade)" }
   ],
-  "name_only_index_size": 16508,
+  "name_only_index_size": 16503,
   "name_only": [
     { "group": "covered_now", "query": "게보린", "minCount": 1, "note": "relation 0 → name_only 가 커버(브랜드 품목명)" },
     { "group": "covered_now", "query": "이부프로펜", "minCount": 5, "note": "Phase 5 10k 실측 30(상한 30)" },

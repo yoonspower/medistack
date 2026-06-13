@@ -179,9 +179,9 @@ def validate(doc, pool, inv):
     ck("불변: alias_count 717 (B/D +35 → A +43 → C buffer_combo +18 product alias)", inv["alias_count"] == 717, str(inv["alias_count"]))
     ck("불변: product_aliases 679 (B/D +35 → A +43 → C +18)", inv["product"] == 679, str(inv["product"]))
     ck("불변: ingredient_aliases 38", inv["ingredient"] == 38, str(inv["ingredient"]))
-    ck("불변: verified_item_seqs 1059/20 (B/D +35 → A +43 → C +18/란소프라졸·라베프라졸)",
-       inv["vis_total"] == 1059 and inv["vis_ing"] == 20, f"{inv['vis_total']}/{inv['vis_ing']}")
-    ck("불변: relations 41 (v1.1 relation 확장 30→41)", inv["relations"] == 41, str(inv["relations"]))
+    ck("불변: verified_item_seqs 1064/22 (C +18 → v1.2 draft +5/클로르탈리돈·인다파미드)",
+       inv["vis_total"] == 1064 and inv["vis_ing"] == 22, f"{inv['vis_total']}/{inv['vis_ing']}")
+    ck("불변: relations 55 (v1.1 30→41 → v1.2 draft 14건 통합 41→55)", inv["relations"] == 55, str(inv["relations"]))
     ck("불변: DATA_URL", inv["data_url"] == EXPECT_DATA_URL, str(inv["data_url"]))
     ck("불변: published=false", inv["published"] is False, str(inv["published"]))
     ck("불변: clinical_reviewed=false", inv["clinical_reviewed"] is False, str(inv["clinical_reviewed"]))

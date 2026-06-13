@@ -10,7 +10,7 @@ guards.js/render.js 는 ES module 이고 repo 에 package.json 이 없으므로,
 guards.js 를 임시 디렉토리에 복사하고 package.json {"type":"module"} 를 둔 뒤 node 로 import 한다.
 
 회귀 시나리오(기대값은 라이브 relation 30 + alias 618 기준 ground-truth):
-  타리비드 → 오플록사신 3건
+  타리비드 → 오플록사신 4건 (v1.2 id45 ×아연 추가)
   포사맥스 → 알렌드론산 1건
   토렘   → 토라세미드 2건
   넥시움 → 0건 (에스오메프라졸 제품 alias 금지 → 브리지 없음)
@@ -53,7 +53,7 @@ const count = (q) => filterRelations(rels, { query: q }, idx).length;
 const hint = (q) => aliasHint(filterRelations(rels, { query: q }, idx), { query: q }, idx);
 
 // 브랜드 alias → 성분 relation 회귀 (불변 기대값)
-check('타리비드 → 오플록사신 3건', count('타리비드') === 3, count('타리비드'));
+check('타리비드 → 오플록사신 4건(v1.2 id45 아연)', count('타리비드') === 4, count('타리비드'));
 check('포사맥스 → 알렌드론산 1건', count('포사맥스') === 1, count('포사맥스'));
 check('토렘 → 토라세미드 2건', count('토렘') === 2, count('토렘'));
 check('넥시움 → 0건(에스오메프라졸 alias 금지)', count('넥시움') === 0, count('넥시움'));

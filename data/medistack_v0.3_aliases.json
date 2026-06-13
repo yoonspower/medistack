@@ -17282,6 +17282,40 @@
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
    }
+  ],
+  "인다파미드": [
+   {
+    "item_seq": "199900835",
+    "item_name": "나트릭스서방정(인다파미드)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199501023",
+    "item_name": "다피드정2.5밀리그램(인다파미드)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "200805114",
+    "item_name": "후루덱스서방정(인다파미드)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   }
+  ],
+  "클로르탈리돈": [
+   {
+    "item_seq": "202500118",
+    "item_name": "클로베네정25밀리그램(클로르탈리돈)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "200302309",
+    "item_name": "하이그로톤정25밀리그램(클로르탈리돈)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   }
   ]
  }
 }

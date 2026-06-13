@@ -1,0 +1,15 @@
+draft_id,source_queue_id,ingredient,nutrient,mechanism,recommended_action,source_status,dup_vs_live41,risk_class_check,potassium_policy_check,wording_check,evidence_draft,evidence_applied,evidence_note,full_index_flip,verdict
+D01,Q06,레보플록사신,아연,absorption,separation,source_confirmed,new_pair,clean(no high-risk class),n/a,clean(no recommend/buy/dose),high,high,absorption×양이온 선례 일치(1-9·21-28 전부 high),0(이미 relation_card),pass_to_integrate
+D02,Q06,시프로플록사신,아연,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption 선례 일치,0(이미 relation_card),pass_to_integrate
+D03,Q06,오플록사신,아연,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption 선례 일치,0(이미 relation_card),pass_to_integrate
+D04,Q06,목시플록사신,아연,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption 선례 일치,0(이미 relation_card),pass_to_integrate
+D05,Q07,독시사이클린,아연,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption 선례 일치,0(이미 relation_card),pass_to_integrate
+D06,Q07,미노사이클린,아연,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption 선례 일치,0(이미 relation_card),pass_to_integrate
+D07,Q04,리세드론산,철분,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,비스포 칼슘 40/41 high + absorption×철 선례 일치,0(이미 relation_card),pass_to_integrate
+D08,Q04,리세드론산,마그네슘,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption×Mg 선례(3·6·9·23·25·28 high) 일치,0(이미 relation_card),pass_to_integrate
+D09,Q04,이반드론산,철분,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption×철 선례 일치,0(이미 relation_card),pass_to_integrate
+D10,Q04,이반드론산,마그네슘,absorption,separation,source_confirmed,new_pair,clean,n/a,clean,high,high,absorption×Mg 선례 일치,0(이미 relation_card),pass_to_integrate
+D11,Q10,클로르탈리돈,칼륨,depletion,monitoring,source_confirmed,new_pair,clean(이뇨제·민감군 아님),OK(card=true·link=false 승계),clean,high,high,depletion×칼륨 선례(17·19·30 전부 high) 일치,2(single flip),pass_to_integrate
+D12,Q10,클로르탈리돈,마그네슘,depletion,monitoring,source_confirmed,new_pair,clean,n/a,clean,high,moderate,relation20 HCTZ×Mg(moderate·draft가 '동일 모델' 명시) 선례 일치 하향,0(D11 flip로 커버),pass_to_integrate
+D13,Q11,인다파미드,칼륨,depletion,monitoring,source_confirmed,new_pair,clean,OK(card=true·link=false 승계),clean,high,high,depletion×칼륨 선례 일치,3(single flip),pass_to_integrate
+D14,Q11,인다파미드,마그네슘,depletion,monitoring,source_confirmed,new_pair,clean,n/a,clean,high,moderate,relation20 HCTZ×Mg 선례 일치 하향(라벨 '드물게' — 원문보다 강하지 않게),0(D13 flip로 커버),pass_to_integrate
