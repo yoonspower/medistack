@@ -85,6 +85,10 @@ export function buildAliasIndex(aliasData) {
         rec.isCombo = true;
         const b = e.combination_basis_ingredient;
         rec.basis = norm(typeof b === 'string' && b.trim() ? b : ci);
+        // v1.1 A: 공존 성분 라벨(예: '비타민D'). 있으면 배너가 '다른 성분' 대신 그 라벨을 명시.
+        // 부재 시 기존 일반 문구('다른 성분') → 하위호환(기존 combo 불변).
+        const ol = e.combination_other_label;
+        if (typeof ol === 'string' && ol.trim()) rec.otherLabel = ol.trim();
       }
       out.push(rec);
     }
@@ -139,7 +143,12 @@ export function aliasHint(filteredRels, state, aliasIndex) {
   const out = { query: s.query, ingredients: ings };
   // v0.7 복합제: 'combo alias 로만' 도달한 성분은 복합제 고지 대상으로 표시.
   const comboBases = comboBasesFor(q, ings, aliasIndex);
-  if (comboBases.length) out.comboBases = comboBases;
+  if (comboBases.length) {
+    out.comboBases = comboBases;
+    // v1.1 A: 공존 성분 라벨 맵 { basisRaw: label }. 부재 시 미설정 → 배너 일반 문구(하위호환).
+    const labels = comboOtherLabelsFor(q, comboBases, aliasIndex);
+    if (Object.keys(labels).length) out.comboOtherLabels = labels;
+  }
   // v0.8 HCTZ: 복합제 basis 가 히드로클로로티아지드이고 칼륨 행(potassium_safety_card 플래그)이
   // 결과에 있을 때만 칼륨 반전 고지 대상. nutrient 문자열 매칭 금지 원칙 → 플래그로 판정.
   // 라이브엔 HCTZ 복합제 0건 → comboBases 에 HCTZ 부재 → 항상 미설정(기존 동작과 동일).
@@ -167,6 +176,20 @@ function comboBasesFor(nq, ings, aliasIndex) {
     const rec = flag.get(norm(ing));
     return !!rec && rec.combo && !rec.single;
   });
+}
+
+// v1.1 A: comboBases 각 basis 의 공존 성분 라벨 { basisRaw: label }. 질의 prefix 로 매칭된 combo alias 의
+// otherLabel 만 수집(없으면 빈 객체 → 배너 일반 문구). 같은 basis 에 라벨이 여럿이면 첫 값(라이브엔 성분당 단일 라벨).
+function comboOtherLabelsFor(nq, comboBases, aliasIndex) {
+  const out = {};
+  if (!nq || !Array.isArray(aliasIndex) || !Array.isArray(comboBases)) return out;
+  const want = new Map(comboBases.map((b) => [norm(b), b]));
+  for (const e of aliasIndex) {
+    if (!e.isCombo || !e.otherLabel || !e.alias.startsWith(nq)) continue;
+    const raw = want.get(e.canonical);
+    if (raw && !out[raw]) out[raw] = e.otherLabel;
+  }
+  return out;
 }
 
 // ---- v1.0 Phase 3: full drug name index (relation 없는 약의 '품목명 확인'). 의학정보 미부착 ----

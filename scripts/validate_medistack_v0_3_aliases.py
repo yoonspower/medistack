@@ -37,8 +37,10 @@ EXCLUDED_BYPASS_INGREDIENT = "에스오메프라졸"  # 제품 alias 금지 대�
 # v0.7 B1 + v0.8 H-G1 복합제 basis allowlist: 이 성분들만 복합제 basis 로 허용.
 # v0.8: 히드로클로로티아지드(HCTZ) 개방(ARB+HCTZ 고혈압 복합제). 에스오메프라졸은 계속 하드 차단.
 # v1.1 복합제검토 1순위: 라베프라졸 개방(B 라베+탄산수소나트륨·D 라베+아스피린, nutrient 무관 35건).
-#       라베+산화Mg(E)·라베+칼슘(C)·비스포+D3(A) 는 미개방(직접모순/미수록 상호작용 — 로드맵 2·3순위·영구금지).
-COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸", "히드로클로로티아지드", "라베프라졸"}
+# v1.1 복합제검토 2순위: 리세드론산·이반드론산 개방(A 비스포+비타민D3, 칼슘≠D3 무모순 43건. 배너가 공존성분
+#       '비타민D' 명시로 칼슘 카드 오인 차단 — 안전게이트 통과). 라베+산화Mg(E)·PPI+칼슘(C)는 미개방(직접모순/미수록).
+COMBO_ALLOWED_BASIS = {"메트포르민", "알렌드론산", "오메프라졸", "히드로클로로티아지드",
+                       "라베프라졸", "리세드론산", "이반드론산"}
 # v0.8 H-G1(#16): 라이브 복합제 alias 표시 문자열에 칼륨보존이뇨제 토큰 금지(K보존 파트너 영구차단).
 # 특정 약물명 토큰만 → 'XX칼륨'(로사르탄칼륨/피마사르탄칼륨) 염 이름의 '칼륨'은 매칭 안 됨(V5 염이름 분리).
 KSPARING_RE = re.compile(
@@ -289,6 +291,7 @@ def main(alias_path, rel_path):
         isc = e.get("is_combination")
         basis = e.get("combination_basis_ingredient")
         notice = e.get("combination_notice_required")
+        other = e.get("combination_other_label")  # v1.1 A: 공존 성분 라벨(옵션)
         if isc is True:
             if src != "product_aliases" or e.get("kind") != "product":
                 combo_bad.append(f"{e.get('alias')!r}:복합제는 product alias만")
@@ -298,10 +301,13 @@ def main(alias_path, rel_path):
                 combo_bad.append(f"{e.get('alias')!r}:basis({basis})!=canonical({e.get('canonical_ingredient')})")
             if notice is not True:
                 combo_bad.append(f"{e.get('alias')!r}:combination_notice_required!=true")
+            # combination_other_label 은 옵션이나, 있으면 비어있지 않은 문자열이어야(배너 표시용).
+            if other is not None and not nonempty_str(other):
+                combo_bad.append(f"{e.get('alias')!r}:combination_other_label 빈값")
         else:
             if isc not in (None, False):
                 combo_bad.append(f"{e.get('alias')!r}:is_combination={isc!r}(bool 아님)")
-            if notice is True or nonempty_str(basis):
+            if notice is True or nonempty_str(basis) or other is not None:
                 combo_bad.append(f"{e.get('alias')!r}:비복합제인데 복합제 고지필드 존재(orphan)")
     v.check(not combo_bad, 14,
             "is_combination 메타 정합(product 한정·basis==canonical·notice_required=true·orphan 금지)",

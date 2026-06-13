@@ -4,7 +4,7 @@
   "kind": "alias_operational",
   "note": "검색 보조 alias 운영 1차. 의학정보 아님. v0.2 30건 relation 기준. alias로 relation 신규생성 불가. 15행/에스오메프라졸 제품 alias 미포함. 앱 미반영(별도 단계).",
   "relation_source": "medistack_v0.2_beta_export.json",
-  "alias_count": 656
+  "alias_count": 699
  },
  "ingredient_aliases": [
   {
@@ -7850,6 +7850,608 @@
    "is_combination": true,
    "combination_basis_ingredient": "라베프라졸",
    "combination_notice_required": true
+  },
+  {
+   "alias": "드로넬플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604117",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "디세든플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201700405",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리도넬디정(리세드론산,콜레칼시페롤)",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201202525",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리드넷플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201605260",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리드산플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201700469",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리론트플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604705",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리산드플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "202001703",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세네플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604686",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세넥스엠정(리세드론산나트륨2.5수화물, 콜레칼시페롤)",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201202526",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세넥스플러스정(리세드론산나트륨2.5수화물, 콜레칼시페롤농축물(분말형))",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201004171",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세닐플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606083",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세드렌플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604698",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세드로플러스디정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604712",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세드론플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604699",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "본비바플러스정",
+   "canonical_ingredient": "이반드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201308067",
+   "source_relation_ids": [
+    41
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "이반드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세드린플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201605330",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세드플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604677",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세로플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606800",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세론플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606189",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세린플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606810",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세비디정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606400",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세원플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201605323",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세트론플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201605346",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세페롤플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201700623",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리세플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201605159",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리센플러스정(리세드론산나트륨,콜레칼시페롤)",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201004170",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "리조넬플러스정(리세드론산나트륨2.5수화물, 콜레칼시페롤농축물(분말형))",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201605347",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "본넬플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604713",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "본세론플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604695",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "세로본플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604692",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "악토론플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604694",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "악토제닉플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604922",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "알토리톤플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604675",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "애드본알정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604697",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "오스톨플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604693",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "위더넥스플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604702",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "윈토넬플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606792",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "지노티넬플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201701415",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "칸토넬플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201606075",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "칼플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604696",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "포스넬엠정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604119",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "포스넬플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604118",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
+  },
+  {
+   "alias": "휴드론플러스정",
+   "canonical_ingredient": "리세드론산",
+   "kind": "product",
+   "lang": "ko",
+   "item_seq": "201604687",
+   "source_relation_ids": [
+    40
+   ],
+   "is_combination": true,
+   "combination_basis_ingredient": "리세드론산",
+   "combination_notice_required": true,
+   "combination_other_label": "비타민D"
   }
  ],
  "verified_item_seqs": {
@@ -15609,6 +16211,258 @@
     "item_name": "휴텍스리세드로네이트정35mg(리세드론산나트륨2.5수화물)",
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (relation expansion v1.1)"
+   },
+   {
+    "item_seq": "201604117",
+    "item_name": "드로넬플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201700405",
+    "item_name": "디세든플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201202525",
+    "item_name": "리도넬디정(리세드론산,콜레칼시페롤)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201605260",
+    "item_name": "리드넷플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201700469",
+    "item_name": "리드산플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604705",
+    "item_name": "리론트플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "202001703",
+    "item_name": "리산드플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604686",
+    "item_name": "리세네플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201202526",
+    "item_name": "리세넥스엠정(리세드론산나트륨2.5수화물, 콜레칼시페롤)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201004171",
+    "item_name": "리세넥스플러스정(리세드론산나트륨2.5수화물, 콜레칼시페롤농축물(분말형))",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606083",
+    "item_name": "리세닐플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604698",
+    "item_name": "리세드렌플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604712",
+    "item_name": "리세드로플러스디정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604699",
+    "item_name": "리세드론플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201605330",
+    "item_name": "리세드린플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604677",
+    "item_name": "리세드플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606800",
+    "item_name": "리세로플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606189",
+    "item_name": "리세론플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606810",
+    "item_name": "리세린플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606400",
+    "item_name": "리세비디정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201605323",
+    "item_name": "리세원플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201605346",
+    "item_name": "리세트론플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201700623",
+    "item_name": "리세페롤플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201605159",
+    "item_name": "리세플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201004170",
+    "item_name": "리센플러스정(리세드론산나트륨,콜레칼시페롤)",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201605347",
+    "item_name": "리조넬플러스정(리세드론산나트륨2.5수화물, 콜레칼시페롤농축물(분말형))",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604713",
+    "item_name": "본넬플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604695",
+    "item_name": "본세론플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604692",
+    "item_name": "세로본플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604694",
+    "item_name": "악토론플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604922",
+    "item_name": "악토제닉플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604675",
+    "item_name": "알토리톤플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604697",
+    "item_name": "애드본알정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604693",
+    "item_name": "오스톨플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604702",
+    "item_name": "위더넥스플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606792",
+    "item_name": "윈토넬플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201701415",
+    "item_name": "지노티넬플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201606075",
+    "item_name": "칸토넬플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604696",
+    "item_name": "칼플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604119",
+    "item_name": "포스넬엠정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604118",
+    "item_name": "포스넬플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
+   },
+   {
+    "item_seq": "201604687",
+    "item_name": "휴드론플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
    }
   ],
   "이반드론산": [
@@ -16043,6 +16897,12 @@
     "item_name": "휴반드론주(이반드론산나트륨일수화물)",
     "verified_at": "2026-06-13",
     "method": "full_index nedrug.searchDrug ingredient_name (relation expansion v1.1)"
+   },
+   {
+    "item_seq": "201308067",
+    "item_name": "본비바플러스정",
+    "verified_at": "2026-06-13",
+    "method": "full_index nedrug.searchDrug ingredient_name (combo banner A v1.1)"
    }
   ]
  }

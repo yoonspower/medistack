@@ -63,9 +63,16 @@ export function renderAliasHint(info) {
   // v0.7 복합제 고지(검색 보조 안내. 제품 추천/구매 아님). info.comboBases 부재 시 미표시 → 기존과 동일.
   if (Array.isArray(info.comboBases) && info.comboBases.length > 0) {
     const basis = info.comboBases.join(', ');
+    // v1.1 A: 공존 성분 라벨(예: 비타민D)이 있으면 '다른 성분' 대신 그 라벨을 명시 → 카드 영양소(칼슘)와
+    // 공존 성분(비타민D)을 구분해 오인 차단. 라벨 부재 시 기존 일반 문구('다른 성분') → 하위호환.
+    const labelMap = (info.comboOtherLabels && typeof info.comboOtherLabels === 'object') ? info.comboOtherLabels : {};
+    const others = [...new Set(info.comboBases.map((b) => labelMap[b]).filter((v) => typeof v === 'string' && v))];
+    const otherClause = others.length
+      ? '함께 포함된 ' + others.join('·') + ' 성분에 대한 정보는 포함하지 않습니다'
+      : '함께 포함된 다른 성분에 대한 정보는 포함하지 않습니다';
     h += '<div class="combobox" role="note"><span class="combobadge">복합제</span><p>' +
       esc('이 제품은 둘 이상의 성분을 가진 복합제입니다. 표시된 약-영양소 참고 정보는 ' + basis +
-          ' 성분을 기준으로 하며, 함께 포함된 다른 성분에 대한 정보는 포함하지 않습니다. 전체 성분은 의약품 허가사항(첨부문서)을 확인하세요.') +
+          ' 성분을 기준으로 하며, ' + otherClause + '. 전체 성분은 의약품 허가사항(첨부문서)을 확인하세요.') +
       '</p></div>';
   }
   // v0.8 HCTZ 칼륨 반전 고지(복합제 basis=HCTZ + 칼륨 행). info.hctzPotassiumNotice 부재 시 미표시 → 기존과 동일.
