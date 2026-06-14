@@ -10,23 +10,35 @@
   "clinical_reviewed": false,
   "count": 2,
   "gate": "scripts/source_confirm_gate_v1_2.py / data/review/source_confirm_gate_v1_2.json (단일 fail-closed)",
+  "reconciled_with_harvester": "v1.3 online manual run 2026-06-14 (AT-01 ≡ AT-FEX-01 펙소페나딘, AT-05 ≡ AT-ITZ-01 이트라코나졸). harvester 가 확정한 online 대표 itemSeq/quote 를 각 draft 의 online_reconcile 로 보강(기존 근거 폐기 아님·provenance 보존). 영양소 relation 아님 — surface 렌더 매핑(render_nutrient/render_action) 은 Al/Mg 제산제 '약물' 카테고리로 표시.",
   "note": "antacid_interaction 트랙은 '약물 × Al/Mg 제산제(약물 카테고리)'이며 영양소(철/칼슘/Mg/아연/칼륨) 보충제 relation 과 개념적으로 분리된다. surface=중립 antacid_interaction, 내부=label_directive_type/counterpart_category/label_quote 로 라벨 원문 강도 보존. 마그네슘 영양제로 오인되지 않게 상대를 제산제로 명시. 이번 라운드 live·일반 relation 미반영. reject/needs_review 후보는 candidates CSV 참조."
  },
  "draft_relations": [
   {
    "draft_id": "AT-01",
+   "harvester_candidate_id": "AT-FEX-01",
    "ingredient": "펙소페나딘",
    "relation_type": "antacid_interaction",
    "counterpart_category": "al_mg_antacid",
    "label_directive_type": "avoid_concomitant",
    "copy_risk_level": "high",
+   "confidence": "low",
+   "risk_level": "low",
+   "source_basis": "허가사항",
    "display_text_ko": "일부 알루미늄·마그네슘 함유 제산제와 함께 사용할 때 약물 흡수에 영향을 줄 수 있다는 허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.",
    "management_ko": "",
    "label_quote": "동안 주의해야 할 약 또는 음식은 무엇입니까? 이 약을 복용하는 동안 피부질환용약, 비염용 내복약을 포함한 다른 알레르기용약, 항히스타민제를 함유한 내복약 등, 알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오. 이 약을 복용하는 동안 케토코나졸이나 에리트로마이신과 함께 복용하지 마십시오. 이 약을 복용하는 동안 자몽주스, 오렌지 및 사과주스와",
+   "surface": {
+    "render_nutrient": "Al/Mg 함유 제산제(약물)",
+    "render_action": "separation",
+    "not_a_nutrient_relation": true,
+    "note": "표면 렌더 매핑(미승격). render_nutrient 는 영양소가 아니라 Al/Mg 함유 제산제 '약물' 카테고리 — 기존 generic relation 카드의 nutrient 슬롯에 넣으면 '마그네슘(영양소)' 이 아니라 '제산제(약물)' 로 표시되어 영양소 트랙과 구분된다. render_action=separation 은 기존 카드의 '복용 간격' chip 재사용(라벨 강도는 label_directive_type 가 내부 보존). live 승격은 별도 PM 결정."
+   },
    "product_link_allowed": false,
    "potassium_safety_card": false,
    "published": false,
    "clinical_reviewed": false,
+   "reviewed_by": "",
    "review_required": true,
    "source_required": true,
    "do_not_implement_yet": true,
@@ -38,22 +50,44 @@
     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202202380",
     "pointer": "식약처 nedrug getItemDetail / 펙소페나딘 / itemSeq 202202380 / 상호작용·복약정보 Al/Mg 제산제 directive / '동안 주의해야 할 약 또는 음식은 무엇입니까? 이 약을 복용하는 동안 피부질환용약, 비염용 내복약을 포함한 다른 알레르기용약, 항히스타민제를 함유한 내복약 등, 알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오. 이 약을 복용하는 동안 케토코나졸이나 에리트로마이신과 함께 복' / 확인일 2026-06-14",
     "checked_at": "2026-06-14"
+   },
+   "online_reconcile": {
+    "harvester_candidate_id": "AT-FEX-01",
+    "online_item_seq": "199801016",
+    "online_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801016",
+    "online_confidence": "low",
+    "online_directive_observed": "coadmin_caution",
+    "online_label_quote": "12세 미만의 소아는 의사 또는 약사와 상의하십시오. 이 약을 사용하는 동안 주의해야 할 약 또는 음식은 무엇입니까? 케토코나졸이나 에리트로마이신, 알루미늄, 수산화마그네슘을 함유한 제산제, 아팔루타마이드와 같은 P-gp 유도제와 함께 사용 시 의사 또는 약사와 상의하십시오. 자몽주스, 오렌지 및 사과주스와 같은 과일주스와 함께 복용 시 이 약의 효과를",
+    "checked_at": "2026-06-14",
+    "classification": "different_valid_representative_itemseq",
+    "provenance_note": "기존 대표품목(202202380)은 avoid_concomitant('…제산제를 복용하지 마십시오')의 강한 directive. v1.3 harvester online 대표품목(199801016)은 같은 Al/Mg 제산제 상호작용을 더 약한 톤('의사 또는 약사와 상의')으로 기재 — 둘 다 유효한 다른 품목(대표 itemSeq 선택 차이, 기존 itemSeq 오류 아님). 보수적으로 강한 directive(avoid_concomitant)를 primary 로 유지하고 online 근거는 provenance 로 보강(폐기 아님). 영양소 Mg relation 아님."
    }
   },
   {
    "draft_id": "AT-05",
+   "harvester_candidate_id": "AT-ITZ-01",
    "ingredient": "이트라코나졸",
    "relation_type": "antacid_interaction",
    "counterpart_category": "al_mg_antacid",
    "label_directive_type": "separation",
    "copy_risk_level": "high",
+   "confidence": "high",
+   "risk_level": "low",
+   "source_basis": "허가사항",
    "display_text_ko": "일부 알루미늄·마그네슘 함유 제산제와 함께 사용할 때 약물 흡수에 영향을 줄 수 있다는 허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.",
    "management_ko": "",
    "label_quote": "과 이트라코나졸 캡슐을 병용 투여 시 주의하여 사용하는 것이 권장됨. 위산도를 저하시키는 약물과 함께 투여 시 콜라(다이어트 콜라 제외)같은 산성음료를 복용함. 수산화알루미늄과 같은 위산중화제는 적어도 이 약 투여 2시간 전이나 2시간 후에 투여하는 것을 권장함. 병용투여시 항진균효과를 관찰하고 필요한 경우 이트라코나졸 용량을 증량하는 것을 권장함. 사카로",
+   "surface": {
+    "render_nutrient": "Al/Mg 함유 제산제(약물)",
+    "render_action": "separation",
+    "not_a_nutrient_relation": true,
+    "note": "표면 렌더 매핑(미승격). render_nutrient 는 영양소가 아니라 Al/Mg 함유 제산제 '약물' 카테고리 — 기존 generic relation 카드의 nutrient 슬롯에 넣으면 '마그네슘(영양소)' 이 아니라 '제산제(약물)' 로 표시되어 영양소 트랙과 구분된다. render_action=separation 은 기존 카드의 '복용 간격' chip 재사용(라벨 강도는 label_directive_type 가 내부 보존). live 승격은 별도 PM 결정."
+   },
    "product_link_allowed": false,
    "potassium_safety_card": false,
    "published": false,
    "clinical_reviewed": false,
+   "reviewed_by": "",
    "review_required": true,
    "source_required": true,
    "do_not_implement_yet": true,
@@ -65,6 +99,17 @@
     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200404726",
     "pointer": "식약처 nedrug getItemDetail / 이트라코나졸 / itemSeq 200404726 / 상호작용·복약정보 Al/Mg 제산제 directive / '과 이트라코나졸 캡슐을 병용 투여 시 주의하여 사용하는 것이 권장됨. 위산도를 저하시키는 약물과 함께 투여 시 콜라(다이어트 콜라 제외)같은 산성음료를 복용함. 수산화알루미늄과 같은 위산중화제는 적어도 이 약 투여 2시간 전이나 2시간 후에 투여하는 것을 권장함. 병용투여시 항진균효과를' / 확인일 2026-06-14",
     "checked_at": "2026-06-14"
+   },
+   "online_reconcile": {
+    "harvester_candidate_id": "AT-ITZ-01",
+    "online_item_seq": "200401453",
+    "online_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200401453",
+    "online_confidence": "high",
+    "online_directive_observed": "separation",
+    "online_label_quote": "과 이트라코나졸 캡슐을 병용 투여 시 주의하여 사용하는 것이 권장됨. 위산도를 저하시키는 약물과 함께 투여 시 콜라(다이어트 콜라 제외)같은 산성음료를 복용함. 수산화알루미늄과 같은 위산중화제는 적어도 이 약 투여 2시간 전이나 2시간 후에 투여하는 것을 권장함. 병용투여시 항진균효과를 관찰하고 필요한 경우 이트라코나졸 용량을 증량하는 것을 권장함. 사카로",
+    "checked_at": "2026-06-14",
+    "classification": "different_valid_representative_itemseq_consistent_directive",
+    "provenance_note": "기존(200404726)과 v1.3 harvester online(200401453) 둘 다 separation('이 약 투여 2시간 전이나 2시간 후') directive 로 일관 — directive 일치, 대표품목만 다름(둘 다 유효, 기존 itemSeq 오류 아님). online high confidence 로 강도 재확인. 기존 근거 폐기 아님 — provenance 보강. 영양소 Mg relation 아님."
    }
   }
  ]

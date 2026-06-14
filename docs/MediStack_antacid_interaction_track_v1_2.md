@@ -142,3 +142,49 @@ draft batch(`data/drafts/antacid_interaction_draft_batch_v1_2.json`)는 §3 권�
 - antacid 전용 draft **2건(AT-01 펙소페나딘 · AT-05 이트라코나졸)** 은 `data/drafts/antacid_interaction_draft_batch_v1_2.json` 에 보관 상태. 모두 `do_not_implement_yet=true` · `adversarial_verified=false`.
 - 다음 단계(별도 PM 단계): surface(`antacid_interaction`) 구현 여부 결정 → **적대검증(카피 충실성: 병용 프레이밍 유지·비지시성·영양소 오인 차단)** → forbidden phrase scanner 0 확인 → (필요 시) clinical reviewer. 본 문서는 설계·기록일 뿐 구현 지시가 아니다.
 - reject 3(AT-02·AT-03·AT-04)·needs_review 1(AT-06)은 승격 대상 아님. AT-06은 itemSeq 재확보 후 재게이트 대상.
+
+---
+
+> 아래 §11 은 v1.3 relation harvester bot 의 **첫 운영 online manual run(2026-06-14, main `c88edc5`)** 결과를 §0–10 설계에 reconcile 한 **보강 섹션**이다. §0–10 의 설계·판정 의미는 변경하지 않는다. **live·draft 승격 없음**(`live_integration_forbidden=true` 유지). 본 섹션은 기록/설계이며 구현 지시가 아니다.
+
+## 11. v1.3 harvester online reconcile + surface/render 상태
+
+### 11.1 트랙 정의 재확인 (영양소 Mg relation 과의 차이)
+antacid_interaction 은 **`약물 × Al/Mg 함유 제산제(약물 카테고리)`** 트랙이다. MediStack 의 핵심 모델인 **`약물 × 영양소(철/칼슘/Mg/아연/칼륨) 보충제`** relation 과 **개념적으로 분리**된다.
+
+| 구분 | 영양소 Mg relation | antacid_interaction |
+|---|---|---|
+| 상대(counterpart) | 마그네슘 **영양제/보충제**(nutrient) | **Al/Mg 함유 제산제**(OTC 위장약, 약물 카테고리) |
+| 데이터 키 | `nutrient="마그네슘"` | `counterpart_category="al_mg_antacid"` (`nutrient` 필드 **미사용**) |
+| surface 표시 | nutrient 슬롯 = "마그네슘" | render_nutrient 슬롯 = **"Al/Mg 함유 제산제(약물)"** |
+| 보충 권유 | 해당(영양소 트랙) | **0**(제산제는 보충 대상 아님) |
+
+→ 같은 다가양이온이라 약리 개연은 있으나 라벨은 **제산제만** 지목하므로, 본 트랙을 Mg 영양소 relation 으로 저장하지 않는다. validator 가 `nutrient` 필드 존재·`surface.render_nutrient` 의 영양소 단독값·Mg 영양제 오인 표현을 fail 시킨다.
+
+### 11.2 AT-FEX / AT-ITZ online itemSeq reconcile
+
+harvester 첫 운영 run 이 두 후보를 `antacid_draft_confirmed` 로 확정했고, 기존 v1.2 draft(AT-01/AT-05)와 **다른 대표 itemSeq** 를 사용했다. 기존 근거를 폐기하지 않고 각 draft 의 `online_reconcile` 로 provenance 보강했다.
+
+| draft_id | harvester id | 약물 | 기존 itemSeq(directive) | online itemSeq(directive) | online conf | 분류 | 처리 |
+|---|---|---|---|---|---|---|---|
+| AT-01 | AT-FEX-01 | 펙소페나딘 | 202202380 (avoid_concomitant · "…제산제를 복용하지 마십시오") | 199801016 (coadmin_caution · "…의사 또는 약사와 상의") | low | **대표 itemSeq 선택 차이**(기존 오류 아님) | 보수적으로 강한 directive(avoid_concomitant) primary 유지 + online provenance 보강 |
+| AT-05 | AT-ITZ-01 | 이트라코나졸 | 200404726 (separation · "2시간 전/후") | 200401453 (separation · "2시간 전/후") | high | **대표 itemSeq 차이 + directive 일치** | 기존 유지 + online high-confidence 로 강도 재확인, provenance 보강 |
+
+판정: 두 건 모두 **기존 itemSeq 가 틀린 것이 아니라 다른 유효 품목**(대표 itemSeq 선택 차이)이다. 펙소페나딘은 품목별 라벨 directive 강도가 갈리므로(202202380=병용금지 / 199801016=상의) 보수적으로 강한 쪽을 primary 로 두고 둘 다 provenance 에 남겼다. 이트라코나졸은 directive 가 일관(separation)되어 reconcile 충돌 없음. **confidence(AT-FEX low / AT-ITZ high)·counterpart_category(al_mg_antacid)·live_integration_forbidden·published/clinical_reviewed=false·reviewed_by 공란 모두 유지.**
+
+### 11.3 render / surface 현재 상태 (src 무수정)
+- **판단: 기존 generic relation 카드(`src/js/render.js renderDetail`/`renderRow`)가 antacid_interaction 을 안전하게 표시 가능 → `src/` 수정하지 않는다.**
+- 표면 매핑(draft 의 `surface` 필드): `render_nutrient="Al/Mg 함유 제산제(약물)"` + `render_action="separation"`. 기존 카드의 nutrient 슬롯에 들어가면 **"마그네슘(영양소)"이 아니라 "Al/Mg 함유 제산제(약물)"** 로 표시되어 영양소 카드와 구분된다. action 은 기존 `separation` chip("복용 간격") 재사용(라벨 강도는 내부 `label_directive_type` 보존).
+- guard 자동 차단: `product_link_allowed=false → canShowProduct=false`(제품/구매/제휴 UI 0), `potassium_safety_card=false → 칼륨 카드 미표시`.
+- **입증**: `scripts/smoke_antacid_interaction_v1_2.py` 가 (1) 카피 시뮬레이션 + (2) **실제 render.js 호출** 로 두 draft 가 — 제산제 명시·영양소 오인 0·앱 카피 비지시('복용하지 마' 미노출, 출처 인용은 허용)·참고정보 프레이밍·상담 종결·공통 면책·제품 0·separation chip — 안전 렌더됨을 검증(PASS).
+- **(선택, 미구현) 향후 src 강화안**: antacid 전용 chip/label(예: "제산제 관련 참고정보")로 영양소 카드와 시각적으로 더 분명히 구분. 이번 라운드는 generic 렌더로 충분하다고 판단해 **구현하지 않음**(애매할 때 docs/smoke 까지만 원칙). live 승격 단계에서 PM 결정.
+
+### 11.4 live 승격 전 PM 체크리스트 (전부 미충족 — 이번 라운드 범위 밖)
+- [ ] 적대검증(카피 충실성: 병용 프레이밍 유지·비지시성·영양소 오인 차단) 통과 → `adversarial_verified=true`
+- [ ] 펙소페나딘 대표 itemSeq 정책 확정(강한 directive 품목 vs online 약한 품목 중 surface 근거로 무엇을 쓸지)
+- [ ] surface 통합 방식 결정: 기존 generic 카드 재사용 vs antacid 전용 label(`src/render.js` 최소 변경) — 후자 선택 시 기존 relation 카드 회귀 smoke + antacid smoke + forbidden + live HTTP 200 동반
+- [ ] clinical reviewer 확보 후 `clinical_reviewed` 전환 검토(현재 천장 = verified_reference)
+- [ ] 별도 integrate 스크립트(멱등) + 새 버전 export/validator 상수 연쇄(칼륨/relation 승격 패턴 준용)
+
+### 11.5 향후 live 통합 조건 (요약)
+antacid_interaction 을 라이브에 노출하려면: ① 적대검증 통과, ② surface 표현(영양소 분리) 최종 확정, ③ clinical reviewer, ④ 멱등 integrate + validator 연쇄, ⑤ deploy 게이트(validator PASS) — **전부 별도 PM 단계**. 현재 상태는 **draft + surface 설계 + render 안전성 입증까지**이며 **live 승격 0**.

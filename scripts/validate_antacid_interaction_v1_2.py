@@ -34,8 +34,12 @@ DISPLAY_TEMPLATE = ("일부 알루미늄·마그네슘 함유 제산제와 함�
                     "허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.")
 DIRECTIVE_OK = {"avoid_concomitant", "separation"}
 # Mg 영양제 오인 유발 표현(antacid 트랙 카피에 있으면 안 됨).
-MG_SUPPLEMENT_CONFUSION = ["마그네슘 영양제", "마그네슘 보충제", "마그네슘제를", "마그네슘을 보충"]
-COPY_FORBIDDEN = ["복용하지 마세요", "복용하세요", "시간 간격을 두세요", "구매", "제휴", "추천", "치료", "예방"]
+MG_SUPPLEMENT_CONFUSION = ["마그네슘 영양제", "마그네슘 보충제", "마그네슘제를", "마그네슘을 보충", "영양제를 드세요"]
+COPY_FORBIDDEN = ["복용하지 마세요", "복용하세요", "시간 간격을 두세요", "구매", "제휴", "추천", "치료", "예방", "반드시",
+                  "식약처 승인", "약사 검수 완료", "법적 문제 없음", "승인 완료"]
+# 제품/제휴/영양소 링크 필드(antacid draft 에 있으면 안 됨 — 제품/구매/제휴 UI 금지·영양소 relation 오인 차단).
+FORBIDDEN_LINK_KEYS = ["product_links", "product_examples", "products", "affiliate_links", "buy_links",
+                       "nutrient_link", "product_link", "nutrient_id", "supplement_link"]
 
 
 def main():
@@ -75,6 +79,39 @@ def main():
         for fb in COPY_FORBIDDEN:
             if fb in disp:
                 fails.append(f"{did}: 카피 금지어 '{fb}'")
+        # reviewed_by 공란 필수(clinical reviewer 미확보 — 검수 완료로 오인 금지)
+        if (r.get("reviewed_by") or "") != "":
+            fails.append(f"{did}: reviewed_by 비공란({r.get('reviewed_by')!r}) — clinical reviewer 전 공란 유지")
+        # 제품/제휴/영양소 링크 필드 금지(제품/구매/제휴 UI·영양소 relation 오인 차단)
+        for k in FORBIDDEN_LINK_KEYS:
+            if k in r:
+                fails.append(f"{did}: 금지 링크 필드 '{k}' 존재(제품/제휴/영양소 링크 금지)")
+        # nutrient 영양소 필드로 저장 금지(antacid 는 약물 카테고리 트랙 — Mg 영양소 relation 아님)
+        if "nutrient" in r:
+            fails.append(f"{did}: nutrient 필드 존재 — antacid 트랙은 counterpart_category 만 사용(영양소 relation 오인 금지)")
+        # surface 렌더 매핑(있으면): render_nutrient 는 제산제(약물)여야·영양소 아님 / render_action 유효 / 분리 플래그
+        surf = r.get("surface")
+        if surf is not None:
+            rn = surf.get("render_nutrient", "")
+            if "제산제" not in rn:
+                fails.append(f"{did}: surface.render_nutrient 에 '제산제' 명시 누락({rn!r}) — 영양소 오인")
+            for fb in MG_SUPPLEMENT_CONFUSION:
+                if fb in rn:
+                    fails.append(f"{did}: surface.render_nutrient Mg 영양제 오인 표현 '{fb}'")
+            if rn.strip() in ("마그네슘", "마그네슘(영양소)", "Mg", "철분", "칼슘", "칼륨", "아연"):
+                fails.append(f"{did}: surface.render_nutrient 가 영양소 단독({rn}) — antacid 트랙 위반")
+            if surf.get("render_action") not in ("separation", "monitoring"):
+                fails.append(f"{did}: surface.render_action 부정({surf.get('render_action')})")
+            if surf.get("not_a_nutrient_relation") is not True:
+                fails.append(f"{did}: surface.not_a_nutrient_relation≠true(영양소 분리 플래그 누락)")
+        # online_reconcile(있으면): 운영 harvester provenance — online_item_seq 실값 보존(기존 근거 폐기 아님)
+        orc = r.get("online_reconcile")
+        if orc is not None:
+            seq = str(orc.get("online_item_seq") or "")
+            if not (seq.isdigit() and len(seq) >= 6):
+                fails.append(f"{did}: online_reconcile.online_item_seq 실 itemSeq 아님({seq!r})")
+            if not (orc.get("provenance_note") or "").strip():
+                fails.append(f"{did}: online_reconcile.provenance_note 공란(기존 근거 폐기 아님 — provenance 필요)")
 
     # 게이트 정합
     if os.path.exists(GATE):
