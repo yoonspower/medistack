@@ -17316,6 +17316,332 @@
     "verified_at": "2026-06-14",
     "method": "nedrug.searchDrug"
    }
+  ],
+  "알마게이트": [
+   {
+    "item_seq": "200904336",
+    "item_name": "갈마겔현탁액(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201310271",
+    "item_name": "게이트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201307834",
+    "item_name": "글로게이트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201908540",
+    "item_name": "대웅바이오알마게이트정500밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199501234",
+    "item_name": "대원알마게이트정",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201900100",
+    "item_name": "마게이트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201800515",
+    "item_name": "마겐정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201706490",
+    "item_name": "마그엠정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201801676",
+    "item_name": "메디알정500mg(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201900692",
+    "item_name": "서울알마게이트정",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199701385",
+    "item_name": "셀마겐정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201402028",
+    "item_name": "씨엠지알마게이트정500mg(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201906127",
+    "item_name": "아마가정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199600597",
+    "item_name": "알게나정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201206499",
+    "item_name": "알게론정500밀리그램(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199602733",
+    "item_name": "알게마정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199500630",
+    "item_name": "알게이트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201805203",
+    "item_name": "알게텍정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199201106",
+    "item_name": "알드린정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199101134",
+    "item_name": "알드린현탁액(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201402826",
+    "item_name": "알리겔정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199703379",
+    "item_name": "알마겐트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201403739",
+    "item_name": "알마노겐정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201309996",
+    "item_name": "알마드정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201707304",
+    "item_name": "알마디정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201402790",
+    "item_name": "알마로정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201208256",
+    "item_name": "알마르정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201402825",
+    "item_name": "알마린정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201802877",
+    "item_name": "알마스정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201804964",
+    "item_name": "알마스콘정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199501564",
+    "item_name": "알마시드정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202003633",
+    "item_name": "알마인정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201403721",
+    "item_name": "알마제트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201901045",
+    "item_name": "알마케이드정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201901656",
+    "item_name": "알마테정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201902342",
+    "item_name": "알마트로정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201400701",
+    "item_name": "알마티정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201706849",
+    "item_name": "알마펜정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201404116",
+    "item_name": "알마휴정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201706415",
+    "item_name": "알바트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201402733",
+    "item_name": "알보젠알마게이트정",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199701172",
+    "item_name": "에이프로젠알마게이트정",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201908559",
+    "item_name": "영일알마게이트정500밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201804933",
+    "item_name": "오스게이트정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201404416",
+    "item_name": "이든알마게이트정",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201902561",
+    "item_name": "일성알마게이트정500밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201403192",
+    "item_name": "일양바이오알마게이트정500밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201604889",
+    "item_name": "중헌 알마게이트정",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "200607914",
+    "item_name": "지알마겔현탁액(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202402085",
+    "item_name": "지엘알마게이트정500밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199301091",
+    "item_name": "파티겔정(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199801515",
+    "item_name": "프리겔현탁액(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "199907335",
+    "item_name": "한미알마게이트정500밀리그램(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201802453",
+    "item_name": "휴게이트정500밀리그램(알마게이트)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   }
   ]
  }
 }

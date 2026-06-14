@@ -4,7 +4,7 @@ validate_factory_integration_v1_2.py
 MediStack — factory draft batch **DF06·DF07(리오티로닌×칼슘/철분) 라이브 통합 정합성** 검증기(읽기전용).
 
 강제:
-  ①relations==57·meta.relation_count==57 (draft14 55 → factory +2)
+  ①relations==58·meta.relation_count==58 (draft14 55 → factory +2 → CQF01 +1)
   ②신규 ids 57·58 = 리오티로닌×칼슘 / 리오티로닌×철분, absorption/separation, evidence high,
     potassium_safety_card=false, requires_clinical_review=false
   ③draft-전용 필드(draft_id/source_batch/source_candidate_id/live_integration_forbidden/published/
@@ -13,7 +13,7 @@ MediStack — factory draft batch **DF06·DF07(리오티로닌×칼슘/철분) �
   ⑤draft batch DF06/DF07 (ingredient,nutrient) 와 정합
   ⑥**DF01-DF05(칼륨) 라이브 미통합(보류 유지)**
   ⑦카피 금지어 0 (참고정보 톤)
-  ⑧full index relation_card 1077·name_only 16503·total 17580 불변, alias 717·verified 1064/22 불변
+  ⑧full index relation_card 1131·name_only 16449·total 17580(CQF01 알마게이트 54 flip 후 라이브 baseline), alias 717 불변·verified 1118/23
   ⑨published/clinical false·DATA_URL v0.2 불변
 
 사용: python3 scripts/validate_factory_integration_v1_2.py
@@ -57,8 +57,8 @@ def main():
     by_id = {r["id"]: r for r in rels}
     new = [r for r in rels if r["id"] in FACTORY_IDS]
 
-    ck("relations == 57", len(rels) == 57, str(len(rels)))
-    ck("meta.relation_count == 57", exp["meta"].get("relation_count") == 57, str(exp["meta"].get("relation_count")))
+    ck("relations == 58 (factory DF06·DF07 + CQF01 알마게이트)", len(rels) == 58, str(len(rels)))
+    ck("meta.relation_count == 58", exp["meta"].get("relation_count") == 58, str(exp["meta"].get("relation_count")))
     ck("신규 ids 57·58 존재", len(new) == 2, str([r["id"] for r in new]))
     got = {(r["id"], r["ingredient"], r["nutrient"]) for r in new}
     ck("신규 = 리오티로닌×칼슘(57)·철분(58)", got == EXPECT, str(got))
@@ -95,12 +95,12 @@ def main():
 
     # 불변(리오티로닌 인덱스 0 → flip 0)
     counts = full["meta"]["counts"]
-    ck("relation_card 1077 불변", counts.get("relation_card") == 1077, str(counts.get("relation_card")))
-    ck("name_only 16503 불변", counts.get("name_only") == 16503, str(counts.get("name_only")))
+    ck("relation_card 1131 (CQF01 알마게이트 54 flip 후 라이브 baseline)", counts.get("relation_card") == 1131, str(counts.get("relation_card")))
+    ck("name_only 16449 (CQF01 알마게이트 54 flip 후 라이브 baseline)", counts.get("name_only") == 16449, str(counts.get("name_only")))
     ck("total 17580 불변", counts.get("total") == 17580, str(counts.get("total")))
     ck("alias_count 717 불변", aliases["meta"].get("alias_count") == 717, str(aliases["meta"].get("alias_count")))
     vis = aliases.get("verified_item_seqs") or {}
-    ck("verified 1064/22 불변", sum(len(v) for v in vis.values()) == 1064 and len(vis) == 22,
+    ck("verified 1118/23 (CQF01 알마게이트 +54 후 라이브 baseline)", sum(len(v) for v in vis.values()) == 1118 and len(vis) == 23,
        f"{sum(len(v) for v in vis.values())}/{len(vis)}")
 
     # 봉인

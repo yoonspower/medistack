@@ -2,7 +2,7 @@
   "meta": {
     "name": "search_regression_v1_0",
     "purpose": "v1.0-C 검색/고지/empty/error 회귀 기준선. full drug name index / name_only UX 도입 전 현행 동작을 실제 guards.js + render.js 로 고정한다.",
-    "data_basis": "live: medistack_v0.2_beta_export.json (relation 55 — v1.2 draft 14건 통합 41→55) + medistack_v0.3_aliases.json (alias 717·verified 1064/22 — v1.2 클로르탈리돈·인다파미드 +5) + full_drug_name_index_sample_v1_0.json (name_only 16,503 / relation_card 1,077 / total 17,580)",
+    "data_basis": "live: medistack_v0.2_beta_export.json (relation 58 — v1.2 draft14 41→55 → factory DF06·DF07 55→57 → CQF01 알마게이트×철분 57→58) + medistack_v0.3_aliases.json (alias 717·verified 1118/23 — CQF01 알마게이트 +54) + full_drug_name_index_sample_v1_0.json (name_only 16,449 / relation_card 1,131 / total 17,580)",
     "ground_truth": "기대값은 실제 guards.js 측정값(추측 아님). name_only 미도입 — relation 없는 약은 count 0(empty).",
     "future_note": "full_index_future_baseline 그룹은 name_only UX 도입 시 기대값이 바뀌는 미래 신호. 그 전까지 relation-only degrade(count 0)."
   },
@@ -75,7 +75,7 @@
     { "query": "오플록사신", "emptyIndexCount": 4, "kind": "direct", "note": "직접검색 — alias 인덱스 무관(v1.2 id45 아연 추가 → 4)" },
     { "query": "타리비드", "emptyIndexCount": 0, "kind": "alias-only", "note": "브랜드 alias 전용 — 인덱스 부재 시 브리지 소멸 → 0(정상 degrade)" }
   ],
-  "name_only_index_size": 16503,
+  "name_only_index_size": 16449,
   "name_only": [
     { "group": "covered_now", "query": "게보린", "minCount": 1, "note": "relation 0 → name_only 가 커버(브랜드 품목명)" },
     { "group": "covered_now", "query": "이부프로펜", "minCount": 5, "note": "Phase 5 10k 실측 30(상한 30)" },

@@ -92,12 +92,17 @@ def main():
     ck("hold/reject/needs_review 후보 draft 미혼입", not leaked, str(leaked))
 
     exp = json.load(open(EXPORT, encoding="utf-8"))
-    ck("라이브 relations==57 불변(이 batch 라이브 미반영)", len(exp["relations"]) == 57, str(len(exp["relations"])))
+    ck("라이브 relations==58 (CQF01 알마게이트×철분 승격 반영)", len(exp["relations"]) == 58, str(len(exp["relations"])))
     ck("라이브 published=false 불변", exp["meta"].get("published") is False)
-    # 이 batch 후보가 라이브에 유입되지 않았는지(ingredient×nutrient pair)
+    # CQF01 은 PM 승인 후 라이브 승격(id 59). 그 외 batch2 draft 는 라이브 미유입이어야 한다.
+    promoted = {"CQF01"}
     live_pairs = {(r.get("ingredient"), r.get("nutrient")) for r in exp["relations"]}
-    leaked_live = [d["draft_id"] for d in drafts if (d["ingredient"], d["nutrient"]) in live_pairs]
-    ck("batch2 draft 라이브 미통합", not leaked_live, str(leaked_live))
+    leaked_live = [d["draft_id"] for d in drafts
+                   if d["draft_id"] not in promoted and (d["ingredient"], d["nutrient"]) in live_pairs]
+    ck("비승격 batch2 draft 라이브 미통합", not leaked_live, str(leaked_live))
+    promoted_missing = [d["draft_id"] for d in drafts
+                        if d["draft_id"] in promoted and (d["ingredient"], d["nutrient"]) not in live_pairs]
+    ck("승격 draft(CQF01) 라이브 존재(승격 누락 회귀 감지)", not promoted_missing, str(promoted_missing))
 
     width = max((len(n) for _, n, _ in checks), default=10)
     fails = 0
