@@ -53,8 +53,8 @@ const check = (name, cond, extra) => {
 // 추천/구매/복용지시 어휘(참고정보 톤 위반). '피하고'·'복용은' 등 신중 톤은 허용(정확 어구만 차단).
 const BANNED = ['드세요', '복용하세요', '피하세요', '추천', '구매', '제품 추천', '구입', '클릭', '할인', '쿠폰'];
 
-const NEW = rels.filter((r) => r.id >= 43 && r.id <= 56);
-check('신규 relation 14건 렌더 대상', NEW.length === 14, `got ${NEW.length}`);
+const NEW = rels.filter((r) => r.id >= 43 && r.id <= 58);
+check('신규 relation 16건 렌더 대상(draft14 + factory DF06·DF07)', NEW.length === 16, `got ${NEW.length}`);
 
 // N. 신규 14건 각각 상세 렌더 안전성
 for (const r of NEW) {

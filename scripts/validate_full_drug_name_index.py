@@ -181,7 +181,7 @@ def validate(doc, pool, inv):
     ck("불변: ingredient_aliases 38", inv["ingredient"] == 38, str(inv["ingredient"]))
     ck("불변: verified_item_seqs 1064/22 (C +18 → v1.2 draft +5/클로르탈리돈·인다파미드)",
        inv["vis_total"] == 1064 and inv["vis_ing"] == 22, f"{inv['vis_total']}/{inv['vis_ing']}")
-    ck("불변: relations 55 (v1.1 30→41 → v1.2 draft 14건 통합 41→55)", inv["relations"] == 55, str(inv["relations"]))
+    ck("불변: relations 57 (v1.2 draft14 41→55 → factory DF06·DF07 55→57)", inv["relations"] == 57, str(inv["relations"]))
     ck("불변: DATA_URL", inv["data_url"] == EXPECT_DATA_URL, str(inv["data_url"]))
     ck("불변: published=false", inv["published"] is False, str(inv["published"]))
     ck("불변: clinical_reviewed=false", inv["clinical_reviewed"] is False, str(inv["clinical_reviewed"]))

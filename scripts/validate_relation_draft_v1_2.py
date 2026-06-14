@@ -25,7 +25,8 @@ ALIASES = os.path.join(DATA, "medistack_v0.3_aliases.json")
 FULL = os.path.join(DATA, "full_drug_name_index_sample_v1_0.json")
 DATA_JS = os.path.join(REPO, "src", "js", "data.js")
 
-NEW_IDS = set(range(43, 57))  # 43..56
+NEW_IDS = set(range(43, 57))  # 43..56 (v1.2 draft14 통합분)
+FACTORY_IDS = {57, 58}        # factory draft batch DF06·DF07(리오티로닌×칼슘/철분) 후속 통합분
 DRAFT_ONLY_FIELDS = {"draft_id", "source_queue_id", "published", "clinical_reviewed",
                      "review_required", "source_required", "do_not_implement_yet", "note"}
 EVIDENCE_MODERATE = {("클로르탈리돈", "마그네슘"), ("인다파미드", "마그네슘")}
@@ -50,9 +51,9 @@ def main():
 
     # 1) 신규 14건 존재 + 기존 41 보존
     ck("신규 relation 14건(ids 43-56) 존재", len(new) == 14, f"{len(new)}")
-    ck("총 relations == 55", len(rels) == 55, f"{len(rels)}")
-    ck("meta.relation_count == 55", exp["meta"].get("relation_count") == 55, str(exp["meta"].get("relation_count")))
-    old_ids = {r["id"] for r in rels} - NEW_IDS
+    ck("총 relations == 57 (draft14 + factory DF06·DF07)", len(rels) == 57, f"{len(rels)}")
+    ck("meta.relation_count == 57", exp["meta"].get("relation_count") == 57, str(exp["meta"].get("relation_count")))
+    old_ids = {r["id"] for r in rels} - NEW_IDS - FACTORY_IDS
     ck("기존 id 1-42(15 제외) 보존", old_ids == (set(range(1, 43)) - {15}), f"{sorted(old_ids)[:5]}...")
 
     # 2) 신규 14건 각각 draft 와 (ingredient,nutrient) 정합 + draft 전체 통합

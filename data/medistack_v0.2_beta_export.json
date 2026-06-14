@@ -5,11 +5,11 @@
   "generated_at": "2026-06-07",
   "source_basis": "식약처 의약품통합정보시스템(nedrug) 허가사항 원문",
   "lifecycle_status_included": "verified_reference",
-  "relation_count": 55,
+  "relation_count": 57,
   "excluded_count": 1,
   "published": false,
   "clinical_reviewed": false,
-  "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음. | v1.1 relation 확장 통합(2026-06-13): source_confirmed 7후보 11건(ids 32-42, 허가사항 출처) 추가. relation 30→41. | v1.2 draft relation 통합(2026-06-14): source_confirmed 14건(ids 43-56, 허가사항 출처) 추가. FQ/테트라×아연·비스포×철/Mg enrichment + 치아지드유사(클로르탈리돈·인다파미드)×칼륨/Mg. relation 41→55."
+  "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음. | v1.1 relation 확장 통합(2026-06-13): source_confirmed 7후보 11건(ids 32-42, 허가사항 출처) 추가. relation 30→41. | v1.2 draft relation 통합(2026-06-14): source_confirmed 14건(ids 43-56, 허가사항 출처) 추가. FQ/테트라×아연·비스포×철/Mg enrichment + 치아지드유사(클로르탈리돈·인다파미드)×칼륨/Mg. relation 41→55. | factory draft batch DF06·DF07 통합(2026-06-14): 리오티로닌(테트로닌정 단일제)×칼슘·철분 absorption/separation 2건(ids 57·58, 허가사항 상호작용 출처·적대적 검증 통과). relation 55→57. DF01-05(칼륨)은 보류."
  },
  "disclaimers": {
   "common": "이 정보는 식약처 허가사항 등을 바탕으로 정리한 참고 정보입니다. 진단, 처방, 복약 지시가 아니며, 실제 복용 여부나 시간 간격은 의사 또는 약사와 상담하세요.",
@@ -1007,6 +1007,42 @@
     "type": "허가사항",
     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900835",
     "pointer": "식약처 허가사항(nedrug) / 나트릭스서방정(인다파미드, itemSeq 199900835) / 이상반응(대사 및 영양계) / '흔하게 저칼륨혈증 … 드물게 저염소혈증 저마그네슘혈증' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 57,
+   "ingredient": "리오티로닌",
+   "nutrient": "칼슘",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "리오티로닌과(와) 칼슘이(가) 함유된 제품을 같은 시간에 복용하면 리오티로닌의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201503196",
+    "pointer": "식약처 허가사항(nedrug) / 테트로닌정5㎍(리오티로닌나트륨), itemSeq 201503196 / 상호작용 / '콜레스티라민, 콜레스티마이드, 철분제제, 알루미늄함유 제산제, 탄산칼슘, 탄산란탄수화물, 세벨라머염산염과 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격을 주의하며 신중히 투여한다.' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 58,
+   "ingredient": "리오티로닌",
+   "nutrient": "철분",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "display_text_ko": "리오티로닌과(와) 철분이(가) 함유된 제품을 같은 시간에 복용하면 리오티로닌의 흡수가 줄어들 가능성이 있습니다.",
+   "management_ko": "같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있습니다. 구체적인 간격은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": true,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201503196",
+    "pointer": "식약처 허가사항(nedrug) / 테트로닌정5㎍(리오티로닌나트륨), itemSeq 201503196 / 상호작용 / '5) 콜레스티라민, 콜레스티마이드, 철분제제, 알루미늄함유 제산제, 탄산칼슘, 탄산란탄수화물, 세벨라머염산염과 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격을 주의하며 신중히 투여한다.' / 확인일 2026-06-14"
    }
   }
  ],
