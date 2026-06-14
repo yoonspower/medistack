@@ -1,0 +1,186 @@
+{
+ "schema": "coverage_queue_adversarial_verify_batch3_v1_2",
+ "created_at": "2026-06-14",
+ "method": "source_confirmed 3건을 독립 회의론자 3명(evidence-literal/direction-overreach/copy-safety)이 nedrug 라벨 전문(itemSeq) 재대조·refute-by-default·6렌즈로 검증(medistack-batch3-adversarial workflow). draft 채택 기준=만장일치 confirm(2/3 split 은 needs_review 보류).",
+ "do_not_implement_yet": true,
+ "summary": {
+  "total": 3,
+  "confirm_unanimous": 2,
+  "needs_review_split": 1,
+  "refute": 0
+ },
+ "verifications": [
+  {
+   "candidate_id": "CQ-103",
+   "ingredient": "펙소페나딘",
+   "nutrient": "마그네슘",
+   "itemseq_used": "202202380",
+   "product": "노즈알연질캡슐(펙소페나딘염산염)",
+   "confirm_votes": 2,
+   "total_votes": 3,
+   "final_verdict": "needs_review",
+   "corrected_evidence_quote": "2. 이 약을 복용(사용)하는 동안 다음의 약을 복용(사용)하지 말 것 ... 3) 제산제(수산화알루미늄·수산화마그네슘 함유제제)",
+   "lens_summary": {
+    "nutrient_co_listed": true,
+    "direction_correct": false,
+    "negation_absent": true,
+    "domestic_single_oral_product": true,
+    "not_class_overreach": true,
+    "copy_reads_as_reference_not_instruction": false
+   },
+   "verdicts": [
+    {
+     "lens": "evidence-literal",
+     "nutrient_co_listed": true,
+     "direction_correct": false,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": false,
+     "verdict": "refute",
+     "corrected_evidence_quote": "2. 이 약을 복용(사용)하는 동안 다음의 약을 복용(사용)하지 말 것 ... 3) 제산제(수산화알루미늄·수산화마그네슘 함유제제)",
+     "reason": "마그네슘 동거어는 실재함(nutrient_co_listed=true): 라벨 상호작용 섹션에 \"제산제(수산화알루미늄·수산화마그네슘 함유제제)\"가 이 약 자신의 라벨에 직접 명시되어 계열 일반화가 아님(not_class_overreach=true), 완화/부정 표현 없음(negation_absent=true), 국내 단일성분 경구 연질캡슐(domestic_single_oral_product=true). 그러나 두 렌즈가 실패해 refute한다. (1) direction_correct=false: 후보 mechanism은 absorption/separation(흡수저해→시간 간격)인데, 라벨은 \"복용(사용)하지 말 것\"이라는 절대적 병용금기일 뿐 흡수저해나 '시간 간격 두기'를 명시·권장하지 않는다. 라벨 어디에도 흡수(흡수저해)나 separation(간격) 문구가 없고, 제재는 분리복용이 아니라 동시병용 금지다. (2) copy_reads_as_reference_not_instruction=false: 제안 display 카피 \"같은 시간대 복용 시 흡수에 영향이 있을 수 있어, 시간 간격을 두는 것이 도움이 될 수 있습니다\"는 라벨의 '병용 자체 금지'를 '시간 간격으로 관리 가능한 흡수 이슈'로 약화·재구성하여 원문보다 약하면서 방향까지 어긋난다. refute-by-default 원칙에 따라 refute."
+    },
+    {
+     "lens": "direction-overreach",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "2. 이 약을 복용(사용)하는 동안 다음의 약을 복용(사용)하지 말 것 ... 3) 제산제(수산화알루미늄·수산화마그네슘 함유제제)",
+     "reason": "6렌즈 전수 통과 → confirm. (1) 영양소 동거: 라벨 상호작용 섹션('이 약을 복용하는 동안 다음의 약을 복용하지 말 것')에 '제산제(수산화알루미늄·수산화마그네슘 함유제제)'로 마그네슘(수산화마그네슘=마그네슘 함유 제제/염형)이 이 약 자신의 라벨에 직접 동거. e약은요에도 '알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오'로 재확인. (2) 방향: 펙소페나딘과 알/마그네슘 함유 제산제 병용 시 흡수 간섭(약물 흡수저해) — absorption/separation 방향과 일치. 제안 카피('같은 시간대 복용 시 흡수에 영향... 시간 간격을 두는 것이 도움')는 흡수간섭+병용간격 방향으로 라벨 기전과 부합. (3) 부정/완화 표현 부재: 라벨은 '복용하지 말 것'으로 명확, '영향 없음/관련성 없음' 류 완화 없음 → negation_absent true. (4) 국내 단일성분 경구: 노즈알연질캡슐, 단일성분 펙소페나딘염산염 60mg 연질캡슐(경구, 일반의약품, itemSeq 202202380) → true. (5) 계열 일반화 아님: '수산화마그네슘'을 명시적으로 직접 적시 → 이 약 라벨 직접 근거, not_class_overreach true. (6) 카피 톤: display는 '영향이 있을 수 있어... 도움이 될 수 있습니다'로 헤지된 참고정보, management는 약사/의사 상담 안내 — 복용지시·추천·치료·구매 톤 아니며 라벨 원문('복용하지 말 것')보다 강하지 않음 → 참고정보 톤 true. 칼륨 무관. 회의론 포인트(direction-overreach): 라벨 문구는 '병용 금지'인데 카피는 '간격 두기'로 완화 표현했으나, 기저 기전이 흡수간섭이고 간격두기는 표준 완화책이라 방향/강도 모두 라벨 범위 내(오히려 약함). refute 트리거 없음."
+    },
+    {
+     "lens": "copy-safety",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "2. 이 약을 복용(사용)하는 동안 다음의 약을 복용(사용)하지 말 것 ... 3) 제산제(수산화알루미늄·수산화마그네슘 함유제제)",
+     "reason": "라벨 전문(itemSeq 202202380, 펙소페나딘염산염 60mg 단일성분 일반의약품 경구 연질캡슐)을 직접 확인함. (1) nutrient_co_listed: 사용상의주의사항 '2. 병용금지' 항에 \"제산제(수산화알루미늄·수산화마그네슘 함유제제)\"가 명시되어 있고 e약은요에도 \"알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오\"가 동거함 — 수산화마그네슘 함유 제제=마그네슘으로 인정. (2) direction_correct: mechanism=absorption/separation. 라벨은 병용 금지(같은 시간대 복용 회피)를 지시하며 이는 흡수 영향에 따른 병용간격 방향과 일치. 칼륨 행이 아니므로 상승/고갈 방향 이슈 없음. (3) negation_absent: 동일 문맥에 '영향 없음/임상적 관련성 없음' 등 완화·부정 표현 없음 — 오히려 강한 병용금지(\"복용하지 말 것\"). (4) domestic_single_oral_product: 국내 허가 단일성분(펙소페나딘염산염) 경구 연질캡슐 제품으로 적합. (5) not_class_overreach: '다른 산분비억제제와 마찬가지로' 같은 계열 일반화가 아니라 이 약 자신의 라벨이 마그네슘 함유 제제를 직접 명시 — 직접근거. (6) copy_reads_as_reference: display 카피는 \"흡수에 영향이 있을 수 있어, 시간 간격을 두는 것이 도움이 될 수 있습니다\"로 참고정보 톤(복용지시/추천/치료/구매 아님), management 카피도 \"약사 또는 의사와 상담하세요\"로 상담 유도 — 마그네슘 보충 권유나 결핍 단정 없음. 6렌즈 모두 true 이므로 confirm. 단, 라벨의 정확한 기전은 '제산제가 펙소페나딘 흡수를 저해'이므로 카피가 마그네슘 자체의 흡수저해로 오인되지 않도록 '같은 시간대 복용 시 흡수에 영향'이라는 중립 표현 유지가 적절함."
+    }
+   ],
+   "override_note": "적대검증 2/3 split. evidence-literal 회의론자가 direction_correct=false·copy_reads_as_reference=false 반론: 펙소페나딘 라벨은 '제산제(Al/Mg 함유) 복용하지 마십시오'(병용금기)인데 제안 카피는 '시간 간격 두기'(separation)로 재구성→원문보다 약화·방향 재해석. 만장일치 미달이라 보수적 needs_review로 보류(상호작용 자체는 실재하나 카피/방향 표현은 PM·임상 검토 필요). 라이브 미반영."
+  },
+  {
+   "candidate_id": "CQ-118",
+   "ingredient": "테고프라잔",
+   "nutrient": "철분",
+   "itemseq_used": "202501770",
+   "product": "위더캡정50밀리그램(테고프라잔고체분산체)",
+   "confirm_votes": 3,
+   "total_votes": 3,
+   "final_verdict": "confirm",
+   "corrected_evidence_quote": "다른 산분비억제제나 제산제와 마찬가지로 이 약 투여 중에는 케토코나졸, 이트라코나졸, 암피실린에스테르, 아타자나비르, 철염, 엘로티닙, 게피티니브 및 미코페놀레이트모페틸의 흡수가 감소될 수 있다.",
+   "lens_summary": {
+    "nutrient_co_listed": true,
+    "direction_correct": true,
+    "negation_absent": true,
+    "domestic_single_oral_product": true,
+    "not_class_overreach": true,
+    "copy_reads_as_reference_not_instruction": true
+   },
+   "verdicts": [
+    {
+     "lens": "evidence-literal",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "다른 산분비억제제나 제산제와 마찬가지로 이 약 투여 중에는 케토코나졸, 이트라코나졸, 암피실린에스테르, 아타자나비르, 철염, 엘로티닙, 게피티니브 및 미코페놀레이트모페틸의 흡수가 감소될 수 있다.",
+     "reason": "라벨 전문 '5. 상호작용 1) pH-의존성 흡수 약동학을 보이는 약물' 항에 이 약(테고프라잔) 자신의 라벨이 '철염'을 직접 명시하며, 위산분비억제로 인해 철염의 '흡수가 감소될 수 있다'고 기술한다. (1)nutrient_co_listed: 철염=철분 함유 제제가 이 약 라벨 상호작용 항에 실제 동거 TRUE. (2)direction_correct: mechanism=absorption/separation, 라벨이 '흡수 감소' 명시로 흡수저해·병용간격 방향 일치 TRUE. (3)negation_absent: 해당 문맥에 '영향 없음/유의하지 않음' 완화·부정 표현 없음(NSAID 문항의 부정은 별개 약물·문맥) TRUE. (4)domestic_single_oral_product: 위더캡정50밀리그램=테고프라잔 단일성분 필름코팅정, 국내 허가 전문의약품(허가일 2025-07-14) TRUE. (5)not_class_overreach: '다른 산분비억제제나 제산제와 마찬가지로' 계열 표현이 있으나 이 약 라벨이 '철염'을 직접 명시하므로 지시문 규칙상 직접근거로 인정 TRUE. (6)copy_reads_as_reference_not_instruction: display 카피 '흡수에 영향이 있을 수 있어, 시간 간격을 두는 것이 도움이 될 수 있습니다'는 참고·완화 톤이며, management 카피는 약사·의사 상담 권유로 복용지시/추천/구매 톤 아님, 원문보다 강하지 않음 TRUE. 6렌즈 모두 true → confirm."
+    },
+    {
+     "lens": "direction-overreach",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "다른 산분비억제제나 제산제와 마찬가지로 이 약 투여 중에는 케토코나졸, 이트라코나졸, 암피실린에스테르, 아타자나비르, 철염, 엘로티닙, 게피티니브 및 미코페놀레이트모페틸의 흡수가 감소될 수 있다.",
+     "reason": "라벨 전문 '5. 상호작용 1) pH-의존성 흡수 약동학을 보이는 약물' 항에서 이 약(테고프라잔) 자신의 라벨이 철염(=철분)을 명시적으로 열거하고 \"흡수가 감소될 수 있다\"고 직접 기술. 6렌즈 전부 통과. (1)nutrient_co_listed: 철염이 이 약 상호작용 섹션에 동거 명시. (2)direction_correct: absorption=흡수저해 방향 일치(철염 흡수 감소). (3)negation_absent: 철염 문맥에 완화/부정 표현 없음(유의성 부정은 NSAIDs 항목에만 국한). (4)domestic_single_oral_product: 위더스제약 국내허가(2025-07-14) 단일성분 테고프라잔 필름코팅정 경구 전문의약품. (5)not_class_overreach: '다른 산분비억제제나 제산제와 마찬가지로'라는 계열 표현이 있으나 동일 문장에서 철염을 직접 명시하므로 직접근거 인정. (6)copy_reads_as_reference_not_instruction: display·management 카피 모두 참고/완화 톤('영향이 있을 수 있어', '도움이 될 수 있습니다', 상담 권유), 복용지시·치료·구매 톤 없음. 따라서 confirm."
+    },
+    {
+     "lens": "copy-safety",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "다른 산분비억제제나 제산제와 마찬가지로 이 약 투여 중에는 케토코나졸, 이트라코나졸, 암피실린에스테르, 아타자나비르, 철염, 엘로티닙, 게피티니브 및 미코페놀레이트모페틸의 흡수가 감소될 수 있다.",
+     "reason": "라벨 전문(/tmp/label_CQ-118.txt) '5. 상호작용 1) pH-의존성 흡수 약동학' 항을 직접 확인. (1)nutrient_co_listed: 이 약 자신의 상호작용 항에 '철염'(=철분/iron salt)이 명시적으로 동거 — TRUE. (2)direction_correct: mechanism=absorption/separation, 라벨은 위산분비억제로 인해 '철염...의 흡수가 감소될 수 있다'며 흡수저해 방향 일치 — TRUE. (3)negation_absent: 철염 문맥에 '영향 없음/관련성 없음/유의하지 않음' 완화·부정 표현 없음(부정표현은 아목시실린·아토르바스타틴·NSAIDs 등 다른 약물에만 해당) — TRUE. (4)domestic_single_oral_product: 위더캡정50밀리그램, 단일성분 테고프라잔(고체분산체) 필름코팅정·경구·MFDS허가(2025-07-14) — TRUE. (5)not_class_overreach: '다른 산분비억제제나 제산제와 마찬가지로'라는 계열 표현이 앞에 있으나, 라벨이 곧이어 '철염'을 직접 명시하므로 직접근거로 인정(루브릭상 영양소 직접 명시 시 계열표현 무관) — TRUE. (6)copy_safety: display 카피는 '흡수에 영향이 있을 수 있어... 도움이 될 수 있습니다'로 hedged·참고정보 톤, management는 약사/의사 상담 권유로 복용지시·치료·구매 톤 아니며 원문('흡수가 감소될 수 있다')보다 강하지 않음 — TRUE. 6렌즈 전부 명백히 true이므로 confirm."
+    }
+   ]
+  },
+  {
+   "candidate_id": "CQ-199",
+   "ingredient": "히드로코르티손",
+   "nutrient": "칼륨",
+   "itemseq_used": "200703172",
+   "product": "래피손정(히드로코르티손)",
+   "confirm_votes": 3,
+   "total_votes": 3,
+   "final_verdict": "confirm",
+   "corrected_evidence_quote": "④ 전해질이상 환자(전해질대사 장애작용에 의한 나트륨 저류, 부종, 칼륨배설증가에 의한 저칼륨혈증 등이 나타나는 경우가 있다); 7) 체액ㆍ전해질 : 부종, 혈압상승, 칼륨손실, 저칼륨성 알칼리혈증, 나트륨 저류 ... 등이 나타날 수 있다.",
+   "lens_summary": {
+    "nutrient_co_listed": true,
+    "direction_correct": true,
+    "negation_absent": true,
+    "domestic_single_oral_product": true,
+    "not_class_overreach": true,
+    "copy_reads_as_reference_not_instruction": true
+   },
+   "verdicts": [
+    {
+     "lens": "evidence-literal",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "④ 전해질이상 환자(전해질대사 장애작용에 의한 나트륨 저류, 부종, 칼륨배설증가에 의한 저칼륨혈증 등이 나타나는 경우가 있다); 7) 체액ㆍ전해질 : 부종, 혈압상승, 칼륨손실, 저칼륨성 알칼리혈증, 나트륨 저류 ... 등이 나타날 수 있다.",
+     "reason": "래피손정(히드로코르티손)은 국내 허가 단일성분 경구 정제(전문의약품, 10mg)이다. 이 약 자신의 라벨 이상반응/신중투여 섹션에 칼륨이 직접 동거한다: 신중투여 ④ '칼륨배설증가에 의한 저칼륨혈증', 부작용 7) 체액·전해질 '칼륨손실, 저칼륨성 알칼리혈증', 일반적주의 5) '칼륨배설의 증가를 일으킬 수 있으나... 음식물 섭취시 염제한과 칼륨보충이 필요할 수 있다'. 방향은 칼륨배설증가/칼륨손실=고갈(depletion) 방향으로 mechanism(depletion/monitoring)과 일치하며 상승방향 아님. 동일 문맥에 '영향 없음/관련성 없음' 등 부정·완화 표현 없음. 계열 일반화가 아니라 이 약 라벨이 칼륨을 직접 명시. display 카피는 '영향이 있을 수 있어 상태 확인이 필요할 수 있다'는 참고/모니터링 톤, management 카피는 임의 보충 금지+전문가 상담 권유로 보충 권유나 결핍 단정이 아님(라벨이 보충 필요 언급에도 카피는 보수적). 6렌즈 모두 명백히 true → confirm."
+    },
+    {
+     "lens": "direction-overreach",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "전해질대사 장애작용에 의한 나트륨 저류, 부종, 칼륨배설증가에 의한 저칼륨혈증 등이 나타나는 경우가 있다 / 체액ㆍ전해질: 칼륨손실, 저칼륨성 알칼리혈증 / 이 약의 평균용량 또는 그 이상을 사용할 경우 혈압상승, 염과 수분의 저류, 칼륨배설의 증가를 일으킬 수 있으나... 음식물 섭취시 염제한과 칼륨보충이 필요할 수 있다.",
+     "reason": "6렌즈 전부 라벨 전문에서 직접 충족. (1) co-listed: 래피손정 자신의 라벨이 칼륨을 신중투여(④, 6)), 부작용 7) 체액ㆍ전해질, 일반적주의 5) 등 다수 섹션에서 직접 명시. (2) direction: mechanism=depletion인데 라벨이 '칼륨배설증가에 의한 저칼륨혈증', '칼륨손실', '칼륨배설의 증가'로 일관되게 고갈 방향 — 칼륨 상승 방향 아님, in-scope. (3) negation absent: 칼륨 문맥에 '영향 없음/관련성 없음' 류 완화·부정 표현 전무, 오히려 '칼륨보충이 필요할 수 있다'로 강화. (4) 단일성분 히드로코르티손, 전문의약품, 정제 경구 제형(1일 10~120mg 경구투여), itemSeq 200703172. (5) 계열 일반화 아님 — 코르티코스테로이드 자체의 전해질대사작용으로 이 약 라벨이 직접 기술. (6) display 카피는 '영향이 있을 수 있어... 확인이 필요할 수 있습니다'로 참고정보 hedged 톤, management 카피는 '임의 보충 위험 → 의사·약사 상담'으로 결핍 단정·보충 권유가 아닌 전문가 상담 redirect. 원문보다 강하지 않음. refute 트리거 없음."
+    },
+    {
+     "lens": "copy-safety",
+     "nutrient_co_listed": true,
+     "direction_correct": true,
+     "negation_absent": true,
+     "domestic_single_oral_product": true,
+     "not_class_overreach": true,
+     "copy_reads_as_reference_not_instruction": true,
+     "verdict": "confirm",
+     "corrected_evidence_quote": "④ 전해질이상 환자(전해질대사 장애작용에 의한 나트륨 저류, 부종, 칼륨배설증가에 의한 저칼륨혈증 등이 나타나는 경우가 있다) … 7) 체액ㆍ전해질 : 부종, 혈압상승, 칼륨손실, 저칼륨성 알칼리혈증, 나트륨 저류, 체액 저류 … 음식물 섭취시 염제한과 칼륨보충이 필요할 수 있다.",
+     "reason": "6렌즈 전부 통과. (1) 칼륨이 이 약 자신의 라벨에 다수 동거: 신중투여 ④·⑥ '칼륨배설증가에 의한 저칼륨혈증', 부작용 7) 체액·전해질 '칼륨손실, 저칼륨성 알칼리혈증', 일반적주의 5) '칼륨배설의 증가... 칼륨보충이 필요할 수 있다'. (2) mechanism=depletion이 라벨의 칼륨배설증가/저칼륨혈증/칼륨손실(고갈·배설증가) 방향과 정확히 일치, 상승방향 아님→칼륨 in-scope. (3) 해당 문맥에 '영향 없음/관련성 없음' 등 완화·부정 표현 없음. (4) 래피손정(히드로코르티손)=국내 허가 단일성분(히드로코르티손 10mg) 경구 정제·전문의약품. (5) 라벨이 '칼륨'을 직접 명시하므로 계열 일반화가 아닌 자기 라벨 직접근거. (6) display 카피는 '영향 있을 수 있어 상태 확인 필요할 수 있다'는 모니터링/참고 톤이고, management 카피는 '임의 보충 위험→의사·약사 상담'으로 칼륨 보충권유나 결핍단정이 아닌 안전 주의 톤(라벨보다 강하지 않음). 따라서 confirm."
+    }
+   ]
+  }
+ ]
+}

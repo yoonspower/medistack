@@ -1,0 +1,101 @@
+rank,ingredient,product_count,therapeutic_class,precheck_class,proposed_nutrient,mechanism,detector_key,potassium_safety,risk_level,recovery_promoted,reason
+101,로수바스타틴칼슘/칸데사르탄실렉세틸,44,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+102,판토프라졸나트륨세스키히드레이트,43,소화/위장,already_covered_or_drafted,,,,false,,false,이미 relation 보유(판토프라졸) — 재후보화 불필요.
+103,펙소페나딘염산염,43,호흡기/알레르기,source_check_candidate,마그네슘,absorption,mg_absorption,false,low,false,펙소페나딘 단일 특이: Al/Mg 제산제 병용시 펙소페나딘 흡수 저하 라벨 실재 개연(퀴놀론 동형). 단일성분 근거.
+104,테라조신염산염수화물,43,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+105,리바록사반,43,항혈전(민감),sensitive_hold,,,,false,,false,민감/고위험군(항혈전(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+106,오메프라졸,42,소화/위장,already_covered_or_drafted,,,,false,,false,이미 relation 보유(에스오메프라졸) — 재후보화 불필요.
+107,나프록센,42,해열진통/소염,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+108,아토르바스타틴칼슘수화물,42,고지혈증,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+109,피타바스타틴칼슘수화물,42,고지혈증,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+110,이토프리드염산염,42,소화/위장,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+111,염화세틸피리디늄,42,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+112,리바스티그민,41,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+113,세프포독심프록세틸,39,항생/항균,source_check_candidate,철분,absorption,iron_absorption,false,low,false,"경구 세파: 흡수 pH의존. cefdinir만 철 적색복합체 확립 — 계열일반화 금지, 단일 라벨 철 동거어 실측만."
+114,리세드론산나트륨2.5수화물/콜레칼시페롤농축물(분말형),39,골다공증,already_covered_or_drafted,,,,false,,false,이미 relation 보유(리세드론산) — 재후보화 불필요.
+115,암로디핀베실산염/로사르탄칼륨,38,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+116,올메사르탄메독소밀/암로디핀베실산염,37,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+117,리나글립틴,37,당뇨,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+118,테고프라잔,37,기타,source_check_candidate,철분,absorption,iron_absorption,false,low,false,P-CAB(K-CAB): batch2 보노프라잔×철분 동일계열 선례. 강력 산억제→철 흡수 저해 라벨 동거어 개연. 단일성분 실측.
+119,올란자핀,37,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+120,라사길린메실산염,37,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+121,피타바스타틴칼슘,36,고지혈증,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+122,플루오로메톨론,36,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+123,포비돈요오드,36,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+124,암브록솔염산염,35,호흡기/알레르기,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+125,아세트아미노펜,34,해열진통/소염,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+126,클래리트로마이신제피과립,34,항생/항균,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+127,암로디핀베실산염,34,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+128,텔미사르탄파우더(23.9%)/암로디핀베실산염,34,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+129,알벤다졸,34,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+130,오플록사신,33,기타,already_covered_or_drafted,,,,false,,false,이미 relation 보유(오플록사신) — 재후보화 불필요.
+131,세푸록심악세틸,33,기타,source_check_candidate,철분,absorption,iron_absorption,false,low,false,"경구 세파(악세틸): 흡수 산도의존. 철 킬레이션 미확립(cefdinir-only) → low, 단일 라벨 실측."
+132,피록시캄,33,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+133,페북소스타트,33,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+134,아세브로필린,33,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+135,라모세트론염산염,33,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+136,토파시티닙시트르산염,33,기타,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+137,둘록세틴염산염장용과립,31,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+138,리세드론산나트륨2.5수화물,31,골다공증,already_covered_or_drafted,,,,false,,false,이미 relation 보유(리세드론산) — 재후보화 불필요.
+139,타크로리무스수화물,31,기타,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+140,로피니롤염산염,31,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+141,올메사르탄메독소밀,30,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+142,탈니플루메이트,30,해열진통/소염,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+143,미르타자핀,30,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+144,프로피베린염산염,30,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+145,토브라마이신,30,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+146,브로멜라인,30,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+147,클로르족사존/에텐자미드/카페인수화물,29,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+148,사이클로스포린,29,기타,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+149,클로르헥시딘글루콘산염 액,29,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+150,펜타닐시트르산염,29,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+151,에독사반토실산염수화물,29,항혈전(민감),sensitive_hold,,,,false,,false,민감/고위험군(항혈전(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+152,아리피프라졸,28,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+153,침강탄산칼슘/인산수소칼슘수화물/아미노카프로산/알란토인클로로히드록시알루미늄,28,기타,source_check_candidate,철분,absorption,iron_absorption,false,low,false,Ca·Al 함유 제산제형 복합: 다가양이온 활성성분(짝이온 아님)→pH상승+킬레이션으로 철 흡수저해(알마게이트 기전).
+154,도네페질염산염일수화물,27,신경/뇌,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+155,아세트아미노펜/슈도에페드린염산염/클로르페니라민말레산염,26,해열진통/소염,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+156,알프라졸람,26,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+157,세픽심수화물,26,항생/항균,source_check_candidate,철분,absorption,iron_absorption,false,low,false,경구 3세대 세파: 다가양이온 흡수 상호작용 보고 약함(cefdinir만 확립). 단일 라벨 실측 목적 low.
+158,테네리글립틴염산염수화물,26,당뇨,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+159,케토티펜푸마르산염,26,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+160,부스피론염산염,26,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+161,디쿠아포솔나트륨,26,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+162,나프록센나트륨,25,해열진통/소염,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+163,아토르바스타틴칼슘삼수화물/에제티미브,25,고지혈증,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+164,미라베그론,25,비뇨/전립선,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+165,프라미펙솔염산염일수화물,25,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+166,이부프로펜/파마브롬,24,해열진통/소염,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+167,란소프라졸과립,24,소화/위장,already_covered_or_drafted,,,,false,,false,이미 relation 보유(란소프라졸) — 재후보화 불필요.
+168,반코마이신염산염,24,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+169,도네페질염산염수화물/메만틴염산염,23,신경/뇌,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+170,텔미사르탄/클로르탈리돈/암로디핀베실산염,23,고혈압/심혈관,already_covered_or_drafted,,,,false,,false,이미 relation 보유(클로르탈리돈) — 재후보화 불필요.
+171,시메티딘,23,기타,source_check_candidate,철분,absorption,iron_absorption,false,low,false,H2 길항제: 산분비 억제→산 의존 비헴철 흡수 저해 개연(PPI/P-CAB 동형). 단일 라벨 실측 확인.
+172,멜라토닌,23,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+173,텔미사르탄/로수바스타틴칼슘,22,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+174,파록세틴염산염수화물,22,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+175,아리피프라졸(미분화),22,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+176,실로스타졸/은행엽건조엑스,21,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+177,설트랄린염산염,21,정신건강(민감),sensitive_hold,,,,false,,false,민감/고위험군(정신건강(민감)) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+178,비사코딜/도큐세이트나트륨,21,기타,source_check_candidate,칼륨,depletion,potassium,true,low,false,"자극성 완하제: 장기/과량시 전해질 상실→저칼륨 동거어 개연(고갈 방향, 상승 아님). 안전카드 대상."
+179,클로베타솔프로피오네이트,21,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+180,아모롤핀염산염,21,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+181,리도카인/프릴로카인,21,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+182,아목시실린수화물/설박탐피복실,20,항생/항균,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+183,로라타딘,20,호흡기/알레르기,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+184,라모트리진,20,신경/뇌,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+185,레르카니디핀염산염,20,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+186,리세드론산나트륨,20,골다공증,already_covered_or_drafted,,,,false,,false,이미 relation 보유(리세드론산) — 재후보화 불필요.
+187,바레니클린살리실산염,20,기타,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+188,시클로피록스,20,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+189,플루오로메톨론/테트라히드로졸린염산염,20,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+190,결정트립신/브로멜라인,20,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+191,이매티닙메실산염,20,기타,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+192,몬테루카스트나트륨/레보세티리진염산염,19,호흡기/알레르기,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+193,펠로디핀,19,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+194,레플루노미드,19,기타,sensitive_hold,,,,false,,false,민감/고위험군(면역억제/항암/특수군) — 임상판단·출혈/상호작용/이식 위험으로 참고정보 베타 범위 밖(clinical reviewer 트랙 전 hold).
+195,레미펜타닐염산염,19,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+196,클린다마이신포스페이트,18,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+197,이르베사르탄,18,고혈압/심혈관,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+198,클로트리마졸,18,기타,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).
+199,히드로코르티손,18,기타,source_check_candidate,칼륨,depletion,potassium,true,low,false,전신 코르티코스테로이드: 미네랄코르티코이드작용 저칼륨 개연(메틸프레드니솔론 선례). 외용 비중 커 전신 제형 실측 필요.
+200,프란루카스트수화물,18,호흡기/알레르기,rejected_precheck,,,,false,,false,허가사항에 6대 영양소(철/칼슘/Mg/아연/칼륨) 직접 상호작용/이상반응 동거어 개연 낮음(품목수만으로 후보화 금지).

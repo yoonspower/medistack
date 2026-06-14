@@ -120,12 +120,15 @@ def main():
     ap.add_argument("--no-write", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--delay", type=float, default=1.0, help="후보 간 fetch 간격(초)")
+    ap.add_argument("--precheck", default=PRECHECK_CSV, help="precheck CSV 입력(기본=batch2). batch3 는 별도 경로 지정.")
+    ap.add_argument("--out", default=OUT_CSV, help="source-check CSV 출력(기본=batch2). batch3 는 별도 경로 지정.")
     args = ap.parse_args()
+    precheck_csv, out_csv = args.precheck, args.out
 
-    if not os.path.exists(PRECHECK_CSV):
-        print(f"[STOP] precheck CSV 없음: {PRECHECK_CSV}")
+    if not os.path.exists(precheck_csv):
+        print(f"[STOP] precheck CSV 없음: {precheck_csv}")
         return 1
-    pre = [r for r in csv.DictReader(open(PRECHECK_CSV, encoding="utf-8"))
+    pre = [r for r in csv.DictReader(open(precheck_csv, encoding="utf-8"))
            if r["precheck_class"] == "source_check_candidate"]
     if args.limit:
         pre = pre[: args.limit]
@@ -218,11 +221,11 @@ def main():
                 "source_checked_at", "evidence_strength", "risk_level", "potassium_safety_card",
                 "pass_to_draft", "rejection_or_needs_review_reason", "safe_user_copy",
                 "internal_note", "adversarial_verdict", "adversarial_itemseq", "adversarial_quote"]
-        with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
+        with open(out_csv, "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=cols)
             w.writeheader()
             w.writerows(out_rows)
-        print(f"[write] {os.path.relpath(OUT_CSV, REPO)}")
+        print(f"[write] {os.path.relpath(out_csv, REPO)}")
     else:
         print("(--no-write)")
     print("\n라이브 미반영(relation/full index/alias/export/src 무변경).")
