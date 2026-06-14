@@ -188,3 +188,154 @@ harvester 첫 운영 run 이 두 후보를 `antacid_draft_confirmed` 로 확정�
 
 ### 11.5 향후 live 통합 조건 (요약)
 antacid_interaction 을 라이브에 노출하려면: ① 적대검증 통과, ② surface 표현(영양소 분리) 최종 확정, ③ clinical reviewer, ④ 멱등 integrate + validator 연쇄, ⑤ deploy 게이트(validator PASS) — **전부 별도 PM 단계**. 현재 상태는 **draft + surface 설계 + render 안전성 입증까지**이며 **live 승격 0**.
+
+---
+
+> §12 는 v1.3 round 의 **독립 적대검증(2026-06-14)** 결과를 §0–11 에 reconcile 한 보강 섹션이다. 자기확증 방지를 위해 독립 회의론자 서브에이전트가 raw 근거(라벨 원문 + 제안 카피)만 받아 refute-by-default 로 판정했다. **live 승격 0**(`live_integration_forbidden=true` 전건 유지). 감사 기록: `data/review/antacid_interaction_adversarial_verify_v1_3.json`.
+
+## 12. 적대검증 결과 + AT-ITZ 1순위 + AT-FEX representative itemSeq 정책
+
+### 12.1 검증 렌즈 / 방법
+독립 회의론자 5인(refute-by-default)이 AT-ITZ/AT-FEX draft 를 다음 렌즈로 판정: ① fidelity(라벨 directive 강도 과약화/방향왜곡 없는가) ② non-directive(앱이 직접 지시 안 하는가) ③ Mg 영양제 오인 없는가 ④ track 구분(counterpart_category=al_mg_antacid) ⑤ 제품/구매/제휴 없는가. fidelity 는 카드 일부(body)가 아니라 **풀 렌더 카드(chip+kicker+출처 인용)** 기준으로 재검증.
+
+### 12.2 결과 요약
+
+| draft | 약물 | directive | 안전 4렌즈 | fidelity | 종합 | adversarial_verified |
+|---|---|---|---|---|---|---|
+| **AT-05** | 이트라코나졸 | separation | 전부 pass | **pass**(풀카드) | **survives** | **true(후보)** · **live 1순위** |
+| AT-01 | 펙소페나딘 | avoid_concomitant | 전부 pass | **fail**(현 basis) | conditional_fail | **false** · 정책 결정 대기 |
+
+### 12.3 AT-ITZ(이트라코나졸) — adversarial_verified=true · live 통합 1순위
+- separation directive 가 풀 렌더 카드에서 방향 일치로 충실 표현됨: **chip "복용 간격" + kicker "같은 시간대 복용 주의" + 출처 인용의 "수산화알루미늄과 같은 위산중화제는 적어도 이 약 투여 2시간 전이나 2시간 후" 라벨 원문**. 앱이 "2시간 간격을 두세요"를 직접 명령하는 것은 비지시 제약 위반이므로, 현 구성이 **비지시 제약 하 최대 충실**.
+- 초기 단일 렌즈의 fidelity refute("2시간 지침 생략")는 body 만 본 부분 컨텍스트 오류였고, 풀카드 재검증서 **기각**(direction error 없음 = co-use 허용 암시 0).
+- **adversarial_verified=true 후보 + `live_candidate_rank=1`**. 단 `live_integration_forbidden=true` 유지 — rank 는 우선순위 표시일 뿐 승격 아님.
+- (선택·비차단) 출처의 "2시간" 인용을 body 에 attributed quote 로 승격하면 가시성↑.
+
+### 12.4 AT-FEX(펙소페나딘) — adversarial_verified=false · representative itemSeq 정책
+- 안전 4렌즈(비지시·Mg오인·트랙·제품)는 통과하나, **fidelity 미통과**: 현 primary basis 인 **202202380(avoid_concomitant "…제산제를 복용하지 마십시오")** 에 대해 중립 카피("흡수 영향 + 확인")가 **prohibition 을 'co-use 가능 + 상담'으로 방향 왜곡(다운그레이드)**. 중립 카피는 **199801016(coadmin_caution "상의")** 에만 충실.
+- **representative itemSeq 정책(PM 결정 대기):**
+
+  | 옵션 | 내용 | 평가 |
+  |---|---|---|
+  | **A (권장)** | 강한 품목(202202380 avoid_concomitant) basis 유지 + **directive_type 별 템플릿** 도입: avoid_concomitant → §4 강한대안("…함께 복용하지 않도록 안내하는 문구가 있습니다…") / separation·coadmin_caution → 현 중립 템플릿 | 가장 강한 라벨 보존 + 충실 + 비지시. validator 템플릿 검사 확장 + 재적대검증 동반(차기 라운드) |
+  | B | display basis 를 199801016(coadmin_caution)로 설정 → 현 중립 카피 충실 | low-confidence 약한 품목을 카피에 맞춰 선택하는 **integrity 우려**(에이전트 지적) |
+
+- **권장 = Option A**(강한 라벨 보존). 단 템플릿/validator/재검증 동반이라 **차기 PM 라운드**. 그때까지 AT-FEX draft 유지·미승격(`adversarial_verified=false`).
+- 두 itemSeq(202202380·199801016)와 verbatim quote·directive_type 는 `source`/`online_reconcile` 에 **모두 보존(폐기 0)**.
+
+### 12.5 안전 불변(이번 라운드)
+live 승격 0 · `live_integration_forbidden=true`(전건) · published/clinical_reviewed=false · reviewed_by 공란 · counterpart_category=al_mg_antacid · 제품/제휴 UI 0 · DATA_URL v0.2 · src 무수정 · export/full index/aliases 무변경. validator 에 "adversarial_verified=true 여도 자동 승격 금지" 불변 추가. **본 적대검증은 카피/안전 검증일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.**
+
+---
+
+> §13 은 **Option A 채택(2026-06-14)** 에 따른 directive 별 카피 구현 + AT-FEX(펙소페나딘) **재적대검증 round2** 결과를 §0–12 에 reconcile 한 보강 섹션이다. §0–12 의 의미는 변경하지 않는다. **live 승격 0**(`live_integration_forbidden=true` 전건 유지). 본 섹션은 기록/설계이며 구현 지시가 아니다.
+
+## 13. Option A 채택 + directive 별 카피 + AT-FEX 재적대검증(round2)
+
+### 13.1 Option A 채택 — directive_type 별 display 템플릿
+§12.4 의 representative itemSeq 정책에서 권고된 **Option A(강한 품목 basis 유지 + directive 별 카피)** 를 이번 라운드 draft 에 반영했다(`representative_itemseq_policy.status=option_A_adopted_2026-06-14_draft_recopy`). live 승격이 아니라 **draft 카피/검증 계약**에 반영한 것이다.
+
+| directive_type | display 템플릿 | 근거 |
+|---|---|---|
+| `avoid_concomitant`(AT-01 펙소페나딘) | **prohibition-보존형**: "일부 알루미늄·마그네슘 함유 제산제와 함께 **복용하지 않도록 안내하는** 허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요." | 라벨 '복용하지 마십시오'(병용금지) 강도를 출처 귀속형으로 보존(비지시). 중립 '흡수 영향' 템플릿은 다운그레이드라 금지. |
+| `separation`(AT-05 이트라코나졸) / `coadmin_caution` | 기존 중립 템플릿("…함께 사용할 때 약물 흡수에 영향을 줄 수 있다는…") | separation/상담 directive 에는 중립 톤이 충실. |
+
+구현 변경(이번 라운드):
+- AT-01 `display_text_ko` → avoid_concomitant 전용 prohibition-보존 카피.
+- AT-01 `surface.render_action` **separation→monitoring**: generic 카드의 separation chip '복용 간격'은 '간격 두면 병용 가능'으로 prohibition 을 다운그레이드(직전 라운드 fidelity 지적) → 제거.
+- `scripts/validate_antacid_interaction_v1_2.py`: directive_type 별 템플릿 verbatim 검사 + avoid_concomitant 의 weak neutral 카피 금지 + directive↔render_action 정합(avoid_concomitant 에 '복용 간격' chip 금지).
+- `scripts/smoke_antacid_interaction_v1_2.py`: directive-aware — avoid_concomitant 는 prohibition 보존('함께 복용하지 않도록')·weak neutral 미노출, separation 은 중립 프레이밍; node 렌더는 action chip(separation→'복용 간격'/monitoring→'상태 모니터링') 정합 검사.
+
+### 13.2 AT-FEX 재적대검증 round2 — 결과: **conditional_fail(needs_copy_review)**
+신규 Option A 카피 + monitoring chip 구성을 **독립 회의론자 7인(general-purpose) refute-by-default** 로 재검증(raw 근거: 라벨 원문 202202380/199801016 + 신규 카피 + 실제 풀 렌더 카드). 자기확증 방지를 위해 작성자 논리 미주입. 감사: `data/review/antacid_interaction_adversarial_verify_v1_3.json` 의 `results[AT-01].reverify_round2_option_A`.
+
+| 렌즈 | 결과 | 핵심 |
+|---|---|---|
+| fidelity #1 다운그레이드(med) | **refuted** | 첫 문장은 prohibition 보존(중립보다 강함, 인정)이나 **둘째 문장 '함께 사용하는 경우에는…확인하세요'가 병용을 옵션으로 전제** → consult-grade 다운그레이드. |
+| fidelity #2 강·약 품목 대조(high) | **refuted** | primary=강한 품목인데 body 2문장 + monitoring chip/kicker 가 **약한 품목(199801016 '상의') 강도에만 대응**. AT-05 풀카드 구제 논리 적용 불가(chip/kicker 가 directive 와 모순). |
+| fidelity #3 풀카드(high) | **refuted** | monitoring chip '상태 모니터링' + kicker '**장기 복용 시** 상태 확인'이 병용금지에 모순 — '장기 복용'은 병용금지 관계에 성립 불가 시나리오 전제(적극적 방향 왜곡). |
+| 비지시성(high) | survives | 앱 자체 카피 직접 명령 부재, 금지는 '문구가 있습니다' 귀속형, 상담 트리거만 명령형(허용). |
+| Mg 영양제 오인(high) | survives | '마그네슘'은 항상 '함유 제산제' 수식, 제목 '(약물)' 태그로 영양소 단독 미노출. |
+| 트랙 구분(high) | survives | 제목 '펙소페나딘 × Al/Mg 함유 제산제(약물)' 약물 명시, nutrient 필드 금지. |
+| 제품/제휴(high) | survives | 제품/구매/제휴 0, 외부링크는 식약처 원문(출처 귀속)뿐. |
+
+**판정: fidelity 3/3 refuted → AT-FEX `adversarial_verified=false` 유지, `status=needs_copy_review`.** 안전 4렌즈는 전부 통과. Option A 첫 문장의 prohibition 보존은 직전 중립 카피 대비 **개선**으로 확인됐으나, ①둘째 문장의 consult 다운그레이드와 ②generic 카드 chip/kicker 의 구조적 모순이 남아 풀 충실성 미달.
+
+### 13.3 핵심 발견 — generic 카드는 avoid_concomitant 를 충실히 렌더할 수 없다
+직전 라운드(separation chip '복용 간격' = spacing-OK 다운그레이드)와 round2(monitoring chip '상태 모니터링' + '장기 복용' = 병용+감시 다운그레이드)를 종합하면, **generic 카드의 두 action(separation·monitoring) 모두 avoid_concomitant(병용금지)와 방향이 모순**된다. separation 트랙(AT-05 이트라코나졸)에서는 chip/kicker 가 directive 와 일치해 generic 카드가 충실하지만, avoid_concomitant 는 그렇지 못하다. → **전용 chip 이 근본적으로 필요**(§15).
+
+### 13.4 AT-FEX 차기 라운드 필요조건(2종, 함께 랜딩 + 재검증 후에만 verified)
+1. **copy v2 — 둘째 문장 비-병용-전제화.** 제안: "복용 중인 제산제가 있다면 약사 또는 의사와 상담하세요"(병용을 권하지 않으면서 기존 복용 상황을 상담으로 라우팅). consult-close 표현 변경 시 validator/smoke 상담 종결 검사 동반 수정.
+2. **전용 avoid_concomitant chip(src 변경, §15).** 비-병용-전제 chip/kicker.
+
+두 수정이 **함께** 적용되고 재적대검증을 통과해야 `adversarial_verified=true` 후보. 그때도 live 승격은 별도 PM + clinical reviewer.
+
+### 13.5 안전 불변(이번 라운드)
+live 승격 0 · `live_integration_forbidden=true`(전건) · published/clinical_reviewed=false · reviewed_by 공란 · counterpart_category=al_mg_antacid · 제품/제휴 UI 0 · DATA_URL v0.2 · **src 무수정** · export/full index/aliases 무변경. AT-05 adversarial_verified=true 후보(미승격)·AT-01 false(needs_copy_review). **본 적대검증은 카피/안전 검증일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.**
+
+---
+
+> §14 는 AT-ITZ(이트라코나졸) **live 통합 준비 문서**다. **실제 통합은 하지 않는다**(이번 라운드 `live_integration_forbidden=true` 유지). 통합 전 체크리스트·멱등 integrate 계획·validator 연쇄·통합 프롬프트 초안만 작성한다.
+
+## 14. AT-ITZ(이트라코나졸) live 통합 준비 — 문서/프롬프트만(통합 0)
+
+AT-ITZ 는 round1 적대검증 survives → `adversarial_verified=true` 후보 + `live_candidate_rank=1`(separation directive, generic 카드 충실). 단 **이번 라운드 live 통합은 수행하지 않는다.** 아래는 향후 별도 PM 라운드용 준비물이다.
+
+### 14.1 live 통합 전 체크리스트(전부 충족돼야 통합 착수)
+- [ ] **clinical reviewer 확보** → `clinical_reviewed` 전환 검토. 현재 천장 = `verified_reference`(미충족). reviewer 전까지 `published=false`/`clinical_reviewed=false`/`reviewed_by` 공란 유지.
+- [ ] **source 재확인**: itemSeq 200404726(기존) + 200401453(online) 라벨 directive(separation '2시간 전/후') 재대조, `source.checked_at` 갱신.
+- [ ] **surface 표현 최종 확정**: 영양소 분리(상대=Al/Mg 제산제 '약물'). separation directive 는 generic 카드(chip '복용 간격' + kicker '같은 시간대 복용 주의')로 충실 입증(round1 풀카드 survives) → **전용 chip 불요**(avoid_concomitant 와 다름).
+- [ ] **적대검증 재확인**(통합 직전 1회 더, 카피 변경 시).
+- [ ] forbidden phrase scanner 0 · antacid validator/smoke PASS.
+
+### 14.2 멱등(idempotent) integrate 계획
+칼륨/relation 승격 패턴(`integrate_*_v1_2.py`) 준용:
+- **신규 버전 export 에 append-only** 추가(v0.1/v0.2 봉인 — 직접 수정 금지). 새 relation 1건(이트라코나졸 × "Al/Mg 함유 제산제(약물)") + 표면 매핑(render_nutrient/render_action) + source + 면책. `relation_count` +1 갱신.
+- **멱등 가드**: integrate 스크립트가 동일 id 존재 시 no-op(재실행 안전). 입력=draft AT-05, 출력=신규 버전 export. 기존 relation 무변경(read-modify-write 시 diff=정확히 1행 추가).
+- product 필드 0(제품/제휴 금지) · potassium_safety_card=false · counterpart_category=al_mg_antacid.
+
+### 14.3 validator 연쇄(통합 시 PASS 필수)
+1. 신규 버전 export validator(v0.2 validator 일반화 준용: relations≥기존+1, meta.relation_count 일치, 제품 필드 금지, requires_clinical_review 차단).
+2. `validate_antacid_interaction_v1_2.py`(draft 계약 유지).
+3. `validate_forbidden_phrases_v1_2.py`(신규 버전 export 의 display/management 스캔 포함).
+4. `smoke_antacid_interaction_v1_2.py`(렌더 안전성) + 기존 relation 회귀 smoke(`smoke_relation_draft_v1_2.py` 등).
+5. deploy 게이트(`deploy.yml` validate job) + live HTTP 200 + DATA_URL 교체 시 검증대상 동기화.
+
+### 14.4 live 통합 프롬프트 초안(차기 라운드용 — 실행 금지)
+> AT-ITZ(이트라코나졸 × Al/Mg 함유 제산제, separation) 1건만 신규 버전 export 에 **멱등 append-only** 통합하라. 전제: clinical reviewer 확보 + source 재확인 + 적대검증 재통과. 불변: v0.1/v0.2 봉인 무수정 · 제품/제휴 0 · counterpart_category=al_mg_antacid · published/clinical_reviewed=false 유지(reviewer 트랙 별도) · reviewed_by 는 reviewer 만 · DATA_URL/deploy 검증대상 동기 교체. 통합 후 validator 연쇄(§14.3) 전수 PASS + live HTTP 200 + git clean 확인. AT-FEX(needs_copy_review)·needs_review/reject 후보는 통합 금지.
+
+### 14.5 generic card 충분성 재명시
+AT-ITZ(separation)는 **generic 카드로 충분**(round1 풀카드 fidelity survives, 전용 chip 불요). 이는 avoid_concomitant(AT-FEX, 전용 chip 필요 — §15)와 구분되는 결론이다.
+
+---
+
+> §15 는 **antacid 전용 label 최소 UI 검토**다. 원칙상 **src 는 수정하지 않는다**(이번 라운드). 전용 label 필요성 판단과 src 변경안(프롬프트)까지만 문서화한다.
+
+## 15. antacid 전용 label 최소 UI 검토 — src 무수정(문서/프롬프트만)
+
+### 15.1 결론: separation 은 generic 충분, avoid_concomitant 는 전용 chip 필요
+- **separation/coadmin_caution(AT-ITZ 등)**: generic 카드(chip '복용 간격'/'상태 모니터링' + kicker)가 directive 와 방향 일치 → **src 무수정 유지**. node render smoke 가 안전성 입증.
+- **avoid_concomitant(AT-FEX 등)**: §13.3 — generic 두 action 모두 prohibition 과 모순(separation=spacing-OK / monitoring=병용+장기감시) → **전용 chip 이 필요**. 단 **이번 라운드 src 미구현**.
+
+### 15.2 src 미구현 이유
+- live 승격 전 UI 변경은 기존 relation 카드 **회귀 위험**(현 node render smoke 가 generic 카드 안전성을 입증 중).
+- 이번 라운드 avoid_concomitant 후보(AT-FEX)는 **live 승격 0 · needs_copy_review** — 당장 전용 chip 없이도 draft 안전(미렌더/미승격).
+- "애매하면 docs/smoke 까지" 원칙(§11.3 후속).
+
+### 15.3 전용 chip 변경안(src — 차기 라운드, 실행 금지)
+`src/js/render.js` ACTION 맵에 avoid_concomitant 전용 항목 추가(예):
+```
+avoid_concomitant: { label: '병용 주의', chip: 'chip-avoid', aClass: 'avoid', kicker: '함께 복용 권장 안 함' }
+```
+- 비-병용-전제: '복용 간격'(spacing-OK)·'장기 복용'(co-use 지속) 어휘 배제.
+- renderRow/renderDetail 가 `recommended_action='avoid_concomitant'` 를 받도록 매핑(draft surface.render_action 확장 동반).
+- 동반 필수: 기존 relation 카드 회귀 smoke + antacid smoke(directive-aware) + forbidden + live HTTP 200. validator 의 render_action enum 에 'avoid_concomitant' 추가.
+- CSS `.chip-avoid`/`.alabel.avoid` 추가(중립 톤, 경고색 과장 금지).
+
+### 15.4 변경안 프롬프트 초안(차기 라운드용 — 실행 금지)
+> avoid_concomitant 전용 chip 을 `src/js/render.js`(+styles.css) 에 최소 추가하라. chip '병용 주의' / kicker '함께 복용 권장 안 함'(병용·간격·장기복용 전제 어휘 금지). draft surface.render_action='avoid_concomitant' 매핑 + validator render_action enum 확장 + smoke directive-aware 갱신. 불변: 기존 relation 카드 회귀 0(회귀 smoke PASS) · 제품/제휴 0 · 면책 유지 · live HTTP 200 · DATA_URL 무변경. 적용 후 AT-FEX copy v2 와 함께 재적대검증.
+
+---
+
+## 16. harvester 운영(별도 문서)
+relation harvester bot v1.3 의 첫 운영 run 기록·manual run 루틴·schedule(비활성) 상태·커밋 제외 원칙은 **`docs/MediStack_harvester_ops_v1_3.md`** 로 분리했다(antacid 트랙과 별개 관심사). 요지: schedule 비활성(수동 dispatch 전용) · 봇 write-scope=`data/harvest_queue/` · live/배포/승격 0 · online run 산출물 커밋 제외.

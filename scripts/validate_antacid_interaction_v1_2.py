@@ -10,7 +10,9 @@ MediStack antacid_interaction 트랙 draft/candidates **데이터 계약 검증*
   - product_link_allowed=false · potassium_safety_card=false.
   - published=false · clinical_reviewed=false · live_integration_forbidden=true · do_not_implement_yet=true.
   - label_quote(라벨 원문) 비공란 + source.checked_at 존재.
-  - display = §4 PM 승인 템플릿 verbatim, management 공란(상담 트리거는 display 종결문).
+  - display = directive_type 별 템플릿 verbatim(avoid_concomitant=prohibition 보존형 / separation·coadmin_caution=중립),
+    avoid_concomitant 에 weak neutral 카피 금지, management 공란(상담 트리거는 display 종결문).
+  - directive ↔ render_action 정합: avoid_concomitant 에 separation('복용 간격') chip 금지(다운그레이드).
   - 게이트 정합: gate ledger 의 antacid_draft_confirmed 집합과 draft draft_id 집합 일치.
 검사(candidates CSV):
   - 모든 행 live_integration_forbidden=True.
@@ -30,9 +32,20 @@ DRAFT = os.path.join(DATA, "drafts", "antacid_interaction_draft_batch_v1_2.json"
 CAND = os.path.join(DATA, "candidates", "antacid_interaction_candidates_v1_2.csv")
 GATE = os.path.join(DATA, "review", "source_confirm_gate_v1_2.json")
 
-DISPLAY_TEMPLATE = ("일부 알루미늄·마그네슘 함유 제산제와 함께 사용할 때 약물 흡수에 영향을 줄 수 있다는 "
+# directive_type 별 display 템플릿(Option A, 2026-06-14):
+#  - 중립(separation/coadmin_caution): '함께 사용할 때 흡수 영향' 톤(병용 자체는 허용·간격/모니터링 신호).
+#  - avoid_concomitant 전용: 라벨의 병용금지를 다운그레이드하지 않도록 'prohibition 보존형'(출처 귀속·비지시).
+#    중립 템플릿을 avoid_concomitant 에 쓰면 prohibition 을 'co-use 가능+상담'으로 약화 → 금지.
+NEUTRAL_TEMPLATE = ("일부 알루미늄·마그네슘 함유 제산제와 함께 사용할 때 약물 흡수에 영향을 줄 수 있다는 "
                     "허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.")
-DIRECTIVE_OK = {"avoid_concomitant", "separation"}
+AVOID_CONCOMITANT_TEMPLATE = ("일부 알루미늄·마그네슘 함유 제산제와 함께 복용하지 않도록 안내하는 "
+                              "허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.")
+TEMPLATE_BY_DIRECTIVE = {
+    "avoid_concomitant": AVOID_CONCOMITANT_TEMPLATE,
+    "separation": NEUTRAL_TEMPLATE,
+    "coadmin_caution": NEUTRAL_TEMPLATE,
+}
+DIRECTIVE_OK = {"avoid_concomitant", "separation", "coadmin_caution"}
 # Mg 영양제 오인 유발 표현(antacid 트랙 카피에 있으면 안 됨).
 MG_SUPPLEMENT_CONFUSION = ["마그네슘 영양제", "마그네슘 보충제", "마그네슘제를", "마그네슘을 보충", "영양제를 드세요"]
 COPY_FORBIDDEN = ["복용하지 마세요", "복용하세요", "시간 간격을 두세요", "구매", "제휴", "추천", "치료", "예방", "반드시",
@@ -68,8 +81,15 @@ def main():
             fails.append(f"{did}: label_quote 공란(라벨 원문 보존 누락)")
         if not (r.get("source", {}).get("checked_at")):
             fails.append(f"{did}: source.checked_at 누락")
-        if r.get("display_text_ko") != DISPLAY_TEMPLATE:
-            fails.append(f"{did}: display ≠ §4 템플릿 verbatim")
+        directive = r.get("label_directive_type")
+        exp_tmpl = TEMPLATE_BY_DIRECTIVE.get(directive)
+        if exp_tmpl is None:
+            fails.append(f"{did}: label_directive_type '{directive}' 대응 display 템플릿 없음")
+        elif r.get("display_text_ko") != exp_tmpl:
+            fails.append(f"{did}: display ≠ '{directive}' directive 템플릿 verbatim")
+        # avoid_concomitant 는 weak neutral 카피 금지(prohibition 을 'co-use 가능+상담'으로 다운그레이드 차단)
+        if directive == "avoid_concomitant" and r.get("display_text_ko") == NEUTRAL_TEMPLATE:
+            fails.append(f"{did}: avoid_concomitant 에 weak neutral 카피 금지(prohibition→co-use 다운그레이드)")
         if (r.get("management_ko") or "") != "":
             fails.append(f"{did}: management 비공란(상담 트리거는 display 종결문)")
         disp = r.get("display_text_ko", "")
@@ -100,8 +120,13 @@ def main():
                     fails.append(f"{did}: surface.render_nutrient Mg 영양제 오인 표현 '{fb}'")
             if rn.strip() in ("마그네슘", "마그네슘(영양소)", "Mg", "철분", "칼슘", "칼륨", "아연"):
                 fails.append(f"{did}: surface.render_nutrient 가 영양소 단독({rn}) — antacid 트랙 위반")
-            if surf.get("render_action") not in ("separation", "monitoring"):
-                fails.append(f"{did}: surface.render_action 부정({surf.get('render_action')})")
+            ra = surf.get("render_action")
+            if ra not in ("separation", "monitoring"):
+                fails.append(f"{did}: surface.render_action 부정({ra})")
+            # directive ↔ render_action 정합: '복용 간격'(separation chip)은 'spacing 두면 병용 가능' 신호 →
+            # avoid_concomitant(병용금지)에 쓰면 prohibition 다운그레이드. separation chip 은 separation directive 에만 허용.
+            if directive == "avoid_concomitant" and ra == "separation":
+                fails.append(f"{did}: avoid_concomitant 에 render_action=separation('복용 간격' chip) 금지(prohibition 다운그레이드) — monitoring 등 비-spacing chip 사용")
             if surf.get("not_a_nutrient_relation") is not True:
                 fails.append(f"{did}: surface.not_a_nutrient_relation≠true(영양소 분리 플래그 누락)")
         # online_reconcile(있으면): 운영 harvester provenance — online_item_seq 실값 보존(기존 근거 폐기 아님)
@@ -112,6 +137,11 @@ def main():
                 fails.append(f"{did}: online_reconcile.online_item_seq 실 itemSeq 아님({seq!r})")
             if not (orc.get("provenance_note") or "").strip():
                 fails.append(f"{did}: online_reconcile.provenance_note 공란(기존 근거 폐기 아님 — provenance 필요)")
+        # adversarial_verified=true 는 적대검증 통과 표시일 뿐 — 자동 승격 금지(live/published/clinical/reviewed_by 불변)
+        if r.get("adversarial_verified") is True:
+            if r.get("live_integration_forbidden") is not True or r.get("published") is not False \
+               or r.get("clinical_reviewed") is not False or (r.get("reviewed_by") or "") != "":
+                fails.append(f"{did}: adversarial_verified=true 이나 안전 플래그 위반 — 적대검증은 승격 아님(live_integration_forbidden/published/clinical_reviewed/reviewed_by 불변 필수)")
 
     # 게이트 정합
     if os.path.exists(GATE):

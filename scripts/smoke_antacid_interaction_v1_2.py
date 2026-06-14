@@ -2,9 +2,12 @@
 """
 smoke_antacid_interaction_v1_2.py
 MediStack antacid_interaction 카피 **렌더 시뮬레이션 스모크**(읽기전용).
-표면 카피가 (a)출처 귀속·비지시(앱이 '복용하지 마세요'라고 지시하지 않음), (b)병용 프레이밍 유지
-('시간 간격 두세요'로 약화 안 함), (c)상담 종결, (d)상대=제산제 명시(Mg 영양제 오인 0)인지,
-내부 directive/label_quote 가 원문 강도를 보존하는지 시뮬레이션 점검한다.
+표면 카피가 (a)출처 귀속·비지시(앱이 '복용하지 마세요'라고 지시하지 않음), (b)directive 별 충실성
+— avoid_concomitant=prohibition 보존('함께 복용하지 않도록')+weak neutral 다운그레이드 차단,
+separation/coadmin_caution=중립 병용 프레이밍 / 공통으로 '시간 간격 두세요' 약화 금지 —,
+(c)상담 종결, (d)상대=제산제 명시(Mg 영양제 오인 0)인지, 내부 directive/label_quote 가 원문 강도를
+보존하는지 시뮬레이션 점검한다. node 렌더는 action chip(separation→'복용 간격'/monitoring→'상태 모니터링')도
+directive 정합(avoid_concomitant 에 '복용 간격' chip 금지)으로 검사한다.
 종료코드: 0 PASS, 1 FAIL.
 """
 import json
@@ -27,15 +30,24 @@ def main():
     for r in d.get("draft_relations", []):
         did = r["draft_id"]
         disp = r.get("display_text_ko", "")
+        directive = r.get("label_directive_type")
         n += 1
         # (a) 출처 귀속·비지시: '허가사항 문구가 있습니다' 포함, 직접 지시('복용하지 마세요') 없음
         if "허가사항 문구가 있습니다" not in disp:
             fails.append(f"{did}: 출처 귀속('허가사항 문구가 있습니다') 누락 — 비지시성 약화")
         if "복용하지 마세요" in disp:
             fails.append(f"{did}: 직접 지시('복용하지 마세요') 노출 — 앱 지시 금지")
-        # (b) 병용 프레이밍 유지(separation 다운그레이드 금지)
-        if "함께 사용할 때" not in disp:
-            fails.append(f"{did}: 병용 프레이밍('함께 사용할 때') 누락")
+        # (b) directive 별 프레이밍 충실성:
+        #   avoid_concomitant → prohibition 보존('함께 복용하지 않도록'), weak neutral('흡수에 영향') 다운그레이드 금지
+        #   separation/coadmin_caution → 중립 병용 프레이밍('함께 사용할 때')
+        if directive == "avoid_concomitant":
+            if "함께 복용하지 않도록" not in disp:
+                fails.append(f"{did}: avoid_concomitant prohibition 보존('함께 복용하지 않도록') 누락 — 다운그레이드")
+            if "흡수에 영향을 줄 수 있다는" in disp:
+                fails.append(f"{did}: avoid_concomitant 에 weak neutral 카피('흡수에 영향') 노출 — prohibition 다운그레이드")
+        else:
+            if "함께 사용할 때" not in disp:
+                fails.append(f"{did}: 중립 병용 프레이밍('함께 사용할 때') 누락")
         if "시간 간격을 두세요" in disp or "간격을 두는 것이 도움" in disp:
             fails.append(f"{did}: separation 다운그레이드 표현 노출(라벨 강도 약화)")
         # (c) 상담 종결
@@ -50,7 +62,7 @@ def main():
         # 내부 강도 보존: label_quote 비공란 + directive_type 유효
         if not (r.get("label_quote") or "").strip():
             fails.append(f"{did}: 내부 label_quote 공란(원문 강도 보존 실패)")
-        if r.get("label_directive_type") not in ("avoid_concomitant", "separation"):
+        if directive not in ("avoid_concomitant", "separation", "coadmin_caution"):
             fails.append(f"{did}: label_directive_type 부정")
     print(f"=== antacid_interaction smoke (1) 카피 시뮬레이션: {n}개 ===")
     for f in fails:
@@ -91,6 +103,7 @@ const check = (name, cond, extra) => {
 
 for (const r of d.draft_relations) {
   const did = r.draft_id, ing = r.ingredient, s = r.surface || {};
+  const directive = r.label_directive_type;
   // 표면 매핑으로 generic 렌더 relation 구성(nutrient 슬롯 = Al/Mg 제산제 '약물' — 영양소 아님)
   const rel = {
     id: did, ingredient: ing, nutrient: s.render_nutrient, recommended_action: s.render_action,
@@ -110,10 +123,22 @@ for (const r of d.draft_relations) {
   check(`${did}(${ing})[appcopy] 직접 복용 지시('복용하지 마') 미노출(앱 카피)`, !appCopy.includes('복용하지 마'));
   check(`${did}(${ing})[appcopy] 참고정보 프레이밍('허가사항 문구가 있습니다') 노출`, appCopy.includes('허가사항 문구가 있습니다'));
   check(`${did}(${ing})[appcopy] 상담 종결('약사 또는 의사에게 확인') 노출`, appCopy.includes('약사 또는 의사에게 확인'));
+  // directive 별 카피 충실성(Option A): avoid_concomitant 는 prohibition 보존 + weak neutral 다운그레이드 차단
+  if (directive === 'avoid_concomitant') {
+    check(`${did}(${ing})[appcopy] avoid_concomitant prohibition 보존('함께 복용하지 않도록') 노출`, appCopy.includes('함께 복용하지 않도록'));
+    check(`${did}(${ing})[appcopy] avoid_concomitant 에 weak neutral('흡수에 영향') 미노출(다운그레이드 차단)`, !appCopy.includes('흡수에 영향을 줄 수 있다는'));
+  } else {
+    check(`${did}(${ing})[appcopy] 중립 병용 프레이밍('함께 사용할 때') 노출`, appCopy.includes('함께 사용할 때'));
+  }
   check(`${did}(${ing})[detail] 공통 면책 출력(fail-safe)`, html.includes(data.disclaimers.common));
   check(`${did}(${ing})[detail] 출처 귀속(허가사항) 출력`, html.includes('출처'));
   check(`${did}(${ing})[detail] 제품/구매/제휴 미노출`, !html.includes('구매') && !html.includes('제휴') && !html.includes('affiliate') && !html.includes('buy_links'));
-  check(`${did}(${ing})[row] separation chip('복용 간격') 표시`, row.includes('복용 간격'));
+  // action chip: separation→'복용 간격' / monitoring→'상태 모니터링'. avoid_concomitant 는 '복용 간격'(spacing) chip 금지(다운그레이드).
+  const chipLabel = s.render_action === 'separation' ? '복용 간격' : '상태 모니터링';
+  check(`${did}(${ing})[row] action chip('${chipLabel}') 표시`, row.includes(chipLabel));
+  if (directive === 'avoid_concomitant') {
+    check(`${did}(${ing})[row] avoid_concomitant 에 separation('복용 간격') chip 미사용(다운그레이드 차단)`, !row.includes('복용 간격'));
+  }
 }
 
 console.log('');

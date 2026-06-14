@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "name": "antacid_interaction_adversarial_verify_v1_3",
+    "date": "2026-06-14",
+    "purpose": "AT-ITZ(이트라코나졸) / AT-FEX(펙소페나딘) antacid_interaction draft 에 대한 독립 적대검증 감사 기록. 자기확증 방지를 위해 독립 회의론자 서브에이전트가 raw 근거(라벨 원문 + 제안 카피)만 받아 refute-by-default 로 판정.",
+    "scope": "draft 단계 카피 충실성·안전성 검증만. live 승격·clinical 검수·식약처 승인 아님. live_integration_forbidden=true 유지.",
+    "lenses": [
+      "fidelity_no_overweaken (라벨 directive 강도 과약화/방향왜곡 없는가)",
+      "non_directive (앱이 '복용하지 마세요' 등 직접 지시하지 않는가)",
+      "mg_supplement_confusion (마그네슘 영양제로 오인될 문구 없는가)",
+      "track_distinction_al_mg_antacid (counterpart_category=al_mg_antacid 유지·약물 트랙)",
+      "no_product_affiliate (제품/구매/제휴로 이어지지 않는가)"
+    ],
+    "method": "독립 회의론자 5인(general-purpose 서브에이전트) refute-by-default. AT-ITZ 2렌즈 패널 + 풀카드 fidelity 재검증 1, AT-FEX 2렌즈 패널.",
+    "round2_note": "2026-06-14 Option A 채택 후 AT-FEX 신규 카피(avoid_concomitant 전용 prohibition-보존형 + render_action=monitoring) 재적대검증 추가 — 독립 회의론자 7인(fidelity 3인 패널 + 안전 4렌즈). 결과: fidelity 3/3 refuted(둘째 문장 consult 다운그레이드 + generic monitoring chip/kicker 의 prohibition 모순), 안전 4렌즈 전부 survives → AT-FEX needs_copy_review 유지. 상세는 results[AT-01].reverify_round2_option_A."
+  },
+  "results": [
+    {
+      "draft_id": "AT-05",
+      "harvester_candidate_id": "AT-ITZ-01",
+      "ingredient": "이트라코나졸",
+      "label_directive_type": "separation",
+      "verdict": "survives",
+      "adversarial_verified_recommendation": true,
+      "live_candidate_rank": 1,
+      "lens_verdicts": {
+        "fidelity_no_overweaken": "pass",
+        "non_directive": "pass",
+        "mg_supplement_confusion": "pass",
+        "track_distinction_al_mg_antacid": "pass",
+        "no_product_affiliate": "pass"
+      },
+      "skeptic_findings": [
+        "회의론자#1(fidelity, body-only): 초기 REFUTE — body 가 '2시간 분리' 구체 지침을 생략해 generic '흡수 영향'으로 약화 주장. ※ chip/출처 인용 미고려한 부분 컨텍스트.",
+        "회의론자#2(안전 4렌즈): non-directive·Mg오인·제품·트랙 전부 SURVIVES. body 가 under-informative 이나 안전 위반 아님, chip '복용 간격'이 timing 신호.",
+        "회의론자#3(fidelity, 풀카드 재검증): fidelity SURVIVES — chip '복용 간격'+kicker '같은 시간대 복용 주의'+출처 인용의 '2시간 전/후' 원문이 separation 을 방향 일치로 표현. 앱이 '2시간 간격을 두세요'를 직접 지시하는 것은 비지시 제약 위반이므로, 현 구성이 비지시 제약 하 '최대 충실'. 방향 오류(co-use 허용 암시) 없음."
+      ],
+      "resolution": "초기 fidelity refute 는 body-only 부분 컨텍스트 오류. 풀 렌더 카드 재검증서 기각 → survives. adversarial_verified=true 후보 + live 통합 1순위(미승격).",
+      "non_blocking_enhancement": "출처의 '2시간' 인용을 body 에 attributed quote 로 승격해 가시성 향상(선택)."
+    },
+    {
+      "draft_id": "AT-01",
+      "harvester_candidate_id": "AT-FEX-01",
+      "ingredient": "펙소페나딘",
+      "label_directive_type": "avoid_concomitant",
+      "verdict": "conditional_fail",
+      "adversarial_verified_recommendation": false,
+      "lens_verdicts": {
+        "fidelity_no_overweaken": "fail_under_avoid_concomitant_basis",
+        "non_directive": "pass",
+        "mg_supplement_confusion": "pass",
+        "track_distinction_al_mg_antacid": "pass",
+        "no_product_affiliate": "pass"
+      },
+      "skeptic_findings": [
+        "회의론자#4(fidelity, 두 품목 대조): avoid_concomitant(202202380 '복용하지 마십시오') basis 면 REFUTE — prohibition 을 'co-use 가능+상담'으로 방향 왜곡·강도 다운그레이드. coadmin_caution(199801016 '상의') basis 면 SURVIVES(현 카피 충실). 권고: basis 를 약한 품목으로 바꾸거나 강한 품목엔 강한 카피.",
+        "회의론자#5(안전 4렌즈+정책): non-directive·Mg오인·제품·트랙 전부 SURVIVES('(약물)' 태그가 disambiguation 핵심). 정책: 단일 중립 display 는 consult-grade directive 를 basis 로, 강한 품목 provenance 는 데이터에 보존(폐기 금지)."
+      ],
+      "resolution": "안전 4렌즈 통과. fidelity 는 현 primary basis(avoid_concomitant 202202380)에서 미통과 → adversarial_verified=false 유지. representative_itemseq_policy(차기 PM) 결정 후 재검증 필요. ※ round2(Option A 채택·신규 카피)로 재검증 수행 — 아래 reverify_round2_option_A 참조.",
+      "representative_itemseq_policy_proposal": {
+        "option_A_recommended": "강한 품목(202202380) basis 유지 + directive_type 별 템플릿(avoid_concomitant→§4 강한대안, separation/coadmin→중립). 강한 라벨 보존+충실+비지시. validator 템플릿 확장+재검증 동반.",
+        "option_B": "display basis=199801016(coadmin_caution) → 현 중립 카피 충실. low-confidence 약품목 선택 integrity 우려.",
+        "recommendation": "Option A"
+      },
+      "reverify_round2_option_A": {
+        "date": "2026-06-14",
+        "subject": "Option A 채택 후 신규 AT-FEX 카피 재적대검증 — display='일부 알루미늄·마그네슘 함유 제산제와 함께 복용하지 않도록 안내하는 허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.' + surface.render_action=monitoring(separation '복용 간격' chip 제거).",
+        "method": "독립 회의론자 7인(general-purpose) refute-by-default, raw 근거(라벨 원문 202202380/199801016 + 신규 카피 + 실제 풀 렌더 카드 chip/kicker)만 수령. fidelity 3인 패널(다운그레이드/강·약 품목 대조/풀카드) + 비지시·Mg오인·트랙·제품 각 1인. (참고: 워크플로우 ledger w13metxlz / wf_8480347a-ff6)",
+        "verdict": "conditional_fail",
+        "fidelity_panel": {
+          "result": "refuted (3/3)",
+          "f1_downgrade_medium": "둘째 문장 '함께 사용하는 경우에는 약사 또는 의사에게 확인하세요'가 병용을 열린 옵션으로 전제하고 '확인'만 요구 → 절대 병용금지를 consult-grade(coadmin_caution '상의') 로 재프레이밍·약화. 첫 문장('함께 복용하지 않도록 안내하는 문구가 있습니다')은 prohibition 방향을 충실히 보존(중립 템플릿보다 명확히 강함) — 인정. 그러나 사용자 행동지침으로 읽히는 둘째 문장이 다운그레이드.",
+          "f2_two_items_high": "primary=강한 품목(202202380 병용금지)인데 렌더 카드가 (a)body 2문장으로 병용을 허용 옵션 전제 (b)monitoring chip '상태 모니터링'+kicker '장기 복용 시 상태 확인'으로 '병용 금지'→'병용 후 모니터링' 방향 반전 → 결과적으로 약한 품목(199801016 '상의') 강도에만 대응. AT-05(separation)의 '풀카드 구제' 논리는 chip/kicker 가 directive 와 방향 일치할 때만 성립 — AT-FEX 는 monitoring chip/kicker 가 prohibition 과 모순이라 풀카드가 충실성을 오히려 깎음.",
+          "f3_fullcard_high": "render_action=monitoring 이 실제 src/js/render.js 에서 chip '상태 모니터링'+kicker '장기 복용 시 상태 확인'으로 렌더됨(코드 확인). avoid_concomitant 인데 (1)kicker '장기 복용 시'는 두 약의 지속 병용을 전제 — 병용금지 관계엔 성립 불가 시나리오(단순 중립 아님, 적극적 방향 왜곡) (2)chip '상태 모니터링'은 '병용하면서 감시'라는 병용허용 관계 신호. 카드 위계상 가장 먼저 프레이밍하는 kicker+chip 가 둘 다 '병용+장기감시'를 암시해 body 가 보존한 prohibition 을 약화."
+        },
+        "safe_4_lenses": {
+          "non_directive": "survives(high) — 앱 자체 카피에 직접 명령 부재, 금지는 '문구가 있습니다' 귀속형, 유일 명령형은 상담 위임 트리거(허용).",
+          "mg_supplement_confusion": "survives(high) — '마그네슘'은 항상 '함유 제산제' 수식, 제목 '(약물)' 태그로 영양소 단독 미노출. 보충/결핍 어휘 0.",
+          "track_distinction": "survives(high) — 제목 '펙소페나딘 × Al/Mg 함유 제산제(약물)' 로 약물(제산제) 명시, nutrient 영양소 필드 금지(validator). (live 시 검색 '영양소' 패싯 슬롯 재사용 우려는 데이터모델/UI-쉘 차원·전용 chip 으로 해소 예정.)",
+          "no_product_affiliate": "survives(high) — 제품/구매/제휴/제품링크 0, 유일 외부링크는 식약처 원문(출처 귀속). canShowProduct 구조적 false."
+        },
+        "resolution": "AT-FEX 는 fidelity 미통과(둘째 문장 consult 다운그레이드 + generic monitoring chip/kicker 의 prohibition 모순) → adversarial_verified=false 유지, status=needs_copy_review. Option A 첫 문장 prohibition 보존은 개선으로 확인되나 풀 충실성엔 미달.",
+        "required_for_next_round_BOTH": {
+          "copy_v2": "둘째 문장이 병용을 허용 옵션으로 전제하지 않도록 수정. 제안: '복용 중인 제산제가 있다면 약사 또는 의사와 상담하세요'(병용을 권하지 않으면서 기존 복용 상황을 상담으로 라우팅). consult-close 표현 변경 시 validator/smoke 의 상담 종결 검사도 동반 수정.",
+          "dedicated_chip_src": "§15 전용 avoid_concomitant chip(src 변경): generic separation('복용 간격'=spacing-OK)·monitoring('상태 모니터링'+'장기 복용'=병용+감시) 둘 다 prohibition 과 모순 입증됨. 비-병용-전제 전용 chip/kicker(예: chip '병용 주의', kicker '함께 복용 권장 안 함') 필요. 이번 라운드 미구현(docs/prompt only).",
+          "note": "두 수정은 함께 랜딩 + 재적대검증 통과 후에만 adversarial_verified=true 후보. 그때도 live 승격은 별도 PM + clinical reviewer."
+        }
+      }
+    }
+  ],
+  "safety_invariants_held": {
+    "live_relations_promoted": 0,
+    "live_integration_forbidden": "true (전건)",
+    "published": false,
+    "clinical_reviewed": false,
+    "reviewed_by": "공란(전건)",
+    "counterpart_category": "al_mg_antacid (전건)",
+    "product_affiliate_ui": "없음",
+    "data_url": "v0.2 (불변)",
+    "src_modified": false,
+    "export_full_index_aliases_modified": false,
+    "note": "본 ledger 는 적대검증 기록일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다."
+  }
+}
