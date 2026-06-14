@@ -1,0 +1,50 @@
+{
+ "meta": {
+  "batch": "coverage_queue_top301_500_v1_2",
+  "band": "Top301-500",
+  "created_at": "2026-06-14",
+  "status": "0 candidates reached adversarial verification (source_confirmed 0)",
+  "note": "Top301-500 source-check(verify_coverage_queue_sources)가 source_confirmed 0 → 적대검증(refute-by-default) 대상 없음. 대신 reject 3건(세팔로스포린×철)에 대해 독립 재fetch + 철 토큰 역검색으로 false-reject(detector miss) 아님을 확인(reverse verification). 라이브 미반영.",
+  "confirmed_before_adversarial": 0,
+  "confirmed_after_adversarial": 0
+ },
+ "verifications": [],
+ "reject_verification": [
+  {
+   "candidate_id": "CQ-426",
+   "ingredient": "세푸록심",
+   "nutrient": "철분",
+   "status": "reject",
+   "itemseqs_rechecked": [
+    "200411029",
+    "201403509"
+   ],
+   "reverse_iron_token_found": false,
+   "label_recheck": "독립 재fetch — itemSeq 200411029;201403509 라벨에 철/철분/철염 직접 동거어 없음. 세팔로스포린×철 킬레이션은 성분특이(세프디니르 적색복합)·계열 일반화 아님 → true reject."
+  },
+  {
+   "candidate_id": "CQ-442",
+   "ingredient": "세프카펜피복실",
+   "nutrient": "철분",
+   "status": "reject",
+   "itemseqs_rechecked": [
+    "200500420",
+    "200500421"
+   ],
+   "reverse_iron_token_found": false,
+   "label_recheck": "독립 재fetch — itemSeq 200500420;200500421 라벨에 철/철분/철염 직접 동거어 없음. 세팔로스포린×철 킬레이션은 성분특이(세프디니르 적색복합)·계열 일반화 아님 → true reject."
+  },
+  {
+   "candidate_id": "CQ-488",
+   "ingredient": "세프디토렌피복실",
+   "nutrient": "철분",
+   "status": "reject",
+   "itemseqs_rechecked": [
+    "199500901",
+    "201006942"
+   ],
+   "reverse_iron_token_found": false,
+   "label_recheck": "독립 재fetch — itemSeq 199500901;201006942 라벨에 철/철분/철염 직접 동거어 없음. 세팔로스포린×철 킬레이션은 성분특이(세프디니르 적색복합)·계열 일반화 아님 → true reject."
+  }
+ ]
+}

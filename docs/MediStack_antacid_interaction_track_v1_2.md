@@ -81,3 +81,64 @@ PM/임상 검토가 "병용금지"의 강도를 더 보존하길 원하면:
 ## 6. 상태
 - CQ-103: **needs_review / HOLD**. live·draft 미반영. 본 문서는 설계안일 뿐 구현 지시가 아니다.
 - 실제 트랙 구현·CQ-103 승격은 PM 결정 + (필요 시) clinical reviewer 검토 후 별도 단계.
+
+---
+
+> 아래 §7 이후는 v1.2 라운드 후보 수집·게이트 실행 결과를 반영한 **보강 섹션**이다. §0–6 설계 본문의 의미는 변경하지 않는다. 모든 판정은 앞단계 ledger(`data/review/source_confirm_gate_v1_2.json`)를 **읽기전용 ground truth**로 인용한 것이며, 본 문서가 새로 판정하지 않는다.
+
+## 7. 후보 수집·게이트 결과 (v1.2 라운드)
+
+이번 라운드에서 antacid_interaction 트랙으로 6개 후보(AT-01~AT-06)를 수집해 단일 fail-closed 게이트(`scripts/source_confirm_gate_v1_2.py` / `data/review/source_confirm_gate_v1_2.json`)에 통과시켰다. 게이트 판정 분포: **antacid_draft_confirmed 2 / reject 3 / needs_review 1**. 이번 라운드 **live 승격 0**, confirm 되어도 **draft(`live_integration_forbidden=true`)까지만**.
+
+판정 원천: `data/review/source_confirm_gate_v1_2.json` 의 `antacid_track` 배열. 원문 quote 원천: `data/candidates/antacid_interaction_evidence_v1_2.json` 의 `evidence` 배열. 후보 행 요약은 `data/candidates/antacid_interaction_candidates_v1_2.csv`.
+
+| id | ingredient | verdict | label_directive_type | itemSeq | 판정 이유 | 라벨 원문 quote(발췌) |
+|---|---|---|---|---|---|---|
+| AT-01 | 펙소페나딘 | **antacid_draft_confirmed** | avoid_concomitant | 202202380 | Al/Mg 제산제 directive 동거어+directive 문맥+부정문구 부재+단일 경구 itemSeq → antacid draft 후보(영양소 relation 아님, live 금지). | "…알루미늄 또는 마그네슘 함유 제제의 **제산제를 복용하지 마십시오.** 이 약을 복용하는 동안 케토코나졸이나 에리트로마이신과 함께 복용하지…" |
+| AT-02 | 아지트로마이신 | reject | coadmin_caution | 200708447 | DENY: 제산제 동거어는 있으나 동일 문맥에 '흡수장애 일어나지 않음/영향 없음' 등 부정문구 → 상호작용 성립 불명확(과다해석 방지). | "…6. 상호작용 1) 제산제: 이 약과 제산제를 동시에 투여하는 경우…약동학 시험에서, **전반적인 생체이용율에는 영향을 미치지 않았으나** 최고 혈청 농도는 약 24%정도 감소하였다…" |
+| AT-03 | 클래리트로마이신 | reject | (없음) | 201211101 / 201211108 | DENY: 라벨에 Al/Mg 제산제 병용 directive 동거어 미확인. | (해당 directive 동거어 미확인 — quote 없음) |
+| AT-04 | 플루코나졸 | reject | coadmin_caution | 200202853 | DENY: 제산제 동거어는 있으나 동일 문맥에 '흡수장애 일어나지 않음/영향 없음' 등 부정문구 → 상호작용 성립 불명확(과다해석 방지). | "…상호작용시험은 이 약의 경구제와 음식, 시메티딘, **제산제,** 골수이식에 대한 전신방사선요법과의 병용 시 임상적으로 유의할만한 이 약의 **흡수장애가 일어나지 않음을 보였다.**…" |
+| AT-05 | 이트라코나졸 | **antacid_draft_confirmed** | separation | 200404726 | Al/Mg 제산제 directive 동거어+directive 문맥+부정문구 부재+단일 경구 itemSeq → antacid draft 후보(영양소 relation 아님, live 금지). | "…**수산화알루미늄과 같은 위산중화제는 적어도 이 약 투여 2시간 전이나 2시간 후에** 투여하는 것을 권장함. 병용투여시 항진균효과를 관찰하고 필요한 경우 이트라코나졸 용량을…" |
+| AT-06 | 케토코나졸 | needs_review | (없음) | (미확보) | DENY(fail-closed): 국내 단일 경구 완제 itemSeq 미확보 — 직접 지정 재확인 필요. | (itemSeq 미확보 — quote 없음) |
+
+**reject 3건의 성격 구분(과다해석 방지):**
+- AT-02 아지트로마이신 / AT-04 플루코나졸 — 제산제 **동거어는 실재**하나, 동일 문맥에 "생체이용율에 영향을 미치지 않았으나" / "흡수장애가 일어나지 않음" 같은 **부정문구**가 함께 있어 상호작용 성립이 불명확하다. 부정문구를 directive로 오독하지 않도록 reject.
+- AT-03 클래리트로마이신 — 점검한 itemSeq(201211101·201211108) 라벨에서 Al/Mg 제산제 병용 **directive 동거어 자체가 미확인**되어 reject(근거 없음).
+
+**needs_review 1건:** AT-06 케토코나졸 — 국내 단일 경구 완제 itemSeq를 확보하지 못해(no_domestic_single_oral_product) fail-closed로 보류. itemSeq 직접 지정 재확인 후 재게이트 필요.
+
+## 8. 내부 필드 스키마 확정
+
+draft batch(`data/drafts/antacid_interaction_draft_batch_v1_2.json`)는 §3 권장 레이어 분리 설계를 다음 필드로 구현한다(표면 중립 / 내부 원문 강도 보존):
+
+| 필드 | 역할 | 값(이번 라운드) |
+|---|---|---|
+| `relation_type` | **표면** 트랙명(사용자 노출, 중립) | `antacid_interaction` |
+| `counterpart_category` | **내부** 상대 카테고리 — 영양소 보충제 아님 | `al_mg_antacid` |
+| `label_directive_type` | **내부** 라벨 지시 강도 보존 | `avoid_concomitant`(AT-01) / `separation`(AT-05) |
+| `label_quote` | **내부** 라벨 원문 직역(충실성 검증용) | evidence json quote verbatim |
+| `copy_risk_level` | **내부** 카피 위험도 | `high`(2건 모두) |
+| `display_text_ko` | **표면** 사용자 노출 카피 | §4 PM 승인 템플릿 verbatim(아래) |
+
+- **표면(surface) = `antacid_interaction`** — 사용자에게는 중립·참고정보 톤만 노출("상호작용 문구가 있습니다 + 상담").
+- **내부(internal) = `label_directive_type` / `counterpart_category` / `label_quote`** — 라벨 원문 강도("복용하지 마십시오" 병용금지, "2시간 전·후" 간격)를 손실 없이 보존. AT-01은 `avoid_concomitant`(병용금지 직역), AT-05는 `separation`(라벨이 명시한 시간 간격) 으로 각 후보의 라벨 강도를 그대로 반영한다.
+- **영양소(Mg) 트랙과 분리 재강조:** 상대(`counterpart_category=al_mg_antacid`)는 **Al/Mg 함유 제산제(약물 카테고리)**이며 마그네슘 **영양제(보충제)**가 아니다. 같은 다가양이온이라도 라벨은 제산제만 지목하므로, 본 트랙을 영양소(철/칼슘/Mg/아연/칼륨) relation 으로 박지 않는다(§2 결론 유지). 칼륨 보충 권유·결핍 단정은 본 트랙과 무관(0).
+- draft batch 메타가 `do_not_implement_yet=true` · `live_integration_forbidden=true` · `published=false` · `clinical_reviewed=false` · `adversarial_verified=false` 를 모든 행에 보존함을 확인.
+
+## 9. CQ-103(펙소페나딘 × Al/Mg 제산제) 재검토 결론
+
+§0–2 분석과 v1.2 게이트 결과를 종합한 최종 결론:
+
+- **일반 separation(영양소 Mg) 트랙으로 승격하지 않는다.** §1의 2/3 split(direction_correct·copy_reads_as_reference 실패)과 §2의 영양소-제산제 불일치가 그대로 유효하다. 펙소페나딘 라벨은 "복용하지 마십시오"라는 **병용금지(avoid_concomitant)**이며 상대는 **제산제(약물 카테고리)**이지 마그네슘 영양소 보충제가 아니다.
+- **antacid_interaction 트랙 draft(AT-01)로 보관한다.** CQ-103의 실체는 본 라운드 AT-01(펙소페나딘 · itemSeq 202202380 · `avoid_concomitant`)로 게이트를 통과해 draft batch에 들어 있다(`antacid_draft_confirmed`, draft까지만).
+- **surface = 중립 카피(§4 템플릿 verbatim):**
+  > 일부 알루미늄·마그네슘 함유 제산제와 함께 사용할 때 약물 흡수에 영향을 줄 수 있다는 허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.
+- **internal = `label_directive_type=avoid_concomitant`** + `label_quote` 로 원문 강도("복용하지 마십시오")를 손실 없이 보존.
+- **라이브·일반 relation 미반영(`live_integration_forbidden=true`).** v0.2 데이터 export·일반 relation 배열에 반영하지 않는다. AT-05 이트라코나졸도 동일하게 antacid draft(separation)로만 보관한다.
+
+## 10. 상태
+
+- 본 라운드 **live 승격 0 · 일반 relation(영양소) draft 0.** published=false / clinical_reviewed=false 유지.
+- antacid 전용 draft **2건(AT-01 펙소페나딘 · AT-05 이트라코나졸)** 은 `data/drafts/antacid_interaction_draft_batch_v1_2.json` 에 보관 상태. 모두 `do_not_implement_yet=true` · `adversarial_verified=false`.
+- 다음 단계(별도 PM 단계): surface(`antacid_interaction`) 구현 여부 결정 → **적대검증(카피 충실성: 병용 프레이밍 유지·비지시성·영양소 오인 차단)** → forbidden phrase scanner 0 확인 → (필요 시) clinical reviewer. 본 문서는 설계·기록일 뿐 구현 지시가 아니다.
+- reject 3(AT-02·AT-03·AT-04)·needs_review 1(AT-06)은 승격 대상 아님. AT-06은 itemSeq 재확보 후 재게이트 대상.

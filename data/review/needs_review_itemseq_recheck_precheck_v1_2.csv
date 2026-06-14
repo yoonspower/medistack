@@ -1,0 +1,3 @@
+rank,ingredient,product_count,therapeutic_class,precheck_class,proposed_nutrient,mechanism,detector_key,potassium_safety,risk_level,recovery_promoted,reason
+9001,플루오르화나트륨,0,기타,source_check_candidate,칼슘,absorption,calcium_absorption,false,low,false,needs_review 재확인 — 국내 단일 경구 완제(치과용/외용 제외) itemSeq 직접 재검색.
+9002,레보도파,0,신경/뇌,source_check_candidate,철분,absorption,iron_absorption,false,low,false,needs_review 재확인 — 국내 단일 경구 완제(복합제 레보도파/카르비도파 제외) itemSeq 직접 재검색.

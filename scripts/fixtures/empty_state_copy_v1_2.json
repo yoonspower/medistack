@@ -1,0 +1,17 @@
+{
+ "note": "검색 empty-state 안전문구 canonical 카피(설계 단계). docs/MediStack_search_empty_state_copy_v1_2.md §2·§3.2 단일 출처. 구현 시 이 문자열을 화면 안내문으로 사용하고 forbidden phrase 게이트 스캔 대상에 포함. 데이터(disclaimers.*)에 박지 않는다.",
+ "pm_disclaimer_sentences": [
+  "현재 준비된 약-영양소 참고정보가 없습니다.",
+  "정보가 없다는 뜻이 안전하거나 위험하지 않다는 의미는 아닙니다.",
+  "복용 중인 약이나 영양소가 걱정되면 약사 또는 의사와 상담하세요.",
+  "MediStack은 제품 추천이나 복용 지시를 제공하지 않습니다."
+ ],
+ "no_result_retry_line": "검색 결과가 없습니다. 철자나 다른 이름(상품명·성분명)으로 다시 검색해 보세요.",
+ "states": {
+  "name_only": "품목명 확인(부분 성공) — 기존 name_only_ux_improvement §3 정의 승계(본 문서 미발명).",
+  "no_result": "전혀 없음 — PM 4문장 + 재시도 한 줄 적용."
+ },
+ "live_integration_forbidden": true,
+ "published": false,
+ "clinical_reviewed": false
+}

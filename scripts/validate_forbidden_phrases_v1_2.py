@@ -33,6 +33,9 @@ SOURCE_CSV = os.path.join(DATA, "relation_factory_source_check_v1_2.csv")
 # batch2(coverage-queue) 산출물도 동일 게이트로 스캔
 COVERAGE_DRAFT = os.path.join(DATA, "coverage_queue_draft_batch_v1_2.json")
 COVERAGE_SOURCE_CSV = os.path.join(DATA, "coverage_queue_source_check_v1_2.csv")
+# v1.2 라운드 신규 산출물(사용자 노출 카피만 스캔 — label_quote/source_pointer 등 라벨 원문 인용은 제외)
+ANTACID_DRAFT = os.path.join(DATA, "drafts", "antacid_interaction_draft_batch_v1_2.json")
+POTASSIUM_PM = os.path.join(DATA, "review", "potassium_depletion_pm_ready_v1_2.json")
 
 # 사용자 노출 카피에서 절대 금지(정확 부분문자열). 명령형 복용지시·승인주장·구매/제휴/추천·의료단정.
 # 주의: '피하고'(신중 톤)는 허용, '피하세요'(명령)는 금지 — 정확 어구만.
@@ -46,9 +49,9 @@ FORBIDDEN = [
     # 복용지시(명령형)
     "복용하세요", "복용하십시오", "드세요", "드십시오", "반드시 드", "꼭 드",
     "보충하세요", "중단하세요", "끊으세요", "피하세요", "드시면 됩니다",
-    # 의료 단정(치료·예방·진단 효능 주장)
+    # 의료 단정(치료·예방·진단 효능 주장) — 사용자 노출 카피엔 bare 형도 금지(라벨 원문 인용은 스캔 대상 아님)
     "치료합니다", "치료됩니다", "예방합니다", "예방됩니다", "진단", "완치",
-    "효과가 있습니다", "안전합니다", "문제없습니다",
+    "효과가 있습니다", "안전합니다", "문제없습니다", "치료", "예방",
 ]
 
 
@@ -106,6 +109,20 @@ def collect():
                 c = row.get("safe_user_copy", "")
                 if c.strip():
                     items.append((f"cq_sourcecsv {row.get('candidate_id')}.safe_user_copy", c))
+    # 7) antacid_interaction draft (있으면) — display/management 만(label_quote 는 라벨 원문이라 제외)
+    if os.path.exists(ANTACID_DRAFT):
+        d = json.load(open(ANTACID_DRAFT, encoding="utf-8"))
+        for r in d.get("draft_relations", []):
+            for fld in ("display_text_ko", "management_ko"):
+                if r.get(fld):
+                    items.append((f"antacid_draft {r.get('draft_id')}.{fld}", r[fld]))
+    # 8) potassium PM-ready (있으면) — final_display/final_management 만(source_pointer 는 라벨 원문이라 제외)
+    if os.path.exists(POTASSIUM_PM):
+        d = json.load(open(POTASSIUM_PM, encoding="utf-8"))
+        for r in d.get("items", []):
+            for fld in ("final_display_text_ko", "final_display_text_ko_named", "final_management_ko"):
+                if r.get(fld):
+                    items.append((f"potassium_pm {r.get('draft_id')}.{fld}", r[fld]))
     return items
 
 

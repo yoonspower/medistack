@@ -1,0 +1,168 @@
+{
+ "meta": {
+  "name": "source_confirm_gate_v1_2",
+  "created_at": "2026-06-14",
+  "status": "GATE LEDGER — 단일 fail-closed 판정. live 승격 0(이번 라운드).",
+  "principle": "DEFAULT DENY · 직접근거+단일경구itemSeq+부정문구부재+계열일반화아님 4조건 → confirm · confirm 되어도 draft(live_integration_forbidden=true)까지만.",
+  "live_promotions_this_round": 0
+ },
+ "nutrient_track": [
+  {
+   "candidate_id": "CQ-426",
+   "track": "D_top301_500",
+   "ingredient": "세푸록심",
+   "nutrient": "철분",
+   "itemseqs_checked": "200411029;201403509",
+   "verdict": "reject",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "gate_reason": "DENY: 허가사항에 해당 영양소 상호작용/이상반응 동거어 미기재(직접 근거 없음)."
+  },
+  {
+   "candidate_id": "CQ-442",
+   "track": "D_top301_500",
+   "ingredient": "세프카펜피복실",
+   "nutrient": "철분",
+   "itemseqs_checked": "200500420;200500421",
+   "verdict": "reject",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "gate_reason": "DENY: 허가사항에 해당 영양소 상호작용/이상반응 동거어 미기재(직접 근거 없음)."
+  },
+  {
+   "candidate_id": "CQ-488",
+   "track": "D_top301_500",
+   "ingredient": "세프디토렌피복실",
+   "nutrient": "철분",
+   "itemseqs_checked": "199500901;201006942",
+   "verdict": "reject",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "gate_reason": "DENY: 허가사항에 해당 영양소 상호작용/이상반응 동거어 미기재(직접 근거 없음)."
+  },
+  {
+   "candidate_id": "CQ-9001",
+   "track": "C_needs_review",
+   "ingredient": "플루오르화",
+   "nutrient": "칼슘",
+   "itemseqs_checked": "",
+   "verdict": "needs_review",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "gate_reason": "DENY(fail-closed): 국내 단일 경구 완제품목 미확보(no_domestic_single_oral_product) — itemSeq 직접 지정 재확인 필요."
+  },
+  {
+   "candidate_id": "CQ-9002",
+   "track": "C_needs_review",
+   "ingredient": "레보도파",
+   "nutrient": "철분",
+   "itemseqs_checked": "",
+   "verdict": "needs_review",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "gate_reason": "DENY(fail-closed): 국내 단일 경구 완제품목 미확보(no_domestic_single_oral_product) — itemSeq 직접 지정 재확인 필요."
+  }
+ ],
+ "antacid_track": [
+  {
+   "candidate_id": "AT-01",
+   "ingredient": "펙소페나딘",
+   "itemseqs_checked": [
+    "202202380"
+   ],
+   "quote": "동안 주의해야 할 약 또는 음식은 무엇입니까? 이 약을 복용하는 동안 피부질환용약, 비염용 내복약을 포함한 다른 알레르기용약, 항히스타민제를 함유한 내복약 등, 알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오. 이 약을 복용하는 동안 케토코나졸이나 에리트로마이신과 함께 복용하지 마십시오. 이 약을 복용하는 동안 자몽주스, 오렌지 및 사과주스와",
+   "verdict": "antacid_draft_confirmed",
+   "draft_eligible": true,
+   "live_integration_forbidden": true,
+   "track": "antacid_interaction",
+   "directive_kind": "avoid_concomitant",
+   "copy_strength": "high",
+   "counterpart_category": "al_mg_antacid",
+   "gate_reason": "Al/Mg 제산제 directive 동거어+directive 문맥+부정문구 부재+단일 경구 itemSeq → antacid draft 후보(영양소 relation 아님, live 금지)."
+  },
+  {
+   "candidate_id": "AT-02",
+   "ingredient": "아지트로마이신",
+   "itemseqs_checked": [
+    "200708447"
+   ],
+   "quote": "용에서, 영아 비대성유문협착증이 보고되었다. 부모 및 보호자에게 수유 중 구토 혹은 자극과민이 발생할 경우 의사의 진료를 받도록 알려야한다. 6. 상호작용 1) 제산제: 이 약과 제산제를 동시에 투여하는 경우 미치는 영향을 알아보기 위한 약동학 시험에서, 전반적인 생체이용율에는 영향을 미치지 않았으나 최고 혈청 농도는 약 24%정도 감소하였다. 이 약과 제",
+   "verdict": "reject",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "track": "antacid_interaction",
+   "directive_kind": "coadmin_caution",
+   "gate_reason": "DENY: 제산제 동거어는 있으나 동일 문맥에 '흡수장애 일어나지 않음/영향 없음' 등 부정문구 → 상호작용 성립 불명확(과다해석 방지)."
+  },
+  {
+   "candidate_id": "AT-03",
+   "ingredient": "클래리트로마이신",
+   "itemseqs_checked": [
+    "201211101",
+    "201211108"
+   ],
+   "quote": "",
+   "verdict": "reject",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "track": "antacid_interaction",
+   "gate_reason": "DENY: 라벨에 Al/Mg 제산제 병용 directive 동거어 미확인."
+  },
+  {
+   "candidate_id": "AT-04",
+   "ingredient": "플루코나졸",
+   "itemseqs_checked": [
+    "200202853"
+   ],
+   "quote": "이러한 작용을 없애거나 감소시키지 못했다. 이 약과 보리코나졸의 병용투여는 어떠한 용량에서도 권장되지 않는다. 상호작용시험은 이 약의 경구제와 음식, 시메티딘, 제산제, 골수이식에 대한 전신방사선요법과의 병용 시 임상적으로 유의할만한 이 약의 흡수장애가 일어나지 않음을 보였다. 처방의는 이 약과 상호작용시험이 수행되지 않은 다른 약물들에 대해서도 상호작용이",
+   "verdict": "reject",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "track": "antacid_interaction",
+   "directive_kind": "coadmin_caution",
+   "gate_reason": "DENY: 제산제 동거어는 있으나 동일 문맥에 '흡수장애 일어나지 않음/영향 없음' 등 부정문구 → 상호작용 성립 불명확(과다해석 방지)."
+  },
+  {
+   "candidate_id": "AT-05",
+   "ingredient": "이트라코나졸",
+   "itemseqs_checked": [
+    "200404726"
+   ],
+   "quote": "과 이트라코나졸 캡슐을 병용 투여 시 주의하여 사용하는 것이 권장됨. 위산도를 저하시키는 약물과 함께 투여 시 콜라(다이어트 콜라 제외)같은 산성음료를 복용함. 수산화알루미늄과 같은 위산중화제는 적어도 이 약 투여 2시간 전이나 2시간 후에 투여하는 것을 권장함. 병용투여시 항진균효과를 관찰하고 필요한 경우 이트라코나졸 용량을 증량하는 것을 권장함. 사카로",
+   "verdict": "antacid_draft_confirmed",
+   "draft_eligible": true,
+   "live_integration_forbidden": true,
+   "track": "antacid_interaction",
+   "directive_kind": "separation_or_spacing",
+   "copy_strength": "high",
+   "counterpart_category": "al_mg_antacid",
+   "gate_reason": "Al/Mg 제산제 directive 동거어+directive 문맥+부정문구 부재+단일 경구 itemSeq → antacid draft 후보(영양소 relation 아님, live 금지)."
+  },
+  {
+   "candidate_id": "AT-06",
+   "ingredient": "케토코나졸",
+   "itemseqs_checked": [],
+   "quote": "",
+   "verdict": "needs_review",
+   "draft_eligible": false,
+   "live_integration_forbidden": true,
+   "track": "antacid_interaction",
+   "gate_reason": "DENY: 국내 단일 경구 완제 itemSeq 미확보 — 직접 지정 재확인 필요."
+  }
+ ],
+ "summary": {
+  "nutrient_verdicts": {
+   "reject": 3,
+   "needs_review": 2
+  },
+  "antacid_verdicts": {
+   "antacid_draft_confirmed": 2,
+   "reject": 3,
+   "needs_review": 1
+  },
+  "nutrient_source_confirmed": 0,
+  "antacid_draft_confirmed": 2,
+  "draft_eligible_total": 2,
+  "live_promotions": 0
+ }
+}
