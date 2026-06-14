@@ -62,6 +62,7 @@ KPI_CSV = os.path.join(DATA, "coverage_kpi_top_candidates_v1_2.csv")
 ANTACID_CANDIDATES = [
     ("AT-LVX-01", "레보플록사신", "레보플록사신"),
     ("AT-FEX-01", "펙소페나딘", "펙소페나딘"),
+    ("AT-ITZ-01", "이트라코나졸", "이트라코나졸"),  # PM 지시 추가(v1.2 antacid 트랙 AT-05 근거): 아졸계 흡수 저해.
 ]
 
 # 짝이온염(counter-ion salt) 트랩: 약물 염의 양이온(나트륨/칼륨/칼슘/마그네슘)을 영양소로 오인 방지.

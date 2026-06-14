@@ -63,8 +63,10 @@ def test_cache_raw(tmp):
     c.get_item_detail("100001")  # 2nd → cache
     check("2회차 동일 조회 = cache hit", c.stats["cache"] == n_cache0 + 1)
     check("offline 에서 network 호출 0", c.stats["network"] == 0)
-    check("raw 원문 파일 저장됨", os.path.exists(os.path.join(tmp, "raw", "detail_100001.html")))
-    check("cache 파일 생성됨", os.path.exists(os.path.join(tmp, "cache", "detail_100001.html")))
+    check("raw 원문 파일 저장됨(offline namespace)",
+          os.path.exists(os.path.join(tmp, "raw", "offline", "detail_100001.html")))
+    check("cache 파일 생성됨(offline namespace)",
+          os.path.exists(os.path.join(tmp, "cache", "offline", "detail_100001.html")))
 
 
 def test_log(tmp):
@@ -107,6 +109,76 @@ def test_retry_failsoft(tmp):
     check("error 로그에 attempts/error 기록", any(r["mode"] == "error" and r.get("attempts") == 3 for r in recs))
 
 
+class _FakeOpener:
+    """주입용 가짜 opener — 실 네트워크 대신 고정 본문 반환(실 소켓 0, 네트워크 미발생)."""
+    def __init__(self, body):
+        self._body = body.encode("utf-8")
+        self.calls = 0
+
+    def open(self, req, timeout=None):
+        self.calls += 1
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def read(self):
+        return self._body
+
+
+# fixture(offline)·실데이터(online)를 명확히 구분하려고 detail_100001 키를 양쪽이 재사용한다.
+_REAL_HTML_A = ("<html><h1>온라인리얼_프레드니솔론</h1><body>실데이터 라벨 본문 — "
+                "상호작용 주의 안내(fixture 아님)</body></html>")
+_REAL_HTML_B = "<html><h1>온라인전용_라벨</h1><body>오직 네트워크에서만 온 본문</body></html>"
+
+
+def test_offline_then_online_no_fixture_contamination(tmp):
+    print("· 캐시 오염 방지 ①: offline 후 online 이 fixture cache-hit 안 함")
+    base_cache, base_raw = os.path.join(tmp, "cache"), os.path.join(tmp, "raw")
+    log = os.path.join(tmp, "calls.jsonl")
+    # 1) offline 런: fixture 를 (offline) 캐시 namespace 에 적재
+    off = NedrugClient(offline=True, fixtures_dir=FIX, cache_dir=base_cache,
+                       raw_dir=base_raw, log_path=log, clock=lambda: 0.0)
+    d_off = off.get_item_detail("100001")
+    check("offline 결과 = fixture(저칼륨혈증)", "저칼륨혈증" in d_off.label_text, d_off.label_text[:40])
+    # 2) online 런: 같은 base cache_dir + 주입 opener 가 다른 '실' 본문 반환(같은 key 100001)
+    on = NedrugClient(offline=False, cache_dir=base_cache, raw_dir=base_raw, log_path=log,
+                      min_interval=0.0, backoff=0.0, clock=lambda: 0.0)
+    on._opener = _FakeOpener(_REAL_HTML_A)
+    net0, cache0 = on.stats["network"], on.stats["cache"]
+    d_on = on.get_item_detail("100001")
+    check("online 이 fixture 를 cache-hit 하지 않음(network 경유)",
+          on.stats["network"] == net0 + 1 and on.stats["cache"] == cache0,
+          f"net={on.stats['network']} cache={on.stats['cache']}")
+    check("online 결과 = 실데이터(fixture 오염 아님)",
+          "온라인리얼_프레드니솔론" in d_on.title and "저칼륨혈증" not in d_on.label_text, d_on.title)
+    check("offline·online 캐시가 mode 별 dir 분리",
+          os.path.exists(os.path.join(base_cache, "offline", "detail_100001.html"))
+          and os.path.exists(os.path.join(base_cache, "online", "detail_100001.html")))
+
+
+def test_online_then_offline_separation(tmp):
+    print("· 캐시 오염 방지 ②: online 후 offline 이 real cache 를 읽지 않음")
+    base_cache, base_raw = os.path.join(tmp, "cache"), os.path.join(tmp, "raw")
+    log = os.path.join(tmp, "calls.jsonl")
+    # 1) online 런: 주입 opener 의 '실' 본문을 (online) 캐시 namespace 에 적재
+    on = NedrugClient(offline=False, cache_dir=base_cache, raw_dir=base_raw, log_path=log,
+                      min_interval=0.0, backoff=0.0, clock=lambda: 0.0)
+    on._opener = _FakeOpener(_REAL_HTML_B)
+    on.get_item_detail("100001")
+    # 2) offline 런: 같은 base cache_dir → online 실캐시 읽지 말고 fixture 사용해야
+    off = NedrugClient(offline=True, fixtures_dir=FIX, cache_dir=base_cache,
+                       raw_dir=base_raw, log_path=log, clock=lambda: 0.0)
+    d_off = off.get_item_detail("100001")
+    check("offline 이 online real cache 를 읽지 않음",
+          "온라인전용_라벨" not in (d_off.title + d_off.label_text), d_off.title)
+    check("offline 결과 = fixture(저칼륨혈증)", "저칼륨혈증" in d_off.label_text)
+    check("offline network 0 유지", off.stats["network"] == 0)
+
+
 def main():
     print("=== NedrugClient dry-run test (네트워크 0) ===")
     with tempfile.TemporaryDirectory() as tmp:
@@ -114,6 +186,8 @@ def main():
         test_cache_raw(os.path.join(tmp, "b"))
         test_log(os.path.join(tmp, "c"))
         test_retry_failsoft(os.path.join(tmp, "d"))
+        test_offline_then_online_no_fixture_contamination(os.path.join(tmp, "e"))
+        test_online_then_offline_separation(os.path.join(tmp, "f"))
     print("=" * 56)
     if _fails:
         print(f"RESULT: FAIL — {len(_fails)}건: {_fails}")

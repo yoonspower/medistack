@@ -18,6 +18,8 @@ SDK 가 내부에서 처리하는 것(이 파일 밖으로 새지 않게):
   - SDK 는 source_confirmed 를 **최종 확정하지 않는다**(found/quote 같은 원자료만 제공, 판정은 게이트가).
   - SDK 는 relation 을 만들지 않고, live export/full index/alias 를 수정하지 않으며, 배포를 수행하지 않는다.
   - SDK 가 쓰는 경로는 cache_dir / raw_dir / log_path 뿐 — 전부 호출자가 지정하는 작업/큐 디렉토리.
+    cache_dir/raw_dir 밑에는 mode 서브디렉토리(`offline/`·`online/`)를 만들어 fixture 캐시와 실 NEDRUG
+    캐시를 물리 분리한다 → offline dry-run 이 online 캐시를 오염시키거나 그 반대가 일어나지 않는다.
 
 종료/예외: 네트워크 실패는 retry 후 빈 결과로 떨어지고(로그에 mode=error 기록), 예외를 호출자에게
 전파하지 않는다(파이프라인이 needs_review 로 분류하게). raise 하지 않는 fail-soft.
@@ -109,7 +111,13 @@ class NedrugClient:
         self.cache_dir = cache_dir
         self.raw_dir = raw_dir
         self.log_path = log_path
-        for d in (cache_dir, raw_dir):
+        # mode 별 캐시/raw namespace — offline(fixture)·online(실 NEDRUG) 산출물이 절대 섞이지 않게.
+        # cache-hit 이 offline/online 분기보다 먼저 일어나므로(_get), 같은 평면 dir 을 공유하면
+        # offline fixture 가 online 캐시를 오염시킨다(역도 성립). dir 에 mode 를 박아 물리 분리한다.
+        self._mode_tag = "offline" if offline else "online"
+        self._cache_dir = os.path.join(cache_dir, self._mode_tag) if cache_dir else None
+        self._raw_dir = os.path.join(raw_dir, self._mode_tag) if raw_dir else None
+        for d in (self._cache_dir, self._raw_dir):
             if d:
                 os.makedirs(d, exist_ok=True)
         if log_path:
@@ -196,7 +204,7 @@ class NedrugClient:
     # ----------------- 조회 코어(cache / raw / log / retry / ratelimit / offline) -----------------
     def _get(self, url, *, kind, key):
         """raw HTML 텍스트 반환(실패/미존재 시 '')."""
-        cache_file = os.path.join(self.cache_dir, f"{kind}_{key}.html") if self.cache_dir else None
+        cache_file = os.path.join(self._cache_dir, f"{kind}_{key}.html") if self._cache_dir else None
         # 1) cache hit
         if cache_file and os.path.exists(cache_file):
             with open(cache_file, encoding="utf-8") as f:
@@ -265,8 +273,8 @@ class NedrugClient:
         return None
 
     def _save_raw(self, kind, key, raw):
-        if self.raw_dir:
-            self._write(os.path.join(self.raw_dir, f"{kind}_{key}.html"), raw)
+        if self._raw_dir:
+            self._write(os.path.join(self._raw_dir, f"{kind}_{key}.html"), raw)
 
     @staticmethod
     def _write(path, text):
