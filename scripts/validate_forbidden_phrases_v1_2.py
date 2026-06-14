@@ -30,6 +30,9 @@ EXPORT = os.path.join(DATA, "medistack_v0.2_beta_export.json")
 DRAFT14 = os.path.join(DATA, "relation_expansion_draft_v1_2.json")
 FACTORY_DRAFT = os.path.join(DATA, "relation_factory_draft_batch_v1_2.json")
 SOURCE_CSV = os.path.join(DATA, "relation_factory_source_check_v1_2.csv")
+# batch2(coverage-queue) 산출물도 동일 게이트로 스캔
+COVERAGE_DRAFT = os.path.join(DATA, "coverage_queue_draft_batch_v1_2.json")
+COVERAGE_SOURCE_CSV = os.path.join(DATA, "coverage_queue_source_check_v1_2.csv")
 
 # 사용자 노출 카피에서 절대 금지(정확 부분문자열). 명령형 복용지시·승인주장·구매/제휴/추천·의료단정.
 # 주의: '피하고'(신중 톤)는 허용, '피하세요'(명령)는 금지 — 정확 어구만.
@@ -89,6 +92,20 @@ def collect():
                 c = row.get("safe_user_copy", "")
                 if c.strip():
                     items.append((f"sourcecsv {row.get('candidate_id')}.safe_user_copy", c))
+    # 5) coverage-queue factory draft batch (있으면)
+    if os.path.exists(COVERAGE_DRAFT):
+        d = json.load(open(COVERAGE_DRAFT, encoding="utf-8"))
+        for r in d.get("draft_relations", []):
+            for fld in ("display_text_ko", "management_ko"):
+                if r.get(fld):
+                    items.append((f"cq_draft {r.get('draft_id')}.{fld}", r[fld]))
+    # 6) coverage-queue source-check CSV safe_user_copy (있으면)
+    if os.path.exists(COVERAGE_SOURCE_CSV):
+        with open(COVERAGE_SOURCE_CSV, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                c = row.get("safe_user_copy", "")
+                if c.strip():
+                    items.append((f"cq_sourcecsv {row.get('candidate_id')}.safe_user_copy", c))
     return items
 
 

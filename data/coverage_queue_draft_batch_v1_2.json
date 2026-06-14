@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "draft_name": "coverage_queue_draft_batch_v1_2",
+    "created_at": "2026-06-14",
+    "status": "DRAFT — NOT LIVE",
+    "do_not_implement_yet": true,
+    "live_integration_forbidden": true,
+    "published": false,
+    "clinical_reviewed": false,
+    "count": 1,
+    "note": "coverage 우선순위 큐(Top100) precheck → 안전후보 nedrug source check → 적대적 검증(독립 회의론자 라벨 재fetch·refute-by-default)을 모두 통과한 source_confirmed 후보의 draft relation. 라이브 export(relations 57)에는 반영되지 않았고 어떤 것도 구현하지 않는다. 각 행 published=false·clinical_reviewed=false·reviewed_by 공란·review_required=true·source_required=true·do_not_implement_yet=true·live_integration_forbidden=true. 실제 채택은 PM 승인 + 검토 통과 후 별도 단계에서만. draft id(CQFxx)는 라이브 id 공간 및 DF01-07 와 분리. 제품/제휴/복용지시/추천/치료/예방/구매 톤 0(참고정보 톤). 칼륨 행은 product_link_allowed=false·potassium_safety_card=true 승계.",
+    "verification_source": "scripts/verify_coverage_queue_sources_v1_2.py + medistack-cq-adversarial-verify workflow / data/coverage_queue_source_check_v1_2.csv + data/coverage_queue_adversarial_verify_v1_2.json",
+    "potassium_rows": []
+  },
+  "draft_relations": [
+    {
+      "draft_id": "CQF01",
+      "source_batch": "coverage_queue_factory_v1_2",
+      "source_candidate_id": "CQ-077",
+      "ingredient": "알마게이트",
+      "nutrient": "철분",
+      "mechanism": "absorption",
+      "recommended_action": "separation",
+      "evidence_level": "high",
+      "display_text_ko": "알마게이트을(를) 복용하는 경우 철분과(와) 같은 시간대 복용 시 흡수에 영향이 있을 수 있어, 시간 간격을 두는 것이 도움이 될 수 있습니다.",
+      "management_ko": "구체적인 간격이나 보충 여부는 약사 또는 의사와 상담하세요.",
+      "product_link_allowed": true,
+      "potassium_safety_card": false,
+      "requires_clinical_review": false,
+      "source_confirmed": true,
+      "published": false,
+      "clinical_reviewed": false,
+      "reviewed_by": "",
+      "review_required": true,
+      "source_required": true,
+      "do_not_implement_yet": true,
+      "live_integration_forbidden": true,
+      "adversarial_verified": true,
+      "risk_level": "low",
+      "note": "precheck rank 77 (소화/위장); 알루미늄·마그네슘 복합 제산제. 제산제는 위 산도 상승으로 철분 흡수저해 및 다른 약물 킬레이션 라벨 동거어 개연성 높음. 안전 카테고리(소화/위장) + 흡수상호작용 → 실측 fetch 가치 있음.",
+      "source": {
+        "type": "허가사항",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199501234",
+        "pointer": "식약처 허가사항(nedrug) / 대원알마게이트정 (주성분 알마게이트, 단일성분 경구정), itemSeq 199501234 / 상호작용(병용 신중) / '(1) 비스테로이드소염진통제(NSAID), 궤양 치료제, 디기탈리스 제제, 클로르프로마진, 란소프라졸, 프레드니솔론, 페니실린, 퀴놀론, 철(Fe)염 제제 : 흡수를 감소시킬 수 있으므로 2 ∼ 3 시간 간격을 두고 복용한다.' / 확인일 2026-06-14",
+        "checked_at": "2026-06-14"
+      }
+    }
+  ]
+}

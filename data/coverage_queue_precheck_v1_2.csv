@@ -1,0 +1,101 @@
+rank,ingredient,product_count,therapeutic_class,precheck_class,proposed_nutrient,mechanism,detector_key,potassium_safety,risk_level,recovery_promoted,reason
+1,프레가발린,200,신경/뇌,rejected_precheck,,,,false,none,no,가바펜티노이드 CNS약. 허가사항에 5영양소 고갈/흡수저해 동거어 없음. seed지만 약리적 근거 부재 → rejected.
+2,피나스테리드,193,비뇨/전립선,rejected_precheck,,,,false,none,no,5알파환원효소 억제제(5ARI). 허가사항에 비타민/미네랄 고갈·흡수 상호작용 없음. 룰 명시 제외군 → rejected.
+3,몬테루카스트나트륨,186,호흡기/알레르기,rejected_precheck,,,,false,none,no,류코트리엔 수용체 길항제(호흡기/알레르기). 성분명 나트륨은 염 짝이온일 뿐 영양소 관계 아님. 5영양소 라벨 동거어 없음 → rejected.
+4,라베프라졸나트륨,174,소화/위장,already_covered_or_drafted,,,,false,none,no,"PPI, 목록 covered=yes. 이미 live relation(마그네슘/철분/B12 등)으로 covered → already_covered."
+5,모사프리드시트르산염수화물,160,소화/위장,rejected_precheck,,,,false,none,no,5-HT4 작용 위장운동개선제. 룰 명시 제외군(위장운동). 5영양소 고갈/흡수 라벨 동거어 없음 → rejected.
+6,탐스로신염산염,160,비뇨/전립선,rejected_precheck,,,,false,none,no,알파1 차단제(전립선/배뇨). 룰 명시 제외군(알파차단). 영양소 고갈/흡수 상호작용 없음 → rejected.
+7,아목시실린수화물/묽은클라불란산칼륨,159,항생/항균,rejected_precheck,,,,false,none,no,페니실린계 항생제. 성분명 클라불란산'칼륨'은 염 짝이온일 뿐 칼륨 영양소 고갈/상승 관계 아님. 항생제 자체는 5영양소 라벨 depletion 동거어 부재 → rejected.
+8,플루코나졸,156,항진균,rejected_precheck,,,,false,none,no,아졸계 항진균제. 룰 명시 제외군(항진균). 저칼륨혈증 언급은 통상 병용약 맥락이며 자체 영양소 고갈 라벨 관계 미약 → rejected.
+9,타다라필,150,비뇨/전립선,rejected_precheck,,,,false,none,no,PDE5 억제제. 룰 명시 제외군(PDE5). 영양소 고갈/흡수 상호작용 없음 → rejected.
+10,레바미피드,149,소화/위장,rejected_precheck,,,,false,none,no,위점막보호제(소화/위장). 5영양소 고갈/흡수 저해 라벨 동거어 없음 → rejected.
+11,도네페질염산염수화물,146,신경/뇌,rejected_precheck,,,,false,none,no,콜린에스터분해효소 억제제(치매약). 룰 명시 제외군(치매약). 영양소 고갈/흡수 관계 없음 → rejected.
+12,클래리트로마이신,144,항생/항균,rejected_precheck,,,,false,none,no,마크로라이드 항생제. CYP3A/QT 상호작용이 주이며 5영양소 고갈/흡수 라벨 depletion 동거어 부재 → rejected.
+13,아세클로페낙,143,해열진통/소염,rejected_precheck,,,,false,none,no,NSAID. 룰 명시 제외군(NSAID). 영양소 고갈/흡수 상호작용 없음 → rejected.
+14,에페리손염산염,142,해열진통/소염,rejected_precheck,,,,false,none,no,중추성 근이완제. 5영양소 고갈/흡수 라벨 동거어 없음 → rejected.
+15,가바펜틴,137,신경/뇌,rejected_precheck,,,,false,none,no,"가바펜티노이드 CNS약. 룰 명시 제외군. 프레가발린과 동일 약리, 영양소 고갈/흡수 관계 부재 → rejected."
+16,글리메피리드,136,당뇨,rejected_precheck,,,,false,none,no,설포닐우레아(SU) 혈당강하제. 룰 명시 제외군(혈당강하 비메트포르민). B12고갈은 메트포르민 특이 → SU는 5영양소 라벨 관계 없음 → rejected.
+17,록소프로펜나트륨수화물,135,해열진통/소염,rejected_precheck,,,,false,none,no,"NSAID. 성분명 나트륨은 염 짝이온일 뿐. 룰 명시 제외군(NSAID), 영양소 고갈/흡수 없음 → rejected."
+18,세파클러수화물,134,항생/항균,rejected_precheck,,,,false,none,no,"세팔로스포린 항생제. 일부 경구 세팔로스포린은 제산제(칼슘/마그네슘/철)와 흡수 상호작용 언급될 수 있어 absorption 동거어 개연성 약간 있으나, 세파클러 자체 라벨엔 미네랄 흡수 킬레이션 표기 통상 없음(퀴놀론·테트라사이클린과 달리) → 개연성 낮아 rejected."
+19,쿠에티아핀푸마르산염,130,정신건강(민감),sensitive_hold,,,,false,high,no,"비정형 항정신병약, 정신건강 민감 카테고리(sensitive=yes). fetch 금지·검토만 → sensitive_hold."
+20,사르포그렐레이트염산염,120,고혈압/심혈관,sensitive_hold,,,,false,high,no,"5-HT2 길항 항혈소판제. 항혈전/항혈소판은 룰 명시 민감 카테고리 → source_check_candidate 금지, sensitive_hold."
+21,레보드로프로피진,119,호흡기/알레르기,rejected_precheck,,,,false,none,no,말초성 진해제(진해거담). 룰 명시 제외군. 영양소 고갈/흡수 관계 없음 → rejected.
+22,솔리페나신숙신산염,115,비뇨/전립선,rejected_precheck,,,,false,none,no,항무스카린(과활동성방광). 5영양소 고갈/흡수 라벨 동거어 없음 → rejected.
+23,토피라메이트,115,신경/뇌,rejected_precheck,,,,false,none,no,항전간제. 탄산탈수효소 억제로 대사성산증 관련이나 5개 검출 영양소(칼륨/Mg/철/칼슘/아연) 중 라벨 depletion 동거어로 확립된 것 미약. 칼륨 변화 방향 모호 → rejected.
+24,테르비나핀염산염,114,항진균,rejected_precheck,,,,false,none,no,알릴아민 항진균제. 룰 명시 제외군(항진균). 영양소 고갈/흡수 관계 없음 → rejected.
+25,메트포르민,113,당뇨,already_covered_or_drafted,,,,false,none,no,"목록 covered=yes. B12고갈로 이미 covered(단 B12는 detector 부재, 기존 live relation 존재) → already_covered."
+26,히드로클로로티아지드,113,고혈압/심혈관,already_covered_or_drafted,,,,false,,no,목록 covered=yes·seed. 티아지드 이뇨제는 칼륨/마그네슘 고갈이 허가사항에 실재하나 이미 live relation으로 covered되어 재fetch 불필요.
+27,플루옥세틴염산염,110,기타,sensitive_hold,,,,false,high,no,SSRI 항우울제 = 정신건강 민감 카테고리. fetch 금지·검토만. SIADH/저나트륨 연관은 있으나 나트륨은 detector 부재이고 민감군이므로 source_check 불가.
+28,메만틴염산염,109,신경/뇌,rejected_precheck,,,,false,,no,NMDA 길항 치매약. 허가사항에 5영양소 고갈/흡수저해 동거어 개연성 없음. 치매약은 reject 카테고리.
+29,에르도스테인,109,기타,rejected_precheck,,,,false,,no,점액용해 진해거담제. 5영양소 depletion/absorption 라벨 동거어 개연성 없음. 진해거담은 reject 카테고리.
+30,파모티딘,106,소화/위장,rejected_precheck,,,,false,,no,"H2차단제. 위산저하로 B12·철·Mg 흡수 영향 문헌은 있으나 B12=detector 부재, literature_only. 한국 허가사항에 5영양소 고갈/흡수 동거어 명시 개연성 낮음 → rejected."
+31,로수바스타틴칼슘,105,고지혈증,rejected_precheck,,,,false,,no,스타틴×CoQ10는 literature_only·CoQ10 detector 부재. 성분명 칼슘은 염 짝이온일 뿐 영양소 관계 아님. 허가사항에 5영양소 고갈/흡수 없음 → rejected(literature_only).
+32,실로스타졸,103,고혈압/심혈관,rejected_precheck,,,,false,,no,PDE3 억제 항혈소판/말초혈관확장제. 허가사항에 5영양소 고갈/흡수 동거어 개연성 없음 → rejected.
+33,에스시탈로프람옥살산염,103,정신건강(민감),sensitive_hold,,,,false,high,no,목록 sensitive=yes. SSRI 항우울제 = 정신건강 민감 카테고리. fetch 금지·검토만.
+34,로사르탄칼륨,101,고혈압/심혈관,sensitive_hold,,,,false,high,no,ARB. 성분명 칼륨은 염 짝이온일 뿐 영양소 관계 아니며 ARB는 혈청 K 상승방향(고칼륨혈증 위험) = 고갈과 반대. 칼륨 상승방향 → sensitive_hold.
+35,오셀타미비르인산염,101,기타,rejected_precheck,,,,false,,no,뉴라미니다아제 억제 항바이러스제. 허가사항에 5영양소 고갈/흡수 동거어 개연성 없음. 항바이러스는 reject 카테고리.
+36,올로파타딘염산염,100,기타,rejected_precheck,,,,false,,no,2세대 항히스타민제. 5영양소 depletion/absorption 라벨 동거어 개연성 없음. 항히스타민은 reject 카테고리.
+37,아세트아미노펜/트라마돌염산염,99,해열진통/소염,rejected_precheck,,,,false,,no,아세트아미노펜+오피오이드 진통 복합제. 5영양소 고갈/흡수 상호작용 없음 → rejected.
+38,덱시부프로펜,99,기타,rejected_precheck,,,,false,,no,NSAID(이부프로펜 활성이성질체). 허가사항에 5영양소 고갈/흡수 없음. NSAID는 reject 카테고리.
+39,멜록시캄,99,해열진통/소염,rejected_precheck,,,,false,,no,선택적 COX-2 우세 NSAID. 5영양소 depletion/absorption 동거어 없음. NSAID는 reject 카테고리.
+40,레보세티리진염산염,99,호흡기/알레르기,rejected_precheck,,,,false,,no,2세대 항히스타민제. 5영양소 고갈/흡수 라벨 동거어 개연성 없음. 항히스타민은 reject 카테고리.
+41,콜린알포세레이트,99,신경/뇌,rejected_precheck,,,,false,,no,콜린성 뇌대사개선제(치매보조). 5영양소 고갈/흡수 상호작용 없음. 치매/뇌약은 reject 카테고리.
+42,베포타스틴베실산염,97,기타,rejected_precheck,,,,false,,no,2세대 항히스타민제. 5영양소 depletion/absorption 동거어 개연성 없음. 항히스타민은 reject 카테고리.
+43,이부프로펜,94,해열진통/소염,rejected_precheck,,,,false,,no,NSAID. 허가사항에 5영양소 고갈/흡수 없음. NSAID는 reject 카테고리.
+44,두타스테리드,94,비뇨/전립선,rejected_precheck,,,,false,,no,5알파환원효소억제제(전립선/탈모). 5영양소 고갈/흡수 상호작용 없음. 5ARI는 reject 카테고리.
+45,레보플록사신,91,항생/항균,already_covered_or_drafted,,,,false,,no,목록 covered=yes·seed. 플루오로퀴놀론은 칼슘/철/아연/Mg 양이온 킬레이션 흡수저해가 허가사항에 실재하나 이미 live relation으로 covered됨.
+46,트라마돌염산염/아세트아미노펜,88,해열진통/소염,rejected_precheck,,,,false,,no,오피오이드+아세트아미노펜 진통 복합제(rank37 성분순서만 다른 동일조합). 5영양소 고갈/흡수 없음 → rejected.
+47,피오글리타존염산염,88,당뇨,rejected_precheck,,,,false,,no,TZD 혈당강하제. 메트포르민 외 혈당강하제는 5영양소 고갈/흡수 없음. 비메트포르민 혈당강하제는 reject 카테고리.
+48,발사르탄,87,고혈압/심혈관,sensitive_hold,,,,false,high,no,ARB. 혈청 칼륨 상승방향(고칼륨혈증 위험)으로 고갈과 반대. 칼륨 상승방향 → sensitive_hold.
+49,모메타손푸로에이트,86,기타,rejected_precheck,,,,false,,no,국소/비강/흡입 코르티코스테로이드. 전신 흡수 미미하여 전신 칼륨 고갈 개연성 없음. 국소·외용 스테로이드는 reject 카테고리(전신 메틸프레드니솔론 DF01과 구분).
+50,레보설피리드,85,기타,rejected_precheck,,,,false,,no,도파민 길항 위장운동개선제. 5영양소 고갈/흡수 동거어 개연성 없음. 위장운동개선제는 reject 카테고리.
+51,리바록사반(미분화),85,항혈전(민감),sensitive_hold,,,,false,high,no,직접작용 Factor Xa 억제 항응고제(DOAC). 항응고/항혈전 민감 카테고리이므로 fetch 금지·검토만. 5영양소 고갈/흡수 라벨 동거어 개연성도 낮음.
+52,아토르바스타틴칼슘삼수화물,84,고지혈증,rejected_precheck,,,,false,low,no,스타틴×CoQ10는 literature_only이고 CoQ10는 detector 부재. 성분명의 '칼슘'은 염 짝이온일 뿐 영양소 관계 아님. 허가사항에 5영양소 depletion/absorption 개연성 없음 → rejected(literature_only).
+53,아세틸시스테인,82,호흡기/알레르기,rejected_precheck,,,,false,low,no,점액용해제/글루타치온 전구체. 허가사항에 5영양소(칼륨·Mg·철·칼슘·아연) 고갈이나 흡수저해 동거어 개연성 없음 → rejected.
+54,세프트리악손나트륨수화물,81,기타,rejected_precheck,,,,false,low,no,주사제 전용 3세대 세팔로스포린(경구 아님)이며 칼슘 함유 수액과의 침전 경고는 약물상호작용이지 영양소 고갈/흡수 관계 아님 → rejected. (주사제 전용 규정에도 부합)
+55,실데나필시트르산염,77,기타,rejected_precheck,,,,false,low,no,PDE5 억제제. 규정상 PDE5는 명시적 reject 카테고리. 허가사항에 5영양소 고갈/흡수 상호작용 없음 → rejected.
+56,다파글리플로진프로판디올수화물,75,당뇨,rejected_precheck,,,,false,low,no,SGLT2 억제제. SGLT2i×Mg는 혈청 Mg를 오히려 상승시켜(고갈 아님) 방향 불일치 → rejected. 5영양소 고갈 개연성 없음.
+57,카르베딜롤,73,고혈압/심혈관,rejected_precheck,,,,false,low,no,알파/베타 차단제. 규정상 베타차단제는 명시적 reject 카테고리. 허가사항에 5영양소 고갈/흡수 동거어 없음 → rejected.
+58,시타글립틴염산염수화물,73,당뇨,rejected_precheck,,,,false,low,no,DPP-4 억제제. 규정상 DPP4는 명시적 reject 카테고리(비메트포르민 혈당강하제). 5영양소 고갈/흡수 개연성 없음 → rejected.
+59,클로피도그렐황산염,72,항혈전(민감),sensitive_hold,,,,false,high,no,P2Y12 항혈소판제. 항혈전 민감 카테고리이므로 fetch 금지·검토만 → sensitive_hold. 5영양소 고갈/흡수 개연성도 없음.
+60,에피나스틴염산염,70,기타,rejected_precheck,,,,false,low,no,2세대 항히스타민제. 규정상 항히스타민은 명시적 reject 카테고리. 허가사항에 5영양소 고갈/흡수 동거어 없음 → rejected.
+61,시프로플록사신,69,항생/항균,already_covered_or_drafted,철분,absorption,iron_absorption,false,low,no,플루오로퀴놀론×다가양이온(철/칼슘/마그네슘/아연) 킬레이션은 잘 알려진 관계이나 목록 covered=yes이므로 이미 live relation으로 covered → already_covered_or_drafted.
+62,이반드론산나트륨일수화물,69,골다공증,already_covered_or_drafted,칼슘,absorption,calcium_absorption,false,low,no,비스포스포네이트×칼슘/철/마그네슘 양이온 흡수 킬레이션 관계이나 목록 covered=yes이므로 이미 covered → already_covered_or_drafted.
+63,트리메부틴말레산염,65,소화/위장,rejected_precheck,,,,false,low,no,위장운동 개선제. 규정상 위장운동개선제는 명시적 reject 카테고리. 5영양소 고갈/흡수 동거어 개연성 없음 → rejected.
+64,발사르탄/암로디핀베실산염,63,고혈압/심혈관,sensitive_hold,,,,false,high,no,ARB(발사르탄)+CCB 복합제. ARB는 칼륨을 상승시키는 방향(고칼륨혈증 위험)이므로 칼륨 상승방향 민감 카테고리 → sensitive_hold. CCB는 reject 대상이나 ARB 동반으로 민감 우선.
+65,세티리진염산염,63,호흡기/알레르기,rejected_precheck,,,,false,low,no,2세대 항히스타민제. 규정상 항히스타민은 명시적 reject 카테고리. 5영양소 고갈/흡수 동거어 없음 → rejected.
+66,텔미사르탄/암로디핀베실산염,62,고혈압/심혈관,sensitive_hold,,,,false,high,no,ARB(텔미사르탄)+CCB 복합제. ARB는 칼륨 상승방향(고칼륨혈증 위험)이므로 칼륨 상승방향 민감 카테고리 → sensitive_hold.
+67,록시트로마이신,60,기타,rejected_precheck,,,,false,low,no,마크로라이드계 항생제. 다가양이온 킬레이션은 테트라사이클린/퀴놀론 특이적이며 마크로라이드는 5영양소 흡수저해/고갈 라벨 동거어 개연성 낮음 → rejected.
+68,메틸프레드니솔론,60,기타,already_covered_or_drafted,칼륨,depletion,potassium,true,moderate,no,"전신 코르티코스테로이드는 칼륨 고갈(저칼륨혈증) 라벨 동거어가 실재하나, 메틸프레드니솔론×칼륨은 이미 직전 라운드 draft batch DF01 confirmed-hold 항목 → already_covered_or_drafted."
+69,니세르골린,60,고혈압/심혈관,rejected_precheck,,,,false,low,no,에르고 알칼로이드계 뇌혈류개선제(말초/뇌순환). 5영양소 고갈/흡수 라벨 동거어 개연성 없음 → rejected.
+70,텔미사르탄,59,고혈압/심혈관,sensitive_hold,,,,false,high,no,ARB 단일제. ARB는 칼륨 상승방향(고칼륨혈증 위험)이므로 칼륨 상승방향 민감 카테고리 → sensitive_hold. fetch 금지.
+71,로수바스타틴칼슘/에제티미브,59,고지혈증,rejected_precheck,,,,false,low,no,"스타틴+콜레스테롤 흡수억제제 복합제. 스타틴×CoQ10는 literature_only(detector 부재), '칼슘'은 염 짝이온일 뿐. 5영양소 고갈/흡수 라벨 개연성 없음 → rejected(literature_only)."
+72,아픽사반,59,항혈전(민감),sensitive_hold,,,,false,high,no,Factor Xa 억제 DOAC. 항응고/항혈전 민감 카테고리이므로 fetch 금지·검토만 → sensitive_hold. 5영양소 고갈/흡수 개연성도 없음.
+73,피마사르탄칼륨삼수화물/에스암로디핀베실산염2.5수화물,57,고혈압/심혈관,sensitive_hold,,,,false,high,no,"ARB(피마사르탄)+CCB 복합제. 성분명의 '칼륨'은 염 짝이온일 뿐 영양소 관계 아니며, ARB는 칼륨 상승방향(고칼륨혈증 위험) → sensitive_hold."
+74,에제티미브/심바스타틴,56,고지혈증,rejected_precheck,,,,false,low,no,콜레스테롤 흡수억제제+스타틴 복합제. 스타틴×CoQ10는 literature_only(detector 부재). 5영양소 고갈/흡수 라벨 동거어 개연성 없음 → rejected(literature_only).
+75,클로피도그렐황산수소염,55,항혈전(민감),sensitive_hold,,,,false,high,no,P2Y12 항혈소판제(rank 59와 동일 성분 다른 염). 항혈전 민감 카테고리이므로 fetch 금지·검토만 → sensitive_hold.
+76,심바스타틴,55,고지혈증,rejected_precheck,,,,false,,no,스타틴×CoQ10는 잘 알려진 literature_only 관계이나 CoQ10는 detector 5영양소가 아님. 한국 허가사항에 칼륨/Mg/철/칼슘/아연 고갈·흡수 동거어 개연성 없음. literature_only → rejected.
+77,알마게이트,54,소화/위장,source_check_candidate,철분,absorption,iron_absorption,false,low,no,알루미늄·마그네슘 복합 제산제. 제산제는 위 산도 상승으로 철분 흡수저해 및 다른 약물 킬레이션 라벨 동거어 개연성 높음. 안전 카테고리(소화/위장) + 흡수상호작용 → 실측 fetch 가치 있음.
+78,알렌드론산,52,골다공증,already_covered_or_drafted,칼슘,absorption,calcium_absorption,false,low,no,비스포스포네이트는 칼슘과 상호 흡수저해(공복 복용·칼슘과 시간 분리 라벨)로 이미 live relation covered=yes. fetch 불필요.
+79,리스페리돈,52,기타,sensitive_hold,,,,false,high,no,비정형 항정신병약 = 정신건강 민감 카테고리. fetch 금지·검토만. 영양소 고갈/흡수 관계도 약함.
+80,미녹시딜,52,기타,rejected_precheck,,,,false,,no,"혈관확장제(경구는 고혈압, 국소는 탈모). 5영양소 고갈/흡수 라벨 동거어 개연성 없음. 칼륨 채널 개방제이나 혈청 칼륨 저하 방향 아님(저류·부종이 오히려 이슈) → rejected."
+81,디클로페낙나트륨,51,해열진통/소염,rejected_precheck,,,,false,,no,NSAID. NSAID는 허가사항에 5영양소 고갈/흡수 상호작용이 없음(가이드 명시 reject 카테고리). 성분명 '나트륨'은 염 짝이온일 뿐 영양소 관계 아님 + 나트륨은 detector 부재 → rejected.
+82,에제티미브/아토르바스타틴칼슘삼수화물,51,고지혈증,rejected_precheck,,,,false,,no,스타틴+에제티미브 복합. 스타틴×CoQ10는 detector 부재 literature_only. 성분명 '칼슘'은 아토르바스타틴의 염 짝이온일 뿐 칼슘 영양소 관계 아님 → rejected.
+83,다파글리플로진프로판디올수화물/시타글립틴인산염수화물,51,당뇨,rejected_precheck,,,,false,,no,"SGLT2i + DPP4i 복합. SGLT2i×Mg는 혈청 Mg 상승 방향(고갈 아님)으로 방향 불일치, DPP4i는 영양소 관계 없음. 비메트포르민 혈당강하제 → rejected."
+84,플루르비프로펜,51,기타,rejected_precheck,,,,false,,no,프로피온산 계열 NSAID. NSAID는 5영양소 고갈/흡수 허가사항 동거어 없음 → reject 카테고리.
+85,칸데사르탄실렉세틸,50,고혈압/심혈관,sensitive_hold,칼륨,,,false,high,no,ARB(사르탄)은 혈청 칼륨 상승 방향(고칼륨혈증 위험)으로 칼륨 상승 카테고리 = sensitive_hold. fetch 금지. 칼륨 고갈 detector 방향과 반대.
+86,엠파글리플로진,50,당뇨,rejected_precheck,,,,false,,no,SGLT2 억제제. SGLT2i×Mg는 혈청 Mg 상승 방향으로 고갈 아님(방향 불일치) → rejected.
+87,리바스티그민타르타르산염,50,기타,rejected_precheck,,,,false,,no,콜린에스터분해효소 억제제(치매약). 치매약은 5영양소 고갈/흡수 허가사항 동거어 없음 → reject 카테고리.
+88,니자티딘,48,소화/위장,rejected_precheck,,,,false,,no,H2 수용체 차단제. H2×B12 고갈은 잘 알려졌으나 B12는 detector 5영양소가 아님(literature_only). 산 억제로 철분 흡수 영향이 이론상 있으나 H2는 PPI보다 약하고 한국 라벨에 5영양소 동거어 개연성 낮음 → literature_only reject.
+89,라푸티딘,48,소화/위장,rejected_precheck,,,,false,,no,"H2 수용체 차단제. H2×B12(detector 부재) literature_only, 한국 허가사항에 5영양소 고갈/흡수 동거어 개연성 낮음 → reject."
+90,아젤라스틴염산염,48,기타,rejected_precheck,,,,false,,no,항히스타민제(비강·점안). 항히스타민은 5영양소 고갈/흡수 허가사항 동거어 없음 → reject 카테고리.
+91,리도카인,48,기타,rejected_precheck,,,,false,,no,국소마취제. 국소·국부 작용으로 5영양소 고갈/흡수 라벨 동거어 없음 → reject 카테고리.
+92,이트라코나졸고체분산체,47,항진균,rejected_precheck,,,,false,,no,아졸계 항진균제. 항진균제는 5영양소 고갈/흡수 허가사항 동거어 없음(reject 카테고리). 이트라코나졸 흡수는 위산도에 의존하나 이는 제산제→이트라 방향이며 영양소 관계 아님 → rejected.
+93,암로디핀베실산염/올메사르탄메독소밀,47,고혈압/심혈관,sensitive_hold,칼륨,,,false,high,no,CCB + ARB(올메사르탄) 복합. ARB 성분이 혈청 칼륨 상승 방향(고칼륨혈증 위험) = 칼륨 상승 카테고리 → sensitive_hold. fetch 금지.
+94,아스피린,47,기타,sensitive_hold,,,,false,high,no,항혈소판제(저용량 심혈관 예방 다수). 항혈소판·항혈전은 민감 카테고리 → sensitive_hold. fetch 금지·검토만.
+95,보노프라잔푸마르산염,46,기타,source_check_candidate,철분,absorption,iron_absorption,false,low,no,P-CAB(칼륨 경쟁적 산분비 차단제). 강력한 산 억제로 PPI 유사하게 철분 흡수저해(산 의존 비헴철 흡수) 라벨 동거어 개연성 있음. 안전 카테고리(소화/위장) + 흡수 → 실측 fetch 가치. 성분명 '칼륨 경쟁적'은 기전명일 뿐 칼륨 영양소 관계 아님.
+96,툴로부테롤,46,기타,rejected_precheck,,,,false,,no,"베타2 작용제(기관지확장, 패치). 베타작용제는 일시적 세포내 칼륨 이동(transient shift)일 뿐 영양소 고갈 아니며 한국 허가사항에 칼륨 고갈 상호작용 동거어로 인정되지 않음 → reject."
+97,엔테카비르,45,기타,rejected_precheck,,,,false,,no,B형간염 항바이러스제. 항바이러스제는 5영양소 고갈/흡수 허가사항 동거어 없음 → reject 카테고리.
+98,데스모프레신아세트산염,45,기타,rejected_precheck,,,,false,,no,바소프레신 유사체(야뇨·요붕증). 저나트륨혈증 경고가 핵심이나 나트륨은 detector 부재. 5영양소(칼륨/Mg/철/칼슘/아연) 고갈/흡수 라벨 동거어 없음 → rejected.
+99,베타메타손발레레이트/겐타마이신황산염,45,기타,rejected_precheck,,,,false,,no,국소 스테로이드(베타메타손) + 국소 항생제(겐타마이신) 외용 복합제. 전신 코르티코스테로이드는 칼륨 고갈 관계가 있으나 이는 국소·외용제로 전신흡수 미미 → 가이드의 국소·외용 스테로이드 reject 카테고리.
+100,세틸피리디늄염화물,45,기타,rejected_precheck,,,,false,,no,구강 소독·방부제(인후 트로키·가글). 국소 방부제로 전신 영양소 고갈/흡수 라벨 동거어 없음 → reject 카테고리.

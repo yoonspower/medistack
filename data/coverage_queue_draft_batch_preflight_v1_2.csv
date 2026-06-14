@@ -1,0 +1,2 @@
+draft_id,source_candidate_id,ingredient,nutrient,mechanism,action,potassium_safety_card,product_link_allowed,source_itemseq,evidence_strength,adversarial_verdict,risk_level,published,clinical_reviewed,reviewed_by,do_not_implement_yet,live_integration_forbidden,pass_to_integrate,checked_at
+CQF01,CQ-077,알마게이트,철분,absorption,separation,false,true,199501234,high,confirm,low,false,false,,true,true,false(PM 승인 별도 단계),2026-06-14

@@ -1,0 +1,68 @@
+{
+  "schema": "coverage_queue_adversarial_verify_v1_2",
+  "created_at": "2026-06-14",
+  "method": "독립 회의론자 3 라벨 재fetch + 6렌즈 refute-by-default(majority>=2 confirm). medistack-cq-adversarial-verify workflow.",
+  "do_not_implement_yet": true,
+  "summary": {
+    "candidates_checked": 1,
+    "confirmed_before_adversarial": 1,
+    "confirmed_after_adversarial": 1,
+    "refuted": 0
+  },
+  "verifications": [
+    {
+      "candidate_id": "CQ-077",
+      "ingredient": "알마게이트",
+      "nutrient": "철분",
+      "itemseq_used": "199501234",
+      "product": "대원알마게이트정 (주성분 알마게이트, 단일성분 경구정)",
+      "confirm_votes": 3,
+      "total_votes": 3,
+      "final_verdict": "confirm",
+      "corrected_evidence_quote": "(1) 비스테로이드소염진통제(NSAID), 궤양 치료제, 디기탈리스 제제, 클로르프로마진, 란소프라졸, 프레드니솔론, 페니실린, 퀴놀론, 철(Fe)염 제제 : 흡수를 감소시킬 수 있으므로 2 ∼ 3 시간 간격을 두고 복용한다.",
+      "lens_summary": {
+        "nutrient_co_listed": true,
+        "direction_correct": true,
+        "negation_absent": true,
+        "domestic_single_oral_product": true,
+        "not_class_overreach": true,
+        "copy_reads_as_reference_not_instruction": true
+      },
+      "verdicts": [
+        {
+          "nutrient_co_listed": true,
+          "direction_correct": true,
+          "negation_absent": true,
+          "domestic_single_oral_product": true,
+          "not_class_overreach": true,
+          "copy_reads_as_reference_not_instruction": true,
+          "verdict": "confirm",
+          "corrected_evidence_quote": "(1) 비스테로이드소염진통제(NSAID), 궤양 치료제, 디기탈리스 제제, 클로르프로마진, 란소프라졸, 프레드니솔론, 페니실린, 퀴놀론, 철(Fe)염 제제 : 흡수를 감소시킬 수 있으므로 2 ∼ 3 시간 간격을 두고 복용한다.",
+          "reasoning": "직접 재fetch한 라벨 원문이 주장을 뒷받침한다. 모든 6개 렌즈 통과: (1) nutrient_co_listed — '철(Fe)염 제제'가 \"함께 복용하는 약물의 흡수·배설에 영향을 줄 수 있으므로\" 라는 명백한 병용주의/상호작용 문맥에 명시됨(첨가제/조성 아님). 두 위치 모두에서 상호작용 섹션 등장. (2) direction_correct — \"흡수를 감소시킬 수 있으므로 2∼3 시간 간격을 두고 복용한다\"로 흡수 감소+복용 간격(absorption/separation) 방향이 정확. 흡수 증가나 빈혈 이상반응 무관 항목 아님. (3) negation_absent — 철 언급 근방에 '영향 없음/임상적 관련성 없음' 등 완화·부정 문구 없음. 오히려 효과를 단언함. (4) domestic_single_oral_product — 대원알마게이트정, 주성분 알마게이트 단일성분 경구정, 국내 완제품. 수출/원료/복합/주사 아님. (5) not_class_overreach — 근거가 알마게이트 자신의 식약처 라벨이며 타 제산제 계열 일반화 아님. (6) copy_reads_as_reference_not_instruction — 제안 카피가 \"영향이 있을 수 있어\", \"도움이 될 수 있습니다\" 등 참고정보 톤(복용지시/추천/구매 아님). 적대적 검증에도 반증 근거를 찾지 못함 → confirm."
+        },
+        {
+          "nutrient_co_listed": true,
+          "direction_correct": true,
+          "negation_absent": true,
+          "domestic_single_oral_product": true,
+          "not_class_overreach": true,
+          "copy_reads_as_reference_not_instruction": true,
+          "verdict": "confirm",
+          "corrected_evidence_quote": "(1) 비스테로이드소염진통제(NSAID), 궤양 치료제, 디기탈리스 제제, 클로르프로마진, 란소프라졸, 프레드니솔론, 페니실린, 퀴놀론, 철(Fe)염 제제 : 흡수를 감소시킬 수 있으므로 2 ∼ 3 시간 간격을 두고 복용한다.",
+          "reasoning": "직접 재fetch한 식약처 라벨(itemSeq 199501234, 대원알마게이트정)에 철(Fe)염 제제가 두 곳에 명시됨: (a) \"주의해야 할 약 또는 음식\" 환자안내에서 의·약사 상의 대상 약물 목록, (b) 병용주의 precautions에서 \"철(Fe)염 제제 : 흡수를 감소시킬 수 있으므로 2∼3 시간 간격을 두고 복용한다\". 6렌즈 평가: ①nutrient_co_listed=PASS(상호작용/병용주의 문맥, 첨가제 아님) ②direction_correct=PASS(흡수 감소+복용간격, 정확히 absorption/separation) ③negation_absent=PASS(철 언급 근방에 '영향 없음/임상적 관련성 없음' 같은 완화·부정 문구 전무, 오히려 감소를 단정) ④domestic_single_oral_product=PASS(국내 단일성분 경구정, 알마게이트 단일주성분, 수출·원료·복합·주사 아님) ⑤not_class_overreach=PASS(알마게이트 자신의 라벨 근거, 타 제산제 계열 일반화 아님) ⑥copy_reads_as_reference_not_instruction=PASS(제안 카피 '영향이 있을 수 있어/도움이 될 수 있습니다' 헤지형 참고톤, 복용지시·추천·구매 아님). 적대적 검토: 카피는 철이 같은 시간대 복용 시 흡수에 영향이라 표현했으나 라벨상 실제로는 알마게이트의 흡착작용이 철 제제의 흡수를 감소시키는 것 — 그러나 방향(흡수 영향+간격 두기)은 일치하고 참고톤이라 중대 결함 아님. 6렌즈 전부 통과로 refute 근거 없음."
+        },
+        {
+          "nutrient_co_listed": true,
+          "direction_correct": true,
+          "negation_absent": true,
+          "domestic_single_oral_product": true,
+          "not_class_overreach": true,
+          "copy_reads_as_reference_not_instruction": true,
+          "verdict": "confirm",
+          "corrected_evidence_quote": "비스테로이드소염진통제(NSAID), 궤양 치료제, 디기탈리스 제제, 클로르프로마진, 란소프라졸, 프레드니솔론, 페니실린, 퀴놀론, 철(Fe)염 제제 : 흡수를 감소시킬 수 있으므로 2 ∼ 3 시간 간격을 두고 복용한다.",
+          "reasoning": "직접 fetch한 알마게이트정(itemSeq 199501234) 라벨 원문에서 철(Fe)염 제제가 두 곳에 명시됨: (1) 병용 시 의사·약사 상의 목록, (2) \"흡수를 감소시킬 수 있으므로 2∼3시간 간격을 두고 복용한다\"는 absorption/separation 절. 6개 렌즈 전부 통과 — (1) 철은 상호작용·병용주의 문맥에 명시(첨가제/조성 아님), (2) 방향=흡수 감소+복용 간격으로 absorption/separation 정확, (3) 철 언급 근방에 '영향 없음/임상적 관련성 없음' 완화·부정 문구 없음, (4) 국내 단일성분(알마게이트) 경구 정제 완제품, (5) 다른 제산제 계열 일반화가 아니라 알마게이트 자신의 라벨 근거, (6) 제안 카피가 '영향이 있을 수 있어/도움이 될 수 있습니다'로 참고정보 톤(복용지시·추천·구매 아님). 적대적 점검: 철염이 NSAID 등과 묶여 나열되나 절 안에 명시적으로 포함되어 흡수감소 방향이 철에 그대로 적용됨 — class overreach 아님. 반증 사유 없음."
+        }
+      ]
+    }
+  ]
+}
