@@ -1,0 +1,100 @@
+name: harvest-relation-queue
+
+# MediStack relation harvester bot — PM review queue 생성(분석 산출물 전용).
+# ⚠️ 이 워크플로우는 live relation 을 만들지도 배포하지도 않는다.
+#    봇은 data/harvest_queue/ 만 쓰고, 보호/live 데이터(export·full index·alias·src)를 한 줄도 수정하지 않는다.
+#    no-live-write 가드가 보호셋 sha256 불변을 강제하며, 위반 시 job 이 FAIL 한다.
+#
+# 트리거: 기본은 수동(workflow_dispatch). schedule 은 안정화 전까지 **비활성**(아래 주석).
+# 산출 방식: 기본 = artifact 업로드(main 무오염). commit=true 옵트인 시 전용 브랜치 + PR(직접 main push 금지).
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "offline(dry-run, fixtures · 네트워크 0) | online(실 nedrug fetch)"
+        type: choice
+        options: ["offline", "online"]
+        default: "offline"
+      commit:
+        description: "큐를 data/harvest_queue/ 에 커밋(전용 브랜치 + PR). 기본 false=artifact 만."
+        type: boolean
+        default: false
+  # 안정화 후 주석 해제(초기 비활성). KST 월 03:00 = UTC 일 18:00.
+  # schedule:
+  #   - cron: "0 18 * * 0"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: harvest-queue
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: 봇 인자 결정(mode)
+        id: cfg
+        run: |
+          if [ "${{ inputs.mode }}" = "online" ]; then
+            echo "bot_args=--online" >> "$GITHUB_OUTPUT"
+          else
+            echo "bot_args=--ingredients 세파클러,프레드니솔론,아세타졸아미드,펙소페나딘" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: SDK dry-run test (네트워크 0)
+        run: python3 medistack_sdk/test_nedrug_client_dryrun.py
+
+      - name: no-live-write 가드 + 봇 실행(보호셋 불변·write-scope·direct-http)
+        run: python3 scripts/guard_no_live_write_v1_3.py --run-bot --bot-args "${{ steps.cfg.outputs.bot_args }}"
+
+      - name: harvest queue 검증(스키마·no-live-promote·금칙어·PM smoke)
+        run: python3 scripts/validate_harvest_queue_v1_3.py
+
+      - name: live data 무수정 재검증(deploy 게이트와 동일 검증대상)
+        run: |
+          python3 scripts/validate_medistack_v0_2_export.py data/medistack_v0.2_beta_export.json
+          python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sample_v1_0.json
+
+      - name: PM review queue artifact 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: harvest-pm-review-queue
+          path: data/harvest_queue/
+
+      - name: write-scope 최종 확인(보호 경로 staged 차단)
+        if: ${{ inputs.commit }}
+        run: |
+          git add data/harvest_queue/
+          OUT_OF_SCOPE=$(git diff --cached --name-only | grep -v '^data/harvest_queue/' || true)
+          if [ -n "$OUT_OF_SCOPE" ]; then
+            echo "STOP: data/harvest_queue/ 밖 staged 변경 감지 — 커밋 중단:"; echo "$OUT_OF_SCOPE"; exit 1
+          fi
+
+      - name: 큐 커밋 → 전용 브랜치 + PR(직접 main push 금지)
+        if: ${{ inputs.commit }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "medistack-harvester-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then echo "변경 없음 — 커밋 생략"; exit 0; fi
+          BR="harvest-queue/auto-${{ github.run_id }}"
+          git checkout -b "$BR"
+          git commit -m "chore(harvest): refresh PM review queue [bot]
+
+          relation harvester bot v1.3 산출물. live relation/배포 0(do_not_implement_yet).
+          PM 검토 + source 재확인 + clinical reviewer 확보 후 별도 통합."
+          git push origin "$BR"
+          gh pr create --base "${{ github.ref_name }}" --head "$BR" \
+            --title "Harvest PM review queue refresh [bot]" \
+            --body "harvester bot v1.3 자동 생성. **live 승격/배포 0**. data/harvest_queue/ 만 변경. PM 검토용." \
+            || echo "(PR 생성 스킵 — 권한/중복)"

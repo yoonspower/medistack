@@ -1,0 +1,30 @@
+candidate_id,track,ingredient,nutrient,mechanism,relation_type,verdict,draft_eligible,itemseqs_checked,confidence,risk_level,potassium_safety_card,gate_reason,adversarial_fails,source_quote,safe_copy,live_integration_forbidden
+F-CEPH-01,nutrient,세파클러,철분,absorption,separation,reject,False,100003,label_missing,low,false,DENY: fetch 1품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지.,,,,true
+F-CEPH-02,nutrient,세푸록심,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-03,nutrient,세프포독심,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-04,nutrient,세프프로질,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-05,nutrient,세픽심,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-06,nutrient,세프라딘,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-07,nutrient,세프카펜,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-08,nutrient,세프디토렌,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-09,nutrient,세팔렉신,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+F-CEPH-10,nutrient,세프록사딘,철분,absorption,separation,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-CORT-01,nutrient,프레드니솔론,칼륨,depletion,monitoring,source_confirmed,True,100001,high,moderate,true,허가사항 직접 동거어+방향 일치+단일 경구 itemSeq 확보(verify 결정론). 적대검증 후 draft only.,,프레드니솔론정5밀리그램 이 약을 장기간 또는 고용량으로 투여하는 경우 전해질 변화로 저칼륨혈증이 나타날 수 있다. 코르티코스테로이드는 칼륨 배설을 증가시킬 수 있으므로 주의한다.,"프레드니솔론을(를) 복용하는 경우 칼륨 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다. / 칼륨은 임의로 보충하면 위험할 수 있으므로, 보충 여부는 반드시 의사 또는 약사와 상담하세요.",true
+D-CORT-02,nutrient,프레드니솔론,칼슘,absorption,monitoring,reject,False,100001,label_missing,moderate,false,DENY: fetch 1품목 상호작용/주의/이상반응 문맥에 칼슘 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지.,,,,true
+D-CORT-03,nutrient,메틸프레드니솔론,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-CORT-07,nutrient,메틸프레드니솔론,칼슘,absorption,monitoring,needs_review,False,,no_product,moderate,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-CORT-04,nutrient,덱사메타손,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-CORT-05,nutrient,하이드로코르티손,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-CORT-06,nutrient,플루드로코르티손,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-CA-01,nutrient,아세타졸아미드,칼륨,depletion,monitoring,source_confirmed,True,100002,high,moderate,true,허가사항 직접 동거어+방향 일치+단일 경구 itemSeq 확보(verify 결정론). 적대검증 후 draft only.,,아세타졸아미드정250밀리그램 탄산탈수효소 억제에 의한 이뇨작용으로 저칼륨혈증 및 대사성 산증이 나타날 수 있어 칼륨 상태를 모니터링한다.,"아세타졸아미드을(를) 복용하는 경우 칼륨 상태에 영향이 있을 수 있어, 상태 확인이 필요할 수 있습니다. / 칼륨은 임의로 보충하면 위험할 수 있으므로, 보충 여부는 반드시 의사 또는 약사와 상담하세요.",true
+D-LOOP-01,nutrient,부메타니드,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-LOOP-02,nutrient,부메타니드,마그네슘,depletion,monitoring,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-LOOP-03,nutrient,피레타니드,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-LOOP-04,nutrient,아조세미드,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-LOOP-05,nutrient,아조세미드,마그네슘,depletion,monitoring,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-THZ-01,nutrient,메토라존,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-THZ-02,nutrient,메토라존,마그네슘,depletion,monitoring,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-THZ-03,nutrient,트리클로르메티아지드,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-THZ-04,nutrient,트리클로르메티아지드,마그네슘,depletion,monitoring,needs_review,False,,no_product,low,false,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+D-THZ-05,nutrient,벤드로플루메티아지드,칼륨,depletion,monitoring,needs_review,False,,no_product,moderate,true,DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.,,,,true
+AT-FEX-01,antacid,펙소페나딘,Al/Mg 제산제(약물),antacid_interaction,antacid_interaction,antacid_draft_confirmed,True,100006,high,low,false,"Al/Mg 제산제 directive 동거어+directive 문맥+부정문구 부재+단일 경구 itemSeq → antacid draft 후보(영양소 relation 아님, live 금지).",,펙소페나딘염산염정120밀리그램 수산화알루미늄 또는 수산화마그네슘을 함유하는 제산제와 동시에 복용하면 이 약의 흡수가 저하될 수 있으므로 2시간 간격을 두고 투여한다.,"펙소페나딘과(와) 알루미늄·마그네슘이 함유된 제산제를 같은 시간에 함께 복용하면 펙소페나딘의 흡수가 줄어들 가능성이 있습니다. / 같은 시간대 복용은 피하고 시간 간격을 두는 것이 도움이 될 수 있으며, 구체적인 간격은 약사 또는 의사와 상담하세요.",true
