@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "batch": "coverage_queue_factory_batch4_v1_2",
+    "band": "Top201-300",
+    "created_at": "2026-06-14",
+    "status": "0 candidates reached adversarial verification",
+    "note": "batch4 source-check(verify_coverage_queue_sources_v1_2.py, nedrug 라벨 실측 + detector)가 source_confirmed 0건을 산출 → 적대적 검증 대상 없음. 적대검증은 confirmed 후보를 refute-by-default로 반증하는 단계인데 confirmed 가 0이라 verifications=[]. 대신 reject/needs_review 7건에 대해 라벨 직접 재대조(역방향 검증)를 수행해 false-reject(detector miss)가 아님을 확인했다(아래 reject_verification). 라이브 미반영.",
+    "confirmed_before_adversarial": 0,
+    "confirmed_after_adversarial": 0,
+    "reject_verification": [
+      {"candidate_id": "CQ-209", "ingredient": "세프프로질", "nutrient": "철분", "status": "reject", "label_recheck": "itemSeq 200400510;200400930 라벨에 철/철분/철염 직접 동거어 없음. 세팔로스포린 철 킬레이션은 성분특이(세프디니르)·계열 일반화 아님(batch3 입증). true reject."},
+      {"candidate_id": "CQ-229", "ingredient": "세프라딘", "nutrient": "철분", "status": "reject", "label_recheck": "itemSeq 199702165;199703551 라벨에 철 직접 동거어 없음. true reject."},
+      {"candidate_id": "CQ-231", "ingredient": "세프프로질", "nutrient": "철분", "status": "reject", "label_recheck": "CQ-209 동일 성분(다른 표기). 철 동거어 없음. true reject."},
+      {"candidate_id": "CQ-233", "ingredient": "아지트로마이신", "nutrient": "마그네슘", "status": "reject", "label_recheck": "itemSeq 200708447 라벨의 마그네슘 출현은 (a)스테아르산마그네슘=첨가제 (b)'저칼륨혈증·저마그네슘혈증 환자'=환자 전해질 경고뿐. 실제 상호작용은 '6.상호작용 1)제산제: 동시투여시 생체이용율 영향 없음, 최고혈청농도 24%↓, 동시 복용 금지'로 마그네슘 보충제가 아닌 제산제(antacid) 대상. 영양소(Mg) 트랙 false 아님 → true reject. ⚠️antacid_interaction 트랙(CQ-103 동형) 후보이나 생체이용율 불변으로 강도 약함."},
+      {"candidate_id": "CQ-241", "ingredient": "플루오르화나트륨", "nutrient": "칼슘", "status": "needs_review", "label_recheck": "플루오르화나트륨/불화나트륨 국내 단일 경구 완제품목 미확보(치과용 국소제형 위주). 칼슘-불화물 흡수 상호작용은 교과서적이나 actionable 국내 경구 제품 없음 → needs_review(hold)."},
+      {"candidate_id": "CQ-274", "ingredient": "트리암시놀론아세토니드", "nutrient": "칼륨", "status": "reject", "label_recheck": "itemSeq 200804589 = 구강점막 부착정(아프타구내염 국소치료, '환부 점막 접촉'). 전신 경구정 아님. 라벨에 칼륨/저칼륨/전해질 없음. 전신 코르티코스테로이드 K고갈 가설은 제형(국소/주사/관절강) 한계로 미성립 → true reject."},
+      {"candidate_id": "CQ-280", "ingredient": "레보도파", "nutrient": "철분", "status": "needs_review", "label_recheck": "레보도파 국내 단일 경구 완제품목 미확보(카르비도파±엔타카폰 복합제만 유통). 철-레보도파 킬레이션은 라벨 개연하나 복합제뿐이라 단일성분 relation 정책상 미성립 → needs_review(hold)."}
+    ]
+  },
+  "verifications": []
+}

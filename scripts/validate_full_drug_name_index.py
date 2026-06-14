@@ -179,9 +179,9 @@ def validate(doc, pool, inv):
     ck("불변: alias_count 717 (B/D +35 → A +43 → C buffer_combo +18 product alias)", inv["alias_count"] == 717, str(inv["alias_count"]))
     ck("불변: product_aliases 679 (B/D +35 → A +43 → C +18)", inv["product"] == 679, str(inv["product"]))
     ck("불변: ingredient_aliases 38", inv["ingredient"] == 38, str(inv["ingredient"]))
-    ck("불변: verified_item_seqs 1118/23 (v1.2 draft +5/클로르탈리돈·인다파미드 → CQF01 +54/알마게이트)",
-       inv["vis_total"] == 1118 and inv["vis_ing"] == 23, f"{inv['vis_total']}/{inv['vis_ing']}")
-    ck("불변: relations 58 (factory DF06·DF07 55→57 → CQF01 알마게이트×철분 57→58)", inv["relations"] == 58, str(inv["relations"]))
+    ck("불변: verified_item_seqs 1155/24 (… CQF01 +54/알마게이트 → CQF02 +37/테고프라잔)",
+       inv["vis_total"] == 1155 and inv["vis_ing"] == 24, f"{inv['vis_total']}/{inv['vis_ing']}")
+    ck("불변: relations 59 (… CQF01 57→58 → CQF02 테고프라잔×철분 58→59)", inv["relations"] == 59, str(inv["relations"]))
     ck("불변: DATA_URL", inv["data_url"] == EXPECT_DATA_URL, str(inv["data_url"]))
     ck("불변: published=false", inv["published"] is False, str(inv["published"]))
     ck("불변: clinical_reviewed=false", inv["clinical_reviewed"] is False, str(inv["clinical_reviewed"]))

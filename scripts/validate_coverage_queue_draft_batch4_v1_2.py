@@ -1,23 +1,18 @@
 #!/usr/bin/env python3
 """
-validate_coverage_queue_draft_batch3_v1_2.py
-MediStack — coverage-queue relation factory **batch3 draft batch(CQFxx) 정합성·안전성** 검증기(읽기전용).
-validate_coverage_queue_draft_batch_v1_2.py(batch2) 패턴 승계, 입력만 batch3 파일로 교체.
-batch3 는 **라이브 미반영**(live_integration_forbidden) — 어떤 draft 도 라이브에 유입되지 않아야 한다.
+validate_coverage_queue_draft_batch4_v1_2.py
+MediStack — coverage-queue relation factory **batch4 draft batch(Top201-300) 정합성·안전성** 검증기(읽기전용).
+validate_coverage_queue_draft_batch3_v1_2.py 패턴 승계, 입력만 batch4 파일로 교체.
+batch4 는 source_confirmed 0건 → draft 0건(count=0). count=0 은 정상 PASS(잘못된 relation 차단이 처리량보다 우선).
 
 강제:
-  ①모든 draft 봉인: published=false·clinical_reviewed=false·reviewed_by 공란·source_confirmed=true·
-    do_not_implement_yet=true·review_required=true·source_required=true·live_integration_forbidden=true·
-    requires_clinical_review=false
-  ②칼륨 nutrient → potassium_safety_card=true ∧ product_link_allowed=false / 비칼륨 → card=false
-  ③source {type=허가사항, url itemSeq, pointer 확인일, checked_at} 정합
-  ④카피(display/management) 금지어 0
-  ⑤후보가 실제 source_confirmed + 적대적 final_verdict=confirm (hold/reject/needs_review 미혼입)
-  ⑥금지 성분(에스오메프라졸·와파린) 미유입
-  ⑦라이브 export relations==58·published=false 불변, batch3 draft pair 라이브 미유입
-  ⑧count=0(confirmed 0) 도 정상 PASS — 잘못된 relation 차단이 처리량보다 우선
+  ①모든 draft 봉인(있다면): published/clinical/reviewed_by/seal 플래그
+  ②칼륨 nutrient → card=true ∧ link=false / 비칼륨 → card=false
+  ③source 정합 ④카피 금지어 0 ⑤source_confirmed + 적대적 confirm ⑥금지 성분 미유입
+  ⑦라이브 export relations==59(CQF01+CQF02)·published=false 불변, batch4 draft 라이브 미유입(0건이라 자명)
+  ⑧count=0 정상 PASS
 
-사용: python3 scripts/validate_coverage_queue_draft_batch3_v1_2.py
+사용: python3 scripts/validate_coverage_queue_draft_batch4_v1_2.py
 종료 코드: 0 PASS, 1 FAIL
 """
 import csv
@@ -29,9 +24,9 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 DATA = os.path.join(REPO, "data")
-BATCH = os.path.join(DATA, "coverage_queue_draft_batch3_v1_2.json")
-SRC_CSV = os.path.join(DATA, "coverage_queue_source_check_batch3_v1_2.csv")
-ADV = os.path.join(DATA, "coverage_queue_adversarial_verify_batch3_v1_2.json")
+BATCH = os.path.join(DATA, "coverage_queue_draft_batch4_v1_2.json")
+SRC_CSV = os.path.join(DATA, "coverage_queue_source_check_batch4_v1_2.csv")
+ADV = os.path.join(DATA, "coverage_queue_adversarial_verify_batch4_v1_2.json")
 EXPORT = os.path.join(DATA, "medistack_v0.2_beta_export.json")
 
 sys.path.insert(0, HERE)
@@ -41,13 +36,13 @@ FORBIDDEN_INGR = re.compile(r"(에스오메프라졸|esomeprazole|넥시움|nexi
 SEAL_TRUE = ["do_not_implement_yet", "review_required", "source_required",
              "live_integration_forbidden", "source_confirmed"]
 SEAL_FALSE = ["published", "clinical_reviewed", "requires_clinical_review"]
-LIVE_RELATIONS = 59          # CQF01 알마게이트×철분(id59) + CQF02 테고프라잔×철분(id60) 승격 반영
-PROMOTED = {"CQF02"}         # batch3 중 PM 승인 라이브 승격분(테고프라잔×철분). CQF03 칼륨은 hold.
+LIVE_RELATIONS = 59          # CQF01(id59) + CQF02(id60) 승격 반영
+PROMOTED = set()             # batch4 라이브 승격분 없음(source_confirmed 0)
 
 
 def main():
     if not os.path.exists(BATCH):
-        print(f"[STOP] batch3 draft 없음: {BATCH}")
+        print(f"[STOP] batch4 draft 없음: {BATCH}")
         return 1
     batch = json.load(open(BATCH, encoding="utf-8"))
     drafts = batch["draft_relations"]
@@ -103,14 +98,10 @@ def main():
     ck(f"라이브 relations=={LIVE_RELATIONS} (CQF01+CQF02 승격 반영)",
        len(exp["relations"]) == LIVE_RELATIONS, str(len(exp["relations"])))
     ck("라이브 published=false 불변", exp["meta"].get("published") is False)
-    # CQF02 는 PM 승인 후 라이브 승격(id 60). 그 외 batch3 draft(CQF03 칼륨)는 라이브 미유입이어야 한다.
     live_pairs = {(r.get("ingredient"), r.get("nutrient")) for r in exp["relations"]}
     leaked_live = [d["draft_id"] for d in drafts
                    if d["draft_id"] not in PROMOTED and (d["ingredient"], d["nutrient"]) in live_pairs]
-    ck("비승격 batch3 draft 라이브 미통합", not leaked_live, str(leaked_live))
-    promoted_missing = [d["draft_id"] for d in drafts
-                        if d["draft_id"] in PROMOTED and (d["ingredient"], d["nutrient"]) not in live_pairs]
-    ck("승격 draft(CQF02) 라이브 존재(승격 누락 회귀 감지)", not promoted_missing, str(promoted_missing))
+    ck("batch4 draft 라이브 미통합(0건 자명)", not leaked_live, str(leaked_live))
 
     width = max((len(n) for _, n, _ in checks), default=10)
     fails = 0
@@ -119,7 +110,7 @@ def main():
             print("[FAIL] " + name.ljust(width) + ("  " + detail if detail else ""))
             fails += 1
     print("=" * 64)
-    print(f"coverage-queue batch3 draft (count={len(drafts)}) | 검사 {len(checks)} | "
+    print(f"coverage-queue batch4 draft (count={len(drafts)}) | 검사 {len(checks)} | "
           f"RESULT: {'PASS' if not fails else 'FAIL'} ({len(checks)-fails}/{len(checks)})")
     print("=" * 64)
     return 1 if fails else 0

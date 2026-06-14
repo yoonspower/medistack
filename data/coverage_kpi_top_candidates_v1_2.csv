@@ -75,7 +75,7 @@ rank,ingredient_name,product_count,therapeutic_class,relation_covered,relation_c
 74,에제티미브/심바스타틴,56,고지혈증,no,0,,yes,no,source_check_candidate
 75,클로피도그렐황산수소염,55,항혈전(민감),no,0,,yes,yes,source_check_hold(sensitive)
 76,심바스타틴,55,고지혈증,no,0,,yes,no,source_check_candidate
-77,알마게이트,54,소화/위장,no,0,,no,no,source_check_candidate
+77,알마게이트,54,소화/위장,yes,54,알마게이트,no,no,covered
 78,알렌드론산,52,골다공증,yes,52,알렌드론산,yes,no,covered
 79,리스페리돈,52,기타,no,0,,no,no,source_check_candidate
 80,미녹시딜,52,기타,no,0,,no,no,source_check_candidate
@@ -116,7 +116,7 @@ rank,ingredient_name,product_count,therapeutic_class,relation_covered,relation_c
 115,암로디핀베실산염/로사르탄칼륨,38,고혈압/심혈관,no,0,,yes,no,source_check_candidate
 116,올메사르탄메독소밀/암로디핀베실산염,37,고혈압/심혈관,no,0,,yes,no,source_check_candidate
 117,리나글립틴,37,당뇨,no,0,,yes,no,source_check_candidate
-118,테고프라잔,37,기타,no,0,,no,no,source_check_candidate
+118,테고프라잔,37,기타,yes,37,테고프라잔,no,no,covered
 119,올란자핀,37,정신건강(민감),no,0,,no,yes,source_check_hold(sensitive)
 120,라사길린메실산염,37,기타,no,0,,no,no,source_check_candidate
 121,피타바스타틴칼슘,36,고지혈증,no,0,,yes,no,source_check_candidate

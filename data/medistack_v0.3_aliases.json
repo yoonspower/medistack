@@ -17642,6 +17642,230 @@
     "verified_at": "2026-06-14",
     "method": "nedrug.searchDrug"
    }
+  ],
+  "테고프라잔": [
+   {
+    "item_seq": "202503032",
+    "item_name": "네오테고정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202503031",
+    "item_name": "네오테고정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601045",
+    "item_name": "라이트프라잔정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601046",
+    "item_name": "라이트프라잔정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202600882",
+    "item_name": "메딕스테고프라잔정(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601070",
+    "item_name": "비바캡정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601069",
+    "item_name": "비바캡정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601298",
+    "item_name": "삼성테고프라잔정25밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601297",
+    "item_name": "삼성테고프라잔정50밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601124",
+    "item_name": "위테고정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601125",
+    "item_name": "위테고정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202503026",
+    "item_name": "제이캡정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202503027",
+    "item_name": "제이캡정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601291",
+    "item_name": "케이이일정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601289",
+    "item_name": "케이이일정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202300722",
+    "item_name": "케이캡구강붕해정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202200635",
+    "item_name": "케이캡구강붕해정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202203018",
+    "item_name": "케이캡정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "201802815",
+    "item_name": "케이캡정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202502530",
+    "item_name": "케이테라잔정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601067",
+    "item_name": "케이프라정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601068",
+    "item_name": "케이프라정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202503035",
+    "item_name": "테고이드정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202503034",
+    "item_name": "테고이드정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202500755",
+    "item_name": "테고잔정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202500754",
+    "item_name": "테고잔정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202502751",
+    "item_name": "테고캡정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202502750",
+    "item_name": "테고캡정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601117",
+    "item_name": "테고피드정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601118",
+    "item_name": "테고피드정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601041",
+    "item_name": "테고피캡정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601040",
+    "item_name": "테고피캡정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202600880",
+    "item_name": "테프란정25밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202600881",
+    "item_name": "테프란정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601005",
+    "item_name": "티티캡정50밀리그램(테고프라잔)",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601071",
+    "item_name": "파마테고프라잔정25밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   },
+   {
+    "item_seq": "202601072",
+    "item_name": "파마테고프라잔정50밀리그램",
+    "verified_at": "2026-06-14",
+    "method": "nedrug.searchDrug"
+   }
   ]
  }
 }

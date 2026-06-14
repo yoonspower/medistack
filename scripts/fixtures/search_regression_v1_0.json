@@ -75,7 +75,7 @@
     { "query": "오플록사신", "emptyIndexCount": 4, "kind": "direct", "note": "직접검색 — alias 인덱스 무관(v1.2 id45 아연 추가 → 4)" },
     { "query": "타리비드", "emptyIndexCount": 0, "kind": "alias-only", "note": "브랜드 alias 전용 — 인덱스 부재 시 브리지 소멸 → 0(정상 degrade)" }
   ],
-  "name_only_index_size": 16449,
+  "name_only_index_size": 16412,
   "name_only": [
     { "group": "covered_now", "query": "게보린", "minCount": 1, "note": "relation 0 → name_only 가 커버(브랜드 품목명)" },
     { "group": "covered_now", "query": "이부프로펜", "minCount": 5, "note": "Phase 5 10k 실측 30(상한 30)" },

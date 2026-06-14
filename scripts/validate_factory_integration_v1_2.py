@@ -57,8 +57,8 @@ def main():
     by_id = {r["id"]: r for r in rels}
     new = [r for r in rels if r["id"] in FACTORY_IDS]
 
-    ck("relations == 58 (factory DF06·DF07 + CQF01 알마게이트)", len(rels) == 58, str(len(rels)))
-    ck("meta.relation_count == 58", exp["meta"].get("relation_count") == 58, str(exp["meta"].get("relation_count")))
+    ck("relations == 59 (factory DF06·DF07 + CQF01 알마게이트 + CQF02 테고프라잔)", len(rels) == 59, str(len(rels)))
+    ck("meta.relation_count == 59", exp["meta"].get("relation_count") == 59, str(exp["meta"].get("relation_count")))
     ck("신규 ids 57·58 존재", len(new) == 2, str([r["id"] for r in new]))
     got = {(r["id"], r["ingredient"], r["nutrient"]) for r in new}
     ck("신규 = 리오티로닌×칼슘(57)·철분(58)", got == EXPECT, str(got))
@@ -95,12 +95,12 @@ def main():
 
     # 불변(리오티로닌 인덱스 0 → flip 0)
     counts = full["meta"]["counts"]
-    ck("relation_card 1131 (CQF01 알마게이트 54 flip 후 라이브 baseline)", counts.get("relation_card") == 1131, str(counts.get("relation_card")))
-    ck("name_only 16449 (CQF01 알마게이트 54 flip 후 라이브 baseline)", counts.get("name_only") == 16449, str(counts.get("name_only")))
+    ck("relation_card 1168 (CQF01 알마게이트 54 + CQF02 테고프라잔 37 flip 후 라이브 baseline)", counts.get("relation_card") == 1168, str(counts.get("relation_card")))
+    ck("name_only 16412 (CQF01 54 + CQF02 37 flip 후 라이브 baseline)", counts.get("name_only") == 16412, str(counts.get("name_only")))
     ck("total 17580 불변", counts.get("total") == 17580, str(counts.get("total")))
     ck("alias_count 717 불변", aliases["meta"].get("alias_count") == 717, str(aliases["meta"].get("alias_count")))
     vis = aliases.get("verified_item_seqs") or {}
-    ck("verified 1118/23 (CQF01 알마게이트 +54 후 라이브 baseline)", sum(len(v) for v in vis.values()) == 1118 and len(vis) == 23,
+    ck("verified 1155/24 (CQF01 +54 + CQF02 테고프라잔 +37 후 라이브 baseline)", sum(len(v) for v in vis.values()) == 1155 and len(vis) == 24,
        f"{sum(len(v) for v in vis.values())}/{len(vis)}")
 
     # 봉인
