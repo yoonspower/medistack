@@ -76,10 +76,13 @@ v1.2 = **draft 14건 라이브 통합(relation 41→55) + combo A~E 정착 + 설
 - **factory(다음 후보 생성)**: relation factory 다음 후보는 **draft/queue/문서까지만, 라이브 통합 금지**. 신규 후보는 source_status 기본값 = `needs_source / candidate_only / source_check_needed`(source_confirmed 자동 승격 금지), `do_not_implement_yet=true`. 고위험(와파린×K·항응고/항혈소판×K·항암제·임신/소아/정신건강)은 high_risk/hold 분류만.
 - **허가사항 미기재 후보 박제**: 스타틴×CoQ10(최대 커버리지 레버)·H2×B12 등은 **missing 확정 → source-policy 결정 전 영구 보류**(임의 통합 금지).
 - **검증(통합 시)**: CI 게이트 7 + 로컬 smoke/unit 11 전부 PASS(통합 보고 §4). 데이터 변경 시 **CI 전체 세트 로컬 선실행 필수**(세션 교훈).
+- **factory 대량 source check 라운드(2026-06-14, 신규)**: 후보 75건 전건 스캔 → source-checkable 33건 nedrug 허가사항 fetch + **적대적 검증(독립 agent 라벨 재fetch·4렌즈)** → **source_confirmed 7 · reject 15 · needs_review 11 · hold 42.** confirmed 7건만 **draft batch DF01–DF07**(`relation_factory_draft_batch_v1_2.json`, `live_integration_forbidden=true`, **라이브 미반영**). 적대적 검증이 F-FQ-01(목시플록사신×칼슘)을 "흡수 정도 영향 없음"으로 **reject 강등**(regex 단독 한계 보정). 상세·다음 프롬프트 = `MediStack_relation_factory_source_check_v1_2.md`. 신규 게이트(금지어 스캐너·draft batch validator·factory draft smoke) 추가, 라이브 데이터 무변경(relations 55 불변).
 
 ---
 
 ## 5. Free / Plus 설계 상태
+
+> 🎯 **우선순위 지시(2026-06-14):** **유료화/결제/구독/프리미엄·saved_stack 은 이번 단계 전면 보류.** 최우선 = **relation coverage 확장**(relation ≥1,000 · relation_card ≥10,000 · 검색 UX 안정화 전까지 유료화 구현 금지). 아래 Free/Plus·가격·기능 플래그는 **설계 동결 상태로 유지**하며 이번 라운드에 진척시키지 않는다. 작업 집중은 factory → source check → draft → live 승격 파이프라인(§4·§8).
 
 설계 문서 = `MediStack_free_plus_plan_v1_2.md`(**설계 초안 전용 — 코드/UI/데이터/결제/스키마 변경 0**). 경계만 확정됐고, 기능 플래그·결제·계정은 별도 라운드.
 
@@ -116,14 +119,17 @@ v1.2 = **draft 14건 라이브 통합(relation 41→55) + combo A~E 정착 + 설
 
 ---
 
-## 8. 다음 milestone
+## 8. 다음 milestone (coverage 우선 · 유료화 보류)
 
-1. **draft factory 다음 후보 생성(draft/queue/문서까지만, 라이브 통합 금지)** — source_status 기본값 needs_source, `do_not_implement_yet=true`, 고위험군 hold 분류만. → `MediStack_relation_factory_*` / `next_work_prompts.md` 프롬프트군.
-2. **source-policy 결정(PM/임상검토 트랙)** — 허가사항 미기재 후보(스타틴×CoQ10·H2×B12)에 이차문헌 허용 여부. 최대 커버리지 레버 해금의 전제.
-3. **Saved-stack MVP 구현 검토(별도 승인)** — localStorage 로컬·무계정·개인정보 0 설계(`saved_stack_mvp_design_v1_2.md`) 기반. Plus 첫 후보.
-4. **기능 플래그 + 결제/계정 설계(별도 라운드)** — Free 한도 잠금·Plus 해금 분기, 저가 평생 구매 1상품, StoreKit/웹 결제.
-5. **공개 전 외부 트랙** — 규제 자문(STOP #1) + relation source confirmed 승격 절차(STOP #2) + clinical reviewer 확보. 이 3종 해소 전 일반 공개 NO-GO 불변.
-6. **영양제 앱 분리 실행 기획**(본체 제품/구매/제휴 영구 0, `supplement_app_separation_strategy.md` §5 경계계약 하).
+**현재 최우선 = relation coverage 확장**(relation 55→≥1,000 · relation_card 1,077→≥10,000 · 검색 UX 안정화). 1–3 이 coverage 파이프라인, 4 는 정체성 게이트, 5–7 은 그 이후.
+
+1. **factory draft batch DF01–DF07 live 승격(PM 승인 후)** — `relation_factory_draft_batch_v1_2.json` 7건(칼륨 5·T3 흡수 2). 멱등 통합기 + 신규 id 57~ + 칼륨 안전정책 승계 + flip·verified seqs. → `MediStack_relation_factory_source_check_v1_2.md` §8 프롬프트 1.
+2. **차기 factory batch + source check 스케일업** — needs_review 11건 itemSeq 보강 + `harvest_relation_candidates.py` 신규 성분군 재생성 → `verify_factory_sources_v1_2.py` + 적대적 검증 반복. draft/queue/문서까지만, 라이브 통합 금지. → §8 프롬프트 2.
+3. **source-policy 결정(PM/임상검토 트랙)** — 허가사항 미기재 hold(스타틴×CoQ10 5건 = 최대 커버리지 레버·H2×B12 3건)에 이차문헌 허용 여부. coverage 대폭 확장 vs "허가사항 기반" 정체성.
+4. **공개 전 외부 트랙** — 규제 자문(STOP #1) + relation source confirmed 승격 절차(STOP #2) + clinical reviewer 확보. 이 3종 해소 전 일반 공개 NO-GO 불변.
+5. **(보류) Saved-stack MVP 구현 검토** — 설계(`saved_stack_mvp_design_v1_2.md`)만 동결 유지. **coverage·UX 목표 달성 + 유료화 승인 전까지 착수 금지.**
+6. **(보류) 기능 플래그 + 결제/계정 + Supabase** — Free 한도/Plus 해금·저가 평생 구매·StoreKit/웹 결제·동기화. **유료화 보류 지시로 본 단계 미착수**(설계 동결).
+7. **영양제 앱 분리 실행 기획**(본체 제품/구매/제휴 영구 0, `supplement_app_separation_strategy.md` §5 경계계약 하).
 
 > 재개 트리거: '메디스택 relation factory' 또는 '메디스택 v1.2 릴리스'.
 

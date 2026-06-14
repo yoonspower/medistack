@@ -1,0 +1,8 @@
+draft_id,source_candidate_id,ingredient,nutrient,mechanism,action,potassium_safety_card,product_link_allowed,source_itemseq,evidence_strength,adversarial_verdict,risk_level,published,clinical_reviewed,do_not_implement_yet,live_integration_forbidden,pass_to_integrate,checked_at
+DF01,D-CORT-03,메틸프레드니솔론,칼륨,depletion,monitoring,true,false,199800324,high+adv_confirmed,confirm,moderate,false,false,true,true,false(PM 승인 별도 단계),2026-06-14
+DF02,D-CORT-04,덱사메타손,칼륨,depletion,monitoring,true,false,202203949,high+adv_confirmed,confirm,moderate,false,false,true,true,false(PM 승인 별도 단계),2026-06-14
+DF03,D-CORT-06,플루드로코르티손,칼륨,depletion,monitoring,true,false,199907231,high+adv_confirmed,confirm,moderate,false,false,true,true,false(PM 승인 별도 단계),2026-06-14
+DF04,D-CA-01,아세타졸아미드,칼륨,depletion,monitoring,true,false,201403403,high+adv_confirmed,confirm,moderate,false,false,true,true,false(PM 승인 별도 단계),2026-06-14
+DF05,D-LOOP-04,아조세미드,칼륨,depletion,monitoring,true,false,199001306,high+adv_confirmed,confirm,moderate,false,false,true,true,false(PM 승인 별도 단계),2026-06-14
+DF06,D-THY-02,리오티로닌,칼슘,absorption,separation,false,true,201503196,high+adv_confirmed,confirm,low,false,false,true,true,false(PM 승인 별도 단계),2026-06-14
+DF07,D-THY-03,리오티로닌,철분,absorption,separation,false,true,201503196,high+adv_confirmed,confirm,low,false,false,true,true,false(PM 승인 별도 단계),2026-06-14

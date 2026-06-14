@@ -1,0 +1,122 @@
+{
+  "schema": "relation_factory_adversarial_verify_v1_2",
+  "created_at": "2026-06-14",
+  "method": "각 source_confirmed 후보를 독립 agent가 nedrug 라벨 재fetch + 4렌즈(첨가제아님/방향정확/국내단일경구제/계열과확장아님) 반증 시도. 불확실하면 refute.",
+  "do_not_implement_yet": true,
+  "summary": {
+    "total": 8,
+    "survived_source_confirmed": [
+      "D-CORT-03",
+      "D-CORT-04",
+      "D-CORT-06",
+      "D-CA-01",
+      "D-LOOP-04",
+      "D-THY-02",
+      "D-THY-03"
+    ],
+    "downgraded": [
+      {
+        "candidate_id": "F-FQ-01",
+        "to": "reject"
+      }
+    ]
+  },
+  "verdicts": [
+    {
+      "candidate_id": "D-CORT-03",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "199800324",
+      "corrected_evidence_quote": "1) 체액ㆍ전해질 : 부종, 나트륨저류, 칼륨손실, 체액저류, 저칼륨성 알칼리혈증, 감수성 환자에 있어서 울혈성 심부전, 고혈압 등이 나타날 수 있다.",
+      "reasoning": "All four lenses PASS across three independently re-fetched MFDS labels (메니솔론정4mg 199800324, 메드론정 201207516, 메드닌정 201307854), all single-ingredient oral methylprednisolone tablets. (1) CO-LISTED: 칼륨손실 appears in the 부작용/이상반응 section under 체액ㆍ전해질, a genuine adverse-reaction electrolyte context (not excipient). (2) DIRECTION depletion: label affirmatively states the drug causes 칼륨손실 and 저칼륨성 알칼리혈증 as adverse reactions — NOT a mere contraindication; reinforced by \"메틸프레드니솔론으로 인한 저칼륨 혈증\" and \"칼륨보충이 필요할 수 있다\". This is a strong adverse-effect listing. (3) DOMESTIC SINGLE ORAL: all 전문의약품 정제 with 주성분=메틸프레드니솔론 alone (4mg); other listed items are 첨가제. (4) NOT CLASS-OVERREACH: evidence is in methylprednisolone's own labels, naming the drug explicitly. No refuting signal found; the only weaker contraindication-style mentions are supplementary, not the basis."
+    },
+    {
+      "candidate_id": "D-CORT-04",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "202203949",
+      "corrected_evidence_quote": "7) 체액ㆍ전해질 : 부종, 고혈압, 혈압상승, 저칼륨성 알칼리혈증, 나트륨저류, 체액저류, 종양용해증후군 등이 나타날 수 있다.",
+      "reasoning": "All 4 lenses pass. (1) CO-LISTED: 저칼륨 appears in genuine 이상반응(체액ㆍ전해질) AND 상호작용(이뇨제/암포테리신B 병용→저칼륨혈증) contexts, not as 첨가제 — excipients are 유당수화물,포비돈,옥수수전분 etc. (2) DIRECTION (depletion): the 이상반응 section directly lists '저칼륨성 알칼리혈증' as an adverse reaction of the drug itself ('나타날 수 있다'), so the drug causes potassium loss — this is an adverse-reaction listing, NOT a mere contraindication, so depletion direction is firmly supported. (3) DOMESTIC SINGLE ORAL: itemSeq 202203949 = 덱사하이정4밀리그램, 주성분 덱사메타손(미분화) 4.0mg, single-ingredient (단일) oral 정제, 전문의약품, (주)대웅제약, ATC H02AB02 dexamethasone — verified domestic finished single oral product. The other two seqs (부광덱사메타손정 0.75mg, 삼남덱사메타손정 0.75mg) are also confirmed single-ingredient oral dexamethasone 정제. No combo/export/raw. (4) NOT CLASS-OVERREACH: evidence is in dexamethasone's own label, not a sibling drug. Script snippet is accurate. source_confirmed."
+    },
+    {
+      "candidate_id": "D-CORT-06",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "199907231",
+      "corrected_evidence_quote": "1) 체액과 전해질 장애 : 나트륨ㆍ체액 저류, 울혈성 심부전, 칼륨소실, 저칼륨성 알칼리혈증, 고혈압, 부종, 심확대",
+      "reasoning": "Label = 플로리네프정(미분화플루드로코르티손아세테이트), 삼일제약, 전문의약품, oral 정제. 원료약품 및 분량 shows a SINGLE active ingredient (순번 1: 미분화플루드로코르티손아세테이트 0.10mg); excipients are 무수유당/탤크/벤조산나트륨/스테아르산마그네슘/유당수화물/옥수수전분/무수인산수소칼슘 — no potassium excipient, so no false positive. (1) CO-LISTED: PASS — 칼륨 appears in 이상반응 (칼륨소실, 저칼륨성 알칼리혈증) and in 상호작용/주의 (혈청 칼륨농도 검사, 칼륨 보충), not as 첨가제. (2) DIRECTION=depletion: PASS — the drug's OWN 이상반응(체액과 전해질 장애) explicitly lists 칼륨소실 + 저칼륨성 알칼리혈증; reinforced by '칼륨의 배설을 증가시킨다' and overdose 저칼륨혈증. This is a genuine adverse-effect depletion signal, not merely a contraindication. (3) DOMESTIC SINGLE ORAL: PASS — single-ingredient finished oral tablet, domestic. (4) NOT CLASS-OVERREACH: PASS — evidence is in this product's own MFDS label. Script snippet matches verbatim. All four lenses hold → source_confirmed."
+    },
+    {
+      "candidate_id": "D-CA-01",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "201403403",
+      "corrected_evidence_quote": "2) 대사 : 때때로 저칼륨혈증, 저나트륨혈증을 포함한 대사성 산증 등의 전해질평형실조, 장기치료로 인한 골연화증, 고혈당/저혈당이 나타날 수 있다.",
+      "reasoning": "Re-fetched label itemSeq 201403403 = 아세타졸정(아세타졸아미드), 한림제약(주), 전문의약품, 정제. (1) CO-LISTED: PASS — 칼륨/저칼륨 appears in genuine 이상반응·일반적주의·노인투여·과량투여 contexts; excipient list contains 인산수소칼슘(calcium), NOT potassium, so all 저칼륨 mentions are clinical. (2) DIRECTION: PASS and stronger than the script's snippet — beyond the bare contraindication (2.다음환자에는 투여하지말것: 저칼륨혈증 환자), section 4.이상반응-2)대사 explicitly lists the DRUG causing 저칼륨혈증 as an adverse reaction ('때때로 저칼륨혈증...전해질평형실조'), reinforced by 5.일반적주의-1) '이 약의 투여에 의해...저칼륨혈증을 포함한 전해질평형실조가 나타날 수 있으므로' and 노인투여-5) '고령자에서는 저나트륨혈증, 저칼륨혈증이 나타날 수 있다'. Depletion direction confirmed. (3) SINGLE ORAL: PASS — 원료약품 = 아세타졸아미드 250mg 단일, oral tablet, DUR 단일. (4) NOT CLASS-OVERREACH: PASS — evidence is in 아세타졸아미드's own label ('이 약'). All four lenses pass; the 이상반응 adverse-reaction listing upgrades this from a contraindication-only weak signal to a full confirm."
+    },
+    {
+      "candidate_id": "D-LOOP-04",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "199001306",
+      "corrected_evidence_quote": "3. 부작용 1) 대사 : 때때로 저칼륨혈증, 저나트륨혈증, 저염소혈증성 알칼리증 등의 전해질평형실조, 고뇨산혈증, BUN·혈청크레아티닌의 상승, 드물게 고혈당이 나타날 수 있으므로 충분히 관찰하고",
+      "reasoning": "All four lenses pass. Product = 유레틴정(아조세미드), a domestic finished SINGLE-ingredient ORAL tablet whose 주성분 is exactly 아조세미드 (loop diuretic). (1) CO-LISTED: 저칼륨혈증 appears in genuine 부작용/전해질·대사 and 고령자 주의 contexts, not excipient. (2) DIRECTION (depletion): decisively confirmed — beyond the weak contraindication snippet the script used (저칼륨혈증 환자 투여금지), the label has a SEPARATE adverse-reaction listing: '3. 부작용 1) 대사 : 때때로 저칼륨혈증...의 전해질평형실조' stating the drug ITSELF causes 저칼륨혈증, plus '고령자에서는 저나트륨혈증, 저칼륨혈증이 나타날 수 있다.' This is the adverse-effect signal the instructions required, not just a contraindication. (3) DOMESTIC SINGLE ORAL PRODUCT: yes, single 아조세미드 정. (4) NOT CLASS-OVERREACH: evidence is in 아조세미드's own label. The depletion direction (저칼륨혈증) is fully supported."
+    },
+    {
+      "candidate_id": "D-THY-02",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "201503196",
+      "corrected_evidence_quote": "콜레스티라민, 콜레스티마이드, 철분제제, 알루미늄함유 제산제, 탄산칼슘, 탄산란탄수화물, 세벨라머염산염과 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격을 주의하며 신중히 투여한다.",
+      "reasoning": "Product = 테트로닌정5㎍(리오티로닌나트륨), 다림바이오텍, 전문의약품, 단일성분 경구정제. (1) CO-LISTED pass: 탄산칼슘 named in 일반적 주의/상호작용 interaction listing, not in 첨가제 (excipients = D-만니톨/전분글리콜산나트륨/젤라틴/미결정셀룰로오스/스테아르산마그네슘). (2) DIRECTION pass (absorption): label explicitly states 탄산칼슘 병용투여시 '이 약의 흡수가 지연 또는 감소' — calcium-containing product reduces THIS drug's absorption, exact direction match; no 'extent not affected' refuting language. (3) DOMESTIC SINGLE ORAL pass: 원료약품 = 리오티로닌나트륨 5㎍ alone, no 레보티록신 combo, finished oral tablet, domestic mfr. (4) NOT CLASS-OVERREACH pass: evidence in 리오티로닌's own label (itemSeq 201503196). All four lenses hold → source_confirmed."
+    },
+    {
+      "candidate_id": "D-THY-03",
+      "verdict": "confirm",
+      "nutrient_co_listed": true,
+      "direction_correct": true,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "source_confirmed",
+      "itemseq_used": "201503196",
+      "corrected_evidence_quote": "5) 콜레스티라민, 콜레스티마이드, 철분제제, 알루미늄함유 제산제, 탄산칼슘, 탄산란탄수화물, 세벨라머염산염과 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격을 주의하며 신중히 투여한다.",
+      "reasoning": "All 4 lenses pass. (1) CO-LISTED: 철분제제 is named in section 6 상호작용 (interaction), not as a 첨가제 — the excipient list is D-만니톨/전분글리콜산나트륨/젤라틴/미결정셀룰로오스/스테아르산마그네슘, no iron. (2) DIRECTION (absorption): label explicitly says 철분제제 병용투여시 '이 약의 흡수가 지연 또는 감소' — iron-containing product reduces THIS drug's absorption, exactly matching the claimed direction; it says 감소(reduced), not 'extent not affected', so no F-FQ-01-style refutation. (3) DOMESTIC SINGLE ORAL PRODUCT: 테트로닌정5㎍, 원료약품 순번 1 = 리오티로닌나트륨 alone (single-ingredient, NOT a 레보티록신+리오티로닌 combo), finished oral tablet, 전문의약품 by 다림바이오텍, 허가일 2015-05-27. (4) NOT CLASS-OVERREACH: evidence is in 리오티로닌's own label (itemSeq 201503196), not borrowed from a sibling drug. Confirm."
+    },
+    {
+      "candidate_id": "F-FQ-01",
+      "verdict": "refute",
+      "nutrient_co_listed": true,
+      "direction_correct": false,
+      "domestic_single_oral_product": true,
+      "not_class_overreach": true,
+      "recommended_status": "reject",
+      "itemseq_used": "201309618",
+      "corrected_evidence_quote": "9) 칼슘 보충제 : 고용량의 칼슘 보충제와 함께 투여할 때, 흡수율이 약간 감소한 반면에 흡수 정도는 영향을 받지 않았다. 이 약의 흡수에 대한 고용량 칼슘 보충제의 영향은 임상적으로 관련성이 없는 것으로 보인다.",
+      "reasoning": "Re-fetched all 3 itemSeqs (201309618 모록사신정400mg, 201310000 모벨록신정400mg, 199906848 아벨록스정400mg) — all confirmed 완제 single-ingredient oral 목시플록사신염산염 tablets, evidence is in moxifloxacin's OWN label (lenses 1/3/4 PASS). However DIRECTION FAILS decisively: the absorption-reduction claim is REFUTED by the label's own words. The full verbatim sentence says only 흡수율(rate) was slightly reduced WHILE 흡수 정도(extent/AUC) was NOT affected, and explicitly concludes 임상적으로 관련성이 없는 것으로 보인다 (clinically not relevant). The same label elsewhere lists 칼슘보충제 among agents that 상호작용을 나타내지 않으므로 용량조절이 필요하지 않다 (no interaction, no dose adjustment). Per the F-FQ-01 CRITICAL rule, when extent is not meaningfully affected the absorption-reduction claim is refuted → reject. The script's snippet truncated the exonerating second half (clinical irrelevance), which inflated the apparent signal."
+    }
+  ]
+}
