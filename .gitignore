@@ -1,3 +1,6 @@
 .gstack/
 
 __pycache__/
+
+# harvester bot SDK 런타임(cache/raw/log) — 리뷰 큐 산출물 아님
+data/harvest_queue/_sdk/

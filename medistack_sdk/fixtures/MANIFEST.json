@@ -1,0 +1,88 @@
+{
+  "note": "SYNTHETIC test doubles for NedrugClient offline mode — NOT real nedrug responses.",
+  "purpose": "결정론적 SDK dry-run/test. 실 PM 런은 --online 으로 실응답 fetch/cache.",
+  "search_fixtures": {
+    "세파클러": [
+      [
+        "100003",
+        "세파클러캡슐250밀리그램",
+        "세파클러"
+      ]
+    ],
+    "프레드니솔론": [
+      [
+        "100001",
+        "프레드니솔론정5밀리그램",
+        "프레드니솔론"
+      ]
+    ],
+    "아세타졸아미드": [
+      [
+        "100002",
+        "아세타졸아미드정250밀리그램",
+        "아세타졸아미드"
+      ]
+    ],
+    "레보티록신": [
+      [
+        "100004",
+        "신지로이드정0.1밀리그램",
+        "레보티록신나트륨수화물"
+      ]
+    ],
+    "레보플록사신": [
+      [
+        "100005",
+        "레보플록사신정250밀리그램",
+        "레보플록사신"
+      ]
+    ],
+    "펙소페나딘": [
+      [
+        "100006",
+        "펙소페나딘염산염정120밀리그램",
+        "펙소페나딘염산염"
+      ]
+    ]
+  },
+  "detail_fixtures": {
+    "100001": {
+      "title": "프레드니솔론정5밀리그램",
+      "expected_signal": "potassium=confirmed(저칼륨혈증) / calcium=reject(미언급)"
+    },
+    "100002": {
+      "title": "아세타졸아미드정250밀리그램",
+      "expected_signal": "potassium=confirmed(저칼륨혈증)"
+    },
+    "100003": {
+      "title": "세파클러캡슐250밀리그램",
+      "expected_signal": "iron_absorption=reject(철 동거어 없음)"
+    },
+    "100004": {
+      "title": "신지로이드정0.1밀리그램",
+      "expected_signal": "zinc=reject, mg_absorption=reject(상호작용 미언급)"
+    },
+    "100005": {
+      "title": "레보플록사신정250밀리그램",
+      "expected_signal": "antacid Al/Mg directive=confirmed(separation_or_spacing) — 단 라이브 covered → dedup"
+    },
+    "100006": {
+      "title": "펙소페나딘염산염정120밀리그램",
+      "expected_signal": "antacid Al/Mg directive=confirmed(미커버 → draft 후보)"
+    }
+  },
+  "files": [
+    "detail_100001.html",
+    "detail_100002.html",
+    "detail_100003.html",
+    "detail_100004.html",
+    "detail_100005.html",
+    "detail_100006.html",
+    "search_레보티록신_p1.html",
+    "search_레보플록사신_p1.html",
+    "search_세파클러_p1.html",
+    "search_아세타졸아미드_p1.html",
+    "search_펙소페나딘_p1.html",
+    "search_프레드니솔론_p1.html"
+  ]
+}

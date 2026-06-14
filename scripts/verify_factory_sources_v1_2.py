@@ -25,14 +25,10 @@ searchDrug 파서를 승계한다.
 """
 import argparse
 import csv
-import html as htmllib
-import http.cookiejar
 import os
 import re
 import sys
 import time
-import urllib.parse
-import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -40,10 +36,9 @@ DATA = os.path.join(REPO, "data")
 OUT_CSV = os.path.join(DATA, "relation_factory_source_check_v1_2.csv")
 CHECKED_AT = "2026-06-14"
 
-UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
-DETAIL_URL = "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq={}"
-SEARCH_URL = "https://nedrug.mfds.go.kr/searchDrug?searchYn=Y&ingrName1={}&page={}"
+# SDK-only: 모든 nedrug 조회는 medistack_sdk.NedrugClient 를 통해서만(직접 urllib 호출 제거).
+sys.path.insert(0, REPO)
+from medistack_sdk import NedrugClient  # noqa: E402
 
 # 첨가제/조성표(false positive) 배제용 문맥.
 EXCIPIENT_CTX = re.compile(r"첨가제|착색|코팅|활택|부형|결합제|붕해|산화마그네슘|스테아르산마그네슘|"
@@ -52,95 +47,53 @@ ORAL_RE = re.compile(r"(정|캡슐)")
 NONORAL_RE = re.compile(r"(점안|점이|점비|주사|연고|크림|로션|겔|외용|흡입|패치|좌제|관장|시럽|현탁|가글|"
                         r"스프레이|에어로졸|틴크|패취|건조시럽|산제|좌약)")
 EXPORT_RE = re.compile(r"수출")
-ANCHOR_RE = re.compile(r'getItemDetail\?itemSeq=(\d+)"[^>]*>\s*([^<]+?)\s*</a>')
 
 
-# ----------------- 네트워크 -----------------
+# ----------------- 네트워크 (SDK 위임 — 시그니처 보존) -----------------
 def make_opener():
-    return urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+    """과거 urllib opener 대신 NedrugClient(기본=online·무캐시) 반환.
+    호출자가 캐시/오프라인/fixtures 가 필요하면 직접 NedrugClient 를 구성해 전달하면 된다."""
+    return NedrugClient()
 
 
 def fetch_detail(opener, seq):
-    url = DETAIL_URL.format(seq)
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ko,en;q=0.8"})
-    last = None
-    for _ in range(3):
-        try:
-            with opener.open(req, timeout=30) as r:
-                raw = r.read().decode("utf-8", "replace")
-            t = re.sub(r"<[^>]+>", " ", raw)
-            t = htmllib.unescape(t)
-            t = re.sub(r"\s+", " ", t)
-            return t, url
-        except Exception as e:  # noqa
-            last = e
-            time.sleep(1.5)
-    raise last
-
-
-def _field(row, label):
-    m = re.search(re.escape(f'<span class="s-th">{label}</span>') + r'(.*?)(?=<span class="s-th">|</td>|</tr>)',
-                  row, re.S)
-    if not m:
-        return ""
-    txt = re.sub(r"<[^>]+>", " ", m.group(1))
-    return " ".join(htmllib.unescape(txt).split()).strip()
+    """itemSeq → (라벨 원문, url). SDK fetch_label 위임. 빈 응답이면 raise(기존 계약 보존)."""
+    text, url = opener.fetch_label(seq)
+    if not text:
+        raise RuntimeError(f"nedrug fetch empty/failed for itemSeq {seq}")
+    return text, url
 
 
 def search_itemseqs(opener, ingredient, exclude_ingr=None, max_n=3, max_pages=2):
-    """성분명 → 국내 완제·경구·정상·단일성분 대표 itemSeq 목록(오름차순). 실패 시 ([], reason)."""
+    """성분명 → 국내 완제·경구·정상·단일성분 대표 itemSeq 목록(오름차순). 실패 시 ([], reason).
+    조회·표준화는 SDK(search_drug)가 수행하고, 여기서는 **선별 필터(경구단일완제)** 만 적용한다."""
+    rows = opener.search_drug(ingredient, max_pages=max_pages)
+    if not rows:
+        return [], "no_domestic_single_oral_product"
     picked = []
     seen = set()
-    for page in range(1, max_pages + 1):
-        url = SEARCH_URL.format(urllib.parse.quote(ingredient), page)
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ko,en;q=0.8"})
-        try:
-            with opener.open(req, timeout=25) as r:
-                html_text = r.read().decode("utf-8", "replace")
-        except Exception as e:  # noqa
-            if page == 1:
-                return [], f"network:{type(e).__name__}"
-            break
-        rows = []
-        for chunk in re.split(r"<tr[ >]", html_text):
-            if "getItemDetail?itemSeq=" not in chunk:
-                continue
-            m = ANCHOR_RE.search(chunk)
-            if not m:
-                continue
-            rows.append({
-                "item_seq": m.group(1),
-                "item_name": htmllib.unescape(m.group(2)).strip(),
-                "ingr_name": _field(chunk, "주성분"),
-                "finished": _field(chunk, "완제/원료구분"),
-                "status_cancel": _field(chunk, "취소/취하구분"),
-            })
-        if not rows:
-            break
-        for p in sorted(rows, key=lambda x: int(x["item_seq"])):
-            if len(picked) >= max_n:
-                break
-            name, seq, ingr = p["item_name"], p["item_seq"], p["ingr_name"]
-            if seq in seen:
-                continue
-            # 완제·정상·경구고형·비수출
-            if "원료" in p["finished"] or (p["finished"] and "완제" not in p["finished"]):
-                continue
-            if p["status_cancel"] and p["status_cancel"] != "정상":
-                continue
-            if EXPORT_RE.search(name) or NONORAL_RE.search(name) or not ORAL_RE.search(name):
-                continue
-            # 주성분에 성분 포함(보수적). 단일성분(복합제 '/' 제외).
-            if not ingr or ingredient not in ingr:
-                continue
-            if "/" in ingr or "," in ingr:
-                continue
-            if exclude_ingr and exclude_ingr in ingr:
-                continue
-            seen.add(seq)
-            picked.append((seq, name, ingr))
+    for p in sorted(rows, key=lambda x: int(x.item_seq) if x.item_seq.isdigit() else 0):
         if len(picked) >= max_n:
             break
+        name, seq, ingr = p.item_name, p.item_seq, p.ingr_name
+        if seq in seen:
+            continue
+        # 완제·정상·경구고형·비수출
+        if "원료" in p.finished or (p.finished and "완제" not in p.finished):
+            continue
+        if p.status_cancel and p.status_cancel != "정상":
+            continue
+        if EXPORT_RE.search(name) or NONORAL_RE.search(name) or not ORAL_RE.search(name):
+            continue
+        # 주성분에 성분 포함(보수적). 단일성분(복합제 '/' 제외).
+        if not ingr or ingredient not in ingr:
+            continue
+        if "/" in ingr or "," in ingr:
+            continue
+        if exclude_ingr and exclude_ingr in ingr:
+            continue
+        seen.add(seq)
+        picked.append((seq, name, ingr))
     if not picked:
         return [], "no_domestic_single_oral_product"
     return picked, "ok"

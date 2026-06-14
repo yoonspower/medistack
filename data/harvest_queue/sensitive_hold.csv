@@ -1,0 +1,47 @@
+candidate_id,track,ingredient,nutrient,precheck_class,precheck_reason,risk_level
+F-STA-01,nutrient,로수바스타틴,코엔자임Q10,literature_only_hold,한국 허가사항 미기재 예상(CoQ10). source-policy(이차문헌 허용) 결정 전 영구 보류.,moderate
+F-STA-02,nutrient,아토르바스타틴,코엔자임Q10,literature_only_hold,허가사항 미기재 예상. source-policy 결정 전 보류.,moderate
+F-STA-03,nutrient,심바스타틴,코엔자임Q10,literature_only_hold,허가사항 미기재 예상. 보류.,moderate
+F-STA-04,nutrient,피타바스타틴,코엔자임Q10,literature_only_hold,허가사항 미기재 예상. 보류.,moderate
+F-STA-05,nutrient,프라바스타틴,코엔자임Q10,literature_only_hold,허가사항 미기재 예상. 보류.,moderate
+F-H2-01,nutrient,파모티딘,비타민B12,literature_only_hold,A티어 확인서 미기재(missing) 확정(구 Q15/E07). 재fetch 불필요. source-policy 결정 시에만 재검토.,moderate
+F-H2-02,nutrient,라푸티딘,비타민B12,literature_only_hold,missing 확정(구 Q15/E09).,moderate
+F-H2-03,nutrient,니자티딘,비타민B12,literature_only_hold,missing 확정(구 Q15/E10).,moderate
+F-PPI-01,nutrient,일라프라졸,마그네슘,literature_only_hold,index 2품목뿐 — 한계효용 낮음. PPI class 저마그네슘 패턴은 존재하나 우선순위 hold.,low
+F-PPI-02,nutrient,일라프라졸,비타민B12,literature_only_hold,index 2품목뿐. PPI class B12 패턴 존재하나 hold.,low
+F-TET-01,nutrient,테트라사이클린,칼슘,literature_only_hold,테트라사이클린 원성분 index 1품목 — near-zero coverage. 독시/미노 톤 존재하나 hold.,low
+D-BIG-01,nutrient,부포르민,비타민B12,literature_only_hold,부포르민/펜포르민 국내 미유통 가능성 — 시장 의미 0. 현행 비구아나이드는 메트포르민 단일(id12 라이브).,low
+D-THZ-06,nutrient,히드로클로로티아지드,칼슘,literature_only_hold,치아지드는 칼슘 배설을 '감소'(고칼슘혈증 방향) — depletion 후보 아님. 혼동방지 hold. HCTZ는 K/Mg covered.,moderate
+D-SGLT2-01,nutrient,다파글리플로진,마그네슘,literature_only_hold,SGLT2는 혈청 Mg 상승 보고 우세 — depletion 가정 부적합 가능. 근거 확인 전 채택 금지.,low
+D-SGLT2-02,nutrient,엠파글리플로진,마그네슘,literature_only_hold,D-SGLT2-01과 동일 — 상승 보고 우세.,low
+F-CEPH-IDX-01,nutrient,세프디니르,철분,literature_only_hold,id42 이미 라이브. relation 신설 불필요 — index/alias 충실도 트랙(데이터 무변경).,low
+F-WAR-01,nutrient,와파린,비타민K,sensitive_hold,CLAUDE.md 영구 금지(antagonism·임상판단 행). source 확인 금지.,high
+F-DOAC-01,nutrient,리바록사반,비타민K,sensitive_hold,항응고·임상판단·출혈위험. source 확인 금지.,high
+F-DOAC-02,nutrient,아픽사반,비타민K,sensitive_hold,항응고·임상판단 영역. source 확인 금지.,high
+F-DOAC-03,nutrient,다비가트란,비타민K,sensitive_hold,항응고·임상판단 영역. source 확인 금지.,high
+F-DOAC-04,nutrient,에독사반,비타민K,sensitive_hold,항응고·임상판단 영역. source 확인 금지.,high
+F-APL-01,nutrient,아스피린(저용량 항혈소판),비타민K,sensitive_hold,항혈소판·출혈·임상판단. source 확인 금지.,high
+F-APL-02,nutrient,클로피도그렐,비타민K,sensitive_hold,항혈소판·출혈·임상판단. source 확인 금지.,high
+F-APL-03,nutrient,실로스타졸,비타민K,sensitive_hold,항혈소판·출혈·임상판단. source 확인 금지.,high
+F-ONC-01,nutrient,메토트렉세이트,엽산,sensitive_hold,항암·엽산길항·임상판단. clinical reviewer 전 대상 아님.,high
+F-ONC-02,nutrient,타목시펜,비타민D/칼슘,sensitive_hold,항암·호르몬요법·임상판단. 대상 아님.,high
+F-ONC-03,nutrient,경구 항암제 일반(이마티닙/카페시타빈 등),비타민D,sensitive_hold,고위험·seed 미포함.,high
+F-SSRI-01,nutrient,에스시탈로프람,마그네슘,sensitive_hold,정신건강 민감군·근거 불충분. clinical reviewer 트랙에서만.,high
+F-SSRI-02,nutrient,설트랄린,마그네슘,sensitive_hold,정신건강 민감군. clinical reviewer 트랙에서만.,high
+F-BZD-01,nutrient,알프라졸람,마그네슘,sensitive_hold,정신건강 민감군. clinical reviewer 트랙에서만.,high
+F-BZD-02,nutrient,졸피뎀,마그네슘,sensitive_hold,정신건강 민감군. clinical reviewer 트랙에서만.,high
+F-AP-01,nutrient,쿠에티아핀,비타민D,sensitive_hold,정신건강 민감군·근거 불충분. clinical reviewer 트랙에서만.,high
+F-OC-01,nutrient,드로스피레논,엽산,sensitive_hold,여성건강 민감군·근거 불충분. clinical reviewer 트랙에서만.,high
+F-PED-01,nutrient,소아 일반(미지정),비타민D,sensitive_hold,소아 민감군·체중당용량·근거 불충분. clinical reviewer 트랙에서만.,high
+F-HERB-01,nutrient,세인트존스워트(성요한풀),다수 약물(영양소 외),sensitive_hold,허브-약물 상호작용(CYP3A4/P-gp 유도)·광범위·고위험 — 참고정보 베타 범위 밖.,high
+F-HERB-02,nutrient,밀크씨슬(실리마린),CYP 기질 약물,sensitive_hold,허브-약물 상호작용·근거 혼재·베타 범위 밖.,moderate
+F-HERB-03,nutrient,은행잎(징코빌로바),항혈소판/항응고 약물,sensitive_hold,허브-약물 상호작용(항혈소판 강화·출혈)·베타 범위 밖.,high
+H-KSPAR-01,nutrient,스피로노락톤,칼륨,sensitive_hold,칼륨 상승(고칼륨혈증) 방향 — depletion 반대. 칼륨 보충 병용 금기 방향. PM 정책 결정 전 hold.,high
+H-KSPAR-02,nutrient,에플레레논,칼륨,sensitive_hold,칼륨 상승 방향. PM 정책 대기.,high
+H-KSPAR-03,nutrient,아밀로라이드,칼륨,sensitive_hold,칼륨 상승 방향. 국내 주로 복합제. PM 정책 대기.,high
+H-KSPAR-04,nutrient,트리암테렌,칼륨,sensitive_hold,칼륨 상승 방향. 엽산 길항은 별도 트랙. PM 정책 대기.,high
+H-WARN-01,nutrient,스피로노락톤(+ACEi/ARB 병용),칼륨,sensitive_hold,약-약 상호작용(칼륨 상승) — 약-영양소 고갈 factory 범위 밖. PM 분류.,high
+KPI-r19,kpi_scan,쿠에티아핀푸마르산염,,sensitive_hold,민감/고위험군(정신건강·항혈전·항암/면역) — clinical reviewer 트랙 전 hold.,
+KPI-r33,kpi_scan,에스시탈로프람옥살산염,,sensitive_hold,민감/고위험군(정신건강·항혈전·항암/면역) — clinical reviewer 트랙 전 hold.,
+KPI-r51,kpi_scan,리바록사반(미분화),,sensitive_hold,민감/고위험군(정신건강·항혈전·항암/면역) — clinical reviewer 트랙 전 hold.,
+KPI-r59,kpi_scan,클로피도그렐황산염,,sensitive_hold,민감/고위험군(정신건강·항혈전·항암/면역) — clinical reviewer 트랙 전 hold.,
