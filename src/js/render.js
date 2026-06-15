@@ -10,7 +10,9 @@ const ACTION = {
   // 앱은 직접 '복용하지 마세요'라 명령하지 않음(비지시) — '병용금지(허가사항)'는 라벨 directive 의 분류 라벨이다.
   avoid_concomitant: { label: '병용금지(허가사항)', chip: 'chip-avoid', aClass: 'avoid', kicker: 'Al/Mg 함유 제산제 관련 참고정보' },
 };
-const ACTION_ORDER = ['separation', 'monitoring'];
+// avoid_concomitant 는 '분류' facet 정렬 끝에 위치(현 라이브엔 avoid_concomitant relation 0건이라
+// facets.actions 에 등장하지 않음 → 정렬 무영향·production 동작 불변. AT-FEX live 통합 시 끝자리 노출).
+const ACTION_ORDER = ['separation', 'monitoring', 'avoid_concomitant'];
 const EVIDENCE_LABEL = { high: '높음', moderate: '보통' };
 const EVIDENCE_ORDER = ['high', 'moderate'];
 

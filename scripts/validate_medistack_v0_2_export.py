@@ -20,7 +20,10 @@ DEFAULT_PATH = "medistack_v0.2_beta_export.json"
 EXPECTED_TOP_KEYS = {"meta", "disclaimers", "relations", "excluded_v0_1"}
 MIN_RELATIONS = 19  # v0.1 baseline. v0.2 확장 시 이 이상.
 ALLOWED_EVIDENCE = {"high", "moderate"}            # low/antagonism 노출 금지
-ALLOWED_ACTION = {"separation", "monitoring"}      # 금기/위험판단성 action 금지
+# avoid_concomitant 는 antacid_interaction(counterpart_category=al_mg_antacid) 전용 — 라벨 병용금지를
+# 출처 귀속·비지시로 운반하는 약물×Al/Mg 제산제 트랙에서만 허용한다. 문맥 강제는 #15 가 담당
+# (enum 통과 ≠ 무조건 허용). 그 밖 금기/위험판단성 action 은 계속 금지.
+ALLOWED_ACTION = {"separation", "monitoring", "avoid_concomitant"}
 ALLOWED_MECHANISM = {"absorption", "depletion"}    # antagonism/additive 차단
 FORBIDDEN_RELATION_FIELDS = ("status", "published", "clinical_reviewed")
 POTASSIUM_NUTRIENT = "칼륨"
@@ -180,6 +183,29 @@ def main(path):
     if rels_ok:
         rc = [rid(r) for r in rels if isinstance(r, dict) and r.get("requires_clinical_review") is True]
         v.check(not rc, 14, "requires_clinical_review=true 행 없음", f"위반 id={rc}" if rc else "")
+
+    # 15) avoid_concomitant·antacid(al_mg_antacid) 안전 가드 + reviewed_by 봉인
+    #  - recommended_action=avoid_concomitant 는 antacid_interaction 전용: counterpart_category=al_mg_antacid
+    #    없으면 fail. 영양소 relation 은 counterpart_category 부재 → avoid_concomitant 사용 시 fail
+    #    (라벨 병용금지를 약물×Al/Mg 제산제 트랙 밖으로 확대 금지).
+    #  - antacid relation(counterpart_category=al_mg_antacid)은 제품/제휴 금지: product_link_allowed=false 강제
+    #    (일반 relation 은 제품 데이터 부재라 flag=true 여도 canShowProduct=false — 그 정책은 불변, antacid 만 추가 잠금).
+    #  - reviewed_by 전건 공란(clinical reviewer 미확보 — 검수 완료 오인 차단). 라이브 스키마엔 본래 부재.
+    if rels_ok:
+        bad = []
+        for r in rels:
+            if not isinstance(r, dict):
+                continue
+            ac, cc = r.get("recommended_action"), r.get("counterpart_category")
+            if ac == "avoid_concomitant" and cc != "al_mg_antacid":
+                bad.append(f"id{rid(r)} avoid_concomitant 인데 counterpart_category!=al_mg_antacid({cc!r})")
+            if cc == "al_mg_antacid" and r.get("product_link_allowed") is not False:
+                bad.append(f"id{rid(r)} antacid relation product_link_allowed!=false({r.get('product_link_allowed')!r})")
+            if nonempty(r.get("reviewed_by")):
+                bad.append(f"id{rid(r)} reviewed_by 비공란({r.get('reviewed_by')!r})")
+        v.check(not bad, 15,
+                "avoid_concomitant=antacid(al_mg_antacid) 전용 · antacid product_link=false · reviewed_by 공란",
+                "; ".join(bad))
 
     total = len(v.passes) + len(v.fails)
     overall = "PASS" if not v.fails else "FAIL"

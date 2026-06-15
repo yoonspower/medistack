@@ -438,3 +438,60 @@ antacid relation 의 `nutrient` 슬롯은 영양소가 아니라 '제산제(약�
 
 ### 18.6 안전 불변
 relations 59→60(AT-ITZ 1건만)·published/clinical_reviewed=false·reviewed_by 공란·제품/제휴 UI 0·DATA_URL v0.2·**full index/aliases/harvest_queue/excluded 무변경**·기존 59 relation 보존·src 변경=getFacets 1줄(facet 제외)뿐. AT-FEX 미통합. **본 통합은 verified_reference 천장의 참고정보 노출일 뿐 clinical_reviewed(임상 검수)·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.** clinical reviewer 확보 시 별도 `clinical_reviewed` 트랙.
+
+---
+
+> §19 는 **AT-FEX(펙소페나딘 × Al/Mg 함유 제산제, avoid_concomitant) live 통합 *준비*(2026-06-15)** 기록이다. **실제 통합은 하지 않는다**(`live_integration_forbidden=true` 유지·live 승격 0). avoid_concomitant 가 라이브 enum 에 처음 등장하는 데 필요한 validator/action-order 선행작업 + 통합 드라이런 + 안전검증까지만 수행했다. AT-FEX 는 confidence=low 이고, live 승격은 별도 PM + clinical reviewer 가 전제다.
+
+## 19. AT-FEX(펙소페나딘·avoid_concomitant) live 통합 준비 — 드라이런·선행작업만(통합 0)
+
+### 19.0 범위
+AT-FEX 는 round4 적대검증 survives(`adversarial_verified=true` 후보, §17). 단 ① avoid_concomitant 가 라이브 export relation 에 **처음** 등장하므로 v0.2 export validator·facet 정렬이 이를 안전하게 받을 수 있어야 하고, ② confidence=low + clinical reviewer 미확보라 **이번 라운드 live 통합은 금지**. 따라서 "통합 준비 상태"만 만든다(드라이런 + 검증 + 문서/프롬프트).
+
+### 19.1 선행작업 — avoid_concomitant 안전 허용(validator/action-order)
+이미 배포된 `src/js/render.js` ACTION 맵의 전용 chip(`avoid_concomitant: '병용금지(허가사항)'`, §17.2)에 더해, **라이브 데이터가 avoid_concomitant 를 담을 수 있도록** 두 곳을 보강했다. 현 라이브엔 avoid_concomitant relation 0건이라 **production 동작 불변**(아래 둘 다 inert).
+
+| 파일 | 변경 | 효과 |
+|---|---|---|
+| `scripts/validate_medistack_v0_2_export.py` | `ALLOWED_ACTION` 에 `avoid_concomitant` 추가 + **신규 check #15**: ①avoid_concomitant ⇒ counterpart_category=al_mg_antacid(없으면 fail — 영양소 relation 의 avoid_concomitant 차단) ②antacid relation(al_mg_antacid) ⇒ product_link_allowed=false ③reviewed_by 전건 공란 | 검사 15→16. 라이브 export 계속 **PASS 16/16**(avoid_concomitant 0건·AT-ITZ link=false·reviewed_by 부재). 음성 5종(문맥밖 avoid / 영양소 avoid / antacid product_link=true / reviewed_by 작성 / evidence=low) 전부 FAIL 확인. |
+| `src/js/render.js` | `ACTION_ORDER` 에 `avoid_concomitant` 추가(끝자리) | '분류' facet 정렬에만 영향. 라이브 facets.actions 에 avoid_concomitant 부재라 정렬 무변화. live 통합 시 전용 label('병용금지(허가사항)')로 끝자리 노출(raw 키 미노출). |
+
+> ⚠️ **product_link_allowed 가드는 antacid(al_mg_antacid) relation 에만** 적용한다. 라이브 일반 relation 60건 중 **54건이 product_link_allowed=true**(v0.2 정책상 제품 데이터 부재라 canShowProduct=false — 정상)이므로, 글로벌 금지로 만들면 배포 게이트가 깨진다. antacid relation 만 추가 잠금(false 강제).
+
+### 19.2 AT-FEX 통합 드라이런 결과(`integrate_antacid_fex_v1_2.py`)
+- 스크립트는 **기본값이 dry-run(쓰기 0)**. live 기록은 `--pm-approved` 플래그가 있어야만 수행(별도 PM 승인 전까지 금지·본 세션 미사용). AT-ITZ 가드 + avoid_concomitant 가드 승계.
+- 드라이런 산출물(예상 통합 결과): `data/review/antacid_fex_dryrun_v1_2.json`(리뷰 산출물·live 아님).
+
+| 항목 | 드라이런 예상값 | 비고 |
+|---|---|---|
+| 신규 id | **62** | max(id)=61 +1 |
+| relations | **60 → 61** | meta.relation_count 61 |
+| relation_card / name_only | **1168 / 16412 (무변경)** | 펙소페나딘 44건 전부 name_only·covered_by_relation=false → flip 불필요(AT-ITZ 패턴) |
+| full index / aliases | **무변경** | 펙소페나딘 CANONICAL_13 아님·alias pool 부재 |
+| nutrient(슬롯) | "Al/Mg 함유 제산제(약물)" | 영양소 아님 |
+| recommended_action | **avoid_concomitant** | 전용 chip '병용금지(허가사항)' |
+| mechanism / evidence_level | absorption / **moderate** | ⚠️ **evidence_level=moderate 는 PM 판단지점**: confidence=low 이나 evidence 는 별개 — 식약처 허가사항(규제 출처)이라 low 아니고, 대표 itemSeq 강도 분기(202202380 병용금지 / 199801016 상의)로 high(AT-ITZ)도 아님 → moderate. v0.2 enum {high,moderate} 충족. |
+| counterpart_category | al_mg_antacid | getFacets 영양소 facet 제외 |
+| product_link_allowed / potassium_safety_card / requires_clinical_review | false / false / false | |
+
+### 19.3 드라이런 안전검증(`validate_antacid_fex_dryrun_v1_2.py`)
+시뮬레이션 export(live + AT-FEX, 임시파일)로 통합 시 안전성을 미리 입증(라이브 무수정):
+- 시뮬 export **v0.2 validator PASS**(avoid_concomitant 가 #15 가드 하 허용됨 입증).
+- (node) getFacets.nutrients 에 'Al/Mg 함유 제산제(약물)' **제외**(영양소 오인 0)·실제 영양소 유지. getFacets.actions 에 avoid_concomitant 포함. '분류' facet 에 전용 label '병용금지(허가사항)' 렌더(raw 키 미노출).
+- (node) renderRow/renderDetail **전용 chip '병용금지(허가사항)'** 사용·generic('복용 간격'/'상태 모니터링') 미사용·kicker 'Al/Mg 함유 제산제 관련 참고정보'·'장기 복용 시 상태 확인' 미노출(병용금지 모순 제거). 앱 카피 비지시('복용하지 마' 미노출)·prohibition 보존('함께 복용하지 않도록')·제산제 명시·Mg 오인 0·제품 0·공통 면책.
+- 라이브 export **relations 60·펙소페나딘 미존재 불변**(sha256 동일).
+
+### 19.4 안전 불변(이번 라운드)
+live 승격 0 · `live_integration_forbidden=true` · published/clinical_reviewed=false · reviewed_by 공란 · counterpart_category=al_mg_antacid · 제품/제휴 UI 0 · DATA_URL v0.2 · **live export/full index/aliases/harvest_queue/excluded 무변경**. src 변경=ACTION_ORDER 1줄(facet 정렬·inert). validator 변경=v0.2 export validator avoid_concomitant 허용 + #15(라이브 계속 16/16 PASS). **본 준비는 카피/표면 충실성·안전성 검증일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.**
+
+### 19.5 AT-FEX live 통합 전 체크리스트(전부 미충족 — 범위 밖)
+- [ ] **clinical reviewer 확보** → `clinical_reviewed` 전환 검토(현 천장=verified_reference). reviewer 전까지 published/clinical_reviewed=false·reviewed_by 공란.
+- [ ] **source 재확인**: 강한 품목 202202380(avoid_concomitant) directive 재대조, `source.checked_at` 갱신.
+- [ ] **evidence_level 확정**: moderate(드라이런 기본) PM 승인 또는 조정.
+- [ ] **별도 PM 승인** → `integrate_antacid_fex_v1_2.py --pm-approved` 1회(멱등).
+- [ ] **relation-count 하드코딩 validator 60→61 갱신**(AT-ITZ 때 59→60 한 9종: full index·factory_integration·cqf02_integration·relation_draft[ANTACID_IDS]·coverage_queue_integration/draft_batch/batch3/batch4·factory_draft_batch) + `validate_antacid_itz_integration_v1_2.py` 의 id 집합 baseline + 신규 `validate_antacid_fex_integration_v1_2.py`(드라이런 검증기를 live 대상으로 전환).
+- [ ] **통합 직전 적대검증 1회 더**(카피/표면 변경 시).
+- [ ] **deploy 게이트 PASS + live HTTP 200 + git clean**.
+
+### 19.6 AT-FEX live 통합 프롬프트 초안(차기 라운드용 — 실행 금지)
+> AT-FEX(펙소페나딘 × Al/Mg 함유 제산제, **avoid_concomitant**) 1건만 v0.2 export 에 **멱등 append-only** 통합하라(`scripts/integrate_antacid_fex_v1_2.py --pm-approved`). **전제(전부 충족돼야)**: clinical reviewer 확보 + source(202202380) 재확인 + evidence_level(moderate) PM 승인 + round4 적대검증 재확인. **불변**: v0.1/v0.2 봉인 외 직접수정 금지(integrate 스크립트만)·relations 60→61(id 62)·counterpart_category=al_mg_antacid·전용 chip '병용금지(허가사항)'·product_link_allowed=false·published/clinical_reviewed=false 유지(reviewer 트랙 별도)·reviewed_by 는 reviewer 만·full index/aliases 무변경(펙소페나딘 name_only)·DATA_URL v0.2 유지. **통합 후**: relation-count 하드코딩 validator 60→61 갱신 + v0.2 export validator(16/16) + antacid validator/smoke + forbidden 0 + full smoke 9종 + 신규 AT-FEX integration 검증기 + no-live-write guard 전수 PASS + deploy 게이트 + live HTTP 200 + git clean. 칼륨 5건·needs_review/reject 후보는 통합 금지.

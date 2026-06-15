@@ -63,3 +63,8 @@ python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sampl
 - [ ] live data 무수정 재검증(v0.2 export + full index) PASS.
 - [ ] online run 산출물은 **커밋 제외**(재현가능). 커밋은 결정적 offline 베이스라인만(필요 시).
 - [ ] `pm_review_queue.md` 검토 → draft_eligible 후보를 PM 라운드로 핸드오프(직접 승격 금지).
+
+## 6. 보호셋 ↔ 사람 dev 편집 구분 (2026-06-15 메모)
+- **보호셋(§3)은 "봇 런타임이 안 건드리는 경계"** 다 — `guard_no_live_write_v1_3.py --run-bot` 이 봇 실행 *전후* sha256 불변으로 강제한다. 고정 baseline 해시를 pin 하는 것이 아니라 **단일 봇 런 내 불변**을 검사한다. 따라서 PM/AI 의 **승인된 dev 편집**(예: validator·render 보강)으로 보호셋 파일이 바뀌어도, 그 편집을 commit 한 뒤 가드를 돌리면 봇은 여전히 그 파일을 안 건드리므로 **PASS** 다(봇 쓰기 ≠ 사람 dev 편집).
+- 검증: 2026-06-15 avoid_concomitant 준비로 `scripts/validate_medistack_v0_2_export.py`(#15 추가)·`src/js/render.js`(ACTION_ORDER) 를 편집한 뒤 `--run-bot` 재실행 → 보호셋 47파일 sha256 불변·write-scope=`data/harvest_queue/` 한정·direct-http 0 **PASS**(봇은 편집된 파일을 건드리지 않음).
+- **schedule 여전히 비활성**(§4). 이번 라운드도 자동화 활성화·online 자동 실행 0. 봇 live/배포/승격 0.

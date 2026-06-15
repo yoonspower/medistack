@@ -1,0 +1,37 @@
+{
+ "meta": {
+  "name": "antacid_fex_dryrun_v1_2",
+  "status": "DRY-RUN — NOT LIVE / do_not_implement_yet=true / live_integration_forbidden=true",
+  "purpose": "AT-FEX(펙소페나딘·avoid_concomitant) live 통합 예상 산출물(드라이런). 실제 export 무수정. validate_antacid_fex_dryrun_v1_2.py 가 이 relation 으로 시뮬레이션 export 를 만들어 검증.",
+  "baseline_relations": 60,
+  "baseline_max_id": 61,
+  "projected_relation_count": 61,
+  "evidence_level_decision": "moderate (PM 판단지점 — confidence=low 이나 허가사항 출처+대표 itemSeq 분기)",
+  "live_promotion": 0,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "data_url": "v0.2 (불변)",
+  "guard_target_violations": [],
+  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + 별도 PM + clinical reviewer."
+ },
+ "projected_live_relation": {
+  "id": 62,
+  "ingredient": "펙소페나딘",
+  "nutrient": "Al/Mg 함유 제산제(약물)",
+  "counterpart_category": "al_mg_antacid",
+  "mechanism": "absorption",
+  "recommended_action": "avoid_concomitant",
+  "evidence_level": "moderate",
+  "display_text_ko": "일부 알루미늄·마그네슘 함유 제산제와 함께 복용하지 않도록 안내하는 허가사항 문구가 있습니다. 이미 복용 중인 제산제가 있다면 약사 또는 의사에게 확인하세요.",
+  "management_ko": "",
+  "product_link_allowed": false,
+  "potassium_safety_card": false,
+  "requires_clinical_review": false,
+  "source": {
+   "type": "허가사항",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202202380",
+   "pointer": "식약처 nedrug getItemDetail / 펙소페나딘 / itemSeq 202202380 / 상호작용·복약정보 Al/Mg 제산제 directive / '동안 주의해야 할 약 또는 음식은 무엇입니까? 이 약을 복용하는 동안 피부질환용약, 비염용 내복약을 포함한 다른 알레르기용약, 항히스타민제를 함유한 내복약 등, 알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오. 이 약을 복용하는 동안 케토코나졸이나 에리트로마이신과 함께 복' / 확인일 2026-06-14"
+  }
+ }
+}
