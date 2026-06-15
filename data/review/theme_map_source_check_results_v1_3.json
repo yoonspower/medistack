@@ -1,0 +1,210 @@
+{
+ "meta": {
+  "name": "theme_map_source_check_v1_3",
+  "mode": "online_sdk",
+  "live_data_written": false,
+  "max_fetch_per_candidate": 2,
+  "note": "라우팅/증거수집 전용. live 승격·draft 확정 없음.",
+  "sdk_stats": {
+   "network": 0,
+   "cache": 25,
+   "fixture": 0,
+   "offline_miss": 0,
+   "error": 0
+  }
+ },
+ "results": [
+  {
+   "candidate_id": "TM-LIP-01",
+   "family": "fatsol_vitamin_absorption",
+   "ingredient": "오르리스타트",
+   "counterpart": "지용성 비타민(A·D·E·K·베타카로틴)",
+   "counterpart_type": "nutrient_group",
+   "priority": "P0",
+   "search_stem": "오르리스타트",
+   "search_why": "ok",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "200806047",
+     "name": "리피다운캡슐60밀리그램(오르리스타트)",
+     "ingredient": "오르리스타트"
+    },
+    {
+     "itemSeq": "200903409",
+     "name": "리피다운캡슐120밀리그램(오르리스타트)",
+     "ingredient": "오르리스타트"
+    }
+   ],
+   "found": true,
+   "quote": ", 탄수화물 및 단백질의 1일 섭취량을 세끼 식사에 골고루 분배하여 섭취해야 한다. 식사를 거르거나 지방이 함유되지 않은 식사를 하는 경우에는 이 약을 복용하지 않을 수 있다. 이 약에 의해 몇몇 지용성 비타민 및 베타카로틴의 흡수가 감소될 수 있으므로, 환자들은 적절한 영양섭취를 위하여 지용성 비타민이 들어있는 종합비타민을 복용하는 것이 권장된다. 비타민 보충제는 이 약 투여 최소 2시간",
+   "detector_kind": "fatsoluble_vitamin",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200806047",
+   "note": "지방분해효소 억제제. 라벨에 지용성 비타민 흡수 저하 + 보충 시점 분리 문구. 주의: 라벨이 종합비타민 보충을 권장 → 사용자 카피는 보충 권유 금지(상호작용·시점만).",
+   "source_itemseq": "200806047",
+   "source_name": "리피다운캡슐60밀리그램(오르리스타트)",
+   "verdict": "source_confirmed_draft_candidate"
+  },
+  {
+   "candidate_id": "TM-LIP-02",
+   "family": "fatsol_vitamin_absorption",
+   "ingredient": "콜레스티라민",
+   "counterpart": "지용성 비타민(A·D·K)",
+   "counterpart_type": "nutrient_group",
+   "priority": "P1",
+   "search_stem": "콜레스티라민",
+   "search_why": "no_domestic_single_oral_product",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "198800813",
+     "name": "(direct itemSeq)",
+     "ingredient": "콜레스티라민"
+    }
+   ],
+   "found": true,
+   "quote": "제, 프로프라놀롤(염기성)과 병용투여시 이들 약물의 체내흡수를 지연시키거나 감소시킬 수 있다. 2) 이 약은 담즙산과 결합하므로 정상적인 지방의 소화와 흡수를 방해하여 비타민 A, D, K와 같은 지용성 비타민의 흡수를 저해할 수 있다. 따라서 이 약을 장기투여할 경우에는 물에 혼합되는 비타민 A, D제제(또는 비경구 형태)를 동시에 공급한다. 3) 이 약은 병용투여하는 다른 약물과 결합할",
+   "detector_kind": "fatsoluble_vitamin",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198800813",
+   "note": "담즙산 결합 수지(보령퀘스트란). 라벨: 비타민 A·D·K 흡수 저해. 엽산은 미확인. 주의: 보충 권유 금지.",
+   "source_itemseq": "198800813",
+   "source_name": "(direct itemSeq)",
+   "verdict": "source_confirmed_draft_candidate"
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-01",
+   "family": "antacid_interaction",
+   "ingredient": "세프포독심프록세틸",
+   "counterpart": "위산 감소·중화 약물(제산제·H2 차단제)",
+   "counterpart_type": "antacid_drug",
+   "priority": "P1",
+   "search_stem": "세프포독심",
+   "search_why": "ok",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "199300168",
+     "name": "바난정(세프포독심프록세틸)",
+     "ingredient": "세프포독심프록세틸"
+    },
+    {
+     "itemSeq": "200001190",
+     "name": "세포세틸정(세프포독심프록세틸)",
+     "ingredient": "세프포독심프록세틸"
+    }
+   ],
+   "found": true,
+   "quote": "여 시 신장애가 증가될 수 있으므로 신중히 투여한다. 2) 프로베네시드와 병용투여 시 이 약의 세뇨관 배설 속도가 감소되어 혈중농도를 지속 시킬 수 있다. 3) 위장 내의 pH를 올리게 되는 약물(제산제, H 2 -길항제)은 생체이용률을 떨어뜨리고, 반대로 pH를 낮추는 약물(펜타게스트린)이나 식사중 복용은 생체이용률을 높인다. 6. 임부 및 수유부에 대한 투여 1) 임신 중 투여에 대한 안",
+   "detector_kind": "antacid_absorption",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199300168",
+   "note": "에스터 프로드러그. pH 의존 흡수 → 제산제/H2 병용 시 생체이용률 저하.",
+   "source_itemseq": "199300168",
+   "source_name": "바난정(세프포독심프록세틸)",
+   "verdict": "source_confirmed_draft_candidate"
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-02",
+   "family": "antacid_interaction",
+   "ingredient": "세프디토렌피복실",
+   "counterpart": "위산 감소·중화 약물(제산제·H2 차단제)",
+   "counterpart_type": "antacid_drug",
+   "priority": "P1",
+   "search_stem": "세프디토렌",
+   "search_why": "ok",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "199500901",
+     "name": "보령메이액트정100밀리그램(세프디토렌피복실)",
+     "ingredient": "세프디토렌피복실"
+    },
+    {
+     "itemSeq": "201006942",
+     "name": "영진세프디토렌피복실정100mg",
+     "ingredient": "세프디토렌피복실"
+    }
+   ],
+   "found": true,
+   "quote": "르니틴 결핍증을 초래할 수 있는 선천성 대사장애 환자에게 투여하지 않는다. 4)이 약은 식사와 함께 투여하는 경우 흡수가 높아진다. 5. 상호작용 1) 이 약을 제산제나 위산을 감소시키는 다른 약물과 동시에 복용하는 것은 권장되지 않는다(이 약의 흡수가 감소되었다.). 2) 파모티딘(20mg) 정맥투여와 이 약의 정제(400 mg)를 경구로 단회 병용투여",
+   "detector_kind": "avoid_concomitant",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199500901",
+   "note": "피복실 에스터. 제산제·위산감소 약물 동시 복용 권장 안 됨(흡수 감소).",
+   "source_itemseq": "199500901",
+   "source_name": "보령메이액트정100밀리그램(세프디토렌피복실)",
+   "verdict": "source_confirmed_draft_candidate"
+  },
+  {
+   "candidate_id": "TM-CHEL-01-FE",
+   "family": "metal_chelation_absorption",
+   "ingredient": "페니실라민",
+   "counterpart": "철분",
+   "counterpart_type": "nutrient",
+   "priority": "P1",
+   "search_stem": "페니실라민",
+   "search_why": "ok",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "198300142",
+     "name": "알타민캡슐250밀리그램(디-페니실라민)",
+     "ingredient": "디-페니실라민"
+    },
+    {
+     "itemSeq": "198300146",
+     "name": "알타민캡슐150밀리그램(디-페니실라민)",
+     "ingredient": "디-페니실라민"
+    }
+   ],
+   "found": true,
+   "quote": "한다. 6. 상호작용 1) 금제제(금사과산나트륨 등)와의 병용시 심각한 혈액장애가 나타날 수 있으므로 병용하지 않는다. 2) 면역억제제와의 병용시 그 이상반응이 증강될 수 있으므로 주의한다. 3) 경구철제제(구연산제일철나트륨, 황산철 등), 마그네슘 또는 알루미늄 함유제산제(수산화마그네슘, 수산화알루미늄)는 이 약의 흡수율을 저하시켜 효과를 감소시킬 수 있으므로, 반드시 투여해야 하는 경우에",
+   "detector_kind": "chelation_iron",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198300142",
+   "note": "윌슨병/RA(메탈캡틴). 경구 철제제·Al/Mg 제산제가 흡수율 저하 → 동시투여 회피.",
+   "source_itemseq": "198300142",
+   "source_name": "알타민캡슐250밀리그램(디-페니실라민)",
+   "verdict": "source_confirmed_draft_candidate"
+  },
+  {
+   "candidate_id": "TM-CHEL-01-ZN",
+   "family": "metal_chelation_absorption",
+   "ingredient": "페니실라민",
+   "counterpart": "아연",
+   "counterpart_type": "nutrient",
+   "priority": "P1",
+   "search_stem": "페니실라민",
+   "search_why": "ok",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "198300142",
+     "name": "알타민캡슐250밀리그램(디-페니실라민)",
+     "ingredient": "디-페니실라민"
+    },
+    {
+     "itemSeq": "198300146",
+     "name": "알타민캡슐150밀리그램(디-페니실라민)",
+     "ingredient": "디-페니실라민"
+    }
+   ],
+   "found": true,
+   "quote": "황산철 등), 마그네슘 또는 알루미늄 함유제산제(수산화마그네슘, 수산화알루미늄)는 이 약의 흡수율을 저하시켜 효과를 감소시킬 수 있으므로, 반드시 투여해야 하는 경우에는 동시투여를 피한다. 4) 아연을 함유하는 경구제는 이 약의 효과를 감소시킬 수 있으므로, 반드시 병용해야 하는 경우에는 동시투여를 피한다. 5) 골수손상을 일으키는 경향이 있는 약물이나 소염제와 병용시 주의한다. 7. 임부",
+   "detector_kind": "chelation_zinc",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198300142",
+   "note": "동일 라벨: 아연 함유 경구제가 효과 감소 → 동시투여 회피.",
+   "source_itemseq": "198300142",
+   "source_name": "알타민캡슐250밀리그램(디-페니실라민)",
+   "verdict": "source_confirmed_draft_candidate"
+  },
+  {
+   "candidate_id": "TM-CHEL-02",
+   "family": "metal_chelation_absorption",
+   "ingredient": "레보도파",
+   "counterpart": "철분",
+   "counterpart_type": "nutrient",
+   "priority": "P1",
+   "search_stem": "레보도파",
+   "search_why": "no_domestic_single_oral_product",
+   "itemseqs_checked": [],
+   "found": false,
+   "quote": "",
+   "detector_kind": "iron",
+   "url": "",
+   "note": "철 킬레이트로 흡수 저하 가능하나 국내 단일성분 완제 없음(마도파/스타레보=복합제) → hold.",
+   "verdict": "no_domestic_product"
+  }
+ ]
+}

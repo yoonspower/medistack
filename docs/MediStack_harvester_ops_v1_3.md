@@ -159,3 +159,22 @@ manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0*
 
 > 활성화하더라도 harvester 의 역할은 **후보 수집·라우팅**에 영구 고정된다(§7). 자동화는 '핸드오프 큐를 더 자주 갱신'할 뿐,
 > live·배포·승격 권한을 얻지 않는다. cron 초안은 KST 월 03:00(UTC 일 18:00)이나 이는 예시이며 PM 결정 전까지 주석 유지.
+
+## 13. 새 theme map / relation family 편입 절차 (2026-06-15 theme map expansion 라운드)
+
+> **배경**: 같은 theme map(`vfs.SEARCH_INGREDIENTS` 25)을 반복 online run 하면 draft 분포가 기존 트리아지로 수렴해
+> **신규 draft-ready 0**(run2·run3 입증). 신규 relation 확장은 **새 seed/family 의 수동 설계**가 선행돼야 한다.
+> 이번 라운드에 신규 family 3종을 **theme map 밖에서** 설계·source-check 해 draft-only 6건을 만들었다
+> (`docs/MediStack_theme_map_expansion_v1_3.md`). **harvester 에는 아직 편입하지 않았다.**
+
+신규 family 를 harvester 자동 경로에 넣을지는 **후속 PR / PM 승인 사항**이며, 넣더라도 순서는 고정이다:
+
+1. **source-check queue** — 새 후보를 `data/review/theme_map_source_check_queue_v1_3.json` 류로 우선순위화(P0/P1/P2/HOLD). SDK-only·≤2 fetch·직접 HTTP 0.
+2. **PM review** — source-confirmed 만 draft 후보로. high-risk(항응고/항암/정신건강/소아/임신/herbal/문헌단독/방향반대/약-약)는 hold.
+3. **draft-only** — `data/drafts/…` 에 `live_integration_forbidden=true`·`published=false`·`clinical_reviewed=false`·`reviewed_by` 공란. 검증기(`validate_theme_map_expansion_v1_3.py`)+smoke 통과.
+4. **live 금지** — 실제 승격은 clinical reviewer note + `--pm-approved --reviewer-note` 수동 단계(§8). harvester 가 자동 승격하지 않는다.
+
+> **편입 시 주의(반복 run 비효율)**: theme map 에 seed 를 추가할 때만 새 draft 가 나온다. 같은 seed 재실행은 비용만 든다 —
+> 새 seed 없이 run 횟수만 늘리지 말 것. seed 추가는 `vfs.SEARCH_INGREDIENTS`(nutrient) 또는 `harvest_relation_bot_v1_3.py`
+> `ANTACID_CANDIDATES`(antacid) 편집(보호셋 아님 — 사람 dev 편집 가능, §6)이며, 그 자체가 PR 리뷰 대상이다.
+> schedule 은 비활성 유지(§12). runtime queue(`data/harvest_queue/`) 커밋 금지(§5).

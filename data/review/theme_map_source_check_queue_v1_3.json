@@ -1,0 +1,33 @@
+{
+ "meta": {
+  "name": "theme_map_source_check_queue_v1_3",
+  "purpose": "theme map expansion 후보의 source-check 우선순위 큐. P0 부터 제한적 SDK-only 확인. 결과는 theme_map_source_check_results_v1_3.json.",
+  "priority_legend": {
+   "P0": "직접 라벨 가능성 높고 안전한 absorption/separation — 우선 확인",
+   "P1": "가능성 있으나 itemSeq/라벨 확인 필요",
+   "P2": "낮은 우선순위 — 2차",
+   "HOLD": "고위험/문헌근거/방향성 불명확 — 확인 대상 아님"
+  },
+  "checked_via": "scripts/sourcecheck_theme_map_expansion_v1_3.py (online SDK, namespace cache, ≤2 fetch/후보, direct HTTP 0)",
+  "live_allowed": false
+ },
+ "queue": [
+  {"priority": "P0", "candidate_id": "TM-LIP-01", "drug": "오르리스타트", "counterpart": "지용성 비타민(A·D·E·K·베타카로틴)", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "200806047"},
+  {"priority": "P1", "candidate_id": "TM-LIP-02", "drug": "콜레스티라민", "counterpart": "지용성 비타민(A·D·K)", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "198800813"},
+  {"priority": "P1", "candidate_id": "TM-CEPH-AC-01", "drug": "세프포독심프록세틸", "counterpart": "제산제·H2 차단제(약물)", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "199300168"},
+  {"priority": "P1", "candidate_id": "TM-CEPH-AC-02", "drug": "세프디토렌피복실", "counterpart": "제산제·위산감소 약물", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "199500901"},
+  {"priority": "P1", "candidate_id": "TM-CHEL-01-FE", "drug": "페니실라민", "counterpart": "철분", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "198300142"},
+  {"priority": "P1", "candidate_id": "TM-CHEL-01-ZN", "drug": "페니실라민", "counterpart": "아연", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "198300142"},
+  {"priority": "P1", "candidate_id": "TM-CHEL-02", "drug": "레보도파", "counterpart": "철분", "check_status": "checked", "result": "hold(no_domestic_single_ingredient_product)", "itemseq": null},
+  {"priority": "P2", "candidate_id": "TM-LIP-03", "drug": "콜레세벨람", "counterpart": "지용성 비타민(A·D·E·K)", "check_status": "pending_2nd_round", "result": "source_check_candidate", "itemseq": null},
+  {"priority": "P2", "candidate_id": "TM-CHEL-03", "drug": "메틸도파", "counterpart": "철분", "check_status": "pending", "result": "needs_review", "itemseq": null},
+  {"priority": "HOLD", "candidate_id": "TM-B6-01", "drug": "이소니아지드", "counterpart": "비타민B6", "check_status": "gated", "result": "needs_review(copy_gate_first)", "itemseq": null},
+  {"priority": "HOLD", "candidate_id": "TM-HOLD-PHENYTOIN", "drug": "페니토인", "counterpart": "엽산·비타민D", "check_status": "not_checked", "result": "hold(bidirectional/clinical)", "itemseq": null},
+  {"priority": "HOLD", "candidate_id": "TM-HOLD-MYCO", "drug": "마이코페놀레이트모페틸", "counterpart": "제산제·철분", "check_status": "not_checked", "result": "hold(transplant/clinical)", "itemseq": null},
+  {"priority": "HOLD", "candidate_id": "TM-HOLD-LDOPA-B6", "drug": "레보도파", "counterpart": "비타민B6", "check_status": "not_checked", "result": "hold(combination_nuance)", "itemseq": null}
+ ],
+ "summary": {
+  "P0_checked": 1, "P1_checked": 6, "P2_pending": 2, "HOLD": 4,
+  "source_confirmed": 6, "hold": 4, "needs_review": 2, "source_check_candidate_pending": 1
+ }
+}

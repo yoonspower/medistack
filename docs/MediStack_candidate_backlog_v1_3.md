@@ -146,6 +146,16 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 
 > ⚠️ **무작정 같은 theme map 을 반복 online run 하는 것은 효율이 낮다.** 2차·3차 online run 이 입증했듯(§0·§2-E) draft 분포는 기존 트리아지로 수렴했고 신규 draft-ready 는 0 이다(같은 seed/theme map → 같은 결과). **다음 relation 확장은 다음 중 하나가 선행돼야 의미가 있다**: ①reviewer note 확보 → 기존 pending(칼륨 4·AT-FEX 1) live 승격, ②**새 theme map/seed 수동 추가**(신규 relation family — `next_prompts` 프롬프트 7), ③medium-risk 성분이 relation 후보化될 때만 deep-check(재후보화 게이트·§2-F), ④clinical reviewer 확보(봉인 천장 상향), ⑤harvester schedule PR 준비(ops §12 게이트). 이 중 어느 것도 없는 반복 run 은 새 정보를 만들지 못한다.
 
+### 3-G. 새 theme map family 확장 — **1차 실행 완료(2026-06-15 theme map expansion 라운드)**
+
+위 ②(새 seed 수동 추가)를 실행했다. 기존 theme map(25 성분) **밖에서** 신규 family **3종**을 설계하고, **SDK source-check 로 국내 허가사항 직접근거를 확인**해 **draft-only 6건**을 만들었다(승격 0, live 무변경). 정본 = `docs/MediStack_theme_map_expansion_v1_3.md`.
+
+- **source-confirmed 6**(draft-only): 오르리스타트×지용성비타민(A·D·E·K, 200806047) · 콜레스티라민×지용성비타민(A·D·K, 198800813) · 세프포독심프록세틸×제산제·H2(199300168) · 세프디토렌피복실×제산제·H2(199500901) · 페니실라민×철분(198300142) · 페니실라민×아연(198300142).
+- **hold 4**: 레보도파×철분(국내 단일성분 완제 없음) · 페니토인×엽산/비타민D(양방향·신경계) · 마이코페놀레이트×제산제/철분(이식·임상판단) · 레보도파×비타민B6(복합제 무력화 오인).
+- **needs_review 2 / source_check 1**: 메틸도파×철분 · 이소니아지드×비타민B6(보충 권유 오인 — copy 게이트 선결) · 콜레세벨람×지용성비타민(2차).
+- ⚠️ **카피 안전**: orlistat·cholestyramine 라벨이 종합비타민 보충을 권장 → 우리 카피는 보충 권유 금지(흡수·시점 분리만). cholestyramine 의 비타민K는 항응고 오인 금지. 세팔로스포린 counterpart 는 약물(제산제/H2)로 Mg 영양제 혼동 금지.
+- **다음**: 적대검증 + counterpart_category 정렬 + 2차 source-check(`next_prompts` 프롬프트 8) → harvester 편입 PR(프롬프트 9). **live 통합은 clinical reviewer note 후 별도 PR.**
+
 1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1, 패키지 `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`).
 2. **칼륨 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01) live 통합** — reviewer note(승인토큰+4건 전건 명시) 후. dry-run·검증기 준비 완료(프롬프트 2, 패키지 `docs/MediStack_reviewer_package_potassium_v1_3.md`). DF-PRED-01 은 2026-06-15 round2 에 dry-run 합류(60→64). DF02 wording / DF03 hold 는 별도.
 3. ~~needs_review 다이유레틱/코르티코스테로이드 source 재확인~~ → **완료(2026-06-15)**: 새 draft **1**(프레드니솔론×칼륨=소론도정 199602982, DF-PRED-01). loop/thiazide 5성분 8건=국내 미유통 reject 격상, 하이드로코르티손×칼륨만 needs_review 유지(CQF03 correctness 선결). **후속 라운드(2026-06-15)**: DF-PRED-01 을 칼륨 PM-ready 통합 준비 그룹에 **dry-run 합류 완료**(4건·whitelist {DF01,DF04,DF05,DF-PRED-01}·`validate_potassium_dryrun_v1_2.py` PASS·60→64, 실제 통합 0). search-depth 항구 개선(`search_itemseqs` deep fallback·`test_search_depth_v1_3.py`·ops §9). 상세 `docs/MediStack_needs_review_source_recheck_v1_3.md`.
@@ -160,4 +170,5 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 - live relation 변경 **0** · export/full index/aliases/DATA_URL 무변경(`62df9284…` 불변) · published/clinical_reviewed=false · reviewed_by 공란 유지.
 - schedule **비활성 유지** · harvester 자동 실행 0 · 제품/구매/제휴 UI 0 · 칼륨 보충 권유/결핍 단정 0.
 - runtime `data/harvest_queue/` 커밋 제외(offline 베이스라인 유지) · 요약은 `data/review/harvest_run2_summary_v1_3.json`·`harvest_run3_summary_v1_3.json`·`substring_domination_scan_v1_3.json` 에만.
+- theme map expansion(§3-G)은 전부 `data/review/theme_map_*_v1_3.json`·`data/drafts/theme_map_draft_batch_v1_3.json`·`scripts/(sourcecheck|validate|smoke)_theme_map*_v1_3.py` (draft-only·live_integration_forbidden=true). SDK source-check 는 namespace 캐시(direct HTTP 0). live relation 0 추가.
 - round3(2026-06-15) 변경분 = scripts(`verify_factory_sources_v1_2.py` 하드닝·`test_search_depth_v1_3.py` 보강·신규 `analyze_substring_domination_v1_3.py`) + data/review 요약/탐색 + docs 만. 보호셋 49 sha 불변(guard PASS).

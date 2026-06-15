@@ -8,6 +8,8 @@
 
 > **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
 
+> **갱신(2026-06-15, theme map expansion 라운드)**: 프롬프트 7(새 theme map 확장)을 **실행** — 신규 family 3종 설계 + SDK source-check 로 **draft-only 6건**(오르리스타트·콜레스티라민 × 지용성비타민, 세프포독심·세프디토렌 × 제산제/H2, 페니실라민 × 철분·아연) 확정. 정본 `docs/MediStack_theme_map_expansion_v1_3.md`. 남은 일은 **프롬프트 8(적대검증+2차 source-check)** · **프롬프트 9(harvester 편입 PR)**. 본 라운드 live 통합·schedule 활성화·workflow·src/export/index/alias 수정 0. ↓이전 라운드:
+
 > **갱신(2026-06-15, reviewer package + schedule PR-ready 라운드)**: ①reviewer 배포용 **독립 패키지 2종** 작성 — `docs/MediStack_reviewer_package_potassium_v1_3.md`(칼륨 4건) · `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`(AT-FEX). 각 패키지에 후보별 상세·source quote·제외 항목·검증 절차·note 템플릿·인터록 요건 자기완결. 프롬프트 1·2 는 이 패키지를 reviewer 핸드오프 정본으로 쓴다. ②**운영자 runbook** `docs/MediStack_operator_runbook_v1_3.md`(일상/주간 흐름·승인 기준·rollback·알림 설정법). ③**schedule 활성화 PR-ready 설계** `docs/MediStack_harvester_schedule_activation_v1_3.md` + 미리보기 `data/review/harvester_schedule_activation_patch_preview_v1_3.json` + 구조 검증기 `scripts/validate_harvester_schedule_safety_v1_3.py`(9규칙+결함주입). 프롬프트 6 갱신. ④**프롬프트 7(새 theme map 확장)** 신설. 본 라운드에서 live 통합·schedule 활성화·workflow 수정 0.
 
 ---
@@ -114,8 +116,10 @@
 
 ---
 
-## 프롬프트 7 — 새 theme map / seed 확장으로 신규 relation family 후보 설계 (draft-only · 승격 아님)
+## 프롬프트 7 — 새 theme map / seed 확장으로 신규 relation family 후보 설계 (draft-only · 승격 아님) → **1차 실행 완료(2026-06-15)**
 
+> **✅ 실행됨(2026-06-15, theme map expansion 라운드)**: 신규 family **3종** 설계 + SDK source-check 로 **draft-only 6건 확정**(승격 0). 산출물 = `docs/MediStack_theme_map_expansion_v1_3.md`(정본) · `data/review/theme_map_expansion_candidates_v1_3.json`(13후보) · `data/review/theme_map_source_check_queue_v1_3.json` · `data/review/theme_map_source_check_results_v1_3.json` · `data/drafts/theme_map_draft_batch_v1_3.json`(6 draft) · `scripts/sourcecheck_theme_map_expansion_v1_3.py` · `scripts/validate_theme_map_expansion_v1_3.py`(결함주입 6 PASS) · `scripts/smoke_theme_map_draft_render_v1_3.py`. **source-confirmed 6**: 오르리스타트×지용성비타민(200806047) · 콜레스티라민×지용성비타민A·D·K(198800813) · 세프포독심·세프디토렌×제산제/H2(199300168·199500901) · 페니실라민×철분·아연(198300142). hold 4 · needs_review 2 · source_check 1. **남은 일은 아래 프롬프트 8.** 아래 원문은 방법론 참고용으로 보존.
+>
 > **왜 이 프롬프트인가**: harvester 2차·3차 online run 이 입증했듯 **같은 theme map 을 반복 run 하면 draft 분포가 기존 트리아지로 수렴**하고 신규 draft-ready 는 0 이다(같은 seed → 같은 결과). substring 광역 탐색(universe 2,292)에서도 신규 위험 0. 따라서 신규 relation 확장은 **새 theme map/seed 의 수동 추가**가 선행돼야 한다(`docs/MediStack_candidate_backlog_v1_3.md` §3).
 >
 > **작업(준비 단계 — live 통합 아님)**: 새 약-영양소 relation **family 후보**를 설계하라. ①기존 트리아지/live/reject 와 겹치지 않는 **새 theme(예: 새 약물군 × 새 영양소 방향)** 를 1~2개 선정하고 근거 가설을 적는다. ②각 후보를 harvester source-check 경로(`verify_factory_sources_v1_2.py` / source_confirm_gate)로 돌려, **한국 허가사항 라벨에 방향성 직접 동거어가 실제 있는 품목만** draft 후보로 끌어올린다(SDK-only·fail-closed). ③산출물은 **draft-only**(`do_not_implement_yet=true`·`live_integration_forbidden=true`) `data/review/` 아티팩트 + 백로그 갱신.
@@ -125,3 +129,19 @@
 > **불변**: 봇/스크립트는 `data/harvest_queue/` 밖 무수정 · live relation 생성 0 · published/clinical_reviewed=false · 칼륨 행 product_link=false·potassium_safety_card=true · 칼륨 보충 권유/결핍 단정 0 · 제품/구매/제휴 UI 0. 실제 승격은 PM + clinical reviewer 후 별도. **draft-only 산출까지가 이 프롬프트의 범위.**
 
 근거/상세: `docs/MediStack_candidate_backlog_v1_3.md` §3 · `docs/MediStack_relation_factory_source_check_v1_2.md` · `scripts/verify_factory_sources_v1_2.py` · `scripts/source_confirm_gate_v1_2.py` · `scripts/harvest_relation_bot_v1_3.py`.
+
+## 프롬프트 8 — theme map expansion draft 6건 적대검증 + 후속 source-check (승격 아님)
+
+> **상태**: 프롬프트 7 의 draft-only 6건(`data/drafts/theme_map_draft_batch_v1_3.json`)이 source-confirmed 로 대기. live 통합은 PM + clinical reviewer 후 별도 PR.
+>
+> **작업(준비 단계 — live 통합 아님)**: ①6건 사용자 카피를 **적대검증**(서로 다른 렌즈): (a) orlistat·cholestyramine 카피가 **비타민 보충 권유**로 읽히지 않는가(라벨은 권장하나 우리는 시점 분리만), (b) cholestyramine 의 **비타민K 언급이 항응고 맥락**으로 오인되지 않는가, (c) 세팔로스포린 counterpart 가 **약물(제산제/H2)** 임이 분명한가(Mg 영양제 혼동 0), (d) 원문보다 강하지 않은가. ②counterpart_category 정렬 결정: 세팔로스포린 antacid 를 id61 `al_mg_antacid` 통합 vs 신규 `acid_reducing_drug`. ③nutrient_group("지용성 비타민") 단일 카드 vs 비타민별 분리. ④2차 source-check: TM-LIP-03(콜레세벨람)·TM-CHEL-03(메틸도파)·TM-B6-01(이소니아지드, **copy 게이트 선결**) — `scripts/sourcecheck_theme_map_expansion_v1_3.py` 에 후보 추가(SDK-only·≤2 fetch).
+>
+> **불변**: live relation 생성 0 · published/clinical_reviewed=false · reviewed_by 공란 · 제품/구매/제휴 UI 0 · 보충 권유/결핍 단정 0 · high-risk hold(페니토인/마이코페놀레이트/레보도파×B6)는 draft 격상 금지. **검증**: `scripts/validate_theme_map_expansion_v1_3.py` + `scripts/smoke_theme_map_draft_render_v1_3.py`.
+
+## 프롬프트 9 — harvester theme map 편입 PR (후속 · PM 승인 전제)
+
+> **상태**: 신규 family(지용성비타민 흡수·세팔로스포린 antacid·페니실라민 킬레이트)는 현재 `vfs.SEARCH_INGREDIENTS`(25)/`ANTACID_CANDIDATES`(AT-ITZ만)에 **미편입**. 자동 run 대상 아님.
+>
+> **작업**: 신규 family seed 를 harvester theme map 에 편입할지 결정하는 **PR 설계**(편입 자체는 PM 승인 후). 편입 순서는 반드시 **source-check queue → PM review → draft-only → live 금지**. schedule 은 비활성 유지(프롬프트 6). runtime queue(`data/harvest_queue/`) 커밋 금지. 같은 theme map 반복 run 비효율(신규 0 수렴) 인지 — 신규 seed 만 가치.
+>
+> 근거: `docs/MediStack_theme_map_expansion_v1_3.md` §6 · `docs/MediStack_harvester_ops_v1_3.md` §13.
