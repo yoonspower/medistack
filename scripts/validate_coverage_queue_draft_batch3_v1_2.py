@@ -41,7 +41,7 @@ FORBIDDEN_INGR = re.compile(r"(에스오메프라졸|esomeprazole|넥시움|nexi
 SEAL_TRUE = ["do_not_implement_yet", "review_required", "source_required",
              "live_integration_forbidden", "source_confirmed"]
 SEAL_FALSE = ["published", "clinical_reviewed", "requires_clinical_review"]
-LIVE_RELATIONS = 59          # CQF01 알마게이트×철분(id59) + CQF02 테고프라잔×철분(id60) 승격 반영
+LIVE_RELATIONS = 60          # CQF01(id59) + CQF02(id60) + AT-ITZ 이트라코나졸(id61) 승격 반영
 PROMOTED = {"CQF02"}         # batch3 중 PM 승인 라이브 승격분(테고프라잔×철분). CQF03 칼륨은 hold.
 
 

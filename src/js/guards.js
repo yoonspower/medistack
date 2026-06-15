@@ -58,10 +58,14 @@ function norm(s) {
 }
 
 // facet 동적 도출 (하드코딩 금지 → 확장 자동 대응)
+// '영양소' facet 은 실제 영양소 relation 만 — counterpart_category 가 있는 relation(antacid_interaction 등
+// 약물×약물 트랙)은 nutrient 슬롯이 영양소가 아니라 '제산제(약물)' 라서 영양소 facet 에서 제외한다
+// (검색 '영양소' 필터에 비-영양소가 끼어 '마그네슘 영양제' 류 오인되는 것 차단). 기존 영양소 relation 은
+// counterpart_category 가 없어 영향 없음. action/evidence facet 은 전 relation 공통이라 그대로.
 export function getFacets(rels) {
   const uniq = (arr) => [...new Set(arr.filter((v) => v !== undefined && v !== null && String(v).length > 0))];
   return {
-    nutrients: uniq(rels.map((r) => r.nutrient)),
+    nutrients: uniq(rels.filter((r) => !r.counterpart_category).map((r) => r.nutrient)),
     actions: uniq(rels.map((r) => r.recommended_action)),
     evidences: uniq(rels.map((r) => r.evidence_level)),
   };

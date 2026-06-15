@@ -96,7 +96,7 @@ def main():
 
     # 라이브 봉인(이 batch 는 라이브 미반영)
     exp = json.load(open(EXPORT, encoding="utf-8"))
-    ck("라이브 relations==59 (draft14 + factory DF06·DF07 + CQF01 + CQF02 통합)", len(exp["relations"]) == 59, str(len(exp["relations"])))
+    ck("라이브 relations==60 (draft14 + factory DF06·DF07 + CQF01 + CQF02 + AT-ITZ 통합)", len(exp["relations"]) == 60, str(len(exp["relations"])))
     ck("라이브 published=false 불변", exp["meta"].get("published") is False)
     # DF06·DF07(리오티로닌)만 라이브, DF01-DF05(칼륨)는 보류 — 칼륨 factory 후보 라이브 미혼입
     live_pairs = {(r.get("ingredient"), r.get("nutrient")) for r in exp["relations"]}

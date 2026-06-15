@@ -74,8 +74,8 @@ def main():
     rels = exp["relations"]
     by_id = {r["id"]: r for r in rels}
 
-    ck("relations == 59", len(rels) == 59, str(len(rels)))
-    ck("meta.relation_count == 59", exp["meta"].get("relation_count") == 59, str(exp["meta"].get("relation_count")))
+    ck("relations == 60", len(rels) == 60, str(len(rels)))
+    ck("meta.relation_count == 60", exp["meta"].get("relation_count") == 60, str(exp["meta"].get("relation_count")))
 
     r = by_id.get(CQF_ID)
     ck(f"id{CQF_ID} 존재", r is not None)

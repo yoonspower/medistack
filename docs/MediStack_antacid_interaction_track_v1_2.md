@@ -409,3 +409,32 @@ avoid_concomitant: { label: '병용금지(허가사항)', chip: 'chip-avoid', aC
 
 ### 17.7 안전 불변(이번 라운드)
 live 승격 0 · `live_integration_forbidden=true`(전건) · published/clinical_reviewed=false · reviewed_by 공란 · counterpart_category=al_mg_antacid · 제품/제휴 UI 0 · DATA_URL v0.2 · export/full index/aliases/harvest_queue 무변경 · 기존 relation 카드 회귀 0. **src 변경은 avoid_concomitant 전용 ACTION 항목 + CSS 2줄 additive 뿐**(generic/live 카드 무영향). AT-05 이트라코나졸 상태 무변경(separation·adversarial_verified=true 후보·rank 1).
+
+---
+
+> §18 은 **AT-05(이트라코나졸 × Al/Mg 함유 제산제)의 라이브 통합(2026-06-15)** — antacid_interaction **트랙 첫 live relation** 기록이다. §14 의 통합 계획을 실행했다. **AT-FEX(펙소페나딘·avoid_concomitant)는 통합하지 않는다**(별도). published/clinical_reviewed=false·reviewed_by 공란 유지.
+
+## 18. AT-ITZ(이트라코나졸) 라이브 통합 — antacid_interaction 첫 live relation
+
+### 18.1 통합 결정·범위
+PM 승인으로 **AT-05(이트라코나졸 × Al/Mg 함유 제산제, separation)만** v0.2 export 에 통합했다(id 61). antacid_interaction 트랙 **첫 live relation**. AT-ITZ 는 round1 적대검증 survives(separation·generic 카드 충실·high confidence)로 통합 자격. **AT-FEX(펙소페나딘·avoid_concomitant)는 통합하지 않음**(confidence low·별도 라운드).
+
+### 18.2 멱등 integrate(`scripts/integrate_antacid_itz_v1_2.py`) — export only
+- v0.2 export: relations **59 → 60**(id 61 append), `meta.relation_count` 60. 멱등(이트라코나졸×al_mg_antacid 이미 있으면 skip — 재실행 검증 완료).
+- draft surface → live 매핑: `nutrient`='Al/Mg 함유 제산제(약물)'(render_nutrient), `recommended_action`='separation'(render_action), `mechanism`='absorption', `evidence_level`='high'. draft-전용 필드(draft_id/surface/adversarial_*/published/clinical_reviewed/reviewed_by/live_integration_forbidden 등) strip.
+- 안전 필드: `product_link_allowed`=false · `potassium_safety_card`=false · `requires_clinical_review`=false · `counterpart_category`='al_mg_antacid'(비-영양소 마커). source={type,url(itemSeq 200404726),pointer(+확인일)}.
+- **full index/aliases 무변경**: 이트라코나졸은 CANONICAL_13 아님 + alias verified_item_seqs pool 부재 → **name_only 유지**(flip 불필요). full index relation_card 1168·name_only 16412 불변. (CQF01/CQF02 가 nutrient relation 이라 full index flip 한 것과 구분 — antacid 는 영양소 트랙 아님.)
+
+### 18.3 검색 facet 처리(src 최소변경) — 영양소 오인 차단
+antacid relation 의 `nutrient` 슬롯은 영양소가 아니라 '제산제(약물)'이므로, 검색 '영양소' 필터에 노출되면 안 된다(round4 회의론자 지적). `src/js/guards.js`의 `getFacets` 를 **counterpart_category 가 있는 relation 은 nutrients facet 에서 제외**하도록 1줄 수정(`rels.filter((r) => !r.counterpart_category)`). 기존 영양소 relation 은 counterpart_category 가 없어 영향 0. → 검색 '영양소' 필터엔 실제 영양소 6종만, 'Al/Mg 함유 제산제(약물)'는 미노출(node 검증 PASS). AT-ITZ 는 기본 목록·검색('이트라코나졸'/'제산제')·분류 필터(separation)로 발견 가능.
+
+### 18.4 렌더(generic separation 카드)
+이트라코나졸 × Al/Mg 함유 제산제(약물) 카드: kicker '같은 시간대 복용 주의' + chip '복용 간격'(separation) + 본문(중립 카피) + 출처(itemSeq 200404726, 접힘) + 공통 면책. round1 풀카드 fidelity survives 그대로. 검색 시 relation 매치이므로 name_only fallback 미표시(이중노출 0).
+
+### 18.5 검증(전수 PASS)
+- 신규 `scripts/validate_antacid_itz_integration_v1_2.py`: relations 60·AT-ITZ 1건·필드/안전 플래그·draft-전용 미누출·reviewed_by 미기재·source itemSeq·display verbatim·full index 무변경·(node) facet 제외·separation 렌더·제품0·면책.
+- relation-count 하드코딩 validator 9종 59→60 갱신(full index·factory_integration·cqf02_integration·relation_draft[ANTACID_IDS={61}]·coverage_queue_integration/draft_batch/batch3/batch4·factory_draft_batch).
+- 배포 게이트(v0.1 12/12·v0.2 15/15·v0.3 aliases·alias surface·full index·potassium policy+selftest) · antacid validator/smoke · forbidden 0 · no-live-write guard · full smoke 9종 전부 PASS.
+
+### 18.6 안전 불변
+relations 59→60(AT-ITZ 1건만)·published/clinical_reviewed=false·reviewed_by 공란·제품/제휴 UI 0·DATA_URL v0.2·**full index/aliases/harvest_queue/excluded 무변경**·기존 59 relation 보존·src 변경=getFacets 1줄(facet 제외)뿐. AT-FEX 미통합. **본 통합은 verified_reference 천장의 참고정보 노출일 뿐 clinical_reviewed(임상 검수)·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.** clinical reviewer 확보 시 별도 `clinical_reviewed` 트랙.

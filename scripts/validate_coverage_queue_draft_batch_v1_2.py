@@ -92,7 +92,7 @@ def main():
     ck("hold/reject/needs_review 후보 draft 미혼입", not leaked, str(leaked))
 
     exp = json.load(open(EXPORT, encoding="utf-8"))
-    ck("라이브 relations==59 (CQF01 + CQF02 승격 반영)", len(exp["relations"]) == 59, str(len(exp["relations"])))
+    ck("라이브 relations==60 (CQF01 + CQF02 + AT-ITZ 승격 반영)", len(exp["relations"]) == 60, str(len(exp["relations"])))
     ck("라이브 published=false 불변", exp["meta"].get("published") is False)
     # CQF01 은 PM 승인 후 라이브 승격(id 59). 그 외 batch2 draft 는 라이브 미유입이어야 한다.
     promoted = {"CQF01"}

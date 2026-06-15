@@ -57,8 +57,8 @@ def main():
     by_id = {r["id"]: r for r in rels}
     new = [r for r in rels if r["id"] in FACTORY_IDS]
 
-    ck("relations == 59 (factory DF06·DF07 + CQF01 알마게이트 + CQF02 테고프라잔)", len(rels) == 59, str(len(rels)))
-    ck("meta.relation_count == 59", exp["meta"].get("relation_count") == 59, str(exp["meta"].get("relation_count")))
+    ck("relations == 60 (factory DF06·DF07 + CQF01 + CQF02 + AT-ITZ)", len(rels) == 60, str(len(rels)))
+    ck("meta.relation_count == 60", exp["meta"].get("relation_count") == 60, str(exp["meta"].get("relation_count")))
     ck("신규 ids 57·58 존재", len(new) == 2, str([r["id"] for r in new]))
     got = {(r["id"], r["ingredient"], r["nutrient"]) for r in new}
     ck("신규 = 리오티로닌×칼슘(57)·철분(58)", got == EXPECT, str(got))
