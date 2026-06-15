@@ -96,6 +96,25 @@ def _filter_pick(rows, ingredient, exclude_ingr, max_n, exact_only=False):
     return picked
 
 
+def _prefix_dominated(rows, ingredient):
+    """얕은 결과가 **다른 약물의 연속 명칭**(성분명 앞에 접두사가 붙어 확장된 별개 약물,
+    예: 메틸/메칠프레드니솔론·에스오메프라졸·덱스란소프라졸)에 점유됐는지 판정한다.
+    이때만 exact_only 깊은 검색이 정확 base 단일·경구를 복구할 수 있다.
+    제외: 염/수화물 등 접미사형 superset(세파클러수화물·라베프라졸나트륨 — 같은 약물, 주성분명 'X염'≠'X'
+    이라 exact_only deep 로 복구 불가)과 복합제('/'·',' 로 구분된 동거 성분) — 불필요한 deep 호출 방지."""
+    for r in rows:
+        ingr = r.ingr_name or ""
+        idx = ingr.find(ingredient)
+        # idx<=0: 미포함(-1) 또는 맨 앞(접미사형 salt) → 다른약물 접두사 확장 아님.
+        if idx <= 0 or ingr == ingredient:
+            continue
+        prev = ingr[idx - 1]
+        # 앞 글자가 한글이면 연속 명칭(다른 약물). '/'·','·공백 등 구분자면 복합제 → 제외.
+        if "가" <= prev <= "힣":
+            return True
+    return False
+
+
 def search_itemseqs(opener, ingredient, exclude_ingr=None, max_n=3, max_pages=2, deep_max_pages=20):
     """성분명 → 국내 완제·경구·정상·단일성분 대표 itemSeq 목록(오름차순). 실패 시 ([], reason).
     조회·표준화는 SDK(search_drug)가 수행하고, 여기서는 **선별 필터(경구단일완제)** 만 적용한다.
@@ -112,8 +131,9 @@ def search_itemseqs(opener, ingredient, exclude_ingr=None, max_n=3, max_pages=2,
     picked = _filter_pick(rows, ingredient, exclude_ingr, max_n)
     if any(ingr == ingredient for _, _, ingr in picked):
         return picked, "ok"
-    # 얕은 검색에 정확 주성분 후보 없음 → substring 지배면 깊은 검색 fallback(정확 주성분만).
-    dominated = any((ingredient in r.ingr_name and r.ingr_name != ingredient) for r in rows)
+    # 얕은 검색에 정확 주성분 후보 없음 → **다른 약물의 연속 명칭**(접두사 확장)에 점유된 경우만
+    # 깊은 검색 fallback(정확 주성분만). 염/수화물(접미사)·복합제는 제외 → deep 호출 과다 방지.
+    dominated = _prefix_dominated(rows, ingredient)
     if dominated and deep_max_pages > max_pages:
         deep_rows = opener.search_drug(ingredient, max_pages=deep_max_pages)
         exact_deep = _filter_pick(deep_rows, ingredient, exclude_ingr, max_n, exact_only=True)

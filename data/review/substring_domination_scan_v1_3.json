@@ -1,0 +1,1196 @@
+{
+ "meta": {
+  "title": "MediStack substring 지배 성분 탐색/분류 (v1.3 — 분석 산출물)",
+  "purpose": "shallow search 가 다른약물 superset 에 지배돼 정확 성분 단일·경구 품목을 놓칠 위험 탐색.",
+  "method": "로컬 substring 쌍 + prefix/suffix 분류 + cache-first SDK domination probe. live/protected 무수정.",
+  "do_not_implement_yet": true,
+  "live_integration_forbidden": true,
+  "published": false,
+  "clinical_reviewed": false,
+  "deploy": "none"
+ },
+ "universe_sizes": {
+  "theme": 25,
+  "carried": 41,
+  "live": 27,
+  "kpi": 300,
+  "union": 366
+ },
+ "substring_pairs_total": 40,
+ "prefix_type_diff_drug": [
+  {
+   "short": "란소프라졸",
+   "diff_supersets": [
+    "덱스란소프라졸"
+   ]
+  },
+  {
+   "short": "세티리진염산염",
+   "diff_supersets": [
+    "레보세티리진염산염"
+   ]
+  },
+  {
+   "short": "오메프라졸",
+   "diff_supersets": [
+    "에스오메프라졸"
+   ]
+  },
+  {
+   "short": "펜타닐",
+   "diff_supersets": [
+    "레미펜타닐염산염"
+   ]
+  },
+  {
+   "short": "프레드니솔론",
+   "diff_supersets": [
+    "메틸프레드니솔론"
+   ]
+  }
+ ],
+ "suffix_type_salt_same_drug": [
+  {
+   "short": "나프록센",
+   "salt_supersets": [
+    "나프록센나트륨"
+   ]
+  },
+  {
+   "short": "다파글리플로진",
+   "salt_supersets": [
+    "다파글리플로진프로판디올수화물"
+   ]
+  },
+  {
+   "short": "덱시부프로펜",
+   "salt_supersets": [
+    "덱시부프로펜 디.씨."
+   ]
+  },
+  {
+   "short": "도네페질염산염",
+   "salt_supersets": [
+    "도네페질염산염수화물",
+    "도네페질염산염일수화물"
+   ]
+  },
+  {
+   "short": "라베프라졸",
+   "salt_supersets": [
+    "라베프라졸나트륨"
+   ]
+  },
+  {
+   "short": "로수바스타틴",
+   "salt_supersets": [
+    "로수바스타틴칼슘",
+    "로수바스타틴칼슘(미분화)"
+   ]
+  },
+  {
+   "short": "로수바스타틴칼슘",
+   "salt_supersets": [
+    "로수바스타틴칼슘(미분화)"
+   ]
+  },
+  {
+   "short": "리도카인",
+   "salt_supersets": [
+    "리도카인염산염수화물"
+   ]
+  },
+  {
+   "short": "리바록사반",
+   "salt_supersets": [
+    "리바록사반(미분화)"
+   ]
+  },
+  {
+   "short": "리바스티그민",
+   "salt_supersets": [
+    "리바스티그민타르타르산염"
+   ]
+  },
+  {
+   "short": "리세드론산",
+   "salt_supersets": [
+    "리세드론산나트륨일수화물",
+    "리세드론산나트륨",
+    "리세드론산나트륨2.5수화물"
+   ]
+  },
+  {
+   "short": "리세드론산나트륨",
+   "salt_supersets": [
+    "리세드론산나트륨일수화물",
+    "리세드론산나트륨2.5수화물"
+   ]
+  },
+  {
+   "short": "설트랄린",
+   "salt_supersets": [
+    "설트랄린염산염"
+   ]
+  },
+  {
+   "short": "세틸피리디늄염화물",
+   "salt_supersets": [
+    "세틸피리디늄염화물수화물"
+   ]
+  },
+  {
+   "short": "세파클러",
+   "salt_supersets": [
+    "세파클러수화물"
+   ]
+  },
+  {
+   "short": "세푸록심",
+   "salt_supersets": [
+    "세푸록심악세틸"
+   ]
+  },
+  {
+   "short": "세프라딘",
+   "salt_supersets": [
+    "세프라딘수화물"
+   ]
+  },
+  {
+   "short": "세프포독심",
+   "salt_supersets": [
+    "세프포독심프록세틸"
+   ]
+  },
+  {
+   "short": "세프프로질",
+   "salt_supersets": [
+    "세프프로질 수화물",
+    "세프프로질수화물"
+   ]
+  },
+  {
+   "short": "세픽심",
+   "salt_supersets": [
+    "세픽심수화물"
+   ]
+  },
+  {
+   "short": "실데나필",
+   "salt_supersets": [
+    "실데나필시트르산염"
+   ]
+  },
+  {
+   "short": "아리피프라졸",
+   "salt_supersets": [
+    "아리피프라졸(미분화)"
+   ]
+  },
+  {
+   "short": "아스피린",
+   "salt_supersets": [
+    "아스피린(저용량 항혈소판)"
+   ]
+  },
+  {
+   "short": "아토르바스타틴",
+   "salt_supersets": [
+    "아토르바스타틴칼슘수화물",
+    "아토르바스타틴칼슘삼수화물"
+   ]
+  },
+  {
+   "short": "에독사반",
+   "salt_supersets": [
+    "에독사반토실산염수화물",
+    "에독사반베실산염수화물"
+   ]
+  },
+  {
+   "short": "에스시탈로프람",
+   "salt_supersets": [
+    "에스시탈로프람옥살산염"
+   ]
+  },
+  {
+   "short": "이반드론산",
+   "salt_supersets": [
+    "이반드론산나트륨일수화물"
+   ]
+  },
+  {
+   "short": "이트라코나졸",
+   "salt_supersets": [
+    "이트라코나졸펠렛",
+    "이트라코나졸고체분산체"
+   ]
+  },
+  {
+   "short": "졸피뎀",
+   "salt_supersets": [
+    "졸피뎀타르타르산염"
+   ]
+  },
+  {
+   "short": "쿠에티아핀",
+   "salt_supersets": [
+    "쿠에티아핀푸마르산염"
+   ]
+  },
+  {
+   "short": "클래리트로마이신",
+   "salt_supersets": [
+    "클래리트로마이신제피과립"
+   ]
+  },
+  {
+   "short": "클로피도그렐",
+   "salt_supersets": [
+    "클로피도그렐황산수소염",
+    "클로피도그렐황산염"
+   ]
+  },
+  {
+   "short": "판토프라졸",
+   "salt_supersets": [
+    "판토프라졸나트륨세스키히드레이트"
+   ]
+  },
+  {
+   "short": "피타바스타틴",
+   "salt_supersets": [
+    "피타바스타틴칼슘수화물",
+    "피타바스타틴칼슘"
+   ]
+  },
+  {
+   "short": "피타바스타틴칼슘",
+   "salt_supersets": [
+    "피타바스타틴칼슘수화물"
+   ]
+  }
+ ],
+ "classification_summary": {
+  "already_safe": 20,
+  "substring_risk_confirmed": 3,
+  "no_risk": 5,
+  "needs_deep_check": 1
+ },
+ "sdk_stats": {
+  "network": 49,
+  "cache": 172,
+  "fixture": 0,
+  "offline_miss": 0,
+  "error": 0
+ },
+ "probes": [
+  {
+   "ingredient": "덱사메타손",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "196300064",
+     "부광덱사메타손정",
+     "덱사메타손"
+    ],
+    [
+     "199401023",
+     "삼남덱사메타손정",
+     "덱사메타손"
+    ]
+   ],
+   "has_exact_in_shallow": true,
+   "diff_drug_supersets_in_shallow": [
+    "염산시프로플록사신/덱사메타손",
+    "클로람페니콜/덱사메타손디나트륨인산염/테트라히드로졸린염산염",
+    "토브라마이신/덱사메타손",
+    "폴리믹신B황산염/네오마이신황산염/덱사메타손"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "196300064",
+     "부광덱사메타손정",
+     "덱사메타손"
+    ],
+    [
+     "199401023",
+     "삼남덱사메타손정",
+     "덱사메타손"
+    ]
+   ]
+  },
+  {
+   "ingredient": "란소프라졸",
+   "kind": "prefix_diff_drug",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "덱스란소프라졸"
+   ],
+   "classification": "substring_risk_confirmed",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "201207343",
+     "덱실란트디알캡슐30밀리그램(덱스란소프라졸)",
+     "덱스란소프라졸"
+    ],
+    [
+     "201207344",
+     "덱실란트디알캡슐60밀리그램(덱스란소프라졸)",
+     "덱스란소프라졸"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "덱스란소프라졸",
+    "침강탄산칼슘/란소프라졸"
+   ],
+   "search_itemseqs_reason": "ok_deep_exact",
+   "search_itemseqs_picks": [
+    [
+     "200301515",
+     "란시드캡슐15밀리그램(란소프라졸)",
+     "란소프라졸"
+    ],
+    [
+     "200510973",
+     "란스톤엘에프디티정15밀리그램(란소프라졸)",
+     "란소프라졸"
+    ]
+   ]
+  },
+  {
+   "ingredient": "레보티록신",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 20,
+   "shallow_pick": [
+    [
+     "197400278",
+     "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
+     "레보티록신나트륨수화물"
+    ],
+    [
+     "200301116",
+     "씬지록신정100마이크로그램(레보티록신나트륨수화물)",
+     "레보티록신나트륨수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "197400278",
+     "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
+     "레보티록신나트륨수화물"
+    ],
+    [
+     "200301116",
+     "씬지록신정100마이크로그램(레보티록신나트륨수화물)",
+     "레보티록신나트륨수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "리오티로닌",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 3,
+   "shallow_pick": [
+    [
+     "201503196",
+     "테트로닌정5㎍(리오티로닌나트륨)",
+     "리오티로닌나트륨"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "레보티록신나트륨수화물/리오티로닌나트륨"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "201503196",
+     "테트로닌정5㎍(리오티로닌나트륨)",
+     "리오티로닌나트륨"
+    ]
+   ]
+  },
+  {
+   "ingredient": "메토라존",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "no_risk",
+   "shallow_rows": 0,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "no_domestic_single_oral_product",
+   "search_itemseqs_picks": []
+  },
+  {
+   "ingredient": "메틸프레드니솔론",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "199701131",
+     "메치론정(메틸프레드니솔론)",
+     "메틸프레드니솔론(미분화)"
+    ],
+    [
+     "199800324",
+     "메니솔론정4밀리그램(메틸프레드니솔론)",
+     "메틸프레드니솔론"
+    ]
+   ],
+   "has_exact_in_shallow": true,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199701131",
+     "메치론정(메틸프레드니솔론)",
+     "메틸프레드니솔론(미분화)"
+    ],
+    [
+     "199800324",
+     "메니솔론정4밀리그램(메틸프레드니솔론)",
+     "메틸프레드니솔론"
+    ]
+   ]
+  },
+  {
+   "ingredient": "목시플록사신",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "199906848",
+     "아벨록스정400밀리그람(목시플록사신염산염)",
+     "목시플록사신염산염"
+    ],
+    [
+     "201309618",
+     "모록사신정400밀리그램(목시플록사신염산염)",
+     "목시플록사신염산염"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199906848",
+     "아벨록스정400밀리그람(목시플록사신염산염)",
+     "목시플록사신염산염"
+    ],
+    [
+     "201309618",
+     "모록사신정400밀리그램(목시플록사신염산염)",
+     "목시플록사신염산염"
+    ]
+   ]
+  },
+  {
+   "ingredient": "벤드로플루메티아지드",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "no_risk",
+   "shallow_rows": 0,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "no_domestic_single_oral_product",
+   "search_itemseqs_picks": []
+  },
+  {
+   "ingredient": "부메타니드",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "no_risk",
+   "shallow_rows": 0,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "no_domestic_single_oral_product",
+   "search_itemseqs_picks": []
+  },
+  {
+   "ingredient": "세티리진염산염",
+   "kind": "prefix_diff_drug",
+   "in_nutrient_scope": false,
+   "linguistic_supersets": [
+    "레보세티리진염산염"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "199802009",
+     "러지텍정(세티리진염산염)",
+     "세티리진염산염"
+    ],
+    [
+     "199803133",
+     "나노텍정(세티리진염산염)",
+     "세티리진염산염"
+    ]
+   ],
+   "has_exact_in_shallow": true,
+   "diff_drug_supersets_in_shallow": [
+    "레보세티리진염산염",
+    "몬테루카스트나트륨/레보세티리진염산염",
+    "슈도에페드린염산염/세티리진염산염"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199802009",
+     "러지텍정(세티리진염산염)",
+     "세티리진염산염"
+    ],
+    [
+     "199803133",
+     "나노텍정(세티리진염산염)",
+     "세티리진염산염"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세파클러",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "세파클러수화물"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "199201155",
+     "메디카세파클러캡슐250밀리그램(세파클러수화물)",
+     "세파클러수화물"
+    ],
+    [
+     "199301197",
+     "명인세파클러캡슐",
+     "세파클러수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199201155",
+     "메디카세파클러캡슐250밀리그램(세파클러수화물)",
+     "세파클러수화물"
+    ],
+    [
+     "199301197",
+     "명인세파클러캡슐",
+     "세파클러수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세팔렉신",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 18,
+   "shallow_pick": [
+    [
+     "198701854",
+     "메섹신정(메틸올세팔렉신리시네이트)",
+     "메틸올세팔렉신리시네이트"
+    ],
+    [
+     "198800426",
+     "케파신캡슐500밀리그램(세팔렉신수화물)",
+     "세팔렉신수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "메틸올세팔렉신리시네이트"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "198701854",
+     "메섹신정(메틸올세팔렉신리시네이트)",
+     "메틸올세팔렉신리시네이트"
+    ],
+    [
+     "198800426",
+     "케파신캡슐500밀리그램(세팔렉신수화물)",
+     "세팔렉신수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세푸록심",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "세푸록심악세틸"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "200300033",
+     "세록심정250밀리그램(세푸록심악세틸)",
+     "세푸록심악세틸"
+    ],
+    [
+     "200411029",
+     "뉴록심정(세푸록심악세틸)",
+     "세푸록심악세틸"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "200300033",
+     "세록심정250밀리그램(세푸록심악세틸)",
+     "세푸록심악세틸"
+    ],
+    [
+     "200411029",
+     "뉴록심정(세푸록심악세틸)",
+     "세푸록심악세틸"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세프디토렌",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 7,
+   "shallow_pick": [
+    [
+     "199500901",
+     "보령메이액트정100밀리그램(세프디토렌피복실)",
+     "세프디토렌피복실"
+    ],
+    [
+     "201006942",
+     "영진세프디토렌피복실정100mg",
+     "세프디토렌피복실"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199500901",
+     "보령메이액트정100밀리그램(세프디토렌피복실)",
+     "세프디토렌피복실"
+    ],
+    [
+     "201006942",
+     "영진세프디토렌피복실정100mg",
+     "세프디토렌피복실"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세프라딘",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "세프라딘수화물"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "198900493",
+     "유한세프라딘캡슐250밀리그램",
+     "세프라딘수화물"
+    ],
+    [
+     "199702165",
+     "넬슨세프라딘캡슐500밀리그램(세프라딘수화물)",
+     "세프라딘수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "198900493",
+     "유한세프라딘캡슐250밀리그램",
+     "세프라딘수화물"
+    ],
+    [
+     "199702165",
+     "넬슨세프라딘캡슐500밀리그램(세프라딘수화물)",
+     "세프라딘수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세프록사딘",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 4,
+   "shallow_pick": [
+    [
+     "199201469",
+     "타이록신캡슐(세프록사딘수화물)",
+     "세프록사딘수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199201469",
+     "타이록신캡슐(세프록사딘수화물)",
+     "세프록사딘수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세프카펜",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 9,
+   "shallow_pick": [
+    [
+     "200500420",
+     "후로목스정75밀리그램(세프카펜피복실염산염수화물)",
+     "세프카펜피복실염산염수화물"
+    ],
+    [
+     "200500421",
+     "후로목스정100밀리그램(세프카펜피복실염산염수화물)",
+     "세프카펜피복실염산염수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "200500420",
+     "후로목스정75밀리그램(세프카펜피복실염산염수화물)",
+     "세프카펜피복실염산염수화물"
+    ],
+    [
+     "200500421",
+     "후로목스정100밀리그램(세프카펜피복실염산염수화물)",
+     "세프카펜피복실염산염수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세프포독심",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "세프포독심프록세틸"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "199300168",
+     "바난정(세프포독심프록세틸)",
+     "세프포독심프록세틸"
+    ],
+    [
+     "200001190",
+     "세포세틸정(세프포독심프록세틸)",
+     "세프포독심프록세틸"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199300168",
+     "바난정(세프포독심프록세틸)",
+     "세프포독심프록세틸"
+    ],
+    [
+     "200001190",
+     "세포세틸정(세프포독심프록세틸)",
+     "세프포독심프록세틸"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세프프로질",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "세프프로질 수화물",
+    "세프프로질수화물"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "200400510",
+     "로지세프정250밀리그램(세프프로질수화물)",
+     "세프프로질 수화물"
+    ],
+    [
+     "200400642",
+     "킹세프정(세프프로질수화물)",
+     "세프프로질 수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "200400510",
+     "로지세프정250밀리그램(세프프로질수화물)",
+     "세프프로질 수화물"
+    ],
+    [
+     "200400642",
+     "킹세프정(세프프로질수화물)",
+     "세프프로질 수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "세픽심",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "세픽심수화물"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "198900223",
+     "동아슈프락스캡슐100밀리그램(세픽심수화물)",
+     "세픽심수화물"
+    ],
+    [
+     "199702588",
+     "세픽스캡슐100밀리그램(세픽심수화물)",
+     "세픽심수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "198900223",
+     "동아슈프락스캡슐100밀리그램(세픽심수화물)",
+     "세픽심수화물"
+    ],
+    [
+     "199702588",
+     "세픽스캡슐100밀리그램(세픽심수화물)",
+     "세픽심수화물"
+    ]
+   ]
+  },
+  {
+   "ingredient": "아세타졸아미드",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 2,
+   "shallow_pick": [
+    [
+     "201403403",
+     "아세타졸정(아세타졸아미드)",
+     "아세타졸아미드"
+    ]
+   ],
+   "has_exact_in_shallow": true,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "201403403",
+     "아세타졸정(아세타졸아미드)",
+     "아세타졸아미드"
+    ]
+   ]
+  },
+  {
+   "ingredient": "아조세미드",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 2,
+   "shallow_pick": [
+    [
+     "199001306",
+     "유레틴정(아조세미드)",
+     "아조세미드"
+    ]
+   ],
+   "has_exact_in_shallow": true,
+   "diff_drug_supersets_in_shallow": [
+    "조결정아조세미드"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199001306",
+     "유레틴정(아조세미드)",
+     "아조세미드"
+    ]
+   ]
+  },
+  {
+   "ingredient": "오메프라졸",
+   "kind": "prefix_diff_drug",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "에스오메프라졸"
+   ],
+   "classification": "substring_risk_confirmed",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "201403414",
+     "네메올정20밀리그램(에스오메프라졸마그네슘삼수화물)",
+     "에스오메프라졸마그네슘삼수화물"
+    ],
+    [
+     "201403418",
+     "네메올정40밀리그램(에스오메프라졸마그네슘삼수화물)",
+     "에스오메프라졸마그네슘삼수화물"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "나프록센/에스오메프라졸마그네슘삼수화물",
+    "나프록센/에스오메프라졸마그네슘이수화물",
+    "나프록센/에스오메프라졸스트론튬사수화물",
+    "에스오메프라졸/나프록센",
+    "에스오메프라졸마그네슘삼수화물",
+    "에스오메프라졸마그네슘삼수화물/탄산수소나트륨",
+    "에스오메프라졸마그네슘이수화물"
+   ],
+   "search_itemseqs_reason": "ok_deep_exact",
+   "search_itemseqs_picks": [
+    [
+     "199202074",
+     "라메졸캡슐20밀리그램(오메프라졸)",
+     "오메프라졸"
+    ]
+   ]
+  },
+  {
+   "ingredient": "트리클로르메티아지드",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "no_risk",
+   "shallow_rows": 0,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "no_domestic_single_oral_product",
+   "search_itemseqs_picks": []
+  },
+  {
+   "ingredient": "펜타닐",
+   "kind": "prefix_diff_drug",
+   "in_nutrient_scope": false,
+   "linguistic_supersets": [
+    "레미펜타닐염산염"
+   ],
+   "classification": "already_safe",
+   "shallow_rows": 30,
+   "shallow_pick": [
+    [
+     "201707583",
+     "나르코설하정100마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ],
+    [
+     "201804098",
+     "나르코설하정200마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "레미펜타닐염산염",
+    "수펜타닐시트르산염",
+    "알펜타닐염산염",
+    "염산알펜타닐"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "201707583",
+     "나르코설하정100마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ],
+    [
+     "201804098",
+     "나르코설하정200마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ]
+   ]
+  },
+  {
+   "ingredient": "프레드니솔론",
+   "kind": "prefix_diff_drug",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [
+    "메틸프레드니솔론"
+   ],
+   "classification": "substring_risk_confirmed",
+   "shallow_rows": 30,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "길초산초산프레드니솔론",
+    "네오마이신황산염/프레드니솔론",
+    "메틸프레드니솔론",
+    "메틸프레드니솔론숙시네이트나트륨",
+    "알란토인/토코페롤아세테이트/프레드니솔론아세테이트/리도카인",
+    "조메칠프레드니솔론",
+    "초산메칠프레드니솔론"
+   ],
+   "search_itemseqs_reason": "ok_deep_exact",
+   "search_itemseqs_picks": [
+    [
+     "199602982",
+     "소론도정(프레드니솔론)",
+     "프레드니솔론"
+    ]
+   ]
+  },
+  {
+   "ingredient": "플루드로코르티손",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "already_safe",
+   "shallow_rows": 1,
+   "shallow_pick": [
+    [
+     "199907231",
+     "플로리네프정(미분화플루드로코르티손아세테이트)",
+     "미분화플루드로코르티손아세테이트"
+    ]
+   ],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [
+    "미분화플루드로코르티손아세테이트"
+   ],
+   "search_itemseqs_reason": "ok",
+   "search_itemseqs_picks": [
+    [
+     "199907231",
+     "플로리네프정(미분화플루드로코르티손아세테이트)",
+     "미분화플루드로코르티손아세테이트"
+    ]
+   ]
+  },
+  {
+   "ingredient": "피레타니드",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "no_risk",
+   "shallow_rows": 0,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "no_domestic_single_oral_product",
+   "search_itemseqs_picks": []
+  },
+  {
+   "ingredient": "하이드로코르티손",
+   "kind": "theme_source_check",
+   "in_nutrient_scope": true,
+   "linguistic_supersets": [],
+   "classification": "needs_deep_check",
+   "shallow_rows": 1,
+   "shallow_pick": [],
+   "has_exact_in_shallow": false,
+   "diff_drug_supersets_in_shallow": [],
+   "search_itemseqs_reason": "no_domestic_single_oral_product",
+   "search_itemseqs_picks": []
+  }
+ ],
+ "live_ppi_itemseq_audit": [
+  {
+   "ingredient": "오메프라졸",
+   "relation_id": 13,
+   "nutrient": "비타민B12",
+   "live_itemseq": "200411095",
+   "pointer_has_base_name": true
+  },
+  {
+   "ingredient": "오메프라졸",
+   "relation_id": 14,
+   "nutrient": "마그네슘",
+   "live_itemseq": "200411095",
+   "pointer_has_base_name": true
+  },
+  {
+   "ingredient": "란소프라졸",
+   "relation_id": 36,
+   "nutrient": "비타민B12",
+   "live_itemseq": "201308978",
+   "pointer_has_base_name": true
+  },
+  {
+   "ingredient": "란소프라졸",
+   "relation_id": 37,
+   "nutrient": "마그네슘",
+   "live_itemseq": "201308978",
+   "pointer_has_base_name": true
+  }
+ ]
+}

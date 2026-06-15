@@ -105,3 +105,26 @@ manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0*
 **회귀 테스트**: `scripts/test_search_depth_v1_3.py`(FakeOpener·네트워크 0·결정적) — ①프레드니솔론 deep fallback 이 소론도정 정확채택+메칠 오채택 금지+수출/원료 종료 금지 ②미유통(부메타니드 등) 0건 시 deep 미호출 ③하이드로코르티손 외용만이면 deep 후에도 [] ④PM-ready 비교군 얕은 exact 있으면 deep 미호출+기존 itemSeq 유지.
 
 봇은 이 개선을 자동 승계한다(import 경로 동일). runtime harvest_queue 는 여전히 커밋하지 않으며 schedule 비활성 유지.
+
+## 10. 3차 online run + 검색 깊이 하드닝 (2026-06-15 round3)
+
+개선된 `search_itemseqs` 가 harvester full online run 에 제대로 반영되는지 재확인하고, deep fallback 의 **과다 호출**을 하드닝했다. **live/배포/승격 0** · 보호셋 sha256 불변 · runtime 큐 커밋 제외.
+
+- **실행**: `python3 scripts/guard_no_live_write_v1_3.py --run-bot --bot-args "--online --kpi-limit 60"` → 가드 **PASS**(보호셋 **49** 파일 sha256 불변 · write-scope=`data/harvest_queue/` 한정 · direct-http 신규 0).
+- **SDK**: 첫 실행 network **3** · cache 139, 재실행 network **0**(완전 캐시·결정적) · error 0.
+- **counts**: harvest 78 · source-check 29 → **draft 7 · needs_review 9 · reject 13** · already_covered 7 · hold 46 · rejected_precheck 52 · KPI 60.
+- **2차 run(§8) 대비**: draft **6→7** · needs_review **11→9** · reject **12→13**.
+  - **D-CORT-01 프레드니솔론×칼륨**: needs_review(검색 0건 false-negative) → **draft(source_confirmed, 소론도정 199602982)**. deep fallback(`ok_deep_exact`)이 harvester 에 자동 반영됨을 입증(= DF-PRED-01 자동 queue 반영).
+  - **D-CORT-02 프레드니솔론×칼슘**: needs_review(fail-closed) → **reject**(라벨 확보·칼슘 방향성 동거어 부재). 개선된 검색으로 fail-closed 가 확정 deny 로 격상.
+  - 나머지 분포 결정적 불변. AT-ITZ-01 은 `already_covered` 유지(id61 live). 요약 → `data/review/harvest_run3_summary_v1_3.json`.
+
+**검색 깊이 하드닝 (deep fallback 발동 조건 정밀화)**: deep fallback 은 **다른 약물의 연속 명칭(접두사 확장)** 이 얕은 페이지를 점유할 때만 의미가 있다(예: 메틸프레드니솔론이 프레드니솔론을, 에스오메프라졸이 오메프라졸을, 덱스란소프라졸이 란소프라졸을 지배). **염/수화물(접미사형 `X나트륨`·`세파클러수화물`)과 복합제(`Y/X`)** 는 `exact_only` deep 로 절대 복구되지 않으므로(주성분명 'X염'≠'X'), 이런 superset 에는 deep 를 발동하지 않도록 `_prefix_dominated(rows, ingredient)` 헬퍼로 한정했다(성분명 앞 글자가 한글=연속 명칭일 때만 지배 판정).
+- **측정**: theme map(25) + live PPI 4종 스캔에서 deep 발동 **20 → 6** (productive 3=프레드니솔론/오메프라졸/란소프라졸 전부 보존, **picks/reason 회귀 0**). 남은 3(세팔렉신/플루드로코르티손/라베프라졸)은 연속명 derivative superset(메틸올세팔렉신리시네이트·미분화플루드로코르티손아세테이트·조라베프라졸나트륨)로, deep 가 정확 base 부재를 확인 후 무해 반환(보수적·정상).
+- **harvester 영향 중립**: online run 분포 7/9/13 불변 — 하드닝은 불필요 네트워크만 절감.
+
+**substring 지배 탐색 (작업 C)**: `scripts/analyze_substring_domination_v1_3.py` → `data/review/substring_domination_scan_v1_3.json`. ingredient universe(theme∪carried∪live∪KPI=366)에서 proper-substring 쌍 **40**건 산출, **접두사형(다른약물) 5 / 접미사형(염·수화물 35)** 분류. 접두사형 5 중 nutrient-scope 는 프레드니솔론(처리완료·draft)·오메프라졸·란소프라졸. **오메프라졸/란소프라졸도 substring 지배**(에스/덱스 enantiomer·combo 가 base 단일·경구를 얕은 페이지에서 지배)로 확인됐으나, 둘 다 **이미 live**(오메프라졸 id13/14 itemSeq 200411095=오메라졸캡슐, 란소프라졸 id36/37 itemSeq 201308978=뉴란소캡슐 — read-only fetch 로 base 단일·경구·enantiomer 문자열 없음 확정)이라 신규 조치 불필요. 세티리진·펜타닐은 영양소 scope 밖.
+
+**회귀 테스트 보강**: `scripts/test_search_depth_v1_3.py` 에 ⑤ 하드닝 케이스 추가(염 접미사·복합제는 deep 미발동, 연속명 접두사만 deep 발동) — 총 **5종 PASS**.
+
+- **커밋 정책**: runtime `data/harvest_queue/`(8 tracked 파일)는 **`git checkout` 으로 복원**(커밋 제외) · `_sdk/` 는 `.gitignore`. 분석 요약/탐색만 `data/review/` 에 보존.
+- **schedule 여전히 비활성**(§4). 자동화 활성화 0 · 봇 live/배포/승격 0.

@@ -1,0 +1,70 @@
+{
+ "meta": {
+  "title": "MediStack harvester 3차 online run — 검색깊이 하드닝 반영 요약",
+  "generated_for": "PM review handoff (분석 산출물 — live/protected 무변경)",
+  "run_at": "2026-06-15 (round3, search-depth hardening)",
+  "mode": "online",
+  "do_not_implement_yet": true,
+  "live_integration_forbidden": true,
+  "published": false,
+  "clinical_reviewed": false,
+  "live_relations_created": 0,
+  "live_promotions": 0,
+  "deploy": "none",
+  "note": "봇은 큐만 생성. 모든 후보 do_not_implement_yet. 승격은 PM + source 재확인 + clinical reviewer 후 별도. runtime harvest_queue 는 커밋 제외(이 요약만 data/review/ 에 보존). 가드(guard_no_live_write_v1_3 --run-bot --online)로 보호셋 49 sha 불변·write-scope 한정 검증."
+ },
+ "run_stats": {
+  "sdk": {"network": "3(첫 실행) → 0(재실행 완전캐시)", "cache": 139, "fixture": 0, "offline_miss": 0, "error": 0},
+  "counts": {"harvest_total": 78, "source_checked": 29, "draft_eligible": 7, "needs_review": 9, "source_reject": 13, "already_covered": 7, "hold": 46, "rejected_precheck": 52, "kpi_scanned": 60},
+  "vs_run2_2026_06_15": {
+   "draft_eligible": "6 → 7",
+   "needs_review": "11 → 9",
+   "source_reject": "12 → 13",
+   "interpretation": "개선된 search_itemseqs(deep fallback)가 harvester online run 에 반영됨. 프레드니솔론×칼륨이 needs_review(검색 0건 false-negative) → draft(source_confirmed, 소론도정 199602982)로 이동(+1 draft). 프레드니솔론×칼슘이 needs_review(fail-closed) → reject(라벨 확보·칼슘 방향성 동거어 부재)로 이동(needs_review -1, reject +1). 그 외 분포는 결정적으로 불변(회귀 0)."
+  }
+ },
+ "drafts_all_previously_triaged": {
+  "summary": "draft_eligible 7건 전부 기존 트리아지 매핑. 신규 draft-ready 0. D-CORT-01 이 이번에 false-negative 에서 복구되어 draft 군에 합류(=DF-PRED-01).",
+  "rows": [
+   {"candidate_id": "D-CORT-01", "relation": "프레드니솔론 × 칼륨", "itemseqs": "199602982", "verdict": "source_confirmed", "maps_to_existing_triage": "DF-PRED-01", "existing_status": "PM-ready (칼륨 dry-run 그룹 합류 완료)", "note": "deep fallback(ok_deep_exact)로 소론도정 복구 — 이전 run 의 검색 0건 false-negative 해소."},
+   {"candidate_id": "D-CORT-03", "relation": "메틸프레드니솔론 × 칼륨", "itemseqs": "199701131;199800324", "verdict": "source_confirmed", "maps_to_existing_triage": "DF01", "existing_status": "PM-ready (dry-run 준비 완료)"},
+   {"candidate_id": "D-CORT-04", "relation": "덱사메타손 × 칼륨", "itemseqs": "196300064;199401023", "verdict": "source_confirmed", "maps_to_existing_triage": "DF02", "existing_status": "wording-review (보류)"},
+   {"candidate_id": "D-CORT-06", "relation": "플루드로코르티손 × 칼륨", "itemseqs": "199907231", "verdict": "source_confirmed", "maps_to_existing_triage": "DF03", "existing_status": "hold (국내 유통 적음)"},
+   {"candidate_id": "D-CA-01", "relation": "아세타졸아미드 × 칼륨", "itemseqs": "201403403", "verdict": "source_confirmed", "maps_to_existing_triage": "DF04", "existing_status": "PM-ready (dry-run 준비 완료)"},
+   {"candidate_id": "D-LOOP-04", "relation": "아조세미드 × 칼륨", "itemseqs": "199001306", "verdict": "source_confirmed", "maps_to_existing_triage": "DF05", "existing_status": "PM-ready (dry-run 준비 완료)"},
+   {"candidate_id": "AT-FEX-01", "relation": "펙소페나딘 × Al/Mg 제산제(약물)", "itemseqs": "199801016", "verdict": "antacid_draft_confirmed", "maps_to_existing_triage": "AT-FEX", "existing_status": "dry-run 준비 완료"}
+  ]
+ },
+ "new_candidates_not_yet_triaged": {"draft_ready": [], "draft_ready_count": 0, "note": "신규 live-eligible 후보 0. substring 지배 탐색(data/review/substring_domination_scan_v1_3.json)에서 오메프라졸/란소프라졸도 substring 위험으로 확인됐으나 둘 다 이미 live(정확 base itemSeq) — 신규 relation 후보 아님."},
+ "needs_review_9_true_negatives": {
+  "note": "전부 '검색 0건/네트워크'(fail-closed). 개선된 deep fallback 으로도 변동 없음 — 이들은 substring 지배가 아니라 국내 미유통(searchDrug 0건) 또는 외용중심(경구 단일 희소)이라 deep 가 발동/복구할 수 없음(회귀 0 확인).",
+  "rows": [
+   {"candidate_id": "D-CORT-05", "relation": "하이드로코르티손 × 칼륨", "status": "needs_deep_check (외용중심·경구 단일 미확보) = CQF03 correctness 선결. substring 지배 아님."},
+   {"candidate_id": "D-LOOP-01", "relation": "부메타니드 × 칼륨", "status": "미유통(searchDrug 0건) — round1/2 reject(not_marketed_kr) 확정. 재조사 불필요."},
+   {"candidate_id": "D-LOOP-02", "relation": "부메타니드 × 마그네슘", "status": "미유통 — 동상."},
+   {"candidate_id": "D-LOOP-03", "relation": "피레타니드 × 칼륨", "status": "미유통 — 확정."},
+   {"candidate_id": "D-THZ-01", "relation": "메토라존 × 칼륨", "status": "미유통 — 확정."},
+   {"candidate_id": "D-THZ-02", "relation": "메토라존 × 마그네슘", "status": "미유통 — 확정."},
+   {"candidate_id": "D-THZ-03", "relation": "트리클로르메티아지드 × 칼륨", "status": "미유통 — 확정."},
+   {"candidate_id": "D-THZ-04", "relation": "트리클로르메티아지드 × 마그네슘", "status": "미유통 — 확정."},
+   {"candidate_id": "D-THZ-05", "relation": "벤드로플루메티아지드 × 칼륨", "status": "미유통 — 확정."}
+  ],
+  "marketed_true_negative_8_maintain_basis": "부메타니드(K/Mg)·피레타니드(K)·메토라존(K/Mg)·트리클로르메티아지드(K/Mg)·벤드로플루메티아지드(K) = 8 relation. searchDrug 0건+철자변형 0 = 국내 미유통 확정. 반복 조사 금지, 근거만 유지."
+ },
+ "reject_13": {
+  "note": "10 세파계×철분(literature-only·계열 일반화 금지) + 프레드니솔론×칼슘(라벨 확보·칼슘 방향성 동거어 부재) + 메틸프레드니솔론×칼슘 + 아조세미드×마그네슘. 세파계 reject 유지.",
+  "newly_definitive_via_improved_search": {"candidate_id": "D-CORT-02", "relation": "프레드니솔론 × 칼슘", "itemseqs": "199602982", "note": "이전 run 은 검색 0건으로 fail-closed needs_review. 개선된 검색으로 소론도정 라벨 확보 → 칼슘 방향성 동거어 부재 확인 → 확정 reject(과다해석 금지)."}
+ },
+ "search_depth_hardening": {
+  "change": "search_itemseqs 의 deep fallback 발동 조건을 '다른 약물의 연속 명칭(접두사 확장) 지배'로 한정(_prefix_dominated). 염/수화물(접미사형 X나트륨) 및 복합제(Y/X)는 exact_only deep 로 복구 불가하므로 deep 호출 자체를 피함.",
+  "measured": "theme map(25) + live PPI 4종 스캔에서 deep 발동 20 → 6 (productive 3=프레드니솔론/오메프라졸/란소프라졸 전부 보존, 회귀 0). 남은 3(세팔렉신/플루드로코르티손/라베프라졸)은 연속명 derivative superset(메틸올세팔렉신리시네이트/미분화플루드로코르티손아세테이트/조라베프라졸나트륨)로 deep 가 정확 base 없음을 확인 후 무해 반환.",
+  "harvester_impact": "harvester online run 분포 불변(7/9/13). 하드닝은 출력 중립, 불필요 네트워크만 절감."
+ },
+ "next_priority_pm_gated": [
+  "1. 칼륨 PM-ready 4건(DF01/DF04/DF05/DF-PRED-01) live 통합 — reviewer note(승인토큰+4건 전건 명시). dry-run 준비 완료. (DF02 wording / DF03 hold 는 별도)",
+  "2. AT-FEX live 통합(reviewer note) — dry-run 준비 완료.",
+  "3. CQF03(하이드로코르티손) correctness 선결: 전신 경구 제형 한정 + source_pointer 섹션 정정(외용중심·경구 단일 미확보).",
+  "4. 오메프라졸/란소프라졸 substring 위험은 live 정확(200411095/201308978 base 확인)이라 조치 불필요 — 재harvest 시 deep fallback 이 base 자동 복구.",
+  "5. 미유통 true negative 8 relation(loop/thiazide)·세파계×철분 10·K-sparing 칼륨상승 holds: 현 분류 유지(반복 조사/계열 일반화 금지)."
+ ]
+}

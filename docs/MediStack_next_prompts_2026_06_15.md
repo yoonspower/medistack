@@ -62,7 +62,7 @@
 
 > **완료분(2026-06-15)**: `search_itemseqs(opener, ingredient, ..., deep_max_pages=20)` — 얕은검색에 정확 주성분(주성분==성분명) 후보가 없고 결과가 성분명을 부분문자열로 포함하는 더 긴 주성분에 점유되면(예: 프레드니솔론 ⊂ 메틸프레드니솔론), deep_max_pages 까지 1회 deep fallback(exact_only). theme map 78 스캔 결과 deep fallback 발동은 **프레드니솔론 1건뿐**(나머지 21종 무변경=회귀 0). 회귀 테스트 4종(`scripts/test_search_depth_v1_3.py`).
 >
-> **차기(필요 시)**: ①다른 substring-지배 성분 발굴(예: 트리암테렌 ⊂ ?·짧은 성분명) ②deep fallback 의 max_n 정렬을 exact-우선으로(현재 exact_only 라 충분) ③harvester full online run 으로 프레드니솔론 draft 가 큐에 실제 반영되는지 확인(runtime 큐 커밋 금지). live 승격 0 유지.
+> **완료분(2026-06-15 round3)**: ①**substring 지배 성분 발굴 완료** — `scripts/analyze_substring_domination_v1_3.py` → `data/review/substring_domination_scan_v1_3.json`. universe 366 에서 proper-substring 쌍 40(접두사형 다른약물 5 / 접미사형 염·수화물 35). 접두사형 5 중 nutrient-scope = 프레드니솔론(처리)·오메프라졸·란소프라졸 — **오메프라졸/란소프라졸도 substring 지배지만 이미 live(base itemSeq 200411095/201308978 확정)라 조치 불필요**. ②**deep fallback 하드닝** — 발동 조건을 '연속 명칭 접두사(다른약물) 지배'로 한정(`_prefix_dominated`), 염/복합제는 deep 미발동. theme+PPI 스캔 deep 20→6(회귀 0, productive 3 보존). 회귀 테스트 5종으로 보강. ③**harvester full online run 재확인 완료** — D-CORT-01 프레드니솔론 자동 draft(source_confirmed 199602982) 반영 확인(`data/review/harvest_run3_summary_v1_3.json`, ops §10). runtime 큐 커밋 0.
 >
 > ↓아래는 완료 전 원안(보존).
 >
@@ -78,4 +78,16 @@
 >
 > **불변**: 봇/스크립트는 `data/harvest_queue/` 밖 무수정 · live relation 생성 0 · published/clinical_reviewed=false · 칼륨 행 product_link=false·potassium_safety_card=true · 칼륨 보충 권유/결핍 단정 0. 산출물은 draft-only(`live_integration_forbidden=true`) — 실제 승격은 PM + clinical reviewer 후 별도.
 
-근거/상세: `docs/MediStack_candidate_backlog_v1_3.md` · `data/review/harvest_run2_summary_v1_3.json` · `scripts/harvest_relation_bot_v1_3.py` · `scripts/verify_factory_sources_v1_2.py`.
+근거/상세: `docs/MediStack_candidate_backlog_v1_3.md` · `data/review/harvest_run2_summary_v1_3.json` · `data/review/harvest_run3_summary_v1_3.json` · `data/review/substring_domination_scan_v1_3.json` · `scripts/harvest_relation_bot_v1_3.py` · `scripts/verify_factory_sources_v1_2.py`.
+
+---
+
+## 프롬프트 5 — substring 지배 후속 deep-check (선택 · 승격 아님)
+
+> **배경**: round3 substring 탐색에서 nutrient-scope 접두사형 위험은 프레드니솔론(draft 처리)·오메프라졸·란소프라졸(이미 live·base 확정)뿐이었다. universe 는 theme∪carried∪live∪KPI(366)로 한정됐다.
+>
+> **차기(필요 시)**: ①KPI 상위 외 더 넓은 성분 시드(full drug name index 의 주성분 추출)로 접두사형 substring 쌍을 재산출 — 새 nutrient-interaction 성분이 다른약물 연속명에 지배되는 경우가 있는지. ②`_prefix_dominated` 잔여 헛발동 3종(세팔렉신/플루드로코르티손/라베프라졸 derivative superset)이 비용 문제면 derivative 접미사(아세테이트/리시네이트) allowlist 로 추가 차단(현재는 무해 1회 deep 라 보류 권장). ③오메프라졸/란소프라졸 live relation 의 대표 itemSeq 를 deep-fallback 픽(199202074/200301515)으로 정합시킬지 PM 판단(둘 다 valid base 라 필수 아님). 
+>
+> **불변**: 분석/탐색 산출물은 `data/review/` 만 · live/export/full index/aliases 무수정 · deep-check 는 SDK-only(직접 http 금지) · runtime 큐 커밋 0 · live 승격 0.
+>
+> 근거: `scripts/analyze_substring_domination_v1_3.py` · `data/review/substring_domination_scan_v1_3.json` · ops §10.
