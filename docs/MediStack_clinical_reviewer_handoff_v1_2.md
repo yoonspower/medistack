@@ -43,9 +43,10 @@
 
 상세: `docs/MediStack_antacid_interaction_track_v1_2.md` §17(적대검증)·§19(통합 준비·드라이런).
 
-### 1-B. potassium depletion 트랙 — 6건 (PM-ready 3 / wording-review 2 / hold 1)
+### 1-B. potassium depletion 트랙 — 7건 (PM-ready 4 / wording-review 2 / hold 1)
 
-원천: `data/review/potassium_depletion_pm_ready_v1_2.json`(2026-06-15 독립 적대 재검토 완료, 6/6 survives).
+원천: `data/review/potassium_depletion_pm_ready_v1_2.json`(2026-06-15 독립 적대 재검토 완료, 6/6 survives) +
+`data/review/prednisolone_potassium_draft_recheck_v1_3.json`(DF-PRED-01, 2026-06-15 needs_review 재확인 발견).
 전건 `nutrient=칼륨`·`potassium_safety_card=true`·`product_link_allowed=false`·published/clinical=false·reviewed_by 공란·`live_integration_forbidden=true`.
 
 | draft | 약물 | itemSeq | 분류 | 검수자에게 |
@@ -53,13 +54,14 @@
 | **DF01** | 메틸프레드니솔론 | 199800324 | **PM-ready** | 라벨 직접근거(칼륨손실+저칼륨성 알칼리혈증) 명확 |
 | **DF04** | 아세타졸아미드 | 201403403 | **PM-ready** | 이상반응(대사) 저칼륨혈증 직접 listing. ⚠️동일 라벨에 금기('저칼륨혈증 환자 투여금지') 공존 — 추출 포인터를 '이상반응(대사)' 섹션으로 한정(금기→depletion 오독 방지) |
 | **DF05** | 아조세미드 | 199001306 | **PM-ready** | 루프이뇨제, 부작용(대사) 저칼륨혈증 직접 |
+| **DF-PRED-01** | 프레드니솔론 | 199602982 | **PM-ready** | 글루코코르티코이드(소론도정). 라벨 직접근거(칼륨손실+저칼륨성 알칼리혈증, DF01과 동일 패턴). ⚠️seeded `ingrName1` 검색이 메틸프레드니솔론 substring 에 지배돼 1차 누락 → search-depth 개선(deep_max_pages fallback) 후 자동 포착. 계열 유추가 아니라 품목 라벨 직접 hit |
 | DF02 | 덱사메타손 | 202203949 | wording-review | 5건 중 유일하게 직접 칼륨손실 동사 부재('저칼륨성 알칼리혈증' 결과어만) → 추론적 약신호. 문구 강도 검수 |
 | CQF03 | 히드로코르티손 | 200703172 | wording-review | **correctness 선결**(아래 §3) |
 | DF03 | 플루드로코르티손 | 199907231 | hold | 강한 MC이나 국내 유통 적음(플로리네프정 1품목) — 품목 가용성 재확인 후 |
 
-이번에 **live 통합 준비(드라이런)를 끝낸 대상은 PM-ready 3건(DF01·DF04·DF05)뿐**이다:
-`scripts/integrate_potassium_pm_ready_v1_2.py`(dry-run, whitelist {DF01,DF04,DF05}) + `scripts/validate_potassium_dryrun_v1_2.py`(PASS).
-통합 시 relations → +3(id 62~64 또는 AT-FEX 통합 순서에 따라 조정), 칼륨 안전카드 노출, 제품 0.
+이번에 **live 통합 준비(드라이런)를 끝낸 대상은 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01)**이다:
+`scripts/integrate_potassium_pm_ready_v1_2.py`(dry-run, whitelist {DF01,DF04,DF05,DF-PRED-01}) + `scripts/validate_potassium_dryrun_v1_2.py`(PASS·시뮬 60→64).
+통합 시 relations → +4(id 62~65 또는 AT-FEX 통합 순서에 따라 조정), 칼륨 안전카드 노출, 제품 0. **reviewer 노트는 승인 토큰 + DF01/DF04/DF05/DF-PRED-01 전건 명시 필요**(미명시 시 STOP — 검증됨).
 
 ---
 
@@ -81,6 +83,7 @@
 7. 통일 display 문구 "**장기간 복용하거나 고용량**으로 사용하는 경우 칼륨 상태에 영향이 있을 수 있어, 진료나 복약상담 시 칼륨 상태 확인이 필요한지 문의" — 각 약물 라벨 근거에 비추어 **과하지도 약하지도** 않은가?
 8. 통일 management "칼륨은 **임의로 보충하지 말고**, 보충 여부는 의사 또는 약사와 상담해 결정" — anti-supplement 방향이 적정한가? (DF01·CQF03 라벨 원문에는 '칼륨보충이 필요할 수 있다'는 보충 시사 문장이 있으나 앱은 의도적으로 anti-supplement 로 다운그레이드함 — 이 다운그레이드를 승인하는가?)
 9. **DF02(덱사메타손)**: '저칼륨성 알칼리혈증'만 있는 약신호로 depletion 카드를 띄우는 것이 정당한가, 아니면 reject/문구 약화인가?
+10. **DF-PRED-01(프레드니솔론, 소론도정 199602982)**: 라벨 근거(칼륨손실+저칼륨성 알칼리혈증)는 DF01 메틸프레드니솔론과 동일 패턴이다. 글루코코르티코이드 class 4종(프레드니솔론·메틸프레드니솔론·덱사메타손·플루드로코르티손)을 한 묶음으로 승격/검수하는 게 적정한가, 아니면 프레드니솔론을 DF01 수준 PM-ready 로 단독 인정하는가? (계열 유추가 아니라 각 품목 라벨 직접 hit 임을 전제.)
 10. **wording-review 2건(DF02·CQF03)은 보류 사유가 서로 다르다**(DF02=약신호 / CQF03=제형+섹션). 한 묶음으로 판정하지 말 것.
 
 ---

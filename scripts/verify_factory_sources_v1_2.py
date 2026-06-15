@@ -64,14 +64,11 @@ def fetch_detail(opener, seq):
     return text, url
 
 
-def search_itemseqs(opener, ingredient, exclude_ingr=None, max_n=3, max_pages=2):
-    """성분명 → 국내 완제·경구·정상·단일성분 대표 itemSeq 목록(오름차순). 실패 시 ([], reason).
-    조회·표준화는 SDK(search_drug)가 수행하고, 여기서는 **선별 필터(경구단일완제)** 만 적용한다."""
-    rows = opener.search_drug(ingredient, max_pages=max_pages)
-    if not rows:
-        return [], "no_domestic_single_oral_product"
-    picked = []
-    seen = set()
+def _filter_pick(rows, ingredient, exclude_ingr, max_n, exact_only=False):
+    """rows → 국내 완제·경구·정상·단일성분 대표 itemSeq 픽(itemSeq 오름차순).
+    exact_only=True 면 주성분==성분명(정확 일치)만 채택 — 부분문자열 동명
+    (예: 프레드니솔론 ⊂ 메틸프레드니솔론/메칠프레드니솔론) 오채택 방지."""
+    picked, seen = [], set()
     for p in sorted(rows, key=lambda x: int(x.item_seq) if x.item_seq.isdigit() else 0):
         if len(picked) >= max_n:
             break
@@ -92,8 +89,36 @@ def search_itemseqs(opener, ingredient, exclude_ingr=None, max_n=3, max_pages=2)
             continue
         if exclude_ingr and exclude_ingr in ingr:
             continue
+        if exact_only and ingr != ingredient:
+            continue
         seen.add(seq)
         picked.append((seq, name, ingr))
+    return picked
+
+
+def search_itemseqs(opener, ingredient, exclude_ingr=None, max_n=3, max_pages=2, deep_max_pages=20):
+    """성분명 → 국내 완제·경구·정상·단일성분 대표 itemSeq 목록(오름차순). 실패 시 ([], reason).
+    조회·표준화는 SDK(search_drug)가 수행하고, 여기서는 **선별 필터(경구단일완제)** 만 적용한다.
+
+    검색 깊이 정책(substring 지배 보정): 기본 max_pages 얕은 검색을 먼저 한다. 얕은 검색에
+    **정확 주성분(주성분==성분명) 후보가 하나도 없고**, 결과가 성분명을 부분문자열로 포함하는
+    **더 긴 주성분**(예: 프레드니솔론 ⊂ 메틸프레드니솔론)에 점유돼 있으면, deep_max_pages 까지
+    **깊은 검색을 fallback** 으로 1회 수행해 정확 주성분 품목만(exact_only) 재탐색한다.
+    (무조건 깊게 늘려 느려지게 하지 않고, exact 부족 + substring 지배일 때만 — 비용 최소화·SDK-only·
+    캐시 네임스페이스 무영향. fallback 적중 시 reason='ok_deep_exact'.)"""
+    rows = opener.search_drug(ingredient, max_pages=max_pages)
+    if not rows:
+        return [], "no_domestic_single_oral_product"
+    picked = _filter_pick(rows, ingredient, exclude_ingr, max_n)
+    if any(ingr == ingredient for _, _, ingr in picked):
+        return picked, "ok"
+    # 얕은 검색에 정확 주성분 후보 없음 → substring 지배면 깊은 검색 fallback(정확 주성분만).
+    dominated = any((ingredient in r.ingr_name and r.ingr_name != ingredient) for r in rows)
+    if dominated and deep_max_pages > max_pages:
+        deep_rows = opener.search_drug(ingredient, max_pages=deep_max_pages)
+        exact_deep = _filter_pick(deep_rows, ingredient, exclude_ingr, max_n, exact_only=True)
+        if exact_deep:
+            return exact_deep, "ok_deep_exact"
     if not picked:
         return [], "no_domestic_single_oral_product"
     return picked, "ok"

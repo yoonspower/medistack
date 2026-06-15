@@ -89,3 +89,19 @@ manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0*
 - **분석 결론**(상세 → `docs/MediStack_candidate_backlog_v1_3.md`): draft 6건 **전부 기존 트리아지 항목과 동일**(DF01~DF05 + AT-FEX, itemSeq 대조) → **신규 draft-ready 0**. 신규 후보는 needs_review 10(다이유레틱/코르티코스테로이드 대표 itemSeq 미확보)·reject 12(세파계×철분 10 등 한국 허가사항 미기재)뿐.
 - **커밋 정책 적용**: runtime `data/harvest_queue/`(6 tracked 파일 변경)는 **`git checkout` 으로 복원**(커밋 제외, offline 베이스라인 유지) · `_sdk/` 는 `.gitignore`. 분석 요약만 `data/review/harvest_run2_summary_v1_3.json` 로 보존.
 - **schedule 여전히 비활성**(§4). 자동화 활성화 0 · 봇 live/배포/승격 0. (2차 online run 안정 — 활성화 조건 카운트 누적, PM 결정 전까지 보류.)
+
+## 9. 검색 깊이 정책 — exact 주성분 우선 + deep fallback (2026-06-15)
+
+`scripts/verify_factory_sources_v1_2.py` 의 `search_itemseqs` 는 봇(`run_nutrient_sourcecheck`/`run_antacid_sourcecheck`)이 성분→대표 itemSeq 를 해결하는 단일 진입점이다. 2026-06-15 needs_review 재확인에서 **substring 지배 누락**이 드러났다: `searchDrug?ingrName1=프레드니솔론` 은 부분문자열로 매칭되는 **메틸프레드니솔론**이 앞페이지를 점유해, 얕은 검색(max_pages=2)에서 국내 프레드니솔론 단일 경구품(소론도정 199602982)이 잡히지 않았다(p7 위치). 1차에선 needs_review(fail-closed)로 떨어졌고, 적대 검증이 이를 거짓음성으로 지적했다.
+
+**개선(최소 변경)**: `search_itemseqs(opener, ingredient, ..., deep_max_pages=20)` 에 deep fallback 추가.
+- 기본 `max_pages` 얕은 검색 먼저.
+- 얕은 검색에 **정확 주성분(주성분==성분명) 후보가 있으면** 그대로 반환(`reason='ok'`).
+- 정확 주성분 후보가 **없고** 결과가 성분명을 부분문자열로 포함하는 **더 긴 주성분**에 점유돼 있으면(substring 지배 감지), `deep_max_pages` 까지 **1회 deep 검색**해 **정확 주성분만**(`exact_only`) 재탐색(`reason='ok_deep_exact'`).
+- 필터(수출용/원료/외용/주사/복합제/취소품목 제외)·SDK-only·캐시 네임스페이스(`offline/`·`online/`)는 그대로.
+- **무조건 깊게 늘리지 않는다** — exact 부족 + substring 지배일 때만 deep(비용 최소화). theme map 78 스캔 결과 deep fallback 발동은 **프레드니솔론 1건뿐**, 나머지 21종(shallow exact 15 + no-product 6)은 무변경(기존 confirmed itemSeq 회귀 0).
+- `exact_only` 는 `메칠프레드니솔론`(메칠/메틸 표기차로 exclude 우회) 같은 **부분문자열 동명 오채택**도 차단한다.
+
+**회귀 테스트**: `scripts/test_search_depth_v1_3.py`(FakeOpener·네트워크 0·결정적) — ①프레드니솔론 deep fallback 이 소론도정 정확채택+메칠 오채택 금지+수출/원료 종료 금지 ②미유통(부메타니드 등) 0건 시 deep 미호출 ③하이드로코르티손 외용만이면 deep 후에도 [] ④PM-ready 비교군 얕은 exact 있으면 deep 미호출+기존 itemSeq 유지.
+
+봇은 이 개선을 자동 승계한다(import 경로 동일). runtime harvest_queue 는 여전히 커밋하지 않으며 schedule 비활성 유지.

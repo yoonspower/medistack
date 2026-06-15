@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 integrate_potassium_pm_ready_v1_2.py
-MediStack — 칼륨 depletion **PM-ready 3건(DF01 메틸프레드니솔론·DF04 아세타졸아미드·DF05 아조세미드)**
+MediStack — 칼륨 depletion **PM-ready 4건(DF01 메틸프레드니솔론·DF04 아세타졸아미드·DF05 아조세미드·
+DF-PRED-01 프레드니솔론[소론도정 199602982, 2026-06-15 needs_review 재확인 발견])**
 live 통합 **준비/드라이런** 스크립트. integrate_antacid_fex_v1_2.py 패턴 승계(칼륨 트랙 특수 가드 추가).
+DF-PRED-01 은 data/review/prednisolone_potassium_draft_recheck_v1_3.json 에서 병합(나머지 3건은 PM 파일).
 
 ⚠️⚠️ 기본값 = **--dry-run(쓰기 0)**. live export 기록은 **--pm-approved + --reviewer-note PATH** 둘 다 있을 때만.
   - --reviewer-note 노트는 **구조적+의미적** 둘 다 충족해야 한다(구조: 존재+비공란 / 의미: 승인 토큰 'approved'|'승인'
@@ -48,9 +50,12 @@ REPO = os.path.dirname(HERE)
 DATA = os.path.join(REPO, "data")
 EXPORT = os.path.join(DATA, "medistack_v0.2_beta_export.json")
 PM = os.path.join(DATA, "review", "potassium_depletion_pm_ready_v1_2.json")
+# DF-PRED-01(프레드니솔론×칼륨, 소론도정 199602982)은 needs_review 재확인(2026-06-15)에서 발견돼
+# 별도 draft 파일에 보관 — 칼륨 PM-ready 통합 준비 그룹에 4번째로 합류(draft_id 로 병합).
+PRED_DRAFT = os.path.join(DATA, "review", "prednisolone_potassium_draft_recheck_v1_3.json")
 DRYRUN_ARTIFACT = os.path.join(DATA, "review", "potassium_pm_ready_dryrun_v1_2.json")
 
-WHITELIST = ["DF01", "DF04", "DF05"]          # PM-ready 승격 후보 3건만(draft_id 기준)
+WHITELIST = ["DF01", "DF04", "DF05", "DF-PRED-01"]   # PM-ready 승격 후보 4건(draft_id 기준)
 EXCLUDED = {"DF02", "CQF03", "DF03", "DF06", "DF07"}  # 보류/비-칼륨 — 들어오면 STOP
 NUTRIENT = "칼륨"
 # 통일 문구(byte-동일 강제). 단일 실패점이므로 정확 일치를 가드한다.
@@ -133,6 +138,10 @@ def main():
     exp = json.load(open(EXPORT, encoding="utf-8"))
     pm = json.load(open(PM, encoding="utf-8"))
     items = {i["draft_id"]: i for i in pm.get("items", [])}
+    # DF-PRED-01 을 별도 draft 파일에서 병합(칼륨 PM-ready 그룹 4번째).
+    if os.path.exists(PRED_DRAFT):
+        for i in json.load(open(PRED_DRAFT, encoding="utf-8")).get("items", []):
+            items.setdefault(i["draft_id"], i)
 
     # whitelist 대상만 추출(파일 전체 아님 — DF02/CQF03/DF03 보류, DF06/DF07 비-칼륨 미존재)
     targets = []
@@ -166,7 +175,7 @@ def main():
         projected_ids.append(it["draft_id"])
     projected_count = baseline + len(projected)
 
-    print(f"=== 칼륨 PM-ready 3건 통합 {'(LIVE)' if pm_approved else '(DRY-RUN)'} ===")
+    print(f"=== 칼륨 PM-ready {len(WHITELIST)}건 통합 {'(LIVE)' if pm_approved else '(DRY-RUN)'} ===")
     print(f"baseline relations: {baseline} · whitelist: {WHITELIST} · skip(이미존재): {skipped}")
     print(f"예상 relations: {baseline} → {projected_count} (신규 {len(projected)}건)")
     for r in projected:

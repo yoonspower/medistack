@@ -6,7 +6,8 @@
   "whitelist": [
    "DF01",
    "DF04",
-   "DF05"
+   "DF05",
+   "DF-PRED-01"
   ],
   "excluded_from_whitelist": [
    "CQF03",
@@ -17,7 +18,7 @@
   ],
   "baseline_relations": 60,
   "baseline_max_id": 61,
-  "projected_relation_count": 63,
+  "projected_relation_count": 64,
   "skipped_already_live": [],
   "guard_violations": {},
   "live_promotion": 0,
@@ -25,7 +26,7 @@
   "clinical_reviewed": false,
   "reviewed_by": "",
   "data_url": "v0.2 (불변)",
-  "relation_count_validators_bump": "live 통합 시 relation-count 하드코딩 validator 들을 +3(=>63) 갱신 필요(AT-FEX 통합 순서에 따라 baseline 조정).",
+  "relation_count_validators_bump": "live 통합 시 relation-count 하드코딩 validator 들을 +4(=>64) 갱신 필요(AT-FEX 통합 순서에 따라 baseline 조정).",
   "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
  },
  "projected_live_relations": [
@@ -81,6 +82,24 @@
     "type": "허가사항",
     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199001306",
     "pointer": "식약처 허가사항(nedrug) / 유레틴정(아조세미드), itemSeq 199001306 / 부작용(대사)·고령자 주의 / '3. 부작용 1) 대사 : 때때로 저칼륨혈증, 저나트륨혈증, 저염소혈증성 알칼리증 등의 전해질평형실조, 고뇨산혈증, BUN·혈청크레아티닌의 상승, 드물게 고혈당이 나타날 수 있으므로 충분히 관찰하고' / 확인일 2026-06-14"
+   }
+  },
+  {
+   "id": 65,
+   "ingredient": "프레드니솔론",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "high",
+   "display_text_ko": "프레드니솔론을(를) 장기간 복용하거나 고용량으로 사용하는 경우 칼륨 상태에 영향이 있을 수 있어, 진료나 복약상담 시 칼륨 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "management_ko": "칼륨은 임의로 보충하지 말고, 보충 여부는 의사 또는 약사와 상담해 결정하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199602982",
+    "pointer": "식약처 nedrug getItemDetail / itemSeq 199602982(소론도정) / 사용상의 주의사항 > 이상반응 > 체액ㆍ전해질 / 칼륨손실·저칼륨성 알칼리혈증 동거어 / 확인일 2026-06-15"
    }
   }
  ]

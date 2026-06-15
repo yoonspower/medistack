@@ -24,6 +24,8 @@
 - K-sparing/상승방향은 **별도 정책 트랙 메모만**(depletion 혼입 금지) — §4.
 
 > **적대 검증 교정(2026-06-15)**: 커밋 전 refute-by-default 3렌즈 적대 검증을 돌렸고, lens A 가 프레드니솔론 needs_review 분류를 의심했다. 1차 판단(seeded `ingrName1=프레드니솔론` max_pages=2/6 검색 → 수출용+원료만)은 메틸프레드니솔론 substring 에 지배된 **검색 깊이 한계**였다(미유통 아님). max_pages=20(200행) 깊은 검색 p7 에서 **소론도정(199602982)** 확인 → 실 라벨 `d_potassium=True`(칼륨손실·저칼륨성 알칼리혈증). 따라서 D-CORT-01 을 needs_review → **source_confirmed draft** 로 교정. 적대 검증이 거짓음성을 정확히 잡아냈다.
+>
+> **검색 정책 항구 개선(후속 라운드, 2026-06-15)**: 위 수동 깊은검색을 production 화했다 — `search_itemseqs` 가 **정확 주성분 부재 + substring 지배** 시 `deep_max_pages=20` 까지 deep fallback(exact_only) 을 자동 수행(`reason='ok_deep_exact'`). 이제 봇/재확인이 프레드니솔론을 **자동 포착**한다(수동 개입 불필요). 회귀 테스트 `scripts/test_search_depth_v1_3.py`, 정책 상세 `docs/MediStack_harvester_ops_v1_3.md` §9. theme map 78 스캔: deep fallback 발동 프레드니솔론 1건뿐(나머지 무변경=회귀 0). DF-PRED-01 은 칼륨 PM-ready 통합 준비 그룹에 dry-run 합류(4건, `validate_potassium_dryrun_v1_2.py` PASS·60→64).
 
 ---
 

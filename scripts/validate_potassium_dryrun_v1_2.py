@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 validate_potassium_dryrun_v1_2.py
-MediStack — 칼륨 PM-ready 3건(DF01·DF04·DF05) **live 통합 드라이런 검증**(읽기전용).
+MediStack — 칼륨 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01 프레드니솔론) **live 통합 드라이런 검증**(읽기전용).
 실제 export 는 한 바이트도 건드리지 않는다. integrate_potassium_pm_ready_v1_2.py(dry-run)가 만든
-data/review/potassium_pm_ready_dryrun_v1_2.json 의 예상 relations 로 **시뮬레이션 export(live + 3)** 를
+data/review/potassium_pm_ready_dryrun_v1_2.json 의 예상 relations 로 **시뮬레이션 export(live + 4)** 를
 임시 파일에 구성해, 통합이 일어났을 때의 안전성·계약을 미리 입증한다.
+(DF-PRED-01 은 data/review/prednisolone_potassium_draft_recheck_v1_3.json 에서 병합.)
 
 검사:
   0) 안전 불변: 라이브 export 무변경(relations==60·meta 60·published/clinical=false·3성분 미존재).
@@ -38,6 +39,7 @@ DATA = os.path.join(REPO, "data")
 SRC = os.path.join(REPO, "src", "js")
 EXPORT = os.path.join(DATA, "medistack_v0.2_beta_export.json")
 PM = os.path.join(DATA, "review", "potassium_depletion_pm_ready_v1_2.json")
+PRED_DRAFT = os.path.join(DATA, "review", "prednisolone_potassium_draft_recheck_v1_3.json")
 FULL = os.path.join(DATA, "full_drug_name_index_sample_v1_0.json")
 ARTIFACT = os.path.join(DATA, "review", "potassium_pm_ready_dryrun_v1_2.json")
 V0_2_VALIDATOR = os.path.join(HERE, "validate_medistack_v0_2_export.py")
@@ -45,8 +47,9 @@ V0_2_VALIDATOR = os.path.join(HERE, "validate_medistack_v0_2_export.py")
 LIVE_RELATIONS = 60
 FULL_RELATION_CARD = 1168
 FULL_NAME_ONLY = 16412
-EXPECT_INGREDIENTS = {"메틸프레드니솔론", "아세타졸아미드", "아조세미드"}
-EXPECT_DRAFT_IDS = {"DF01", "DF04", "DF05"}
+# DF-PRED-01 프레드니솔론(소론도정) 합류 → 통합 준비 그룹 4건.
+EXPECT_INGREDIENTS = {"메틸프레드니솔론", "아세타졸아미드", "아조세미드", "프레드니솔론"}
+EXPECT_DRAFT_IDS = {"DF01", "DF04", "DF05", "DF-PRED-01"}
 UNIFIED_MGMT = "칼륨은 임의로 보충하지 말고, 보충 여부는 의사 또는 약사와 상담해 결정하세요."
 DISPLAY_MUST = ["장기간 복용하거나 고용량", "칼륨 상태에 영향", "확인이 필요한지 문의"]
 COPY_FORBIDDEN = ["칼륨을 보충", "칼륨제를", "칼륨 섭취를 늘", "결핍", "부족", "빠집니다",
@@ -75,6 +78,9 @@ def main():
     meta = art.get("meta") or {}
     exp = json.load(open(EXPORT, encoding="utf-8"))
     pm = {i["draft_id"]: i for i in json.load(open(PM, encoding="utf-8")).get("items", [])}
+    if os.path.exists(PRED_DRAFT):
+        for i in json.load(open(PRED_DRAFT, encoding="utf-8")).get("items", []):
+            pm.setdefault(i["draft_id"], i)
 
     # 0) 안전 불변 — 라이브 export 무변경
     ck(len(exp["relations"]) == LIVE_RELATIONS, f"라이브 relations != {LIVE_RELATIONS} ({len(exp['relations'])}) — 드라이런인데 변경됨")
@@ -97,7 +103,7 @@ def main():
     ck(set(meta.get("whitelist", [])) == EXPECT_DRAFT_IDS, f"whitelist != {sorted(EXPECT_DRAFT_IDS)} ({meta.get('whitelist')})")
 
     # 2) 예상 relations 필드
-    ck(len(rels_new) == 3, f"예상 relations 3건 아님({len(rels_new)})")
+    ck(len(rels_new) == 4, f"예상 relations 4건 아님({len(rels_new)})")
     seen = set()
     for rel in rels_new:
         ing = rel.get("ingredient")
@@ -163,7 +169,7 @@ def main():
     if fails or node_fail:
         print(f"RESULT: FAIL — {len(fails)}건 + node({node_fail})")
         return 1
-    print("RESULT: PASS — 칼륨 3건 통합 시 안전(시뮬 v0.2 PASS·칼륨 안전카드·anti-supplement·제품0·봉인) · 라이브 무수정")
+    print(f"RESULT: PASS — 칼륨 {len(rels_new)}건 통합 시 안전(시뮬 v0.2 PASS·칼륨 안전카드·anti-supplement·제품0·봉인) · 라이브 무수정")
     return 0
 
 
@@ -180,7 +186,7 @@ const rels = getRenderableRelations(data);
 const facets = getFacets(rels);
 ck("getFacets.nutrients 에 '칼륨' 포함(영양소 facet 유지)", facets.nutrients.includes('칼륨'));
 
-const TARGET = ['메틸프레드니솔론','아세타졸아미드','아조세미드'];
+const TARGET = ['메틸프레드니솔론','아세타졸아미드','아조세미드','프레드니솔론'];
 for (const ing of TARGET) {
   const r = rels.find(x => x.ingredient === ing && x.nutrient === '칼륨');
   ck(`[${ing}] renderable 포함`, !!r);

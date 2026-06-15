@@ -26,7 +26,9 @@
 
 ---
 
-## 프롬프트 2 — 칼륨 depletion PM-ready 3건(DF01·DF04·DF05) live 통합
+## 프롬프트 2 — 칼륨 depletion PM-ready 4건(DF01·DF04·DF05·DF-PRED-01) live 통합
+
+> **갱신(2026-06-15, search-depth 라운드)**: DF-PRED-01 프레드니솔론×칼륨(소론도정 199602982)이 PM-ready 그룹에 4번째로 합류했다(dry-run 60→64·`scripts/validate_potassium_dryrun_v1_2.py` PASS). whitelist 는 이제 {DF01,DF04,DF05,DF-PRED-01}, reviewer 노트는 **4건 전건 명시** 필요. 아래 원안의 '3건'을 '4건'으로 읽을 것.
 
 > **선행 충족 필수(전부)**: ①clinical reviewer 노트 확보(`verdict=approved`, `docs/MediStack_clinical_reviewer_handoff_v1_2.md` §2 질문 답) ②CQF03 등 correctness 항목은 이 통합과 무관(CQF03 는 wording-review 라 **대상 아님** — whitelist 밖) ③별도 PM 승인.
 >
@@ -52,7 +54,15 @@
 
 > **완료(2026-06-15)**: SDK-only online 재확인 수행. 결과 **새 draft 1** — 프레드니솔론×칼륨(소론도정 199602982, DF-PRED-01, draft-only `data/review/prednisolone_potassium_draft_recheck_v1_3.json`). loop/thiazide 5성분 8건(부메타니드·피레타니드·메토라존·트리클로르메티아지드·벤드로플루메티아지드)은 `searchDrug` 0건+철자변형 0 = **국내 미유통 확정 → reject(not_marketed_kr)**, 프레드니솔론×칼슘 reject, **하이드로코르티손×칼륨만 needs_review 유지**(CQF03 correctness 선결). 상세 → `docs/MediStack_needs_review_source_recheck_v1_3.md` · `data/review/needs_review_source_recheck_v1_3.json`.
 >
-> **잔여(차기 작업, 승격 아님) = DF-PRED-01 통합 판단**: 적대 검증이 프레드니솔론 1차 보수판단(seeded max_pages=2/6 검색이 메틸프레드니솔론 substring 에 지배돼 국내 단일품 누락)을 교정 — max_pages=20 p7 에서 소론도정 확인 후 draft 확정. **다음**: reviewer note 후 DF-PRED-01 을 칼륨 PM-ready 통합 라운드(DF01·DF04·DF05)에 합류시킬지 PM 판단(글루코코르티코이드 class 4종 묶음 가능). 미유통 8건은 재후보화 금지(국내 시판 시에만).
+> **갱신(2026-06-15, search-depth 라운드 완료)**: DF-PRED-01 을 칼륨 PM-ready 통합 준비 그룹에 **dry-run 으로 합류 완료**(4건·whitelist {DF01,DF04,DF05,DF-PRED-01}·`validate_potassium_dryrun_v1_2.py` PASS·60→64). 또한 search-depth 한계를 **항구 개선**: `search_itemseqs` 가 exact 주성분 부재 + substring 지배 시 deep_max_pages=20 까지 deep fallback(exact_only) 을 수행하도록 함 → 프레드니솔론이 이제 자동 포착(reason='ok_deep_exact'). 회귀 테스트 `scripts/test_search_depth_v1_3.py` 추가. **다음**: 프롬프트 2(칼륨 4건 통합)로 일원화 — reviewer note 후 통합. 미유통 8건은 재후보화 금지(국내 시판 시에만).
+
+---
+
+## 프롬프트 4 — search-depth 정책 회귀/확장(승격 아님)
+
+> **완료분(2026-06-15)**: `search_itemseqs(opener, ingredient, ..., deep_max_pages=20)` — 얕은검색에 정확 주성분(주성분==성분명) 후보가 없고 결과가 성분명을 부분문자열로 포함하는 더 긴 주성분에 점유되면(예: 프레드니솔론 ⊂ 메틸프레드니솔론), deep_max_pages 까지 1회 deep fallback(exact_only). theme map 78 스캔 결과 deep fallback 발동은 **프레드니솔론 1건뿐**(나머지 21종 무변경=회귀 0). 회귀 테스트 4종(`scripts/test_search_depth_v1_3.py`).
+>
+> **차기(필요 시)**: ①다른 substring-지배 성분 발굴(예: 트리암테렌 ⊂ ?·짧은 성분명) ②deep fallback 의 max_n 정렬을 exact-우선으로(현재 exact_only 라 충분) ③harvester full online run 으로 프레드니솔론 draft 가 큐에 실제 반영되는지 확인(runtime 큐 커밋 금지). live 승격 0 유지.
 >
 > ↓아래는 완료 전 원안(보존).
 >

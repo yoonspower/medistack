@@ -115,7 +115,7 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 
 1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1).
 2. **칼륨 PM-ready 3건(DF01·DF04·DF05) live 통합** — reviewer note 후. dry-run·검증기 준비 완료(프롬프트 2).
-3. ~~needs_review 다이유레틱/코르티코스테로이드 source 재확인~~ → **완료(2026-06-15)**: 새 draft **1**(프레드니솔론×칼륨=소론도정 199602982, DF-PRED-01, draft-only). loop/thiazide 5성분 8건=국내 미유통 reject 격상, 하이드로코르티손×칼륨만 needs_review 유지(CQF03 correctness 선결). **다음**: DF-PRED-01 을 칼륨 PM-ready 통합 라운드(DF01·DF04·DF05)에 합류시킬지 PM 판단(reviewer note 후). 상세 `docs/MediStack_needs_review_source_recheck_v1_3.md`.
+3. ~~needs_review 다이유레틱/코르티코스테로이드 source 재확인~~ → **완료(2026-06-15)**: 새 draft **1**(프레드니솔론×칼륨=소론도정 199602982, DF-PRED-01). loop/thiazide 5성분 8건=국내 미유통 reject 격상, 하이드로코르티손×칼륨만 needs_review 유지(CQF03 correctness 선결). **후속 라운드(2026-06-15)**: DF-PRED-01 을 칼륨 PM-ready 통합 준비 그룹에 **dry-run 합류 완료**(4건·whitelist {DF01,DF04,DF05,DF-PRED-01}·`validate_potassium_dryrun_v1_2.py` PASS·60→64, 실제 통합 0). search-depth 항구 개선(`search_itemseqs` deep fallback·`test_search_depth_v1_3.py`·ops §9). 상세 `docs/MediStack_needs_review_source_recheck_v1_3.md`.
 4. **CQF03(히드로코르티손) correctness 선결**: 전신 제형 한정 + source_pointer 섹션 정정(handoff §3).
 5. **K-sparing 칼륨 상승 holds**: depletion 과 반대 방향 — 별도 정책 트랙이 필요한지 PM 판단(현재 hold 유지).
 6. **세파계×철분 10종 reject 확정**: 한국 허가사항 미기재 → 재후보화 금지(계열 일반화 금지 재확인).
