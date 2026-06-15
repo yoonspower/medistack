@@ -2,7 +2,9 @@
 
 작성일: 2026-06-15 · 상태: **핸드오프 / 실행 금지(차기 PM 라운드용)** · 자기완결
 
-이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = avoid_concomitant 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격, published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
+이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = clinical reviewer 핸드오프 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격(3건 통합 드라이런 완료), published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
+
+> **갱신(2026-06-15)**: 프롬프트 2가 '칼륨 PM-ready **재검토**'였으나 재검토는 완료됐다(6건 확정·6/6 survives·`data/review/potassium_depletion_pm_ready_v1_2.json` `meta.rereview_2026_06_15`). 또한 PM-ready 3건(DF01·DF04·DF05)의 **live 통합 준비(드라이런·검증기)**까지 끝났다. 그래서 프롬프트 2를 다음 실제 작업인 **'칼륨 PM-ready 3건 live 통합'**으로 교체한다. reviewer 핸드오프: `docs/MediStack_clinical_reviewer_handoff_v1_2.md`.
 
 ---
 
@@ -24,17 +26,22 @@
 
 ---
 
-## 프롬프트 2 — 칼륨 depletion PM-ready 재검토
+## 프롬프트 2 — 칼륨 depletion PM-ready 3건(DF01·DF04·DF05) live 통합
 
-> **현재 상태(`data/review/potassium_depletion_pm_ready_v1_2.json`)**: 6건, 전건 source_confirmed high(적대검증 통과)·`live_integration_forbidden=true`(미승격). 분류 = **PM-ready 3**(DF01 메틸프레드니솔론·DF04 아세타졸아미드·DF05 아조세미드, `promotion_candidate=true`) / **needs_clinical_wording_review 2**(DF02 덱사메타손·CQF03 히드로코르티손) / **hold_continue 1**(DF03 플루드로코르티손). 전건 `potassium_safety_card=true`·`product_link_allowed=false`·published/clinical_reviewed=false·reviewed_by 공란.
-> ⚠️ **카운트 확인 필요**: 핸드오프 지시는 "칼륨 5건"이라 했으나 PM-ready 파일은 **6건**이다(5 vs 6 불일치 — PM 가 대상 집합을 확정할 것. 아래 작업은 파일 6건 기준).
+> **선행 충족 필수(전부)**: ①clinical reviewer 노트 확보(`verdict=approved`, `docs/MediStack_clinical_reviewer_handoff_v1_2.md` §2 질문 답) ②CQF03 등 correctness 항목은 이 통합과 무관(CQF03 는 wording-review 라 **대상 아님** — whitelist 밖) ③별도 PM 승인.
 >
-> **작업(clinical reviewer 전제)**: 칼륨 depletion 행의 live 승격은 **임상 검수 노트 확보 후에만** 진행한다. 이번 단계는 ①needs_clinical_wording_review 2건의 장기/고용량/상담 문구를 clinical reviewer 와 함께 확정 ②PM-ready 3건의 승격 가부를 reviewer 노트로 결정 ③hold_continue 1건은 근거 보강 여부 판단.
+> **현재 상태**: 칼륨 6건 재검토 완료(6/6 survives·`meta.rereview_2026_06_15`). PM-ready 3건(DF01 메틸프레드니솔론·DF04 아세타졸아미드·DF05 아조세미드)은 **통합 드라이런·검증기까지 완료**(`scripts/integrate_potassium_pm_ready_v1_2.py` dry-run + `scripts/validate_potassium_dryrun_v1_2.py` PASS·시뮬 v0.2 PASS·칼륨 안전카드·anti-supplement·제품0). 라이브 미반영(relations 60 불변).
 >
-> **불변(칼륨 트랙 특수 규칙)**: `potassium_safety_card=true`(칼륨 고지 카드 필수)·`product_link_allowed=false`(칼륨 제품링크 영구 금지)·**칼륨 보충 권유 0·결핍 단정 0**·`disclaimers.potassium_notice` 노출·장기/고용량 맥락은 '상담'으로 종결(임의 보충·중단 지시 금지). published/clinical_reviewed=false 는 reviewer 노트 확보 전까지 유지.
+> **작업**: 칼륨 PM-ready **3건만**(whitelist {DF01,DF04,DF05}) v0.2 export 에 **멱등 append-only** 통합하라 — `python3 scripts/integrate_potassium_pm_ready_v1_2.py --pm-approved --reviewer-note <노트파일>`(멱등: (성분,칼륨) 이미 있으면 skip). **reviewer 노트 게이트(구조+의미)**: 노트가 비공란이고 + 승인 토큰('approved' 또는 '승인')을 담고 + **승격 대상 draft_id(DF01·DF04·DF05)를 전건 명시**해야 통과한다(검수자가 승인한 행만 승격). 미충족 시 STOP(스크립트가 가드 — garbage/공백/일부 누락 노트 거부).
 >
-> **승격 시(reviewer 후, 별도 라운드)**: 멱등 integrate(칼륨 행 패턴) + relations 수 갱신 + v0.2 validator(칼륨 일관성 #11: nutrient=칼륨 ⇒ link=false&card=true) + potassium policy validator + forbidden 0 + full smoke + deploy + live HTTP 200. **승격은 제한적**(reviewer 가 승인한 행만, 일괄 승격 금지).
+> **예상 변경**: relations 60→63(AT-FEX 미통합 시 id 62~64. AT-FEX 먼저 통합됐으면 baseline 조정 — id 는 max+1 런타임 계산이라 자동 정합). 각 행 nutrient=칼륨·mechanism=depletion·recommended_action=monitoring·evidence_level=high·`potassium_safety_card=true`·`product_link_allowed=false`·`requires_clinical_review=false`. display=PM-ready `final_display_text_ko_named`(약물명+장기/고용량/문의 종결)·management=통일 anti-supplement 문구. **full index/aliases 무변경**.
 >
-> **금지**: reviewer 노트 없이 clinical_reviewed=true 전환·published=true·reviewed_by 작성·칼륨 제품링크·보충 권유·결핍 단정·일괄 자동 승격.
+> **제외(통합 금지)**: DF02 덱사메타손·CQF03 히드로코르티손(wording-review)·DF03 플루드로코르티손(hold)·DF06/DF07 리오티로닌×칼슘/철분(비-칼륨·product_link_allowed=TRUE — 같은 factory 파일이지만 whitelist 밖). 스크립트가 draft_id 로 필터해 강제 차단.
+>
+> **불변(칼륨 트랙 특수 규칙)**: `potassium_safety_card=true`·`product_link_allowed=false`(칼륨 제품링크 영구 금지)·**칼륨 보충 권유 0·결핍 단정 0**·`disclaimers.potassium_notice` 노출·장기/고용량 맥락은 '상담'으로 종결(임의 보충·중단 지시 금지)·management 통일 문자열 정확 일치. published/clinical_reviewed=false 유지(reviewer 트랙은 별도 — 통합이 곧 clinical_reviewed 가 아님). reviewed_by 는 reviewer 만.
+>
+> **통합 후 검증(전수 PASS 필수)**: relation-count 하드코딩 validator **+3 누적 갱신**(AT-FEX 통합 순서에 따라 baseline 조정·`docs/MediStack_antacid_interaction_track_v1_2.md` §19.7) + v0.2 export validator(칼륨 일관성 #11) + `validate_potassium_pm_ready_v1_2.py`(큐 계약 — 승격 후에도 큐 파일은 불변) + 신규 `validate_potassium_integration_v1_2.py`(드라이런 검증기를 live 대상으로 전환) + potassium name_only policy + forbidden 0 + full smoke 9종 + no-live-write guard + deploy 게이트 + **live HTTP 200** + git clean.
+>
+> **승격은 제한적**(reviewer 가 승인한 행만·일괄 승격 금지). **금지**: reviewer 노트 없이 통합·clinical_reviewed=true·published=true·reviewed_by 작성·칼륨 제품링크·보충 권유·결핍 단정·DF02/CQF03/DF03/DF06/DF07 동반 통합.
 
-근거/상세: `data/review/potassium_depletion_pm_ready_v1_2.json`(policy/distribution/promotion_candidates) · `scripts/validate_potassium_pm_ready_v1_2.py` · `scripts/smoke_potassium_pm_ready_v1_2.py`.
+근거/상세: `data/review/potassium_depletion_pm_ready_v1_2.json`(items·`meta.rereview_2026_06_15`) · `scripts/integrate_potassium_pm_ready_v1_2.py` · `scripts/validate_potassium_dryrun_v1_2.py` · `scripts/validate_potassium_pm_ready_v1_2.py` · `scripts/smoke_potassium_pm_ready_v1_2.py` · `docs/MediStack_clinical_reviewer_handoff_v1_2.md`.
