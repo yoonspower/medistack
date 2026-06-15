@@ -84,10 +84,10 @@
 
 ## 프롬프트 5 — substring 지배 후속 deep-check (선택 · 승격 아님)
 
-> **배경**: round3 substring 탐색에서 nutrient-scope 접두사형 위험은 프레드니솔론(draft 처리)·오메프라졸·란소프라졸(이미 live·base 확정)뿐이었다. universe 는 theme∪carried∪live∪KPI(366)로 한정됐다.
+> **완료(2026-06-15 round3 후속)**: ①full drug name index distinct ingredient 전체(2,225)∪alias(27)∪seed(367)=scan **2,292**(단일성분 922)로 universe 확대 재산출 완료(`scripts/analyze_substring_search_risk_v1_3.py`→`data/review/substring_search_risk_v1_3.json`·`docs/MediStack_substring_search_risk_v1_3.md`). **diff-active 접두사** vs **형태접두사(무수/미세/제피)** vs 염/수화물 분리 분류. high 10/medium 14/salt_trap 143/no_action 2. deep-check 결과 **shallow_miss = baseline 3종뿐(프레드니솔론·오메프라졸·란소프라졸)**, 신규 diff-active 7종 전부 shallow_already_safe + 영양소 트랙 밖 → **신규 substring false-negative 0·신규 draft 0**. ③오메/란소 live 대표 itemSeq(200411095/201308978)는 base 정확 확인, deep-pick(199202074/200301515)과 정합은 선택(둘 다 valid·미실시).
 >
-> **차기(필요 시)**: ①KPI 상위 외 더 넓은 성분 시드(full drug name index 의 주성분 추출)로 접두사형 substring 쌍을 재산출 — 새 nutrient-interaction 성분이 다른약물 연속명에 지배되는 경우가 있는지. ②`_prefix_dominated` 잔여 헛발동 3종(세팔렉신/플루드로코르티손/라베프라졸 derivative superset)이 비용 문제면 derivative 접미사(아세테이트/리시네이트) allowlist 로 추가 차단(현재는 무해 1회 deep 라 보류 권장). ③오메프라졸/란소프라졸 live relation 의 대표 itemSeq 를 deep-fallback 픽(199202074/200301515)으로 정합시킬지 PM 판단(둘 다 valid base 라 필수 아님). 
+> **차기(필요 시)**: ①medium_risk 14종(트레티노인·프로게스테론·설피리드·페니토인·케타민 등)은 해당 성분이 relation 후보化될 때만 deep-check(재후보화 게이트). ②`_prefix_dominated` production 발동을 형태접두사(무수/미세/제피)까지 차단할지(현재 무해 1회 deep·보류 권장). ③오메/란소 대표 itemSeq deep-pick 정합(필수 아님).
 >
 > **불변**: 분석/탐색 산출물은 `data/review/` 만 · live/export/full index/aliases 무수정 · deep-check 는 SDK-only(직접 http 금지) · runtime 큐 커밋 0 · live 승격 0.
 >
-> 근거: `scripts/analyze_substring_domination_v1_3.py` · `data/review/substring_domination_scan_v1_3.json` · ops §10.
+> 근거: `scripts/analyze_substring_search_risk_v1_3.py` · `data/review/substring_search_risk_v1_3.json` · `docs/MediStack_substring_search_risk_v1_3.md` · ops §11.

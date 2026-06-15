@@ -1,0 +1,556 @@
+{
+ "meta": {
+  "title": "MediStack substring 검색 위험 광역 탐색 (v1.3 round3 후속 — 분석 산출물)",
+  "purpose": "full drug name index distinct ingredient(전체)까지 확대해 substring 지배 검색 누락 위험 추가 탐색.",
+  "method": "full index ingredient universe pairwise substring + prefix/salt/combo 분류 + cache-first SDK deep-check. live/protected 무수정·SDK-only.",
+  "do_not_implement_yet": true,
+  "live_integration_forbidden": true,
+  "published": false,
+  "clinical_reviewed": false,
+  "deploy": "none",
+  "baseline_handled": [
+   "란소프라졸",
+   "오메프라졸",
+   "프레드니솔론"
+  ]
+ },
+ "universe": {
+  "full_index_distinct_ingredients": 2225,
+  "alias_ingredients": 27,
+  "seed_universe": 367,
+  "scan_universe_combined": 2292,
+  "single_ingredient_scanned": 922
+ },
+ "classification_summary": {
+  "medium_risk_substring": 14,
+  "salt_or_formulation_trap": 143,
+  "high_risk_substring": 10,
+  "no_action": 2
+ },
+ "high_risk_substring": [
+  {
+   "ingredient": "프레드니솔론",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": true,
+   "diff_active_supersets": [
+    "메칠프레드니솔론",
+    "메틸프레드니솔론",
+    "메틸프레드니솔론(미분화)",
+    "메틸프레드니솔론숙시네이트나트륨",
+    "메틸프레드니솔론아세포네이트(미분화)",
+    "메틸프레드니솔론아세폰산염"
+   ],
+   "diff_active_count": 7,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 2,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "암로디핀베실산염",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "에스암로디핀베실산염",
+    "에스암로디핀베실산염2.5수화물",
+    "에스암로디핀베실산염이수화물"
+   ],
+   "diff_active_count": 3,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 1
+  },
+  {
+   "ingredient": "펜타닐",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "레미펜타닐염산염",
+    "수펜타닐시트르산염",
+    "알펜타닐염산염"
+   ],
+   "diff_active_count": 3,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 2,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "란소프라졸",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": true,
+   "diff_active_supersets": [
+    "덱스란소프라졸"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 2,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "로라타딘",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "데스로라타딘(미분화)"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "세티리진염산염",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "레보세티리진염산염"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "세팔렉신",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "메틸올세팔렉신리시네이트"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 1,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "오메프라졸",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": true,
+   "diff_active_supersets": [
+    "에스오메프라졸"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "졸피뎀",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "주석산졸피뎀"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 1,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "펜타닐시트르산염",
+   "in_seed": true,
+   "classification": "high_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "수펜타닐시트르산염"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 1,
+   "combo_superset_count": 0
+  }
+ ],
+ "medium_risk_substring": [
+  {
+   "ingredient": "살리실산",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "바레니클린살리실산염",
+    "베포타스틴살리실산염",
+    "비스무트차살리실산염",
+    "설포살리실산테트로포스민"
+   ],
+   "diff_active_count": 4,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "에탄올",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "다루나비르에탄올레이트",
+    "디클로페낙β-디메틸아미노에탄올",
+    "디클로페낙베타디메틸아미노에탄올"
+   ],
+   "diff_active_count": 3,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 3,
+   "combo_superset_count": 4
+  },
+  {
+   "ingredient": "트레티노인",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "알리트레티노인",
+    "이소트레티노인"
+   ],
+   "diff_active_count": 2,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "과산화벤조일",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "가수과산화벤조일"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "라미프릴",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "히드록시프로필메틸셀룰로오스로제피한라미프릴과립"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "메칠프레드니솔론",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "아세폰산메칠프레드니솔론"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "미로데나필",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "염산미로데나필"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "설피리드",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "레보설피리드"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "이소소르비드일질산염",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "묽은이소소르비드일질산염"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 1,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "케타민염산염",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "에스케타민염산염"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "클로니딘염산염",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "아프라클로니딘염산염"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "페니토인",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "포스페니토인나트륨"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 1,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "페니토인나트륨",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "포스페니토인나트륨"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [],
+   "formulation_count": 0,
+   "salt_superset_count": 0,
+   "combo_superset_count": 0
+  },
+  {
+   "ingredient": "프로게스테론",
+   "in_seed": false,
+   "classification": "medium_risk_substring",
+   "baseline_handled": false,
+   "diff_active_supersets": [
+    "메드록시프로게스테론아세테이트"
+   ],
+   "diff_active_count": 1,
+   "formulation_supersets": [
+    "미분화프로게스테론"
+   ],
+   "formulation_count": 1,
+   "salt_superset_count": 1,
+   "combo_superset_count": 0
+  }
+ ],
+ "deep_check": {
+  "란소프라졸": {
+   "result": "shallow_miss_confirmed",
+   "search_reason": "ok_deep_exact",
+   "has_exact_shallow": false,
+   "picks": [
+    [
+     "200301515",
+     "란시드캡슐15밀리그램(란소프라졸)",
+     "란소프라졸"
+    ],
+    [
+     "200510973",
+     "란스톤엘에프디티정15밀리그램(란소프라졸)",
+     "란소프라졸"
+    ]
+   ]
+  },
+  "로라타딘": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": true,
+   "picks": [
+    [
+     "199701227",
+     "노타민정(로라타딘)",
+     "로라타딘"
+    ],
+    [
+     "199702177",
+     "로리딘정(로라타딘)",
+     "로라타딘"
+    ]
+   ]
+  },
+  "세티리진염산염": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": true,
+   "picks": [
+    [
+     "199802009",
+     "러지텍정(세티리진염산염)",
+     "세티리진염산염"
+    ],
+    [
+     "199803133",
+     "나노텍정(세티리진염산염)",
+     "세티리진염산염"
+    ]
+   ]
+  },
+  "세팔렉신": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": false,
+   "picks": [
+    [
+     "198701854",
+     "메섹신정(메틸올세팔렉신리시네이트)",
+     "메틸올세팔렉신리시네이트"
+    ],
+    [
+     "198800426",
+     "케파신캡슐500밀리그램(세팔렉신수화물)",
+     "세팔렉신수화물"
+    ]
+   ]
+  },
+  "암로디핀베실산염": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": true,
+   "picks": [
+    [
+     "200606960",
+     "국제암로디핀정5밀리그람(암로디핀베실산염)",
+     "암로디핀베실산염"
+    ],
+    [
+     "201103324",
+     "노마로크정5밀리그램(암로디핀베실산염)",
+     "암로디핀베실산염"
+    ]
+   ]
+  },
+  "오메프라졸": {
+   "result": "shallow_miss_confirmed",
+   "search_reason": "ok_deep_exact",
+   "has_exact_shallow": false,
+   "picks": [
+    [
+     "199202074",
+     "라메졸캡슐20밀리그램(오메프라졸)",
+     "오메프라졸"
+    ]
+   ]
+  },
+  "졸피뎀": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": false,
+   "picks": [
+    [
+     "200410861",
+     "졸피드정10밀리그램(졸피뎀타르타르산염)",
+     "졸피뎀타르타르산염"
+    ],
+    [
+     "200512142",
+     "졸피람정10밀리그램(졸피뎀타르타르산염)",
+     "졸피뎀타르타르산염"
+    ]
+   ]
+  },
+  "펜타닐": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": false,
+   "picks": [
+    [
+     "201707583",
+     "나르코설하정100마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ],
+    [
+     "201804098",
+     "나르코설하정200마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ]
+   ]
+  },
+  "펜타닐시트르산염": {
+   "result": "shallow_already_safe",
+   "search_reason": "ok",
+   "has_exact_shallow": true,
+   "picks": [
+    [
+     "200605327",
+     "액틱구강정200마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ],
+    [
+     "200605328",
+     "액틱구강정400마이크로그램(펜타닐시트르산염)",
+     "펜타닐시트르산염"
+    ]
+   ]
+  },
+  "프레드니솔론": {
+   "result": "shallow_miss_confirmed",
+   "search_reason": "ok_deep_exact",
+   "has_exact_shallow": false,
+   "picks": [
+    [
+     "199602982",
+     "소론도정(프레드니솔론)",
+     "프레드니솔론"
+    ]
+   ]
+  }
+ },
+ "sdk_stats": {
+  "network": 3,
+  "cache": 96,
+  "fixture": 0,
+  "offline_miss": 0,
+  "error": 0
+ }
+}

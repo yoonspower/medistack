@@ -128,3 +128,13 @@ manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0*
 
 - **커밋 정책**: runtime `data/harvest_queue/`(8 tracked 파일)는 **`git checkout` 으로 복원**(커밋 제외) · `_sdk/` 는 `.gitignore`. 분석 요약/탐색만 `data/review/` 에 보존.
 - **schedule 여전히 비활성**(§4). 자동화 활성화 0 · 봇 live/배포/승격 0.
+
+## 11. substring 검색 위험 광역 탐색 (2026-06-15 round3 후속)
+
+§10 substring 탐색(universe 366)을 **full drug name index distinct ingredient 전체**까지 확대. `scripts/analyze_substring_search_risk_v1_3.py` → `data/review/substring_search_risk_v1_3.json`. 상세 → `docs/MediStack_substring_search_risk_v1_3.md`.
+
+- **universe**: full index 2,225 ∪ alias(한글) 27 ∪ seed 367 = scan 2,292(단일성분 922). proper-substring 쌍을 **diff-active 접두사**(메틸/에스/덱스 = 다른 약물·진짜 위험) vs **형태접두사**(무수/미세/제피 = 같은 약물) vs **염/수화물 접미사** vs 복합제로 분류.
+- **분류**: high_risk 10 · medium_risk 14(seed 밖) · salt_or_formulation_trap 143 · no_action 2.
+- **deep-check(cache-first SDK·SDK-only)**: high(diff-active+seed) 10종. **shallow_miss_confirmed = baseline 3종뿐**(프레드니솔론·오메프라졸·란소프라졸, 처리/확인 완료). 신규 diff-active 7종(로라타딘·세티리진·세팔렉신·암로디핀·졸피뎀·펜타닐·펜타닐시트르산염)은 **전부 shallow_already_safe**(다른 활성성분 superset 이 base 를 지배하지 못함) + 영양소 트랙 밖.
+- **결론**: 광역 universe 에서도 **신규 substring 지배 false-negative 0 · 신규 draft 후보 0**. deep fallback 하드닝이 광역에서도 과다호출 없이 정확 동작. 형태접두사 domination(무수리세드론산나트륨 등)은 deep fallback 이 무해 복구·live bisphosphonate relation(리세드론산 itemSeq 201903166 등) 정확.
+- **불변**: live/protected 무수정 · SDK-only(direct-http 신규 0) · runtime 큐 커밋 0 · live 승격 0 · schedule 비활성.

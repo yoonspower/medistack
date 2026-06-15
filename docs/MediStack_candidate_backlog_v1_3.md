@@ -90,6 +90,17 @@ bot 이 source-check 에서 fail-closed DENY 한 행(라벨 직접근거가 아�
 - **미유통/외용 true negative 재확인(작업 D)**: loop/thiazide 5성분 8 relation 은 개선된 검색으로도 `searchDrug` 0건 = 미유통 유지(substring 지배 아님 — deep 발동/복구 불가). 하이드로코르티손은 외용중심(경구 단일 희소)으로 needs_deep_check=CQF03. **반복 조사 금지, 근거만 유지.**
 - **3차 online run**: draft 6→7(프레드니솔론 false-negative 복구)·needs_review 11→9·reject 12→13(프레드니솔론×칼슘 fail-closed→확정 reject). AT-ITZ already_covered 유지. 분포 그 외 불변(회귀 0).
 
+### 2-F. substring 검색 위험 광역 탐색 (2026-06-15 round3 후속)
+
+> 상세 → `docs/MediStack_substring_search_risk_v1_3.md` · `data/review/substring_search_risk_v1_3.json` · ops §11.
+
+§2-E(universe 366)를 **full drug name index distinct ingredient 전체**(2,225)∪alias(27)∪seed(367)=scan **2,292**(단일성분 922)까지 확대해 substring 지배 위험을 더 찾음. proper-substring 쌍을 **diff-active 접두사**(다른약물·진짜 위험)·**형태접두사**(무수/미세/제피=같은약물)·**염/수화물 접미사**·복합제로 분류.
+
+- **분류**: high_risk **10** · medium_risk **14**(seed 밖) · salt_or_formulation_trap **143** · no_action 2.
+- **deep-check(cache-first·SDK-only)**: high(diff-active+seed) 10종 → **shallow_miss_confirmed = baseline 3종뿐**(프레드니솔론·오메프라졸·란소프라졸). 신규 diff-active 7종(로라타딘·세티리진·세팔렉신·암로디핀·졸피뎀·펜타닐·펜타닐시트르산염) **전부 shallow_already_safe**(지배 미발현)+영양소 트랙 밖.
+- **신규 draft/relation 후보 0** — full index 광역에서도 신규 substring 지배 false-negative 없음. artifact 가 draft-only 기록. **live 무반영.**
+- medium_risk 14(트레티노인·프로게스테론·설피리드·페니토인·케타민 등)는 현재 relation 트랙 무관 → 해당 성분이 후보化될 때만 deep-check(재후보화 게이트).
+
 ### 2-B. reject (12건) — 실 라벨 기반 clean deny (literature-only / 방향성 동거어 부재)
 
 online 실 라벨 fetch 로 **직접근거 부재**가 확인돼 reject. 계열 유추 채택 금지 원칙이 작동.
