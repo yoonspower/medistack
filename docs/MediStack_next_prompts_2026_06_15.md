@@ -8,6 +8,8 @@
 
 > **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
 
+> **갱신(2026-06-16, theme map 적대검증 라운드)**: 프롬프트 8 **실행** — draft 6건 refute-by-default 적대검증(8 렌즈) + 2차 source-check. 6건 전부 survives(3 clean / 3 copy_change), source quote 6/6 verbatim 정정·확인. counterpart_category 확정(acid_reducing_drug 신규). 2차 source-check 신규 draft 0(콜레세벨람·메틸도파 미유통·이소니아지드 B6=AE 치료 지시 → 전부 hold). validator 17 검사군·결함주입 9·smoke 6 카드 PASS. 정본 ledger `theme_map_adversarial_verify_v1_3.json`. live 통합·schedule·workflow·export/index/alias 수정 0. ↓이전:
+
 > **갱신(2026-06-15, theme map expansion 라운드)**: 프롬프트 7(새 theme map 확장)을 **실행** — 신규 family 3종 설계 + SDK source-check 로 **draft-only 6건**(오르리스타트·콜레스티라민 × 지용성비타민, 세프포독심·세프디토렌 × 제산제/H2, 페니실라민 × 철분·아연) 확정. 정본 `docs/MediStack_theme_map_expansion_v1_3.md`. 남은 일은 **프롬프트 8(적대검증+2차 source-check)** · **프롬프트 9(harvester 편입 PR)**. 본 라운드 live 통합·schedule 활성화·workflow·src/export/index/alias 수정 0. ↓이전 라운드:
 
 > **갱신(2026-06-15, reviewer package + schedule PR-ready 라운드)**: ①reviewer 배포용 **독립 패키지 2종** 작성 — `docs/MediStack_reviewer_package_potassium_v1_3.md`(칼륨 4건) · `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`(AT-FEX). 각 패키지에 후보별 상세·source quote·제외 항목·검증 절차·note 템플릿·인터록 요건 자기완결. 프롬프트 1·2 는 이 패키지를 reviewer 핸드오프 정본으로 쓴다. ②**운영자 runbook** `docs/MediStack_operator_runbook_v1_3.md`(일상/주간 흐름·승인 기준·rollback·알림 설정법). ③**schedule 활성화 PR-ready 설계** `docs/MediStack_harvester_schedule_activation_v1_3.md` + 미리보기 `data/review/harvester_schedule_activation_patch_preview_v1_3.json` + 구조 검증기 `scripts/validate_harvester_schedule_safety_v1_3.py`(9규칙+결함주입). 프롬프트 6 갱신. ④**프롬프트 7(새 theme map 확장)** 신설. 본 라운드에서 live 통합·schedule 활성화·workflow 수정 0.
@@ -130,9 +132,11 @@
 
 근거/상세: `docs/MediStack_candidate_backlog_v1_3.md` §3 · `docs/MediStack_relation_factory_source_check_v1_2.md` · `scripts/verify_factory_sources_v1_2.py` · `scripts/source_confirm_gate_v1_2.py` · `scripts/harvest_relation_bot_v1_3.py`.
 
-## 프롬프트 8 — theme map expansion draft 6건 적대검증 + 후속 source-check (승격 아님)
+## 프롬프트 8 — theme map expansion draft 6건 적대검증 + 후속 source-check (승격 아님) → **실행 완료(2026-06-16)**
 
-> **상태**: 프롬프트 7 의 draft-only 6건(`data/drafts/theme_map_draft_batch_v1_3.json`)이 source-confirmed 로 대기. live 통합은 PM + clinical reviewer 후 별도 PR.
+> **✅ 실행됨(2026-06-16)**: refute-by-default 8 렌즈 적대검증 완료. **6건 전부 survives**(3 survives / 3 survives_with_copy_change), source quote **6/6 라벨 verbatim 대조**. 정정 = TM-LIP-01 quote verbatim·TM-CEPH-AC-02 counterpart PPI 확장·TM-CHEL-01-ZN mechanism 추론 플래그+confidence moderate. counterpart_category 확정(세팔로=acid_reducing_drug 신규·지용성비타민=fat_soluble_vitamin·페니실라민=null). 2차 source-check: 콜레세벨람·메틸도파 미유통→hold·이소니아지드 B6=이상반응 치료 지시→hold(신규 draft 0). validator 17 검사군+결함주입 9 PASS·smoke 6 카드. ledger `data/review/theme_map_adversarial_verify_v1_3.json`. **남은 일은 프롬프트 9 + clinical reviewer.** 아래 원문은 참고용 보존.
+>
+> **상태**: 프롬프트 7 의 draft-only 6건(`data/drafts/theme_map_draft_batch_v1_3.json`)이 source-confirmed·adversarial_verified 로 대기. live 통합은 PM + clinical reviewer 후 별도 PR.
 >
 > **작업(준비 단계 — live 통합 아님)**: ①6건 사용자 카피를 **적대검증**(서로 다른 렌즈): (a) orlistat·cholestyramine 카피가 **비타민 보충 권유**로 읽히지 않는가(라벨은 권장하나 우리는 시점 분리만), (b) cholestyramine 의 **비타민K 언급이 항응고 맥락**으로 오인되지 않는가, (c) 세팔로스포린 counterpart 가 **약물(제산제/H2)** 임이 분명한가(Mg 영양제 혼동 0), (d) 원문보다 강하지 않은가. ②counterpart_category 정렬 결정: 세팔로스포린 antacid 를 id61 `al_mg_antacid` 통합 vs 신규 `acid_reducing_drug`. ③nutrient_group("지용성 비타민") 단일 카드 vs 비타민별 분리. ④2차 source-check: TM-LIP-03(콜레세벨람)·TM-CHEL-03(메틸도파)·TM-B6-01(이소니아지드, **copy 게이트 선결**) — `scripts/sourcecheck_theme_map_expansion_v1_3.py` 에 후보 추가(SDK-only·≤2 fetch).
 >

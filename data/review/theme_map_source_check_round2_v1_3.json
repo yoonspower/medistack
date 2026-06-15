@@ -1,0 +1,82 @@
+{
+ "meta": {
+  "name": "theme_map_source_check_v1_3_round2",
+  "mode": "online_sdk",
+  "live_data_written": false,
+  "max_fetch_per_candidate": 2,
+  "note": "라우팅/증거수집 전용. live 승격·draft 확정 없음.",
+  "adversarial_notes": "TM-LIP-03(콜레세벨람): 콜레세벨람/콜레세벨람염산염/웰콜 전부 0 → 국내 미유통 확정 → hold. TM-CHEL-03(메틸도파): 메틸도파/메칠도파/메틸도파정/부광메칠도파/알도메트/메틸도파수화물 전부 0 → 국내 미유통(단종 추정) → hold. TM-B6-01(이소니아지드): B6 raw=found 이나 라벨 문맥이 '말초신경병증 발생 시 피리독신을 투여하는 적절한 처치'(이상반응 치료 지시)로, depletion-monitoring relation 이 아님 → adversarial 최종 = HOLD(소비자 카드 부적합·보충 권유 오인·clinical reviewer). draft 승격 0.",
+  "final_statuses": {"TM-LIP-03": "hold", "TM-CHEL-03": "hold", "TM-B6-01": "hold"},
+  "new_drafts_promoted": 0,
+  "sdk_stats": {
+   "network": 6,
+   "cache": 0,
+   "fixture": 0,
+   "offline_miss": 0,
+   "error": 0
+  }
+ },
+ "results": [
+  {
+   "candidate_id": "TM-LIP-03",
+   "family": "fatsol_vitamin_absorption",
+   "ingredient": "콜레세벨람",
+   "counterpart": "지용성 비타민(A·D·E·K)",
+   "counterpart_type": "nutrient_group",
+   "priority": "P2",
+   "search_stem": "콜레세벨람",
+   "search_why": "no_domestic_single_oral_product",
+   "itemseqs_checked": [],
+   "found": false,
+   "quote": "",
+   "detector_kind": "fatsol",
+   "url": "",
+   "note": "담즙산 결합제(콜레스티라민 동류). 결합 선택성↑로 라벨에 지용성 비타민 미기재 가능.",
+   "verdict": "no_domestic_product"
+  },
+  {
+   "candidate_id": "TM-CHEL-03",
+   "family": "metal_chelation_absorption",
+   "ingredient": "메틸도파",
+   "counterpart": "철분",
+   "counterpart_type": "nutrient",
+   "priority": "P2",
+   "search_stem": "메틸도파",
+   "search_why": "no_domestic_single_oral_product",
+   "itemseqs_checked": [],
+   "found": false,
+   "quote": "",
+   "detector_kind": "iron",
+   "url": "",
+   "note": "철염이 메틸도파 흡수 저하. 임신 사용 약물 — 임신 카피 번짐 금지.",
+   "verdict": "no_domestic_product"
+  },
+  {
+   "candidate_id": "TM-B6-01",
+   "family": "vitamin_depletion_monitoring",
+   "ingredient": "이소니아지드",
+   "counterpart": "비타민B6(피리독신)",
+   "counterpart_type": "nutrient",
+   "priority": "HOLD",
+   "search_stem": "이소니아지드",
+   "search_why": "ok",
+   "itemseqs_checked": [
+    {
+     "itemSeq": "196200032",
+     "name": "유한짓정100mg(이소니아지드)(군납명:이소니아지드정케이.피100밀리그람)",
+     "ingredient": "이소니아지드"
+    }
+   ],
+   "found": true,
+   "quote": "련 등의 말초신경병증, 사지 지각이상(지각과민, 저린감, 개미가 기어다니는 듯한 감각), 방향감각 상실 등이 나타날 수 있으므로 충분히 관찰하고 이상이 확인되는 경우에는 감량하거나 투여를 중지하고 피리독신을 투여하는 등의 적절한 처치를 한다. 6) 눈 : 대량투여에 의해, 드물게 시신경염 또는 시신경 위축이 나타날 수 있으므로 충분히 관찰하고 이상이 확인되는 경우에는 감량하거나 투여를 중지한",
+   "detector_kind": "vitamin_b6",
+   "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196200032",
+   "note": "결핵약. B6 길항/소실 → 보충 권유 오인 위험 큼(copy 게이트 선결).",
+   "source_itemseq": "196200032",
+   "source_name": "유한짓정100mg(이소니아지드)(군납명:이소니아지드정케이.피100밀리그람)",
+   "verdict": "source_confirmed_draft_candidate",
+   "adversarial_override": "hold",
+   "adversarial_reason": "라벨 B6 문구는 '말초신경병증 발생 시 피리독신 투여'(이상반응 치료 지시)로, drug-depletes-nutrient 의 monitoring relation 이 아님. 소비자 카드化 시 '이소니아지드와 B6 함께'로 오인(보충 권유) 위험 → draft 승격 금지, clinical reviewer 트랙 유지."
+  }
+ ]
+}

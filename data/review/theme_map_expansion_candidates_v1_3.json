@@ -10,7 +10,8 @@
   "clinical_reviewed": false,
   "reviewed_by": "",
   "safety_frame": "약-영양소/약-제산제 흡수(separation) 또는 결핍(monitoring) 만. antagonism·임상판단·약-약·고위험·문헌단독은 hold.",
-  "counts": {"source_confirmed_draft_candidate": 6, "hold": 4, "needs_review": 2, "source_check_candidate": 1, "total": 13},
+  "counts": {"source_confirmed_draft_candidate": 6, "hold": 7, "needs_review": 0, "source_check_candidate": 0, "total": 13},
+  "round2_source_check": "2026-06-16: TM-LIP-03(콜레세벨람)·TM-CHEL-03(메틸도파) 국내 미유통 확정→hold; TM-B6-01(이소니아지드) B6 라벨=이상반응 치료 지시(depletion relation 아님)→hold. 신규 draft 0. 상세 data/review/theme_map_source_check_round2_v1_3.json.",
   "new_families": [
    "fatsol_vitamin_absorption (지용성 비타민 흡수저해 — 지방분해효소 억제제 / 담즙산 결합 수지)",
    "antacid_interaction 확장 (경구 세팔로스포린 에스터 프로드러그 × 위산감소·중화 약물)",
@@ -143,8 +144,8 @@
    "why_candidate": "담즙산 결합제 동류(콜레스티라민과 같은 family). 지용성 비타민 흡수 영향 가능성.",
    "known_risks": "국내 완제·라벨 직접근거 미확인. 콜레세벨람은 콜레스티라민보다 결합 선택성이 높아 비타민 영향이 약하다는 보고 → 라벨에 명시 안 됐을 수 있음(direction/strength 불확실).",
    "duplicate_with_existing": "TM-LIP-02 와 동일 family.",
-   "initial_status": "source_check_candidate",
-   "required_source": "국내 콜레세벨람 완제 itemSeq 라벨에 지용성 비타민 흡수 문구 — 미확인(2차 source-check 필요)",
+   "initial_status": "hold",
+   "required_source": "2차 source-check(2026-06-16): 콜레세벨람·콜레세벨람염산염·웰콜 전부 국내 검색 0 → 미유통 확정. relation 불가. 국내 시판 시에만 재후보화.",
    "live_allowed": false
   },
   {
@@ -159,8 +160,8 @@
    "why_candidate": "철염(황산철·글루콘산철)이 메틸도파 흡수를 저하시킨다는 고전적 상호작용. 라벨 가능.",
    "known_risks": "임신 고혈압 사용 약물 → 임부 맥락 민감(단 상호작용 자체는 일반적). 국내 단일성분 완제·라벨 직접근거 미확인. 임신 관련 카피로 번지면 금지.",
    "duplicate_with_existing": "없음.",
-   "initial_status": "needs_review",
-   "required_source": "국내 메틸도파 완제 itemSeq 라벨 철분 문구 — 미확인",
+   "initial_status": "hold",
+   "required_source": "2차 source-check(2026-06-16): 메틸도파·메칠도파·메틸도파정·부광메칠도파·알도메트·메틸도파수화물 전부 국내 검색 0 → 미유통(단종 추정). relation 불가. 국내 시판 시에만 재후보화.",
    "live_allowed": false
   },
   {
@@ -175,8 +176,8 @@
    "why_candidate": "결핵약. B6 길항/소실로 말초신경병증 → 임상에서 B6 병용이 통상. 라벨 직접근거 가능.",
    "known_risks": "라벨/임상관행이 B6 보충을 동반 → '보충 권유'로 오인 위험 큼(orlistat 와 동질 문제이나 더 강함). 결핵 치료 맥락. 사용자 카피 매우 신중해야. depletion 방향 자체는 안전.",
    "duplicate_with_existing": "없음.",
-   "initial_status": "needs_review",
-   "required_source": "국내 이소니아지드 완제 라벨 B6 문구 — 미확인. copy 게이트 선결 필요.",
+   "initial_status": "hold",
+   "required_source": "2차 source-check(2026-06-16): 유한짓정(196200032) 라벨에 B6/피리독신 존재하나 문맥이 '말초신경병증 발생 시 피리독신을 투여하는 적절한 처치'(이상반응 치료 지시)로 depletion-monitoring relation 이 아님 → adversarial=HOLD. 소비자 카드 부적합·clinical reviewer 트랙.",
    "live_allowed": false
   },
   {

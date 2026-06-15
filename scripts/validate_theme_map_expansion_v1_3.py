@@ -48,6 +48,12 @@ DRAFT_REQUIRED = ["candidate_id", "family", "ingredient", "nutrient", "counterpa
                   "source_name", "source_section", "source_quote", "source_url",
                   "display_text_ko_draft", "management_copy_draft", "product_link_allowed",
                   "potassium_safety_card"]
+# 프롬프트 8 적대검증 결과 강제용 상수
+ANTICOAGULANT_TERMS = ["와파린", "항응고", "항혈소판", "INR", "혈액응고", "출혈 위험", "프로트롬빈"]
+SUPPLEMENT_RECO_PHRASES = ["권장합니다", "권장됩니다", "복용을 권", "보충을 권", "섭취하세요",
+                           "섭취하십시오", "드시는 것이 좋", "복용하는 것이 좋습니다", "보충제를 드"]
+DRUG_COUNTERPART_CATEGORIES = {"acid_reducing_drug", "al_mg_antacid", "antacid_h2_drug"}
+ADV_VERDICTS = {"survives", "survives_with_copy_change", "needs_review", "hold", "reject"}
 
 
 def find_rels(o):
@@ -142,8 +148,36 @@ def main():
         if d.get("counterpart_type") == "antacid_drug":
             if "약물" not in nut:
                 errs.append(f"{cid}: antacid_drug counterpart must label '약물' (got {nut})")
-            if not d.get("counterpart_category"):
+            cat = d.get("counterpart_category")
+            if not cat:
                 errs.append(f"{cid}: antacid_drug counterpart needs counterpart_category")
+            elif cat not in DRUG_COUNTERPART_CATEGORIES:
+                errs.append(f"{cid}: antacid_drug counterpart_category must be a drug category "
+                            f"{DRUG_COUNTERPART_CATEGORIES} (got {cat})")
+            # H2/PPI-bearing acid-reducer must NOT be narrowed to Al/Mg-only
+            if cat == "al_mg_antacid":
+                errs.append(f"{cid}: acid-reducing drug counterpart must not use al_mg_antacid "
+                            f"(narrows H2/PPI to Al/Mg) — use acid_reducing_drug")
+        # nutrient facet must NOT carry a drug counterpart category
+        if d.get("counterpart_type") in ("nutrient", "nutrient_group"):
+            if d.get("counterpart_category") in DRUG_COUNTERPART_CATEGORIES:
+                errs.append(f"{cid}: nutrient counterpart_type has a DRUG category "
+                            f"{d.get('counterpart_category')}")
+        # vitamin-K anticoagulation framing (지용성 비타민 / 비타민 K)
+        if ("지용성 비타민" in nut) or ("비타민 K" in nut) or ("·K" in nut):
+            hit = [t for t in ANTICOAGULANT_TERMS if t in copy or t in d.get("source_quote", "")]
+            if hit:
+                errs.append(f"{cid}: vitamin-K relation must not carry anticoagulant framing {hit}")
+        # supplement recommendation phrasing in user copy
+        sup = [p for p in SUPPLEMENT_RECO_PHRASES if p in copy]
+        if sup:
+            errs.append(f"{cid}: supplement-recommendation phrase in user copy {sup}")
+        # adversarial verdict present + valid
+        av = d.get("adversarial_verified")
+        if not isinstance(av, dict) or av.get("verdict") not in ADV_VERDICTS:
+            errs.append(f"{cid}: missing/invalid adversarial_verified.verdict")
+        elif av.get("verdict") in ("needs_review", "hold", "reject"):
+            errs.append(f"{cid}: downgraded verdict '{av.get('verdict')}' must not stay in draft batch")
         # duplicate within batch + vs live
         pair = (d.get("ingredient"), d.get("nutrient"))
         if pair in seen_pairs:
@@ -156,7 +190,7 @@ def main():
     if confirmed_ids != draft_ids:
         errs.append(f"source_confirmed candidates {confirmed_ids} != draft batch {draft_ids}")
 
-    n_checks = 11
+    n_checks = 17
     if errs:
         print(f"RESULT: FAIL ({len(errs)} issue(s))")
         for e in errs:

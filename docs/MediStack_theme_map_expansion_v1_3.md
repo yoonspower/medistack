@@ -50,12 +50,33 @@
 교훈: **nedrug 검색은 product-name 매칭** — 성분명("오를리스타트")이 비어도 실제 철자("오르리스타트")·브랜드(리피다운)로 존재. exact-ingredient 필터가 완제를 거를 때는 확인된 itemSeq 직접 지정(`direct_itemseqs`). zero-result 를 곧장 no_domestic_product 로 단정하지 말 것.
 
 ## 5. 검증
-- `scripts/validate_theme_map_expansion_v1_3.py` — schema/중복/live무중복/published·clinical false/forbidden/제품·제휴/itemSeq 실값/high-risk hold 차단/potassium·antacid 위생/cross-check (PASS, 결함주입 6종 전건 탐지).
-- `scripts/smoke_theme_map_draft_render_v1_3.py` — draft 카드 렌더·copy 안전·제품 UI 부재·출처 표시 (PASS, 6 카드).
+- `scripts/validate_theme_map_expansion_v1_3.py` — schema/중복/live무중복/published·clinical false/forbidden/제품·제휴/itemSeq 실값/high-risk hold 차단/potassium·antacid 위생/**vitamin-K 항응고 차단·보충 권유 차단·약물/영양소 category 분리·adversarial verdict 강제**/cross-check (PASS, 17 검사군, 결함주입 9종 전건 탐지).
+- `scripts/smoke_theme_map_draft_render_v1_3.py` — draft 카드 렌더·copy 안전·**chip/kicker(antacid=약물 표기·비타민K 항응고 차단)**·보충 권유 차단·제품 UI 부재·출처 표시 (PASS, 6 카드).
 
-## 6. 다음 단계(전부 PM/clinical reviewer 게이트)
-1. 6건 draft 의 사용자 카피 적대검증(보충 권유 오인·비타민K 항응고 오인·counterpart 약물/영양소 혼동).
-2. counterpart_category 정렬(세팔로스포린 antacid = id61 al_mg_antacid 통합 vs 신규 acid_reducing_drug).
-3. nutrient_group("지용성 비타민") 단일 카드 vs 비타민별 분리.
-4. TM-LIP-03/TM-CHEL-03/TM-B6-01 2차 source-check(copy 게이트 선결).
-5. **live 통합은 clinical reviewer note 후 별도 PR.** harvester theme map 편입도 후속 PR.
+## 6. 적대검증 결과 (프롬프트 8 · 2026-06-16 · refute-by-default 8 렌즈)
+정본 ledger = `data/review/theme_map_adversarial_verify_v1_3.json`. **6건 전부 survives**(3 survives / 3 survives_with_copy_change). source quote **6/6 라벨 verbatim 대조**(네트워크 0, 캐시).
+
+| candidate | verdict | 반증→조치 |
+|---|---|---|
+| TM-LIP-01 오르리스타트 | survives_with_copy_change | source_quote 가 시점 문구를 압축/변형 → **라벨 verbatim 정정**('최소 2시간 전 또는 취침 시와 같이 이 약 투여 최소 2시간 후에 복용해야 한다') |
+| TM-LIP-02 콜레스티라민 | survives | 비타민K 항응고 언급 0·엽산 미확장·콜레스티라민은 id57/58 source.pointer 의 binder(역방향·무충돌) |
+| TM-CEPH-AC-01 세프포독심 | survives | 라벨이 제산제·H2 명시(PPI 미명시) → counterpart 그대로·category=acid_reducing_drug |
+| TM-CEPH-AC-02 세프디토렌 | survives_with_copy_change | 라벨 '위산을 감소시키는 다른 약물'(광의) → counterpart 를 **PPI 포함 확장**('제산제·위산 감소 약물(H2 차단제·PPI 등)') |
+| TM-CHEL-01-FE 페니실라민×철분 | survives | 라벨 '흡수율 저하' 명시 → absorption 정확 |
+| TM-CHEL-01-ZN 페니실라민×아연 | survives_with_copy_change | 라벨이 아연엔 '효과 감소'만(흡수 미명시) → **mechanism=absorption 은 추론 플래그**·confidence high→moderate·user copy 는 '효과 감소'로 라벨 충실 |
+
+### counterpart_category 정렬 결정(작업 G)
+- **fat_soluble_vitamin** (nutrient_group): TM-LIP-01/02 — 그룹 표시 유지.
+- **acid_reducing_drug** (antacid_drug): TM-CEPH-AC-01/02 — **신규 category 채택**. id61(이트라코나졸)의 `al_mg_antacid` 와 구분(세팔로스포린은 cation chelation 이 아닌 **pH 의존**·H2/PPI 포함). `antacid_h2_drug` 는 PPI 누락하므로 비채택. validator 가 acid-reducer 의 `al_mg_antacid` 사용을 **차단**(H2/PPI 를 Al/Mg 로 좁히지 못하게).
+- **null category** (nutrient): TM-CHEL-01-FE/ZN — 기존 live 60 nutrient relation 이 전부 null 이라 동일 유지. `mineral_ion` 신규 category 불필요.
+
+### 2차 source-check 결과(작업 H · `theme_map_source_check_round2_v1_3.json`) — 신규 draft 0
+- **TM-LIP-03 콜레세벨람**: 콜레세벨람/염산염/웰콜 국내 검색 0 → **hold(미유통)**.
+- **TM-CHEL-03 메틸도파**: 메틸도파/메칠도파/부광메칠도파/알도메트/수화물 국내 검색 0 → **hold(미유통·단종 추정)**.
+- **TM-B6-01 이소니아지드**: 유한짓정(196200032)에 B6/피리독신 있으나 문맥이 **'말초신경병증 발생 시 피리독신 투여'(이상반응 치료 지시)** — depletion-monitoring relation 아님 → **hold**(소비자 카드 부적합·보충 권유 오인·clinical reviewer 트랙). raw=found 이나 adversarial_override=hold.
+
+## 7. 다음 단계(전부 PM/clinical reviewer 게이트)
+1. counterpart_category 최종 채택(acid_reducing_drug) + nutrient_group 단일 vs 분리 + ZN mechanism(absorption vs interaction) reviewer 확정.
+2. 페니실라민 FE/ZN 다중 영양소 묶음 카드 여부·전문약 노출 가치.
+3. **live 통합은 clinical reviewer note 후 별도 PR.** harvester theme map 편입도 후속 PR(프롬프트 9).
+4. 미유통 hold(콜레세벨람·메틸도파)는 국내 시판 시에만 재후보화. 이소니아지드 B6 는 clinical reviewer 전 대상 아님.

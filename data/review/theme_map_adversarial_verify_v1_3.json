@@ -1,0 +1,160 @@
+{
+ "meta": {
+  "name": "theme_map_adversarial_verify_v1_3",
+  "round": "프롬프트 8 — refute-by-default 적대검증 (2026-06-16)",
+  "method": "각 draft 를 8개 독립 렌즈로 반증 시도. source quote 는 캐시 라벨과 normalized verbatim 대조(network 0).",
+  "lenses": ["source_fidelity", "user_safety", "counterpart_clarity", "product_commerce", "clinical_risk", "existing_policy_compat", "copy_rendering", "duplicate_generalization"],
+  "live_data_written": false,
+  "live_integration_forbidden": true,
+  "summary": {
+   "targets": 6,
+   "survives": 3,
+   "survives_with_copy_change": 3,
+   "needs_review": 0,
+   "hold": 0,
+   "reject": 0,
+   "source_quote_verbatim_after_fix": "6/6"
+  },
+  "category_alignment": {
+   "fat_soluble_vitamin": "TM-LIP-01/02 (counterpart_type=nutrient_group) — group 표시 유지, 비타민별 분리는 reviewer.",
+   "acid_reducing_drug": "TM-CEPH-AC-01/02 (counterpart_type=antacid_drug) — 신규 category 권고. id61 의 al_mg_antacid 와 구분(세팔로스포린은 cation chelation 이 아닌 pH 의존·H2/PPI 포함). antacid_h2_drug 는 PPI 누락하므로 비채택.",
+   "nutrient(null category)": "TM-CHEL-01-FE/ZN — 기존 live 60 nutrient relation 이 모두 counterpart_category=null 이므로 동일 유지. mineral_ion 신규 category 는 불필요(일관성)."
+  }
+ },
+ "candidates": [
+  {
+   "candidate_id": "TM-LIP-01",
+   "drug_counterpart": "오르리스타트 × 지용성 비타민(A·D·E·K·베타카로틴)",
+   "verdict": "survives_with_copy_change",
+   "lens_results": {
+    "source_fidelity": "FAIL→FIXED: source_quote 가 라벨 시점 문구를 압축/변형('최소 2시간 후 또는 취침 시에 복용한다') → 라벨 verbatim 으로 정정('최소 2시간 전 또는 취침 시와 같이 이 약 투여 최소 2시간 후에 복용해야 한다'). 정정 후 verbatim 일치.",
+    "user_safety": "PASS — display/management 가 보충 '권유' 아님(조건부 '복용 중이라면'+'보충 여부는 상담해 결정'). 라벨이 종합비타민 권장하더라도 echo 안 함.",
+    "counterpart_clarity": "PASS — 지용성 비타민(A·D·E·K) group 명시.",
+    "product_commerce": "PASS — 제품/구매/제휴 0.",
+    "clinical_risk": "PASS — 비만 치료 맥락 민감도 낮음·흡수/시점 정보만.",
+    "existing_policy_compat": "PASS — 칼륨 보충 권유 금지 원칙과 동형.",
+    "copy_rendering": "PASS — chip='지용성 비타민', body=흡수·상담.",
+    "duplicate_generalization": "PASS — live/CARRIED 무관·신규 family."
+   },
+   "refuted_points": ["source_quote 라벨 불일치(시점 문구 변형)"],
+   "copy_changes": ["source_quote 라벨 verbatim 정정"],
+   "category_changes": [],
+   "final_status": "draft (source_confirmed) 유지",
+   "remaining_risks": ["nutrient_group 단일 카드 vs 비타민별 분리(reviewer 결정)"],
+   "next_action": "reviewer: group vs split 결정. live 통합은 clinical reviewer note 후."
+  },
+  {
+   "candidate_id": "TM-LIP-02",
+   "drug_counterpart": "콜레스티라민 × 지용성 비타민(A·D·K)",
+   "verdict": "survives",
+   "lens_results": {
+    "source_fidelity": "PASS — quote 라벨 verbatim 일치.",
+    "user_safety": "PASS — 보충 권유 아님('보충 여부는 상담해 결정').",
+    "counterpart_clarity": "PASS — A·D·K 한정(엽산 미확인→제외 유지). 라벨에 없는 비타민 추가 안 함.",
+    "product_commerce": "PASS.",
+    "clinical_risk": "PASS — 비타민K 언급이 흡수 정보로만, 항응고/와파린/INR 언급 0.",
+    "existing_policy_compat": "PASS.",
+    "copy_rendering": "PASS.",
+    "duplicate_generalization": "PASS — 콜레스티라민은 live id57/58(리오티로닌) source.pointer 에 binder 로만 등장(역방향·별 relation)·무충돌."
+   },
+   "refuted_points": [],
+   "copy_changes": [],
+   "category_changes": [],
+   "final_status": "draft (source_confirmed) 유지",
+   "remaining_risks": ["엽산 추가 압력 시 라벨 재확인 전 금지"],
+   "next_action": "reviewer: vitamin K 중립 표현 최종 확인."
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-01",
+   "drug_counterpart": "세프포독심프록세틸 × 제산제·H2 차단제(약물)",
+   "verdict": "survives",
+   "lens_results": {
+    "source_fidelity": "PASS — '제산제, H2-길항제' 명시·생체이용률 저하 verbatim. PPI 는 라벨 미명시이므로 추가 안 함.",
+    "user_safety": "PASS — '복용하지 마세요' 직접 지시 없음·'복용 간격 상담' 톤.",
+    "counterpart_clarity": "PASS — counterpart=약물(제산제·H2) 명시·Mg 영양제 아님.",
+    "product_commerce": "PASS.",
+    "clinical_risk": "PASS — 항생제 흡수 정보·과도 경고 아님.",
+    "existing_policy_compat": "PASS — id61 antacid_interaction 트랙과 동류(기전은 pH 의존).",
+    "copy_rendering": "PASS — chip 은 '제산제·H2 차단제'(약물)로 표기 권고.",
+    "duplicate_generalization": "PASS — 성분은 nutrient theme map 에 있으나 antacid-약물 counterpart 는 신규. 세프디니르(id42 철분)와 다른 counterpart."
+   },
+   "refuted_points": [],
+   "copy_changes": [],
+   "category_changes": ["counterpart_category=acid_reducing_drug 권고 확정(al_mg_antacid 아님)"],
+   "final_status": "draft (source_confirmed) 유지",
+   "remaining_risks": ["counterpart_category 를 id61 과 통합할지(reviewer) — 통합 시 id61 은 cation/Al·Mg, 세팔로는 pH/H2 라 별 category 권고"],
+   "next_action": "reviewer: acid_reducing_drug category 채택 여부 + chip 표기."
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-02",
+   "drug_counterpart": "세프디토렌피복실 × 제산제·위산 감소 약물(H2·PPI 등)",
+   "verdict": "survives_with_copy_change",
+   "lens_results": {
+    "source_fidelity": "FIX: 라벨은 '제산제나 위산을 감소시키는 다른 약물'(PPI 포함 광의)인데 counterpart 가 '(제산제·H2 차단제)'로 좁음 → '제산제·위산 감소 약물(H2 차단제·PPI 등)'로 확장. avoid_concomitant='권장되지 않는다' verbatim.",
+    "user_safety": "PASS — '동시 복용 권장되지 않음' 라벨 충실·'복용하지 마세요' 단정 회피.",
+    "counterpart_clarity": "PASS — 약물 명시.",
+    "product_commerce": "PASS.",
+    "clinical_risk": "PASS — 라벨의 카르니틴 결핍(선천성 대사장애) 별도 주의는 혼입 안 함.",
+    "existing_policy_compat": "PASS — AT-FEX avoid_concomitant 와 톤 정합.",
+    "copy_rendering": "PASS.",
+    "duplicate_generalization": "PASS — 신규(세프포독심과 다른 약물·다른 action)."
+   },
+   "refuted_points": ["counterpart 가 라벨보다 좁음(PPI 누락)"],
+   "copy_changes": ["nutrient/counterpart 표기 확장(PPI 포함)", "display copy 확장"],
+   "category_changes": ["counterpart_category=acid_reducing_drug"],
+   "final_status": "draft (source_confirmed) 유지",
+   "remaining_risks": ["avoid_concomitant 톤이 과도해 보이면 reviewer 가 separation 으로 완화 검토(현재 라벨 충실)"],
+   "next_action": "reviewer: 확장된 counterpart + avoid_concomitant 톤 확인."
+  },
+  {
+   "candidate_id": "TM-CHEL-01-FE",
+   "drug_counterpart": "페니실라민 × 철분",
+   "verdict": "survives",
+   "lens_results": {
+    "source_fidelity": "PASS — '흡수율을 저하' 명시 → mechanism=absorption 정확. quote verbatim.",
+    "user_safety": "PASS — 철분 보충 권유 아님('철분 보충제와는 복용 시간 분리'·'상담').",
+    "counterpart_clarity": "PASS — 철분=영양소 명확.",
+    "product_commerce": "PASS.",
+    "clinical_risk": "PASS — 분리 정보·과도 아님. (전문약·소량 유통은 노출 가치 reviewer)",
+    "existing_policy_compat": "PASS — 기존 mineral separation(FQ/테트라/비스포 × 철분)과 동형 톤·counterpart_category=null 일관.",
+    "copy_rendering": "PASS.",
+    "duplicate_generalization": "PASS — 다른 약물·신규."
+   },
+   "refuted_points": [],
+   "copy_changes": [],
+   "category_changes": ["counterpart_category=null 유지(기존 nutrient relation 일관)"],
+   "final_status": "draft (source_confirmed) 유지",
+   "remaining_risks": ["전문의약품·소량 유통 — 베타 노출 가치(reviewer)", "동일 라벨 Al/Mg 제산제 각도는 antacid 트랙 별 relation 옵션(미확장)"],
+   "next_action": "reviewer: 노출 가치 + Al/Mg 제산제 별 relation 여부."
+  },
+  {
+   "candidate_id": "TM-CHEL-01-ZN",
+   "drug_counterpart": "페니실라민 × 아연",
+   "verdict": "survives_with_copy_change",
+   "lens_results": {
+    "source_fidelity": "PARTIAL→FLAGGED: 라벨이 아연에 대해 '이 약의 효과를 감소'(효과)만 명시·'흡수' 미명시(철분은 '흡수율 저하' 명시) → mechanism=absorption 은 추론. 상호작용·동시투여 회피 자체는 verbatim. user copy 는 '효과가 감소'로 라벨 충실(흡수 단정 안 함).",
+    "user_safety": "PASS — 아연 보충 권유 아님.",
+    "counterpart_clarity": "PASS — 아연=영양소.",
+    "product_commerce": "PASS.",
+    "clinical_risk": "PASS.",
+    "existing_policy_compat": "PASS.",
+    "copy_rendering": "PASS.",
+    "duplicate_generalization": "PASS."
+   },
+   "refuted_points": ["mechanism=absorption 가 아연에 대해 라벨 미명시(라벨='효과 감소')"],
+   "copy_changes": ["risk_flag 추가(mechanism INFERRED)", "confidence high→moderate", "user copy 는 '효과가 감소'로 라벨 충실 유지(흡수 미단정)"],
+   "category_changes": ["counterpart_category=null 유지"],
+   "final_status": "draft (source_confirmed·상호작용) 유지 — mechanism 태그만 reviewer 확정",
+   "remaining_risks": ["mechanism 을 absorption vs interaction 으로 reviewer 가 확정. user 카피는 영향 없음(이미 '효과 감소')."],
+   "next_action": "reviewer: mechanism 태그 확정. 필요 시 FE 와 다중 영양소 카드로 묶기."
+  }
+ ],
+ "round2_source_check": {
+  "note": "P2/HOLD 후보 2차 source-check(2026-06-16, SDK-only ≤2 fetch). 신규 draft 0.",
+  "results": [
+   {"candidate_id": "TM-LIP-03", "drug": "콜레세벨람", "final": "hold", "reason": "콜레세벨람/콜레세벨람염산염/웰콜 국내 검색 0 → 미유통 확정."},
+   {"candidate_id": "TM-CHEL-03", "drug": "메틸도파", "final": "hold", "reason": "메틸도파/메칠도파/메틸도파정/부광메칠도파/알도메트/메틸도파수화물 국내 검색 0 → 미유통(단종 추정)."},
+   {"candidate_id": "TM-B6-01", "drug": "이소니아지드", "final": "hold", "reason": "유한짓정(196200032) 라벨에 B6/피리독신 있으나 문맥이 '말초신경병증 발생 시 피리독신 투여'(이상반응 치료 지시)로 depletion-monitoring relation 아님 → 소비자 카드 부적합·보충 권유 오인 위험·clinical reviewer 트랙."}
+  ]
+ }
+}

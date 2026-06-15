@@ -154,7 +154,13 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 - **hold 4**: 레보도파×철분(국내 단일성분 완제 없음) · 페니토인×엽산/비타민D(양방향·신경계) · 마이코페놀레이트×제산제/철분(이식·임상판단) · 레보도파×비타민B6(복합제 무력화 오인).
 - **needs_review 2 / source_check 1**: 메틸도파×철분 · 이소니아지드×비타민B6(보충 권유 오인 — copy 게이트 선결) · 콜레세벨람×지용성비타민(2차).
 - ⚠️ **카피 안전**: orlistat·cholestyramine 라벨이 종합비타민 보충을 권장 → 우리 카피는 보충 권유 금지(흡수·시점 분리만). cholestyramine 의 비타민K는 항응고 오인 금지. 세팔로스포린 counterpart 는 약물(제산제/H2)로 Mg 영양제 혼동 금지.
-- **다음**: 적대검증 + counterpart_category 정렬 + 2차 source-check(`next_prompts` 프롬프트 8) → harvester 편입 PR(프롬프트 9). **live 통합은 clinical reviewer note 후 별도 PR.**
+
+#### 3-G-2. 적대검증 + 2차 source-check **완료(2026-06-16, 프롬프트 8)**
+프롬프트 8 실행. ledger = `data/review/theme_map_adversarial_verify_v1_3.json`. **draft 6건 전부 survives**(3 survives / 3 survives_with_copy_change), source quote **6/6 라벨 verbatim 대조**.
+- **정정 3건**: TM-LIP-01 source_quote 라벨 verbatim 정정(시점 문구 변형 적발) · TM-CEPH-AC-02 counterpart 를 PPI 포함 확장(라벨 '위산을 감소시키는 다른 약물') · TM-CHEL-01-ZN mechanism=absorption 추론 플래그(라벨은 아연에 '효과 감소'만)+confidence moderate.
+- **counterpart_category 확정**: 세팔로스포린 = **acid_reducing_drug**(신규·id61 al_mg_antacid 와 구분, H2/PPI 포함) · 지용성비타민 = fat_soluble_vitamin(group) · 페니실라민 철/아연 = null(기존 nutrient relation 일관). validator 가 acid-reducer 의 al_mg_antacid 사용·nutrient facet 의 drug category·비타민K 항응고 문맥·보충 권유 카피를 **차단**(17 검사군·결함주입 9 PASS).
+- **2차 source-check 신규 draft 0**: 콜레세벨람·메틸도파 국내 미유통→hold · 이소니아지드 B6 라벨=이상반응 치료 지시(depletion relation 아님)→hold.
+- **다음**: harvester 편입 PR(프롬프트 9) · reviewer 가 counterpart_category/ZN mechanism/group-split 확정. **live 통합은 clinical reviewer note 후 별도 PR.**
 
 1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1, 패키지 `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`).
 2. **칼륨 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01) live 통합** — reviewer note(승인토큰+4건 전건 명시) 후. dry-run·검증기 준비 완료(프롬프트 2, 패키지 `docs/MediStack_reviewer_package_potassium_v1_3.md`). DF-PRED-01 은 2026-06-15 round2 에 dry-run 합류(60→64). DF02 wording / DF03 hold 는 별도.

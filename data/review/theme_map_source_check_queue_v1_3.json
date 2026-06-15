@@ -19,15 +19,16 @@
   {"priority": "P1", "candidate_id": "TM-CHEL-01-FE", "drug": "페니실라민", "counterpart": "철분", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "198300142"},
   {"priority": "P1", "candidate_id": "TM-CHEL-01-ZN", "drug": "페니실라민", "counterpart": "아연", "check_status": "checked", "result": "source_confirmed_draft_candidate", "itemseq": "198300142"},
   {"priority": "P1", "candidate_id": "TM-CHEL-02", "drug": "레보도파", "counterpart": "철분", "check_status": "checked", "result": "hold(no_domestic_single_ingredient_product)", "itemseq": null},
-  {"priority": "P2", "candidate_id": "TM-LIP-03", "drug": "콜레세벨람", "counterpart": "지용성 비타민(A·D·E·K)", "check_status": "pending_2nd_round", "result": "source_check_candidate", "itemseq": null},
-  {"priority": "P2", "candidate_id": "TM-CHEL-03", "drug": "메틸도파", "counterpart": "철분", "check_status": "pending", "result": "needs_review", "itemseq": null},
-  {"priority": "HOLD", "candidate_id": "TM-B6-01", "drug": "이소니아지드", "counterpart": "비타민B6", "check_status": "gated", "result": "needs_review(copy_gate_first)", "itemseq": null},
+  {"priority": "P2", "candidate_id": "TM-LIP-03", "drug": "콜레세벨람", "counterpart": "지용성 비타민(A·D·E·K)", "check_status": "checked_2nd_round", "result": "hold(no_domestic_product)", "itemseq": null},
+  {"priority": "P2", "candidate_id": "TM-CHEL-03", "drug": "메틸도파", "counterpart": "철분", "check_status": "checked_2nd_round", "result": "hold(no_domestic_product_likely_discontinued)", "itemseq": null},
+  {"priority": "HOLD", "candidate_id": "TM-B6-01", "drug": "이소니아지드", "counterpart": "비타민B6", "check_status": "checked_2nd_round", "result": "hold(label_B6=AE_treatment_directive_not_depletion_relation)", "itemseq": "196200032"},
   {"priority": "HOLD", "candidate_id": "TM-HOLD-PHENYTOIN", "drug": "페니토인", "counterpart": "엽산·비타민D", "check_status": "not_checked", "result": "hold(bidirectional/clinical)", "itemseq": null},
   {"priority": "HOLD", "candidate_id": "TM-HOLD-MYCO", "drug": "마이코페놀레이트모페틸", "counterpart": "제산제·철분", "check_status": "not_checked", "result": "hold(transplant/clinical)", "itemseq": null},
   {"priority": "HOLD", "candidate_id": "TM-HOLD-LDOPA-B6", "drug": "레보도파", "counterpart": "비타민B6", "check_status": "not_checked", "result": "hold(combination_nuance)", "itemseq": null}
  ],
  "summary": {
-  "P0_checked": 1, "P1_checked": 6, "P2_pending": 2, "HOLD": 4,
-  "source_confirmed": 6, "hold": 4, "needs_review": 2, "source_check_candidate_pending": 1
+  "P0_checked": 1, "P1_checked": 6, "P2_checked_2nd_round": 3, "HOLD": 3,
+  "source_confirmed": 6, "hold": 7, "needs_review": 0, "source_check_candidate_pending": 0,
+  "round2_note": "2차 source-check 완료(2026-06-16): 콜레세벨람·메틸도파 미유통→hold, 이소니아지드 B6=이상반응 치료 지시→hold. 신규 draft 0."
  }
 }

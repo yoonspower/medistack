@@ -100,6 +100,16 @@ def d_zinc_chelation(text):
     return False, ""
 
 
+def d_vitamin_b6(text):
+    """비타민B6/피리독신 결핍·소실·보충 문맥(이소니아지드류)."""
+    for m in re.finditer(r"피리독신|비타민\s*B\s*6|비타민\s*B6|비타민B6", text):
+        i = m.start()
+        w = text[max(0, i - 90):i + 110]
+        if re.search(r"결핍|소실|저하|보충|투여|길항|신경(염|병)|말초", w):
+            return True, snip(text, i)
+    return False, ""
+
+
 # 후보 정의:
 #   (candidate_id, family, ingredient, search_stem, counterpart, counterpart_type,
 #    detector, priority, direct_itemseqs, note)
@@ -131,6 +141,19 @@ CANDIDATES = [
      "철 킬레이트로 흡수 저하 가능하나 국내 단일성분 완제 없음(마도파/스타레보=복합제) → hold."),
 ]
 
+# 2차 source-check 대상(프롬프트 8 작업 H) — P2/needs_review 후보.
+ROUND2_CANDIDATES = [
+    ("TM-LIP-03", "fatsol_vitamin_absorption", "콜레세벨람", "콜레세벨람",
+     "지용성 비타민(A·D·E·K)", "nutrient_group", "fatsol", "P2", [],
+     "담즙산 결합제(콜레스티라민 동류). 결합 선택성↑로 라벨에 지용성 비타민 미기재 가능."),
+    ("TM-CHEL-03", "metal_chelation_absorption", "메틸도파", "메틸도파",
+     "철분", "nutrient", "iron", "P2", [],
+     "철염이 메틸도파 흡수 저하. 임신 사용 약물 — 임신 카피 번짐 금지."),
+    ("TM-B6-01", "vitamin_depletion_monitoring", "이소니아지드", "이소니아지드",
+     "비타민B6(피리독신)", "nutrient", "b6", "HOLD", [],
+     "결핵약. B6 길항/소실 → 보충 권유 오인 위험 큼(copy 게이트 선결)."),
+]
+
 
 def classify(found, det_kind, seqs_found, direct):
     if not seqs_found and not direct:
@@ -157,16 +180,21 @@ def _detect(det, text):
         return (*d_zinc_chelation(text), "chelation_zinc")
     if det == "iron":
         return (*vfs.d_iron_absorption(text), "iron_absorption")
+    if det == "b6":
+        return (*d_vitamin_b6(text), "vitamin_b6")
     return False, "", det
 
 
 def main():
+    round2 = "--round2" in sys.argv
+    candset = ROUND2_CANDIDATES if round2 else CANDIDATES
     client = make_online_client()
-    out = {"meta": {"name": "theme_map_source_check_v1_3", "mode": "online_sdk",
-                    "live_data_written": False, "max_fetch_per_candidate": 2,
+    out = {"meta": {"name": "theme_map_source_check_v1_3" + ("_round2" if round2 else ""),
+                    "mode": "online_sdk", "live_data_written": False,
+                    "max_fetch_per_candidate": 2,
                     "note": "라우팅/증거수집 전용. live 승격·draft 확정 없음."},
            "results": []}
-    for (cid, family, ing, stem, counterpart, ctype, det, prio, direct, note) in CANDIDATES:
+    for (cid, family, ing, stem, counterpart, ctype, det, prio, direct, note) in candset:
         seqs, why = vfs.search_itemseqs(client, stem, max_n=2, max_pages=2)
         # 성분명 검색이 비거나 완제를 거르면 확인된 완제 itemSeq 로 보강(라벨 직접근거 확보용).
         pick = list(seqs or [])
@@ -194,9 +222,10 @@ def main():
         out["results"].append(rec)
     out["meta"]["sdk_stats"] = client.stats
     text_out = json.dumps(out, ensure_ascii=False, indent=1)
-    if len(sys.argv) > 1 and sys.argv[1] == "--out":
-        open(sys.argv[2], "w").write(text_out + "\n")
-        print(f"wrote {sys.argv[2]}")
+    if "--out" in sys.argv:
+        outpath = sys.argv[sys.argv.index("--out") + 1]
+        open(outpath, "w").write(text_out + "\n")
+        print(f"wrote {outpath}")
         for r in out["results"]:
             print(f'  {r["candidate_id"]:>15} | {r["verdict"]} | found={r["found"]}')
         print("SDK stats:", client.stats)

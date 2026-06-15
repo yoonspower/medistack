@@ -10,6 +10,10 @@
   "reviewed_by": "",
   "pm_approval_required": true,
   "clinical_reviewer_required": true,
+  "adversarial_verified": true,
+  "adversarial_verified_round": "2026-06-16 (프롬프트 8, refute-by-default, 8 lenses)",
+  "adversarial_ledger": "data/review/theme_map_adversarial_verify_v1_3.json",
+  "adversarial_summary": "6건 전부 survives. 3건 survives_with_copy_change(TM-LIP-01 quote 정정·TM-CEPH-AC-02 counterpart 확장·TM-CHEL-01-ZN mechanism 플래그). source quote 6/6 라벨 verbatim 대조(TM-LIP-01 정정 후).",
   "copy_safety_rule": "흡수/결핍 상호작용과 복용 시점 분리만 안내. 보충제 복용 '권유' 금지(라벨이 권장하더라도). 결핍 단정·복용 지시·제품/구매/제휴 금지. 칼륨 보충 권유 금지 원칙과 동일.",
   "count": 6
  },
@@ -28,13 +32,20 @@
    "source_itemseq": "200806047",
    "source_name": "리피다운캡슐60밀리그램(오르리스타트)",
    "source_section": "사용상 주의사항(지용성 비타민)",
-   "source_quote": "이 약에 의해 몇몇 지용성 비타민 및 베타카로틴의 흡수가 감소될 수 있으므로, 환자들은 적절한 영양섭취를 위하여 지용성 비타민이 들어있는 종합비타민을 복용하는 것이 권장된다. 비타민 보충제는 이 약 투여 최소 2시간 후 또는 취침 시에 복용한다.",
+   "source_quote": "이 약에 의해 몇몇 지용성 비타민 및 베타카로틴의 흡수가 감소될 수 있으므로, 환자들은 적절한 영양섭취를 위하여 지용성 비타민이 들어있는 종합비타민을 복용하는 것이 권장된다. 비타민 보충제는 이 약 투여 최소 2시간 전 또는 취침 시와 같이 이 약 투여 최소 2시간 후에 복용해야 한다.",
    "source_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200806047",
    "display_text_ko_draft": "이 약은 일부 지용성 비타민(A·D·E·K)과 베타카로틴의 흡수를 줄일 수 있다는 허가사항 문구가 있습니다. 지용성 비타민 보충제를 함께 복용하는 경우에는 복용 시점을 분리하도록 안내하고 있으니, 자세한 사항은 약사 또는 의사와 상담하세요.",
    "management_copy_draft": "지용성 비타민 보충제를 복용 중이라면 복용 시간을 분리하는 것이 좋을 수 있습니다. 보충 여부와 방법은 약사 또는 의사와 상담해 결정하세요.",
    "product_link_allowed": false,
    "potassium_safety_card": false,
    "risk_flags": ["label_recommends_supplement_DO_NOT_ECHO_AS_ADVICE", "nutrient_group_counterpart_reviewer_decide_split"],
+   "adversarial_verified": {
+    "verdict": "survives_with_copy_change",
+    "refuted_points": ["source_quote 가 라벨과 불일치(시점 문구를 '최소 2시간 후 또는 취침 시에 복용한다'로 압축) → 라벨 verbatim '최소 2시간 전 또는 취침 시와 같이 이 약 투여 최소 2시간 후에 복용해야 한다' 로 정정"],
+    "changes": ["source_quote → 라벨 verbatim 정정"],
+    "lenses_passed": ["user_safety(보충 권유 아님·조건부 시점)", "product/commerce(없음)", "counterpart_clarity(지용성 비타민군 명시)"],
+    "remaining_risks": ["nutrient_group 단일 카드 vs 비타민별 분리(reviewer)"]
+   },
    "reviewer_questions": [
     "counterpart 를 '지용성 비타민(A·D·E·K)' 그룹 단일 relation 으로 둘지, 비타민별 분리할지?",
     "사용자 카피가 보충 '권유'로 읽히지 않는지 (라벨은 권장하나 우리는 시점 분리만)?"
@@ -61,6 +72,13 @@
    "product_link_allowed": false,
    "potassium_safety_card": false,
    "risk_flags": ["label_recommends_supplement_DO_NOT_ECHO_AS_ADVICE", "counterpart_ADK_only_no_E_no_folate", "vitamin_K_mention_keep_neutral_no_anticoagulant_framing"],
+   "adversarial_verified": {
+    "verdict": "survives",
+    "refuted_points": [],
+    "changes": [],
+    "lenses_passed": ["source_fidelity(quote 라벨 verbatim 확인)", "vitamin_K(항응고/와파린 언급 없음·흡수 정보로만)", "user_safety(보충 권유 아님)", "duplicate(콜레스티라민은 id57/58 source.pointer 에 binder 로만 등장 — 역방향·별 relation·무충돌)"],
+    "remaining_risks": ["엽산 미확인 → A·D·K 한정 유지(라벨에 없는 영양소 추가 금지)"]
+   },
    "reviewer_questions": [
     "비타민 K 언급이 항응고 맥락으로 오인되지 않도록 흡수 정보로만 유지되는지?",
     "엽산은 이 라벨 미확인 → counterpart 에서 제외 유지 적절한지?"
@@ -86,7 +104,14 @@
    "management_copy_draft": "제산제·H2 차단제 등과 함께 복용하는 경우 복용 시점을 분리하는 것에 대해 약사 또는 의사와 상담하세요.",
    "product_link_allowed": false,
    "potassium_safety_card": false,
-   "risk_flags": ["counterpart_is_DRUG_not_Mg_nutrient", "mechanism_pH_dependent_not_cation_chelation_align_with_id61_reviewer"],
+   "risk_flags": ["counterpart_is_DRUG_not_Mg_nutrient", "mechanism_pH_dependent_not_cation_chelation_align_with_id61_reviewer", "label_names_제산제_and_H2_only_do_not_add_PPI_here"],
+   "adversarial_verified": {
+    "verdict": "survives",
+    "refuted_points": [],
+    "changes": [],
+    "lenses_passed": ["source_fidelity(라벨이 제산제·H2-길항제 명시 — counterpart 정확)", "counterpart_clarity(약물임 명시·Mg 영양제 아님)", "action(라벨이 pH 효과 기술 → separation·'간격 상담' 톤으로 과도 지시 안 함)"],
+    "remaining_risks": ["라벨은 PPI 미명시 → 여기엔 PPI 추가 금지(세프디토렌과 구분)"]
+   },
    "reviewer_questions": [
     "counterpart_category 를 id61(al_mg_antacid)과 통합할지, 신규 'acid_reducing_drug' 로 둘지?",
     "counterpart 가 약물임이 사용자에게 분명한지(Mg 영양제 아님)?"
@@ -96,7 +121,7 @@
    "candidate_id": "TM-CEPH-AC-02",
    "family": "antacid_interaction",
    "ingredient": "세프디토렌피복실",
-   "nutrient": "위산 감소·중화 약물(제산제·H2 차단제)",
+   "nutrient": "제산제·위산 감소 약물(H2 차단제·PPI 등)",
    "counterpart_category": "acid_reducing_drug",
    "counterpart_type": "antacid_drug",
    "mechanism": "absorption",
@@ -108,13 +133,21 @@
    "source_section": "상호작용",
    "source_quote": "이 약을 제산제나 위산을 감소시키는 다른 약물과 동시에 복용하는 것은 권장되지 않는다(이 약의 흡수가 감소되었다.).",
    "source_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199500901",
-   "display_text_ko_draft": "이 약은 제산제나 위산을 감소시키는 약과 동시에 복용하는 것이 권장되지 않는다는 허가사항 문구가 있습니다(함께 복용하면 흡수가 줄어들 수 있음). 복용 방법은 약사 또는 의사와 상담하세요.",
+   "display_text_ko_draft": "이 약은 제산제나 위산을 감소시키는 약(H2 차단제·PPI 등)과 동시에 복용하는 것이 권장되지 않는다는 허가사항 문구가 있습니다(함께 복용하면 흡수가 줄어들 수 있음). 복용 방법은 약사 또는 의사와 상담하세요.",
    "management_copy_draft": "제산제·위산 감소 약물과의 동시 복용은 권장되지 않습니다. 복용 시점 분리에 대해 약사 또는 의사와 상담하세요.",
    "product_link_allowed": false,
    "potassium_safety_card": false,
-   "risk_flags": ["counterpart_is_DRUG_not_Mg_nutrient", "carnitine_deficiency_note_in_label_is_unrelated_do_not_merge"],
+   "risk_flags": ["counterpart_is_DRUG_not_Mg_nutrient", "carnitine_deficiency_note_in_label_is_unrelated_do_not_merge", "label_says_위산감소_다른약물_broad_includes_PPI"],
+   "adversarial_verified": {
+    "verdict": "survives_with_copy_change",
+    "refuted_points": ["counterpart 가 '(제산제·H2 차단제)' 로 좁게 표기 → 라벨은 '제산제나 위산을 감소시키는 다른 약물'(PPI 포함 광의) → counterpart 를 '제산제·위산 감소 약물(H2 차단제·PPI 등)' 로 확장"],
+    "changes": ["nutrient/counterpart 표기 확장(PPI 포함)", "display copy 동일 확장"],
+    "lenses_passed": ["source_fidelity(avoid_concomitant='권장되지 않는다' verbatim)", "counterpart_clarity(약물)", "clinical_risk(과도 지시 아님)"],
+    "remaining_risks": ["카르니틴 결핍 별도 주의는 본 relation 과 무관 — 혼입 금지"]
+   },
    "reviewer_questions": [
-    "avoid_concomitant 톤이 과도하지 않은지(라벨 '권장되지 않는다' 충실)?"
+    "avoid_concomitant 톤이 과도하지 않은지(라벨 '권장되지 않는다' 충실)?",
+    "counterpart 확장(PPI 포함)이 라벨 '위산을 감소시키는 다른 약물'에 충실한지?"
    ]
   },
   {
@@ -138,6 +171,13 @@
    "product_link_allowed": false,
    "potassium_safety_card": false,
    "risk_flags": ["specialist_drug_low_market", "label_also_covers_AlMg_antacid_separate_track_option"],
+   "adversarial_verified": {
+    "verdict": "survives",
+    "refuted_points": [],
+    "changes": [],
+    "lenses_passed": ["source_fidelity(라벨 '흡수율을 저하' 명시 → mechanism=absorption 정확)", "user_safety(철분 보충 권유 아님·조건부 시점)", "scope(Al/Mg 제산제 각도는 risk_flag 로 분리·미확장)"],
+    "remaining_risks": ["전문의약품·소량 유통 — 베타 노출 가치는 reviewer"]
+   },
    "reviewer_questions": [
     "동일 라벨의 Al/Mg 제산제 각도를 antacid 트랙 relation 으로도 만들지?",
     "전문의약품·소량 유통이 베타 노출 가치에 맞는지?"
@@ -153,7 +193,7 @@
    "mechanism": "absorption",
    "recommended_action": "separation",
    "evidence_level": "high",
-   "confidence": "high",
+   "confidence": "moderate",
    "source_itemseq": "198300142",
    "source_name": "알타민캡슐250밀리그램(디-페니실라민)",
    "source_section": "상호작용",
@@ -163,9 +203,17 @@
    "management_copy_draft": "아연 보충제와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
    "product_link_allowed": false,
    "potassium_safety_card": false,
-   "risk_flags": ["specialist_drug_low_market"],
+   "risk_flags": ["specialist_drug_low_market", "zinc_label_says_효과감소_not_explicit_흡수_mechanism_absorption_INFERRED_reviewer_confirm"],
+   "adversarial_verified": {
+    "verdict": "survives_with_copy_change",
+    "refuted_points": ["mechanism=absorption 는 라벨이 아연에 대해 '이 약의 효과를 감소'(효과)라고만 적고 '흡수'를 명시하지 않음 → 철분(흡수율 저하 명시)과 달리 absorption 은 추론. 상호작용·분리 자체는 source-confirmed."],
+    "changes": ["risk_flag 추가(mechanism INFERRED)", "confidence high→moderate", "user copy 는 라벨대로 '효과가 감소'(흡수 단정 안 함) 유지"],
+    "lenses_passed": ["source_fidelity(상호작용·avoid concomitant verbatim·copy 가 '효과 감소'로 라벨 충실)", "user_safety(아연 보충 권유 아님)"],
+    "remaining_risks": ["mechanism 태그는 reviewer 가 absorption vs interaction 확정 — user 카피는 영향 없음"]
+   },
    "reviewer_questions": [
-    "TM-CHEL-01-FE 와 함께 묶어 한 약물의 다중 영양소 카드로 노출할지?"
+    "TM-CHEL-01-FE 와 함께 묶어 한 약물의 다중 영양소 카드로 노출할지?",
+    "mechanism 을 absorption 으로 둘지(라벨은 '효과 감소'만 명시)?"
    ]
   }
  ]
