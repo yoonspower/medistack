@@ -49,27 +49,28 @@ bot 의 draft_eligible 6건은 **전부** clinical reviewer handoff(`docs/MediSt
 
 ## 2. 신규 후보 분류 (트리아지되지 않은 것만)
 
-### 2-A. needs_review (10건) — fail-closed: 국내 경구 단일성분 대표 품목 미확보(검색 0건)
+### 2-A. needs_review (10건) → **source 재확인 완료 (2026-06-15)**: needs_review 2 · reject 8
 
-bot 이 source-check 에서 **fail-closed DENY** 한 행. 라벨 직접근거가 아니라 "대표 itemSeq 미확보"가 사유 → 승격 전 **source 재확인 필요**(국내 경구 단일성분 완제 품목과 itemSeq 확정).
+> **갱신(2026-06-15, source 재확인)**: 아래 needs_review 10건을 SDK-only online 으로 재확인했다(상세 → `docs/MediStack_needs_review_source_recheck_v1_3.md` · `data/review/needs_review_source_recheck_v1_3.json`). 결과: **새 draft 1**(프레드니솔론×칼륨=소론도정, draft-only) · needs_review 유지 1 · reject 9. loop/thiazide 5성분 8건은 `searchDrug` **총 0건(+철자변형 0)** = **국내 미유통 확정(true negative)** → **reject(not_marketed_kr) 격상**. 적대 검증이 프레드니솔론 1차 보수판단을 교정(깊은검색 p7 소론도정 확인).
 
-| candidate_id | relation | mechanism/action | 비고 |
+bot 이 source-check 에서 fail-closed DENY 한 행(라벨 직접근거가 아니라 "대표 itemSeq 미확보"가 사유). 재확인 verdict:
+
+| candidate_id | relation | 재확인 결과(2026-06-15) | verdict |
 |---|---|---|---|
-| D-CORT-01 | 프레드니솔론 × 칼륨 | depletion/monitoring | 코르티코스테로이드(시장 큼). 대표 경구품목 itemSeq 재확인 필요 |
-| D-CORT-02 | 프레드니솔론 × 칼슘 | absorption/monitoring | 칼슘 방향은 라벨 직접 동거어 별도 확인(약신호 약할 수 있음) |
-| D-LOOP-01 | 부메타니드 × 칼륨 | depletion/monitoring | loop 이뇨제. 국내 유통/대표품목 재확인 |
-| D-LOOP-02 | 부메타니드 × 마그네슘 | depletion/monitoring | Mg 방향 라벨 직접 동거어 확인 필요 |
-| D-LOOP-03 | 피레타니드 × 칼륨 | depletion/monitoring | loop 이뇨제. 국내 유통 재확인 |
-| D-THZ-01 | 메토라존 × 칼륨 | depletion/monitoring | thiazide-유사. 국내 유통/대표품목 재확인 |
-| D-THZ-02 | 메토라존 × 마그네슘 | depletion/monitoring | Mg 방향 확인 필요 |
-| D-THZ-03 | 트리클로르메티아지드 × 칼륨 | depletion/monitoring | thiazide. 대표품목 재확인 |
-| D-THZ-04 | 트리클로르메티아지드 × 마그네슘 | depletion/monitoring | Mg 방향 확인 필요 |
-| D-THZ-05 | 벤드로플루메티아지드 × 칼륨 | depletion/monitoring | thiazide. 국내 유통 재확인 |
+| D-CORT-01 | 프레드니솔론 × 칼륨 | max_pages=20 깊은검색 p7 = **소론도정(199602982)** 단일·경구·완제. 라벨 칼륨손실·저칼륨성 알칼리혈증 | **draft(source_confirmed)** = DF-PRED-01, draft-only |
+| D-CORT-02 | 프레드니솔론 × 칼슘 | 동 품목, 칼슘 흡수 동거어 없음 | **reject**(label_missing) |
+| D-LOOP-01 | 부메타니드 × 칼륨 | searchDrug **0건**(+부메타나이드 0) | **reject**(not_marketed_kr) |
+| D-LOOP-02 | 부메타니드 × 마그네슘 | 동상 | **reject**(not_marketed_kr) |
+| D-LOOP-03 | 피레타니드 × 칼륨 | searchDrug **0건**(+피레타나이드 0) | **reject**(not_marketed_kr) |
+| D-THZ-01 | 메토라존 × 칼륨 | searchDrug **0건**(메톨라존 1행=부적격) | **reject**(not_marketed_kr) |
+| D-THZ-02 | 메토라존 × 마그네슘 | 동상 | **reject**(not_marketed_kr) |
+| D-THZ-03 | 트리클로르메티아지드 × 칼륨 | searchDrug **0건**(+변형 3종 0) | **reject**(not_marketed_kr) |
+| D-THZ-04 | 트리클로르메티아지드 × 마그네슘 | 동상 | **reject**(not_marketed_kr) |
+| D-THZ-05 | 벤드로플루메티아지드 × 칼륨 | searchDrug **0건**(+변형 3종 0) | **reject**(not_marketed_kr) |
 
-> 분류 근거(작업 D 기준): itemSeq 불확실 · 단일 경구 완제품목 불명 → **needs_review**. 고위험군(항암/항응고/정신건강) 아님이고
-> 칼륨 **고갈(depletion)** 방향(상승 아님)이라 hold 가 아니라 source 재확인 트랙. 계열 일반화로 채택 금지 — 품목별 라벨 직접 동거어 필수.
+> **계열 일반화로 채택 금지** 원칙 유지 — 푸로세미드 id17·HCTZ id19 등 기존 라이브와 무관하게 품목 직접 라벨이 없으면 불가. 미유통 8건은 재후보화를 국내 시판 시로 한정.
 
-(중복 1건: **D-CORT-05 하이드로코르티손 × 칼륨** = 기존 **CQF03**(히드로코르티손, wording-review·correctness 선결). 신규 아님 — 표기만 다름.)
+(중복 1건: **D-CORT-05 하이드로코르티손 × 칼륨** = 기존 **CQF03**(히드로코르티손, wording-review). 재확인: 전신 경구 단일성분 0건(외용 위주) → **needs_review 유지** + correctness 선결.)
 
 ### 2-B. reject (12건) — 실 라벨 기반 clean deny (literature-only / 방향성 동거어 부재)
 
@@ -114,8 +115,7 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 
 1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1).
 2. **칼륨 PM-ready 3건(DF01·DF04·DF05) live 통합** — reviewer note 후. dry-run·검증기 준비 완료(프롬프트 2).
-3. **needs_review 다이유레틱/코르티코스테로이드 source 재확인**(프롬프트 3 신규): 국내 경구 단일성분 대표 itemSeq 확보 시 칼륨 depletion factory 후보化.
-   우선순위: **프레드니솔론**(코르티코스테로이드, 시장 큼) > **부메타니드·피레타니드**(loop) > **메토라존·트리클로르메티아지드·벤드로플루메티아지드**(thiazide). Mg/칼슘 방향은 라벨 직접 동거어 별도 확인.
+3. ~~needs_review 다이유레틱/코르티코스테로이드 source 재확인~~ → **완료(2026-06-15)**: 새 draft **1**(프레드니솔론×칼륨=소론도정 199602982, DF-PRED-01, draft-only). loop/thiazide 5성분 8건=국내 미유통 reject 격상, 하이드로코르티손×칼륨만 needs_review 유지(CQF03 correctness 선결). **다음**: DF-PRED-01 을 칼륨 PM-ready 통합 라운드(DF01·DF04·DF05)에 합류시킬지 PM 판단(reviewer note 후). 상세 `docs/MediStack_needs_review_source_recheck_v1_3.md`.
 4. **CQF03(히드로코르티손) correctness 선결**: 전신 제형 한정 + source_pointer 섹션 정정(handoff §3).
 5. **K-sparing 칼륨 상승 holds**: depletion 과 반대 방향 — 별도 정책 트랙이 필요한지 PM 판단(현재 hold 유지).
 6. **세파계×철분 10종 reject 확정**: 한국 허가사항 미기재 → 재후보화 금지(계열 일반화 금지 재확인).

@@ -48,9 +48,15 @@
 
 ---
 
-## 프롬프트 3 — needs_review 다이유레틱/코르티코스테로이드 source 재확인(승격 아님)
+## 프롬프트 3 — needs_review 다이유레틱/코르티코스테로이드 source 재확인(승격 아님) → **완료(2026-06-15)**
 
-> **추가(2026-06-15, harvester 2차 online run 산물)**: online run 이 draft-ready 신규는 0 이었으나, **needs_review 10건**(국내 경구 단일성분 대표 itemSeq 미확보로 fail-closed)을 backlog 로 남겼다. 상세 → `docs/MediStack_candidate_backlog_v1_3.md` §2-A · `data/review/harvest_run2_summary_v1_3.json`.
+> **완료(2026-06-15)**: SDK-only online 재확인 수행. 결과 **새 draft 1** — 프레드니솔론×칼륨(소론도정 199602982, DF-PRED-01, draft-only `data/review/prednisolone_potassium_draft_recheck_v1_3.json`). loop/thiazide 5성분 8건(부메타니드·피레타니드·메토라존·트리클로르메티아지드·벤드로플루메티아지드)은 `searchDrug` 0건+철자변형 0 = **국내 미유통 확정 → reject(not_marketed_kr)**, 프레드니솔론×칼슘 reject, **하이드로코르티손×칼륨만 needs_review 유지**(CQF03 correctness 선결). 상세 → `docs/MediStack_needs_review_source_recheck_v1_3.md` · `data/review/needs_review_source_recheck_v1_3.json`.
+>
+> **잔여(차기 작업, 승격 아님) = DF-PRED-01 통합 판단**: 적대 검증이 프레드니솔론 1차 보수판단(seeded max_pages=2/6 검색이 메틸프레드니솔론 substring 에 지배돼 국내 단일품 누락)을 교정 — max_pages=20 p7 에서 소론도정 확인 후 draft 확정. **다음**: reviewer note 후 DF-PRED-01 을 칼륨 PM-ready 통합 라운드(DF01·DF04·DF05)에 합류시킬지 PM 판단(글루코코르티코이드 class 4종 묶음 가능). 미유통 8건은 재후보화 금지(국내 시판 시에만).
+>
+> ↓아래는 완료 전 원안(보존).
+>
+> **(원안)** online run 이 draft-ready 신규는 0 이었으나, **needs_review 10건**(국내 경구 단일성분 대표 itemSeq 미확보로 fail-closed)을 backlog 로 남겼다. 상세 → `docs/MediStack_candidate_backlog_v1_3.md` §2-A · `data/review/harvest_run2_summary_v1_3.json`.
 >
 > **작업(준비 단계 — live 통합 아님)**: 아래 needs_review 후보의 **국내 경구·단일성분·정상 완제 대표 품목 + itemSeq** 를 SDK(`medistack_sdk`)로 재확인하고, 라벨에 **방향성 직접 동거어**(칼륨/마그네슘/칼슘 + 고갈 방향)가 실제 있는 품목만 draft 후보로 끌어올려라. 못 찾으면 needs_review 유지(fail-closed). **계열 일반화로 채택 금지 — 품목별 라벨 직접 확인 필수.**
 >

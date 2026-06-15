@@ -1,0 +1,121 @@
+{
+ "meta": {
+  "title": "MediStack needs_review 전해질(다이유레틱/코르티코스테로이드) source 재확인 요약",
+  "generated_for": "PM review handoff (분석 산출물 — 코드/live/protected 데이터 무변경)",
+  "recheck_at": "2026-06-15",
+  "method": "medistack_sdk.NedrugClient(online) + scripts/verify_factory_sources_v1_2.py(search_itemseqs/fetch_detail/classify_active) 재사용. 기존 online 캐시 재사용(결정적) + 미캐시 깊은검색은 실 NEDRUG network fetch.",
+  "do_not_implement_yet": true,
+  "live_integration_forbidden": true,
+  "published": false,
+  "clinical_reviewed": false,
+  "live_relations_created": 0,
+  "live_promotions": 0,
+  "deploy": "none",
+  "sdk_only": true,
+  "no_direct_http": true,
+  "note": "SDK 산출 캐시/raw 는 data/harvest_queue/_sdk/(gitignored) 에만 기록. 이 요약만 data/review/ 보존. 모든 후보 do_not_implement_yet. 승격은 PM + clinical reviewer 후 별도."
+ },
+ "scope": {
+  "user_primary_targets": [
+   "프레드니솔론×칼륨(D-CORT-01)", "프레드니솔론×칼슘(D-CORT-02)", "하이드로코르티손×칼륨(D-CORT-05=CQF03)",
+   "부메타니드×칼륨(D-LOOP-01)", "피레타니드×칼륨(D-LOOP-03)", "메토라존×칼륨(D-THZ-01)",
+   "트리클로르메티아지드×칼륨(D-THZ-03)", "벤드로플루메티아지드×칼륨(D-THZ-05)"
+  ],
+  "comparison_already_triaged": [
+   "메틸프레드니솔론×칼륨(DF01)", "덱사메타손×칼륨(DF02)", "플루드로코르티손×칼륨(DF03)",
+   "아세타졸아미드×칼륨(DF04)", "아조세미드×칼륨(DF05)"
+  ],
+  "excluded_by_policy": "K-sparing(스피로노락톤·에플레레논·아밀로라이드·트리암테렌)·SGLT2×Mg·thiazide×Ca·세파계×철분 — 별도 트랙/기존 처리(이 재확인 비대상)."
+ },
+ "adversarial_correction_2026_06_15": {
+  "trigger": "커밋 전 적대 검증(refute-by-default 3렌즈) 중 lens A 가 프레드니솔론 needs_review 분류를 의심(국내 프레드니솔론 실유통). 1차 판단(max_pages=2/6 seeded 검색 → export+raw 만)이 과도하게 보수적이었음.",
+  "action": "max_pages=20(200행) 깊은 SDK 검색 → p7 에서 소론도정(199602982, 프레드니솔론 단일·경구·완제·정상) 확인. 실 라벨 fetch → d_potassium=True(칼륨손실·저칼륨성 알칼리혈증), d_calcium_absorption=False.",
+  "result": "D-CORT-01 프레드니솔론×칼륨: needs_review → source_confirmed draft-only(DF-PRED-01). D-CORT-02 프레드니솔론×칼슘: reject 유지(칼슘 동거어 없음). 적대 검증이 거짓음성을 정확히 교정함.",
+  "root_cause": "production search_itemseqs max_pages=2 가 메틸프레드니솔론 substring 에 지배돼 깊은 페이지의 국내 프레드니솔론 단일품을 못 잡음(검색 깊이 한계, 미유통 아님)."
+ },
+ "availability_buckets": {
+  "domestic_single_oral_found": ["프레드니솔론(D-CORT-01): 소론도정 itemSeq 199602982(완제·경구·정상·단일성분). 라벨 칼륨손실·저칼륨성 알칼리혈증 동거어 → source_confirmed draft."],
+  "export_only_or_raw_only_in_shallow_search": ["프레드니솔론: max_pages=2/6 seeded 검색에선 대한뉴팜프레드니솔론정5mg(수출용)+대신프레드니솔론(원료)만 노출 — 소론도정은 p7(깊은검색)에서 확인. shallow 검색 한계였음."],
+  "topical_or_nonoral_only": ["하이드로코르티손(D-CORT-05): 정확 단일성분 0건, 외용(크림/연고/로션) 위주 — 전신 경구 단일성분 완제 미확보(20페이지 깊은검색에도 미확인)."],
+  "true_negative_not_marketed_kr": [
+   "부메타니드(D-LOOP-01/02): searchDrug 0건(+변형 부메타나이드 0).",
+   "피레타니드(D-LOOP-03): searchDrug 0건(+변형 피레타나이드 0).",
+   "메토라존(D-THZ-01/02): searchDrug 0건(변형 메톨라존 1행=경구단일 부적격).",
+   "트리클로르메티아지드(D-THZ-03/04): searchDrug 0건(+변형 트리클로르메치아짓/지드/트리클로메티아지드 0).",
+   "벤드로플루메티아지드(D-THZ-05): searchDrug 0건(+변형 벤드로플루메치아짓/지드/벤즈플루아짓 0)."
+  ],
+  "needs_further_check": ["하이드로코르티손(D-CORT-05=CQF03): 전신 경구 하이드로코르티손(코티솔정류) 국내 유통 + CQF03 correctness(전신 제형 한정·섹션 정정) 선결."]
+ },
+ "final_classification": {
+  "draft_candidate": [
+   {"draft_id": "DF-PRED-01", "candidate_id": "D-CORT-01", "relation": "프레드니솔론 × 칼륨", "mechanism": "depletion",
+    "itemseq": "199602982", "product_name": "소론도정(프레드니솔론)", "evidence_level": "high",
+    "source_status": "source_confirmed", "potassium_safety_card": true, "product_link_allowed": false,
+    "live_integration_forbidden": true, "promotion_candidate": false,
+    "evidence": "허가사항 이상반응>체액·전해질: 칼륨손실, 저칼륨성 알칼리혈증.",
+    "artifact": "data/review/prednisolone_potassium_draft_recheck_v1_3.json",
+    "note": "draft-only. live 통합은 PM 승인 + clinical reviewer 노트 후 별도(DF 통합 화이트리스트 미포함). 글루코코르티코이드 class 패턴이나 프레드니솔론 품목 라벨 직접 hit(계열 유추 아님)."}
+  ],
+  "draft_candidate_count": 1,
+  "needs_review_retained": [
+   {"candidate_id": "D-CORT-05", "relation": "하이드로코르티손 × 칼륨", "mechanism": "depletion",
+    "alias": "CQF03(wording-review)",
+    "reason": "전신 경구 단일성분 완제 미확보(외용 위주, 20페이지 깊은검색에도 미확인). 기존 CQF03 correctness 선결(전신 제형 한정 + source_pointer 섹션 정정) 미해결 — 유지.",
+    "next": "전신 경구 하이드로코르티손(코티솔정류) 국내 유통 확인 + CQF03 correctness 선결."}
+  ],
+  "needs_review_retained_count": 1,
+  "reject": [
+   {"candidate_id": "D-CORT-02", "relation": "프레드니솔론 × 칼슘", "mechanism": "absorption",
+    "strength": "no_product_and_weak_label", "reason": "국내 경구 단일성분 완제 미확보 + 흡수 직접 동거어 약함(골소실은 골다공증 문맥). 과다해석 금지."},
+   {"candidate_id": "D-LOOP-01", "relation": "부메타니드 × 칼륨", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(searchDrug 0건 + 철자변형 0, deterministic). 한국 허가사항 부재 — 근거 불가. 재후보화는 국내 시판 시에만."},
+   {"candidate_id": "D-LOOP-02", "relation": "부메타니드 × 마그네슘", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(동상). 한국 허가사항 부재."},
+   {"candidate_id": "D-LOOP-03", "relation": "피레타니드 × 칼륨", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(searchDrug 0건 + 변형 0). 한국 허가사항 부재."},
+   {"candidate_id": "D-THZ-01", "relation": "메토라존 × 칼륨", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(searchDrug 0건, 변형 메톨라존 1행=경구단일 부적격). 한국 허가사항 부재."},
+   {"candidate_id": "D-THZ-02", "relation": "메토라존 × 마그네슘", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(동상). 한국 허가사항 부재."},
+   {"candidate_id": "D-THZ-03", "relation": "트리클로르메티아지드 × 칼륨", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(searchDrug 0건 + 변형 3종 0). 한국 허가사항 부재."},
+   {"candidate_id": "D-THZ-04", "relation": "트리클로르메티아지드 × 마그네슘", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(동상). 한국 허가사항 부재."},
+   {"candidate_id": "D-THZ-05", "relation": "벤드로플루메티아지드 × 칼륨", "mechanism": "depletion", "strength": "not_marketed_kr",
+    "reason": "국내 미유통 확정(searchDrug 0건 + 변형 3종 0). 한국 허가사항 부재."}
+  ],
+  "reject_count": 9,
+  "hold_new": [],
+  "reclassified_from_needs_review_to_reject": [
+   "D-LOOP-01", "D-LOOP-02", "D-LOOP-03", "D-THZ-01", "D-THZ-02", "D-THZ-03", "D-THZ-04", "D-THZ-05"
+  ],
+  "note_reclassify": "8건은 이전 needs_review(fail-closed, ambiguous '재확인 필요')였으나 이번 deterministic searchDrug 0건 + 철자변형 0으로 '국내 미유통 확정'(true negative)이 확인되어 reject 로 격상. live 결과는 동일(영구 제외)이나 backlog 의 '재확인 필요' 부담 제거."
+ },
+ "comparison_reconfirmation_deterministic": {
+  "summary": "이미 트리아지된 비교군 5건은 실 itemSeq + 실 라벨로 source_confirmed 재확인(칼륨 고갈 방향 동거어 존재). 결정성 재확인 — 이번 작업의 신규 산출 아님.",
+  "rows": [
+   {"candidate_id": "DF01", "relation": "메틸프레드니솔론 × 칼륨", "itemseqs": "199701131;199800324", "status": "source_confirmed", "evidence": "체액·전해질: 부종, 나트륨저류, 칼륨손실, 저칼륨성 알칼리혈증"},
+   {"candidate_id": "DF02", "relation": "덱사메타손 × 칼륨", "itemseqs": "196300064;199401023", "status": "source_confirmed", "evidence": "체액·전해질: 저칼륨성 알칼리혈증, 나트륨저류"},
+   {"candidate_id": "DF03", "relation": "플루드로코르티손 × 칼륨", "itemseqs": "199907231", "status": "source_confirmed", "evidence": "체액·전해질: 칼륨소실, 저칼륨성 알칼리혈증"},
+   {"candidate_id": "DF04", "relation": "아세타졸아미드 × 칼륨", "itemseqs": "201403403", "status": "source_confirmed", "evidence": "저칼륨혈증 환자 투여 금기 문맥"},
+   {"candidate_id": "DF05", "relation": "아조세미드 × 칼륨", "itemseqs": "199001306", "status": "source_confirmed", "evidence": "저나트륨·저칼륨혈증 환자 투여 금기 문맥"},
+   {"candidate_id": "D-CORT-07", "relation": "메틸프레드니솔론 × 칼슘", "itemseqs": "199701131;199800324", "status": "reject", "evidence": "칼슘 흡수 방향 동거어 없음"},
+   {"candidate_id": "D-LOOP-05", "relation": "아조세미드 × 마그네슘", "itemseqs": "199001306", "status": "reject", "evidence": "마그네슘 방향 동거어 없음"}
+  ]
+ },
+ "k_sparing_separate_policy_track": {
+  "note": "칼륨 상승(고칼륨혈증) 방향 — depletion factory 와 정반대. 절대 depletion 카드로 혼입 금지. 별도 '칼륨 상승/병용 주의' 정책 트랙 신설 여부는 PM 판단(현재 hold 유지). 제품/보충/치료 문구 금지.",
+  "candidates_hold": [
+   "H-KSPAR-01 스피로노락톤×칼륨(rise)", "H-KSPAR-02 에플레레논×칼륨(rise)",
+   "H-KSPAR-03 아밀로라이드×칼륨(rise·주로 복합제)", "H-KSPAR-04 트리암테렌×칼륨(rise)",
+   "H-WARN-01 스피로노락톤(+ACEi/ARB)×칼륨(rise·약-약)",
+   "D-SGLT2-01 다파글리플로진×Mg(direction_uncertain·상승 우세)", "D-SGLT2-02 엠파글리플로진×Mg(direction_uncertain)",
+   "D-THZ-06 히드로클로로티아지드×칼슘(retention·고칼슘 방향)"
+  ]
+ },
+ "sdk_run_stats": {
+  "cached_deterministic_run": {"network": 0, "cache": 26, "fixture": 0, "offline_miss": 0, "error": 0},
+  "deep_search_prednisolone_6pages": "network fetch p3-p6 (이후 캐시), exact-ingr 프레드니솔론 = 원료1+수출용1",
+  "spelling_variant_probe": "부메타니드/피레타니드/메토라존/트리클로르메티아지드/벤드로플루메티아지드 + 변형 11종 — 국내 경구 단일성분 완제 0"
+ }
+}
