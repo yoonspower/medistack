@@ -78,5 +78,14 @@
 ## 7. 다음 단계(전부 PM/clinical reviewer 게이트)
 1. counterpart_category 최종 채택(acid_reducing_drug) + nutrient_group 단일 vs 분리 + ZN mechanism(absorption vs interaction) reviewer 확정.
 2. 페니실라민 FE/ZN 다중 영양소 묶음 카드 여부·전문약 노출 가치.
-3. **live 통합은 clinical reviewer note 후 별도 PR.** harvester theme map 편입도 후속 PR(프롬프트 9).
+3. **live 통합은 clinical reviewer note 후 별도 PR.** ~~harvester theme map 편입도 후속 PR(프롬프트 9).~~ → **편입 완료(아래 §8).**
 4. 미유통 hold(콜레세벨람·메틸도파)는 국내 시판 시에만 재후보화. 이소니아지드 B6 는 clinical reviewer 전 대상 아님.
+
+## 8. harvester 편입 (2026-06-16 · 프롬프트 9 · branch+PR · candidate-only)
+신규 family 6건을 harvester 에 **candidate-only 로 편입**했다(branch `harvester-theme-map-v1.3`). **live 통합·schedule 활성화·자동 integrate 0.** 정본 절차 = `docs/MediStack_harvester_ops_v1_3.md` §14.
+- **방식**: manual flag `--include-theme-map-expansion`(기본 비활성) + config-driven 격리 provider. flag 없으면 기존 78-후보 run 무변경(byte-동일).
+- **단일 진실원**: `data/config/theme_map_seeds_v1_3.json`(읽기 전용 policy/pointer). provider(`scripts/theme_map_harvest_provider_v1_3.py`)가 draft batch/candidates/adversarial ledger 를 읽어 PM review queue(draft 6 + hold 7) 생성. SDK·네트워크 0.
+- **신규 category 처리(review-level·src 무수정)**: acid_reducing_drug(세팔로 acid-reducer·id61 al_mg_antacid 구분) · fat_soluble_vitamin(지용성 비타민군). validator 가 약물/영양소 category 혼동·al_mg_antacid 축소·항응고 framing·보충 권유·제품 문구 차단.
+- **runtime 산출물**(`data/harvest_queue/theme_map_*`)은 `.gitignore`(커밋 0). 커밋 = review summary `data/review/theme_map_harvest_incorporation_v1_3.json` 뿐.
+- **검증**: `scripts/validate_harvester_theme_map_v1_3.py`(17 검사군+결함주입 9)·`scripts/smoke_harvester_theme_map_v1_3.py`(PM queue+6 카드)·guard flag run(보호셋 불변·write-scope·direct-http 0) PASS.
+- **남은 일**: reviewer 가 §7-1·2 확정 → live 통합은 clinical reviewer note + 수동 단계 후 별도 PR(harvester 자동 승격 없음).

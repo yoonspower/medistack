@@ -178,3 +178,29 @@ manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0*
 > 새 seed 없이 run 횟수만 늘리지 말 것. seed 추가는 `vfs.SEARCH_INGREDIENTS`(nutrient) 또는 `harvest_relation_bot_v1_3.py`
 > `ANTACID_CANDIDATES`(antacid) 편집(보호셋 아님 — 사람 dev 편집 가능, §6)이며, 그 자체가 PR 리뷰 대상이다.
 > schedule 은 비활성 유지(§12). runtime queue(`data/harvest_queue/`) 커밋 금지(§5).
+
+## 14. theme map expansion 편입 — manual flag (2026-06-16 프롬프트 9 · branch+PR)
+
+§13 의 신규 family 6건(프롬프트 8 적대검증 완료)을 harvester 에 **candidate-only 로 편입**했다. **live 통합·schedule 활성화·자동 integrate 0.** §13 이 권한 부재를 재명시한 것과 같이, 이 편입도 harvester 에 승격 권한을 주지 않는다 — PM review queue 를 더 풍부하게 만들 뿐이다.
+
+**방식 = manual flag(기본 비활성) + config-driven 격리 provider** (옵션 1). 별도 runner(옵션 2) 대신 flag 를 택한 이유: "harvester 편입"의 직접 구현이면서, 모든 신규 로직을 격리 provider 모듈로 빼 **기본 run 회귀 0**(플래그 없으면 byte-동일)·validator/smoke 단순화를 동시 달성.
+
+```bash
+# theme map expansion 후보를 candidate-only 로 PM 큐에 편입(guard wrapper 권장)
+python3 scripts/guard_no_live_write_v1_3.py --run-bot \
+  --bot-args "--ingredients 세파클러,프레드니솔론,아세타졸아미드,펙소페나딘 --include-theme-map-expansion"
+# provider 단독(요약 갱신) — review summary 만 커밋
+python3 scripts/theme_map_harvest_provider_v1_3.py --emit \
+  --summary-out data/review/theme_map_harvest_incorporation_v1_3.json --stamp 2026-06-16
+# 편입 검증 + 렌더 smoke
+python3 scripts/validate_harvester_theme_map_v1_3.py     # 17 검사군 + 결함주입 9
+python3 scripts/smoke_harvester_theme_map_v1_3.py         # PM queue + 6 카드 렌더-safe
+```
+
+- **seed 의 단일 진실원** = `data/config/theme_map_seeds_v1_3.json`(읽기 전용 policy/pointer). provider 는 이 config + source_of_truth 아티팩트(draft batch / candidates / adversarial ledger)만 읽는다 — SDK·네트워크 0, live/protected 무수정.
+- **default disabled**: `--include-theme-map-expansion` 없으면 provider 미호출 → 기존 78-후보 run 무변경(기본 offline/online run, KPI 스캔 모두 그대로).
+- **출력**: `data/harvest_queue/theme_map_pm_review_queue.md`(LIVE 아님·자동 승격 금지·source quote/app copy 분리·제품/구매/제휴 없음 배너) + `theme_map_draft_candidates.json`(draft 6) + `theme_map_hold_report.json`(hold 7). 모든 행 live_integration_forbidden=true·published=false·clinical_reviewed=false·reviewed_by 공란·do_not_implement_yet=true.
+- **runtime 산출물 커밋 금지**: `data/harvest_queue/theme_map_*` 는 `.gitignore`(§5 와 동형). 커밋되는 건 review summary `data/review/theme_map_harvest_incorporation_v1_3.json` 뿐.
+- **신규 category(review-level 처리만, src 무수정)**: `acid_reducing_drug`(세팔로스포린 acid-reducer — pH 의존, id61 `al_mg_antacid` 와 구분·H2/PPI 포함) · `fat_soluble_vitamin`(지용성 비타민군). validator 가 ①약물 category 를 영양소로 표기 ②acid-reducer 를 al_mg_antacid 로 축소 ③지용성/비타민K 항응고 framing ④보충 권유·제품 문구 를 전부 차단.
+- **무충돌**: theme map 후보 id 는 `TM-*`(기존 F-*/AT-*/KPI- 와 disjoint). 기존 harvester theme map 의 `F-CEPH-03/08`(세프포독심/세프디토렌×**철분**)과는 counterpart(=acid_reducing_drug)·ingredient 문자열(세프포독심**프록세틸**)이 달라 무충돌. live 60·pending(칼륨 4·AT-FEX)과도 (ingredient,counterpart) 무중복(validator 검증).
+- **schedule 비활성 유지**(§4·§12). 편입은 자동 실행을 켜지 않는다. live 통합은 clinical reviewer note + 수동 단계 후 별도 PR.

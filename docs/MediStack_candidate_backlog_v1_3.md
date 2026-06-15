@@ -160,7 +160,12 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 - **정정 3건**: TM-LIP-01 source_quote 라벨 verbatim 정정(시점 문구 변형 적발) · TM-CEPH-AC-02 counterpart 를 PPI 포함 확장(라벨 '위산을 감소시키는 다른 약물') · TM-CHEL-01-ZN mechanism=absorption 추론 플래그(라벨은 아연에 '효과 감소'만)+confidence moderate.
 - **counterpart_category 확정**: 세팔로스포린 = **acid_reducing_drug**(신규·id61 al_mg_antacid 와 구분, H2/PPI 포함) · 지용성비타민 = fat_soluble_vitamin(group) · 페니실라민 철/아연 = null(기존 nutrient relation 일관). validator 가 acid-reducer 의 al_mg_antacid 사용·nutrient facet 의 drug category·비타민K 항응고 문맥·보충 권유 카피를 **차단**(17 검사군·결함주입 9 PASS).
 - **2차 source-check 신규 draft 0**: 콜레세벨람·메틸도파 국내 미유통→hold · 이소니아지드 B6 라벨=이상반응 치료 지시(depletion relation 아님)→hold.
-- **다음**: harvester 편입 PR(프롬프트 9) · reviewer 가 counterpart_category/ZN mechanism/group-split 확정. **live 통합은 clinical reviewer note 후 별도 PR.**
+
+#### 3-G-3. harvester 편입 **완료(2026-06-16, 프롬프트 9 · branch+PR)**
+신규 family 6건을 harvester 에 **candidate-only 편입**(branch `harvester-theme-map-v1.3`). manual flag `--include-theme-map-expansion`(기본 비활성) + config-driven 격리 provider. **live 통합·schedule 활성화·자동 integrate·main push/merge 0.**
+- seed config `data/config/theme_map_seeds_v1_3.json`(읽기 전용) → provider `scripts/theme_map_harvest_provider_v1_3.py` → PM review queue(draft 6 + hold 7). runtime `data/harvest_queue/theme_map_*` gitignore(커밋 0), 요약만 `data/review/theme_map_harvest_incorporation_v1_3.json` 커밋.
+- 검증: `validate_harvester_theme_map_v1_3.py`(17+결함주입 9)·`smoke_harvester_theme_map_v1_3.py`·guard flag run PASS. 기본 run(무플래그) byte-동일. 정본 = ops §14.
+- **다음**: reviewer 가 counterpart_category(acid_reducing_drug)/ZN mechanism/group-split 확정. **live 통합은 clinical reviewer note 후 별도 PR.**
 
 1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1, 패키지 `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`).
 2. **칼륨 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01) live 통합** — reviewer note(승인토큰+4건 전건 명시) 후. dry-run·검증기 준비 완료(프롬프트 2, 패키지 `docs/MediStack_reviewer_package_potassium_v1_3.md`). DF-PRED-01 은 2026-06-15 round2 에 dry-run 합류(60→64). DF02 wording / DF03 hold 는 별도.

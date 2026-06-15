@@ -4,3 +4,6 @@ __pycache__/
 
 # harvester bot SDK 런타임(cache/raw/log) — 리뷰 큐 산출물 아님
 data/harvest_queue/_sdk/
+
+# theme map expansion 편입(프롬프트 9) 런타임 산출물 — review summary(data/review/)만 커밋
+data/harvest_queue/theme_map_*

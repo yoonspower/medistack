@@ -65,6 +65,18 @@ python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sampl
 - guard wrapper 가 보호셋 sha256 불변·write-scope=`data/harvest_queue/` 한정·direct-http 신규 0 을 강제한다.
 - **runtime `data/harvest_queue/` 커밋 금지**(§9). online 산출물은 재현가능 → `git checkout -- data/harvest_queue/` 로 복원. `_sdk/` 는 `.gitignore`.
 
+**theme map expansion 편입(선택 · candidate-only · 2026-06-16 프롬프트 9)** — 정본 `MediStack_harvester_ops_v1_3.md` §14:
+
+```bash
+# 신규 theme map 6건을 candidate-only 로 PM 큐에 편입(기본 비활성 flag)
+python3 scripts/guard_no_live_write_v1_3.py --run-bot \
+  --bot-args "--ingredients 세파클러,프레드니솔론,아세타졸아미드,펙소페나딘 --include-theme-map-expansion"
+python3 scripts/validate_harvester_theme_map_v1_3.py   # 17 검사군 + 결함주입 9
+python3 scripts/smoke_harvester_theme_map_v1_3.py        # PM queue + 6 카드
+```
+
+- flag 없으면 기존 run 무변경. seed = `data/config/theme_map_seeds_v1_3.json`(읽기 전용). runtime `data/harvest_queue/theme_map_*` 는 `.gitignore`(커밋 0) — 요약만 `data/review/theme_map_harvest_incorporation_v1_3.json`. **live 통합·schedule 활성화·자동 integrate 0**, 승격은 clinical reviewer note 후 별도 PR.
+
 ---
 
 ## 3. PM review queue 확인
