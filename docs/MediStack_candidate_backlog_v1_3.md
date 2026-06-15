@@ -142,8 +142,12 @@ KPI 트랩 스캔 결과: 허가사항 6대 영양소 직접 동거어 개연 �
 
 ## 3. 다음 확장 우선순위 (PM 게이트 — 승격은 별도 라운드)
 
-1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1).
-2. **칼륨 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01) live 통합** — reviewer note(승인토큰+4건 전건 명시) 후. dry-run·검증기 준비 완료(프롬프트 2). DF-PRED-01 은 2026-06-15 round2 에 dry-run 합류(60→64). DF02 wording / DF03 hold 는 별도.
+**현재 상태 요약(2026-06-15)**: relations **60** · antacid live **1**(AT-ITZ id61) · 칼륨 PM-ready **4건 pending**(DF01·DF04·DF05·DF-PRED-01, dry-run 60→64) · AT-FEX **1건 pending**(dry-run 60→61) · 전건 **reviewer-gated**(승인 토큰+대상 전건 명시 + SAMPLE/placeholder 거부 인터록). harvester 검색 품질 개선 완료(deep fallback·하드닝·회귀 5종) · substring 신규 위험 **0**(universe 2,292 광역까지 확인). published/clinical_reviewed=false · schedule 비활성.
+
+> ⚠️ **무작정 같은 theme map 을 반복 online run 하는 것은 효율이 낮다.** 2차·3차 online run 이 입증했듯(§0·§2-E) draft 분포는 기존 트리아지로 수렴했고 신규 draft-ready 는 0 이다(같은 seed/theme map → 같은 결과). **다음 relation 확장은 다음 중 하나가 선행돼야 의미가 있다**: ①reviewer note 확보 → 기존 pending(칼륨 4·AT-FEX 1) live 승격, ②**새 theme map/seed 수동 추가**(신규 relation family — `next_prompts` 프롬프트 7), ③medium-risk 성분이 relation 후보化될 때만 deep-check(재후보화 게이트·§2-F), ④clinical reviewer 확보(봉인 천장 상향), ⑤harvester schedule PR 준비(ops §12 게이트). 이 중 어느 것도 없는 반복 run 은 새 정보를 만들지 못한다.
+
+1. **AT-FEX live 통합** — reviewer note 후. dry-run·검증기 준비 완료(`docs/MediStack_next_prompts_2026_06_15.md` 프롬프트 1, 패키지 `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`).
+2. **칼륨 PM-ready 4건(DF01·DF04·DF05·DF-PRED-01) live 통합** — reviewer note(승인토큰+4건 전건 명시) 후. dry-run·검증기 준비 완료(프롬프트 2, 패키지 `docs/MediStack_reviewer_package_potassium_v1_3.md`). DF-PRED-01 은 2026-06-15 round2 에 dry-run 합류(60→64). DF02 wording / DF03 hold 는 별도.
 3. ~~needs_review 다이유레틱/코르티코스테로이드 source 재확인~~ → **완료(2026-06-15)**: 새 draft **1**(프레드니솔론×칼륨=소론도정 199602982, DF-PRED-01). loop/thiazide 5성분 8건=국내 미유통 reject 격상, 하이드로코르티손×칼륨만 needs_review 유지(CQF03 correctness 선결). **후속 라운드(2026-06-15)**: DF-PRED-01 을 칼륨 PM-ready 통합 준비 그룹에 **dry-run 합류 완료**(4건·whitelist {DF01,DF04,DF05,DF-PRED-01}·`validate_potassium_dryrun_v1_2.py` PASS·60→64, 실제 통합 0). search-depth 항구 개선(`search_itemseqs` deep fallback·`test_search_depth_v1_3.py`·ops §9). 상세 `docs/MediStack_needs_review_source_recheck_v1_3.md`.
 4. **CQF03(히드로코르티손) correctness 선결**: 전신 제형 한정 + source_pointer 섹션 정정(handoff §3).
 5. **K-sparing 칼륨 상승 holds**: depletion 과 반대 방향 — 별도 정책 트랙이 필요한지 PM 판단(현재 hold 유지).

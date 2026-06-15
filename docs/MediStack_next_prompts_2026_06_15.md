@@ -8,6 +8,8 @@
 
 > **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
 
+> **갱신(2026-06-15, reviewer package + schedule PR-ready 라운드)**: ①reviewer 배포용 **독립 패키지 2종** 작성 — `docs/MediStack_reviewer_package_potassium_v1_3.md`(칼륨 4건) · `docs/MediStack_reviewer_package_antacid_fex_v1_3.md`(AT-FEX). 각 패키지에 후보별 상세·source quote·제외 항목·검증 절차·note 템플릿·인터록 요건 자기완결. 프롬프트 1·2 는 이 패키지를 reviewer 핸드오프 정본으로 쓴다. ②**운영자 runbook** `docs/MediStack_operator_runbook_v1_3.md`(일상/주간 흐름·승인 기준·rollback·알림 설정법). ③**schedule 활성화 PR-ready 설계** `docs/MediStack_harvester_schedule_activation_v1_3.md` + 미리보기 `data/review/harvester_schedule_activation_patch_preview_v1_3.json` + 구조 검증기 `scripts/validate_harvester_schedule_safety_v1_3.py`(9규칙+결함주입). 프롬프트 6 갱신. ④**프롬프트 7(새 theme map 확장)** 신설. 본 라운드에서 live 통합·schedule 활성화·workflow 수정 0.
+
 ---
 
 ## 프롬프트 1 — AT-FEX(펙소페나딘 · avoid_concomitant) live 통합
@@ -102,10 +104,24 @@
 >
 > **선행 점검(전건 통과 시에만 검토 진행 — ops §12 체크리스트)**: ①여러 회의 수동 `workflow_dispatch`(offline+online) run 이 큐 validator 무위반으로 안정 ②no-live-write guard 무위반 지속 ③runtime 큐 커밋 0 유지 ④direct-http allowlist 감소 ⑤PM review queue 피드백 반영.
 >
-> **작업(검토 단계 — live/자동 통합 아님)**: ops §12 의 schedule 켜기 전 체크리스트를 한 항목씩 점검하고, 통과하면 `.github/workflows/harvest.yml` 의 `schedule:`/`cron:` 주석 해제를 **PR 로만** 제안하라(직접 main push 금지). PR 본문에 §12 체크리스트 결과를 첨부한다. cron 초안 = KST 월 03:00(UTC 일 18:00). **schedule 을 켜더라도** 자동 run 은 `workflow_dispatch` 와 동일 경로(mode/commit 입력)·commit 기본 false·output=artifact only 여야 한다.
+> **작업(검토 단계 — live/자동 통합 아님)**: ops §12 의 schedule 켜기 전 체크리스트를 한 항목씩 점검하고, 통과하면 `.github/workflows/harvest.yml` 의 `schedule:`/`cron:` 주석 해제를 **PR 로만** 제안하라(직접 main push 금지). 최소 diff·PR 체크리스트·구조 검증은 **`docs/MediStack_harvester_schedule_activation_v1_3.md`**(+ 미리보기 `data/review/harvester_schedule_activation_patch_preview_v1_3.json`)에 정리돼 있으니 그대로 따른다. PR 본문에 §12 체크리스트 결과 + `python3 scripts/validate_harvester_schedule_safety_v1_3.py` 결과(활성화 PR 에선 R1 외 R2~R9 PASS)를 첨부한다. cron 초안 = KST 월 03:00(UTC 일 18:00). **schedule 을 켜더라도** 자동 run 은 `workflow_dispatch` 와 동일 경로(mode/commit 입력)·commit 기본 false·output=artifact only 여야 한다.
 >
-> **불변(켠 뒤에도)**: 자동 run 은 후보 수집·라우팅만 — **integrate_*.py / live 통합은 절대 자동 실행 금지**. 승격은 항상 사람 PM + source 재확인 + clinical reviewer 노트(핸드오프 §8) + `--pm-approved --reviewer-note` 수동 단계. 자동 run 실패는 알림/보고로만 처리(자동 재시도로 live 쓰기 시도 금지). 보호셋 sha256 불변·write-scope=`data/harvest_queue/` 한정·published/clinical_reviewed=false 유지.
+> **불변(켠 뒤에도)**: 자동 run 은 후보 수집·라우팅만 — **integrate_*.py / live 통합은 절대 자동 실행 금지**. 승격은 항상 사람 PM + source 재확인 + clinical reviewer 노트(핸드오프 §8 / reviewer 패키지) + `--pm-approved --reviewer-note` 수동 단계. 자동 run 실패는 알림/보고로만 처리(자동 재시도로 live 쓰기 시도 금지). 보호셋 sha256 불변·write-scope=`data/harvest_queue/` 한정·published/clinical_reviewed=false 유지.
 >
 > **금지**: schedule 활성화를 main 에 직접 push · 자동 integrate · 자동 커밋/자동 PR 머지 · runtime 큐 커밋 · live 승격.
 
-근거/상세: `docs/MediStack_harvester_ops_v1_3.md` §4·§7·§12 · `.github/workflows/harvest.yml` · `scripts/guard_no_live_write_v1_3.py`.
+근거/상세: `docs/MediStack_harvester_schedule_activation_v1_3.md` · `docs/MediStack_harvester_ops_v1_3.md` §4·§7·§12 · `scripts/validate_harvester_schedule_safety_v1_3.py` · `.github/workflows/harvest.yml` · `scripts/guard_no_live_write_v1_3.py`.
+
+---
+
+## 프롬프트 7 — 새 theme map / seed 확장으로 신규 relation family 후보 설계 (draft-only · 승격 아님)
+
+> **왜 이 프롬프트인가**: harvester 2차·3차 online run 이 입증했듯 **같은 theme map 을 반복 run 하면 draft 분포가 기존 트리아지로 수렴**하고 신규 draft-ready 는 0 이다(같은 seed → 같은 결과). substring 광역 탐색(universe 2,292)에서도 신규 위험 0. 따라서 신규 relation 확장은 **새 theme map/seed 의 수동 추가**가 선행돼야 한다(`docs/MediStack_candidate_backlog_v1_3.md` §3).
+>
+> **작업(준비 단계 — live 통합 아님)**: 새 약-영양소 relation **family 후보**를 설계하라. ①기존 트리아지/live/reject 와 겹치지 않는 **새 theme(예: 새 약물군 × 새 영양소 방향)** 를 1~2개 선정하고 근거 가설을 적는다. ②각 후보를 harvester source-check 경로(`verify_factory_sources_v1_2.py` / source_confirm_gate)로 돌려, **한국 허가사항 라벨에 방향성 직접 동거어가 실제 있는 품목만** draft 후보로 끌어올린다(SDK-only·fail-closed). ③산출물은 **draft-only**(`do_not_implement_yet=true`·`live_integration_forbidden=true`) `data/review/` 아티팩트 + 백로그 갱신.
+>
+> **선정 기준(중요)**: **source-confirmed only**(라벨 직접 동거어) · **계열 일반화 채택 금지**(품목별 라벨 직접 확인) · **high-risk hold**(K-sparing 칼륨 상승·SGLT2×Mg 등 방향 반대/민감군은 hold, depletion 카드로 만들지 말 것) · 미유통(`searchDrug` 0건)은 reject(재후보화는 국내 시판 시에만).
+>
+> **불변**: 봇/스크립트는 `data/harvest_queue/` 밖 무수정 · live relation 생성 0 · published/clinical_reviewed=false · 칼륨 행 product_link=false·potassium_safety_card=true · 칼륨 보충 권유/결핍 단정 0 · 제품/구매/제휴 UI 0. 실제 승격은 PM + clinical reviewer 후 별도. **draft-only 산출까지가 이 프롬프트의 범위.**
+
+근거/상세: `docs/MediStack_candidate_backlog_v1_3.md` §3 · `docs/MediStack_relation_factory_source_check_v1_2.md` · `scripts/verify_factory_sources_v1_2.py` · `scripts/source_confirm_gate_v1_2.py` · `scripts/harvest_relation_bot_v1_3.py`.

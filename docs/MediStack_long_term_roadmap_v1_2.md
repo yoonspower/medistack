@@ -22,7 +22,7 @@
 
 | 순위 | 트랙 | 지금 할 일 | 게이트(다음으로 넘어가는 조건) | 상태 |
 |---|---|---|---|---|
-| **1** | **relation coverage 확장** | factory → source check → draft → live 승격 파이프라인 반복(`..._relation_factory_source_check_v1_2.md` §7) | relation **≥1,000** · relation_card **≥10,000** · 검색 UX 안정화 | **진행 중**(현재 relation 55 · relation_card 1,077) |
+| **1** | **relation coverage 확장** | factory → source check → draft → live 승격 파이프라인 반복(`..._relation_factory_source_check_v1_2.md` §7) | relation **≥1,000** · relation_card **≥10,000** · 검색 UX 안정화 | **진행 중**(2026-06-15 현재 relation **60** · relation_card **1,168** / name_only 16,412 · antacid live 1[AT-ITZ id61] · 칼륨 PM-ready 4 + AT-FEX 1 = reviewer-gated 대기) |
 | **2** | **saved_stack(내 약 목록)** | 설계만 동결 유지(`..._saved_stack_mvp_design_v1_2.md`) | 1순위 목표 달성 **+ §4 프라이버시 요건 충족** | **보류(설계 동결)** |
 | **3** | **유료화 / 결제 / 구독** | 경계만 확정(`..._free_plus_plan_v1_2.md`), 구현 0 | 1·2순위 안정화 **+ PM 유료화 승인** | **보류(설계 동결)** |
 | **(병행/별도)** | **우리영양소 앱 연동** | 비-커머스 import/export 편의 경계 문서화(§2) | 커머스 0 보장 하에서만 별도 검토 | **경계 고정·구현 미착수** |

@@ -29,6 +29,10 @@
 
 ## 1. 검수 대기 후보 — 두 트랙
 
+> **reviewer 배포 정본(2026-06-15 분리)**: 후보별 상세 카드 · source quote · 검증 절차 · note 템플릿 · 인터록 요건은 **독립 패키지**가 단일 진실원이다 —
+> 칼륨 4건 → **`docs/MediStack_reviewer_package_potassium_v1_3.md`**, AT-FEX → **`docs/MediStack_reviewer_package_antacid_fex_v1_3.md`**.
+> 본 문서 §6~§9 는 핸드오프 인덱스로 유지하되, 패키지와 차이가 나면 **패키지가 우선**한다. 운영 절차는 `docs/MediStack_operator_runbook_v1_3.md`.
+
 ### 1-A. antacid_interaction 트랙 — AT-FEX (1건)
 
 | 항목 | 값 |

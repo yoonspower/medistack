@@ -1,0 +1,86 @@
+{
+ "meta": {
+  "name": "harvester_schedule_activation_patch_preview_v1_3",
+  "created_at": "2026-06-15",
+  "status": "PR-READY PREVIEW — schedule 비활성 유지 / 활성화 0 / .github workflow 무수정",
+  "purpose": "harvester schedule(cron) 활성화 시 필요한 최소 diff + 안전 평가 미리보기. 적용 금지(PR 로만). 상세 → docs/MediStack_harvester_schedule_activation_v1_3.md",
+  "workflow_file": ".github/workflows/harvest.yml",
+  "schedule_currently_active": false,
+  "live_write": 0,
+  "auto_integrate": 0,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "note": "본 미리보기는 활성화 인가가 아니다. ops §12 게이트 9항목 전건 통과 + 별도 PM 결정 + PR 머지 후에만 활성화."
+ },
+ "minimal_activation_patch": {
+  "before": [
+   "  # 안정화 후 주석 해제(초기 비활성). KST 월 03:00 = UTC 일 18:00.",
+   "  # schedule:",
+   "  #   - cron: \"0 18 * * 0\""
+  ],
+  "after": [
+   "  # KST 월 03:00 = UTC 일 18:00. 자동 run 도 commit 기본 false · output=artifact only · auto-integrate 0.",
+   "  schedule:",
+   "    - cron: \"0 18 * * 0\""
+  ],
+  "cron": "0 18 * * 0",
+  "cron_meaning_kst": "매주 월요일 03:00 KST (UTC 일 18:00)",
+  "scope": "두 줄 주석 해제만. workflow_dispatch/inputs/steps/permissions/guard 무변경.",
+  "apply": "PR only — main 직접 push 금지. 적용은 별도 PM 결정."
+ },
+ "current_safety_evaluation": {
+  "R1_schedule_not_active": {
+   "passed": true,
+   "detail": "활성 schedule/cron: []"
+  },
+  "R2_has_workflow_dispatch": {
+   "passed": true,
+   "detail": "workflow_dispatch 트리거 없음"
+  },
+  "R3_commit_default_false": {
+   "passed": true,
+   "detail": "commit default = false"
+  },
+  "R4_no_direct_push_to_main": {
+   "passed": true,
+   "detail": "main 직접 push: []"
+  },
+  "R5_write_scope_queue_only": {
+   "passed": true,
+   "detail": "scope밖 git add: [] / out-of-scope 가드 존재: True"
+  },
+  "R6_no_live_export_write": {
+   "passed": true,
+   "detail": "보호파일 쓰기: []"
+  },
+  "R7_no_integrate_call": {
+   "passed": true,
+   "detail": "integrate 호출: []"
+  },
+  "R8_uses_no_live_write_guard": {
+   "passed": true,
+   "detail": "no-live-write 가드 미사용"
+  },
+  "R9_artifact_or_queue_only": {
+   "passed": true,
+   "detail": "artifact 업로드: True / deploy 스텝: []"
+  }
+ },
+ "current_all_pass": true,
+ "pr_ready_checklist": [
+  "ops §12 게이트 9항목 전건 통과",
+  "workflow_dispatch 정상(수동 트리거 보존)",
+  "schedule cron 은 PR 에서만 추가(main 직접 push 금지)",
+  "commit 기본 false(artifact only)",
+  "artifact only 기본(PM review queue + data/review 요약)",
+  "live write 0(published/clinical_reviewed/reviewed_by 무변경)",
+  "no-live-write guard 필수(보호셋 sha256 불변)",
+  "runtime queue 커밋 금지(_sdk/ gitignore)",
+  "PM review queue만 생성(직접 승격 경로 없음)",
+  "자동 integrate 금지(integrate_*.py 자동 실행 0)",
+  "실패 시 보고/알림만(fail-soft)",
+  "PR 브랜치 validate_harvester_schedule_safety_v1_3.py 로 R2~R9 PASS 확인(R1 은 활성화 시 의도적 변경)"
+ ],
+ "structural_no_live_write": "schedule 활성화 여부와 무관하게 write-scope=data/harvest_queue/ 한정·no-live-write guard·integrate 미호출·commit false·deploy 스텝 부재로 live write/auto-integrate 구조적 불가(R3·R5·R6·R7·R8·R9)."
+}
