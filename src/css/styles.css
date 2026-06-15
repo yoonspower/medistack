@@ -68,6 +68,7 @@ body{
 .chip{ font-size:11px; font-weight:600; border-radius:999px; padding:4px 9px; white-space:nowrap }
 .chip-sep{ color:var(--teal-deep); background:var(--teal-soft) }
 .chip-mon{ color:#5b4a2e; background:#F1E9D8 }
+.chip-avoid{ color:var(--clay-deep); background:var(--clay-soft) }
 .chev{ color:var(--ink-faint); flex:none }
 .listfooter{ margin:14px 6px 4px; font-size:11px; line-height:1.55; color:var(--ink-faint);
   border-top:1px dashed var(--line); padding-top:12px }
@@ -80,6 +81,7 @@ body{
 .alabel{ display:inline-flex; align-items:center; gap:7px; margin:14px 6px 2px; font-size:12px; font-weight:600;
   color:var(--teal-deep); background:var(--teal-soft); border-radius:999px; padding:6px 12px }
 .alabel.mon{ color:#5b4a2e; background:#F1E9D8 }
+.alabel.avoid{ color:var(--clay-deep); background:var(--clay-soft) }
 .alabel .dot{ width:6px; height:6px; border-radius:50%; background:currentColor }
 .bodytext{ font-size:16px; line-height:1.62; color:var(--ink); padding:14px 6px 4px }
 .guide{ margin-top:14px; padding:14px; background:#fff; border:1px solid var(--line-soft); border-radius:14px }

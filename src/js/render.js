@@ -4,6 +4,11 @@ import { canShowProduct, showPotassiumNotice, commonDisclaimer, potassiumNotice 
 const ACTION = {
   separation: { label: '복용 간격', chip: 'chip-sep', aClass: '', kicker: '같은 시간대 복용 주의' },
   monitoring: { label: '상태 모니터링', chip: 'chip-mon', aClass: 'mon', kicker: '장기 복용 시 상태 확인' },
+  // antacid_interaction 전용(avoid_concomitant). generic separation('복용 간격'=간격두면 병용가능)·
+  // monitoring('상태 모니터링/장기 복용'=병용+감시)이 라벨 병용금지와 모순돼 fidelity 실패 → 전용 chip.
+  // chip 은 prohibition 강도를 '(허가사항)' 귀속으로 운반(round3 fidelity 지적: '주의' 레지스터는 금지보다 약함).
+  // 앱은 직접 '복용하지 마세요'라 명령하지 않음(비지시) — '병용금지(허가사항)'는 라벨 directive 의 분류 라벨이다.
+  avoid_concomitant: { label: '병용금지(허가사항)', chip: 'chip-avoid', aClass: 'avoid', kicker: 'Al/Mg 함유 제산제 관련 참고정보' },
 };
 const ACTION_ORDER = ['separation', 'monitoring'];
 const EVIDENCE_LABEL = { high: '높음', moderate: '보통' };

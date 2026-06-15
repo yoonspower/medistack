@@ -12,7 +12,8 @@
       "no_product_affiliate (제품/구매/제휴로 이어지지 않는가)"
     ],
     "method": "독립 회의론자 5인(general-purpose 서브에이전트) refute-by-default. AT-ITZ 2렌즈 패널 + 풀카드 fidelity 재검증 1, AT-FEX 2렌즈 패널.",
-    "round2_note": "2026-06-14 Option A 채택 후 AT-FEX 신규 카피(avoid_concomitant 전용 prohibition-보존형 + render_action=monitoring) 재적대검증 추가 — 독립 회의론자 7인(fidelity 3인 패널 + 안전 4렌즈). 결과: fidelity 3/3 refuted(둘째 문장 consult 다운그레이드 + generic monitoring chip/kicker 의 prohibition 모순), 안전 4렌즈 전부 survives → AT-FEX needs_copy_review 유지. 상세는 results[AT-01].reverify_round2_option_A."
+    "round2_note": "2026-06-14 Option A 채택 후 AT-FEX 신규 카피(avoid_concomitant 전용 prohibition-보존형 + render_action=monitoring) 재적대검증 추가 — 독립 회의론자 7인(fidelity 3인 패널 + 안전 4렌즈). 결과: fidelity 3/3 refuted(둘째 문장 consult 다운그레이드 + generic monitoring chip/kicker 의 prohibition 모순), 안전 4렌즈 전부 survives → AT-FEX needs_copy_review 유지. 상세는 results[AT-01].reverify_round2_option_A.",
+    "round3_4_note": "2026-06-15 전용 avoid_concomitant chip(src 구현) + copy 반복 개선. round3(copy v2 '함께 사용해야 하는 상황이라면' + chip '제산제 동시 사용 주의'): fidelity 2/3 refuted — 전용 chip 이 generic monitoring/separation 모순은 제거했으나 chip '주의' 레지스터가 절대 병용금지보다 약함. round4(copy v3 '이미 복용 중인 제산제가 있다면' + chip '병용금지(허가사항)'): 독립 회의론자 8인 전부 survives(fidelity 3/3 + 비지시·Mg오인·generic chip 모순제거·제품·source구분, 회의론자가 실코드 검증) → AT-FEX adversarial_verified=true 후보(live 승격 금지). 상세는 results[AT-01].reverify_round3 / reverify_round4."
   },
   "results": [
     {
@@ -85,6 +86,37 @@
           "dedicated_chip_src": "§15 전용 avoid_concomitant chip(src 변경): generic separation('복용 간격'=spacing-OK)·monitoring('상태 모니터링'+'장기 복용'=병용+감시) 둘 다 prohibition 과 모순 입증됨. 비-병용-전제 전용 chip/kicker(예: chip '병용 주의', kicker '함께 복용 권장 안 함') 필요. 이번 라운드 미구현(docs/prompt only).",
           "note": "두 수정은 함께 랜딩 + 재적대검증 통과 후에만 adversarial_verified=true 후보. 그때도 live 승격은 별도 PM + clinical reviewer."
         }
+      },
+      "reverify_round3": {
+        "date": "2026-06-15",
+        "subject": "전용 avoid_concomitant chip(src 구현) + copy v2. chip '제산제 동시 사용 주의'(clay 주의 톤) · kicker 'Al/Mg 함유 제산제 관련 참고정보' · copy v2 둘째문장 '해당 제산제를 함께 사용해야 하는 상황이라면 약사 또는 의사에게 확인하세요'. src/js/render.js ACTION 에 전용 항목 추가.",
+        "method": "독립 회의론자 8인(general-purpose) refute-by-default, raw 근거(라벨 원문 + 신규 카드 chip/kicker/body) 만. fidelity 3인 패널 + 비지시·Mg오인·generic chip 모순제거·제품·source구분.",
+        "verdict": "conditional_fail",
+        "fidelity_panel": {
+          "result": "refuted (2/3)",
+          "f1_downgrade": "survives(med) — 둘째문장 '함께 사용해야 하는 상황이라면'은 제약된 필요를 전문가에 위임할 뿐 병용을 옵션 전제 안 함('함께 사용하는 경우에는'과 구분). monitoring 모순도 전용 chip 으로 해소.",
+          "f2_two_items": "refuted(med) — chip '제산제 동시 사용 주의'의 '주의'(caution) 레지스터가 '금지'보다 약해 동시사용을 '주의하며 가능'으로 전제 → 약한 품목(199801016 '상의') 강도에 대응. 둘째문장도 consult 로 읽힘.",
+          "f3_fullcard": "refuted(med) — chip '주의' 레지스터가 '복용하지 마십시오'(절대 병용금지)를 consult/caution-grade 로 다운그레이드. kicker 'Al/Mg 함유 제산제 관련 참고정보'는 (round2 장기복용 모순은 제거됐으나) prohibition 방향을 운반하지 않는 중립 토픽 라벨 → chip+kicker 쌍이 병용금지 절대성을 표면에서 표현 못함. (설계 doc §15.3 제안 kicker '함께 복용 권장 안 함'을 구현이 중립으로 교체)."
+        },
+        "safe_lenses": "비지시·Mg오인·generic chip 모순제거(전용 chip 이 round2 monitoring/separation 모순 제거 확인)·제품·source구분 — 전부 survives(high).",
+        "resolution": "전용 chip 으로 generic 모순은 제거됐으나(generic_chip_contradiction_removed survives), chip 'X 주의' 레지스터가 절대 병용금지엔 여전히 약해 fidelity 미통과 → copy v3 + chip prohibition 어휘화 필요(round4).",
+        "progress": "round2(3/3 refuted) → round3(2/3 refuted, f1 survives). 전용 chip 으로 monitoring/separation 모순 해소·둘째문장 일부 개선."
+      },
+      "reverify_round4": {
+        "date": "2026-06-15",
+        "subject": "chip attribution 강화 + copy v3. chip '병용금지(허가사항)'(prohibition 어휘 + 출처 귀속) · kicker 'Al/Mg 함유 제산제 관련 참고정보' · copy v3 둘째문장 '이미 복용 중인 제산제가 있다면 약사 또는 의사에게 확인하세요'(기존-상황 라우팅).",
+        "method": "독립 회의론자 8인(general-purpose) refute-by-default, raw 근거(라벨 원문 + 신규 카드) 만. fidelity 3인 패널 + 비지시·Mg오인·generic chip 모순제거·제품·source구분. 회의론자가 실제 src/js/render.js·draft·smoke 코드 직접 검증.",
+        "verdict": "survives",
+        "overall": "survives (0 refuted)",
+        "fidelity_panel": {
+          "result": "survives (0/3 refuted)",
+          "f1_downgrade": "survives(high) — 둘째문장 '이미 복용 중인 제산제가 있다면…확인하세요'는 기존(이미 발생한) 병용 상황 발견→전문가 라우팅, 새 병용 미전제. prohibition 은 첫문장+chip '병용금지'+출처 인용이 보존.",
+          "f2_two_items": "survives(med) — 카드 net 강도 신호 3종(chip '병용금지' + body prohibition 귀속 + 출처 금지 인용)이 강한 품목(202202380)에 대응. round2 두 결함 모두 제거.",
+          "f3_fullcard": "survives(high) — 'avoid_concomitant/병용금지'는 한국어 의약 directive 최강 레지스터로 '복용하지 마십시오'와 등급 일치. '(허가사항)'은 '(약물)' 태그와 평행한 출처 귀속으로 비지시 유지하며 prohibition 어휘를 전면에. 어떤 표면 요소도 병용허용/관리 미암시."
+        },
+        "safe_lenses": "비지시(high·chip 은 라벨 directive 분류 라벨, '(허가사항)' 귀속이라 앱 명령 아님)·Mg오인(high)·generic chip 모순제거(high)·제품(high)·source 인용구분(high) — 전부 survives.",
+        "resolution": "round4 전 렌즈 survives → AT-FEX adversarial_verified=true 후보. 단 live 승격은 별도 PM + clinical reviewer(live_integration_forbidden=true 유지). round2→round3→round4 정당한 반복 개선(회의론자 제시 수정 적용 → 신규 독립 패널 통과), 게이밍 아님(회의론자가 실코드 검증).",
+        "remaining_for_live": "①clinical reviewer 확보(clinical_reviewed 전환은 그 후) ②live integrate 시 §14 패턴(멱등 append-only + validator 연쇄) ③별도 PM 승인. 본 verified 는 카피/표면 충실성·안전성 검증일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다."
       }
     }
   ],

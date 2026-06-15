@@ -6,8 +6,9 @@ MediStack antacid_interaction 카피 **렌더 시뮬레이션 스모크**(읽기
 — avoid_concomitant=prohibition 보존('함께 복용하지 않도록')+weak neutral 다운그레이드 차단,
 separation/coadmin_caution=중립 병용 프레이밍 / 공통으로 '시간 간격 두세요' 약화 금지 —,
 (c)상담 종결, (d)상대=제산제 명시(Mg 영양제 오인 0)인지, 내부 directive/label_quote 가 원문 강도를
-보존하는지 시뮬레이션 점검한다. node 렌더는 action chip(separation→'복용 간격'/monitoring→'상태 모니터링')도
-directive 정합(avoid_concomitant 에 '복용 간격' chip 금지)으로 검사한다.
+보존하는지 시뮬레이션 점검한다. node 렌더는 action chip(separation→'복용 간격'/monitoring→'상태 모니터링'/
+avoid_concomitant→전용 '병용금지(허가사항)')도 directive 정합으로 검사한다 — avoid_concomitant 카드는 전용
+chip/kicker 노출 + generic '상태 모니터링'/'복용 간격'/'장기 복용 시 상태 확인' 미노출(병용금지 모순 제거)을 입증.
 종료코드: 0 PASS, 1 FAIL.
 """
 import json
@@ -45,6 +46,8 @@ def main():
                 fails.append(f"{did}: avoid_concomitant prohibition 보존('함께 복용하지 않도록') 누락 — 다운그레이드")
             if "흡수에 영향을 줄 수 있다는" in disp:
                 fails.append(f"{did}: avoid_concomitant 에 weak neutral 카피('흡수에 영향') 노출 — prohibition 다운그레이드")
+            if "함께 사용하는 경우에는" in disp:
+                fails.append(f"{did}: avoid_concomitant 에 병용 옵션 전제('함께 사용하는 경우에는') 노출 — consult 다운그레이드")
         else:
             if "함께 사용할 때" not in disp:
                 fails.append(f"{did}: 중립 병용 프레이밍('함께 사용할 때') 누락")
@@ -127,17 +130,24 @@ for (const r of d.draft_relations) {
   if (directive === 'avoid_concomitant') {
     check(`${did}(${ing})[appcopy] avoid_concomitant prohibition 보존('함께 복용하지 않도록') 노출`, appCopy.includes('함께 복용하지 않도록'));
     check(`${did}(${ing})[appcopy] avoid_concomitant 에 weak neutral('흡수에 영향') 미노출(다운그레이드 차단)`, !appCopy.includes('흡수에 영향을 줄 수 있다는'));
+    check(`${did}(${ing})[appcopy] avoid_concomitant 에 병용 옵션 전제('함께 사용하는 경우에는') 미노출`, !appCopy.includes('함께 사용하는 경우에는'));
+    check(`${did}(${ing})[chip] avoid 전용 chip('병용금지(허가사항)') 노출`, html.includes('병용금지(허가사항)'));
+    check(`${did}(${ing})[chip] generic monitoring('상태 모니터링') 미노출(모순 제거)`, !html.includes('상태 모니터링'));
+    check(`${did}(${ing})[chip] generic separation('복용 간격') 미노출(다운그레이드 제거)`, !html.includes('복용 간격'));
+    check(`${did}(${ing})[kicker] '장기 복용 시 상태 확인' 미노출(병용+장기 모순 제거)`, !html.includes('장기 복용 시 상태 확인'));
+    check(`${did}(${ing})[kicker] avoid 전용 kicker('관련 참고정보') 노출`, html.includes('관련 참고정보'));
   } else {
     check(`${did}(${ing})[appcopy] 중립 병용 프레이밍('함께 사용할 때') 노출`, appCopy.includes('함께 사용할 때'));
   }
   check(`${did}(${ing})[detail] 공통 면책 출력(fail-safe)`, html.includes(data.disclaimers.common));
   check(`${did}(${ing})[detail] 출처 귀속(허가사항) 출력`, html.includes('출처'));
   check(`${did}(${ing})[detail] 제품/구매/제휴 미노출`, !html.includes('구매') && !html.includes('제휴') && !html.includes('affiliate') && !html.includes('buy_links'));
-  // action chip: separation→'복용 간격' / monitoring→'상태 모니터링'. avoid_concomitant 는 '복용 간격'(spacing) chip 금지(다운그레이드).
-  const chipLabel = s.render_action === 'separation' ? '복용 간격' : '상태 모니터링';
-  check(`${did}(${ing})[row] action chip('${chipLabel}') 표시`, row.includes(chipLabel));
+  // action chip: separation→'복용 간격' / monitoring→'상태 모니터링' / avoid_concomitant→전용 '제산제 동시 사용 주의'.
+  const CHIP_BY_ACTION = { separation: '복용 간격', monitoring: '상태 모니터링', avoid_concomitant: '병용금지(허가사항)' };
+  const chipLabel = CHIP_BY_ACTION[s.render_action] || '';
+  check(`${did}(${ing})[row] action chip('${chipLabel}') 표시`, !!chipLabel && row.includes(chipLabel));
   if (directive === 'avoid_concomitant') {
-    check(`${did}(${ing})[row] avoid_concomitant 에 separation('복용 간격') chip 미사용(다운그레이드 차단)`, !row.includes('복용 간격'));
+    check(`${did}(${ing})[row] avoid_concomitant 에 generic chip(복용 간격/상태 모니터링) 미사용`, !row.includes('복용 간격') && !row.includes('상태 모니터링'));
   }
 }
 

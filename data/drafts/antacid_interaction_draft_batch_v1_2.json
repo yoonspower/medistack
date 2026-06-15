@@ -9,7 +9,7 @@
   "published": false,
   "clinical_reviewed": false,
   "count": 2,
-  "adversarial_round": "v1.3 2026-06-14 — 독립 회의론자 refute-by-default 적대검증(자기확증 방지). AT-05(이트라코나졸) survives → adversarial_verified=true · live 통합 1순위(미승격). AT-01(펙소페나딘) 안전 4렌즈 통과 · fidelity 는 representative_itemseq_policy 결정 전까지 미통과(adversarial_verified=false). round2(Option A 채택·2026-06-14): AT-01 신규 카피(prohibition-보존형 + render_action=monitoring)로 독립 회의론자 7인 재적대검증 — fidelity 3/3 refuted(둘째 문장 consult 다운그레이드 + generic monitoring chip/kicker 의 병용금지 모순), 안전 4렌즈 전부 survives → AT-01 adversarial_verified=false·status=needs_copy_review 유지. 차기 라운드 필요조건 2종(copy v2 + 전용 chip src)은 ledger 참조. 감사 ledger: data/review/antacid_interaction_adversarial_verify_v1_3.json. live 승격 0 유지.",
+  "adversarial_round": "v1.3 2026-06-14 — 독립 회의론자 refute-by-default 적대검증(자기확증 방지). AT-05(이트라코나졸) survives → adversarial_verified=true · live 통합 1순위(미승격). AT-01(펙소페나딘) 안전 4렌즈 통과 · fidelity 는 representative_itemseq_policy 결정 전까지 미통과(adversarial_verified=false). round2(Option A 채택·2026-06-14): AT-01 신규 카피(prohibition-보존형 + render_action=monitoring)로 독립 회의론자 7인 재적대검증 — fidelity 3/3 refuted(둘째 문장 consult 다운그레이드 + generic monitoring chip/kicker 의 병용금지 모순), 안전 4렌즈 전부 survives → AT-01 adversarial_verified=false·needs_copy_review. round3/round4(2026-06-15, 전용 chip/copy 구현): src/js/render.js 에 avoid_concomitant 전용 ACTION(chip '병용금지(허가사항)'·kicker 'Al/Mg 함유 제산제 관련 참고정보'·clay 톤) 추가 + copy v3('이미 복용 중인 제산제가 있다면 약사 또는 의사에게 확인하세요'). round3(copy v2 + chip '제산제 동시 사용 주의') fidelity 2/3 refuted → round4(copy v3 + chip '병용금지(허가사항)') 독립 회의론자 8인 전부 survives(fidelity 3/3 + 비지시·Mg오인·generic chip 모순제거·제품·source구분) → AT-01 adversarial_verified=true 후보(live 승격 금지·live_integration_forbidden=true 유지). 감사 ledger: data/review/antacid_interaction_adversarial_verify_v1_3.json. live 승격 0 유지.",
   "gate": "scripts/source_confirm_gate_v1_2.py / data/review/source_confirm_gate_v1_2.json (단일 fail-closed)",
   "reconciled_with_harvester": "v1.3 online manual run 2026-06-14 (AT-01 ≡ AT-FEX-01 펙소페나딘, AT-05 ≡ AT-ITZ-01 이트라코나졸). harvester 가 확정한 online 대표 itemSeq/quote 를 각 draft 의 online_reconcile 로 보강(기존 근거 폐기 아님·provenance 보존). 영양소 relation 아님 — surface 렌더 매핑(render_nutrient/render_action) 은 Al/Mg 제산제 '약물' 카테고리로 표시.",
   "note": "antacid_interaction 트랙은 '약물 × Al/Mg 제산제(약물 카테고리)'이며 영양소(철/칼슘/Mg/아연/칼륨) 보충제 relation 과 개념적으로 분리된다. surface=중립 antacid_interaction, 내부=label_directive_type/counterpart_category/label_quote 로 라벨 원문 강도 보존. 마그네슘 영양제로 오인되지 않게 상대를 제산제로 명시. 이번 라운드 live·일반 relation 미반영. reject/needs_review 후보는 candidates CSV 참조."
@@ -26,14 +26,14 @@
    "confidence": "low",
    "risk_level": "low",
    "source_basis": "허가사항",
-   "display_text_ko": "일부 알루미늄·마그네슘 함유 제산제와 함께 복용하지 않도록 안내하는 허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.",
+   "display_text_ko": "일부 알루미늄·마그네슘 함유 제산제와 함께 복용하지 않도록 안내하는 허가사항 문구가 있습니다. 이미 복용 중인 제산제가 있다면 약사 또는 의사에게 확인하세요.",
    "management_ko": "",
    "label_quote": "동안 주의해야 할 약 또는 음식은 무엇입니까? 이 약을 복용하는 동안 피부질환용약, 비염용 내복약을 포함한 다른 알레르기용약, 항히스타민제를 함유한 내복약 등, 알루미늄 또는 마그네슘 함유 제제의 제산제를 복용하지 마십시오. 이 약을 복용하는 동안 케토코나졸이나 에리트로마이신과 함께 복용하지 마십시오. 이 약을 복용하는 동안 자몽주스, 오렌지 및 사과주스와",
    "surface": {
     "render_nutrient": "Al/Mg 함유 제산제(약물)",
-    "render_action": "monitoring",
+    "render_action": "avoid_concomitant",
     "not_a_nutrient_relation": true,
-    "note": "표면 렌더 매핑(미승격). render_nutrient 는 영양소가 아니라 Al/Mg 함유 제산제 '약물' 카테고리 — 기존 generic relation 카드의 nutrient 슬롯에 넣으면 '마그네슘(영양소)' 이 아니라 '제산제(약물)' 로 표시되어 영양소 트랙과 구분된다. avoid_concomitant directive 이므로 render_action=monitoring 사용 — separation('복용 간격' chip)은 '간격 두면 병용 가능'으로 prohibition 을 다운그레이드하므로 금지(적대검증 fidelity 지적). monitoring('상태 모니터링') chip 은 비-spacing 중립 신호이며 prohibition 강도는 display 카피('함께 복용하지 않도록 안내하는 문구가 있습니다')와 내부 label_directive_type 가 보존한다. 단 generic monitoring chip 도 avoid_concomitant 에 완전 충실하진 않음 → 전용 '병용 주의' chip 은 §15 에서 src 변경안으로만 문서화(이번 라운드 미구현). live 승격은 별도 PM 결정."
+    "note": "표면 렌더 매핑(미승격). render_nutrient 는 영양소가 아니라 Al/Mg 함유 제산제 '약물' 카테고리 — 기존 generic relation 카드의 nutrient 슬롯에 넣으면 '마그네슘(영양소)' 이 아니라 '제산제(약물)' 로 표시되어 영양소 트랙과 구분된다. avoid_concomitant directive 전용 render_action=avoid_concomitant: src/js/render.js ACTION 에 전용 항목 추가(chip '병용금지(허가사항)' · kicker 'Al/Mg 함유 제산제 관련 참고정보' · clay 주의 톤). generic separation('복용 간격'=간격두면 병용가능)·monitoring('상태 모니터링'+'장기 복용'=병용+감시)은 둘 다 병용금지와 모순(round1/round2 fidelity 지적)이라 제거. chip 은 prohibition 강도를 '병용금지' 어휘로 운반하되 '(허가사항)' 출처 귀속으로 비지시 유지(round3→round4 개선: '주의' 레지스터는 금지보다 약하다는 fidelity 지적 반영). prohibition 강도는 display 카피('함께 복용하지 않도록 안내하는 문구가 있습니다')·chip·label_directive_type·출처 인용이 보존하고, 앱은 직접 '복용하지 마세요'라 명령하지 않는다(비지시). live 승격은 별도 PM 결정."
    },
    "product_link_allowed": false,
    "potassium_safety_card": false,
@@ -44,14 +44,14 @@
    "source_required": true,
    "do_not_implement_yet": true,
    "live_integration_forbidden": true,
-   "adversarial_verified": false,
+   "adversarial_verified": true,
    "adversarial_verification": {
-    "date": "2026-06-14",
-    "method": "독립 회의론자 refute-by-default(자기확증 방지). round1: 중립 카피 기준 fidelity fail. round2: Option A 신규 카피(prohibition-보존형 + render_action=monitoring) 기준 독립 회의론자 7인(fidelity 3인 패널 + 안전 4렌즈).",
-    "verdict": "conditional_fail",
-    "status": "needs_copy_review",
-    "lenses": {"fidelity_no_overweaken": "fail", "non_directive": "pass", "mg_supplement_confusion": "pass", "track_distinction_al_mg_antacid": "pass", "no_product_affiliate": "pass"},
-    "note": "round2(Option A 신규 카피) 재검증 결과 fidelity 여전히 미통과(3/3 refuted): ①display 둘째 문장 '함께 사용하는 경우에는…확인하세요'가 병용을 옵션으로 전제 → consult 다운그레이드(약한 품목 199801016 강도에만 충실) ②generic monitoring chip('상태 모니터링')+kicker('장기 복용 시 상태 확인')가 병용금지에 모순(병용+장기감시 암시, '장기 복용'은 병용금지 관계 성립불가 시나리오). 첫 문장 prohibition 보존('함께 복용하지 않도록 안내하는 문구가 있습니다')은 개선으로 인정되나 풀 충실성 미달. 안전 4렌즈(비지시·Mg오인·트랙·제품)는 전부 survives(high). adversarial_verified=false 유지. 차기 라운드 필요조건 2종(copy v2 둘째문장 비-병용-전제 + 전용 avoid_concomitant chip src)은 ledger.reverify_round2_option_A.required_for_next_round_BOTH 참조.",
+    "date": "2026-06-15",
+    "method": "독립 회의론자 refute-by-default(자기확증 방지). round1: 중립 카피 fidelity fail. round2: Option A 카피 v1(prohibition-보존형 + render_action=monitoring) → fidelity 3/3 refuted. round3: copy v2('함께 사용해야 하는 상황이라면') + 전용 avoid_concomitant chip('제산제 동시 사용 주의') → fidelity 2/3 refuted(chip '주의' 레지스터<금지, 둘째문장 consult). round4: copy v3('이미 복용 중인 제산제가 있다면') + chip '병용금지(허가사항)'(prohibition 어휘+출처 귀속) → 독립 회의론자 8인(fidelity 3인 패널 + 비지시·Mg오인·generic chip 모순제거·제품·source구분) 전부 survives.",
+    "verdict": "survives",
+    "status": "adversarial_verified_candidate",
+    "lenses": {"fidelity_no_overweaken": "pass", "non_directive": "pass", "mg_supplement_confusion": "pass", "generic_chip_contradiction_removed": "pass", "no_product_affiliate": "pass", "source_quote_vs_appcopy": "pass"},
+    "note": "round4(copy v3 + 전용 chip '병용금지(허가사항)') 재검증 survives(0 refuted): round2/round3 의 두 결함을 모두 해소 — ①둘째 문장 '이미 복용 중인 제산제가 있다면 약사 또는 의사에게 확인하세요'는 기존(이미 발생한) 병용 상황을 전문가로 라우팅(새 병용 미전제) ②전용 chip '병용금지(허가사항)'가 prohibition 어휘를 출처 귀속으로 운반(generic monitoring/separation 의 모순 제거, '주의' 레지스터 다운그레이드 해소). fidelity 3/3 survives + 비지시·Mg오인·generic chip 모순제거·제품·source 인용구분 전부 survives(독립 회의론자가 실제 render.js/draft/smoke 코드 직접 검증). adversarial_verified=true 후보. 단 live 승격은 별도 PM + clinical reviewer(live_integration_forbidden=true 유지). 라운드별 상세는 ledger.reverify_round2_option_A / reverify_round3 / reverify_round4.",
     "ledger": "data/review/antacid_interaction_adversarial_verify_v1_3.json"
    },
    "representative_itemseq_policy": {

@@ -11,8 +11,9 @@ MediStack antacid_interaction 트랙 draft/candidates **데이터 계약 검증*
   - published=false · clinical_reviewed=false · live_integration_forbidden=true · do_not_implement_yet=true.
   - label_quote(라벨 원문) 비공란 + source.checked_at 존재.
   - display = directive_type 별 템플릿 verbatim(avoid_concomitant=prohibition 보존형 / separation·coadmin_caution=중립),
-    avoid_concomitant 에 weak neutral 카피 금지, management 공란(상담 트리거는 display 종결문).
-  - directive ↔ render_action 정합: avoid_concomitant 에 separation('복용 간격') chip 금지(다운그레이드).
+    avoid_concomitant 에 weak neutral 카피 + 병용 옵션 전제 표현('함께 사용하는 경우에는') 금지, management 공란.
+  - directive ↔ render_action 정합: avoid_concomitant 는 전용 render_action=avoid_concomitant 필수
+    (generic separation '복용 간격'·monitoring '상태 모니터링' 금지 — 둘 다 prohibition 모순). render_action ∈ {separation, monitoring, avoid_concomitant}.
   - 게이트 정합: gate ledger 의 antacid_draft_confirmed 집합과 draft draft_id 집합 일치.
 검사(candidates CSV):
   - 모든 행 live_integration_forbidden=True.
@@ -39,7 +40,10 @@ GATE = os.path.join(DATA, "review", "source_confirm_gate_v1_2.json")
 NEUTRAL_TEMPLATE = ("일부 알루미늄·마그네슘 함유 제산제와 함께 사용할 때 약물 흡수에 영향을 줄 수 있다는 "
                     "허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.")
 AVOID_CONCOMITANT_TEMPLATE = ("일부 알루미늄·마그네슘 함유 제산제와 함께 복용하지 않도록 안내하는 "
-                              "허가사항 문구가 있습니다. 함께 사용하는 경우에는 약사 또는 의사에게 확인하세요.")
+                              "허가사항 문구가 있습니다. 이미 복용 중인 제산제가 있다면 약사 또는 의사에게 확인하세요.")
+# avoid_concomitant 카피가 병용을 '옵션'으로 전제하면 prohibition→consult 다운그레이드(round2 fidelity 지적).
+# '함께 사용하는 경우에는'(병용을 일반 케이스로 전제) 금지 / '함께 사용해야 하는 상황이라면'(제약된 필요) 허용.
+AVOID_COUSE_OPTION_PHRASES = ["함께 사용하는 경우에는", "함께 복용하는 경우에는", "함께 사용할 경우", "병용하는 경우에는"]
 TEMPLATE_BY_DIRECTIVE = {
     "avoid_concomitant": AVOID_CONCOMITANT_TEMPLATE,
     "separation": NEUTRAL_TEMPLATE,
@@ -90,6 +94,13 @@ def main():
         # avoid_concomitant 는 weak neutral 카피 금지(prohibition 을 'co-use 가능+상담'으로 다운그레이드 차단)
         if directive == "avoid_concomitant" and r.get("display_text_ko") == NEUTRAL_TEMPLATE:
             fails.append(f"{did}: avoid_concomitant 에 weak neutral 카피 금지(prohibition→co-use 다운그레이드)")
+        # avoid_concomitant 는 병용을 '옵션'으로 전제하는 표현 금지(round2 fidelity: consult 다운그레이드).
+        # '함께 사용해야 하는 상황이라면'(제약된 필요+상담)은 허용.
+        if directive == "avoid_concomitant":
+            disp_v = r.get("display_text_ko", "")
+            for ph in AVOID_COUSE_OPTION_PHRASES:
+                if ph in disp_v:
+                    fails.append(f"{did}: avoid_concomitant 카피에 병용 옵션 전제 표현 '{ph}'(prohibition→consult 다운그레이드)")
         if (r.get("management_ko") or "") != "":
             fails.append(f"{did}: management 비공란(상담 트리거는 display 종결문)")
         disp = r.get("display_text_ko", "")
@@ -121,12 +132,15 @@ def main():
             if rn.strip() in ("마그네슘", "마그네슘(영양소)", "Mg", "철분", "칼슘", "칼륨", "아연"):
                 fails.append(f"{did}: surface.render_nutrient 가 영양소 단독({rn}) — antacid 트랙 위반")
             ra = surf.get("render_action")
-            if ra not in ("separation", "monitoring"):
+            if ra not in ("separation", "monitoring", "avoid_concomitant"):
                 fails.append(f"{did}: surface.render_action 부정({ra})")
-            # directive ↔ render_action 정합: '복용 간격'(separation chip)은 'spacing 두면 병용 가능' 신호 →
-            # avoid_concomitant(병용금지)에 쓰면 prohibition 다운그레이드. separation chip 은 separation directive 에만 허용.
-            if directive == "avoid_concomitant" and ra == "separation":
-                fails.append(f"{did}: avoid_concomitant 에 render_action=separation('복용 간격' chip) 금지(prohibition 다운그레이드) — monitoring 등 비-spacing chip 사용")
+            # directive ↔ render_action 정합: avoid_concomitant(병용금지)는 generic separation('복용 간격'=간격두면
+            # 병용가능)·monitoring('상태 모니터링/장기 복용'=병용+감시)이 둘 다 prohibition 과 모순(round1/round2
+            # fidelity 지적) → 전용 render_action=avoid_concomitant 필수. 역으로 separation/coadmin 은 전용 action 금지.
+            if directive == "avoid_concomitant" and ra != "avoid_concomitant":
+                fails.append(f"{did}: avoid_concomitant 는 전용 render_action=avoid_concomitant 필요(generic separation/monitoring 금지 — prohibition 모순)")
+            if directive in ("separation", "coadmin_caution") and ra == "avoid_concomitant":
+                fails.append(f"{did}: {directive} 에 avoid_concomitant 전용 render_action 부적합")
             if surf.get("not_a_nutrient_relation") is not True:
                 fails.append(f"{did}: surface.not_a_nutrient_relation≠true(영양소 분리 플래그 누락)")
         # online_reconcile(있으면): 운영 harvester provenance — online_item_seq 실값 보존(기존 근거 폐기 아님)
