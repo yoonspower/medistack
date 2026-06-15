@@ -17,7 +17,21 @@
    "DF05"
   ],
   "policy": "potassium_safety_card=true·product_link_allowed=false·published/clinical_reviewed=false 유지. 칼륨 보충 권유 0·결핍 단정 0.",
-  "note": "6건 모두 source_confirmed high(적대검증 통과). 분류는 승격 준비도이며 근거 부족 보류는 없음. 승격 후보(promotion_candidate=true)는 플래그일 뿐 이번 라운드 승격 아님."
+  "note": "6건 모두 source_confirmed high(적대검증 통과). 분류는 승격 준비도이며 근거 부족 보류는 없음. 승격 후보(promotion_candidate=true)는 플래그일 뿐 이번 라운드 승격 아님.",
+  "rereview_2026_06_15": {
+   "scope": "독립 적대 재검토(refute-by-default, 회의론자 6인 + 교차검증 1인). live 승격 0·데이터 무변경(본 record 추가 외).",
+   "count_resolution": "대상 = 6건. '5 vs 6' 혼동은 출처 배치 차이일 뿐 임상축은 동일: DF01-DF05(5)=relation_factory_draft_batch(meta.potassium_rows), CQF03(1)=coverage_queue_draft_batch3. 칼륨 depletion 안전 재검토의 통합키는 임상 relation이므로 분모=6. (CQF03은 별도 트랙 아님.)",
+   "outcome": "6/6 overall_survives=true · 분류 6/6 justified. 차원 전건 survives(source_fidelity·no_supplement_recommendation·no_deficiency_assertion·longterm_highdose_consult_framing). 카피 전건 비단정('영향이 있을 수 있어')·anti-supplement('임의로 보충하지 말고…상담해 결정')·장기/고용량 한정·상담 라우팅. live/금기 오독·보충권유·결핍단정 누수 0. live export(v0.1 19·v0.2 60)에 DF/CQF 누출 0(기존 live 칼륨행은 모두 별개 이뇨제).",
+   "classification_audit": "PM-ready(DF01·DF04·DF05) > needs_clinical_wording_review(DF02·CQF03) > hold_continue(DF03) 순서는 근거 강도로 정당. DF02 덱사메타손은 5건 중 유일하게 직접 칼륨손실 동사(칼륨손실/소실/배설/저칼륨혈증) 부재·'저칼륨성 알칼리혈증'(결과어)만 → 추론적 약신호라 wording review 보류가 타당. DF02·CQF03은 보류 사유가 서로 다름(DF02=약신호 / CQF03=제형 일반화+섹션 오라벨)이라 reviewer에게 한 묶음으로 넘기지 말 것.",
+   "pre_promotion_items_for_clinical_reviewer": [
+    "CQF03(히드로코르티손): ①source_pointer 섹션 표기 '상호작용(병용 신중)'은 부정확 — 실제 인용은 신중투여(④ 전해질이상 환자)+이상반응(7 체액ㆍ전해질). 승격 전 정정. ②외용 제형 비중이 큰 성분에 전신(경구 래피손정) 근거 depletion 경고를 일반화하면 외용 사용자 오적용(positive false attribution) — wording이 아닌 correctness 차원. 제형 한정 필수.",
+    "공유 템플릿 단일 실패점: 6건 management_ko가 byte-동일('칼륨은 임의로 보충하지 말고, 보충 여부는 의사 또는 약사와 상담해 결정하세요'). anti-supplement 안전마진 전체가 이 한 문자열에 의존 → 승격 검증기는 행별 부분문자열(MGMT_MUST)뿐 아니라 통일 문자열 정확 일치를 assert 권장.",
+    "DF06/DF07 동일 파일 혼입: relation_factory_draft_batch_v1_2.json 에 비-칼륨 리오티로닌×칼슘/철분(DF06/DF07, product_link_allowed=TRUE·separation) 동거. 칼륨 승격 스크립트는 파일이 아니라 draft_id(meta.potassium_rows=['DF01'..'DF05']) 기준 필터 — 아니면 product_link=true 행 동반 승격 위험.",
+    "DF04(아세타졸아미드): 같은 라벨에 금기 문맥('저칼륨혈증 환자 투여금지')도 공존. 인용은 이상반응(대사) 섹션 ADR이라 현재 오독 없음이나, 승격 시 추출 포인터에 '이상반응(대사)' 섹션 한정 명시 유지(금기→depletion 오독 방지). 신호어가 기전어 아닌 결과어(저칼륨혈증)임을 provenance에 기재.",
+    "DF01·CQF03 라벨 원문에는 '칼륨보충이 필요할 수 있다'는 보충 시사 문장 존재. 현 카피가 anti-supplement로 정확히 다운그레이드했으나, 향후 카피 변경 시 라벨의 '칼륨보충 필요'를 사용자에 직접 전파 금지 가드 유지."
+   ],
+   "do_not_promote": "PM-ready/promotion_candidate=true 는 '큐 준비도'일 뿐 승격 인가 아님. clinical reviewer 노트 확보 전 published/clinical_reviewed 전환·live 통합 금지(CLAUDE.md §1/§6 천장=verified_reference). 전건 live_integration_forbidden=true·published=false·clinical_reviewed=false·reviewed_by 공란·potassium_safety_card=true·product_link_allowed=false 유지 확인."
+  }
  },
  "items": [
   {
