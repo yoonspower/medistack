@@ -45,3 +45,21 @@
 > **승격은 제한적**(reviewer 가 승인한 행만·일괄 승격 금지). **금지**: reviewer 노트 없이 통합·clinical_reviewed=true·published=true·reviewed_by 작성·칼륨 제품링크·보충 권유·결핍 단정·DF02/CQF03/DF03/DF06/DF07 동반 통합.
 
 근거/상세: `data/review/potassium_depletion_pm_ready_v1_2.json`(items·`meta.rereview_2026_06_15`) · `scripts/integrate_potassium_pm_ready_v1_2.py` · `scripts/validate_potassium_dryrun_v1_2.py` · `scripts/validate_potassium_pm_ready_v1_2.py` · `scripts/smoke_potassium_pm_ready_v1_2.py` · `docs/MediStack_clinical_reviewer_handoff_v1_2.md`.
+
+---
+
+## 프롬프트 3 — needs_review 다이유레틱/코르티코스테로이드 source 재확인(승격 아님)
+
+> **추가(2026-06-15, harvester 2차 online run 산물)**: online run 이 draft-ready 신규는 0 이었으나, **needs_review 10건**(국내 경구 단일성분 대표 itemSeq 미확보로 fail-closed)을 backlog 로 남겼다. 상세 → `docs/MediStack_candidate_backlog_v1_3.md` §2-A · `data/review/harvest_run2_summary_v1_3.json`.
+>
+> **작업(준비 단계 — live 통합 아님)**: 아래 needs_review 후보의 **국내 경구·단일성분·정상 완제 대표 품목 + itemSeq** 를 SDK(`medistack_sdk`)로 재확인하고, 라벨에 **방향성 직접 동거어**(칼륨/마그네슘/칼슘 + 고갈 방향)가 실제 있는 품목만 draft 후보로 끌어올려라. 못 찾으면 needs_review 유지(fail-closed). **계열 일반화로 채택 금지 — 품목별 라벨 직접 확인 필수.**
+>
+> **대상**: 프레드니솔론×칼륨(D-CORT-01) · 부메타니드×칼륨(D-LOOP-01) · 피레타니드×칼륨(D-LOOP-03) · 메토라존×칼륨(D-THZ-01) · 트리클로르메티아지드×칼륨(D-THZ-03) · 벤드로플루메티아지드×칼륨(D-THZ-05). Mg/칼슘 방향(D-CORT-02·D-LOOP-02·D-THZ-02·D-THZ-04)은 라벨 직접 동거어가 확인될 때만(약신호 약할 수 있음).
+>
+> **우선순위**: 프레드니솔론(코르티코스테로이드, 시장 큼) > 부메타니드·피레타니드(loop) > 메토라존·트리클로르메티아지드·벤드로플루메티아지드(thiazide).
+>
+> **제외/주의**: K-sparing(스피로노락톤·에플레레논·아밀로라이드·트리암테렌)·SGLT2×Mg·thiazide×칼슘은 **칼륨/전해질 상승 방향**이라 depletion factory 와 정반대 — 절대 depletion 후보로 만들지 말 것(hold 유지, §2-C). 세파계×철분 10종은 한국 허가사항 미기재로 **reject 확정**(재후보화 금지).
+>
+> **불변**: 봇/스크립트는 `data/harvest_queue/` 밖 무수정 · live relation 생성 0 · published/clinical_reviewed=false · 칼륨 행 product_link=false·potassium_safety_card=true · 칼륨 보충 권유/결핍 단정 0. 산출물은 draft-only(`live_integration_forbidden=true`) — 실제 승격은 PM + clinical reviewer 후 별도.
+
+근거/상세: `docs/MediStack_candidate_backlog_v1_3.md` · `data/review/harvest_run2_summary_v1_3.json` · `scripts/harvest_relation_bot_v1_3.py` · `scripts/verify_factory_sources_v1_2.py`.

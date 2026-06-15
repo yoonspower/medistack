@@ -1,0 +1,373 @@
+{
+ "meta": {
+  "title": "MediStack harvester 2차 online run — 분석/백로그 요약",
+  "generated_for": "PM review handoff (분석 산출물 — 코드/데이터 무변경)",
+  "run_at": "2026-06-15T14:33:17",
+  "mode": "online",
+  "do_not_implement_yet": true,
+  "live_integration_forbidden": true,
+  "published": false,
+  "clinical_reviewed": false,
+  "live_relations_created": 0,
+  "live_promotions": 0,
+  "deploy": "none",
+  "note": "봇은 큐만 생성. 모든 후보 do_not_implement_yet. 승격은 PM + source 재확인 + clinical reviewer 후 별도. runtime harvest_queue 는 커밋 제외(이 요약만 data/review/ 에 보존)."
+ },
+ "run_stats": {
+  "sdk": {
+   "network": 0,
+   "cache": 68,
+   "fixture": 0,
+   "offline_miss": 0,
+   "error": 0
+  },
+  "counts": {
+   "harvest_total": 78,
+   "source_checked": 29,
+   "draft_eligible": 6,
+   "needs_review": 11,
+   "source_reject": 12,
+   "already_covered": 7,
+   "hold": 46,
+   "rejected_precheck": 52,
+   "kpi_scanned": 60
+  },
+  "vs_offline_baseline_2026_06_14": {
+   "harvest_total": "77 → 78",
+   "draft_eligible": "3 → 6",
+   "needs_review": "24 → 11",
+   "source_reject": "2 → 12",
+   "already_covered": "6 → 7",
+   "interpretation": "online 이 offline_miss 23→0 해소 → 실 라벨로 직접근거 확인(draft↑)·문헌-only deny(reject↑)·fail-closed 감소(needs_review↓). hold/rejected_precheck 는 KPI/carry 결정적이라 불변."
+  }
+ },
+ "dedup_drafts_all_already_triaged": {
+  "summary": "draft_eligible 6건 전부 기존 트리아지 항목과 동일(itemSeq 대조 확인). 신규 draft-ready 0.",
+  "rows": [
+   {
+    "candidate_id": "D-CORT-03",
+    "relation": "메틸프레드니솔론 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "199701131;199800324",
+    "verdict": "source_confirmed",
+    "maps_to_existing_triage": "DF01",
+    "existing_status": "PM-ready (dry-run 준비 완료)"
+   },
+   {
+    "candidate_id": "D-CORT-04",
+    "relation": "덱사메타손 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "196300064;199401023",
+    "verdict": "source_confirmed",
+    "maps_to_existing_triage": "DF02",
+    "existing_status": "wording-review (보류)"
+   },
+   {
+    "candidate_id": "D-CORT-06",
+    "relation": "플루드로코르티손 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "199907231",
+    "verdict": "source_confirmed",
+    "maps_to_existing_triage": "DF03",
+    "existing_status": "hold (국내 유통 적음)"
+   },
+   {
+    "candidate_id": "D-CA-01",
+    "relation": "아세타졸아미드 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "201403403",
+    "verdict": "source_confirmed",
+    "maps_to_existing_triage": "DF04",
+    "existing_status": "PM-ready (dry-run 준비 완료)"
+   },
+   {
+    "candidate_id": "D-LOOP-04",
+    "relation": "아조세미드 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "199001306",
+    "verdict": "source_confirmed",
+    "maps_to_existing_triage": "DF05",
+    "existing_status": "PM-ready (dry-run 준비 완료)"
+   },
+   {
+    "candidate_id": "AT-FEX-01",
+    "relation": "펙소페나딘 × Al/Mg 제산제(약물)",
+    "mechanism_action": "antacid_interaction/antacid_interaction",
+    "itemseqs": "199801016",
+    "verdict": "antacid_draft_confirmed",
+    "maps_to_existing_triage": "AT-FEX",
+    "existing_status": "dry-run 준비 완료"
+   }
+  ]
+ },
+ "new_candidates_not_yet_triaged": {
+  "draft_ready": [],
+  "draft_ready_count": 0,
+  "needs_review": [
+   {
+    "candidate_id": "D-CORT-01",
+    "relation": "프레드니솔론 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-CORT-02",
+    "relation": "프레드니솔론 × 칼슘",
+    "mechanism_action": "absorption/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-LOOP-01",
+    "relation": "부메타니드 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-LOOP-02",
+    "relation": "부메타니드 × 마그네슘",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-LOOP-03",
+    "relation": "피레타니드 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-THZ-01",
+    "relation": "메토라존 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-THZ-02",
+    "relation": "메토라존 × 마그네슘",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-THZ-03",
+    "relation": "트리클로르메티아지드 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-THZ-04",
+    "relation": "트리클로르메티아지드 × 마그네슘",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   },
+   {
+    "candidate_id": "D-THZ-05",
+    "relation": "벤드로플루메티아지드 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요."
+   }
+  ],
+  "needs_review_count": 10,
+  "reject": [
+   {
+    "candidate_id": "F-CEPH-01",
+    "relation": "세파클러 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "199201155;199301197",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-02",
+    "relation": "세푸록심 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "200300033;200411029",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-03",
+    "relation": "세프포독심 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "199300168;200001190",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-04",
+    "relation": "세프프로질 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "200400510;200400642",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-05",
+    "relation": "세픽심 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "198900223;199702588",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-06",
+    "relation": "세프라딘 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "198900493;199702165",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-07",
+    "relation": "세프카펜 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "200500420;200500421",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-08",
+    "relation": "세프디토렌 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "199500901;201006942",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-09",
+    "relation": "세팔렉신 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "198701854;198800426",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "F-CEPH-10",
+    "relation": "세프록사딘 × 철분",
+    "mechanism_action": "absorption/separation",
+    "itemseqs": "199201469",
+    "reason": "DENY: fetch 1품목 상호작용/주의/이상반응 문맥에 철분 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "D-CORT-07",
+    "relation": "메틸프레드니솔론 × 칼슘",
+    "mechanism_action": "absorption/monitoring",
+    "itemseqs": "199701131;199800324",
+    "reason": "DENY: fetch 2품목 상호작용/주의/이상반응 문맥에 칼슘 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   },
+   {
+    "candidate_id": "D-LOOP-05",
+    "relation": "아조세미드 × 마그네슘",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "199001306",
+    "reason": "DENY: fetch 1품목 상호작용/주의/이상반응 문맥에 마그네슘 방향성 동거어 없음 — 한국 허가사항 미기재(literature only 가능). 계열 유추 채택 금지."
+   }
+  ],
+  "reject_count": 12,
+  "needs_review_already_triaged_overlap": [
+   {
+    "candidate_id": "D-CORT-05",
+    "relation": "하이드로코르티손 × 칼륨",
+    "mechanism_action": "depletion/monitoring",
+    "itemseqs": "",
+    "reason": "DENY(fail-closed): 국내 완제·경구·정상·단일성분 대표 품목 미확보(검색 0건/네트워크) — 재확인 필요.",
+    "maps_to_existing_triage": "CQF03",
+    "existing_status": "wording-review (correctness 선결)"
+   }
+  ]
+ },
+ "policy_holds_notable": [
+  {
+   "candidate_id": "F-STA-01",
+   "relation": "로수바스타틴 × 코엔자임Q10",
+   "reason": "한국 허가사항 미기재 예상(CoQ10). source-policy(이차문헌 허용) 결정 전 영구 보류."
+  },
+  {
+   "candidate_id": "F-H2-01",
+   "relation": "파모티딘 × 비타민B12",
+   "reason": "A티어 확인서 미기재(missing) 확정(구 Q15/E07). 재fetch 불필요. source-policy 결정 시에만 재검토."
+  },
+  {
+   "candidate_id": "F-H2-02",
+   "relation": "라푸티딘 × 비타민B12",
+   "reason": "missing 확정(구 Q15/E09)."
+  },
+  {
+   "candidate_id": "F-H2-03",
+   "relation": "니자티딘 × 비타민B12",
+   "reason": "missing 확정(구 Q15/E10)."
+  },
+  {
+   "candidate_id": "F-PPI-01",
+   "relation": "일라프라졸 × 마그네슘",
+   "reason": "index 2품목뿐 — 한계효용 낮음. PPI class 저마그네슘 패턴은 존재하나 우선순위 hold."
+  },
+  {
+   "candidate_id": "F-PPI-02",
+   "relation": "일라프라졸 × 비타민B12",
+   "reason": "index 2품목뿐. PPI class B12 패턴 존재하나 hold."
+  },
+  {
+   "candidate_id": "F-TET-01",
+   "relation": "테트라사이클린 × 칼슘",
+   "reason": "테트라사이클린 원성분 index 1품목 — near-zero coverage. 독시/미노 톤 존재하나 hold."
+  },
+  {
+   "candidate_id": "D-BIG-01",
+   "relation": "부포르민 × 비타민B12",
+   "reason": "부포르민/펜포르민 국내 미유통 가능성 — 시장 의미 0. 현행 비구아나이드는 메트포르민 단일(id12 라이브)."
+  },
+  {
+   "candidate_id": "D-THZ-06",
+   "relation": "히드로클로로티아지드 × 칼슘",
+   "reason": "치아지드는 칼슘 배설을 '감소'(고칼슘혈증 방향) — depletion 후보 아님. 혼동방지 hold. HCTZ는 K/Mg covered."
+  },
+  {
+   "candidate_id": "D-SGLT2-01",
+   "relation": "다파글리플로진 × 마그네슘",
+   "reason": "SGLT2는 혈청 Mg 상승 보고 우세 — depletion 가정 부적합 가능. 근거 확인 전 채택 금지."
+  },
+  {
+   "candidate_id": "D-SGLT2-02",
+   "relation": "엠파글리플로진 × 마그네슘",
+   "reason": "D-SGLT2-01과 동일 — 상승 보고 우세."
+  },
+  {
+   "candidate_id": "H-KSPAR-01",
+   "relation": "스피로노락톤 × 칼륨",
+   "reason": "칼륨 상승(고칼륨혈증) 방향 — depletion 반대. 칼륨 보충 병용 금기 방향. PM 정책 결정 전 hold."
+  },
+  {
+   "candidate_id": "H-KSPAR-02",
+   "relation": "에플레레논 × 칼륨",
+   "reason": "칼륨 상승 방향. PM 정책 대기."
+  },
+  {
+   "candidate_id": "H-KSPAR-03",
+   "relation": "아밀로라이드 × 칼륨",
+   "reason": "칼륨 상승 방향. 국내 주로 복합제. PM 정책 대기."
+  },
+  {
+   "candidate_id": "H-KSPAR-04",
+   "relation": "트리암테렌 × 칼륨",
+   "reason": "칼륨 상승 방향. 엽산 길항은 별도 트랙. PM 정책 대기."
+  },
+  {
+   "candidate_id": "H-WARN-01",
+   "relation": "스피로노락톤(+ACEi/ARB 병용) × 칼륨",
+   "reason": "약-약 상호작용(칼륨 상승) — 약-영양소 고갈 factory 범위 밖. PM 분류."
+  }
+ ],
+ "rejected_precheck_summary": {
+  "허가사항 6대 영양소 직접 동거어 개연 낮음(품목수만으로 후보화 금지·계열 일반화 금지). grounded ": 35,
+  "짝이온염 트랩 — 약물 염의 양이온(나트륨/칼륨/칼슘/Mg)을 영양소로 오인 방지.": 14,
+  "복합제(2성분 이상) — 단일 성분-영양소 모델 부적합·조성 트랩.": 3
+ },
+ "next_priority_pm_gated": [
+  "1. AT-FEX live 통합(reviewer note) — dry-run 준비 완료.",
+  "2. 칼륨 PM-ready 3건(DF01/DF04/DF05) live 통합(reviewer note) — dry-run 준비 완료.",
+  "3. needs_review 다이유레틱/코르티코스테로이드 7종: 국내 경구 단일성분 대표 itemSeq 재확인 시 칼륨 depletion factory 후보化. 우선순위: 프레드니솔론 > 부메타니드/피레타니드(loop) > 메토라존/트리클로르메티아지드/벤드로플루메티아지드(thiazide).",
+  "4. CQF03(히드로코르티손) correctness 선결: 전신 제형 한정 + source_pointer 섹션 정정.",
+  "5. K-sparing(스피로노락톤·에플레레논·아밀로라이드·트리암테렌) 칼륨 상승 방향 holds: depletion factory 와 반대 방향 — 별도 정책 트랙 필요 여부 PM 판단(현재 hold 유지).",
+  "6. 세파계×철분 10종: 한국 허가사항 미기재(literature-only) → reject 확정. 계열 일반화 금지 재확인."
+ ]
+}

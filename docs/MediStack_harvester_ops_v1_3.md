@@ -76,3 +76,16 @@ python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sampl
 - **runtime harvest_queue 커밋 금지**: online run 산출물은 재현가능 → **커밋 제외**. 커밋되는 건 결정적 offline 베이스라인뿐. `data/harvest_queue/_sdk/` 는 `.gitignore`.
 - **PM review queue 확인**: `data/harvest_queue/pm_review_queue.md` 의 draft_eligible 후보를 PM 라운드로 핸드오프(직접 승격 금지).
 - **schedule 비활성 유지**(§4). **하루 1회 자동화는 계속 보류.** 활성화 전 충족 권장: 수동 online run N회 안정 · 큐 validator 무위반 지속 · no-live-write 가드 무위반 · direct-http allowlist 감소. 이번 라운드에서 활성화하지 않는다.
+
+## 8. 2차 online run 결과 (2026-06-15)
+manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0** · 보호셋 sha256 불변 · 산출물은 분석/요약만(runtime 큐 커밋 제외).
+
+- **실행**: `python3 scripts/guard_no_live_write_v1_3.py --run-bot --bot-args=--online` → 가드 **PASS**(보호셋 48파일 불변 · write-scope=`data/harvest_queue/` 한정 · direct-http 신규 0).
+  - argparse 주의: `--bot-args --online` 은 `--online` 을 값 없는 옵션으로 오인 → **`--bot-args=--online`(= 형식)** 으로 전달.
+- **SDK**: network **0** · cache **68** · fixture 0 · offline_miss **0** · error 0 → 6/14 online 캐시(`_sdk/cache/online/`) 전부 적중. 결정적·재현가능, 신규 네트워크 0.
+- **counts**: harvest 78 · source-check 29 → draft 6 · needs_review 11 · reject 12 · already_covered 7 · hold 46 · rejected_precheck 52 · KPI 60.
+- **1차 offline 베이스라인(6/14) 대비**: draft 3→6 · needs_review 24→11 · reject 2→12. online 이 offline_miss 23→0 해소 → 실 라벨로 직접근거 확인(draft↑)·문헌-only deny(reject↑)·fail-closed 감소(needs_review↓). hold/rejected_precheck 는 KPI/carry 결정적이라 불변.
+- **queue validator**: `validate_harvest_queue_v1_3.py` **PASS**(스키마·no-live-promote·safe_copy 금칙어 0·PM smoke).
+- **분석 결론**(상세 → `docs/MediStack_candidate_backlog_v1_3.md`): draft 6건 **전부 기존 트리아지 항목과 동일**(DF01~DF05 + AT-FEX, itemSeq 대조) → **신규 draft-ready 0**. 신규 후보는 needs_review 10(다이유레틱/코르티코스테로이드 대표 itemSeq 미확보)·reject 12(세파계×철분 10 등 한국 허가사항 미기재)뿐.
+- **커밋 정책 적용**: runtime `data/harvest_queue/`(6 tracked 파일 변경)는 **`git checkout` 으로 복원**(커밋 제외, offline 베이스라인 유지) · `_sdk/` 는 `.gitignore`. 분석 요약만 `data/review/harvest_run2_summary_v1_3.json` 로 보존.
+- **schedule 여전히 비활성**(§4). 자동화 활성화 0 · 봇 live/배포/승격 0. (2차 online run 안정 — 활성화 조건 카운트 누적, PM 결정 전까지 보류.)
