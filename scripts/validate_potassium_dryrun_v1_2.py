@@ -50,6 +50,9 @@ FULL_NAME_ONLY = 16412
 # DF-PRED-01 프레드니솔론(소론도정) 합류 → 통합 준비 그룹 4건.
 EXPECT_INGREDIENTS = {"메틸프레드니솔론", "아세타졸아미드", "아조세미드", "프레드니솔론"}
 EXPECT_DRAFT_IDS = {"DF01", "DF04", "DF05", "DF-PRED-01"}
+# 통합 대상 아님 — 시뮬 relations 에 절대 누출되면 안 됨(DF02 덱사메타손·CQF03 히드로코르티손·
+# DF03 플루드로코르티손 = wording-review/hold, DF06/DF07 리오티로닌 = 비-칼륨·product_link_allowed=TRUE).
+EXCLUDED_INGREDIENTS = {"덱사메타손", "히드로코르티손", "플루드로코르티손", "리오티로닌"}
 UNIFIED_MGMT = "칼륨은 임의로 보충하지 말고, 보충 여부는 의사 또는 약사와 상담해 결정하세요."
 DISPLAY_MUST = ["장기간 복용하거나 고용량", "칼륨 상태에 영향", "확인이 필요한지 문의"]
 COPY_FORBIDDEN = ["칼륨을 보충", "칼륨제를", "칼륨 섭취를 늘", "결핍", "부족", "빠집니다",
@@ -136,6 +139,8 @@ def main():
             ck(disp == pm[did]["final_display_text_ko_named"], f"{tag}: display != PM-ready named verbatim")
             ck(did in EXPECT_DRAFT_IDS, f"{tag}: draft_id {did} whitelist 밖")
     ck(seen == EXPECT_INGREDIENTS, f"성분 집합 불일치: {seen} != {EXPECT_INGREDIENTS}")
+    leaked_excluded = EXCLUDED_INGREDIENTS & seen
+    ck(not leaked_excluded, f"제외 대상(DF02/CQF03/DF03/DF06/DF07) 통합 누출: {leaked_excluded}")
 
     # 시뮬레이션 export(live + 3) — 임시 파일(라이브 무수정)
     sim = json.loads(json.dumps(exp))

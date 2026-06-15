@@ -6,13 +6,15 @@
 
 > **갱신(2026-06-15)**: 프롬프트 2가 '칼륨 PM-ready **재검토**'였으나 재검토는 완료됐다(6건 확정·6/6 survives·`data/review/potassium_depletion_pm_ready_v1_2.json` `meta.rereview_2026_06_15`). 또한 PM-ready 3건(DF01·DF04·DF05)의 **live 통합 준비(드라이런·검증기)**까지 끝났다. 그래서 프롬프트 2를 다음 실제 작업인 **'칼륨 PM-ready 3건 live 통합'**으로 교체한다. reviewer 핸드오프: `docs/MediStack_clinical_reviewer_handoff_v1_2.md`.
 
+> **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
+
 ---
 
 ## 프롬프트 1 — AT-FEX(펙소페나딘 · avoid_concomitant) live 통합
 
-> **선행 충족 필수(전부)**: ①clinical reviewer 확보 ②source 202202380(avoid_concomitant '…제산제를 복용하지 마십시오') directive 재대조 + `source.checked_at` 갱신 ③evidence_level=moderate PM 승인(또는 조정) ④round4 적대검증 재확인(카피/표면 변경 시).
+> **선행 충족 필수(전부)**: ①clinical reviewer 노트 확보(핸드오프 §7-1 질문 답, §8-2 템플릿) ②source 202202380(avoid_concomitant '…제산제를 복용하지 마십시오') directive 재대조 + `source.checked_at` 갱신 ③evidence_level=moderate PM 승인(또는 조정) ④round4 적대검증 재확인(카피/표면 변경 시).
 >
-> **작업**: AT-FEX(펙소페나딘 × Al/Mg 함유 제산제, **avoid_concomitant**) **1건만** v0.2 export 에 멱등 append-only 통합하라 — `python3 scripts/integrate_antacid_fex_v1_2.py --pm-approved`(멱등: 이미 있으면 skip). 드라이런 검증은 `scripts/validate_antacid_fex_dryrun_v1_2.py` 로 이미 통과(시뮬 export v0.2 PASS·전용 chip·facet 제외·live 무수정).
+> **작업**: AT-FEX(펙소페나딘 × Al/Mg 함유 제산제, **avoid_concomitant**) **1건만** v0.2 export 에 멱등 append-only 통합하라 — `python3 scripts/integrate_antacid_fex_v1_2.py --pm-approved --reviewer-note <노트>`(멱등: 이미 있으면 skip). **reviewer 노트 인터록(보강 완료)**: 노트가 비공란 + 승인 토큰('approved'|'승인') + **candidate_id(AT-FEX-01/AT-01)** + **primary itemSeq 202202380** + **evidence_level 'moderate'** 를 전건 명시하고, **SAMPLE 토큰·미기입 placeholder 가 없어야** 통과(미충족 시 STOP — `check_reviewer_note`). 드라이런 검증은 `scripts/validate_antacid_fex_dryrun_v1_2.py` 로 이미 통과(시뮬 export v0.2 PASS·전용 chip·facet 제외·live 무수정), 게이트 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`.
 >
 > **예상 변경**: relations 60→61(id 62), meta.relation_count 61, recommended_action=avoid_concomitant, mechanism=absorption, evidence_level=moderate, counterpart_category=al_mg_antacid, product_link_allowed=false, potassium_safety_card=false, requires_clinical_review=false. **full index/aliases 무변경**(펙소페나딘 name_only). 전용 chip '병용금지(허가사항)' + kicker 'Al/Mg 함유 제산제 관련 참고정보'.
 >
@@ -34,15 +36,15 @@
 >
 > **현재 상태**: 칼륨 6건 재검토 완료(6/6 survives·`meta.rereview_2026_06_15`). PM-ready 3건(DF01 메틸프레드니솔론·DF04 아세타졸아미드·DF05 아조세미드)은 **통합 드라이런·검증기까지 완료**(`scripts/integrate_potassium_pm_ready_v1_2.py` dry-run + `scripts/validate_potassium_dryrun_v1_2.py` PASS·시뮬 v0.2 PASS·칼륨 안전카드·anti-supplement·제품0). 라이브 미반영(relations 60 불변).
 >
-> **작업**: 칼륨 PM-ready **3건만**(whitelist {DF01,DF04,DF05}) v0.2 export 에 **멱등 append-only** 통합하라 — `python3 scripts/integrate_potassium_pm_ready_v1_2.py --pm-approved --reviewer-note <노트파일>`(멱등: (성분,칼륨) 이미 있으면 skip). **reviewer 노트 게이트(구조+의미)**: 노트가 비공란이고 + 승인 토큰('approved' 또는 '승인')을 담고 + **승격 대상 draft_id(DF01·DF04·DF05)를 전건 명시**해야 통과한다(검수자가 승인한 행만 승격). 미충족 시 STOP(스크립트가 가드 — garbage/공백/일부 누락 노트 거부).
+> **작업**: 칼륨 PM-ready **4건만**(whitelist {DF01,DF04,DF05,DF-PRED-01}) v0.2 export 에 **멱등 append-only** 통합하라 — `python3 scripts/integrate_potassium_pm_ready_v1_2.py --pm-approved --reviewer-note <노트파일>`(멱등: (성분,칼륨) 이미 있으면 skip). **reviewer 노트 게이트(구조+의미+SAMPLE/placeholder)**: 노트가 비공란이고 + 승인 토큰('approved' 또는 '승인')을 담고 + **승격 대상 draft_id(DF01·DF04·DF05·DF-PRED-01)를 전건 명시**하고 + **SAMPLE 토큰·미기입 placeholder 가 없어야** 통과한다(검수자가 승인한 행만 승격). 미충족 시 STOP(스크립트가 가드 — garbage/공백/일부 누락/SAMPLE/빈칸 노트 거부). 복붙 템플릿은 핸드오프 §8-1, 게이트 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`.
 >
-> **예상 변경**: relations 60→63(AT-FEX 미통합 시 id 62~64. AT-FEX 먼저 통합됐으면 baseline 조정 — id 는 max+1 런타임 계산이라 자동 정합). 각 행 nutrient=칼륨·mechanism=depletion·recommended_action=monitoring·evidence_level=high·`potassium_safety_card=true`·`product_link_allowed=false`·`requires_clinical_review=false`. display=PM-ready `final_display_text_ko_named`(약물명+장기/고용량/문의 종결)·management=통일 anti-supplement 문구. **full index/aliases 무변경**.
+> **예상 변경**: relations 60→**64**(AT-FEX 미통합 시 id 62~65. AT-FEX 먼저 통합됐으면 baseline 조정 — id 는 max+1 런타임 계산이라 자동 정합). 각 행 nutrient=칼륨·mechanism=depletion·recommended_action=monitoring·evidence_level=high·`potassium_safety_card=true`·`product_link_allowed=false`·`requires_clinical_review=false`. display=PM-ready `final_display_text_ko_named`(약물명+장기/고용량/문의 종결)·management=통일 anti-supplement 문구. **full index/aliases 무변경**.
 >
 > **제외(통합 금지)**: DF02 덱사메타손·CQF03 히드로코르티손(wording-review)·DF03 플루드로코르티손(hold)·DF06/DF07 리오티로닌×칼슘/철분(비-칼륨·product_link_allowed=TRUE — 같은 factory 파일이지만 whitelist 밖). 스크립트가 draft_id 로 필터해 강제 차단.
 >
 > **불변(칼륨 트랙 특수 규칙)**: `potassium_safety_card=true`·`product_link_allowed=false`(칼륨 제품링크 영구 금지)·**칼륨 보충 권유 0·결핍 단정 0**·`disclaimers.potassium_notice` 노출·장기/고용량 맥락은 '상담'으로 종결(임의 보충·중단 지시 금지)·management 통일 문자열 정확 일치. published/clinical_reviewed=false 유지(reviewer 트랙은 별도 — 통합이 곧 clinical_reviewed 가 아님). reviewed_by 는 reviewer 만.
 >
-> **통합 후 검증(전수 PASS 필수)**: relation-count 하드코딩 validator **+3 누적 갱신**(AT-FEX 통합 순서에 따라 baseline 조정·`docs/MediStack_antacid_interaction_track_v1_2.md` §19.7) + v0.2 export validator(칼륨 일관성 #11) + `validate_potassium_pm_ready_v1_2.py`(큐 계약 — 승격 후에도 큐 파일은 불변) + 신규 `validate_potassium_integration_v1_2.py`(드라이런 검증기를 live 대상으로 전환) + potassium name_only policy + forbidden 0 + full smoke 9종 + no-live-write guard + deploy 게이트 + **live HTTP 200** + git clean.
+> **통합 후 검증(전수 PASS 필수)**: relation-count 하드코딩 validator **+4 누적 갱신**(AT-FEX 통합 순서에 따라 baseline 조정·`docs/MediStack_antacid_interaction_track_v1_2.md` §19.7) + v0.2 export validator(칼륨 일관성 #11) + `validate_potassium_pm_ready_v1_2.py`(큐 계약 — 승격 후에도 큐 파일은 불변) + 신규 `validate_potassium_integration_v1_2.py`(드라이런 검증기를 live 대상으로 전환) + potassium name_only policy + forbidden 0 + full smoke 9종 + no-live-write guard + deploy 게이트 + **live HTTP 200** + git clean.
 >
 > **승격은 제한적**(reviewer 가 승인한 행만·일괄 승격 금지). **금지**: reviewer 노트 없이 통합·clinical_reviewed=true·published=true·reviewed_by 작성·칼륨 제품링크·보충 권유·결핍 단정·DF02/CQF03/DF03/DF06/DF07 동반 통합.
 
@@ -91,3 +93,19 @@
 > **불변**: 분석/탐색 산출물은 `data/review/` 만 · live/export/full index/aliases 무수정 · deep-check 는 SDK-only(직접 http 금지) · runtime 큐 커밋 0 · live 승격 0.
 >
 > 근거: `scripts/analyze_substring_search_risk_v1_3.py` · `data/review/substring_search_risk_v1_3.json` · `docs/MediStack_substring_search_risk_v1_3.md` · ops §11.
+
+---
+
+## 프롬프트 6 — harvester schedule 활성화 검토 (아직 실행 아님)
+
+> **상태**: schedule 은 여전히 비활성(harvest.yml `cron:` 주석). 이 프롬프트는 **활성화 자체가 아니라 활성화 가부를 검토**하는 단계다. 본 라운드까지 활성화 0.
+>
+> **선행 점검(전건 통과 시에만 검토 진행 — ops §12 체크리스트)**: ①여러 회의 수동 `workflow_dispatch`(offline+online) run 이 큐 validator 무위반으로 안정 ②no-live-write guard 무위반 지속 ③runtime 큐 커밋 0 유지 ④direct-http allowlist 감소 ⑤PM review queue 피드백 반영.
+>
+> **작업(검토 단계 — live/자동 통합 아님)**: ops §12 의 schedule 켜기 전 체크리스트를 한 항목씩 점검하고, 통과하면 `.github/workflows/harvest.yml` 의 `schedule:`/`cron:` 주석 해제를 **PR 로만** 제안하라(직접 main push 금지). PR 본문에 §12 체크리스트 결과를 첨부한다. cron 초안 = KST 월 03:00(UTC 일 18:00). **schedule 을 켜더라도** 자동 run 은 `workflow_dispatch` 와 동일 경로(mode/commit 입력)·commit 기본 false·output=artifact only 여야 한다.
+>
+> **불변(켠 뒤에도)**: 자동 run 은 후보 수집·라우팅만 — **integrate_*.py / live 통합은 절대 자동 실행 금지**. 승격은 항상 사람 PM + source 재확인 + clinical reviewer 노트(핸드오프 §8) + `--pm-approved --reviewer-note` 수동 단계. 자동 run 실패는 알림/보고로만 처리(자동 재시도로 live 쓰기 시도 금지). 보호셋 sha256 불변·write-scope=`data/harvest_queue/` 한정·published/clinical_reviewed=false 유지.
+>
+> **금지**: schedule 활성화를 main 에 직접 push · 자동 integrate · 자동 커밋/자동 PR 머지 · runtime 큐 커밋 · live 승격.
+
+근거/상세: `docs/MediStack_harvester_ops_v1_3.md` §4·§7·§12 · `.github/workflows/harvest.yml` · `scripts/guard_no_live_write_v1_3.py`.

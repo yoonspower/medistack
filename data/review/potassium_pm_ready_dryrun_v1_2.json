@@ -27,6 +27,21 @@
   "reviewed_by": "",
   "data_url": "v0.2 (불변)",
   "relation_count_validators_bump": "live 통합 시 relation-count 하드코딩 validator 들을 +4(=>64) 갱신 필요(AT-FEX 통합 순서에 따라 baseline 조정).",
+  "reviewer_note_interlock": {
+   "required": true,
+   "approval_tokens": [
+    "approved",
+    "승인"
+   ],
+   "draft_ids_all_required": [
+    "DF01",
+    "DF04",
+    "DF05",
+    "DF-PRED-01"
+   ],
+   "rejects": "SAMPLE/예시 토큰 · 미기입 placeholder · 빈 노트 · 승인 토큰 누락 · draft_id 일부 누락",
+   "note": "live 통합은 --pm-approved + --reviewer-note PATH 둘 다 필요. 노트가 승인 토큰 + 승격 대상 draft_id 전건(위 목록)을 담고 SAMPLE/placeholder 가 없어야 통과(check_reviewer_note 가 강제)."
+  },
   "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
  },
  "projected_live_relations": [

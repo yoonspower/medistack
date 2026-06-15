@@ -138,3 +138,24 @@ manual `--online` run 을 guard wrapper 로 1회 수행. **live/배포/승격 0*
 - **deep-check(cache-first SDK·SDK-only)**: high(diff-active+seed) 10종. **shallow_miss_confirmed = baseline 3종뿐**(프레드니솔론·오메프라졸·란소프라졸, 처리/확인 완료). 신규 diff-active 7종(로라타딘·세티리진·세팔렉신·암로디핀·졸피뎀·펜타닐·펜타닐시트르산염)은 **전부 shallow_already_safe**(다른 활성성분 superset 이 base 를 지배하지 못함) + 영양소 트랙 밖.
 - **결론**: 광역 universe 에서도 **신규 substring 지배 false-negative 0 · 신규 draft 후보 0**. deep fallback 하드닝이 광역에서도 과다호출 없이 정확 동작. 형태접두사 domination(무수리세드론산나트륨 등)은 deep fallback 이 무해 복구·live bisphosphonate relation(리세드론산 itemSeq 201903166 등) 정확.
 - **불변**: live/protected 무수정 · SDK-only(direct-http 신규 0) · runtime 큐 커밋 0 · live 승격 0 · schedule 비활성.
+
+## 12. schedule 켜기 전 안전 체크리스트 (2026-06-15 — 활성화 아님·문서화만)
+
+> **이 라운드는 schedule 을 켜지 않는다.** `.github/workflows/harvest.yml` 의 `schedule:`/`cron:` 은 주석 유지(§4).
+> 아래는 **나중에 PM 이 자동화를 켜기로 결정할 때** 활성화 직전 통과해야 할 게이트만 정의한다(실행 아님). harvester 의 기존
+> no-live-promote 불변(§3·§7)을 자동 트리거 맥락으로 재확인하는 것이며, 새 권한을 주는 게 아니다.
+
+활성화 직전 점검(전건 충족 시에만 cron 주석 해제 — 그래도 별도 PM 결정):
+
+- [ ] **트리거 안정성**: 여러 회의 수동 `workflow_dispatch`(offline+online) run 이 큐 validator 무위반으로 안정. cron 도입 후에도 1차는 `workflow_dispatch` 와 동일 경로(mode/commit 입력 동일)여야 한다.
+- [ ] **output = artifact only**: 자동 run 의 산출물은 **분석/요약 artifact**(`data/review/…`)와 runtime 큐(`data/harvest_queue/`)뿐. live export/full index/aliases/src/.github 무수정.
+- [ ] **commit 기본 false**: 자동 run 은 **기본 commit=false**(workflow 입력 기본값). 자동 커밋·자동 PR 머지 금지. 결정적 offline 베이스라인 외 커밋 금지.
+- [ ] **live write 0**: 자동 run 이 live relation 을 0건 생성. `published`/`clinical_reviewed`/`reviewed_by` 무변경. 모든 후보 `do_not_implement_yet`.
+- [ ] **no-live-write guard 통과**: 자동 run 도 `guard_no_live_write_v1_3.py --run-bot` 경로를 거쳐 보호셋 sha256 불변 · write-scope=`data/harvest_queue/` 한정 · direct-http 신규 0 을 강제.
+- [ ] **runtime queue 커밋 금지**: `data/harvest_queue/` 의 online run 산출물은 재현가능 → 커밋 제외(`_sdk/` 는 `.gitignore`). 자동화가 이를 커밋하지 않는지 확인.
+- [ ] **PM review queue만 생성**: 자동 run 의 사람-대면 출력은 `data/harvest_queue/pm_review_queue.md`(draft_eligible 후보 라우팅)뿐. 직접 승격 경로 없음.
+- [ ] **자동 integrate 금지**: schedule 을 켠 뒤에도 **integrate_*.py / live 통합은 절대 자동 실행 안 함**. 승격은 항상 사람 PM + source 재확인 + clinical reviewer 노트(§8 핸드오프) + `--pm-approved --reviewer-note` 수동 단계.
+- [ ] **실패 시 알림/보고만**: 자동 run 실패는 알림/로그/요약 보고로만 처리(자동 재시도로 live 쓰기 시도 금지). 실패가 안전 위반으로 번지지 않게 fail-soft.
+
+> 활성화하더라도 harvester 의 역할은 **후보 수집·라우팅**에 영구 고정된다(§7). 자동화는 '핸드오프 큐를 더 자주 갱신'할 뿐,
+> live·배포·승격 권한을 얻지 않는다. cron 초안은 KST 월 03:00(UTC 일 18:00)이나 이는 예시이며 PM 결정 전까지 주석 유지.

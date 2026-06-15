@@ -13,7 +13,22 @@
   "reviewed_by": "",
   "data_url": "v0.2 (불변)",
   "guard_target_violations": [],
-  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + 별도 PM + clinical reviewer."
+  "reviewer_note_interlock": {
+   "required": true,
+   "approval_tokens": [
+    "approved",
+    "승인"
+   ],
+   "candidate_id_any_of": [
+    "AT-FEX-01",
+    "AT-01"
+   ],
+   "primary_itemseq": "202202380",
+   "evidence_level_phrase": "moderate",
+   "rejects": "SAMPLE/예시 토큰 · 미기입 placeholder · 빈 노트 · 토큰/candidate_id/itemSeq/evidence 누락",
+   "note": "live 통합은 --pm-approved + --reviewer-note PATH 둘 다 필요. 노트가 위 의미 요건을 전건 충족해야 STOP 없이 통과(check_reviewer_note 가 강제)."
+  },
+  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
  },
  "projected_live_relation": {
   "id": 62,

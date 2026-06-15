@@ -9,6 +9,7 @@ DF-PRED-01 은 data/review/prednisolone_potassium_draft_recheck_v1_3.json 에서
 ⚠️⚠️ 기본값 = **--dry-run(쓰기 0)**. live export 기록은 **--pm-approved + --reviewer-note PATH** 둘 다 있을 때만.
   - --reviewer-note 노트는 **구조적+의미적** 둘 다 충족해야 한다(구조: 존재+비공란 / 의미: 승인 토큰 'approved'|'승인'
     + 승격 대상 draft_id 전건 명시 — '검수자가 승인한 행만 승격' 정책. 미충족 시 --pm-approved 가 있어도 STOP).
+  - **SAMPLE/예시 토큰·미기입 placeholder 거부**: docs handoff §C 의 reviewer note **템플릿을 그대로 제출**하면(SAMPLE 마커·빈칸 placeholder 잔존) 승인 토큰이 들어 있어도 STOP — 실제 검수 노트로 교체해야만 통과.
   - 본 세션(준비 라운드)에서는 둘 다 사용하지 않는다(절대 live 통합 금지).
   - --pm-approved 없이 실행하면 어떤 보호/live 데이터도 쓰지 않고, 예상 통합 결과(live-shape relations + 예상 카운트)만
     계산해 **data/review/potassium_pm_ready_dryrun_v1_2.json**(리뷰 산출물, live 아님)에 기록한다.
@@ -67,6 +68,12 @@ COPY_FORBIDDEN = ["칼륨을 보충", "칼륨제를", "칼륨 섭취를 늘", "�
                   "복용하세요", "반드시 드", "구매", "제휴", "추천 영양제", "치료", "예방"]
 # clinical reviewer 노트 승인 토큰(의미적 게이트).
 APPROVAL_TOKENS = ("approved", "승인")
+# SAMPLE/예시 노트 거부 — docs handoff §C reviewer note 템플릿을 그대로 제출하면(미교체) 승격 차단.
+# 템플릿의 예시 승인 토큰은 'APPROVED-SAMPLE-NOT-VALID' 식으로 SAMPLE 마커를 박아, 토큰이 있어도 여기서 STOP.
+NOTE_SAMPLE_SENTINELS = ("SAMPLE", "샘플", "NOT-VALID", "NOT A REAL APPROVAL",
+                         "NOT_FOR_PROMOTION", "TEMPLATE-ONLY", "PLACEHOLDER")
+# 미기입 placeholder 마커(검수자 식별자/검토일 칸을 비운 채 제출하면 STOP).
+NOTE_PLACEHOLDER_MARKERS = ("____", "YYYY-MM-DD", "<검수자", "<reviewer", "<날짜", "<date")
 
 
 def item_to_live(it, new_id):
@@ -125,6 +132,39 @@ def guard_item(it):
     elif str(it["itemseq"]) not in (it.get("source_pointer") or ""):
         bad.append(f"{did}: source_pointer 에 itemseq 불일치")
     return bad
+
+
+def check_reviewer_note(reviewer_note, required_ids):
+    """clinical reviewer 노트 게이트(구조+의미+SAMPLE/placeholder 거부).
+    (note_content, violations) 반환 — violations 빈 리스트 = 통과. live 통합 전 main() 과 테스트가 공유."""
+    bad = []
+    note_content = ""
+    if reviewer_note and os.path.exists(reviewer_note):
+        with open(reviewer_note, encoding="utf-8") as f:
+            note_content = f.read()
+    # 구조적: 존재 + 비공란
+    if not note_content.strip():
+        bad.append(f"노트 비공란 필요(--reviewer-note PATH). 받은 값: {reviewer_note!r}")
+        return note_content, bad
+    # SAMPLE/예시 토큰 거부(템플릿 그대로 제출 차단) — 승인 토큰보다 우선.
+    up = note_content.upper()
+    for s in NOTE_SAMPLE_SENTINELS:
+        if s.upper() in up:
+            bad.append(f"SAMPLE/예시 토큰 감지('{s}') — 템플릿 그대로는 승격 거부(실제 검수 노트로 교체 필요)")
+            break
+    # 미기입 placeholder 거부(검수자 식별자/검토일 빈칸 잔존 차단).
+    for m in NOTE_PLACEHOLDER_MARKERS:
+        if m in note_content:
+            bad.append(f"미기입 placeholder 감지('{m}') — 검수자 식별자/검토일 등 빈칸 채우기 필요")
+            break
+    # 의미적: 승인 토큰 + 승격 대상 draft_id 전건 명시.
+    low = note_content.lower()
+    if not any(tok in low or tok in note_content for tok in APPROVAL_TOKENS):
+        bad.append(f"승인 표기({'/'.join(APPROVAL_TOKENS)}) 없음 — 검수 승인 미확인")
+    missing = [d for d in required_ids if d not in note_content]
+    if missing:
+        bad.append(f"승격 대상 draft_id 미명시: {missing} — 검수자가 승인한 행만 승격")
+    return note_content, bad
 
 
 def main():
@@ -210,6 +250,13 @@ def main():
                 "data_url": "v0.2 (불변)",
                 "relation_count_validators_bump": "live 통합 시 relation-count 하드코딩 validator 들을 "
                                                   f"+{len(projected)}(=>{projected_count}) 갱신 필요(AT-FEX 통합 순서에 따라 baseline 조정).",
+                "reviewer_note_interlock": {
+                    "required": True,
+                    "approval_tokens": list(APPROVAL_TOKENS),
+                    "draft_ids_all_required": list(WHITELIST),
+                    "rejects": "SAMPLE/예시 토큰 · 미기입 placeholder · 빈 노트 · 승인 토큰 누락 · draft_id 일부 누락",
+                    "note": "live 통합은 --pm-approved + --reviewer-note PATH 둘 다 필요. 노트가 승인 토큰 + 승격 대상 draft_id 전건(위 목록)을 담고 SAMPLE/placeholder 가 없어야 통과(check_reviewer_note 가 강제).",
+                },
                 "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·"
                         "법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer.",
             },
@@ -229,22 +276,11 @@ def main():
             for b in bad:
                 print(f"[STOP] {b}")
         return 1
-    # 구조적 게이트: 노트 존재 + 비공란
-    note_content = ""
-    if reviewer_note and os.path.exists(reviewer_note):
-        with open(reviewer_note, encoding="utf-8") as f:
-            note_content = f.read()
-    if not note_content.strip():
-        print(f"[STOP] clinical reviewer 노트 필요(--reviewer-note PATH, 비공란). 받은 값: {reviewer_note!r}")
-        return 1
-    # 의미적 게이트: 승인 토큰 + 승격 대상 draft_id 전건 명시('검수자가 승인한 행만 승격')
-    low = note_content.lower()
-    if not any(tok in low or tok in note_content for tok in APPROVAL_TOKENS):
-        print(f"[STOP] reviewer 노트에 승인 표기({'/'.join(APPROVAL_TOKENS)}) 없음 — 검수 승인 미확인")
-        return 1
-    missing = [d for d in projected_ids if d not in note_content]
-    if missing:
-        print(f"[STOP] reviewer 노트에 승격 대상 draft_id 미명시: {missing} — 검수자가 승인한 행만 승격")
+    # reviewer 노트 게이트(구조+의미+SAMPLE/placeholder) — 승격 대상 draft_id 전건 명시 요구.
+    _note, note_bad = check_reviewer_note(reviewer_note, projected_ids)
+    if note_bad:
+        for b in note_bad:
+            print(f"[STOP] reviewer 노트: {b}")
         return 1
     if not projected:
         print("[skip] 통합할 신규 칼륨 행 없음(전건 이미 live)")
