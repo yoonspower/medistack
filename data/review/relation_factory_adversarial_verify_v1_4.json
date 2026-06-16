@@ -1,0 +1,2796 @@
+{
+ "meta": {
+  "name": "relation_factory_adversarial_verify_v1_4",
+  "status": "LIVE 아님 · 적대검증(refute-by-default) 기록 · 자동 승격 금지 · 제품/구매/제휴 없음",
+  "method": "10-lens refute-by-default. survives/copy_change 만 reviewer-ready. needs_review/hold/reject 는 draft 제외.",
+  "lenses": {
+   "L1_source_fidelity": "source quote 가 라벨 verbatim 이고 app copy 가 강도/방향을 왜곡하지 않는가",
+   "L2_direct_cooccurrence": "counterpart 가 라벨에 직접 등장하고 itemSeq 가 실제 국내 품목인가",
+   "L3_direction": "흡수저하/효과감소/결핍/모니터링 방향이 맞는가",
+   "L4_negation": "부정문(영향 없음/저해되지 않음)을 반대로 읽지 않았는가",
+   "L5_category_clarity": "nutrient vs antacid drug vs acid_reducing_drug 구분이 되는가",
+   "L6_supplement_safety": "비타민/철분/아연/칼슘/마그네슘/칼륨 보충 권유처럼 보이지 않는가",
+   "L7_clinical_high_risk": "항응고/항암/이식/면역억제/임신·소아 고위험이 아닌가",
+   "L8_formulation_route": "IV/주사/외용/복합제/원료/수출용을 경구 일반 relation 으로 오인하지 않았는가",
+   "L9_duplicate_conflict": "live 60·pending 13 과 중복/충돌이 없는가",
+   "L10_copy_render_safety": "카드 렌더 시 지시문/제품/보충권유/진단처럼 보이지 않는가"
+  },
+  "total": 43,
+  "counts": {
+   "survives": 31,
+   "survives_with_copy_change": 6,
+   "needs_review": 5,
+   "hold": 1,
+   "reject": 0
+  },
+  "reviewer_ready": 37,
+  "downgraded": 6,
+  "family_survival": {
+   "F1": {
+    "total": 18,
+    "survives": 18,
+    "yield": 1.0
+   },
+   "F10": {
+    "total": 2,
+    "survives": 1,
+    "yield": 0.5
+   },
+   "F2": {
+    "total": 5,
+    "survives": 5,
+    "yield": 1.0
+   },
+   "F3": {
+    "total": 4,
+    "survives": 3,
+    "yield": 0.75
+   },
+   "F4": {
+    "total": 1,
+    "survives": 1,
+    "yield": 1.0
+   },
+   "F6": {
+    "total": 1,
+    "survives": 1,
+    "yield": 1.0
+   },
+   "F9": {
+    "total": 12,
+    "survives": 8,
+    "yield": 0.67
+   }
+  },
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "live_integration_forbidden": true,
+  "note": "adversarial_verdict 는 reviewer/PM 의 임상 검수를 대체하지 않는다. survives 도 식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다."
+ },
+ "entries": [
+  {
+   "candidate_id": "RF-F1-0021",
+   "relation": "노르플록사신 × 철분",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0022",
+   "relation": "노르플록사신 × 칼슘",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0024",
+   "relation": "노르플록사신 × 아연",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0025",
+   "relation": "노르플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F2-0105",
+   "relation": "독시사이클린 × Al/Mg 함유 제산제(약물)",
+   "family": "F2",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "테트라사이클린계 공통 라벨 문구 기반 — 약물별 국내 품목(itemSeq) 매칭이 정확한지 확인.",
+    "live 에 동일 약물 × mineral nutrient 가 있는 경우 antacid-drug relation 의 중복 여부 확인."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0010",
+   "relation": "레보플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0035",
+   "relation": "로메플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F2-0110",
+   "relation": "미노사이클린 × Al/Mg 함유 제산제(약물)",
+   "family": "F2",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "테트라사이클린계 공통 라벨 문구 기반 — 약물별 국내 품목(itemSeq) 매칭이 정확한지 확인.",
+    "live 에 동일 약물 × mineral nutrient 가 있는 경우 antacid-drug relation 의 중복 여부 확인."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0040",
+   "relation": "발로플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0020",
+   "relation": "오플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0041",
+   "relation": "자보플록사신 × 철분",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0042",
+   "relation": "자보플록사신 × 칼슘",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0044",
+   "relation": "자보플록사신 × 아연",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0045",
+   "relation": "자보플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F2-0111",
+   "relation": "테트라사이클린 × 철분",
+   "family": "F2",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "테트라사이클린계 공통 라벨 문구 기반 — 약물별 국내 품목(itemSeq) 매칭이 정확한지 확인.",
+    "live 에 동일 약물 × mineral nutrient 가 있는 경우 antacid-drug relation 의 중복 여부 확인."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F2-0114",
+   "relation": "테트라사이클린 × 아연",
+   "family": "F2",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "테트라사이클린계 공통 라벨 문구 기반 — 약물별 국내 품목(itemSeq) 매칭이 정확한지 확인.",
+    "live 에 동일 약물 × mineral nutrient 가 있는 경우 antacid-drug relation 의 중복 여부 확인."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F2-0115",
+   "relation": "테트라사이클린 × Al/Mg 함유 제산제(약물)",
+   "family": "F2",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "테트라사이클린계 공통 라벨 문구 기반 — 약물별 국내 품목(itemSeq) 매칭이 정확한지 확인.",
+    "live 에 동일 약물 × mineral nutrient 가 있는 경우 antacid-drug relation 의 중복 여부 확인."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0066",
+   "relation": "토수플록사신 × 철분",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0067",
+   "relation": "토수플록사신 × 칼슘",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0070",
+   "relation": "토수플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0026",
+   "relation": "페플록사신 × 철분",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0029",
+   "relation": "페플록사신 × 아연",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F1-0030",
+   "relation": "페플록사신 × Al/Mg 함유 제산제(약물)",
+   "family": "F1",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 약물 × 마그네슘/철분/칼슘(nutrient)이 있는 경우, Al/Mg 제산제(약물) relation 을 별도 counterpart 로 유지할지 확인(id61 이트라코나졸 선례).",
+    "separation 간격(2~4시간)을 카드에 노출할지 — 현재는 일반 '분리' 안내."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F4-0173",
+   "relation": "레보티록신 × Al/Mg 함유 제산제(약물)",
+   "family": "F4",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "note",
+     "detail": "라벨은 '알루미늄 함유 제산제'만 명시(Mg 미명시). al_mg_antacid 통합 category 적용 — id61 선례 있으나 reviewer 확인 필요."
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "counterpart_category=al_mg_antacid 유지하되 라벨은 Al 만 명시함을 reviewer note 로 기록.",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "Al-only 라벨을 Al/Mg 통합 category 로 일반화한 점.",
+   "reviewer_questions": [
+    "라벨이 알루미늄만 명시 — Al/Mg 통합 표기가 과일반화 아닌지 확인."
+   ],
+   "next_action": "reviewer 확인 후 통합(별도 PR).",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F3-0139",
+   "relation": "알렌드론산 × Al/Mg 함유 제산제(약물)",
+   "family": "F3",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "needs_review",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "fail",
+     "detail": "quote 가 '칼슘보충제나 제산제 및 일부 경구용 약물들' 로 generic — Al/Mg 제산제를 명시하지 않음."
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "fail",
+     "detail": "live 알렌드론산 × 칼슘(nutrient)이 이미 칼슘-흡수저해 핵심을 커버 — antacid-drug 특이성 약함."
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [
+    "quote 가 '칼슘보충제나 제산제 및 일부 경구용 약물들' 로 generic — Al/Mg 제산제를 명시하지 않음.",
+    "live 알렌드론산 × 칼슘(nutrient)이 이미 칼슘-흡수저해 핵심을 커버 — antacid-drug 특이성 약함."
+   ],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "needs_review",
+   "downgrade_reason": "Al/Mg 제산제를 직접 명시하지 않는 generic quote('제산제')이고, 명시 양이온은 칼슘뿐(이미 live). 특이성 부족 — refute(직접근거 약함).",
+   "remaining_risks": "알렌드론산 antacid 상호작용 자체는 실재하나 라벨에 Al/Mg 직접 명시 quote 필요.",
+   "reviewer_questions": [
+    "알렌드론산 라벨에 'Al/Mg 함유 제산제' 직접 명시 문구가 있는지 재검색 — 있으면 quote 교체 후 survives."
+   ],
+   "next_action": "라벨 재검색(Al/Mg 직접 명시) 후 재평가. 없으면 칼슘(live)로 충분.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F6-0201",
+   "relation": "에스오메프라졸 × 비타민B12",
+   "family": "F6",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "저위산증/무위산증 기전(흡수 감소) 문구가 monitoring 카드로 적절한지 — 다른 PPI × B12 live 와 톤 일치 확인.",
+    "장기복용 조건을 카드에 명시할지(현재 '장기간 복용할 때')."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F3-0148",
+   "relation": "에티드론산 × 칼슘",
+   "family": "F3",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "note",
+     "detail": "quote 끝의 '○ 파제트병'(적응증 artifact) 제거 — 상호작용과 무관."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "note",
+     "detail": "칼슘이 '미네랄 첨가 비타민제(보충)' 와 '함유 제산제' 양쪽에 걸침 — live 리세드론산/이반드론산 × 칼슘(nutrient) 선례로 nutrient 분류 유지."
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {
+    "source_quote": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제"
+   },
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "라벨이 보충제/제산제 칼슘을 혼합 서술 — nutrient vs antacid-drug 분리 가능성.",
+   "reviewer_questions": [
+    "칼슘을 nutrient 로 둘지, 별도 al_mg_antacid relation 으로 분리할지 확인(라벨이 양쪽 서술)."
+   ],
+   "next_action": "quote 정비본으로 reviewer 검토.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F3-0149",
+   "relation": "에티드론산 × 철분",
+   "family": "F3",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "note",
+     "detail": "quote 끝 '○ 파제트병' 제거."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "note",
+     "detail": "철분이 보충/제산제 양쪽 서술 — nutrient 분류 유지(bisphosphonate×철분 nutrient 톤)."
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {
+    "source_quote": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제"
+   },
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "동 RF-F3-0148.",
+   "reviewer_questions": [
+    "철분 nutrient 분류 적절성 확인."
+   ],
+   "next_action": "quote 정비본으로 reviewer 검토.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F3-0147",
+   "relation": "이반드론산 × Al/Mg 함유 제산제(약물)",
+   "family": "F3",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "live 에 동일 비스포스포네이트 × 칼슘/철분(nutrient)이 있음 — antacid-drug relation 을 별도로 둘지 확인.",
+    "공복 복용·물 외 음료 금지 등 비스포스포네이트 일반 복약지침과의 관계 정리(카드 범위 밖)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F10-0275",
+   "relation": "케토코나졸 × Al/Mg 함유 제산제(약물)",
+   "family": "F10",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "note",
+     "detail": "흡수 저하 방향 맞음."
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "note",
+     "detail": "기전이 Al/Mg 킬레이션이 아니라 위산도 의존 흡수(제산제·항콜린제·H2 차단제가 위산분비 억제). 제산제 부분만 al_mg_antacid 로 매핑 — 향후 acid_reducing_drug category 검토."
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "absorption(위산도 의존) — reviewer note 로 기전 명시.",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "라벨이 H2 차단제·항콜린제도 함께 언급하나 카드는 제산제(al_mg_antacid)로 한정.",
+   "reviewer_questions": [
+    "위산도 의존 흡수를 al_mg_antacid 로 표기 vs acid_reducing_drug 신규 category 중 택일.",
+    "콜라(산성음료) 동시복용 라벨 문구는 카드 범위 밖으로 둘지 확인."
+   ],
+   "next_action": "category 결정 후 통합.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F10-0276",
+   "relation": "포사코나졸 × Al/Mg 함유 제산제(약물)",
+   "family": "F10",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "hold",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "fail",
+     "detail": "counterpart 를 'Al/Mg 함유 제산제'로 두었으나 quote 는 제산제를 명시하지 않음(주어 불일치)."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "fail",
+     "detail": "source quote 는 'H2 수용체 억제제' 만 언급 — Al/Mg 제산제(al_mg_antacid)와 다른 약물군."
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [
+    "source quote 는 'H2 수용체 억제제' 만 언급 — Al/Mg 제산제(al_mg_antacid)와 다른 약물군.",
+    "counterpart 를 'Al/Mg 함유 제산제'로 두었으나 quote 는 제산제를 명시하지 않음(주어 불일치)."
+   ],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "hold",
+   "downgrade_reason": "포사코나졸 quote 가 H2 차단제 상호작용만 서술 — al_mg_antacid 로 매핑 불가(주어/카테고리 불일치). refute: 제산제 직접근거 없음. acid_reducing_drug(H2/PPI) category 미존재로 현재 표현 불가 → hold.",
+   "remaining_risks": "포사코나졸은 위산도 의존 흡수가 실재 — 향후 acid_reducing_drug category 도입 시 H2 차단제 relation 으로 재평가.",
+   "reviewer_questions": [
+    "포사코나졸 라벨에 Al/Mg '제산제' 직접 명시 문구가 별도로 있는지 확인.",
+    "acid_reducing_drug(H2/PPI) category 신설 시 H2 차단제 relation 으로 복원할지 결정."
+   ],
+   "next_action": "acid_reducing_drug category 설계 트랙으로 이관(hold). al_mg_antacid 로는 통합 금지.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0260",
+   "relation": "라모트리진 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "needs_review",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "fail",
+     "detail": "카드는 '장기간 복용 시 엽산 수치 변화'로 일반화하나 quote 는 동물/임신 근거."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "fail",
+     "detail": "근거가 '랫트 시험' + '임신 중 엽산 감소' — 동물·임신 한정."
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [
+    "근거가 '랫트 시험' + '임신 중 엽산 감소' — 동물·임신 한정.",
+    "카드는 '장기간 복용 시 엽산 수치 변화'로 일반화하나 quote 는 동물/임신 근거."
+   ],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "needs_review",
+   "downgrade_reason": "동물(랫트)·임신 한정 근거를 인체 만성 depletion 으로 일반화 — 근거 강도/맥락 불일치(refute: 인체 만성 depletion 직접근거 아님).",
+   "remaining_risks": "라모트리진은 약한 DHFR 억제제 — 임상적 엽산 영향은 reviewer 판단 영역.",
+   "reviewer_questions": [
+    "임신 외 일반 복용에서 엽산 모니터링 근거가 라벨에 별도로 있는지 확인."
+   ],
+   "next_action": "라벨 재검색(임신 외 엽산 문구) 또는 hold.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0269",
+   "relation": "설파살라진 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "만성/장기복용·고용량 맥락이 필요한 depletion — 카드의 '장기간 복용할 때' 프레이밍이 라벨 근거와 일치하는지 확인.",
+    "결핍 단정이 아니라 '수치 변화 가능·모니터링' 톤인지 확인(현재 충족)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0257",
+   "relation": "옥스카르바제핀 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "needs_review",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "fail",
+     "detail": "문장 구조상 '엽산 결핍 등의 증상성 저나트륨혈증'으로 엽산이 저나트륨혈증에 종속."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "fail",
+     "detail": "'엽산 결핍'이 저나트륨혈증 이상반응 나열문 중간에 매몰 — 특성화된 depletion 서술 아님."
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [
+    "'엽산 결핍'이 저나트륨혈증 이상반응 나열문 중간에 매몰 — 특성화된 depletion 서술 아님.",
+    "문장 구조상 '엽산 결핍 등의 증상성 저나트륨혈증'으로 엽산이 저나트륨혈증에 종속."
+   ],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "needs_review",
+   "downgrade_reason": "엽산 결핍이 이상반응 열거문에 저신호로 매몰 — 직접 depletion 근거로 보기 약함.",
+   "remaining_risks": "옥스카르바제핀의 엽산 영향 자체는 문헌상 약함.",
+   "reviewer_questions": [
+    "라벨 내 엽산 단독 서술이 별도로 있는지 확인."
+   ],
+   "next_action": "라벨 재검색 또는 drop.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0245",
+   "relation": "카르바마제핀 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "note",
+     "detail": "원 quote 가 이상반응 표 raw 텍스트 — '엽산 결핍증' 핵심부만 verbatim 발췌."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "note",
+     "detail": "엽산 결핍(depletion) 방향 맞음 — 카르바마제핀 효소유도 알려진 기전."
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {
+    "source_quote": "드물게 백혈구 증가, 임파절 장애, 엽산 결핍증"
+   },
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "라벨상 '드물게' 등급 — evidence_level moderate 가 다소 높을 수 있음(reviewer 하향 검토).",
+   "reviewer_questions": [
+    "'드물게' 빈도의 엽산 결핍증을 monitoring 카드로 둘지, evidence_level 하향할지 확인."
+   ],
+   "next_action": "정비 quote 로 reviewer 검토.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0246",
+   "relation": "카르바마제핀 × 비타민D",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "note",
+     "detail": "원 quote 가 표 raw 텍스트 — '25-hydroxy-콜레칼시페롤 감소…골연화증' 핵심부만 발췌."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "note",
+     "detail": "비타민D(25-OH) 감소·골대사 장애 방향 맞음."
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {
+    "source_quote": "혈장 칼슘과 혈중25-hydroxy-콜레칼시페롤의 감소와 같은 골대사 장애로 인한 골연화증 및 골다공증"
+   },
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "표 텍스트 발췌 — reviewer 가 원문 위치 재확인 권장.",
+   "reviewer_questions": [
+    "발췌 quote 가 라벨 원문과 일치하는지 reviewer 재확인."
+   ],
+   "next_action": "정비 quote 로 reviewer 검토.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0272",
+   "relation": "트리메토프림 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "만성/장기복용·고용량 맥락이 필요한 depletion — 카드의 '장기간 복용할 때' 프레이밍이 라벨 근거와 일치하는지 확인.",
+    "결핍 단정이 아니라 '수치 변화 가능·모니터링' 톤인지 확인(현재 충족)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0251",
+   "relation": "페노바르비탈 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "needs_review",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "fail",
+     "detail": "quote '임신중의 투여에 의해 엽산 저하' — 임신 한정. 카드는 '장기간 복용'으로 일반화(원문보다 넓음)."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [
+    "quote '임신중의 투여에 의해 엽산 저하' — 임신 한정. 카드는 '장기간 복용'으로 일반화(원문보다 넓음)."
+   ],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "needs_review",
+   "downgrade_reason": "임신 한정 근거를 일반 장기복용으로 일반화 — '원문보다 강하면 금지' 위반 소지. (페노바르비탈 효소유도 엽산저하는 임상상 알려졌으나 라벨 quote 는 임신 한정.)",
+   "remaining_risks": "임신 외 엽산저하 라벨 근거 확보 시 승격 가능.",
+   "reviewer_questions": [
+    "임신 외 엽산저하 라벨 문구 유무 확인 — 있으면 quote 교체 후 survives."
+   ],
+   "next_action": "라벨 재검색(임신 외 엽산) 후 재평가.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0252",
+   "relation": "페노바르비탈 × 비타민D",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "만성/장기복용·고용량 맥락이 필요한 depletion — 카드의 '장기간 복용할 때' 프레이밍이 라벨 근거와 일치하는지 확인.",
+    "결핍 단정이 아니라 '수치 변화 가능·모니터링' 톤인지 확인(현재 충족)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0242",
+   "relation": "페니토인 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "만성/장기복용·고용량 맥락이 필요한 depletion — 카드의 '장기간 복용할 때' 프레이밍이 라벨 근거와 일치하는지 확인.",
+    "결핍 단정이 아니라 '수치 변화 가능·모니터링' 톤인지 확인(현재 충족)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0243",
+   "relation": "페니토인 × 비타민D",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "만성/장기복용·고용량 맥락이 필요한 depletion — 카드의 '장기간 복용할 때' 프레이밍이 라벨 근거와 일치하는지 확인.",
+    "결핍 단정이 아니라 '수치 변화 가능·모니터링' 톤인지 확인(현재 충족)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0254",
+   "relation": "프리미돈 × 엽산",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "needs_review",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "fail",
+     "detail": "quote '임신중의 투여에 의해 엽산저하' — 임신 한정. 카드 일반화."
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [
+    "quote '임신중의 투여에 의해 엽산저하' — 임신 한정. 카드 일반화."
+   ],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "needs_review",
+   "downgrade_reason": "프리미돈×엽산: 임신 한정 근거를 일반 장기복용으로 일반화 — 동 RF-F9-0251.",
+   "remaining_risks": "프리미돈 대사물=페노바르비탈 — 임신 외 근거 확보 시 승격 가능.",
+   "reviewer_questions": [
+    "임신 외 엽산저하 라벨 문구 유무 확인."
+   ],
+   "next_action": "라벨 재검색 후 재평가.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  },
+  {
+   "candidate_id": "RF-F9-0255",
+   "relation": "프리미돈 × 비타민D",
+   "family": "F9",
+   "original_status": "source_confirmed_draft_candidate",
+   "adversarial_verdict": "survives",
+   "lens_results": {
+    "L1_source_fidelity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L2_direct_cooccurrence": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L3_direction": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L4_negation": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L5_category_clarity": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L6_supplement_safety": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L7_clinical_high_risk": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L8_formulation_route": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L9_duplicate_conflict": {
+     "result": "pass",
+     "detail": ""
+    },
+    "L10_copy_render_safety": {
+     "result": "pass",
+     "detail": ""
+    }
+   },
+   "refuted_points": [],
+   "copy_changes": {},
+   "category_changes": "",
+   "mechanism_changes": "",
+   "final_status": "reviewer_ready_candidate",
+   "downgrade_reason": "",
+   "remaining_risks": "moderate 근거(라벨 직접 quote) — reviewer 가 evidence_level 확정.",
+   "reviewer_questions": [
+    "만성/장기복용·고용량 맥락이 필요한 depletion — 카드의 '장기간 복용할 때' 프레이밍이 라벨 근거와 일치하는지 확인.",
+    "결핍 단정이 아니라 '수치 변화 가능·모니터링' 톤인지 확인(현재 충족)."
+   ],
+   "next_action": "reviewer package 포함 → dry-run integrator → 별도 PR.",
+   "reviewer_needed": true,
+   "live_allowed": false
+  }
+ ]
+}

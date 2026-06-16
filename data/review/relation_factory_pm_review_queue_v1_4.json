@@ -624,5 +624,108 @@
   "reviewer package",
   "dry-run integrator(별도)",
   "hold/reject close"
- ]
+ ],
+ "adversarial_verify": {
+  "method": "10-lens refute-by-default",
+  "total": 43,
+  "counts": {
+   "survives": 31,
+   "survives_with_copy_change": 6,
+   "needs_review": 5,
+   "hold": 1,
+   "reject": 0
+  },
+  "reviewer_ready": 37,
+  "downgraded": 6,
+  "family_survival": {
+   "F1": {
+    "total": 18,
+    "survives": 18,
+    "yield": 1.0
+   },
+   "F10": {
+    "total": 2,
+    "survives": 1,
+    "yield": 0.5
+   },
+   "F2": {
+    "total": 5,
+    "survives": 5,
+    "yield": 1.0
+   },
+   "F3": {
+    "total": 4,
+    "survives": 3,
+    "yield": 0.75
+   },
+   "F4": {
+    "total": 1,
+    "survives": 1,
+    "yield": 1.0
+   },
+   "F6": {
+    "total": 1,
+    "survives": 1,
+    "yield": 1.0
+   },
+   "F9": {
+    "total": 12,
+    "survives": 8,
+    "yield": 0.67
+   }
+  },
+  "downgrades": [
+   {
+    "candidate_id": "RF-F3-0139",
+    "relation": "알렌드론산 × Al/Mg 함유 제산제(약물)",
+    "verdict": "needs_review",
+    "reason": "Al/Mg 제산제를 직접 명시하지 않는 generic quote('제산제')이고, 명시 양이온은 칼슘뿐(이미 live). 특이성 부족 — refute(직접근거 약함)."
+   },
+   {
+    "candidate_id": "RF-F10-0276",
+    "relation": "포사코나졸 × Al/Mg 함유 제산제(약물)",
+    "verdict": "hold",
+    "reason": "포사코나졸 quote 가 H2 차단제 상호작용만 서술 — al_mg_antacid 로 매핑 불가(주어/카테고리 불일치). refute: 제산제 직접근거 없음. acid_reducing_drug(H2/PPI) category 미존재로 현재 표현 불가 → hold."
+   },
+   {
+    "candidate_id": "RF-F9-0260",
+    "relation": "라모트리진 × 엽산",
+    "verdict": "needs_review",
+    "reason": "동물(랫트)·임신 한정 근거를 인체 만성 depletion 으로 일반화 — 근거 강도/맥락 불일치(refute: 인체 만성 depletion 직접근거 아님)."
+   },
+   {
+    "candidate_id": "RF-F9-0257",
+    "relation": "옥스카르바제핀 × 엽산",
+    "verdict": "needs_review",
+    "reason": "엽산 결핍이 이상반응 열거문에 저신호로 매몰 — 직접 depletion 근거로 보기 약함."
+   },
+   {
+    "candidate_id": "RF-F9-0251",
+    "relation": "페노바르비탈 × 엽산",
+    "verdict": "needs_review",
+    "reason": "임신 한정 근거를 일반 장기복용으로 일반화 — '원문보다 강하면 금지' 위반 소지. (페노바르비탈 효소유도 엽산저하는 임상상 알려졌으나 라벨 quote 는 임신 한정.)"
+   },
+   {
+    "candidate_id": "RF-F9-0254",
+    "relation": "프리미돈 × 엽산",
+    "verdict": "needs_review",
+    "reason": "프리미돈×엽산: 임신 한정 근거를 일반 장기복용으로 일반화 — 동 RF-F9-0251."
+   }
+  ],
+  "major_false_positive_patterns": [
+   "F10 acid-reducer 주어 혼동: 포사코나졸 quote 는 H2 차단제 — al_mg_antacid 매핑 불가.",
+   "F9 임신 한정 근거 일반화: 페노바르비탈/프리미돈 × 엽산 quote '임신중' → 카드 '장기간 복용' 과일반화.",
+   "F9 동물·임신 근거: 라모트리진 × 엽산 = 랫트 시험.",
+   "F9 이상반응 열거 저신호: 옥스카르바제핀 엽산이 저나트륨혈증 나열문에 매몰.",
+   "F3 generic '제산제' quote + live 중복: 알렌드론산 antacid 가 칼슘(live)만 명시.",
+   "quote hygiene(비치명): 에티드론산 '○ 파제트병'·카르바마제핀 표 raw·레보티록신 Al-only."
+  ],
+  "validator_changes_added": [
+   "adversarial ledger ↔ draft batch cid 일치",
+   "reviewer_ready = survives/copy_change 만(needs_review/hold/reject 0)",
+   "reviewer_ready 정비 quote 가 원문 substring(verbatim)",
+   "결함주입 6종 추가(reject→ready, H2→al_mg, 임신 한정 일반화, generic 제산제, IV oral 오인, quote=copy 지시문)"
+  ],
+  "status_note": "LIVE 아님 · 자동 승격 금지 · reviewer note 전 live 금지 · 제품 없음"
+ }
 }

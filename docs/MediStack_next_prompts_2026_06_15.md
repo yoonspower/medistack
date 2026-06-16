@@ -259,3 +259,19 @@
 근거: `data/review/theme_map_live_dryrun_v1_3.json` `live_integration_prerequisites` · `docs/MediStack_reviewer_package_theme_map_v1_3.md` §7 · `docs/MediStack_counterpart_category_policy_v1_3.md` §6.
 
 > **순서 권고**: 프롬프트 14·15(페니실라민 subset·선행조건 0) **먼저** → 프롬프트 13(category sign-off) → 프롬프트 16(선행 PR) → 프롬프트 11(나머지 4건 또는 full-6 잔여). 칼륨 4건(프롬프트 2)·AT-FEX(프롬프트 1)은 독립 트랙으로 병행 가능. **full-6 통합기와 subset 통합기는 동시 실행 금지**(같은 후보 중복 — subset 우선 시 full 은 잔여 4건만, 프롬프트 12 `--only`).
+
+---
+
+## Relation Factory v1.4 — 적대검증 후 다음 프롬프트 (2026-06-16 추가)
+
+factory 43 draft → 적대검증(refute-by-default) → **reviewer-ready 37**(survives 31·copy_change 6) · 강등 6. live 0. 정본 `docs/MediStack_reviewer_package_relation_factory_v1_4.md`.
+
+1. **factory reviewer-ready batch package** — reviewer-ready 37 을 family 그룹(F1/F2 우선)으로 clinical reviewer note 받기. 통합 0, note 수집만.
+2. **factory high-yield 확장 batch 2** — F9 만성 depletion·F10 azole(최고 수확) + 미커버 약물 신규 seed. inventory dedup 선행 필수. live 0.
+3. **factory reviewer-gated dry-run integrator** — reviewer note 확보분만 projected count/ids 산출(STOP guard). live write 0.
+4. **selected subset live integration with reviewer note** — F1/F2 등 note 확보 subset 만 별도 PR(60→+N). dry-run 일치 확인 후.
+5. **needs_review 5 재평가** — 알렌드론산(Al/Mg 직접 명시 라벨)·페노바르비탈/프리미돈(임신 외 엽산)·라모트리진·옥스카르바제핀 라벨 재검색.
+6. **hold 1(포사코나졸)** — `acid_reducing_drug` category 설계 트랙(프롬프트 16과 합류 가능)에서 H2 차단제 relation 으로 재평가.
+7. 기존 트랙 병행: 페니실라민(프롬프트 14·15)·theme map(16·11)·칼륨(2)·AT-FEX(1) — 전부 reviewer note 전제.
+
+> **금지**: reviewer-ready/factory 후보 live 추가 · published/clinical=true · 제품/구매/제휴 UI · 강등분 승격 · 계열 일반화 draft.

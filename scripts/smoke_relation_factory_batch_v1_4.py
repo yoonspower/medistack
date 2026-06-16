@@ -2,11 +2,12 @@
 """
 smoke_relation_factory_batch_v1_4.py — Relation Factory v1.4 draft batch **카드 렌더 smoke**(네트워크 0, live 무관).
 
-draft 후보가 카드로 안전 렌더되는지 시뮬:
+draft 후보 + 적대검증 reviewer-ready 후보가 카드로 안전 렌더되는지 시뮬:
 - 배너: 'LIVE 아님 · draft-only · 자동 승격 금지'.
 - 사용자 카피 금칙어·제품/구매/제휴·보충 권유·직접 복용 지시 0.
 - source quote(허가사항 원문)와 app copy 분리.
 - 참고정보 톤('약사 또는 의사와 상담').
+- reviewer-ready batch: 전건 adversarial_verdict=survives/copy_change·reviewer_questions 보유·카드 safe.
 - PM review queue 안전 마커(LIVE 아님·reviewer 전 live 금지·제품 없음).
 종료코드: 0 PASS / 1 FAIL.
 """
@@ -17,6 +18,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 BATCH = os.path.join(REPO, "data", "drafts", "relation_factory_draft_batch_v1_4.json")
+READY = os.path.join(REPO, "data", "drafts", "relation_factory_reviewer_ready_batch_v1_4.json")
 PMQ = os.path.join(REPO, "data", "review", "relation_factory_pm_review_queue_v1_4.json")
 
 
@@ -85,6 +87,27 @@ def main():
     if len(cards) == len(drafts):
         ok(f"{len(cards)}건 카드 렌더-safe·copy-safe·출처분리·제품/보충/지시 0·상담 톤", True)
     ok("카드 ≥10", len(cards) >= 10, str(len(cards)))
+
+    # reviewer-ready batch(적대검증 생존분) 카드 시뮬
+    if os.path.exists(READY):
+        rd = json.load(open(READY, encoding="utf-8"))
+        rmeta = rd["meta"]
+        rrel = rd["reviewer_ready_relations"]
+        ok("reviewer-ready meta NOT LIVE·published/clinical=false·reviewed_by 공란",
+           "NOT LIVE" in rmeta.get("status", "") and rmeta.get("published") is False
+           and rmeta.get("clinical_reviewed") is False and (rmeta.get("reviewed_by") or "") == "")
+        rcards = []
+        for d in rrel:
+            try:
+                rcards.append(render(d))
+                # adversarial_verdict + reviewer_questions 노출(카드 외 PM 메타)
+                assert d.get("adversarial_verdict") in ("survives", "survives_with_copy_change"), "verdict not survive"
+                assert isinstance(d.get("reviewer_questions"), list), "reviewer_questions 누락"
+            except AssertionError as ex:
+                ok(f"reviewer-ready 렌더 {d.get('candidate_id')}", False, str(ex))
+        if len(rcards) == len(rrel):
+            ok(f"reviewer-ready {len(rcards)}건 카드 렌더-safe·출처분리·제품/보충/지시 0·verdict=survive·상담 톤", True)
+        ok("reviewer-ready ≥10", len(rcards) >= 10, str(len(rcards)))
 
     # PM queue 안전 마커
     if os.path.exists(PMQ):

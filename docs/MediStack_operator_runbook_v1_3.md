@@ -239,11 +239,12 @@ theme map 6건의 live 통합은 **reviewer note + 선행조건 후 별도 PR**(
 python3 scripts/build_relation_factory_inventory_v1_4.py            # 중복 차단 인벤토리(읽기전용)
 python3 scripts/relation_factory_bot_v1_4.py                        # universe+후보+precheck+queue (offline·data/review)
 python3 scripts/relation_factory_bot_v1_4.py --online-source-check --max-source-check 200   # SDK source-check+draft+PM
-python3 scripts/validate_relation_factory_batch_v1_4.py             # 결함주입 10
-python3 scripts/smoke_relation_factory_batch_v1_4.py
+python3 scripts/adversarial_verify_relation_factory_v1_4.py         # 적대검증 → reviewer-ready 37 + ledger (live 0)
+python3 scripts/validate_relation_factory_batch_v1_4.py             # 적대검증 정합성 + 결함주입 15
+python3 scripts/smoke_relation_factory_batch_v1_4.py                # draft + reviewer-ready 카드 시뮬
 ```
-- 산출물 `data/review/relation_factory_*`·`data/drafts/relation_factory_draft_batch_v1_4.json`. SDK 캐시 `data/harvest_queue/_sdk/`(gitignore).
-- draft → adversarial → reviewer note → dry-run integrator → 별도 PR 후에만 live. 정본 `docs/MediStack_relation_scaleup_roadmap_v1_4.md`.
+- 산출물 `data/review/relation_factory_*`(inventory/queue/adversarial_verify/pm_queue)·`data/drafts/relation_factory_draft_batch_v1_4.json`·`data/drafts/relation_factory_reviewer_ready_batch_v1_4.json`. SDK 캐시 `data/harvest_queue/_sdk/`(gitignore).
+- draft → **adversarial(refute-by-default, reviewer-ready 37/43)** → reviewer note → dry-run integrator → 별도 PR 후에만 live. 정본 `docs/MediStack_relation_scaleup_roadmap_v1_4.md` §7 · reviewer package `docs/MediStack_reviewer_package_relation_factory_v1_4.md`.
 
 ## 13. 금지 (운영 불변)
 

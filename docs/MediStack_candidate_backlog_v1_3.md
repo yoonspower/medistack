@@ -2,6 +2,8 @@
 
 작성일: 2026-06-15 · 상태: **분석/백로그 · 실행 금지(승격 0)** · 자기완결
 
+> **Relation Factory v1.4 적대검증(2026-06-16):** 별도 factory 트랙의 source_confirmed draft 43 → reviewer-ready **37**(survives 31·copy_change 6) · 강등 6(needs_review 5·hold 1). 본 harvester 백로그와 **별개 트랙**. 정본 `docs/MediStack_reviewer_package_relation_factory_v1_4.md`.
+
 > 이 문서는 harvester bot v1.3 **2차 online run**(2026-06-15)의 PM review queue 를 분석해, 이미 트리아지된 항목을
 > 제거하고 **남은 신규 후보를 분류·우선순위화**한 백로그다. 모든 항목 `do_not_implement_yet=true` · `live_integration_forbidden=true` ·
 > `published=false` · `clinical_reviewed=false`. **이 라운드에서 코드·데이터·export·DATA_URL 를 승격 방향으로 바꾸지 않는다.**

@@ -1,5 +1,7 @@
 # MediStack — relation harvester bot v1.3 운영 문서 (manual run 루틴)
 
+> **참고(2026-06-16):** 대량 후보는 별도 **Relation Factory Bot v1.4**(`scripts/relation_factory_bot_v1_4.py` + `adversarial_verify_relation_factory_v1_4.py`) 트랙에서 생성·적대검증한다(harvester 와 비연동). factory 운영 절차는 `docs/MediStack_operator_runbook_v1_3.md` §12.6.
+
 작성일: 2026-06-14 · 상태: **운영 가이드 / schedule 비활성** · 대상 AI/PM 세션 핸드오프용 자기완결 문서
 
 > 이 문서는 harvester bot 의 **수동 운영 절차**와 **안전 불변**을 정리한다. 봇은 PM review queue(분석 산출물)만 만들고

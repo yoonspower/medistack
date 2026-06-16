@@ -1,6 +1,8 @@
 # MediStack — Relation Factory v1.4 후보 요약
 
 > raw 후보 **301** · 중복 제거 후 신규 **262** · source-check queue **200**. draft/live 생성 아님(source-check 후보).
+>
+> **적대검증(2026-06-16):** source_confirmed draft 43 → refute-by-default 10-lens → **reviewer-ready 37**(survives 31·copy_change 6) · 강등 6(needs_review 5·hold 1). 정본 `docs/MediStack_reviewer_package_relation_factory_v1_4.md` · ledger `data/review/relation_factory_adversarial_verify_v1_4.json`. live 0.
 
 ## priority 분포
 ```

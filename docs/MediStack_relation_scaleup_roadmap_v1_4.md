@@ -9,10 +9,12 @@
 |---|---|
 | **live relations** | **60** (id1~61, published=false·clinical_reviewed=false) |
 | reviewer-gated near-term(통합 준비 완료) | 페니실라민 2 · theme map 6 · 칼륨 4 · AT-FEX 1 = **13** |
-| **신규 factory source_confirmed draft(v1.4)** | **43** (adversarial+reviewer 전 — live 아님) |
+| **신규 factory source_confirmed draft(v1.4)** | **43** (적대검증 전 raw) |
+| **factory 적대검증 후 reviewer-ready(v1.4)** | **37** (survives 31 + copy_change 6 — live 아님) · 강등 6 |
 | raw 후보 풀(v1.4) | 301 (중복 제거 후 신규 262 · source-check queue 200) |
 
-> near-term 13 + factory 43 = 잠재 +56 → reviewer/adversarial 통과분만 단계적 live. **개수보다 정확성 우선**.
+> near-term 13 + factory reviewer-ready 37 = 잠재 +50 → reviewer note/dry-run 통과분만 단계적 live. **개수보다 정확성 우선**.
+> 적대검증에서 6건 강등(needs_review 5·hold 1) — 정확성 우선 원칙으로 의심분 제거. 정본 §7.
 
 ## 2. 단계 목표
 
@@ -75,7 +77,36 @@ python3 scripts/relation_factory_bot_v1_4.py --online-source-check --max-source-
 # 4) 검증
 python3 scripts/validate_relation_factory_batch_v1_4.py   # 결함주입 10
 python3 scripts/smoke_relation_factory_batch_v1_4.py
+# 5) 적대검증(refute-by-default) — draft → reviewer-ready 필터 + ledger
+python3 scripts/adversarial_verify_relation_factory_v1_4.py
+python3 scripts/validate_relation_factory_batch_v1_4.py   # 적대검증 정합성 + 결함주입 15
+python3 scripts/smoke_relation_factory_batch_v1_4.py        # reviewer-ready 카드 시뮬
 ```
 - 기본 실행은 **live write 0 · export write 0 · src write 0 · no auto integrate**. 산출물은 `data/review/`·`data/drafts/` 만.
 - SDK 캐시: `data/harvest_queue/_sdk/`(gitignore). runtime queue 커밋 금지.
 - live 통합은 draft → adversarial → reviewer note → dry-run integrator → 별도 PR(본 라운드 0).
+
+## 7. 적대검증 결과(v1.4, 2026-06-16)
+
+factory 43 draft 를 refute-by-default 10-lens(source fidelity·direct co-occurrence·direction·negation·category·supplement safety·clinical high-risk·formulation/route·duplicate conflict·copy/render safety)로 검증.
+
+| verdict | 수 | |
+|---|---|---|
+| survives | 31 | 라벨 직접 quote·방향 일치·중복 0 |
+| survives_with_copy_change | 6 | quote 정비/카테고리 note 후 유지 |
+| **reviewer-ready 소계** | **37** | reviewer note → dry-run → 별도 PR |
+| needs_review | 5 | 라벨 재검색 후 재평가 |
+| hold | 1 | acid_reducing_drug category 트랙 |
+| reject | 0 | |
+
+**family 생존율**: F1 18/18(1.0) · F2 5/5(1.0) · F4 1/1 · F6 1/1 · F3 3/4(0.75) · F9 8/12(0.67) · F10 1/2(0.5).
+
+**주요 false-positive 패턴(강등 사유)**
+1. **acid-reducer 주어 혼동**: 포사코나졸 quote 가 H2 차단제만 서술 → al_mg_antacid 매핑 불가(hold).
+2. **임신 한정 근거 일반화**: 페노바르비탈·프리미돈 × 엽산 quote '임신중' → 카드 '장기복용' 과일반화(needs_review).
+3. **동물·임신 근거**: 라모트리진 × 엽산 = 랫트 시험(needs_review).
+4. **이상반응 열거 저신호**: 옥스카르바제핀 엽산이 저나트륨혈증 나열문 매몰(needs_review).
+5. **generic 제산제 + live 중복**: 알렌드론산 antacid quote 가 칼슘(live)만 명시·Al/Mg 미명시(needs_review).
+6. quote hygiene(비치명, copy_change): 에티드론산 '○ 파제트병'·카르바마제핀 표 raw·레보티록신 Al-only.
+
+정본: `data/review/relation_factory_adversarial_verify_v1_4.json`(ledger) · `data/drafts/relation_factory_reviewer_ready_batch_v1_4.json`(37) · `docs/MediStack_reviewer_package_relation_factory_v1_4.md`(패키지).
