@@ -54,6 +54,9 @@ kpi = _load("kpi", "analyze_coverage_kpi_v1_2.py")
 gate = _load("gate", "source_confirm_gate_v1_2.py")
 antacid = _load("antacid", "collect_antacid_interaction_evidence_v1_2.py")
 vfp = _load("vfp", "validate_forbidden_phrases_v1_2.py")  # 권위있는 금지어 스캐너 재사용
+# theme map expansion provider(편입 PR, 프롬프트 9) — --include-theme-map-expansion 플래그로만 호출.
+# 격리된 읽기 전용 모듈. 기본 비활성 → 기본 run 동작 무변경.
+tmprov = _load("tmprov", "theme_map_harvest_provider_v1_3.py")
 
 EXPORT = os.path.join(DATA, "medistack_v0.2_beta_export.json")
 KPI_CSV = os.path.join(DATA, "coverage_kpi_top_candidates_v1_2.csv")
@@ -380,6 +383,9 @@ def main():
     ap.add_argument("--online", action="store_true", help="실 nedrug fetch(SDK). 기본은 offline+fixtures dry-run.")
     ap.add_argument("--ingredients", default="", help="콤마구분 성분 필터(dry-run 권장 서브셋).")
     ap.add_argument("--kpi-limit", type=int, default=60, help="KPI 트랩 스캔 상한.")
+    ap.add_argument("--include-theme-map-expansion", action="store_true",
+                    help="신규 theme map expansion 후보(편입 PR, 프롬프트 9)를 candidate-only 로 PM 큐에 편입. "
+                         "기본 비활성. config(data/config/theme_map_seeds_v1_3.json) 읽기 전용. live/auto-integrate 없음.")
     args = ap.parse_args()
 
     os.makedirs(QUEUE, exist_ok=True)
@@ -485,6 +491,18 @@ def main():
     if log:
         print(f"fetch errors: {len(log)}")
     print(f"[write] {os.path.relpath(QUEUE, REPO)}/  (7 artifacts)")
+
+    # theme map expansion 편입(프롬프트 9) — 플래그가 있을 때만. 격리된 provider 가 candidate-only
+    # 큐(theme_map_*)만 쓴다. live/auto-integrate 없음. 기본 비활성이라 기본 run 은 무변경.
+    if args.include_theme_map_expansion:
+        try:
+            tm = tmprov.emit(QUEUE, stamp=meta["run_at"])
+            print(f"[theme-map] candidate-only 편입: draft {tm['counts']['confirmed_draft']} / "
+                  f"hold {tm['counts']['hold']} → {os.path.relpath(QUEUE, REPO)}/theme_map_* "
+                  f"(live 0 · auto-integrate 0)")
+        except RuntimeError as e:
+            sys.stderr.write(f"STOP: theme map provider 안전 위반 — {e}\n")
+            return 1
     return 0
 
 

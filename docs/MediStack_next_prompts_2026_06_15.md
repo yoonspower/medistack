@@ -8,6 +8,8 @@
 
 > **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
 
+> **갱신(2026-06-16, harvester 편입 PR 라운드)**: 프롬프트 9 **실행**(branch `harvester-theme-map-v1.3` + PR) — 신규 theme map 6건을 harvester 에 **candidate-only 편입**(manual flag `--include-theme-map-expansion`, 기본 비활성, config-driven 격리 provider). seed config `data/config/theme_map_seeds_v1_3.json` + provider `scripts/theme_map_harvest_provider_v1_3.py` → PM review queue(draft 6 + hold 7). 신규 category(acid_reducing_drug·fat_soluble_vitamin) review-level 처리. validator(17+결함주입 9)·smoke·guard(flag run) PASS. runtime `data/harvest_queue/theme_map_*` gitignore(커밋 0), 요약만 `data/review/theme_map_harvest_incorporation_v1_3.json` 커밋. **live 통합·schedule 활성화·자동 integrate·main push/merge 0.** 정본 ops §14. ↓이전:
+
 > **갱신(2026-06-16, theme map 적대검증 라운드)**: 프롬프트 8 **실행** — draft 6건 refute-by-default 적대검증(8 렌즈) + 2차 source-check. 6건 전부 survives(3 clean / 3 copy_change), source quote 6/6 verbatim 정정·확인. counterpart_category 확정(acid_reducing_drug 신규). 2차 source-check 신규 draft 0(콜레세벨람·메틸도파 미유통·이소니아지드 B6=AE 치료 지시 → 전부 hold). validator 17 검사군·결함주입 9·smoke 6 카드 PASS. 정본 ledger `theme_map_adversarial_verify_v1_3.json`. live 통합·schedule·workflow·export/index/alias 수정 0. ↓이전:
 
 > **갱신(2026-06-15, theme map expansion 라운드)**: 프롬프트 7(새 theme map 확장)을 **실행** — 신규 family 3종 설계 + SDK source-check 로 **draft-only 6건**(오르리스타트·콜레스티라민 × 지용성비타민, 세프포독심·세프디토렌 × 제산제/H2, 페니실라민 × 철분·아연) 확정. 정본 `docs/MediStack_theme_map_expansion_v1_3.md`. 남은 일은 **프롬프트 8(적대검증+2차 source-check)** · **프롬프트 9(harvester 편입 PR)**. 본 라운드 live 통합·schedule 활성화·workflow·src/export/index/alias 수정 0. ↓이전 라운드:
@@ -142,9 +144,18 @@
 >
 > **불변**: live relation 생성 0 · published/clinical_reviewed=false · reviewed_by 공란 · 제품/구매/제휴 UI 0 · 보충 권유/결핍 단정 0 · high-risk hold(페니토인/마이코페놀레이트/레보도파×B6)는 draft 격상 금지. **검증**: `scripts/validate_theme_map_expansion_v1_3.py` + `scripts/smoke_theme_map_draft_render_v1_3.py`.
 
-## 프롬프트 9 — harvester theme map 편입 PR (후속 · PM 승인 전제)
+## 프롬프트 9 — harvester theme map 편입 PR (후속 · PM 승인 전제) → **실행 완료(2026-06-16, branch+PR)**
 
-> **상태**: 신규 family(지용성비타민 흡수·세팔로스포린 antacid·페니실라민 킬레이트)는 현재 `vfs.SEARCH_INGREDIENTS`(25)/`ANTACID_CANDIDATES`(AT-ITZ만)에 **미편입**. 자동 run 대상 아님.
+> **✅ 실행됨(2026-06-16, harvester-theme-map-v1.3 브랜치)**: 신규 family 6건을 harvester 에 **candidate-only 로 편입**. 방식 = **manual flag `--include-theme-map-expansion`(기본 비활성)** + config-driven 격리 provider. live 통합·schedule 활성화·자동 integrate 0. main push/merge 0(브랜치+PR only).
+> - **편입 흐름**: seed config(`data/config/theme_map_seeds_v1_3.json`, 읽기 전용) → provider(`scripts/theme_map_harvest_provider_v1_3.py`)가 draft batch/candidates/adversarial ledger 읽어 PM review queue 생성 → draft-only 6 + hold 7. 순서 **source-check queue → PM review → draft-only → live 금지** 준수.
+> - **신규 category 처리**: acid_reducing_drug(세팔로 acid-reducer·id61 al_mg_antacid 와 구분) · fat_soluble_vitamin(지용성 비타민군). validator 가 약물/영양소 category 혼동·al_mg_antacid 축소·항응고 framing 차단.
+> - **runtime 산출물**(`data/harvest_queue/theme_map_*`)은 `.gitignore` → **커밋 0**. 커밋되는 건 review summary(`data/review/theme_map_harvest_incorporation_v1_3.json`)뿐.
+> - **검증**: `scripts/validate_harvester_theme_map_v1_3.py`(17 검사군+결함주입 9) · `scripts/smoke_harvester_theme_map_v1_3.py`(PM queue·6 카드) · guard `--run-bot --include-theme-map-expansion`(보호셋 sha256 불변·write-scope 한정·direct-http 0) 전부 PASS. 기본 run(무플래그)은 byte-동일·무변경.
+> - **남은 일(PM/clinical reviewer 게이트)**: reviewer 가 ①acid_reducing_drug category 채택 ②TM-CHEL-01-ZN mechanism(absorption vs interaction) ③지용성비타민 group-split ④페니실라민 FE/ZN 묶음 확정 → **live 통합은 clinical reviewer note + 수동 단계 후 별도 PR**(provider/harvester 자동 승격 없음).
+>
+> 정본: `docs/MediStack_harvester_ops_v1_3.md` §14 · `docs/MediStack_theme_map_expansion_v1_3.md` §6 · `data/review/theme_map_harvest_incorporation_v1_3.json`. 아래 원문은 참고용 보존.
+
+> **상태(원문, 보존)**: 신규 family(지용성비타민 흡수·세팔로스포린 antacid·페니실라민 킬레이트)는 현재 `vfs.SEARCH_INGREDIENTS`(25)/`ANTACID_CANDIDATES`(AT-ITZ만)에 **미편입**. 자동 run 대상 아님.
 >
 > **작업**: 신규 family seed 를 harvester theme map 에 편입할지 결정하는 **PR 설계**(편입 자체는 PM 승인 후). 편입 순서는 반드시 **source-check queue → PM review → draft-only → live 금지**. schedule 은 비활성 유지(프롬프트 6). runtime queue(`data/harvest_queue/`) 커밋 금지. 같은 theme map 반복 run 비효율(신규 0 수렴) 인지 — 신규 seed 만 가치.
 >

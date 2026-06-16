@@ -1,0 +1,143 @@
+{
+ "meta": {
+  "name": "theme_map_harvest_incorporation_v1_3",
+  "purpose": "harvester theme map expansion 편입(프롬프트 9) 결과 요약. review artifact / live 통합 아님.",
+  "generated_via": "scripts/theme_map_harvest_provider_v1_3.py (harvester --include-theme-map-expansion 또는 standalone)",
+  "incorporation_mode": "manual flag (default disabled) — config-driven, read-only, candidate-only",
+  "live_relations_created": 0,
+  "live_integration_forbidden": true,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "auto_integrate": false,
+  "schedule_activation": false,
+  "runtime_output_committed": false,
+  "run_at": "2026-06-16"
+ },
+ "counts": {
+  "confirmed_draft": 6,
+  "hold": 7,
+  "by_adversarial_verdict": {
+   "survives_with_copy_change": 3,
+   "survives": 3
+  }
+ },
+ "confirmed_candidates": [
+  {
+   "candidate_id": "TM-LIP-01",
+   "relation": "오르리스타트 × 지용성 비타민(A·D·E·K·베타카로틴)",
+   "counterpart_type": "nutrient_group",
+   "counterpart_category": "fat_soluble_vitamin",
+   "itemSeq": "200806047",
+   "adversarial_verdict": "survives_with_copy_change",
+   "final_status": "draft_only (source_confirmed · adversarial_verified)",
+   "reviewer_needed": true
+  },
+  {
+   "candidate_id": "TM-LIP-02",
+   "relation": "콜레스티라민 × 지용성 비타민(A·D·K)",
+   "counterpart_type": "nutrient_group",
+   "counterpart_category": "fat_soluble_vitamin",
+   "itemSeq": "198800813",
+   "adversarial_verdict": "survives",
+   "final_status": "draft_only (source_confirmed · adversarial_verified)",
+   "reviewer_needed": true
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-01",
+   "relation": "세프포독심프록세틸 × 위산 감소·중화 약물(제산제·H2 차단제)",
+   "counterpart_type": "antacid_drug",
+   "counterpart_category": "acid_reducing_drug",
+   "itemSeq": "199300168",
+   "adversarial_verdict": "survives",
+   "final_status": "draft_only (source_confirmed · adversarial_verified)",
+   "reviewer_needed": true
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-02",
+   "relation": "세프디토렌피복실 × 제산제·위산 감소 약물(H2 차단제·PPI 등)",
+   "counterpart_type": "antacid_drug",
+   "counterpart_category": "acid_reducing_drug",
+   "itemSeq": "199500901",
+   "adversarial_verdict": "survives_with_copy_change",
+   "final_status": "draft_only (source_confirmed · adversarial_verified)",
+   "reviewer_needed": true
+  },
+  {
+   "candidate_id": "TM-CHEL-01-FE",
+   "relation": "페니실라민 × 철분",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198300142",
+   "adversarial_verdict": "survives",
+   "final_status": "draft_only (source_confirmed · adversarial_verified)",
+   "reviewer_needed": true
+  },
+  {
+   "candidate_id": "TM-CHEL-01-ZN",
+   "relation": "페니실라민 × 아연",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198300142",
+   "adversarial_verdict": "survives_with_copy_change",
+   "final_status": "draft_only (source_confirmed · adversarial_verified)",
+   "reviewer_needed": true
+  }
+ ],
+ "hold_candidates": [
+  {
+   "candidate_id": "TM-CHEL-02",
+   "drug_ingredient": "레보도파",
+   "counterpart": "철분",
+   "hold_reason": "국내 단일성분 완제 없음(복합제만 유통) — relation 모델 부적합."
+  },
+  {
+   "candidate_id": "TM-LIP-03",
+   "drug_ingredient": "콜레세벨람",
+   "counterpart": "지용성 비타민(A·D·E·K)",
+   "hold_reason": "2차 source-check: 국내 미유통 확정(웰콜 등 검색 0)."
+  },
+  {
+   "candidate_id": "TM-CHEL-03",
+   "drug_ingredient": "메틸도파",
+   "counterpart": "철분",
+   "hold_reason": "2차 source-check: 국내 미유통(단종 추정)."
+  },
+  {
+   "candidate_id": "TM-B6-01",
+   "drug_ingredient": "이소니아지드",
+   "counterpart": "비타민B6(피리독신)",
+   "hold_reason": "2차 source-check: 라벨 B6=이상반응 치료 지시(depletion relation 아님)·보충 권유 오인 위험·clinical reviewer 트랙."
+  },
+  {
+   "candidate_id": "TM-HOLD-PHENYTOIN",
+   "drug_ingredient": "페니토인",
+   "counterpart": "엽산·비타민D",
+   "hold_reason": "엽산↔페니토인 양방향 — 단순 depletion 오도·신경계 임상판단."
+  },
+  {
+   "candidate_id": "TM-HOLD-MYCO",
+   "drug_ingredient": "마이코페놀레이트모페틸",
+   "counterpart": "Al/Mg 제산제·철분",
+   "hold_reason": "이식 면역억제제·거부반응 위험·임상판단."
+  },
+  {
+   "candidate_id": "TM-HOLD-LDOPA-B6",
+   "drug_ingredient": "레보도파",
+   "counterpart": "비타민B6(피리독신)",
+   "hold_reason": "복합제(카르비도파)에서 상호작용 무력화 → 'B6 피하라' 카드는 오정보·antagonism."
+  }
+ ],
+ "category_decision": {
+  "fat_soluble_vitamin": "지용성 비타민(A·D·E·K) 그룹(counterpart_type=nutrient_group). 영양소 — 약물 아님. 비타민K 항응고 맥락 금지.",
+  "acid_reducing_drug": "위산 감소·중화 약물(제산제·H2·PPI). pH 의존 흡수. counterpart_type=antacid_drug — '약물' 표기. id61 al_mg_antacid 와 구분(cation chelation 아님·H2/PPI 포함). Al/Mg 영양제로 오인 금지.",
+  "al_mg_antacid": "기존 id61(이트라코나졸) — Al/Mg cation chelation 전용. 세팔로스포린 acid-reducer 에는 쓰지 않음(H2/PPI 를 Al/Mg 로 좁히지 못함).",
+  "null": "기존 live 60 nutrient relation 일관(철분·아연 등 단일 영양소·mineral_ion 신규 category 불필요)."
+ },
+ "id_disjointness": "theme map expansion 후보 id 는 모두 'TM-' 접두사 — 기존 harvester 후보(F-*, AT-*, KPI-*)와 disjoint. (ingredient, counterpart) 도 기존 F-CEPH-03/08(세프포독심/세프디토렌×철분)과 다른 counterpart(=acid_reducing_drug)이며 ingredient 문자열도 다름(세프포독심프록세틸≠세프포독심) → 무충돌.",
+ "next_pm_actions": [
+  "reviewer: acid_reducing_drug category 채택 + TM-CHEL-01-ZN mechanism + 지용성비타민 group-split 확정",
+  "live 통합은 clinical reviewer 노트 + 수동 단계 후 별도 PR(자동 승격 금지)",
+  "schedule 비활성 유지(프롬프트 6 게이트)"
+ ]
+}
