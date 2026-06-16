@@ -227,6 +227,22 @@ def main():
     exp2 = json.load(open(EXPORT, encoding="utf-8"))
     ck(len(exp2["relations"]) == LIVE_RELATIONS, "검증 중 라이브 relations 변경됨")
 
+    # 3.5) subset(페니실라민 FE/ZN) 선행 통합 시 full-6 중복 감지 — 동시 통합 금지 회귀
+    #   FE/ZN 이 이미 live 인 temp export 에 full-6 build_projected → '이미 live 에 존재' violation 이 떠야(중복 0).
+    sim_pen = copy.deepcopy(exp)
+    pen = [e["projected_live_relation"] for e in entries
+           if e.get("candidate_id") in ("TM-CHEL-01-FE", "TM-CHEL-01-ZN")]
+    ck(len(pen) == 2, f"full-6 artifact 에 페니실라민 FE/ZN 2건 없음 ({len(pen)})")
+    mx = max(r["id"] for r in sim_pen["relations"])
+    for i, rel in enumerate(pen):
+        rc = copy.deepcopy(rel); rc["id"] = mx + 1 + i
+        sim_pen["relations"].append(rc)
+    sim_pen["meta"]["relation_count"] = len(sim_pen["relations"])
+    _ents, _holds, dup_viol = integ.build_projected(sim_pen)
+    dup_detected = [v for v in (dup_viol or []) if "이미 live" in v]
+    ck(len(dup_detected) >= 2, f"subset 선행 통합 시 full-6 가 FE/ZN 중복 미감지(동시 통합 위험): {dup_viol}")
+    ck(len(exp2["relations"]) == LIVE_RELATIONS, "중복감지 검사 중 라이브 relations 변경됨")
+
     # 4) 결함주입 9종 — validate_artifact 가 검출해야 함
     print("--- 결함주입(검출되어야 PASS) ---")
     inj_fail = []
@@ -266,7 +282,7 @@ def main():
         print(f"RESULT: FAIL — {len(fails)}건")
         return 1
     print("RESULT: PASS — 6건 계약 안전(60→66·category 2/2/2·draft누출0·제품/보충/항응고0·라이브 무수정) · "
-          f"separation5 v0.2 PASS · 6건 #15 선행조건 문서화 · 결함주입 9종 검출")
+          f"separation5 v0.2 PASS · 6건 #15 선행조건 문서화 · subset 선행 통합 시 FE/ZN 중복감지(동시 통합 차단) · 결함주입 9종 검출")
     return 0
 
 

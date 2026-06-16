@@ -4,6 +4,8 @@
 
 이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = clinical reviewer 핸드오프 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격(3건 통합 드라이런 완료), published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
 
+> **갱신(2026-06-16, 페니실라민 reviewer decision 하드닝 라운드)**: reviewer note 실물 **없음 확인 → live 0** 유지. subset 통합기에 **부분 승인 시나리오**(`meta.partial_approval_scenarios`: both 60→62·id 62,63 / FE_only·ZN_only 60→61·**id 62=max+1** / neither 60) + `--only` STOP(미구현·both-approval 전제) 추가. validator 결함주입 **10종**(ZN_only id 오기 추가)·부분승인 일관성 검증. reviewer package **§8 결정 체크리스트·§9 PM decision table·§10 FE-only/ZN-only 근거·§11 rollback·post-live 검증** + mechanism doc **§5 Option 체크박스** 보강. **full-6 중복 생성 불가 실증**(FE/ZN live 인 temp 에 full-6 build → 2 violation→STOP). 프롬프트 14·15 갱신. ↓이전:
+>
 > **갱신(2026-06-16, 페니실라민 FE/ZN subset 통합 준비 라운드)**: theme map 6건 중 **페니실라민 × 철분/아연 2건만** subset 으로 분리해 reviewer-gated 준비 완료(승격 0). 둘 다 **counterpart_category=null(일반 영양소) → live 선행조건 0**(현행 v0.2 PASS 실증·src/facet/chip/validator/full index/aliases 변경 불필요) → theme map 6건 중 **가장 먼저 안전 통합 가능**. 신규: `scripts/integrate_penicillamine_subset_v1_3.py`(dry-run·`--pm-approved --reviewer-note` 전제) → `data/review/penicillamine_subset_live_dryrun_v1_3.json`(**60→62**·id 62~63·sha 불변·prerequisites []) · `test_penicillamine_reviewer_note_gate_v1_3.py` · `validate_penicillamine_subset_dryrun_v1_3.py`(결함주입 9) · `smoke_penicillamine_subset_v1_3.py` · docs `MediStack_reviewer_package_penicillamine_subset_v1_3.md` · `MediStack_penicillamine_mechanism_decision_v1_3.md`. **ZN mechanism 결정 = Option A**(absorption 추론 유지·confidence moderate·user 카피 '효과 감소' 충실 — Option B interaction 은 v0.2 ALLOWED_MECHANISM 밖이라 validator PR 선행 필요라 비채택). subset 게이트와 full-6 게이트는 **상호 배타**(노트 교차 거부)·dry-run artifact 분리. 아래 **프롬프트 14~16** 신설. ↓이전:
 
 > **갱신(2026-06-15)**: 프롬프트 2가 '칼륨 PM-ready **재검토**'였으나 재검토는 완료됐다(6건 확정·6/6 survives·`data/review/potassium_depletion_pm_ready_v1_2.json` `meta.rereview_2026_06_15`). 또한 PM-ready 3건(DF01·DF04·DF05)의 **live 통합 준비(드라이런·검증기)**까지 끝났다. 그래서 프롬프트 2를 다음 실제 작업인 **'칼륨 PM-ready 3건 live 통합'**으로 교체한다. reviewer 핸드오프: `docs/MediStack_clinical_reviewer_handoff_v1_2.md`.
@@ -219,7 +221,7 @@
 
 > **선행**: subset reviewer 패키지·mechanism 결정 문서·dry-run(60→62·선행조건 0) ready.
 >
-> **작업(결정 단계)**: clinical reviewer / PM 이 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §3 두 카드를 검토하고 reviewer note(§6 템플릿)를 작성하라. 결정: ①**TM-CHEL-01-ZN mechanism** = absorption(추론·Option A 권고) vs interaction(Option B — validator PR 선행) vs needs_review 보류(Option C) — 상세 `docs/MediStack_penicillamine_mechanism_decision_v1_3.md`. ②FE/ZN **개별 카드** 확인. ③verified_reference 노출 동의. 게이트(`integrate_penicillamine_subset_v1_3.check_reviewer_note`)가 승인 토큰·FE/ZN 전건·ZN mechanism·grouping·verified_reference·clinical_reviewed=true 아님·제품 추천 아님·철분/아연 보충 권유 아님 을 강제.
+> **작업(결정 단계)**: clinical reviewer / PM 이 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §3 두 카드 + §8 **결정 체크리스트**를 검토하고 reviewer note(§6 템플릿)를 작성하라. 결정: ①**승인 범위** = approve both(권고·60→62·id 62,63) / FE only(60→61·id 62) / ZN only(60→61·id 62·비권장) / reject(live 0) — §9 PM decision table(**단건 승인 시 id=max+1=62**, both 일 때만 FE=62·ZN=63). ②**TM-CHEL-01-ZN mechanism** = absorption(추론·Option A 권고) vs interaction(Option B — validator PR 선행) vs needs_review 보류(Option C) — mechanism doc §5 체크박스. ③FE/ZN **개별 카드** 확인. ④verified_reference 노출 동의. 게이트(`integrate_penicillamine_subset_v1_3.check_reviewer_note`)가 승인 토큰·FE/ZN 전건·ZN mechanism·grouping·verified_reference·clinical_reviewed=true 아님·제품 추천 아님·철분/아연 보충 권유 아님 을 강제(**현 통합기는 both-approval 전제**; 부분 승인이 실제 결정되면 `--only` 변형 PR 선행).
 >
 > **불변**: live relation 0 · published/clinical_reviewed=false · reviewed_by 공란 · 제품/보충 UI 0. 결정·노트 작성까지가 범위.
 
@@ -235,9 +237,13 @@
 >
 > **통합 후 검증(전수 PASS)**: relation-count 하드코딩 validator **+2 갱신** + 신규 `validate_penicillamine_subset_integration_v1_3.py`(드라이런 검증기를 live 대상 전환) + v0.2 export validator(python+node·**선행조건 없이 PASS**) + 영양소 facet node 렌더(철분/아연 정상 노출·separation chip) + forbidden 0 + full smoke + no-live-write guard + deploy 게이트 + **live HTTP 200** + git clean.
 >
-> **금지**: reviewer note 없이 통합 · full-6 integrator 동시 사용(같은 후보 중복) · clinical_reviewed=true · published=true · reviewed_by 작성 · 제품/제휴 UI · 철분/아연 보충 권유 · ZN 을 interaction 으로 바꾸되 validator 미확장(enum FAIL).
+> **rollback 준비**: merge 전=branch reset / merge 후=`git revert` → relation id 62/63 제거 시 `meta.relation_count` 동기화 + v0.2 validator 재검증(절차 = reviewer package §11). full index/aliases 무관.
+>
+> **subset 통합 후 full-6 중복 점검(필수)**: 통합 직후 full-6 dry-run(`integrate_theme_map_draft_batch_v1_3.py`)을 **naive 재실행하면 FE/ZN 이 이미 live → `이미 live 에 존재` violation → 전체 STOP**(중복 0, 2026-06-16 실증). 나머지 4건만 통합하려면 full-6 에 `--only`(잔여 4건) 변형이 **선행 필수**(프롬프트 16). subset 통합 전후로 full-6 통합기를 동시 실행하지 말 것.
+>
+> **금지**: reviewer note 없이 통합 · full-6 integrator 동시 사용(같은 후보 중복) · clinical_reviewed=true · published=true · reviewed_by 작성 · 제품/제휴 UI · 철분/아연 보충 권유 · ZN 을 interaction 으로 바꾸되 validator 미확장(enum FAIL) · `--only`(부분 승인)로 live 통합(미구현 STOP — both-approval 전제).
 
-근거: `data/review/penicillamine_subset_live_dryrun_v1_3.json` · `scripts/integrate_penicillamine_subset_v1_3.py` · `scripts/validate_penicillamine_subset_dryrun_v1_3.py` · `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §5·§7.
+근거: `data/review/penicillamine_subset_live_dryrun_v1_3.json`(`meta.partial_approval_scenarios`) · `scripts/integrate_penicillamine_subset_v1_3.py` · `scripts/validate_penicillamine_subset_dryrun_v1_3.py` · `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §5·§7~§11.
 
 ---
 

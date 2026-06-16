@@ -179,6 +179,11 @@ def build_subset(exp):
 
 
 def main():
+    if "--only" in sys.argv:
+        print("[STOP] --only(부분 승인)는 미구현. 현 integrator 는 both-approval 전제(FE/ZN 2건 전건). "
+              "부분 승인 시나리오는 dry-run artifact meta.partial_approval_scenarios 문서 참조 — "
+              "실제 부분 live 통합은 별도 --only 변형 PR(dry-run 우선) 필요.")
+        return 1
     pm_approved = "--pm-approved" in sys.argv
     reviewer_note = None
     if "--reviewer-note" in sys.argv:
@@ -209,6 +214,24 @@ def main():
     if not pm_approved:
         with open(EXPORT, "rb") as f:
             sha_before = hashlib.sha256(f.read()).hexdigest()
+        before_max = max(r["id"] for r in exp["relations"])
+        # 부분 승인 시나리오(문서화 전용·id 는 runtime max+1 → 단건 승인 시 그 단건이 id 62 차지. both 일 때만 FE=62·ZN=63).
+        single_id = before_max + 1
+        partial_scenarios = {
+            "recommended": "both",
+            "both": {"approved": SUBSET_IDS, "expected_count": after, "expected_ids": ids,
+                     "note": "권고 — FE=id 62, ZN=id 63(2건 동시 → 순서대로 62·63)."},
+            "FE_only": {"approved": ["TM-CHEL-01-FE"], "expected_count": before + 1, "expected_ids": [single_id],
+                        "note": "ZN hold 시. 단건이므로 FE=id 62(max+1). ZN 은 needs_review 유지."},
+            "ZN_only": {"approved": ["TM-CHEL-01-ZN"], "expected_count": before + 1, "expected_ids": [single_id],
+                        "note": "단건이므로 ZN=id 62(max+1 — both 모드의 '63' 아님). FE 제외 사유 명시 필요 — "
+                                "일반적으로 비권장(FE 가 '흡수율 저하' 직접근거로 더 확실, ZN 은 추론). reviewer 가 FE 위험만 보류할 특별 사유가 있을 때만."},
+            "neither": {"approved": [], "expected_count": before, "expected_ids": [],
+                        "note": "reject subset → live 0."},
+            "id_rule": "id 는 runtime max+1. 단건 승인 시 그 단건이 id 62 를 차지. both 일 때만 FE=62·ZN=63.",
+            "live_partial_integration": "현 integrator 는 both-approval 전제(SUBSET_IDS 전건 + 게이트가 FE/ZN 2건·grouping 강제). "
+                                        "부분 승인이 실제 필요해지면 별도 --only 변형(dry-run 우선)을 추가 — 본 라운드는 시나리오 문서화만(live 0).",
+        }
         # v0.2 validator 증거 — 선행조건 0 입증(현행 v0.2 PASS).
         sim = json.loads(json.dumps(exp))
         sim["relations"] += projected
@@ -228,6 +251,7 @@ def main():
                 "expected_ids": ids,
                 "included_candidate_ids": SUBSET_IDS,
                 "excluded_theme_map_candidate_ids": EXCLUDED_THEME_MAP,
+                "partial_approval_scenarios": partial_scenarios,
                 "itemSeq": ITEMSEQ,
                 "live_write_performed": False,
                 "live_promotion": 0,

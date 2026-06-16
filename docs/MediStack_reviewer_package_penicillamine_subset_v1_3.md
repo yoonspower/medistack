@@ -86,10 +86,72 @@ clinical_reviewed=true 아님(verified_reference 천장 유지). 제품·구매�
 > 승인 후 live 통합: `python3 scripts/integrate_penicillamine_subset_v1_3.py --pm-approved --reviewer-note <노트경로>`
 > (별도 PM 승인 + 별도 PR 에서만. 본 세션은 실행하지 않음.) 회귀 = `scripts/test_penicillamine_reviewer_note_gate_v1_3.py`.
 
+**통합 전 마지막 금지사항(게이트가 거부 — note 에 쓰지 말 것)**
+- `SAMPLE`/`샘플`/`PLACEHOLDER`/`NOT-VALID` 등 예시 토큰이 남으면 **절대 통과 안 됨** — 템플릿 그대로 제출 금지.
+- `<…>`/`YYYY-MM-DD` 등 미교체 placeholder 가 남으면 거부.
+- `clinical_reviewed=true`/`published=true` 승격 요구·"약사 검수 완료"·"식약처 승인" 단정 → 거부(천장 = verified_reference).
+- "제품 추천 허용"·"구매/제휴 링크 추가" → 거부.
+- "철분/아연 보충 권장/권유/복용하세요" → 거부. **복용 지시('복용하세요/피하세요/반드시')는 app copy 에도 금지.**
+
 ## 7. full-6 integrator 와의 관계 (충돌 주의)
 
 - 이 subset 통합기와 full-6 통합기(`integrate_theme_map_draft_batch_v1_3.py`)는 **동시 사용 금지**(같은 후보 중복).
 - subset 을 **먼저** 통합하면(60→62), 이후 나머지 4건(TM-LIP-01/02·TM-CEPH-AC-01/02)은 별도 PR 에서 통합.
   현행 full-6 통합기는 후보가 이미 live 면 STOP 하므로, subset-우선 경로에서는 full-6 통합기에 **나머지 4건만** 대상으로
-  하는 `--only` 변형(next_prompts 프롬프트 12) 또는 idempotency skip 보강이 선행돼야 한다.
+  하는 `--only` 변형(next_prompts 프롬프트 16) 또는 idempotency skip 보강이 선행돼야 한다.
 - id 는 runtime max+1 — subset 이 먼저면 나머지 4건은 64~67 로 자동 정합.
+- **중복 생성 불가(실증)**: full-6 `build_projected` 는 `(ingredient, nutrient)` 가 이미 live 면 violation 을 쌓고
+  `main()` 이 STOP 한다(2026-06-16 검증: FE/ZN 이 live 인 temp export 에 full-6 build → `TM-CHEL-01-FE/ZN: 이미 live 에 존재`
+  2건 → STOP). 즉 subset 통합 후 full-6 를 **naive 재실행하면 전체 STOP**(중복 0). 나머지 4건만 통합하려면 `--only` 가 **선행 필수**.
+
+---
+
+## 8. reviewer 결정 체크리스트
+
+> reviewer note 작성 전, 아래를 결정한다(게이트가 강제하는 항목 표시). 미결정 항목이 있으면 note 게이트가 거부한다.
+
+- [ ] **TM-CHEL-01-FE 페니실라민×철분 live 후보 승인**(verified_reference 노출) — *게이트: candidate_id 필수*
+- [ ] **TM-CHEL-01-ZN 페니실라민×아연 live 후보 승인**(verified_reference 노출) — *게이트: candidate_id 필수*
+- [ ] **ZN mechanism = Option A(absorption 추론·confidence moderate·user 카피 '효과 감소' 충실)** 승인 — *게이트: 'mechanism/기전' 줄 필수* (상세 = mechanism 결정 문서 §3)
+- [ ] **FE/ZN 개별 카드 유지**(묶음 카드 아님) — *게이트: 'grouping 결정/개별 카드' 줄 필수*
+- [ ] **verified_reference 수준 노출**(= clinical_reviewed=true 아님) — *게이트: 'verified_reference' + 'clinical_reviewed=true 아님' 필수*
+- [ ] **제품·구매·제휴 추천 아님 / 철분·아연 보충 권유 아님** 확인 — *게이트: 해당 부정 문구 필수 + 허용 문구 거부*
+- [ ] reviewer 식별자(RPH-…) 또는 PM 승인 근거 기재
+
+## 9. PM decision table (부분 승인 포함)
+
+> id 는 runtime max+1. **단건 승인 시 그 단건이 id 62 를 차지**(both 일 때만 FE=62·ZN=63). dry-run artifact
+> `meta.partial_approval_scenarios` 가 동일 값을 기계검증(validator).
+
+| 결정 | included | expected count | expected ids | validator 영향 | 권고 |
+|---|---|---|---|---|---|
+| **approve both** | FE + ZN | 60 → **62** | **62, 63** | 현행 v0.2 PASS(선행조건 0) | ✅ **권고** |
+| approve FE only | FE | 60 → 61 | **62**(max+1) | 현행 v0.2 PASS | ZN 보류 사유 있을 때 |
+| approve ZN only | ZN | 60 → 61 | **62**(max+1, 63 아님) | 현행 v0.2 PASS | ⚠️ 비권장(FE 가 더 확실) |
+| hold ZN (= FE only) | FE | 60 → 61 | 62 | — | ZN needs_review 유지 |
+| reject subset | — | 60 → 60 | (없음) | 변화 없음 | live 0 |
+
+- **현행 통합기는 both-approval 전제**(게이트가 FE/ZN 2건·grouping 강제). 부분 승인이 실제 결정되면 **별도 `--only` 변형(dry-run 우선)**
+  PR 이 필요하며, 본 라운드에서 `--only` 인자는 STOP 처리(미구현)된다. 부분 승인 시나리오 수치는 문서/artifact 로만 제공.
+
+## 10. 부분 승인 — FE-only / ZN-only 판단 근거
+
+- **FE-only**: ZN 라벨 근거('효과 감소'·absorption 추론)가 reviewer 판단에 부족하면 ZN 을 needs_review 로 보류하고 FE 만 노출. 안전(FE 는 '흡수율 저하' 직접근거).
+- **ZN-only**: FE 를 빼고 ZN 만 노출할 실익은 낮다(FE 가 더 확실한 근거인데 제외할 사유가 통상 없음). reviewer 가 FE 특정 위험(예: 전문약 맥락)을 별도 보류할 때만. **권장하지 않음**.
+- **both(권고)**: 둘 다 source-confirmed + 동일 라벨(198300142) + 동일 separation 안내. 일관성·완결성에서 both 가 최선.
+- **neither**: subset 전체 reject → live 0. 차후 재검토.
+
+## 11. 통합 후 rollback / post-live 검증 절차 (다음 단계용 — 본 세션 미실행)
+
+**rollback 원칙**
+- merge **전**(작업 브랜치): `git reset --hard <통합 직전 SHA>` 또는 브랜치 폐기.
+- merge **후**(main): `git revert <통합 commit>` (export 되돌림) → v0.2 validator 재검증 → push.
+- export 에서 relation id 62/63 제거 시 `meta.relation_count` 동기화 + v0.2 validator 재실행 **필수**(count 불일치 시 배포 게이트 FAIL).
+- full index/aliases 는 무관(subset 은 변경 안 함) — rollback 시에도 건드리지 않는다.
+
+**post-live 검증(통합 직후)**
+- relations **62** · 신규 id **62, 63** · `meta.relation_count==62`
+- published=false · clinical_reviewed=false · reviewed_by 공란 · 제품/구매/제휴 UI 0
+- live HTTP 200 · data HTTP 200 · forbidden phrase 0 · smoke 9종 PASS
+- App copy: 철분/아연 **보충 권유 없음** · source quote ↔ app copy 분리 · 제품/구매/제휴 없음 · 상담 톤('약사 또는 의사')
+- counterpart_category 키 부재(일반 영양소) · separation chip '복용 간격' 정상 렌더

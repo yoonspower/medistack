@@ -38,3 +38,11 @@
 3. user 카피 '효과 감소'(absorption 단정 안 함)가 충분히 중립적인지?
 
 > reviewer 결정은 reviewer note(reviewer package §6)에 'mechanism 결정' 줄로 명시 — 게이트가 강제.
+
+## 5. reviewer 선택 체크박스
+
+- [ ] **Option A (권고)** — mechanism=absorption(추론·inference_flag·confidence moderate), user 카피 '효과 감소' 유지. **선행조건 0**(현행 v0.2 PASS).
+- [ ] Option B — mechanism=interaction. ⚠️ v0.2 `ALLOWED_MECHANISM={absorption,depletion}` 밖 → **validator 확장 PR 선행**(렌더/facet 파급) 후에만. subset 의 '선행조건 0' 이점 상실.
+- [ ] Option C — ZN → needs_review 보류, FE 만 통합(60→61·id 62). ZN 가치 상실.
+
+> 기본 채택 = **Option A**(dry-run·통합기 `ZN_MECHANISM_DECISION` 에 고정). B/C 를 원하면 reviewer note 에 명시하고 별도 절차(B 는 validator PR 선행).

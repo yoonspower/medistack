@@ -14,8 +14,8 @@ integrate_penicillamine_subset_v1_3.py(dry-run)가 만든 data/review/penicillam
      product_link/potassium/clinical=false·reviewed_by 부재·source itemSeq 198300142·라벨 quote pointer·
      FE confidence high / ZN inference flag·confidence moderate·기존 live 60·칼륨·AT-FEX 무중복·금칙어/제품/보충권유 0.
   3) v0.2 validator 증거: subset 2건 시뮬 export **PASS**(재실행 확인) → 선행조건 0.
-  4) 결함주입 9종(published=true·reviewed_by 작성·제품 카피·FE 또는 ZN 누락·다른 theme map 포함·live_write=true·
-     잘못된 count·itemSeq 변조·ZN mechanism decision 누락) → 전건 검출.
+  4) 결함주입 10종(published=true·reviewed_by 작성·제품 카피·FE 또는 ZN 누락·다른 theme map 포함·live_write=true·
+     잘못된 count·itemSeq 변조·ZN mechanism decision 누락·ZN_only id 오기) → 전건 검출.
 사용: python3 scripts/validate_penicillamine_subset_dryrun_v1_3.py
 종료코드: 0 PASS, 1 FAIL.
 """
@@ -100,6 +100,25 @@ def validate_artifact(art, exp):
         bad.append("zn_mechanism_decision 미기록")
     if meta.get("live_integration_prerequisites") != []:
         bad.append(f"subset 선행조건은 0이어야: {meta.get('live_integration_prerequisites')}")
+
+    # 부분 승인 시나리오(both/FE_only/ZN_only/neither) 문서 일관성 — id 는 runtime max+1(단건=max+1, both=62·63)
+    ps = meta.get("partial_approval_scenarios")
+    if not isinstance(ps, dict):
+        bad.append("partial_approval_scenarios 미기록")
+    else:
+        single_id = (meta.get("baseline_max_id") or 0) + 1
+        ids_meta = meta.get("expected_ids", [])
+        if ps.get("recommended") != "both":
+            bad.append("partial recommended != both")
+        if ps.get("both", {}).get("expected_count") != after \
+                or sorted(ps.get("both", {}).get("expected_ids", [])) != sorted(ids_meta):
+            bad.append("partial both 불일치(60→62·ids 62,63)")
+        for key in ("FE_only", "ZN_only"):
+            sc = ps.get(key, {})
+            if sc.get("expected_count") != (before or 0) + 1 or sc.get("expected_ids") != [single_id]:
+                bad.append(f"partial {key} 불일치(60→61·id {single_id}=max+1)")
+        if ps.get("neither", {}).get("expected_count") != before or ps.get("neither", {}).get("expected_ids") != []:
+            bad.append("partial neither 불일치(live 0)")
 
     if len(entries) != 2:
         bad.append(f"projected_entries != 2 ({len(entries)})")
@@ -248,6 +267,8 @@ def main():
            lambda a: (a["meta"].pop("zn_mechanism_decision", None),
                       [e.update(risk_flags=[]) for e in a["projected_entries"]
                        if e.get("candidate_id") == "TM-CHEL-01-ZN"]))
+    inject("ZN_only id 오기(both 모드 63 을 단건에 사용)",
+           lambda a: a["meta"]["partial_approval_scenarios"]["ZN_only"].update(expected_ids=[63]))
     fails.extend(inj_fail)
 
     print(f"=== 페니실라민 subset dry-run 검증: 라이브 relations {len(exp['relations'])}(불변) · 예상 {art['meta'].get('expected_relation_count_before')}→{art['meta'].get('expected_relation_count_after')} ===")
@@ -257,7 +278,7 @@ def main():
         print(f"RESULT: FAIL — {len(fails)}건")
         return 1
     print("RESULT: PASS — FE/ZN 2건 계약 안전(60→62·counterpart_category=null·draft누출0·제품/보충 0·라이브 무수정) · "
-          "sim v0.2 PASS(선행조건 0) · 결함주입 9종 검출")
+          "sim v0.2 PASS(선행조건 0) · 부분승인 시나리오 일관 · 결함주입 10종 검출")
     return 0
 
 
