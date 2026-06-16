@@ -4,6 +4,8 @@
 > **reviewer-ready 37**(survives 31 + survives_with_copy_change 6)만 본 패키지에 포함. 강등 6(needs_review 5·hold 1)은 §6.
 > 정본 데이터: `data/drafts/relation_factory_reviewer_ready_batch_v1_4.json` · 판정 근거 `data/review/relation_factory_adversarial_verify_v1_4.json`.
 >
+> **F1 퀴놀론 18건 reviewer-gated 통합 준비(2026-06-16):** reviewer-ready 의 **F1 18건**(survives)을 전용 패키지 `docs/MediStack_reviewer_package_f1_quinolone_v1_4.md` 로 분리(작업 C family 재검증: 17 survives + 1 copy_change[RF-F1-0020]·강등 0). dry-run integrator `scripts/integrate_f1_quinolone_batch_v1_4.py`(`--scope all18/nutrient10/antacid8`)·선행조건 0·index/alias 무변경(60→78). F1 reviewer note 는 그 패키지 §6 사용. F2~F10 은 본 패키지 유지.
+>
 > ⚠️ **`reviewer_ready` 는 자동 검증 렌즈 통과를 의미하며 `clinical_reviewed=true`·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.**
 > ⚠️ 본 패키지의 어떤 항목도 제품/구매/제휴·보충제 추천·복용 지시가 아니다. 전건 `published=false`·`reviewed_by` 공란.
 

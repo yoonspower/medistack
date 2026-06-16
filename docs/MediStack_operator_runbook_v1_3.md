@@ -4,6 +4,8 @@
 
 > 이 문서는 MediStack 의 **일상 운영 절차**를 한 곳에 묶는다. harvester 수동 운영 → PM review queue 확인 → reviewer note 확보 →
 > dry-run 검증 → live 통합 승인 → deploy → rollback 까지의 흐름이다. 세부 정본은 상호참조로 가리킨다(중복 최소화):
+>
+> **F1 퀴놀론 reviewer-gated 통합(2026-06-16):** factory reviewer-ready 의 첫 통합 후보. dry-run `python3 scripts/integrate_f1_quinolone_batch_v1_4.py [--scope all18|nutrient10|antacid8]` → 3 산출물(inventory/live_dryrun/index_impact) → `validate_f1_quinolone_dryrun_v1_4.py`·`smoke_f1_quinolone_dryrun_v1_4.py`·`test_f1_quinolone_reviewer_note_gate_v1_4.py` PASS 확인 → reviewer note 실물 확보 → `--pm-approved --reviewer-note` 로 live(별도 PR). 권고 grouping=by-counterpart 2-wave. 패키지 `docs/MediStack_reviewer_package_f1_quinolone_v1_4.md`·grouping `_grouping_strategy_v1_4.md`.
 > harvester 운영 → `MediStack_harvester_ops_v1_3.md` · 핸드오프 → `MediStack_clinical_reviewer_handoff_v1_2.md` ·
 > reviewer 패키지 → `MediStack_reviewer_package_potassium_v1_3.md` / `MediStack_reviewer_package_antacid_fex_v1_3.md` ·
 > schedule 활성화 → `MediStack_harvester_schedule_activation_v1_3.md` · 다음 라운드 → `MediStack_next_prompts_2026_06_15.md`.

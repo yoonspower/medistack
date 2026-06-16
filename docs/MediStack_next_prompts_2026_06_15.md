@@ -4,6 +4,8 @@
 
 이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = clinical reviewer 핸드오프 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격(3건 통합 드라이런 완료), published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
 
+> **갱신(2026-06-16, F1 퀴놀론 reviewer-gated 통합 준비 라운드)**: factory reviewer-ready 37 중 **F1 플루오로퀴놀론 18건**(survives 18/18)을 reviewer-gated subset 으로 분리해 통합 준비 완료(live 0). **작업 C family 재검증**: 17 survives + **1 copy_change**(RF-F1-0020 오플록사신 끝 stray '1' 트림=verbatim 부분문자열) · 강등 0. **선행조건 0**(al_mg_antacid=id61 선례·일반 영양소=live FQ×광물 둘 다 현행 v0.2+src 지원) · **index/alias 무변경**(레보/오플 covered·신규 6 성분 sample 부재 → relation_card 1168/name_only 16412 불변). 신규: `scripts/integrate_f1_quinolone_batch_v1_4.py`(dry-run·`--scope all18/nutrient10/antacid8`·`--pm-approved --reviewer-note` 전제) → `data/review/f1_quinolone_{inventory,live_dryrun,index_impact}_v1_4.json`(60→78·id 62~79·sha 불변) · `test_f1_quinolone_reviewer_note_gate_v1_4.py`(temp write all18/nutrient10/antacid8·idempotency·live sha 불변) · `validate_f1_quinolone_dryrun_v1_4.py`(결함주입 12) · `smoke_f1_quinolone_dryrun_v1_4.py`(18 카드) · docs `MediStack_f1_quinolone_inventory_v1_4.md`·`_grouping_strategy_v1_4.md`·`reviewer_package_f1_quinolone_v1_4.md`·`_index_impact_v1_4.md`. 권고 grouping = **by-counterpart 2-wave**(nutrient10 60→70 → antacid8 70→78). 아래 **프롬프트 17~19** 신설. ↓이전:
+>
 > **갱신(2026-06-16, 페니실라민 reviewer decision 하드닝 라운드)**: reviewer note 실물 **없음 확인 → live 0** 유지. subset 통합기에 **부분 승인 시나리오**(`meta.partial_approval_scenarios`: both 60→62·id 62,63 / FE_only·ZN_only 60→61·**id 62=max+1** / neither 60) + `--only` STOP(미구현·both-approval 전제) 추가. validator 결함주입 **10종**(ZN_only id 오기 추가)·부분승인 일관성 검증. reviewer package **§8 결정 체크리스트·§9 PM decision table·§10 FE-only/ZN-only 근거·§11 rollback·post-live 검증** + mechanism doc **§5 Option 체크박스** 보강. **full-6 중복 생성 불가 실증**(FE/ZN live 인 temp 에 full-6 build → 2 violation→STOP). 프롬프트 14·15 갱신. ↓이전:
 >
 > **갱신(2026-06-16, 페니실라민 FE/ZN subset 통합 준비 라운드)**: theme map 6건 중 **페니실라민 × 철분/아연 2건만** subset 으로 분리해 reviewer-gated 준비 완료(승격 0). 둘 다 **counterpart_category=null(일반 영양소) → live 선행조건 0**(현행 v0.2 PASS 실증·src/facet/chip/validator/full index/aliases 변경 불필요) → theme map 6건 중 **가장 먼저 안전 통합 가능**. 신규: `scripts/integrate_penicillamine_subset_v1_3.py`(dry-run·`--pm-approved --reviewer-note` 전제) → `data/review/penicillamine_subset_live_dryrun_v1_3.json`(**60→62**·id 62~63·sha 불변·prerequisites []) · `test_penicillamine_reviewer_note_gate_v1_3.py` · `validate_penicillamine_subset_dryrun_v1_3.py`(결함주입 9) · `smoke_penicillamine_subset_v1_3.py` · docs `MediStack_reviewer_package_penicillamine_subset_v1_3.md` · `MediStack_penicillamine_mechanism_decision_v1_3.md`. **ZN mechanism 결정 = Option A**(absorption 추론 유지·confidence moderate·user 카피 '효과 감소' 충실 — Option B interaction 은 v0.2 ALLOWED_MECHANISM 밖이라 validator PR 선행 필요라 비채택). subset 게이트와 full-6 게이트는 **상호 배타**(노트 교차 거부)·dry-run artifact 분리. 아래 **프롬프트 14~16** 신설. ↓이전:
@@ -275,3 +277,51 @@ factory 43 draft → 적대검증(refute-by-default) → **reviewer-ready 37**(s
 7. 기존 트랙 병행: 페니실라민(프롬프트 14·15)·theme map(16·11)·칼륨(2)·AT-FEX(1) — 전부 reviewer note 전제.
 
 > **금지**: reviewer-ready/factory 후보 live 추가 · published/clinical=true · 제품/구매/제휴 UI · 강등분 승격 · 계열 일반화 draft.
+
+---
+
+## 프롬프트 17 — F1 퀴놀론 18건 reviewer decision (승격 아님)
+
+> **전제**: clinical reviewer 가 `docs/MediStack_reviewer_package_f1_quinolone_v1_4.md` §5 decision table + §6 note 템플릿으로 판단. 통합 0.
+>
+> **작업**: F1 18건(reviewer package 카드)별로 reviewer 가 (a) 승인 범위(all18/nutrient10/antacid8/by-ingredient/일부 hold) (b) grouping (c) **al_mg_antacid category 채택**(id61 선례·Mg 영양제 아님) (d) separation 간격 노출 여부 (e) 발로플록사신 action 입도(separation vs avoid_concomitant) (f) 오플록사신 경구 scope 표기 (g) verified_reference 노출 동의 를 결정해 §6 노트로 회신. 신규 코드/데이터 0(reviewer 회신 수집만).
+>
+> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화.
+
+## 프롬프트 18 — F1 퀴놀론 live 통합 (reviewer note 실물 전제)
+
+> **선행 충족 필수**: ①§6 reviewer note 실물(승인 토큰+scope 전건 candidate_id+al_mg_antacid+간격+grouping+verified_reference+clinical≠true+제품/복용권유 아님+reviewer 식별자) ②별도 PM 승인 ③별도 PR.
+>
+> **작업**: `python3 scripts/integrate_f1_quinolone_batch_v1_4.py --scope <all18|nutrient10|antacid8> --pm-approved --reviewer-note <노트>` (멱등: (ingredient,counterpart) 이미 있으면 skip). gate 가 scope 선언 ↔ 요청 scope 일치 + 전건 명시 강제. **예상**: all18 60→78(id 62~79) / nutrient10 60→70 / antacid8 60→68. nutrient=category 키 부재 · 제산제=al_mg_antacid·'약물' 표기 · product_link/potassium/clinical=false.
+>
+> **통합 후 검증(전수 PASS)**: relation-count 하드코딩 validator 갱신(60→target) + v0.2 export(16/16) + full index/aliases(무변경 확인) + forbidden 0 + full smoke 9종 + no-live-write guard 비대상 + deploy 게이트 + **live HTTP 200** + git clean. relation-count baseline 을 쓰는 다수 validator(factory_integration·coverage_queue 등) 동반 갱신 주의.
+>
+> **금지**: 강등/needs_review 후보 동시 통합 · evidence 임의 상향 · clinical_reviewed=true·published=true·reviewed_by 작성 · Mg 영양제 relation 으로 저장 · 제품 UI.
+
+## 프롬프트 19 — F1 subset 통합 (top10 nutrient / top8 antacid / by-counterpart 2-wave)
+
+> **전제**: 프롬프트 18 과 동일(reviewer note 실물). subset 만 별도 PR.
+>
+> **작업**: 권고 grouping = **by-counterpart 2-wave** — wave1 `--scope nutrient10`(60→70·live FQ×광물 동일 렌더·신규성 0), wave2 `--scope antacid8`(70→78·id61 렌더 경로). 또는 `--candidate-ids A,B,...` 로 임의 subset. 각 wave 는 자체 reviewer note(해당 scope 전건). dry-run(`data/review/f1_quinolone_live_dryrun_v1_4.json` scope_scenarios) 일치 확인 후 live.
+>
+> **금지**: 프롬프트 18 과 동일.
+
+## 프롬프트 20 — F2 테트라사이클린 5건 reviewer package (승격 아님)
+
+> **작업**: factory reviewer-ready F2 5건(테트라사이클린 family·survives 5/5)을 F1 패턴으로 reviewer package + dry-run integrator + gate/validator/smoke + inventory 작성(통합 0). dedup: live 독시/미노사이클린 ×광물 존재 → 신규 성분/counterpart 만. al_mg_antacid·일반 영양소 분기 동일.
+>
+> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화.
+
+## 프롬프트 21 — F9 만성 depletion 확장 batch 2 (draft-only · 승격 아님)
+
+> **작업**: F9 만성 depletion·F10 azole(최고 수확) + 미커버 약물 신규 seed 로 factory batch 2. inventory dedup 선행 필수. 적대검증(refute-by-default 10 렌즈) + source-check. live 0. F9 needs_review 5(임신 한정/동물/ADR 매몰) 라벨 재검색 동반.
+>
+> **금지**: 통합·schedule 활성화·harvester 자동 실행·계열 일반화.
+
+## 프롬프트 22 — factory reviewer-ready 37 전체 dry-run integrator (승격 아님)
+
+> **작업**: reviewer-ready 37(F1 18 포함) 전체를 단일 dry-run integrator 로 projected count/ids 산출 + family별 선행조건/충돌/dedup 매트릭스. **F1 통합분 중복 생성 금지**(이미 live 면 (ingredient,counterpart/category-counterpart) 키로 skip). reviewer note 확보분만 STOP-guard 통과. live write 0.
+>
+> **금지**: 통합·published/clinical=true·제품 UI.
+
+> 기존 트랙 병행 유지: 페니실라민(14·15)·theme map(10~13·16·11)·칼륨(2)·AT-FEX(1) — 전부 reviewer note 전제.

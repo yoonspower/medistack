@@ -2,6 +2,8 @@
 
 > Relation Factory Bot v1.4 라운드(2026-06-16) 산출. **live 승격 0** — 본 문서는 1,000 relation 달성 경로·구조·수확률.
 > 정본 데이터: `data/review/relation_factory_*_v1_4.*` · draft `data/drafts/relation_factory_draft_batch_v1_4.json`.
+>
+> **F1 퀴놀론 18건 통합 준비(2026-06-16, live 0):** 첫 reviewer-gated 통합 후보 = **F1 18건**(60→78). by-counterpart 2-wave 권고(nutrient10 60→70 → antacid8 70→78). 선행조건 0·index/alias 무변경. `scripts/integrate_f1_quinolone_batch_v1_4.py` + docs `MediStack_f1_quinolone_*_v1_4.md`. 1,000 경로의 첫 가시적 진척.
 
 ## 1. 현재 위치
 

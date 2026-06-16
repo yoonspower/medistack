@@ -3,6 +3,8 @@
 작성일: 2026-06-15 · 상태: **분석/백로그 · 실행 금지(승격 0)** · 자기완결
 
 > **Relation Factory v1.4 적대검증(2026-06-16):** 별도 factory 트랙의 source_confirmed draft 43 → reviewer-ready **37**(survives 31·copy_change 6) · 강등 6(needs_review 5·hold 1). 본 harvester 백로그와 **별개 트랙**. 정본 `docs/MediStack_reviewer_package_relation_factory_v1_4.md`.
+>
+> **F1 퀴놀론 18건 통합 준비(2026-06-16):** reviewer-ready F1 18건 → reviewer-gated 통합 준비(live 0·60→78·선행조건 0). 정본 `docs/MediStack_reviewer_package_f1_quinolone_v1_4.md` + `scripts/integrate_f1_quinolone_batch_v1_4.py`. 본 백로그와 별개 트랙.
 
 > 이 문서는 harvester bot v1.3 **2차 online run**(2026-06-15)의 PM review queue 를 분석해, 이미 트리아지된 항목을
 > 제거하고 **남은 신규 후보를 분류·우선순위화**한 백로그다. 모든 항목 `do_not_implement_yet=true` · `live_integration_forbidden=true` ·

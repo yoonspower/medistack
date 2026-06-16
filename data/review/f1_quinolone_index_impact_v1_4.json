@@ -1,0 +1,71 @@
+{
+ "meta": {
+  "name": "f1_quinolone_index_impact_v1_4",
+  "status": "ANALYSIS — read-only / no index/alias write",
+  "purpose": "F1 18건 live 통합 시 full index/relation_card/name_only/aliases 영향 분석.",
+  "confirmed_at": "2026-06-16"
+ },
+ "impact": {
+  "full_index_counts_current": {
+   "total": 17580,
+   "relation_card": 1168,
+   "name_only": 16412
+  },
+  "per_ingredient": {
+   "노르플록사신": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false
+   },
+   "레보플록사신": {
+    "index_items": 91,
+    "covered_by_relation": 91,
+    "name_only": 0,
+    "in_aliases": true
+   },
+   "로메플록사신": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false
+   },
+   "발로플록사신": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false
+   },
+   "오플록사신": {
+    "index_items": 33,
+    "covered_by_relation": 33,
+    "name_only": 0,
+    "in_aliases": true
+   },
+   "자보플록사신": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false
+   },
+   "토수플록사신": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false
+   },
+   "페플록사신": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false
+   }
+  },
+  "relation_card_flip_required": 0,
+  "relation_card_after": 1168,
+  "name_only_after": 16412,
+  "index_change_required": false,
+  "alias_change_required": false,
+  "interpretation": "레보/오플록사신은 이미 covered(live ×광물). 신규 6 성분(노르·로메·발로·자보·토수·페플록사신)은 현 index sample(17,580)에 부재 → flip 0 · relation_card 1168/name_only 16412 불변. index/aliases 는 relation export 와 decoupled(런타임 재생성·fail-soft 검색보조) → F1 통합 선행 변경 불필요. 차후 index 재생성 시 6 성분 품목이 추가되면 자연히 relation_card 로 표기(별도 index 작업·통합 전제 아님)."
+ }
+}
