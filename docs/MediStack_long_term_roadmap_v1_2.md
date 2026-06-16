@@ -144,6 +144,8 @@ saved_stack·가족 프로필이 **언젠가 풀릴 때**, 다음 요건을 **�
 | **약사 참여** | 문구 검수·품질 자문·상담 신뢰 | 제품 추천·판매·랭킹·"검수 완료" 보증·봉인 자동 해제 | §5, clinical reviewer 체크리스트 |
 | **유료화** | 경계 확정(설계 동결) | 결제·구독·플래그 구현(coverage·saved_stack 전)·추천/제휴/광고 수익 | §6, free_plus 전체 |
 
+> **coverage(우선순위 1) 진행 상황(2026-06-16)**: relation 60(live) + reviewer-gated 후보(칼륨 4·AT-FEX·theme map 6, 전부 dry-run/검증 완료·승격 0). theme map 6건 live 통합은 reviewer note + 선행조건 후 별도 PR. 본 표의 경계(제품/제휴/published/clinical_reviewed)는 불변. 추적 정본 = `docs/MediStack_next_prompts_2026_06_15.md`(프롬프트 1·2·11) · `docs/MediStack_candidate_backlog_v1_3.md`.
+
 ---
 
 ## 8. 이 로드맵이 **아닌 것** (What this is NOT)

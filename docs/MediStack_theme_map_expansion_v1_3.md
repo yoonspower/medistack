@@ -89,3 +89,11 @@
 - **runtime 산출물**(`data/harvest_queue/theme_map_*`)은 `.gitignore`(커밋 0). 커밋 = review summary `data/review/theme_map_harvest_incorporation_v1_3.json` 뿐.
 - **검증**: `scripts/validate_harvester_theme_map_v1_3.py`(17 검사군+결함주입 9)·`scripts/smoke_harvester_theme_map_v1_3.py`(PM queue+6 카드)·guard flag run(보호셋 불변·write-scope·direct-http 0) PASS.
 - **남은 일**: reviewer 가 §7-1·2 확정 → live 통합은 clinical reviewer note + 수동 단계 후 별도 PR(harvester 자동 승격 없음).
+
+## 9. live 통합 reviewer-gated 준비 (2026-06-16 · 승격 0)
+
+PR #3 merge 후, 6건의 **live 통합을 reviewer-gated 로 준비**했다(실제 통합·src/validator/export 수정 0).
+- 문서: reviewer 패키지 `docs/MediStack_reviewer_package_theme_map_v1_3.md`(후보별 카드·**reviewer-note 템플릿**) · category 정책 `docs/MediStack_counterpart_category_policy_v1_3.md` · grouping 전략 `docs/MediStack_theme_map_grouping_strategy_v1_3.md`.
+- dry-run integrator `scripts/integrate_theme_map_draft_batch_v1_3.py`(기본 dry-run·`--pm-approved --reviewer-note` 전제·멱등) → `data/review/theme_map_live_dryrun_v1_3.json`: 예상 **60→66**(id 62~67)·export sha 불변·live_write 0.
+- 게이트/검증: `scripts/test_theme_map_reviewer_note_gate_v1_3.py`(6건+category+grouping+mechanism+verified_reference·SAMPLE/promo 거부·temp write 60→66·live sha 불변) · `scripts/validate_theme_map_live_dryrun_v1_3.py`(계약+결함주입 9) · `scripts/smoke_theme_map_live_dryrun_v1_3.py`.
+- **live 선행조건(별도 PR)**: ①v0.2 validator #15(avoid_concomitant⇒al_mg_antacid)→acid_reducing_drug 포함 확장(TM-CEPH-AC-02) ②src getFacets(fat_soluble_vitamin facet 포함·drug category 제외) ③src render.js(acid_reducing_drug chip). separation 5건 현행 v0.2 PASS, 6건 전체는 선행조건 후. 실행 = next_prompts 프롬프트 11.

@@ -8,6 +8,8 @@
 
 > **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
 
+> **갱신(2026-06-16, theme map reviewer-gated 통합 준비 라운드)**: 프롬프트 9 PR #3 **main merge 완료**(81e8ec6, deploy success, live 200). 이어 theme map 6건의 **live 통합 reviewer-gated 준비** 완료(승격 0): ①reviewer 패키지 `docs/MediStack_reviewer_package_theme_map_v1_3.md`(후보별 카드·reviewer-note 템플릿) ②category 정책 `docs/MediStack_counterpart_category_policy_v1_3.md` ③grouping 전략 `docs/MediStack_theme_map_grouping_strategy_v1_3.md` ④**dry-run integrator** `scripts/integrate_theme_map_draft_batch_v1_3.py`(기본 dry-run·`--pm-approved --reviewer-note` 전제·멱등) → `data/review/theme_map_live_dryrun_v1_3.json`(60→66·id 62~67·export sha 불변·live_write 0) ⑤reviewer-note 게이트 `scripts/test_theme_map_reviewer_note_gate_v1_3.py`(6건+category+grouping+mechanism+verified_reference·SAMPLE/promo 거부·temp write 60→66·live sha 불변) ⑥dry-run validator `scripts/validate_theme_map_live_dryrun_v1_3.py`(계약+결함주입 9) ⑦smoke `scripts/smoke_theme_map_live_dryrun_v1_3.py`. **핵심 발견(live 선행조건)**: v0.2 validator 검사 #15(avoid_concomitant⇒al_mg_antacid)가 TM-CEPH-AC-02(acid_reducing_drug+avoid_concomitant)를 차단 → separation 5건은 현행 v0.2 PASS, 6건 전체는 validator #15 확장 + src(getFacets nutrient_categories 포함·acid_reducing_drug chip) 선행조건 필요(별도 PR). live 통합·schedule·자동 integrate·export/index/alias/src 수정 0. 아래 **프롬프트 10~13** 신설. ↓이전:
+
 > **갱신(2026-06-16, harvester 편입 PR 라운드)**: 프롬프트 9 **실행**(branch `harvester-theme-map-v1.3` + PR) — 신규 theme map 6건을 harvester 에 **candidate-only 편입**(manual flag `--include-theme-map-expansion`, 기본 비활성, config-driven 격리 provider). seed config `data/config/theme_map_seeds_v1_3.json` + provider `scripts/theme_map_harvest_provider_v1_3.py` → PM review queue(draft 6 + hold 7). 신규 category(acid_reducing_drug·fat_soluble_vitamin) review-level 처리. validator(17+결함주입 9)·smoke·guard(flag run) PASS. runtime `data/harvest_queue/theme_map_*` gitignore(커밋 0), 요약만 `data/review/theme_map_harvest_incorporation_v1_3.json` 커밋. **live 통합·schedule 활성화·자동 integrate·main push/merge 0.** 정본 ops §14. ↓이전:
 
 > **갱신(2026-06-16, theme map 적대검증 라운드)**: 프롬프트 8 **실행** — draft 6건 refute-by-default 적대검증(8 렌즈) + 2차 source-check. 6건 전부 survives(3 clean / 3 copy_change), source quote 6/6 verbatim 정정·확인. counterpart_category 확정(acid_reducing_drug 신규). 2차 source-check 신규 draft 0(콜레세벨람·메틸도파 미유통·이소니아지드 B6=AE 치료 지시 → 전부 hold). validator 17 검사군·결함주입 9·smoke 6 카드 PASS. 정본 ledger `theme_map_adversarial_verify_v1_3.json`. live 통합·schedule·workflow·export/index/alias 수정 0. ↓이전:
@@ -160,3 +162,51 @@
 > **작업**: 신규 family seed 를 harvester theme map 에 편입할지 결정하는 **PR 설계**(편입 자체는 PM 승인 후). 편입 순서는 반드시 **source-check queue → PM review → draft-only → live 금지**. schedule 은 비활성 유지(프롬프트 6). runtime queue(`data/harvest_queue/`) 커밋 금지. 같은 theme map 반복 run 비효율(신규 0 수렴) 인지 — 신규 seed 만 가치.
 >
 > 근거: `docs/MediStack_theme_map_expansion_v1_3.md` §6 · `docs/MediStack_harvester_ops_v1_3.md` §13.
+
+---
+
+## 프롬프트 10 — theme map 6건 reviewer/category/grouping 결정 (승격 아님)
+
+> **선행**: PR #3 merge 완료(theme map candidate-only 편입 live). reviewer 패키지·category 정책·grouping 전략 문서 ready.
+>
+> **작업(결정 단계 — live 통합 아님)**: clinical reviewer / PM 이 `docs/MediStack_reviewer_package_theme_map_v1_3.md` §3 후보별 카드를 검토하고 **4가지 결정**을 내려 reviewer note(§8 템플릿)를 작성하라. ①**acid_reducing_drug** category 채택(세팔로 acid-reducer, id61 al_mg_antacid 와 구분) vs 통합 — 근거 `docs/MediStack_counterpart_category_policy_v1_3.md` §3. ②**fat_soluble_vitamin** group 채택. ③**grouping**: 지용성 비타민 group 단일(권고) vs 비타민별 분리 · 페니실라민 FE/ZN 개별(권고) vs 묶음 — `docs/MediStack_theme_map_grouping_strategy_v1_3.md`. ④**TM-CHEL-01-ZN mechanism**: absorption(권고) vs interaction(user 카피 영향 없음). reviewer note 는 게이트(`integrate_theme_map_draft_batch_v1_3.check_reviewer_note`)가 강제하는 요건(승인 토큰·6건 전건·category 2종·grouping·mechanism·verified_reference·clinical_reviewed=true 아님·제품/보충 추천 아님)을 전건 충족해야 한다.
+>
+> **불변**: live relation 0 · published/clinical_reviewed=false · reviewed_by 공란 · 제품/보충 UI 0. **결정·노트 작성까지가 범위.**
+
+근거: `docs/MediStack_reviewer_package_theme_map_v1_3.md` · `docs/MediStack_counterpart_category_policy_v1_3.md` · `docs/MediStack_theme_map_grouping_strategy_v1_3.md`.
+
+---
+
+## 프롬프트 11 — theme map 6건 live 통합 (reviewer note + 선행조건 전제)
+
+> **선행 충족 필수(전부)**: ①프롬프트 10 reviewer note 확보(실물·게이트 통과). ②**v0.2 validator #15 확장**(별도 작업): `avoid_concomitant` 허용 counterpart_category 에 `acid_reducing_drug` 추가(TM-CEPH-AC-02) — 또는 reviewer 가 TM-CEPH-AC-02 를 separation 으로 하향. ③**src 선행**: `src/js/guards.js getFacets`(fat_soluble_vitamin facet 포함·drug category 제외) + `src/js/render.js`(acid_reducing_drug 전용 chip/kicker). ④별도 PM 승인.
+>
+> **작업**: theme map **6건**(또는 reviewer 가 승인한 subset)을 v0.2 export 에 멱등 append-only 통합하라 — `python3 scripts/integrate_theme_map_draft_batch_v1_3.py --pm-approved --reviewer-note <노트>`. id 는 runtime max+1(현재 60→66·id 62~67. AT-FEX/칼륨 먼저면 자동 조정). 각 행: display=draft `display_text_ko_draft`·management=`management_copy_draft`·product_link_allowed=false·potassium_safety_card=false·requires_clinical_review=false·counterpart_category(fat_soluble_vitamin 2·acid_reducing_drug 2·생략 2)·source={허가사항,url,pointer(itemSeq+quote+확인일)}. **full index/aliases 무변경.**
+>
+> **통합 후 검증(전수 PASS)**: relation-count 하드코딩 validator **+6 누적 갱신**(AT-FEX/칼륨 통합 순서 따라 baseline 조정) + 신규 `validate_theme_map_live_integration_v1_3.py`(드라이런 검증기를 live 대상 전환) + v0.2 export validator(python+node) + facet/chip node 렌더(신규 category) + forbidden 0 + full smoke + no-live-write guard + deploy 게이트 + **live HTTP 200** + git clean.
+>
+> **금지**: reviewer note 없이 통합 · hold 7건 동반 · clinical_reviewed=true · published=true · reviewed_by 작성 · 제품/제휴 UI · 보충 권유 · 비타민K 항응고 framing · acid_reducing_drug 를 al_mg_antacid 로 축소 · 제산제/H2/PPI 를 Mg 영양제로 표기 · src 선행조건 없이 통합(facet/chip 깨짐).
+
+근거: `data/review/theme_map_live_dryrun_v1_3.json`(선행조건·예상치) · `scripts/integrate_theme_map_draft_batch_v1_3.py` · `scripts/validate_theme_map_live_dryrun_v1_3.py` · `docs/MediStack_reviewer_package_theme_map_v1_3.md` §7.
+
+---
+
+## 프롬프트 12 — theme map subset 통합 (예: 지용성 2건만 / 페니실라민 2건만 / 세팔로 2건만)
+
+> **상태**: 현행 integrator 는 **6건 일괄**(reviewer note 도 6건 전건 요구). subset 통합은 별도 변형 필요.
+>
+> **작업(설계 단계)**: reviewer 가 일부만 우선 노출하려는 경우(예: 페니실라민 FE/ZN 2건만 — src 변경 불필요·일반 영양소라 가장 안전, 또는 지용성 2건만 — facet 선행만, 또는 세팔로 2건만 — chip+#15 선행), `integrate_theme_map_draft_batch_v1_3.py` 에 **`--only <candidate_id,...>` 필터**를 추가하고, reviewer-note 게이트의 candidate 요건을 subset 으로 좁히는 변형을 설계하라. **권고 우선순위**: ①페니실라민 FE/ZN(선행조건 0) → ②지용성 비타민(facet 선행) → ③세팔로 acid-reducer(chip+validator #15 선행). 각 subset 의 예상 count·선행조건을 dry-run 으로 별도 산출.
+>
+> **불변**: subset 도 reviewer note 전제 · live 0(설계까지) · 선행조건 미충족 category 는 통합 금지.
+
+근거: `docs/MediStack_theme_map_grouping_strategy_v1_3.md` §4 · `data/review/theme_map_live_dryrun_v1_3.json`.
+
+---
+
+## 프롬프트 13 — category/grouping 정책 reviewer sign-off (문서 검토 · 승격 아님)
+
+> **작업**: reviewer 가 `docs/MediStack_counterpart_category_policy_v1_3.md` 와 `docs/MediStack_theme_map_grouping_strategy_v1_3.md` 를 검토하고, ①category 카탈로그(nutrient_categories vs drug_categories 분기) ②al_mg_antacid vs acid_reducing_drug 분리 근거 ③§6 향후 src 검토사항(getFacets·render chip·validator #15)에 sign-off 하라. 이 sign-off 는 프롬프트 11 의 src/validator 선행조건 작업을 착수할 근거가 된다.
+>
+> **불변**: 문서 검토·sign-off 까지가 범위. src/validator/export 수정 0.
+
+근거: `docs/MediStack_counterpart_category_policy_v1_3.md` · `docs/MediStack_theme_map_grouping_strategy_v1_3.md`.

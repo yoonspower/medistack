@@ -222,6 +222,13 @@ export MEDISTACK_NOTIFY_IMESSAGE_TO="yoonspower@gmail.com"
 
 ---
 
+## 12.5 theme map live 통합 (reviewer-gated · 준비 완료 · 미실행)
+
+theme map 6건의 live 통합은 **reviewer note + 선행조건 후 별도 PR**(자동·이번 라운드 실행 0).
+1. reviewer 가 `docs/MediStack_reviewer_package_theme_map_v1_3.md` §3 검토 → §8 템플릿으로 note 작성(category·grouping·zinc mechanism 결정 포함).
+2. **선행조건(별도 PR)**: v0.2 validator #15 를 acid_reducing_drug 포함 확장 + src(getFacets·acid_reducing_drug chip). dry-run = `data/review/theme_map_live_dryrun_v1_3.json`.
+3. `python3 scripts/integrate_theme_map_draft_batch_v1_3.py --pm-approved --reviewer-note <노트>`(60→66·멱등) → 통합 후 검증 전수 + live HTTP 200. 게이트 회귀 = `scripts/test_theme_map_reviewer_note_gate_v1_3.py`. 실행 프롬프트 = next_prompts 프롬프트 11.
+
 ## 13. 금지 (운영 불변)
 
 live relation 실제 추가(승인 경로 외) / export·full index·aliases·DATA_URL 직접 손편집 / schedule 활성화(이 라운드) /
