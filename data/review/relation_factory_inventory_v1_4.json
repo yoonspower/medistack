@@ -1,0 +1,781 @@
+{
+ "meta": {
+  "name": "relation_factory_inventory_v1_4",
+  "purpose": "Relation Factory v1.4 중복방지 인벤토리(읽기전용). live/pending/draft/needs_review/hold/reject 통합.",
+  "live_relations": 60,
+  "do_not_implement_yet": true,
+  "live_integration_forbidden": true,
+  "dedup_key_count": 87,
+  "counts": {
+   "live_pairs": 60,
+   "source_confirmed_draft": 0,
+   "needs_review": 0,
+   "hold": 3,
+   "reject": 10,
+   "no_domestic_product": 5,
+   "high_risk_permanent_hold": 5
+  }
+ },
+ "live_pairs": [
+  {
+   "drug": "레보플록사신",
+   "counterpart": "칼슘",
+   "key": "레보플록사신|ca",
+   "src": "live id1",
+   "id": 1,
+   "counterpart_category": null
+  },
+  {
+   "drug": "레보플록사신",
+   "counterpart": "철분",
+   "key": "레보플록사신|fe",
+   "src": "live id2",
+   "id": 2,
+   "counterpart_category": null
+  },
+  {
+   "drug": "레보플록사신",
+   "counterpart": "마그네슘",
+   "key": "레보플록사신|mg",
+   "src": "live id3",
+   "id": 3,
+   "counterpart_category": null
+  },
+  {
+   "drug": "시프로플록사신",
+   "counterpart": "칼슘",
+   "key": "시프로플록사신|ca",
+   "src": "live id4",
+   "id": 4,
+   "counterpart_category": null
+  },
+  {
+   "drug": "시프로플록사신",
+   "counterpart": "철분",
+   "key": "시프로플록사신|fe",
+   "src": "live id5",
+   "id": 5,
+   "counterpart_category": null
+  },
+  {
+   "drug": "시프로플록사신",
+   "counterpart": "마그네슘",
+   "key": "시프로플록사신|mg",
+   "src": "live id6",
+   "id": 6,
+   "counterpart_category": null
+  },
+  {
+   "drug": "독시사이클린",
+   "counterpart": "칼슘",
+   "key": "독시사이클린|ca",
+   "src": "live id7",
+   "id": 7,
+   "counterpart_category": null
+  },
+  {
+   "drug": "독시사이클린",
+   "counterpart": "철분",
+   "key": "독시사이클린|fe",
+   "src": "live id8",
+   "id": 8,
+   "counterpart_category": null
+  },
+  {
+   "drug": "독시사이클린",
+   "counterpart": "마그네슘",
+   "key": "독시사이클린|mg",
+   "src": "live id9",
+   "id": 9,
+   "counterpart_category": null
+  },
+  {
+   "drug": "레보티록신",
+   "counterpart": "칼슘",
+   "key": "레보티록신|ca",
+   "src": "live id10",
+   "id": 10,
+   "counterpart_category": null
+  },
+  {
+   "drug": "레보티록신",
+   "counterpart": "철분",
+   "key": "레보티록신|fe",
+   "src": "live id11",
+   "id": 11,
+   "counterpart_category": null
+  },
+  {
+   "drug": "메트포르민",
+   "counterpart": "비타민B12",
+   "key": "메트포르민|b12",
+   "src": "live id12",
+   "id": 12,
+   "counterpart_category": null
+  },
+  {
+   "drug": "오메프라졸",
+   "counterpart": "비타민B12",
+   "key": "오메프라졸|b12",
+   "src": "live id13",
+   "id": 13,
+   "counterpart_category": null
+  },
+  {
+   "drug": "오메프라졸",
+   "counterpart": "마그네슘",
+   "key": "오메프라졸|mg",
+   "src": "live id14",
+   "id": 14,
+   "counterpart_category": null
+  },
+  {
+   "drug": "에스오메프라졸",
+   "counterpart": "마그네슘",
+   "key": "에스오메프라졸|mg",
+   "src": "live id16",
+   "id": 16,
+   "counterpart_category": null
+  },
+  {
+   "drug": "푸로세미드",
+   "counterpart": "칼륨",
+   "key": "푸로세미드|k",
+   "src": "live id17",
+   "id": 17,
+   "counterpart_category": null
+  },
+  {
+   "drug": "푸로세미드",
+   "counterpart": "마그네슘",
+   "key": "푸로세미드|mg",
+   "src": "live id18",
+   "id": 18,
+   "counterpart_category": null
+  },
+  {
+   "drug": "히드로클로로티아지드",
+   "counterpart": "칼륨",
+   "key": "히드로클로로티아지드|k",
+   "src": "live id19",
+   "id": 19,
+   "counterpart_category": null
+  },
+  {
+   "drug": "히드로클로로티아지드",
+   "counterpart": "마그네슘",
+   "key": "히드로클로로티아지드|mg",
+   "src": "live id20",
+   "id": 20,
+   "counterpart_category": null
+  },
+  {
+   "drug": "오플록사신",
+   "counterpart": "칼슘",
+   "key": "오플록사신|ca",
+   "src": "live id21",
+   "id": 21,
+   "counterpart_category": null
+  },
+  {
+   "drug": "오플록사신",
+   "counterpart": "철분",
+   "key": "오플록사신|fe",
+   "src": "live id22",
+   "id": 22,
+   "counterpart_category": null
+  },
+  {
+   "drug": "오플록사신",
+   "counterpart": "마그네슘",
+   "key": "오플록사신|mg",
+   "src": "live id23",
+   "id": 23,
+   "counterpart_category": null
+  },
+  {
+   "drug": "목시플록사신",
+   "counterpart": "철분",
+   "key": "목시플록사신|fe",
+   "src": "live id24",
+   "id": 24,
+   "counterpart_category": null
+  },
+  {
+   "drug": "목시플록사신",
+   "counterpart": "마그네슘",
+   "key": "목시플록사신|mg",
+   "src": "live id25",
+   "id": 25,
+   "counterpart_category": null
+  },
+  {
+   "drug": "미노사이클린",
+   "counterpart": "칼슘",
+   "key": "미노사이클린|ca",
+   "src": "live id26",
+   "id": 26,
+   "counterpart_category": null
+  },
+  {
+   "drug": "미노사이클린",
+   "counterpart": "철분",
+   "key": "미노사이클린|fe",
+   "src": "live id27",
+   "id": 27,
+   "counterpart_category": null
+  },
+  {
+   "drug": "미노사이클린",
+   "counterpart": "마그네슘",
+   "key": "미노사이클린|mg",
+   "src": "live id28",
+   "id": 28,
+   "counterpart_category": null
+  },
+  {
+   "drug": "알렌드론산",
+   "counterpart": "칼슘",
+   "key": "알렌드론산|ca",
+   "src": "live id29",
+   "id": 29,
+   "counterpart_category": null
+  },
+  {
+   "drug": "토라세미드",
+   "counterpart": "칼륨",
+   "key": "토라세미드|k",
+   "src": "live id30",
+   "id": 30,
+   "counterpart_category": null
+  },
+  {
+   "drug": "토라세미드",
+   "counterpart": "마그네슘",
+   "key": "토라세미드|mg",
+   "src": "live id31",
+   "id": 31,
+   "counterpart_category": null
+  },
+  {
+   "drug": "라베프라졸",
+   "counterpart": "비타민B12",
+   "key": "라베프라졸|b12",
+   "src": "live id32",
+   "id": 32,
+   "counterpart_category": null
+  },
+  {
+   "drug": "라베프라졸",
+   "counterpart": "마그네슘",
+   "key": "라베프라졸|mg",
+   "src": "live id33",
+   "id": 33,
+   "counterpart_category": null
+  },
+  {
+   "drug": "판토프라졸",
+   "counterpart": "비타민B12",
+   "key": "판토프라졸|b12",
+   "src": "live id34",
+   "id": 34,
+   "counterpart_category": null
+  },
+  {
+   "drug": "판토프라졸",
+   "counterpart": "마그네슘",
+   "key": "판토프라졸|mg",
+   "src": "live id35",
+   "id": 35,
+   "counterpart_category": null
+  },
+  {
+   "drug": "란소프라졸",
+   "counterpart": "비타민B12",
+   "key": "란소프라졸|b12",
+   "src": "live id36",
+   "id": 36,
+   "counterpart_category": null
+  },
+  {
+   "drug": "란소프라졸",
+   "counterpart": "마그네슘",
+   "key": "란소프라졸|mg",
+   "src": "live id37",
+   "id": 37,
+   "counterpart_category": null
+  },
+  {
+   "drug": "덱스란소프라졸",
+   "counterpart": "비타민B12",
+   "key": "덱스란소프라졸|b12",
+   "src": "live id38",
+   "id": 38,
+   "counterpart_category": null
+  },
+  {
+   "drug": "덱스란소프라졸",
+   "counterpart": "마그네슘",
+   "key": "덱스란소프라졸|mg",
+   "src": "live id39",
+   "id": 39,
+   "counterpart_category": null
+  },
+  {
+   "drug": "리세드론산",
+   "counterpart": "칼슘",
+   "key": "리세드론산|ca",
+   "src": "live id40",
+   "id": 40,
+   "counterpart_category": null
+  },
+  {
+   "drug": "이반드론산",
+   "counterpart": "칼슘",
+   "key": "이반드론산|ca",
+   "src": "live id41",
+   "id": 41,
+   "counterpart_category": null
+  },
+  {
+   "drug": "세프디니르",
+   "counterpart": "철분",
+   "key": "세프디니르|fe",
+   "src": "live id42",
+   "id": 42,
+   "counterpart_category": null
+  },
+  {
+   "drug": "레보플록사신",
+   "counterpart": "아연",
+   "key": "레보플록사신|zn",
+   "src": "live id43",
+   "id": 43,
+   "counterpart_category": null
+  },
+  {
+   "drug": "시프로플록사신",
+   "counterpart": "아연",
+   "key": "시프로플록사신|zn",
+   "src": "live id44",
+   "id": 44,
+   "counterpart_category": null
+  },
+  {
+   "drug": "오플록사신",
+   "counterpart": "아연",
+   "key": "오플록사신|zn",
+   "src": "live id45",
+   "id": 45,
+   "counterpart_category": null
+  },
+  {
+   "drug": "목시플록사신",
+   "counterpart": "아연",
+   "key": "목시플록사신|zn",
+   "src": "live id46",
+   "id": 46,
+   "counterpart_category": null
+  },
+  {
+   "drug": "독시사이클린",
+   "counterpart": "아연",
+   "key": "독시사이클린|zn",
+   "src": "live id47",
+   "id": 47,
+   "counterpart_category": null
+  },
+  {
+   "drug": "미노사이클린",
+   "counterpart": "아연",
+   "key": "미노사이클린|zn",
+   "src": "live id48",
+   "id": 48,
+   "counterpart_category": null
+  },
+  {
+   "drug": "리세드론산",
+   "counterpart": "철분",
+   "key": "리세드론산|fe",
+   "src": "live id49",
+   "id": 49,
+   "counterpart_category": null
+  },
+  {
+   "drug": "리세드론산",
+   "counterpart": "마그네슘",
+   "key": "리세드론산|mg",
+   "src": "live id50",
+   "id": 50,
+   "counterpart_category": null
+  },
+  {
+   "drug": "이반드론산",
+   "counterpart": "철분",
+   "key": "이반드론산|fe",
+   "src": "live id51",
+   "id": 51,
+   "counterpart_category": null
+  },
+  {
+   "drug": "이반드론산",
+   "counterpart": "마그네슘",
+   "key": "이반드론산|mg",
+   "src": "live id52",
+   "id": 52,
+   "counterpart_category": null
+  },
+  {
+   "drug": "클로르탈리돈",
+   "counterpart": "칼륨",
+   "key": "클로르탈리돈|k",
+   "src": "live id53",
+   "id": 53,
+   "counterpart_category": null
+  },
+  {
+   "drug": "클로르탈리돈",
+   "counterpart": "마그네슘",
+   "key": "클로르탈리돈|mg",
+   "src": "live id54",
+   "id": 54,
+   "counterpart_category": null
+  },
+  {
+   "drug": "인다파미드",
+   "counterpart": "칼륨",
+   "key": "인다파미드|k",
+   "src": "live id55",
+   "id": 55,
+   "counterpart_category": null
+  },
+  {
+   "drug": "인다파미드",
+   "counterpart": "마그네슘",
+   "key": "인다파미드|mg",
+   "src": "live id56",
+   "id": 56,
+   "counterpart_category": null
+  },
+  {
+   "drug": "리오티로닌",
+   "counterpart": "칼슘",
+   "key": "리오티로닌|ca",
+   "src": "live id57",
+   "id": 57,
+   "counterpart_category": null
+  },
+  {
+   "drug": "리오티로닌",
+   "counterpart": "철분",
+   "key": "리오티로닌|fe",
+   "src": "live id58",
+   "id": 58,
+   "counterpart_category": null
+  },
+  {
+   "drug": "알마게이트",
+   "counterpart": "철분",
+   "key": "알마게이트|fe",
+   "src": "live id59",
+   "id": 59,
+   "counterpart_category": null
+  },
+  {
+   "drug": "테고프라잔",
+   "counterpart": "철분",
+   "key": "테고프라잔|fe",
+   "src": "live id60",
+   "id": 60,
+   "counterpart_category": null
+  },
+  {
+   "drug": "이트라코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "key": "이트라코나졸|al_mg_antacid",
+   "src": "live id61",
+   "id": 61,
+   "counterpart_category": "al_mg_antacid"
+  }
+ ],
+ "pending_reviewer_gated": {
+  "penicillamine": [
+   "TM-CHEL-01-FE",
+   "TM-CHEL-01-ZN"
+  ],
+  "theme_map": [
+   "TM-CEPH-AC-01",
+   "TM-CEPH-AC-02",
+   "TM-LIP-01",
+   "TM-LIP-02"
+  ],
+  "potassium": [
+   "DF01",
+   "DF04",
+   "DF05"
+  ],
+  "at_fex": [
+   "AT-FEX"
+  ]
+ },
+ "source_confirmed_draft": [],
+ "needs_review": [],
+ "hold": [
+  {
+   "drug": "다파글리플로진",
+   "counterpart": "마그네슘",
+   "key": "다파글리플로진|mg",
+   "src": "SGLT2×Mg 방향 민감 hold(라벨 직접근거 필요)",
+   "reason": "weak_signal"
+  },
+  {
+   "drug": "엠파글리플로진",
+   "counterpart": "마그네슘",
+   "key": "엠파글리플로진|mg",
+   "src": "SGLT2×Mg 방향 민감 hold(라벨 직접근거 필요)",
+   "reason": "weak_signal"
+  },
+  {
+   "drug": "이프라글리플로진",
+   "counterpart": "마그네슘",
+   "key": "이프라글리플로진|mg",
+   "src": "SGLT2×Mg 방향 민감 hold(라벨 직접근거 필요)",
+   "reason": "weak_signal"
+  }
+ ],
+ "reject": [
+  {
+   "drug": "세파클러",
+   "counterpart": "철분",
+   "key": "세파클러|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세파드록실",
+   "counterpart": "철분",
+   "key": "세파드록실|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세팔렉신",
+   "counterpart": "철분",
+   "key": "세팔렉신|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세픽심",
+   "counterpart": "철분",
+   "key": "세픽심|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세프카펜",
+   "counterpart": "철분",
+   "key": "세프카펜|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세프디니르",
+   "counterpart": "철분",
+   "key": "세프디니르|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세프테람",
+   "counterpart": "철분",
+   "key": "세프테람|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세프포독심",
+   "counterpart": "철분",
+   "key": "세프포독심|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세프록심",
+   "counterpart": "철분",
+   "key": "세프록심|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  },
+  {
+   "drug": "세프디토렌",
+   "counterpart": "철분",
+   "key": "세프디토렌|fe",
+   "src": "cephalosporin×Fe 한국 라벨 미기재 reject(재후보화 금지)",
+   "reason": "label_not_found_confirmed"
+  }
+ ],
+ "no_domestic_product": [
+  {
+   "drug": "부메타니드",
+   "counterpart": "칼륨",
+   "key": "부메타니드|k",
+   "src": "loop/thiazide not_marketed_kr(searchDrug 0)",
+   "reason": "not_marketed_kr"
+  },
+  {
+   "drug": "피레타니드",
+   "counterpart": "칼륨",
+   "key": "피레타니드|k",
+   "src": "loop/thiazide not_marketed_kr(searchDrug 0)",
+   "reason": "not_marketed_kr"
+  },
+  {
+   "drug": "메토라존",
+   "counterpart": "칼륨",
+   "key": "메토라존|k",
+   "src": "loop/thiazide not_marketed_kr(searchDrug 0)",
+   "reason": "not_marketed_kr"
+  },
+  {
+   "drug": "트리클로르메티아지드",
+   "counterpart": "칼륨",
+   "key": "트리클로르메티아지드|k",
+   "src": "loop/thiazide not_marketed_kr(searchDrug 0)",
+   "reason": "not_marketed_kr"
+  },
+  {
+   "drug": "벤드로플루메티아지드",
+   "counterpart": "칼륨",
+   "key": "벤드로플루메티아지드|k",
+   "src": "loop/thiazide not_marketed_kr(searchDrug 0)",
+   "reason": "not_marketed_kr"
+  }
+ ],
+ "high_risk_permanent_hold": [
+  {
+   "drug": "스피로노락톤",
+   "counterpart": "칼륨",
+   "key": "스피로노락톤|k",
+   "src": "K-sparing: 칼륨 상승 방향 → depletion 카드 금지",
+   "reason": "k_raising_not_depletion"
+  },
+  {
+   "drug": "에플레레논",
+   "counterpart": "칼륨",
+   "key": "에플레레논|k",
+   "src": "K-sparing: 칼륨 상승 방향 → depletion 카드 금지",
+   "reason": "k_raising_not_depletion"
+  },
+  {
+   "drug": "아밀로라이드",
+   "counterpart": "칼륨",
+   "key": "아밀로라이드|k",
+   "src": "K-sparing: 칼륨 상승 방향 → depletion 카드 금지",
+   "reason": "k_raising_not_depletion"
+  },
+  {
+   "drug": "트리암테렌",
+   "counterpart": "칼륨",
+   "key": "트리암테렌|k",
+   "src": "K-sparing: 칼륨 상승 방향 → depletion 카드 금지",
+   "reason": "k_raising_not_depletion"
+  },
+  {
+   "drug": "와파린",
+   "counterpart": "비타민K",
+   "key": "와파린|비타민k",
+   "src": "항응고×비타민K: 임상판단(antagonism) — reviewer 전 제외",
+   "reason": "anticoagulant_clinical"
+  }
+ ],
+ "dedup_keys": [
+  "?|?",
+  "다파글리플로진|mg",
+  "덱스란소프라졸|b12",
+  "덱스란소프라졸|mg",
+  "독시사이클린|ca",
+  "독시사이클린|fe",
+  "독시사이클린|mg",
+  "독시사이클린|zn",
+  "라베프라졸|b12",
+  "라베프라졸|mg",
+  "란소프라졸|b12",
+  "란소프라졸|mg",
+  "레보티록신|ca",
+  "레보티록신|fe",
+  "레보플록사신|ca",
+  "레보플록사신|fe",
+  "레보플록사신|mg",
+  "레보플록사신|zn",
+  "리세드론산|ca",
+  "리세드론산|fe",
+  "리세드론산|mg",
+  "리오티로닌|ca",
+  "리오티로닌|fe",
+  "메토라존|k",
+  "메트포르민|b12",
+  "메틸프레드니솔론|k",
+  "목시플록사신|fe",
+  "목시플록사신|mg",
+  "목시플록사신|zn",
+  "미노사이클린|ca",
+  "미노사이클린|fe",
+  "미노사이클린|mg",
+  "미노사이클린|zn",
+  "벤드로플루메티아지드|k",
+  "부메타니드|k",
+  "세파드록실|fe",
+  "세파클러|fe",
+  "세팔렉신|fe",
+  "세프디니르|fe",
+  "세프디토렌|fe",
+  "세프록심|fe",
+  "세프카펜|fe",
+  "세프테람|fe",
+  "세프포독심|fe",
+  "세픽심|fe",
+  "스피로노락톤|k",
+  "시프로플록사신|ca",
+  "시프로플록사신|fe",
+  "시프로플록사신|mg",
+  "시프로플록사신|zn",
+  "아밀로라이드|k",
+  "아세타졸아미드|k",
+  "아조세미드|k",
+  "알렌드론산|ca",
+  "알마게이트|fe",
+  "에스오메프라졸|mg",
+  "에플레레논|k",
+  "엠파글리플로진|mg",
+  "오메프라졸|b12",
+  "오메프라졸|mg",
+  "오플록사신|ca",
+  "오플록사신|fe",
+  "오플록사신|mg",
+  "오플록사신|zn",
+  "와파린|비타민k",
+  "이반드론산|ca",
+  "이반드론산|fe",
+  "이반드론산|mg",
+  "이트라코나졸|al_mg_antacid",
+  "이프라글리플로진|mg",
+  "인다파미드|k",
+  "인다파미드|mg",
+  "클로르탈리돈|k",
+  "클로르탈리돈|mg",
+  "테고프라잔|fe",
+  "토라세미드|k",
+  "토라세미드|mg",
+  "트리암테렌|k",
+  "트리클로르메티아지드|k",
+  "판토프라졸|b12",
+  "판토프라졸|mg",
+  "펙소페나딘|al_mg_antacid",
+  "푸로세미드|k",
+  "푸로세미드|mg",
+  "피레타니드|k",
+  "히드로클로로티아지드|k",
+  "히드로클로로티아지드|mg"
+ ]
+}

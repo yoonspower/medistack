@@ -1,0 +1,302 @@
+candidate_id,family,drug_ingredient,counterpart,counterpart_type,priority,duplicate_status,existing_status,source_check_allowed,risk_class
+RF-F1-0001,F1,시프로플록사신,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0002,F1,시프로플록사신,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0003,F1,시프로플록사신,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0004,F1,시프로플록사신,아연,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0005,F1,시프로플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0006,F1,레보플록사신,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0007,F1,레보플록사신,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0008,F1,레보플록사신,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0009,F1,레보플록사신,아연,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0010,F1,레보플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0011,F1,목시플록사신,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0012,F1,목시플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0013,F1,목시플록사신,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0014,F1,목시플록사신,아연,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0015,F1,목시플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0016,F1,오플록사신,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0017,F1,오플록사신,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0018,F1,오플록사신,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0019,F1,오플록사신,아연,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F1-0020,F1,오플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0021,F1,노르플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0022,F1,노르플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0023,F1,노르플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0024,F1,노르플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0025,F1,노르플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0026,F1,페플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0027,F1,페플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0028,F1,페플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0029,F1,페플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0030,F1,페플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0031,F1,로메플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0032,F1,로메플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0033,F1,로메플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0034,F1,로메플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0035,F1,로메플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0036,F1,발로플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0037,F1,발로플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0038,F1,발로플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0039,F1,발로플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0040,F1,발로플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0041,F1,자보플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0042,F1,자보플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0043,F1,자보플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0044,F1,자보플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0045,F1,자보플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0046,F1,프룰리플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0047,F1,프룰리플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0048,F1,프룰리플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0049,F1,프룰리플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0050,F1,프룰리플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0051,F1,게미플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0052,F1,게미플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0053,F1,게미플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0054,F1,게미플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0055,F1,게미플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0056,F1,스파르플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0057,F1,스파르플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0058,F1,스파르플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0059,F1,스파르플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0060,F1,스파르플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0061,F1,가티플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0062,F1,가티플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0063,F1,가티플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0064,F1,가티플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0065,F1,가티플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0066,F1,토수플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0067,F1,토수플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0068,F1,토수플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0069,F1,토수플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0070,F1,토수플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0071,F1,플루메퀸,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0072,F1,플루메퀸,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0073,F1,플루메퀸,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0074,F1,플루메퀸,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0075,F1,플루메퀸,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0076,F1,에녹사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0077,F1,에녹사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0078,F1,에녹사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0079,F1,에녹사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0080,F1,에녹사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0081,F1,플레록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0082,F1,플레록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0083,F1,플레록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0084,F1,플레록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0085,F1,플레록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0086,F1,루플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0087,F1,루플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0088,F1,루플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0089,F1,루플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0090,F1,루플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0091,F1,가레녹사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0092,F1,가레녹사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0093,F1,가레녹사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0094,F1,가레녹사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0095,F1,가레녹사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F1-0096,F1,시노플록사신,철분,nutrient,P0,new,none,True,known_safe
+RF-F1-0097,F1,시노플록사신,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0098,F1,시노플록사신,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F1-0099,F1,시노플록사신,아연,nutrient,P0,new,none,True,known_safe
+RF-F1-0100,F1,시노플록사신,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0101,F2,독시사이클린,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0102,F2,독시사이클린,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0103,F2,독시사이클린,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0104,F2,독시사이클린,아연,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0105,F2,독시사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0106,F2,미노사이클린,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0107,F2,미노사이클린,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0108,F2,미노사이클린,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0109,F2,미노사이클린,아연,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F2-0110,F2,미노사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0111,F2,테트라사이클린,철분,nutrient,P0,new,none,True,known_safe
+RF-F2-0112,F2,테트라사이클린,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0113,F2,테트라사이클린,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0114,F2,테트라사이클린,아연,nutrient,P0,new,none,True,known_safe
+RF-F2-0115,F2,테트라사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0116,F2,옥시테트라사이클린,철분,nutrient,P0,new,none,True,known_safe
+RF-F2-0117,F2,옥시테트라사이클린,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0118,F2,옥시테트라사이클린,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0119,F2,옥시테트라사이클린,아연,nutrient,P0,new,none,True,known_safe
+RF-F2-0120,F2,옥시테트라사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0121,F2,데메클로사이클린,철분,nutrient,P0,new,none,True,known_safe
+RF-F2-0122,F2,데메클로사이클린,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0123,F2,데메클로사이클린,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0124,F2,데메클로사이클린,아연,nutrient,P0,new,none,True,known_safe
+RF-F2-0125,F2,데메클로사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0126,F2,메타사이클린,철분,nutrient,P0,new,none,True,known_safe
+RF-F2-0127,F2,메타사이클린,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0128,F2,메타사이클린,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0129,F2,메타사이클린,아연,nutrient,P0,new,none,True,known_safe
+RF-F2-0130,F2,메타사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F2-0131,F2,티게사이클린,철분,nutrient,P0,new,none,True,known_safe
+RF-F2-0132,F2,티게사이클린,칼슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0133,F2,티게사이클린,마그네슘,nutrient,P0,new,none,True,known_safe
+RF-F2-0134,F2,티게사이클린,아연,nutrient,P0,new,none,True,known_safe
+RF-F2-0135,F2,티게사이클린,Al/Mg 함유 제산제(약물),drug,P0,new,none,True,known_safe
+RF-F3-0136,F3,알렌드론산,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0137,F3,알렌드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0138,F3,알렌드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0139,F3,알렌드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0140,F3,리세드론산,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0141,F3,리세드론산,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0142,F3,리세드론산,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0143,F3,리세드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0144,F3,이반드론산,칼슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0145,F3,이반드론산,철분,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0146,F3,이반드론산,마그네슘,nutrient,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F3-0147,F3,이반드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0148,F3,에티드론산,칼슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0149,F3,에티드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0150,F3,에티드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0151,F3,에티드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0152,F3,클로드론산,칼슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0153,F3,클로드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0154,F3,클로드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0155,F3,클로드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0156,F3,파미드론산,칼슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0157,F3,파미드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0158,F3,파미드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0159,F3,파미드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0160,F3,졸레드론산,칼슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0161,F3,졸레드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0162,F3,졸레드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0163,F3,졸레드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0164,F3,미노드론산,칼슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0165,F3,미노드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0166,F3,미노드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0167,F3,미노드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F3-0168,F3,인카드론산,칼슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0169,F3,인카드론산,철분,nutrient,P1,new,none,True,known_safe
+RF-F3-0170,F3,인카드론산,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F3-0171,F3,인카드론산,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F4-0172,F4,레보티록신,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F4-0173,F4,레보티록신,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F4-0174,F4,리오티로닌,마그네슘,nutrient,P1,new,none,True,known_safe
+RF-F4-0175,F4,리오티로닌,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F5-0176,F5,트리엔틴,철분,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0177,F5,트리엔틴,아연,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0178,F5,트리엔틴,칼슘,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0179,F5,데페라시록스,철분,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0180,F5,데페라시록스,아연,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0181,F5,데페라시록스,칼슘,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0182,F5,데페리프론,철분,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0183,F5,데페리프론,아연,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0184,F5,데페리프론,칼슘,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0185,F5,데페록사민,철분,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0186,F5,데페록사민,아연,nutrient,HOLD,new,none,False,high_risk
+RF-F5-0187,F5,데페록사민,칼슘,nutrient,HOLD,new,none,False,high_risk
+RF-F6-0188,F6,파모티딘,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0189,F6,파모티딘,비타민B12,nutrient,P1,new,none,True,monitoring
+RF-F6-0190,F6,시메티딘,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0191,F6,시메티딘,비타민B12,nutrient,P1,new,none,True,monitoring
+RF-F6-0192,F6,니자티딘,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0193,F6,니자티딘,비타민B12,nutrient,P1,new,none,True,monitoring
+RF-F6-0194,F6,라푸티딘,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0195,F6,라푸티딘,비타민B12,nutrient,P1,new,none,True,monitoring
+RF-F6-0196,F6,록사티딘,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0197,F6,록사티딘,비타민B12,nutrient,P1,new,none,True,monitoring
+RF-F6-0198,F6,오메프라졸,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0199,F6,오메프라졸,비타민B12,nutrient,REJECT_PRECHECK,duplicate_live,live,False,monitoring
+RF-F6-0200,F6,에스오메프라졸,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0201,F6,에스오메프라졸,비타민B12,nutrient,P1,new,none,True,monitoring
+RF-F6-0202,F6,란소프라졸,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0203,F6,란소프라졸,비타민B12,nutrient,REJECT_PRECHECK,duplicate_live,live,False,monitoring
+RF-F6-0204,F6,판토프라졸,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0205,F6,판토프라졸,비타민B12,nutrient,REJECT_PRECHECK,duplicate_live,live,False,monitoring
+RF-F6-0206,F6,라베프라졸,철분,nutrient,P1,new,none,True,monitoring
+RF-F6-0207,F6,라베프라졸,비타민B12,nutrient,REJECT_PRECHECK,duplicate_live,live,False,monitoring
+RF-F7-0208,F7,콜레세벨람,지용성 비타민(A·D·E·K),nutrient_group,P1,new,none,True,known_safe
+RF-F7-0209,F7,콜레세벨람,엽산,nutrient,P1,new,none,True,known_safe
+RF-F7-0210,F7,콜레스티폴,지용성 비타민(A·D·E·K),nutrient_group,P1,new,none,True,known_safe
+RF-F7-0211,F7,콜레스티폴,엽산,nutrient,P1,new,none,True,known_safe
+RF-F8-0212,F8,아세타졸아미드,칼륨,nutrient,REJECT_PRECHECK,duplicate_pending,pending,False,mixed
+RF-F8-0213,F8,아세타졸아미드,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0214,F8,아세타졸아미드,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0215,F8,아조세미드,칼륨,nutrient,REJECT_PRECHECK,duplicate_pending,pending,False,mixed
+RF-F8-0216,F8,아조세미드,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0217,F8,아조세미드,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0218,F8,부메타니드,칼륨,nutrient,REJECT_PRECHECK,duplicate_no_domestic,no_domestic_product,False,mixed
+RF-F8-0219,F8,부메타니드,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0220,F8,부메타니드,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0221,F8,에타크린산,칼륨,nutrient,P2,new,none,False,mixed
+RF-F8-0222,F8,에타크린산,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0223,F8,에타크린산,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0224,F8,스피로노락톤,칼륨,nutrient,REJECT_PRECHECK,duplicate_highrisk,k_raising_not_depletion,False,mixed
+RF-F8-0225,F8,스피로노락톤,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0226,F8,스피로노락톤,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0227,F8,덱사메타손,칼륨,nutrient,P2,new,none,False,mixed
+RF-F8-0228,F8,덱사메타손,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0229,F8,덱사메타손,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0230,F8,베타메타손,칼륨,nutrient,P2,new,none,False,mixed
+RF-F8-0231,F8,베타메타손,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0232,F8,베타메타손,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0233,F8,센나,칼륨,nutrient,P2,new,none,False,mixed
+RF-F8-0234,F8,센나,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0235,F8,센나,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0236,F8,비사코딜,칼륨,nutrient,P2,new,none,False,mixed
+RF-F8-0237,F8,비사코딜,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0238,F8,비사코딜,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F8-0239,F8,수산화마그네슘,칼륨,nutrient,P2,new,none,False,mixed
+RF-F8-0240,F8,수산화마그네슘,마그네슘,nutrient,P2,new,none,False,mixed
+RF-F8-0241,F8,수산화마그네슘,나트륨,electrolyte,P2,new,none,False,mixed
+RF-F9-0242,F9,페니토인,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0243,F9,페니토인,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0244,F9,페니토인,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0245,F9,카르바마제핀,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0246,F9,카르바마제핀,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0247,F9,카르바마제핀,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0248,F9,발프로산,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0249,F9,발프로산,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0250,F9,발프로산,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0251,F9,페노바르비탈,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0252,F9,페노바르비탈,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0253,F9,페노바르비탈,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0254,F9,프리미돈,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0255,F9,프리미돈,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0256,F9,프리미돈,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0257,F9,옥스카르바제핀,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0258,F9,옥스카르바제핀,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0259,F9,옥스카르바제핀,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0260,F9,라모트리진,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0261,F9,라모트리진,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0262,F9,라모트리진,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0263,F9,토피라메이트,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0264,F9,토피라메이트,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0265,F9,토피라메이트,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0266,F9,조니사미드,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0267,F9,조니사미드,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0268,F9,조니사미드,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0269,F9,설파살라진,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0270,F9,설파살라진,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0271,F9,설파살라진,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F9-0272,F9,트리메토프림,엽산,nutrient,P2,new,none,True,mixed
+RF-F9-0273,F9,트리메토프림,비타민D,nutrient,P2,new,none,True,mixed
+RF-F9-0274,F9,트리메토프림,비타민B12,nutrient,P2,new,none,True,mixed
+RF-F10-0275,F10,케토코나졸,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F10-0276,F10,포사코나졸,Al/Mg 함유 제산제(약물),drug,P1,new,none,True,known_safe
+RF-F10-0277,F10,이트라코나졸,Al/Mg 함유 제산제(약물),drug,REJECT_PRECHECK,duplicate_live,live,False,known_safe
+RF-F11-0278,F11,와파린,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0279,F11,와파린,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0280,F11,와파린,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0281,F11,사이클로스포린,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0282,F11,사이클로스포린,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0283,F11,사이클로스포린,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0284,F11,타크로리무스,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0285,F11,타크로리무스,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0286,F11,타크로리무스,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0287,F11,메토트렉세이트,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0288,F11,메토트렉세이트,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0289,F11,메토트렉세이트,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0290,F11,피리메타민,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0291,F11,피리메타민,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0292,F11,피리메타민,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0293,F11,레날리도마이드,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0294,F11,레날리도마이드,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0295,F11,레날리도마이드,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0296,F11,이소니아지드,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0297,F11,이소니아지드,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0298,F11,이소니아지드,칼륨,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0299,F11,레보도파,엽산,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0300,F11,레보도파,비타민B6,nutrient,HOLD,new,none,False,high_risk
+RF-F11-0301,F11,레보도파,칼륨,nutrient,HOLD,new,none,False,high_risk

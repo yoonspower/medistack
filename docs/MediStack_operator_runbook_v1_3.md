@@ -231,6 +231,20 @@ theme map 6건의 live 통합은 **reviewer note + 선행조건 후 별도 PR**(
 
 > **🟢 페니실라민 FE/ZN subset 우선 경로(2026-06-16·선행조건 0)**: theme map 6건 중 FE/ZN 2건은 일반 영양소(counterpart_category=null)라 **validator/src 선행조건 없이** 먼저 통합 가능(60→62). reviewer 가 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §6 템플릿으로 note 작성(FE/ZN+ZN mechanism+개별카드) → `python3 scripts/integrate_penicillamine_subset_v1_3.py --pm-approved --reviewer-note <노트>`(멱등). 게이트 회귀 = `scripts/test_penicillamine_reviewer_note_gate_v1_3.py`. 실행 프롬프트 = next_prompts 프롬프트 15. ⚠️ full-6 통합기와 **동시 실행 금지**(같은 후보 중복).
 
+## 12.6 Relation Factory Bot v1.4 (대량 후보 공장 · manual tool · live 0)
+
+> 1,000 relation scale-up 용 별도 manual tool. harvester/schedule 와 **비연동**(향후 PR 검토). 기본 실행 = live/export/src write 0.
+
+```bash
+python3 scripts/build_relation_factory_inventory_v1_4.py            # 중복 차단 인벤토리(읽기전용)
+python3 scripts/relation_factory_bot_v1_4.py                        # universe+후보+precheck+queue (offline·data/review)
+python3 scripts/relation_factory_bot_v1_4.py --online-source-check --max-source-check 200   # SDK source-check+draft+PM
+python3 scripts/validate_relation_factory_batch_v1_4.py             # 결함주입 10
+python3 scripts/smoke_relation_factory_batch_v1_4.py
+```
+- 산출물 `data/review/relation_factory_*`·`data/drafts/relation_factory_draft_batch_v1_4.json`. SDK 캐시 `data/harvest_queue/_sdk/`(gitignore).
+- draft → adversarial → reviewer note → dry-run integrator → 별도 PR 후에만 live. 정본 `docs/MediStack_relation_scaleup_roadmap_v1_4.md`.
+
 ## 13. 금지 (운영 불변)
 
 live relation 실제 추가(승인 경로 외) / export·full index·aliases·DATA_URL 직접 손편집 / schedule 활성화(이 라운드) /

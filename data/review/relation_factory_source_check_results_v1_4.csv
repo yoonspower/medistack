@@ -1,0 +1,201 @@
+candidate_id,family,drug_ingredient,counterpart,priority,sc_status,itemSeq,source_section,source_quote
+RF-F1-0091,F1,가레녹사신,철분,P0,no_domestic_product,,,
+RF-F1-0092,F1,가레녹사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0093,F1,가레녹사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0094,F1,가레녹사신,아연,P0,no_domestic_product,,,
+RF-F1-0095,F1,가레녹사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0061,F1,가티플록사신,철분,P0,no_domestic_product,,,
+RF-F1-0062,F1,가티플록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0063,F1,가티플록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0064,F1,가티플록사신,아연,P0,no_domestic_product,,,
+RF-F1-0065,F1,가티플록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0051,F1,게미플록사신,철분,P0,no_domestic_product,,,
+RF-F1-0052,F1,게미플록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0053,F1,게미플록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0054,F1,게미플록사신,아연,P0,no_domestic_product,,,
+RF-F1-0055,F1,게미플록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0021,F1,노르플록사신,철분,P0,source_confirmed_draft_candidate,198500810,병용투여,아연 또는 철분이 함유된 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.
+RF-F1-0022,F1,노르플록사신,칼슘,P0,source_confirmed_draft_candidate,198500810,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0023,F1,노르플록사신,마그네슘,P0,direction_mismatch,198500810,,
+RF-F1-0024,F1,노르플록사신,아연,P0,source_confirmed_draft_candidate,198500810,병용투여,아연 또는 철분이 함유된 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.
+RF-F1-0025,F1,노르플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,198500810,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F2-0121,F2,데메클로사이클린,철분,P0,no_domestic_product,,,
+RF-F2-0122,F2,데메클로사이클린,칼슘,P0,no_domestic_product,,,
+RF-F2-0123,F2,데메클로사이클린,마그네슘,P0,no_domestic_product,,,
+RF-F2-0124,F2,데메클로사이클린,아연,P0,no_domestic_product,,,
+RF-F2-0125,F2,데메클로사이클린,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F2-0105,F2,독시사이클린,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,198000105,병용투여,"칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다."
+RF-F1-0010,F1,레보플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,199901759,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 수크랄페이트, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0031,F1,로메플록사신,철분,P0,label_not_found,199903690,,
+RF-F1-0032,F1,로메플록사신,칼슘,P0,direction_mismatch,199903690,,
+RF-F1-0033,F1,로메플록사신,마그네슘,P0,direction_mismatch,199903690,,
+RF-F1-0034,F1,로메플록사신,아연,P0,label_not_found,199903690,,
+RF-F1-0035,F1,로메플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,199903690,병용투여,"수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제와 병용 시 킬레이트 복합체를 형성하면서 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0086,F1,루플록사신,철분,P0,no_domestic_product,,,
+RF-F1-0087,F1,루플록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0088,F1,루플록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0089,F1,루플록사신,아연,P0,no_domestic_product,,,
+RF-F1-0090,F1,루플록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F2-0126,F2,메타사이클린,철분,P0,no_domestic_product,,,
+RF-F2-0127,F2,메타사이클린,칼슘,P0,no_domestic_product,,,
+RF-F2-0128,F2,메타사이클린,마그네슘,P0,no_domestic_product,,,
+RF-F2-0129,F2,메타사이클린,아연,P0,no_domestic_product,,,
+RF-F2-0130,F2,메타사이클린,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0012,F1,목시플록사신,칼슘,P0,label_not_found,201206595,,
+RF-F1-0015,F1,목시플록사신,Al/Mg 함유 제산제(약물),P0,label_not_found,201206595,,
+RF-F2-0110,F2,미노사이클린,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,198501028,병용투여,"칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무스(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다."
+RF-F1-0036,F1,발로플록사신,철분,P0,label_not_found,199300319,,
+RF-F1-0037,F1,발로플록사신,칼슘,P0,direction_mismatch,199300319,,
+RF-F1-0038,F1,발로플록사신,마그네슘,P0,direction_mismatch,199300319,,
+RF-F1-0039,F1,발로플록사신,아연,P0,label_not_found,199300319,,
+RF-F1-0040,F1,발로플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,199300319,상호작용,알루미늄 또는 마그네슘을 함유하는 제산제와의 병용에 의해 이 약의 흡수가 저하되고 효과가 감소되는 경우가 있으므로 병용을 피하는 것이 바람직하다.
+RF-F1-0056,F1,스파르플록사신,철분,P0,no_domestic_product,,,
+RF-F1-0057,F1,스파르플록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0058,F1,스파르플록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0059,F1,스파르플록사신,아연,P0,no_domestic_product,,,
+RF-F1-0060,F1,스파르플록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0096,F1,시노플록사신,철분,P0,no_domestic_product,,,
+RF-F1-0097,F1,시노플록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0098,F1,시노플록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0099,F1,시노플록사신,아연,P0,no_domestic_product,,,
+RF-F1-0100,F1,시노플록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0005,F1,시프로플록사신,Al/Mg 함유 제산제(약물),P0,label_not_found,199303818,,
+RF-F1-0076,F1,에녹사신,철분,P0,no_domestic_product,,,
+RF-F1-0077,F1,에녹사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0078,F1,에녹사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0079,F1,에녹사신,아연,P0,no_domestic_product,,,
+RF-F1-0080,F1,에녹사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0020,F1,오플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,198900665,병용투여,"수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다(단, 경구제에 한함). 1"
+RF-F2-0116,F2,옥시테트라사이클린,철분,P0,no_domestic_product,,,
+RF-F2-0117,F2,옥시테트라사이클린,칼슘,P0,no_domestic_product,,,
+RF-F2-0118,F2,옥시테트라사이클린,마그네슘,P0,no_domestic_product,,,
+RF-F2-0119,F2,옥시테트라사이클린,아연,P0,no_domestic_product,,,
+RF-F2-0120,F2,옥시테트라사이클린,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0041,F1,자보플록사신,철분,P0,source_confirmed_draft_candidate,201501455,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다."
+RF-F1-0042,F1,자보플록사신,칼슘,P0,source_confirmed_draft_candidate,201501455,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다."
+RF-F1-0043,F1,자보플록사신,마그네슘,P0,direction_mismatch,201501455,,
+RF-F1-0044,F1,자보플록사신,아연,P0,source_confirmed_draft_candidate,201501455,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다."
+RF-F1-0045,F1,자보플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,201501455,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다."
+RF-F2-0111,F2,테트라사이클린,철분,P0,source_confirmed_draft_candidate,196000001,병용투여,"칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다."
+RF-F2-0112,F2,테트라사이클린,칼슘,P0,direction_mismatch,196000001,,
+RF-F2-0113,F2,테트라사이클린,마그네슘,P0,direction_mismatch,196000001,,
+RF-F2-0114,F2,테트라사이클린,아연,P0,source_confirmed_draft_candidate,196000001,병용투여,"칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다."
+RF-F2-0115,F2,테트라사이클린,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,196000001,병용투여,"칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다."
+RF-F1-0066,F1,토수플록사신,철분,P0,source_confirmed_draft_candidate,200501778,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0067,F1,토수플록사신,칼슘,P0,source_confirmed_draft_candidate,200501778,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0068,F1,토수플록사신,마그네슘,P0,direction_mismatch,200501778,,
+RF-F1-0069,F1,토수플록사신,아연,P0,label_not_found,200501778,,
+RF-F1-0070,F1,토수플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,200501778,병용투여,"알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F2-0131,F2,티게사이클린,철분,P0,no_domestic_product,,,
+RF-F2-0132,F2,티게사이클린,칼슘,P0,no_domestic_product,,,
+RF-F2-0133,F2,티게사이클린,마그네슘,P0,no_domestic_product,,,
+RF-F2-0134,F2,티게사이클린,아연,P0,no_domestic_product,,,
+RF-F2-0135,F2,티게사이클린,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0026,F1,페플록사신,철분,P0,source_confirmed_draft_candidate,199202246,병용투여,"철분 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0027,F1,페플록사신,칼슘,P0,label_not_found,199202246,,
+RF-F1-0028,F1,페플록사신,마그네슘,P0,direction_mismatch,199202246,,
+RF-F1-0029,F1,페플록사신,아연,P0,source_confirmed_draft_candidate,199202246,병용투여,"철분 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다."
+RF-F1-0030,F1,페플록사신,Al/Mg 함유 제산제(약물),P0,source_confirmed_draft_candidate,199202246,병용투여,알루미늄 또는 마그네슘 함유 제산제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.
+RF-F1-0046,F1,프룰리플록사신,철분,P0,no_domestic_product,,,
+RF-F1-0047,F1,프룰리플록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0048,F1,프룰리플록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0049,F1,프룰리플록사신,아연,P0,no_domestic_product,,,
+RF-F1-0050,F1,프룰리플록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0081,F1,플레록사신,철분,P0,no_domestic_product,,,
+RF-F1-0082,F1,플레록사신,칼슘,P0,no_domestic_product,,,
+RF-F1-0083,F1,플레록사신,마그네슘,P0,no_domestic_product,,,
+RF-F1-0084,F1,플레록사신,아연,P0,no_domestic_product,,,
+RF-F1-0085,F1,플레록사신,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F1-0071,F1,플루메퀸,철분,P0,no_domestic_product,,,
+RF-F1-0072,F1,플루메퀸,칼슘,P0,no_domestic_product,,,
+RF-F1-0073,F1,플루메퀸,마그네슘,P0,no_domestic_product,,,
+RF-F1-0074,F1,플루메퀸,아연,P0,no_domestic_product,,,
+RF-F1-0075,F1,플루메퀸,Al/Mg 함유 제산제(약물),P0,no_domestic_product,,,
+RF-F6-0192,F6,니자티딘,철분,P1,label_not_found,200000919,,
+RF-F6-0193,F6,니자티딘,비타민B12,P1,label_not_found,200000919,,
+RF-F6-0206,F6,라베프라졸,철분,P1,label_not_found,200607667,,
+RF-F6-0194,F6,라푸티딘,철분,P1,label_not_found,201302935,,
+RF-F6-0195,F6,라푸티딘,비타민B12,P1,label_not_found,201302935,,
+RF-F6-0202,F6,란소프라졸,철분,P1,label_not_found,200401591,,
+RF-F4-0172,F4,레보티록신,마그네슘,P1,direction_mismatch,197400278,,
+RF-F4-0173,F4,레보티록신,Al/Mg 함유 제산제(약물),P1,source_confirmed_draft_candidate,197400278,병용투여,"콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다."
+RF-F6-0196,F6,록사티딘,철분,P1,label_not_found,198800712,,
+RF-F6-0197,F6,록사티딘,비타민B12,P1,label_not_found,198800712,,
+RF-F3-0143,F3,리세드론산,Al/Mg 함유 제산제(약물),P1,label_not_found,200706876,,
+RF-F4-0174,F4,리오티로닌,마그네슘,P1,direction_mismatch,197800304,,
+RF-F4-0175,F4,리오티로닌,Al/Mg 함유 제산제(약물),P1,label_not_found,197800304,,
+RF-F3-0164,F3,미노드론산,칼슘,P1,no_domestic_product,,,
+RF-F3-0165,F3,미노드론산,철분,P1,no_domestic_product,,,
+RF-F3-0166,F3,미노드론산,마그네슘,P1,no_domestic_product,,,
+RF-F3-0167,F3,미노드론산,Al/Mg 함유 제산제(약물),P1,no_domestic_product,,,
+RF-F6-0190,F6,시메티딘,철분,P1,label_not_found,197800085,,
+RF-F6-0191,F6,시메티딘,비타민B12,P1,label_not_found,197800085,,
+RF-F3-0137,F3,알렌드론산,철분,P1,label_not_found,199800180,,
+RF-F3-0138,F3,알렌드론산,마그네슘,P1,direction_mismatch,199800180,,
+RF-F3-0139,F3,알렌드론산,Al/Mg 함유 제산제(약물),P1,source_confirmed_draft_candidate,199800180,병용투여,칼슘보충제/제산제 칼슘보충제나 제산제 및 일부 경구용 약물들은 이 약의 흡수를 방해하는 것으로 알려져 있다.
+RF-F6-0200,F6,에스오메프라졸,철분,P1,label_not_found,201308928,,
+RF-F6-0201,F6,에스오메프라졸,비타민B12,P1,source_confirmed_draft_candidate,201308928,병용투여,"⑥ 에스오메프라졸은 저위산증 또는 무위산증으로 인한 비타민 B12(시아노코발라민)의 흡수를 감소시킬 수 있으므로, 장기간 치료에서 비타민 B12 흡수를 감소시키는 위험 인자 또는 체내 저장이 감소된 환자는 충분한 주의가 요구된다."
+RF-F3-0148,F3,에티드론산,칼슘,P1,source_confirmed_draft_candidate,198802519,병용금기,"미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제 ○ 파제트병"
+RF-F3-0149,F3,에티드론산,철분,P1,source_confirmed_draft_candidate,198802519,병용금기,"미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제 ○ 파제트병"
+RF-F3-0150,F3,에티드론산,마그네슘,P1,direction_mismatch,198802519,,
+RF-F3-0151,F3,에티드론산,Al/Mg 함유 제산제(약물),P1,direction_mismatch,198802519,,
+RF-F6-0198,F6,오메프라졸,철분,P1,label_not_found,201308928,,
+RF-F3-0147,F3,이반드론산,Al/Mg 함유 제산제(약물),P1,source_confirmed_draft_candidate,201207007,상호작용,"칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할 수 있다."
+RF-F3-0168,F3,인카드론산,칼슘,P1,no_domestic_product,,,
+RF-F3-0169,F3,인카드론산,철분,P1,no_domestic_product,,,
+RF-F3-0170,F3,인카드론산,마그네슘,P1,no_domestic_product,,,
+RF-F3-0171,F3,인카드론산,Al/Mg 함유 제산제(약물),P1,no_domestic_product,,,
+RF-F3-0160,F3,졸레드론산,칼슘,P1,direction_mismatch,201110518,,
+RF-F3-0161,F3,졸레드론산,철분,P1,label_not_found,201110518,,
+RF-F3-0162,F3,졸레드론산,마그네슘,P1,label_not_found,201110518,,
+RF-F3-0163,F3,졸레드론산,Al/Mg 함유 제산제(약물),P1,label_not_found,201110518,,
+RF-F10-0275,F10,케토코나졸,Al/Mg 함유 제산제(약물),P1,source_confirmed_draft_candidate,199101243,병용투여,"이 약의 흡수에는 적당한 위산분비가 필요하므로 위산분비를 억제하는 약인 제산제, 항콜린제, H2-차단제를 병용투여해야 하는 환자는 이 약 투여 후 최소한 2시간 경과 후에 투여하거나, 이 약을 콜라와 함께 복용하도록 한다."
+RF-F7-0208,F7,콜레세벨람,지용성 비타민(A·D·E·K),P1,no_domestic_product,,,
+RF-F7-0209,F7,콜레세벨람,엽산,P1,no_domestic_product,,,
+RF-F7-0210,F7,콜레스티폴,지용성 비타민(A·D·E·K),P1,no_domestic_product,,,
+RF-F7-0211,F7,콜레스티폴,엽산,P1,no_domestic_product,,,
+RF-F3-0152,F3,클로드론산,칼슘,P1,no_domestic_product,,,
+RF-F3-0153,F3,클로드론산,철분,P1,no_domestic_product,,,
+RF-F3-0154,F3,클로드론산,마그네슘,P1,no_domestic_product,,,
+RF-F3-0155,F3,클로드론산,Al/Mg 함유 제산제(약물),P1,no_domestic_product,,,
+RF-F6-0188,F6,파모티딘,철분,P1,label_not_found,198902704,,
+RF-F6-0189,F6,파모티딘,비타민B12,P1,label_not_found,198902704,,
+RF-F3-0156,F3,파미드론산,칼슘,P1,no_domestic_product,,,
+RF-F3-0157,F3,파미드론산,철분,P1,no_domestic_product,,,
+RF-F3-0158,F3,파미드론산,마그네슘,P1,no_domestic_product,,,
+RF-F3-0159,F3,파미드론산,Al/Mg 함유 제산제(약물),P1,no_domestic_product,,,
+RF-F6-0204,F6,판토프라졸,철분,P1,direction_mismatch,200702870,,
+RF-F10-0276,F10,포사코나졸,Al/Mg 함유 제산제(약물),P1,source_confirmed_draft_candidate,201502727,상호작용,포사코나졸과 H2 수용체 억제제의 병용은 환자에 대한 이익이 위험을 상회하지 않는 한 피해야 한다.
+RF-F9-0260,F9,라모트리진,엽산,P2,source_confirmed_draft_candidate,200209641,병용투여,이 약은 디히드로폴레이트 환원효소의 약한 억제제이며 랫트에서의 시험은 임신 중 엽산의 감소를 제시하였다.
+RF-F9-0261,F9,라모트리진,비타민D,P2,label_not_found,200209641,,
+RF-F9-0262,F9,라모트리진,비타민B12,P2,label_not_found,200209641,,
+RF-F9-0248,F9,발프로산,엽산,P2,label_not_found,198900925,,
+RF-F9-0249,F9,발프로산,비타민D,P2,label_not_found,198900925,,
+RF-F9-0250,F9,발프로산,비타민B12,P2,label_not_found,198900925,,
+RF-F9-0269,F9,설파살라진,엽산,P2,source_confirmed_draft_candidate,199803482,상호작용,"엽산과 병용투여 시 엽산의 흡수가 저하되고, 거대적혈모구증, 범혈구감소를 초래하는 엽산결핍증을 일으킬 수 있으므로 엽산결핍증이 의심되는 경우에는 엽산을 보충한다."
+RF-F9-0270,F9,설파살라진,비타민D,P2,label_not_found,199803482,,
+RF-F9-0271,F9,설파살라진,비타민B12,P2,label_not_found,199803482,,
+RF-F9-0257,F9,옥스카르바제핀,엽산,P2,source_confirmed_draft_candidate,200008776,주의사항,": 흔하게 특별한 임상 상황 하에서 발생하고 고령 환자에서 더 자주 나타나는 저나트륨혈증, 매우 드물게 경련, 뇌병증, 인지력 저하, 혼돈(신경계 참조), 시각장애(예, 시야혼탁), 갑상선기능저하증, 구토, 구역, 엽산 결핍 등의 증상성 저나트륨혈증이 나타날 수 있다."
+RF-F9-0258,F9,옥스카르바제핀,비타민D,P2,label_not_found,200008776,,
+RF-F9-0259,F9,옥스카르바제핀,비타민B12,P2,label_not_found,200008776,,
+RF-F9-0266,F9,조니사미드,엽산,P2,label_not_found,199000165,,
+RF-F9-0267,F9,조니사미드,비타민D,P2,label_not_found,199000165,,
+RF-F9-0268,F9,조니사미드,비타민B12,P2,label_not_found,199000165,,
+RF-F9-0245,F9,카르바마제핀,엽산,P2,source_confirmed_draft_candidate,198401121,병용투여,"투여 시 이상반응 4. 이상반응 ::: 기관구분, 발생빈도, 이상반응 기관구분 발생빈도 이상반응 혈액 및 림프계 매우 흔하게 백혈구 감소증 흔하게 혈소판 감소증, 호산구 증가증 드물게 백혈구 증가, 임파절 장애, 엽산 결핍증 매우 드물게 무과립구증, 재생불량성 빈혈, 온혈구감소증, 순수 적혈구 무형성, 빈혈, 거대적아구성 빈혈, 급성 간헐성 포르피린증, 혼합 포르피린증, 만발피부 포르피린증, 망상적혈구증가증, 용혈성 빈혈 면"
+RF-F9-0246,F9,카르바마제핀,비타민D,P2,source_confirmed_draft_candidate,198401121,병용투여,"닌) 감소와 갑상선자극호르몬 증가) 등의 임상증상을 동반하거나 동반하지 않지만 보통 임상 증상을 동반하지 않는 혈중 프로락틴 증가와 혈장 칼슘과 혈중25-hydroxy-콜레칼시페롤의 감소와 같은 골대사 장애로 인한 골연화증 및 골다공증, HDL 콜레스테롤과 중성지방을 포함하는 혈중 콜레스테롤 증가 대사 및 영양계 빈도불명 고암모니아혈증 정신계 드물게 시각적 청각적 환각, 우울, 식욕부진, 불안, 공격적 행동, 초조, 혼돈상태"
+RF-F9-0247,F9,카르바마제핀,비타민B12,P2,label_not_found,198401121,,
+RF-F9-0263,F9,토피라메이트,엽산,P2,label_not_found,200503065,,
+RF-F9-0264,F9,토피라메이트,비타민D,P2,label_not_found,200503065,,
+RF-F9-0265,F9,토피라메이트,비타민B12,P2,label_not_found,200503065,,
+RF-F9-0272,F9,트리메토프림,엽산,P2,source_confirmed_draft_candidate,197000049,주의사항,"폴산결핍 또는 대사이상 환자(이미 위적출술을 받은 환자, 다른 폴산대사길항제를 투여받고 있는 환자, 선천성 폴산대사이상 환자 등)(폴산결핍을 악화시켜 거대적아구성빈혈을 일으킬 수 있다.) 4. 이상반응"
+RF-F9-0273,F9,트리메토프림,비타민D,P2,label_not_found,197000049,,
+RF-F9-0274,F9,트리메토프림,비타민B12,P2,label_not_found,197000049,,
+RF-F9-0251,F9,페노바르비탈,엽산,P2,source_confirmed_draft_candidate,197000212,병용투여,임신중의 투여에 의해 엽산 저하가 생긴다는 보고가 있다.
+RF-F9-0252,F9,페노바르비탈,비타민D,P2,source_confirmed_draft_candidate,197000212,주의사항,"근골격계 : 연용중에 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(혈청 ALP, 혈청칼슘, 무기인의 저하)이 나타나는 경우에는 감량 또는 비타민 D를 섭취하는 등 주의한다."
+RF-F9-0253,F9,페노바르비탈,비타민B12,P2,label_not_found,197000212,,
+RF-F9-0242,F9,페니토인,엽산,P2,source_confirmed_draft_candidate,197000104,주의사항,"기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.). 1"
+RF-F9-0243,F9,페니토인,비타민D,P2,source_confirmed_draft_candidate,197000104,주의사항,"근골격계 : 연용에 의해 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(ALP, 혈청 칼슘 저하 및 무기인 저하 등)이 나타나는 경우에는 감량 또는 비타민D를 투여하는 등 적절히 조치한다."
+RF-F9-0244,F9,페니토인,비타민B12,P2,label_not_found,197000104,,
+RF-F9-0254,F9,프리미돈,엽산,P2,source_confirmed_draft_candidate,198000160,병용투여,임신중의 투여에 의해 엽산저하가 생긴다는 보고가 있다.
+RF-F9-0255,F9,프리미돈,비타민D,P2,source_confirmed_draft_candidate,198000160,주의사항,"근골격계 : 연용시 구루병, 골연화증, 치조골형성부전이 나타날 수 있으므로 이상(ALP, 혈청칼슘, 무기질저하 등)이 나타나면 감량 또는 비타민 D를 투여하는 등 적절한 처치를 한다."
+RF-F9-0256,F9,프리미돈,비타민B12,P2,label_not_found,198000160,,

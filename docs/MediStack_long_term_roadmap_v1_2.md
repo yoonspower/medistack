@@ -1,5 +1,7 @@
 # MediStack — 장기 로드맵 · 경계 계약 v1.2
 
+> **Relation Factory v1.4(2026-06-16):** 1,000 relation scale-up 공장 구축(live 0). raw 후보 301·source_confirmed draft 43. 단계 60→75→120→200→300+→1,000. 최고 수확 family = 만성 depletion(F9 0.36)·azole(F10 1.0). 정본 `docs/MediStack_relation_scaleup_roadmap_v1_4.md`.
+
 > 작성일: 2026-06-14. **설계/로드맵 문서 전용 — 코드/데이터/DATA_URL/결제/스키마/validator 변경 0.** 본 문서는 흩어진 경계 합의(영양제 앱 분리·saved_stack·Supabase·Free/Plus·릴리스 게이트)를 **장기 로드맵 관점으로 한 곳에 묶고 경계를 강화**한다. 구현·배선·승격은 일절 없다. 기존 문서가 이미 다룬 상세는 **상호참조**로 가리키고, 본 문서는 그 위에 우선순위·경계만 못박는다.
 >
 > 선행(자기완결 인계): `CLAUDE.md`(리포 가드레일) · `MediStack_supplement_app_separation_strategy.md`(영양제 앱 분리·경계 계약) · `MediStack_saved_stack_mvp_design_v1_2.md`(로컬·무서버·건강정보 0) · `MediStack_supabase_migration_strategy_v1_2.md`(RLS·local-only·커버리지 게이트 이연) · `MediStack_free_plus_plan_v1_2.md`(Free/Plus·유료화 보류) · `MediStack_v1_2_release_readiness.md`(§5·§8 유료화 보류·coverage 우선) · `MediStack_relation_factory_source_check_v1_2.md`(§7 커버리지 우선 로드맵) · `MediStack_v1.0_clinical_reviewer_checklist.md`(clinical reviewer 트랙).

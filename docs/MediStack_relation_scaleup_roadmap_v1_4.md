@@ -1,0 +1,81 @@
+# MediStack — Relation Scale-up Roadmap (v1.4, 1,000 relation 목표)
+
+> Relation Factory Bot v1.4 라운드(2026-06-16) 산출. **live 승격 0** — 본 문서는 1,000 relation 달성 경로·구조·수확률.
+> 정본 데이터: `data/review/relation_factory_*_v1_4.*` · draft `data/drafts/relation_factory_draft_batch_v1_4.json`.
+
+## 1. 현재 위치
+
+| 구분 | 수 |
+|---|---|
+| **live relations** | **60** (id1~61, published=false·clinical_reviewed=false) |
+| reviewer-gated near-term(통합 준비 완료) | 페니실라민 2 · theme map 6 · 칼륨 4 · AT-FEX 1 = **13** |
+| **신규 factory source_confirmed draft(v1.4)** | **43** (adversarial+reviewer 전 — live 아님) |
+| raw 후보 풀(v1.4) | 301 (중복 제거 후 신규 262 · source-check queue 200) |
+
+> near-term 13 + factory 43 = 잠재 +56 → reviewer/adversarial 통과분만 단계적 live. **개수보다 정확성 우선**.
+
+## 2. 단계 목표
+
+| 단계 | 목표 relation | 내용 |
+|---|---|---|
+| v1.3 | 60 → ~75 | 페니실라민 2 + theme map 6(선행 PR 후) + 칼륨 4 + AT-FEX 1 (reviewer note 후) |
+| **v1.4** | 75 → ~120 | factory 43 draft 중 adversarial+reviewer 통과분(FQ/tetracycline/bisphosphonate × mineral·antacid, AED × folate/vitD) |
+| v1.5 | 120 → ~200 | 신규 family 2차 수확(bile-acid·azole·만성 depletion 확장) + 미커버 약물 |
+| v2.0 | 200 → 300+ | family universe 확장 + 주간 factory run 누적 |
+| long-term | → **1,000** verified_reference | 아래 §4 구조 |
+
+## 3. family별 수확률 (v1.4 source-check 실측)
+
+| family | source-check | confirmed | yield | 비고 |
+|---|---|---|---|---|
+| F1 Fluoroquinolone × metal | 85 | 18 | **0.21** | live 다수 존재→신규는 미커버 약물(노르/페/발로/자보/토수플록사신 등) |
+| F2 Tetracycline × metal | 27 | 5 | 0.19 | 테트라사이클린·미노/독시(antacid) |
+| F3 Bisphosphonate × mineral | 29 | 4 | 0.14 | 에티드론산(Ca/Fe)·알렌드론/이반드론(antacid) |
+| F4 Thyroid × mineral/antacid | 4 | 1 | 0.25 | 레보티록신×antacid (Fe/Ca live) |
+| F6 Acid-reducer × Fe/B12 | 16 | 1 | 0.06 | 에스오메프라졸×B12(저위산증). 대부분 live/약신호 |
+| F7 Bile-acid seq × fat-sol vit | 4 | 0 | 0.00 | 콜레세벨람/콜레스티폴 — 라벨 미기재(needs_review) |
+| **F9 Chronic-use depletion** | 33 | 12 | **0.36** | 항전간제(페니토인·카르바마제핀·페노바르비탈·프리미돈)×엽산/비타민D·설파살라진/트리메토프림×엽산 |
+| F10 Azole × antacid | 2 | 2 | **1.00** | 케토/포사코나졸(pH 의존 흡수) |
+
+**수확 인사이트**
+- **최고 수확 = F9(만성 depletion 0.36)·F10(azole 1.0)** — live 미개척 영역. F1/F2 는 live 가 이미 mineral 흡수를 흡수해 신규 여지 적음(미커버 약물만).
+- **no_domestic 90건** = 가티/게미/스파르플록사신 등 다수 미유통(fail-closed 정상). 미유통은 재후보화 금지.
+- direction_mismatch(needs_review) 17 · label_not_found 50 — 라벨은 있으나 직접근거 약함 → reviewer 판단.
+
+## 4. 1,000 relation 달성 구조
+
+1,000 verified_reference 는 단일 라운드로 불가 — **공장 파이프라인 + reviewer batch** 가 필요.
+
+- **draft pool 3,000+**: family universe 확장(현 11 family → 30+). 약물군 × counterpart 조합 대량 생성(중복 차단 inventory 필수).
+- **source-check queue 10,000+**: SDK-only·fail-closed·캐시. 라벨당 1회 fetch 로 다중 counterpart 동시 확인(비용 절감).
+- **reject/hold ledger 영속화**: `relation_factory_inventory_v1_4.json` 확장 — 미유통·세파계×철분·K-sparing·고위험 재후보화 영구 차단.
+- **reviewer batch**: source_confirmed draft → adversarial(refute-by-default) → reviewer package → dry-run integrator → live(별도). 배치당 20~40건.
+- **주간 factory run**(향후·schedule 아님): 신규 seed/약물만 대상(같은 family 반복 run 은 신규 0 수렴 → 비효율). 신규 family 확장이 가치.
+- **품질 게이트 자동화**: `validate_relation_factory_batch_v1_4.py`(결함주입 10) — Mg 영양제 오인·제산제 양이온 오분류·보충 권유·항응고 오인·고위험 약물·live 중복을 기계 차단.
+
+## 5. 다음 확장 family 후보(우선순위)
+
+1. **만성 depletion 확장**(최고 수확): 더 많은 효소유도제·항대사물질 × 비타민/미네랄(라벨 직접근거).
+2. **azole/pH 의존 흡수**: 항진균·일부 항바이러스 × 제산제/H2/PPI.
+3. **bile-acid/lipid 흡수**: 미확인 품목 라벨 직접 확인(콜레세벨람은 미기재).
+4. **미커버 mineral 흡수 약물**: live 에 없는 개별 약물(테트라사이클린계·일부 FQ).
+- ⚠️ **고위험 제외 유지**: warfarin×비타민K(antagonism)·이식/면역억제·항암(MTX)·임신·정신과·K-sparing×칼륨(상승 방향). 계열 일반화 금지.
+
+## 6. manual run 절차 (Relation Factory Bot v1.4)
+
+> harvester/schedule 와 **연동하지 않음**(별도 manual tool). 향후 PR 로 provider 편입 검토.
+
+```bash
+# 1) 인벤토리(중복 차단) 갱신 — 읽기전용
+python3 scripts/build_relation_factory_inventory_v1_4.py
+# 2) family universe + 후보 생성 + precheck + source-check queue (offline·안전·쓰기 data/review 만)
+python3 scripts/relation_factory_bot_v1_4.py
+# 3) (선택) SDK-only source-check + draft batch + PM queue — 네트워크 최소·fail-closed
+python3 scripts/relation_factory_bot_v1_4.py --online-source-check --max-source-check 200 [--p0-only] [--families F1,F9]
+# 4) 검증
+python3 scripts/validate_relation_factory_batch_v1_4.py   # 결함주입 10
+python3 scripts/smoke_relation_factory_batch_v1_4.py
+```
+- 기본 실행은 **live write 0 · export write 0 · src write 0 · no auto integrate**. 산출물은 `data/review/`·`data/drafts/` 만.
+- SDK 캐시: `data/harvest_queue/_sdk/`(gitignore). runtime queue 커밋 금지.
+- live 통합은 draft → adversarial → reviewer note → dry-run integrator → 별도 PR(본 라운드 0).

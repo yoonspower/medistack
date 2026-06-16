@@ -1,0 +1,40 @@
+{
+ "meta": {
+  "name": "relation_factory_precheck_summary_v1_4"
+ },
+ "total_raw": 301,
+ "new_after_dedup": 262,
+ "source_check_queue": 200,
+ "by_priority": {
+  "REJECT_PRECHECK": 39,
+  "P0": 112,
+  "P1": 55,
+  "HOLD": 36,
+  "P2": 59
+ },
+ "by_family": {
+  "F1": 100,
+  "F2": 35,
+  "F3": 36,
+  "F4": 4,
+  "F5": 12,
+  "F6": 20,
+  "F7": 4,
+  "F8": 30,
+  "F9": 33,
+  "F10": 3,
+  "F11": 24
+ },
+ "by_duplicate_status": {
+  "duplicate_live": 35,
+  "new": 262,
+  "duplicate_pending": 2,
+  "duplicate_no_domestic": 1,
+  "duplicate_highrisk": 1
+ },
+ "p0": 112,
+ "p1": 55,
+ "p2": 59,
+ "hold": 36,
+ "reject_precheck": 39
+}
