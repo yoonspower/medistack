@@ -4,6 +4,8 @@
 
 이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = clinical reviewer 핸드오프 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격(3건 통합 드라이런 완료), published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
 
+> **갱신(2026-06-16, 페니실라민 FE/ZN subset 통합 준비 라운드)**: theme map 6건 중 **페니실라민 × 철분/아연 2건만** subset 으로 분리해 reviewer-gated 준비 완료(승격 0). 둘 다 **counterpart_category=null(일반 영양소) → live 선행조건 0**(현행 v0.2 PASS 실증·src/facet/chip/validator/full index/aliases 변경 불필요) → theme map 6건 중 **가장 먼저 안전 통합 가능**. 신규: `scripts/integrate_penicillamine_subset_v1_3.py`(dry-run·`--pm-approved --reviewer-note` 전제) → `data/review/penicillamine_subset_live_dryrun_v1_3.json`(**60→62**·id 62~63·sha 불변·prerequisites []) · `test_penicillamine_reviewer_note_gate_v1_3.py` · `validate_penicillamine_subset_dryrun_v1_3.py`(결함주입 9) · `smoke_penicillamine_subset_v1_3.py` · docs `MediStack_reviewer_package_penicillamine_subset_v1_3.md` · `MediStack_penicillamine_mechanism_decision_v1_3.md`. **ZN mechanism 결정 = Option A**(absorption 추론 유지·confidence moderate·user 카피 '효과 감소' 충실 — Option B interaction 은 v0.2 ALLOWED_MECHANISM 밖이라 validator PR 선행 필요라 비채택). subset 게이트와 full-6 게이트는 **상호 배타**(노트 교차 거부)·dry-run artifact 분리. 아래 **프롬프트 14~16** 신설. ↓이전:
+
 > **갱신(2026-06-15)**: 프롬프트 2가 '칼륨 PM-ready **재검토**'였으나 재검토는 완료됐다(6건 확정·6/6 survives·`data/review/potassium_depletion_pm_ready_v1_2.json` `meta.rereview_2026_06_15`). 또한 PM-ready 3건(DF01·DF04·DF05)의 **live 통합 준비(드라이런·검증기)**까지 끝났다. 그래서 프롬프트 2를 다음 실제 작업인 **'칼륨 PM-ready 3건 live 통합'**으로 교체한다. reviewer 핸드오프: `docs/MediStack_clinical_reviewer_handoff_v1_2.md`.
 
 > **갱신(2026-06-15, reviewer-gated 하드닝 라운드)**: 두 통합 스크립트 모두 **의미적 reviewer-note 인터록**(`check_reviewer_note`) 보강 완료 — 칼륨=승인 토큰+draft_id 4건 전건, AT-FEX=승인 토큰+candidate_id+itemSeq 202202380+evidence moderate, 공통=**SAMPLE 토큰·미기입 placeholder 거부**. 복붙 reviewer note 템플릿은 핸드오프 §8, SAMPLE 주의는 §9, 회귀는 `scripts/test_reviewer_note_gate_v1_3.py`(invalid 거부+valid 통과+live export sha256 불변). 그래서 아래 프롬프트 1(AT-FEX)·2(칼륨)는 **`--pm-approved --reviewer-note <노트>` 둘 다** 전제로 갱신. 또한 **프롬프트 6(harvester schedule 활성화 검토)** 신설(아직 실행 아님). 본 라운드에서 실제 통합·schedule 활성화는 0.
@@ -210,3 +212,44 @@
 > **불변**: 문서 검토·sign-off 까지가 범위. src/validator/export 수정 0.
 
 근거: `docs/MediStack_counterpart_category_policy_v1_3.md` · `docs/MediStack_theme_map_grouping_strategy_v1_3.md`.
+
+---
+
+## 프롬프트 14 — 페니실라민 FE/ZN 2건 reviewer decision (승격 아님)
+
+> **선행**: subset reviewer 패키지·mechanism 결정 문서·dry-run(60→62·선행조건 0) ready.
+>
+> **작업(결정 단계)**: clinical reviewer / PM 이 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §3 두 카드를 검토하고 reviewer note(§6 템플릿)를 작성하라. 결정: ①**TM-CHEL-01-ZN mechanism** = absorption(추론·Option A 권고) vs interaction(Option B — validator PR 선행) vs needs_review 보류(Option C) — 상세 `docs/MediStack_penicillamine_mechanism_decision_v1_3.md`. ②FE/ZN **개별 카드** 확인. ③verified_reference 노출 동의. 게이트(`integrate_penicillamine_subset_v1_3.check_reviewer_note`)가 승인 토큰·FE/ZN 전건·ZN mechanism·grouping·verified_reference·clinical_reviewed=true 아님·제품 추천 아님·철분/아연 보충 권유 아님 을 강제.
+>
+> **불변**: live relation 0 · published/clinical_reviewed=false · reviewed_by 공란 · 제품/보충 UI 0. 결정·노트 작성까지가 범위.
+
+근거: `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` · `docs/MediStack_penicillamine_mechanism_decision_v1_3.md`.
+
+---
+
+## 프롬프트 15 — 페니실라민 FE/ZN 2건 live 통합 (reviewer note 전제 · 선행조건 0)
+
+> **선행 충족 필수**: 프롬프트 14 reviewer note 확보(실물·게이트 통과). **별도 validator/src 선행조건 없음**(일반 영양소 — dry-run `live_integration_prerequisites: []` 실증). 별도 PM 승인.
+>
+> **작업**: 페니실라민 **2건**(TM-CHEL-01-FE·TM-CHEL-01-ZN)을 v0.2 export 에 멱등 append-only 통합 — `python3 scripts/integrate_penicillamine_subset_v1_3.py --pm-approved --reviewer-note <노트>`. id runtime max+1(현재 **60→62**·id 62~63. full-6/AT-FEX/칼륨 먼저면 자동 조정). 각 행: ingredient=페니실라민·nutrient=철분/아연·mechanism=absorption(ZN 추론)·action=separation·evidence=high·**counterpart_category 필드 생략(null)**·product_link/potassium/clinical=false·source={허가사항,url(itemSeq 198300142),pointer}. **full index/aliases/relation_card 1168·name_only 16412 무변경.**
+>
+> **통합 후 검증(전수 PASS)**: relation-count 하드코딩 validator **+2 갱신** + 신규 `validate_penicillamine_subset_integration_v1_3.py`(드라이런 검증기를 live 대상 전환) + v0.2 export validator(python+node·**선행조건 없이 PASS**) + 영양소 facet node 렌더(철분/아연 정상 노출·separation chip) + forbidden 0 + full smoke + no-live-write guard + deploy 게이트 + **live HTTP 200** + git clean.
+>
+> **금지**: reviewer note 없이 통합 · full-6 integrator 동시 사용(같은 후보 중복) · clinical_reviewed=true · published=true · reviewed_by 작성 · 제품/제휴 UI · 철분/아연 보충 권유 · ZN 을 interaction 으로 바꾸되 validator 미확장(enum FAIL).
+
+근거: `data/review/penicillamine_subset_live_dryrun_v1_3.json` · `scripts/integrate_penicillamine_subset_v1_3.py` · `scripts/validate_penicillamine_subset_dryrun_v1_3.py` · `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §5·§7.
+
+---
+
+## 프롬프트 16 — theme map full-6 선행조건 PR (페니실라민 외 4건 · live relation 0)
+
+> **상태**: TM-LIP-01/02(fat_soluble_vitamin)·TM-CEPH-AC-01/02(acid_reducing_drug)는 live 통합 전 **validator/src 선행 PR** 필요(페니실라민 subset 은 불필요).
+>
+> **작업(선행 PR — live relation 0)**: ①`scripts/validate_medistack_v0_2_export.py` 검사 #15 의 `avoid_concomitant ⇒ counterpart_category==al_mg_antacid` 를 **acid_reducing_drug 포함**으로 확장(TM-CEPH-AC-02) + 결함주입 테스트. ②`src/js/guards.js getFacets`: `counterpart_category` 있는 relation 일괄 제외 → **nutrient_categories(fat_soluble_vitamin)은 facet 포함**, drug_categories 만 제외 분기 + node 렌더 테스트. ③`src/js/render.js`: **acid_reducing_drug 전용 chip/kicker**(제산제·H2/PPI 약물 표기). **이 PR 은 relation 추가 0**(validator/src 만). 검증: 기존 60 relation 회귀 0 + 신규 category 시뮬 렌더 PASS + deploy + live 200.
+>
+> **금지**: 이 PR 에서 theme map relation live 추가 · published/clinical=true · 제품 UI.
+> → 이 PR 통과 후 프롬프트 11(full-6 live 통합·60→66 또는 subset 후 잔여)로 진행.
+
+근거: `data/review/theme_map_live_dryrun_v1_3.json` `live_integration_prerequisites` · `docs/MediStack_reviewer_package_theme_map_v1_3.md` §7 · `docs/MediStack_counterpart_category_policy_v1_3.md` §6.
+
+> **순서 권고**: 프롬프트 14·15(페니실라민 subset·선행조건 0) **먼저** → 프롬프트 13(category sign-off) → 프롬프트 16(선행 PR) → 프롬프트 11(나머지 4건 또는 full-6 잔여). 칼륨 4건(프롬프트 2)·AT-FEX(프롬프트 1)은 독립 트랙으로 병행 가능. **full-6 통합기와 subset 통합기는 동시 실행 금지**(같은 후보 중복 — subset 우선 시 full 은 잔여 4건만, 프롬프트 12 `--only`).

@@ -98,7 +98,9 @@ evidence/confidence · adversarial verdict · remaining risks · reviewer 질문
 | TM-LIP-01/02 | ✅ | ✅ PASS(separation) | src facet: fat_soluble_vitamin 영양소 facet 포함 필요(§7) |
 | TM-CEPH-AC-01 | ✅ | ✅ PASS(separation) | acid_reducing_drug chip/kicker src 필요(§7) |
 | TM-CEPH-AC-02 | ✅ | ⚠️ #15 차단 | avoid_concomitant+acid_reducing_drug → validator #15 확장 필요(§7) |
-| TM-CHEL-01-FE/ZN | ✅ | ✅ PASS(separation) | 일반 영양소 — src 변경 불필요 |
+| TM-CHEL-01-FE/ZN | ✅ | ✅ PASS(separation) | 일반 영양소 — **src 변경 불필요·선행조건 0**(별도 subset 패키지) |
+
+> **🟢 페니실라민 FE/ZN subset 우선(2026-06-16)**: 이 2건은 **선행조건 0**이라 나머지 4건(§7 선행 PR 필요)보다 먼저 통합 가능. 전용 패키지 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` + dry-run `data/review/penicillamine_subset_live_dryrun_v1_3.json`(60→62) + 통합기 `scripts/integrate_penicillamine_subset_v1_3.py`. 실행 = next_prompts 프롬프트 15. **full-6 통합기와 subset 통합기는 동시 실행 금지**(같은 후보 중복).
 
 ## 6. HOLD 7건 (검토 대상 아님 — 참고)
 

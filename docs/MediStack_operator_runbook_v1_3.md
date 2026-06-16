@@ -229,6 +229,8 @@ theme map 6건의 live 통합은 **reviewer note + 선행조건 후 별도 PR**(
 2. **선행조건(별도 PR)**: v0.2 validator #15 를 acid_reducing_drug 포함 확장 + src(getFacets·acid_reducing_drug chip). dry-run = `data/review/theme_map_live_dryrun_v1_3.json`.
 3. `python3 scripts/integrate_theme_map_draft_batch_v1_3.py --pm-approved --reviewer-note <노트>`(60→66·멱등) → 통합 후 검증 전수 + live HTTP 200. 게이트 회귀 = `scripts/test_theme_map_reviewer_note_gate_v1_3.py`. 실행 프롬프트 = next_prompts 프롬프트 11.
 
+> **🟢 페니실라민 FE/ZN subset 우선 경로(2026-06-16·선행조건 0)**: theme map 6건 중 FE/ZN 2건은 일반 영양소(counterpart_category=null)라 **validator/src 선행조건 없이** 먼저 통합 가능(60→62). reviewer 가 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` §6 템플릿으로 note 작성(FE/ZN+ZN mechanism+개별카드) → `python3 scripts/integrate_penicillamine_subset_v1_3.py --pm-approved --reviewer-note <노트>`(멱등). 게이트 회귀 = `scripts/test_penicillamine_reviewer_note_gate_v1_3.py`. 실행 프롬프트 = next_prompts 프롬프트 15. ⚠️ full-6 통합기와 **동시 실행 금지**(같은 후보 중복).
+
 ## 13. 금지 (운영 불변)
 
 live relation 실제 추가(승인 경로 외) / export·full index·aliases·DATA_URL 직접 손편집 / schedule 활성화(이 라운드) /

@@ -42,6 +42,8 @@
 → **권고: 개별 카드**(FE 직접근거 vs ZN 추론 강도 차이 보존). 아연 mechanism 은 reviewer 가
 absorption vs interaction 확정(**user 카피는 '효과 감소'로 라벨 충실 — 영향 없음**). **reviewer 최종 결정.**
 
+> **🟢 subset 우선 권고(2026-06-16)**: FE/ZN 2건은 **counterpart_category=null(일반 영양소) → live 선행조건 0**(현행 v0.2 PASS·src/facet/chip/validator 변경 불필요). theme map 6건 중 **가장 먼저 안전 통합 가능**. 전용 패키지 `docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md` · mechanism 결정(Option A=absorption 추론) `docs/MediStack_penicillamine_mechanism_decision_v1_3.md` · dry-run `data/review/penicillamine_subset_live_dryrun_v1_3.json`(60→62). 실행 = next_prompts 프롬프트 15. (지용성비타민·세팔로 4건은 src/validator 선행 PR=프롬프트 16 후.)
+
 ## 4. 카드 수 · relation_count 예상
 
 | grouping 시나리오 | 신규 relation | live count |

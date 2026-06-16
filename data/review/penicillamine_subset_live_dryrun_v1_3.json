@@ -1,0 +1,158 @@
+{
+ "meta": {
+  "name": "penicillamine_subset_live_dryrun_v1_3",
+  "status": "DRY-RUN — NOT LIVE / do_not_implement_yet=true / live_integration_forbidden=true",
+  "purpose": "페니실라민 FE/ZN 2건 subset live 통합 예상 산출물(드라이런). 실제 export/full index/aliases/src 무수정. validate_penicillamine_subset_dryrun_v1_3.py 가 안전·계약을 검증.",
+  "baseline_relations": 60,
+  "baseline_max_id": 61,
+  "expected_relation_count_before": 60,
+  "expected_relation_count_after": 62,
+  "expected_ids": [
+   62,
+   63
+  ],
+  "included_candidate_ids": [
+   "TM-CHEL-01-FE",
+   "TM-CHEL-01-ZN"
+  ],
+  "excluded_theme_map_candidate_ids": [
+   "TM-LIP-01",
+   "TM-LIP-02",
+   "TM-CEPH-AC-01",
+   "TM-CEPH-AC-02"
+  ],
+  "itemSeq": "198300142",
+  "live_write_performed": false,
+  "live_promotion": 0,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "data_url": "v0.2 (불변)",
+  "export_sha_before": "62df92844faf1bcc47e0e6ace1b0cd1307222b0461a6b819122b6ffab5030144",
+  "export_sha_after_same": true,
+  "zn_mechanism_decision": {
+   "option": "A",
+   "mechanism": "absorption",
+   "inference_flag": true,
+   "confidence": "moderate",
+   "user_copy_basis": "라벨 '효과 감소' 충실 — absorption 단정 안 함",
+   "rationale": "Option B(interaction)는 v0.2 ALLOWED_MECHANISM={absorption,depletion} 밖이라 validator 선행 PR 필요. Option A 는 선행조건 0(현행 v0.2 PASS) + user 카피 라벨 충실."
+  },
+  "zn_mechanism_decision_required": true,
+  "reviewer_note_required": true,
+  "reviewer_note_interlock": {
+   "required": true,
+   "approval_tokens": [
+    "approved",
+    "승인"
+   ],
+   "candidate_ids_all_of": [
+    "TM-CHEL-01-FE",
+    "TM-CHEL-01-ZN"
+   ],
+   "zn_mechanism_decision_required": true,
+   "grouping_decision_required": true,
+   "verified_reference_consent_required": true,
+   "rejects": "SAMPLE/placeholder/빈 노트 · 토큰/candidate_id/mechanism/grouping/verified_reference 누락 · clinical_reviewed=true·제품추천·철분/아연 보충 권유 허용 문구",
+   "template": "docs/MediStack_reviewer_package_penicillamine_subset_v1_3.md §reviewer-note"
+  },
+  "guard_checks": {
+   "guard_projected_violations": [],
+   "all_counterpart_category_null": true,
+   "all_product_link_false": true,
+   "all_potassium_card_false": true,
+   "all_requires_clinical_review_false": true,
+   "no_reviewed_by": true,
+   "no_draft_only_leak": true,
+   "all_itemseq_198300142": true,
+   "ids_disjoint_from_live": true
+  },
+  "live_integration_prerequisites": [],
+  "v0_2_validator_evidence": {
+   "sim_subset_2_passed": true,
+   "sim_subset_2_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================",
+   "interpretation": "counterpart_category=null(일반 영양소)+separation+mechanism=absorption → 현행 v0.2 validator PASS. acid_reducing_drug/avoid_concomitant(#15)·fat_soluble_vitamin(facet) 선행조건 무관."
+  },
+  "render_safety_summary": "두 카드 모두 counterpart_category=null → 기존 nutrient relation 과 동일 렌더(영양소 facet 노출·separation chip '복용 간격'). src getFacets/render 변경 불필요. full index/aliases/relation_card 1168·name_only 16412 불변.",
+  "validator_result_summary": "sim v0.2 PASS=True (선행조건 0)",
+  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
+ },
+ "projected_entries": [
+  {
+   "candidate_id": "TM-CHEL-01-FE",
+   "projected_id": 62,
+   "counterpart_category": null,
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "confidence": "high",
+   "adversarial_verdict": "survives",
+   "risk_flags": [],
+   "projected_live_relation": {
+    "id": 62,
+    "ingredient": "페니실라민",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "high",
+    "display_text_ko": "이 약은 철분제와 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분 보충제와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198300142",
+     "pointer": "식약처 nedrug getItemDetail / 페니실라민 / itemSeq 198300142 / 상호작용 / '경구철제제(구연산제일철나트륨, 황산철 등), 마그네슘 또는 알루미늄 함유제산제(수산화마그네슘, 수산화알루미늄)는 이 약의 흡수율을 저하시켜 효과를 감소시킬 수 있으므로, 반드시 투여해야 하는 경우에는 동시투여를 피한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "TM-CHEL-01-ZN",
+   "projected_id": 63,
+   "counterpart_category": null,
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "high",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "risk_flags": [],
+   "projected_live_relation": {
+    "id": 63,
+    "ingredient": "페니실라민",
+    "nutrient": "아연",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "high",
+    "display_text_ko": "이 약은 아연 보충제와 함께 복용하면 약의 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "아연 보충제와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198300142",
+     "pointer": "식약처 nedrug getItemDetail / 페니실라민 / itemSeq 198300142 / 상호작용 / '아연을 함유하는 경구제는 이 약의 효과를 감소시킬 수 있으므로, 반드시 병용해야 하는 경우에는 동시투여를 피한다.' / 확인일 2026-06-16"
+    }
+   }
+  }
+ ],
+ "excluded_theme_map": [
+  {
+   "candidate_id": "TM-LIP-01",
+   "reason": "fat_soluble_vitamin — facet 선행조건(별도 PR)"
+  },
+  {
+   "candidate_id": "TM-LIP-02",
+   "reason": "fat_soluble_vitamin — facet 선행조건(별도 PR)"
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-01",
+   "reason": "acid_reducing_drug — chip 선행조건(별도 PR)"
+  },
+  {
+   "candidate_id": "TM-CEPH-AC-02",
+   "reason": "acid_reducing_drug+avoid_concomitant — validator #15 선행조건(별도 PR)"
+  }
+ ]
+}
