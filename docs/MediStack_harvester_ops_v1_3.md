@@ -2,6 +2,7 @@
 
 > **참고(2026-06-16):** 대량 후보는 별도 **Relation Factory Bot v1.4**(`scripts/relation_factory_bot_v1_4.py` + `adversarial_verify_relation_factory_v1_4.py`) 트랙에서 생성·적대검증한다(harvester 와 비연동). factory 운영 절차는 `docs/MediStack_operator_runbook_v1_3.md` §12.6.
 > factory reviewer-ready 의 첫 reviewer-gated 통합 후보 = **F1 퀴놀론 18건**(`scripts/integrate_f1_quinolone_batch_v1_4.py` dry-run·live 0·harvester 비연동·schedule 무관).
+> 두 번째 후보 = **F2 테트라사이클린 5건**(`scripts/integrate_f2_tetracycline_batch_v1_4.py` dry-run·live 0·60→65·harvester 비연동·schedule 무관).
 
 작성일: 2026-06-14 · 상태: **운영 가이드 / schedule 비활성** · 대상 AI/PM 세션 핸드오프용 자기완결 문서
 

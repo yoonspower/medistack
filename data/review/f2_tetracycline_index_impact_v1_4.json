@@ -1,0 +1,49 @@
+{
+ "meta": {
+  "name": "f2_tetracycline_index_impact_v1_4",
+  "status": "ANALYSIS — read-only / no index/alias write",
+  "purpose": "F2 5건 live 통합 시 full index/relation_card/name_only/aliases 영향 분석.",
+  "confirmed_at": "2026-06-17"
+ },
+ "impact": {
+  "full_index_counts_current": {
+   "total": 17580,
+   "relation_card": 1168,
+   "name_only": 16412
+  },
+  "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+  "per_ingredient": {
+   "독시사이클린": {
+    "index_items": 11,
+    "covered_by_relation": 11,
+    "name_only": 0,
+    "in_aliases": true,
+    "latent_flip_if_alias_enriched": 0
+   },
+   "미노사이클린": {
+    "index_items": 3,
+    "covered_by_relation": 3,
+    "name_only": 0,
+    "in_aliases": true,
+    "latent_flip_if_alias_enriched": 0
+   },
+   "테트라사이클린": {
+    "index_items": 1,
+    "covered_by_relation": 0,
+    "name_only": 1,
+    "in_aliases": false,
+    "latent_flip_if_alias_enriched": 1
+   }
+  },
+  "automatic_flip_from_relation_integration": 0,
+  "relation_card_flip_required": 0,
+  "relation_card_after": 1168,
+  "name_only_after": 16412,
+  "index_change_required": false,
+  "alias_change_required": false,
+  "latent_flip_if_alias_enriched": 1,
+  "relation_card_after_if_alias_enriched": 1169,
+  "name_only_after_if_alias_enriched": 16411,
+  "interpretation": "독시사이클린(11)/미노사이클린(3)은 이미 covered_by_relation(verified_item_seqs 등록·in_aliases). 테트라사이클린은 index sample 에 1건 name_only(in_aliases=false). full index/aliases 의 coverage 는 alias pool(verified_item_seqs)로 결정되며 export relations 와 decoupled(런타임 재생성·fail-soft 검색보조) → relation-only 통합은 자동 flip 0 · relation_card 1168/name_only 16412 불변. 테트라사이클린을 verified_item_seqs 에 등록(별도 alias 작업)하면 1건 flip → relation_card 1169/name_only 16411 (F1(전 성분 부재) 대비 F2 차이점: 테트라 1건은 latent flip 후보). 통합 차단 아님."
+ }
+}

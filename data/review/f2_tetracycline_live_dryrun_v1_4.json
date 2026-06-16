@@ -1,0 +1,422 @@
+{
+ "meta": {
+  "name": "f2_tetracycline_live_dryrun_v1_4",
+  "status": "DRY-RUN — NOT LIVE / do_not_implement_yet=true / live_integration_forbidden=true",
+  "purpose": "F2 5건 live 통합 예상 산출물(드라이런). 실제 export/full index/aliases/src 무수정. validate_f2_tetracycline_dryrun_v1_4.py 가 안전·계약을 검증.",
+  "requested_scope": "all5",
+  "baseline_relations": 60,
+  "baseline_max_id": 61,
+  "expected_relation_count_before": 60,
+  "expected_relation_count_after_full": 65,
+  "expected_relation_count_after": 65,
+  "expected_ids_full": [
+   62,
+   63,
+   64,
+   65,
+   66
+  ],
+  "expected_ids": [
+   62,
+   63,
+   64,
+   65,
+   66
+  ],
+  "scenario_if_f1_already_live": {
+   "baseline": 78,
+   "expected_after_full": 83
+  },
+  "included_candidate_ids": [
+   "RF-F2-0105",
+   "RF-F2-0110",
+   "RF-F2-0111",
+   "RF-F2-0114",
+   "RF-F2-0115"
+  ],
+  "all_f2_candidate_ids": [
+   "RF-F2-0105",
+   "RF-F2-0110",
+   "RF-F2-0111",
+   "RF-F2-0114",
+   "RF-F2-0115"
+  ],
+  "excluded_non_f2_candidate_ids_note": "다른 family(F1/F3/F4/F6/F9/F10)·pending(페니실라민/theme/칼륨/AT-FEX)은 본 batch 제외.",
+  "scope_scenarios": {
+   "recommended": "all5 once (60→65) — 5건 소규모·reviewer 1패스. 단 독시/미노 nutrient-overlap 결정 1건 surface. isolate 원하면 by_counterpart_2wave. F1 동시 통합 시 antibiotic_mineral_wave 로 fold.",
+   "all5": {
+    "count": 5,
+    "expected_count": 65,
+    "expected_ids": [
+     62,
+     63,
+     64,
+     65,
+     66
+    ],
+    "candidate_ids": [
+     "RF-F2-0105",
+     "RF-F2-0110",
+     "RF-F2-0111",
+     "RF-F2-0114",
+     "RF-F2-0115"
+    ]
+   },
+   "nutrient2": {
+    "count": 2,
+    "expected_count": 62,
+    "expected_ids": [
+     62,
+     63
+    ],
+    "candidate_ids": [
+     "RF-F2-0111",
+     "RF-F2-0114"
+    ]
+   },
+   "antacid3": {
+    "count": 3,
+    "expected_count": 63,
+    "expected_ids": [
+     62,
+     63,
+     64
+    ],
+    "candidate_ids": [
+     "RF-F2-0105",
+     "RF-F2-0110",
+     "RF-F2-0115"
+    ]
+   },
+   "top2": {
+    "count": 2,
+    "expected_count": 62,
+    "expected_ids": [
+     62,
+     63
+    ],
+    "candidate_ids": [
+     "RF-F2-0111",
+     "RF-F2-0114"
+    ]
+   },
+   "top3_tetra_by_ingredient": {
+    "count": 3,
+    "expected_count": 63,
+    "expected_ids": [
+     62,
+     63,
+     64
+    ],
+    "candidate_ids": [
+     "RF-F2-0111",
+     "RF-F2-0114",
+     "RF-F2-0115"
+    ]
+   },
+   "by_counterpart_2wave": {
+    "wave1_nutrient2": {
+     "expected_count": 62,
+     "note": "테트라×철분/아연 — live 독시/미노×광물과 동일 렌더·cleanly additive → 1차 권고."
+    },
+    "wave2_antacid3": {
+     "expected_count": 65,
+     "note": "독시/미노/테트라×Al/Mg제산제(id61 렌더). 독시/미노 nutrient-overlap reviewer 판단 후 → 2차."
+    },
+    "note": "wave1 60→62, wave2 62→65. rollback 단위 분리·overlap 결정 격리. all5 일괄도 허용(양 렌더 경로 live 검증됨)."
+   },
+   "scenario_if_f1_already_live": {
+    "baseline": 78,
+    "expected_after_full": 83,
+    "note": "F1 18건(60→78) 먼저 live 면 F2 5건은 78→83(id 80~84). runtime max+1 자동 조정."
+   },
+   "antibiotic_mineral_wave_with_f1": {
+    "nutrient_wave": "F1 nutrient10 + F2 nutrient2 = 12건(전부 live 광물 렌더 동일)",
+    "antacid_wave": "F1 antacid8 + F2 antacid3 = 11건(al_mg_antacid·id61 렌더)",
+    "note": "항생제×금속/제산제 통합 wave 로 F1·F2 묶음. 통합 여부·순서는 reviewer/PM."
+   },
+   "by_ingredient": {
+    "독시사이클린": [
+     "RF-F2-0105"
+    ],
+    "미노사이클린": [
+     "RF-F2-0110"
+    ],
+    "테트라사이클린": [
+     "RF-F2-0111",
+     "RF-F2-0114",
+     "RF-F2-0115"
+    ]
+   },
+   "id_rule": "id 는 runtime max+1. 단독/순차 통합 시 그 시점 max+1 부터. F1/AT-FEX/칼륨/theme/페니실라민 먼저면 자동 조정."
+  },
+  "reverify_counts": {
+   "survives": 5,
+   "survives_with_copy_change": 0,
+   "needs_review": 0,
+   "hold": 0,
+   "reject": 0
+  },
+  "live_write_performed": false,
+  "live_promotion": 0,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "data_url": "v0.2 (불변)",
+  "export_sha_before": "62df92844faf1bcc47e0e6ace1b0cd1307222b0461a6b819122b6ffab5030144",
+  "export_sha_after_same": true,
+  "reviewer_note_required": true,
+  "reviewer_note_interlock": {
+   "required": true,
+   "approval_tokens": [
+    "approved",
+    "승인"
+   ],
+   "candidate_ids_all_of_scope": true,
+   "scope_decision_required": true,
+   "grouping_decision_required": true,
+   "category_decision": "al_mg_antacid",
+   "nutrient_overlap_decision_required": true,
+   "separation_interval_decision_required": true,
+   "verified_reference_consent_required": true,
+   "rejects": "SAMPLE/placeholder/빈 노트 · 토큰/candidate_id(scope 전건)/scope/grouping/al_mg_antacid/overlap/간격/verified_reference 누락 · clinical_reviewed=true·제품추천·금속이온/제산제/우유 복용 권유 허용",
+   "template": "docs/MediStack_reviewer_package_f2_tetracycline_v1_4.md §reviewer-note"
+  },
+  "guard_checks": {
+   "guard_projected_violations": [],
+   "all_product_link_false": true,
+   "all_potassium_card_false": true,
+   "all_requires_clinical_review_false": true,
+   "no_reviewed_by": true,
+   "no_draft_only_leak": true,
+   "all_source_itemseq": true,
+   "ids_disjoint_from_live": true,
+   "antacid_category_al_mg_only": true,
+   "nutrient_no_category": true,
+   "ingredient_all_tetracycline": true
+  },
+  "duplicate_summary": {
+   "exact_dup_with_live": [],
+   "note": "독시/미노사이클린은 live 에 ×칼슘/철분/마그네슘/아연(영양소)만 — Al/Mg 제산제(al_mg_antacid·약물)는 별도 counterpart(id61 선례)로 exact dup 아님. 테트라사이클린은 신규 성분. exact dup 0."
+  },
+  "conflict_summary": {
+   "live_60": "exact dup 0(위 duplicate_summary).",
+   "f1_quinolone_18": "퀴놀론(록사신)×광물/제산제 — 성분 다름·충돌 0(F2=사이클린).",
+   "penicillamine_2": "성분/counterpart 무관 — 충돌 0.",
+   "theme_map_6": "지용성비타민/세팔로 acid_reducing_drug/페니실라민 — F2 무관·충돌 0.",
+   "potassium_4": "이뇨제×칼륨 depletion — F2 무관·충돌 0.",
+   "at_fex_1": "펙소페나딘×제산제 — F2 무관·충돌 0.",
+   "at_itz_id61": "이트라코나졸×Al/Mg제산제 — 동일 al_mg_antacid 렌더 경로(선례)·성분 다름·충돌 0.",
+   "other_factory_families": "F3/F9/F10 reviewer-ready — 성분/관계 다름·충돌 0.",
+   "doxy_mino_nutrient_overlap": "독시/미노는 ×칼슘/철분/마그네슘/아연 nutrient 이미 live — antacid(약물) relation 은 별도 counterpart 라 exact dup 아니나 정보 중복 여부는 reviewer 판단(headline_reviewer_question).",
+   "full_factory_integrator_dedup": "차후 factory 37 일괄 integrator 는 (ingredient, counterpart/category-counterpart) 키로 본 F2 통합분을 skip 해야 함(중복 생성 금지)."
+  },
+  "full_index_alias_impact": {
+   "full_index_counts_current": {
+    "total": 17580,
+    "relation_card": 1168,
+    "name_only": 16412
+   },
+   "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+   "per_ingredient": {
+    "독시사이클린": {
+     "index_items": 11,
+     "covered_by_relation": 11,
+     "name_only": 0,
+     "in_aliases": true,
+     "latent_flip_if_alias_enriched": 0
+    },
+    "미노사이클린": {
+     "index_items": 3,
+     "covered_by_relation": 3,
+     "name_only": 0,
+     "in_aliases": true,
+     "latent_flip_if_alias_enriched": 0
+    },
+    "테트라사이클린": {
+     "index_items": 1,
+     "covered_by_relation": 0,
+     "name_only": 1,
+     "in_aliases": false,
+     "latent_flip_if_alias_enriched": 1
+    }
+   },
+   "automatic_flip_from_relation_integration": 0,
+   "relation_card_flip_required": 0,
+   "relation_card_after": 1168,
+   "name_only_after": 16412,
+   "index_change_required": false,
+   "alias_change_required": false,
+   "latent_flip_if_alias_enriched": 1,
+   "relation_card_after_if_alias_enriched": 1169,
+   "name_only_after_if_alias_enriched": 16411,
+   "interpretation": "독시사이클린(11)/미노사이클린(3)은 이미 covered_by_relation(verified_item_seqs 등록·in_aliases). 테트라사이클린은 index sample 에 1건 name_only(in_aliases=false). full index/aliases 의 coverage 는 alias pool(verified_item_seqs)로 결정되며 export relations 와 decoupled(런타임 재생성·fail-soft 검색보조) → relation-only 통합은 자동 flip 0 · relation_card 1168/name_only 16412 불변. 테트라사이클린을 verified_item_seqs 에 등록(별도 alias 작업)하면 1건 flip → relation_card 1169/name_only 16411 (F1(전 성분 부재) 대비 F2 차이점: 테트라 1건은 latent flip 후보). 통합 차단 아님."
+  },
+  "v0_2_validator_evidence": {
+   "sim_all_passed": true,
+   "sim_all_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================",
+   "sim_nutrient_passed": true,
+   "sim_nutrient_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================",
+   "interpretation": "al_mg_antacid(id61 선례)·일반 영양소(live 독시/미노×철분/아연) 둘 다 현행 v0.2 validator PASS → 선행조건 0."
+  },
+  "render_safety_summary": "nutrient 2건 = live 독시/미노×철분/아연과 동일(영양소 facet·separation chip). al_mg_antacid 3건 = id61 렌더 경로(약물 counterpart kicker). src 변경 불필요.",
+  "live_integration_prerequisites": [],
+  "validator_result_summary": "sim 전체 v0.2 PASS=True · nutrient PASS=True (선행조건 0)",
+  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
+ },
+ "projected_entries": [
+  {
+   "candidate_id": "RF-F2-0105",
+   "projected_id": 62,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 62,
+    "ingredient": "독시사이클린",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198000105",
+     "pointer": "식약처 nedrug getItemDetail / 독시사이클린 / itemSeq 198000105 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0110",
+   "projected_id": 63,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 63,
+    "ingredient": "미노사이클린",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198501028",
+     "pointer": "식약처 nedrug getItemDetail / 미노사이클린 / itemSeq 198501028 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무스(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0111",
+   "projected_id": 64,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 64,
+    "ingredient": "테트라사이클린",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+     "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0114",
+   "projected_id": 65,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 65,
+    "ingredient": "테트라사이클린",
+    "nutrient": "아연",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "아연과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+     "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0115",
+   "projected_id": 66,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 66,
+    "ingredient": "테트라사이클린",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+     "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  }
+ ]
+}

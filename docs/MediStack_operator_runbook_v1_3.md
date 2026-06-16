@@ -6,6 +6,7 @@
 > dry-run 검증 → live 통합 승인 → deploy → rollback 까지의 흐름이다. 세부 정본은 상호참조로 가리킨다(중복 최소화):
 >
 > **F1 퀴놀론 reviewer-gated 통합(2026-06-16):** factory reviewer-ready 의 첫 통합 후보. dry-run `python3 scripts/integrate_f1_quinolone_batch_v1_4.py [--scope all18|nutrient10|antacid8]` → 3 산출물(inventory/live_dryrun/index_impact) → `validate_f1_quinolone_dryrun_v1_4.py`·`smoke_f1_quinolone_dryrun_v1_4.py`·`test_f1_quinolone_reviewer_note_gate_v1_4.py` PASS 확인 → reviewer note 실물 확보 → `--pm-approved --reviewer-note` 로 live(별도 PR). 권고 grouping=by-counterpart 2-wave. 패키지 `docs/MediStack_reviewer_package_f1_quinolone_v1_4.md`·grouping `_grouping_strategy_v1_4.md`.
+> **F2 테트라사이클린 reviewer-gated 통합(2026-06-17):** 두 번째 후보. dry-run `python3 scripts/integrate_f2_tetracycline_batch_v1_4.py [--scope all5|nutrient2|antacid3|top2|top3]` → 3 산출물 → `validate_f2_tetracycline_dryrun_v1_4.py`·`smoke_f2_tetracycline_dryrun_v1_4.py`·`test_f2_tetracycline_reviewer_note_gate_v1_4.py` PASS 확인 → reviewer note 실물(독시/미노 overlap 판단 포함) → `--pm-approved --reviewer-note` 로 live(별도 PR·60→65, F1 후 78→83). 권고 grouping=all5 once 또는 by-counterpart 2-wave. 패키지 `docs/MediStack_reviewer_package_f2_tetracycline_v1_4.md`.
 > harvester 운영 → `MediStack_harvester_ops_v1_3.md` · 핸드오프 → `MediStack_clinical_reviewer_handoff_v1_2.md` ·
 > reviewer 패키지 → `MediStack_reviewer_package_potassium_v1_3.md` / `MediStack_reviewer_package_antacid_fex_v1_3.md` ·
 > schedule 활성화 → `MediStack_harvester_schedule_activation_v1_3.md` · 다음 라운드 → `MediStack_next_prompts_2026_06_15.md`.

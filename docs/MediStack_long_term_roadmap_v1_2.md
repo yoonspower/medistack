@@ -1,6 +1,6 @@
 # MediStack — 장기 로드맵 · 경계 계약 v1.2
 
-> **Relation Factory v1.4(2026-06-16):** 1,000 relation scale-up 공장 구축(live 0). raw 후보 301·source_confirmed draft 43 → **적대검증 후 reviewer-ready 37**(survives 31·copy_change 6, 강등 6). 단계 60→75→120→200→300+→1,000. 최고 수확 family = 만성 depletion(F9 0.36)·azole(F10 1.0). 정본 `docs/MediStack_relation_scaleup_roadmap_v1_4.md` · reviewer package `docs/MediStack_reviewer_package_relation_factory_v1_4.md`. **첫 reviewer-gated 통합 후보 = F1 퀴놀론 18건**(60→78·선행조건 0·index/alias 무변경·`docs/MediStack_reviewer_package_f1_quinolone_v1_4.md`, live 0).
+> **Relation Factory v1.4(2026-06-16):** 1,000 relation scale-up 공장 구축(live 0). raw 후보 301·source_confirmed draft 43 → **적대검증 후 reviewer-ready 37**(survives 31·copy_change 6, 강등 6). 단계 60→75→120→200→300+→1,000. 최고 수확 family = 만성 depletion(F9 0.36)·azole(F10 1.0). 정본 `docs/MediStack_relation_scaleup_roadmap_v1_4.md` · reviewer package `docs/MediStack_reviewer_package_relation_factory_v1_4.md`. **첫 reviewer-gated 통합 후보 = F1 퀴놀론 18건**(60→78·선행조건 0·index/alias 무변경·`docs/MediStack_reviewer_package_f1_quinolone_v1_4.md`, live 0). **두 번째 = F2 테트라사이클린 5건**(60→65·survives 5/5·선행조건 0·index 자동 flip 0·`docs/MediStack_reviewer_package_f2_tetracycline_v1_4.md`, live 0).
 
 > 작성일: 2026-06-14. **설계/로드맵 문서 전용 — 코드/데이터/DATA_URL/결제/스키마/validator 변경 0.** 본 문서는 흩어진 경계 합의(영양제 앱 분리·saved_stack·Supabase·Free/Plus·릴리스 게이트)를 **장기 로드맵 관점으로 한 곳에 묶고 경계를 강화**한다. 구현·배선·승격은 일절 없다. 기존 문서가 이미 다룬 상세는 **상호참조**로 가리키고, 본 문서는 그 위에 우선순위·경계만 못박는다.
 >

@@ -4,6 +4,8 @@
 
 이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = clinical reviewer 핸드오프 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격(3건 통합 드라이런 완료), published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
 
+> **갱신(2026-06-17, F2 테트라사이클린 reviewer-gated 통합 준비 라운드)**: factory reviewer-ready 37 중 **F2 테트라사이클린 5건**(survives 5/5)을 reviewer-gated subset 으로 분리해 통합 준비 완료(live 0). split = nutrient 2(테트라사이클린×철분·아연) + al_mg_antacid 3(독시·미노·테트라사이클린 × Al/Mg 제산제). **작업 C family 재검증**(12+3 렌즈·refute-by-default): **survives 5 · copy_change 0 · 강등 0**. 🔑 family 차이: ①원문 '철ㆍ아연'이라 **철분→토큰 '철' 매핑**(F1 은 '철분' 리터럴). ②**독시/미노사이클린은 live 에 ×칼슘/철분/마그네슘/아연(영양소) 이미 존재** → Al/Mg 제산제(약물) relation 추가는 별도 counterpart(al_mg_antacid·id61 선례)로 **exact dup 0**이나 "정보 가치 vs 중복"은 **headline reviewer 결정**(gate 강제). ③**테트라사이클린 1건 index name_only 존재** → relation-only 통합 **자동 flip 0**(pool=aliases 와 decoupled·relation_card 1168/name_only 16412 불변), alias 등록 시에만 latent flip 1(1169/16411·별도 작업). **선행조건 0**(양 렌더 경로 live 검증: 독시/미노×광물·id61). 신규: `scripts/integrate_f2_tetracycline_batch_v1_4.py`(dry-run·`--scope all5/nutrient2/antacid3/top2/top3`·`--pm-approved --reviewer-note` 전제) → `data/review/f2_tetracycline_{inventory,live_dryrun,index_impact}_v1_4.json`(60→65·id 62~66·sha 불변·F1 후 78→83) · `test_f2_tetracycline_reviewer_note_gate_v1_4.py`(temp write all5/nutrient2/antacid3·idempotency·live sha 불변) · `validate_f2_tetracycline_dryrun_v1_4.py`(결함주입 12·재실행 reverify) · `smoke_f2_tetracycline_dryrun_v1_4.py`(5 카드) · docs `MediStack_f2_tetracycline_inventory_v1_4.md`·`_grouping_strategy_v1_4.md`·`reviewer_package_f2_tetracycline_v1_4.md`·`_index_impact_v1_4.md`. 권고 grouping = **all5 once(60→65)** 또는 overlap 격리 시 **by-counterpart 2-wave**(nutrient2 60→62 → antacid3 62→65). 프롬프트 20 완료·**23~25** 신설(F2 live 통합·F1+F2 antibiotic-mineral wave·F3 비스포스포네이트 package). ↓이전:
+>
 > **갱신(2026-06-16, F1 퀴놀론 reviewer-gated 통합 준비 라운드)**: factory reviewer-ready 37 중 **F1 플루오로퀴놀론 18건**(survives 18/18)을 reviewer-gated subset 으로 분리해 통합 준비 완료(live 0). **작업 C family 재검증**: 17 survives + **1 copy_change**(RF-F1-0020 오플록사신 끝 stray '1' 트림=verbatim 부분문자열) · 강등 0. **선행조건 0**(al_mg_antacid=id61 선례·일반 영양소=live FQ×광물 둘 다 현행 v0.2+src 지원) · **index/alias 무변경**(레보/오플 covered·신규 6 성분 sample 부재 → relation_card 1168/name_only 16412 불변). 신규: `scripts/integrate_f1_quinolone_batch_v1_4.py`(dry-run·`--scope all18/nutrient10/antacid8`·`--pm-approved --reviewer-note` 전제) → `data/review/f1_quinolone_{inventory,live_dryrun,index_impact}_v1_4.json`(60→78·id 62~79·sha 불변) · `test_f1_quinolone_reviewer_note_gate_v1_4.py`(temp write all18/nutrient10/antacid8·idempotency·live sha 불변) · `validate_f1_quinolone_dryrun_v1_4.py`(결함주입 12) · `smoke_f1_quinolone_dryrun_v1_4.py`(18 카드) · docs `MediStack_f1_quinolone_inventory_v1_4.md`·`_grouping_strategy_v1_4.md`·`reviewer_package_f1_quinolone_v1_4.md`·`_index_impact_v1_4.md`. 권고 grouping = **by-counterpart 2-wave**(nutrient10 60→70 → antacid8 70→78). 아래 **프롬프트 17~19** 신설. ↓이전:
 >
 > **갱신(2026-06-16, 페니실라민 reviewer decision 하드닝 라운드)**: reviewer note 실물 **없음 확인 → live 0** 유지. subset 통합기에 **부분 승인 시나리오**(`meta.partial_approval_scenarios`: both 60→62·id 62,63 / FE_only·ZN_only 60→61·**id 62=max+1** / neither 60) + `--only` STOP(미구현·both-approval 전제) 추가. validator 결함주입 **10종**(ZN_only id 오기 추가)·부분승인 일관성 검증. reviewer package **§8 결정 체크리스트·§9 PM decision table·§10 FE-only/ZN-only 근거·§11 rollback·post-live 검증** + mechanism doc **§5 Option 체크박스** 보강. **full-6 중복 생성 불가 실증**(FE/ZN live 인 temp 에 full-6 build → 2 violation→STOP). 프롬프트 14·15 갱신. ↓이전:
@@ -306,11 +308,17 @@ factory 43 draft → 적대검증(refute-by-default) → **reviewer-ready 37**(s
 >
 > **금지**: 프롬프트 18 과 동일.
 
-## 프롬프트 20 — F2 테트라사이클린 5건 reviewer package (승격 아님)
+## 프롬프트 20 — F2 테트라사이클린 5건 reviewer package (승격 아님) → **실행 완료(2026-06-17)**
 
-> **작업**: factory reviewer-ready F2 5건(테트라사이클린 family·survives 5/5)을 F1 패턴으로 reviewer package + dry-run integrator + gate/validator/smoke + inventory 작성(통합 0). dedup: live 독시/미노사이클린 ×광물 존재 → 신규 성분/counterpart 만. al_mg_antacid·일반 영양소 분기 동일.
+> **완료**: F2 5건(survives 5/5)을 F1 패턴으로 reviewer package + dry-run integrator + gate/validator/smoke + inventory 작성(통합 0). dedup 결과: live 독시/미노사이클린 ×칼슘/철분/마그네슘/아연 존재 → F2 antacid 는 별도 counterpart(al_mg_antacid·id61)·테트라사이클린 신규 성분 → **exact dup 0**. 산출물·재검증은 위 2026-06-17 갱신 참조. **남은 일 = 프롬프트 22(F2 reviewer decision)·23(F2 live 통합)·24(F1+F2 wave).**
+
+## 프롬프트 20b — F2 테트라사이클린 5건 reviewer decision (승격 아님)
+
+> **전제**: clinical reviewer 가 `docs/MediStack_reviewer_package_f2_tetracycline_v1_4.md` §5 decision table + §6 note 템플릿으로 판단. 통합 0.
 >
-> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화.
+> **작업**: F2 5건별로 reviewer 가 (a) 승인 범위(all5/nutrient2/antacid3/top2/top3/by-ingredient/일부 hold) (b) grouping (c) **al_mg_antacid category 채택**(id61 선례·Mg 영양제 아님) (d) **독시/미노 nutrient-overlap 판단**(기존 ×칼슘/철분/마그네슘/아연 대비 제산제 약물 relation 의 정보 가치 vs 중복 — F2 headline) (e) separation 간격 노출 (f) 약물별 itemSeq 매칭 확정(공통 라벨 문장) (g) verified_reference 노출 동의 를 결정해 §6 노트로 회신. 신규 코드/데이터 0.
+>
+> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화·우유/유제품·소아/골/치아 문맥 일반화.
 
 ## 프롬프트 21 — F9 만성 depletion 확장 batch 2 (draft-only · 승격 아님)
 
@@ -320,8 +328,32 @@ factory 43 draft → 적대검증(refute-by-default) → **reviewer-ready 37**(s
 
 ## 프롬프트 22 — factory reviewer-ready 37 전체 dry-run integrator (승격 아님)
 
-> **작업**: reviewer-ready 37(F1 18 포함) 전체를 단일 dry-run integrator 로 projected count/ids 산출 + family별 선행조건/충돌/dedup 매트릭스. **F1 통합분 중복 생성 금지**(이미 live 면 (ingredient,counterpart/category-counterpart) 키로 skip). reviewer note 확보분만 STOP-guard 통과. live write 0.
+> **작업**: reviewer-ready 37(F1 18 + F2 5 포함) 전체를 단일 dry-run integrator 로 projected count/ids 산출 + family별 선행조건/충돌/dedup 매트릭스. **F1·F2 통합분 중복 생성 금지**(이미 live 면 (ingredient,counterpart/category-counterpart) 키로 skip). reviewer note 확보분만 STOP-guard 통과. live write 0.
 >
 > **금지**: 통합·published/clinical=true·제품 UI.
 
-> 기존 트랙 병행 유지: 페니실라민(14·15)·theme map(10~13·16·11)·칼륨(2)·AT-FEX(1) — 전부 reviewer note 전제.
+## 프롬프트 23 — F2 테트라사이클린 live 통합 (reviewer note 실물 전제)
+
+> **선행 충족 필수**: ①§6 reviewer note 실물(승인 토큰+scope 전건 candidate_id+al_mg_antacid+**독시/미노 overlap 판단**+간격+grouping+verified_reference+clinical≠true+제품/복용권유 아님+reviewer 식별자+약물별 itemSeq 확정) ②별도 PM 승인 ③별도 PR.
+>
+> **작업**: `python3 scripts/integrate_f2_tetracycline_batch_v1_4.py --scope <all5|nutrient2|antacid3|top2|top3> --pm-approved --reviewer-note <노트>` (멱등: (ingredient,counterpart) 이미 있으면 skip). gate 가 scope 선언 ↔ 요청 scope 일치 + 전건 명시 + overlap 판단 강제. **예상**: all5 60→65(id 62~66) / nutrient2 60→62 / antacid3 60→63. **F1 먼저 live 면 78→83**(runtime max+1 자동 조정). nutrient(철분/아연)=category 키 부재 · 제산제=al_mg_antacid·'약물' 표기 · product_link/potassium/clinical=false.
+>
+> **통합 후 검증(전수 PASS)**: relation-count 하드코딩 validator 갱신(60→target) + v0.2 export(16/16) + full index/aliases(무변경 확인·테트라 latent flip 은 별도 alias 작업) + forbidden 0 + full smoke 9종 + no-live-write guard 비대상 + deploy 게이트 + **live HTTP 200** + git clean.
+>
+> **금지**: 강등 후보 동시 통합 · evidence 임의 상향 · clinical_reviewed=true·published=true·reviewed_by 작성 · Mg 영양제/우유·유제품 relation 오인 · 소아/골/치아 문맥 absorption 오인 · 제품 UI.
+
+## 프롬프트 24 — F1+F2 antibiotic-mineral combined wave (reviewer note 전제)
+
+> **전제**: F1·F2 reviewer note 실물(각 scope 전건). 별도 PR.
+>
+> **작업**: 항생제×금속/제산제 통합을 family 횡단 wave 로 묶음 — **nutrient wave** = F1 nutrient10 + F2 nutrient2 = 12건(전부 live 광물 렌더 동일), **antacid wave** = F1 antacid8 + F2 antacid3 = 11건(al_mg_antacid·id61). 두 integrator 를 순차 실행(`integrate_f1_quinolone_batch_v1_4.py` + `integrate_f2_tetracycline_batch_v1_4.py`, 각 scope+note). id 는 runtime max+1 누적. dry-run scope_scenarios(`antibiotic_mineral_wave_with_f1`)와 대조.
+>
+> **금지**: 프롬프트 18·23 과 동일. 두 family 의 reviewer note 를 교차/혼용 금지(각자 scope 전건).
+
+## 프롬프트 25 — F3 비스포스포네이트 3건 reviewer package (draft-only · 승격 아님)
+
+> **작업**: factory reviewer-ready F3 3건(비스포스포네이트 family·survives 3/3)을 F1/F2 패턴으로 reviewer package + dry-run integrator + gate/validator/smoke + inventory 작성(통합 0). dedup: live 리세드론산/알렌드론산/이반드론산 ×광물 존재 여부 선검사 → 신규 성분/counterpart 만 projected. al_mg_antacid·일반 영양소 분기·index/alias decoupling 동일 점검.
+>
+> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화.
+
+> 기존 트랙 병행 유지: 페니실라민(14·15)·theme map(10~13·16·11)·칼륨(2)·AT-FEX(1)·F1(17~19)·F2(20b·23) — 전부 reviewer note 전제.
