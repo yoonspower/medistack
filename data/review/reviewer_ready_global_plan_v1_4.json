@@ -2,7 +2,7 @@
  "meta": {
   "name": "reviewer_ready_global_plan_v1_4",
   "status": "DRY-RUN PLAN — NOT LIVE / no_live_write=true / live_integration_forbidden=true / 글로벌 도구는 export 무수정 · live 는 per-family integrator 위임",
-  "purpose": "factory reviewer-ready 37 family map + 통합 가능분(F1/F2/F3) 조합 시나리오 + 교차 dedup + v0.2 sim.",
+  "purpose": "factory reviewer-ready 37 family map + 통합 가능분(F1/F2/F3/F9) 조합 시나리오 + 교차 dedup + v0.2 sim.",
   "confirmed_at": "2026-06-17",
   "reviewer_ready_total": 37,
   "reviewer_ready_by_family_adversarial": {
@@ -17,17 +17,28 @@
   "family_reverified": [
    "F1",
    "F2",
-   "F3"
+   "F3",
+   "F9"
   ],
   "family_pending_reverify": [
    "F10",
    "F4",
-   "F6",
-   "F9"
+   "F6"
   ],
-  "integrable_total": 24,
-  "pending_total": 11,
-  "f3_needs_review": 2,
+  "integrable_total": 31,
+  "pending_total": 3,
+  "needs_review_total": 3,
+  "needs_review_by_family": {
+   "F1": [],
+   "F2": [],
+   "F3": [
+    "RF-F3-0148",
+    "RF-F3-0149"
+   ],
+   "F9": [
+    "RF-F9-0245"
+   ]
+  },
   "per_family": {
    "F1": {
     "family_name": "Fluoroquinolone × metal cation / Al·Mg 제산제",
@@ -86,6 +97,25 @@
     ],
     "expected_count_standalone": 61
    },
+   "F9": {
+    "family_name": "Chronic-use depletion × folate/vitD",
+    "reviewer_ready_adversarial": 8,
+    "family_reverified": true,
+    "integrable_count": 7,
+    "integrable_ids": [
+     "RF-F9-0269",
+     "RF-F9-0246",
+     "RF-F9-0272",
+     "RF-F9-0252",
+     "RF-F9-0242",
+     "RF-F9-0243",
+     "RF-F9-0255"
+    ],
+    "needs_review_ids": [
+     "RF-F9-0245"
+    ],
+    "expected_count_standalone": 67
+   },
    "F4": {
     "family_name": "Thyroid hormone × mineral/antacid",
     "reviewer_ready_adversarial": 1,
@@ -102,14 +132,6 @@
     "blocked_reason": "family-specific 재검증 미수행 → 통합 불가(per-family integrator/재검증 선행 필요).",
     "expected_count_standalone": null
    },
-   "F9": {
-    "family_name": "Chronic-use depletion × folate/vitD",
-    "reviewer_ready_adversarial": 8,
-    "family_reverified": false,
-    "integrable_count": 0,
-    "blocked_reason": "family-specific 재검증 미수행 → 통합 불가(per-family integrator/재검증 선행 필요).",
-    "expected_count_standalone": null
-   },
    "F10": {
     "family_name": "Azole antifungal × antacid",
     "reviewer_ready_adversarial": 1,
@@ -121,25 +143,41 @@
   },
   "combined_scenarios": {
    "baseline": 60,
+   "F1": 78,
+   "F2": 65,
+   "F3": 61,
+   "F9": 67,
+   "F1+F2": 83,
+   "F1+F3": 79,
+   "F1+F9": 85,
+   "F2+F3": 66,
+   "F2+F9": 72,
+   "F3+F9": 68,
+   "F1+F2+F3": 84,
+   "F1+F2+F9": 90,
+   "F1+F3+F9": 86,
+   "F2+F3+F9": 73,
+   "F1+F2+F3+F9": 91,
    "F1_only": 78,
    "F2_only": 65,
    "F3_only": 61,
-   "F1+F2": 83,
-   "F1+F3": 79,
-   "F2+F3": 66,
-   "F1+F2+F3": 84,
-   "note": "통합 가능분 기준. 모든 family ingredient disjoint(록사신/사이클린/드론산)·교차 dedup 0 → 합산 단순."
+   "F9_only": 67,
+   "note": "통합 가능분 기준. 모든 family ingredient disjoint(록사신/사이클린/드론산/만성depletion약)·교차 dedup 0 → 합산 단순. 현행 헤드라인: F1+F2+F3 60→84(F1/F2/F3 live) · F1+F2+F3+F9 60→91."
   },
   "dedup": {
    "vs_live": {
     "F1": [],
     "F2": [],
-    "F3": []
+    "F3": [],
+    "F9": []
    },
    "cross_family": {
     "F1∩F2": [],
     "F1∩F3": [],
-    "F2∩F3": []
+    "F1∩F9": [],
+    "F2∩F3": [],
+    "F2∩F9": [],
+    "F3∩F9": []
    }
   },
   "dedup_clean": true,
@@ -157,26 +195,27 @@
    "selected_families": [
     "F1",
     "F2",
-    "F3"
+    "F3",
+    "F9"
    ],
-   "combined_count": 84,
+   "combined_count": 91,
    "sim_passed": true,
    "sim_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================"
   },
   "reviewer_note_gate": {
-   "delegation": "글로벌 도구는 live write 안 함 — live 통합은 per-family integrator(F1/F2/F3) 의 --pm-approved --reviewer-note(각 family 게이트) 로만. 글로벌 노트는 family 선택·순서·pending 확인용.",
-   "requires": "승인 토큰 · 통합 family 전건 명시 · per-family reviewer-note 위임 명시 · F4/F6/F9/F10 family 재검증 선행 확인 · family/계열 일반화·clinical=true 금지."
+   "delegation": "글로벌 도구는 live write 안 함 — live 통합은 per-family integrator(F1/F2/F3/F9) 의 --pm-approved --reviewer-note(각 family 게이트) 로만. 글로벌 노트는 family 선택·순서·pending 확인용.",
+   "requires": "승인 토큰 · 통합 family 전건 명시 · per-family reviewer-note 위임 명시 · F4/F6/F10 family 재검증 선행 확인 · family/계열 일반화·clinical=true 금지."
   },
   "factory_v1_5_recommendation": {
    "run_now": false,
-   "reason": "신규 harvest/family 확장은 (a) 통합 가능 24건(F1·F2·F3)의 reviewer note·live PR 미완, (b) F4/F6/F9/F10 family 재검증 미수행(품질 게이트 미통과), (c) F9 needs_review 4·F3 needs_review 2 등 기존 backlog 정리 우선. 신규 후보 추가는 backlog 부풀림·중복 위험.",
+   "reason": "신규 harvest/family 확장은 (a) 통합 가능 31건(F1·F2·F3·F9)의 reviewer note·live PR 미완, (b) F4/F6/F10 family 재검증 미수행(품질 게이트 미통과), (c) F3 needs_review 2·F9 needs_review 1 등 기존 backlog 정리 우선. 신규 후보 추가는 backlog 부풀림·중복 위험.",
    "preconditions_to_run": [
-    "F1/F2/F3 reviewer note 확보 + live PR(60→84 경로)",
-    "F4/F6/F9/F10 family 재검증 + per-family integrator",
-    "F9 needs_review 5·F3 needs_review 2 재검색/정리",
+    "F1/F2/F3/F9 reviewer note 확보 + live PR(60→91 경로)",
+    "F4/F6/F10 family 재검증 + per-family integrator",
+    "F3 needs_review 2·F9 needs_review 1 재검색/정리",
     "factory dedup 키(ingredient,counterpart/category) 표준화"
    ],
-   "recommended_timing": "위 4 선행조건 중 최소 reviewer note 트랙(F1/F2/F3 live) 가동 후."
+   "recommended_timing": "위 4 선행조건 중 최소 reviewer note 트랙(F1/F2/F3/F9 live) 가동 후."
   },
   "note": "본 산출물은 계획/드라이런이며 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 통합은 per-family integrator + 별도 PM + clinical reviewer note + 별도 PR."
  },
@@ -719,6 +758,160 @@
      "pointer": "식약처 nedrug getItemDetail / 이반드론산 / itemSeq 201207007 / 상호작용 / '칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할 수 있다.' / 확인일 2026-06-16"
     },
     "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0269",
+   "projected_live_relation": {
+    "id": 86,
+    "ingredient": "설파살라진",
+    "nutrient": "엽산",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199803482",
+     "pointer": "식약처 nedrug getItemDetail / 설파살라진 / itemSeq 199803482 / 상호작용 / '엽산과 병용투여 시 엽산의 흡수가 저하되고, 거대적혈모구증, 범혈구감소를 초래하는 엽산결핍증을 일으킬 수 있으므로 엽산결핍증이 의심되는 경우에는 엽산을 보충한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0246",
+   "projected_live_relation": {
+    "id": 87,
+    "ingredient": "카르바마제핀",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198401121",
+     "pointer": "식약처 nedrug getItemDetail / 카르바마제핀 / itemSeq 198401121 / 병용투여 / '혈장 칼슘과 혈중25-hydroxy-콜레칼시페롤의 감소와 같은 골대사 장애로 인한 골연화증 및 골다공증' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0272",
+   "projected_live_relation": {
+    "id": 88,
+    "ingredient": "트리메토프림",
+    "nutrient": "엽산",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000049",
+     "pointer": "식약처 nedrug getItemDetail / 트리메토프림 / itemSeq 197000049 / 주의사항 / '폴산결핍 또는 대사이상 환자(이미 위적출술을 받은 환자, 다른 폴산대사길항제를 투여받고 있는 환자, 선천성 폴산대사이상 환자 등)(폴산결핍을 악화시켜 거대적아구성빈혈을 일으킬 수 있다.) 4. 이상반응' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0252",
+   "projected_live_relation": {
+    "id": 89,
+    "ingredient": "페노바르비탈",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000212",
+     "pointer": "식약처 nedrug getItemDetail / 페노바르비탈 / itemSeq 197000212 / 주의사항 / '근골격계 : 연용중에 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(혈청 ALP, 혈청칼슘, 무기인의 저하)이 나타나는 경우에는 감량 또는 비타민 D를 섭취하는 등 주의한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0242",
+   "projected_live_relation": {
+    "id": 90,
+    "ingredient": "페니토인",
+    "nutrient": "엽산",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000104",
+     "pointer": "식약처 nedrug getItemDetail / 페니토인 / itemSeq 197000104 / 주의사항 / '기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.)' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0243",
+   "projected_live_relation": {
+    "id": 91,
+    "ingredient": "페니토인",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000104",
+     "pointer": "식약처 nedrug getItemDetail / 페니토인 / itemSeq 197000104 / 주의사항 / '근골격계 : 연용에 의해 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(ALP, 혈청 칼슘 저하 및 무기인 저하 등)이 나타나는 경우에는 감량 또는 비타민D를 투여하는 등 적절히 조치한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F9",
+   "candidate_id": "RF-F9-0255",
+   "projected_live_relation": {
+    "id": 92,
+    "ingredient": "프리미돈",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198000160",
+     "pointer": "식약처 nedrug getItemDetail / 프리미돈 / itemSeq 198000160 / 주의사항 / '근골격계 : 연용시 구루병, 골연화증, 치조골형성부전이 나타날 수 있으므로 이상(ALP, 혈청칼슘, 무기질저하 등)이 나타나면 감량 또는 비타민 D를 투여하는 등 적절한 처치를 한다.' / 확인일 2026-06-16"
+    }
    }
   }
  ]

@@ -8,9 +8,9 @@ MediStack — Relation Factory v1.4 **글로벌 reviewer-ready 37 통합 계획/
   도구가 직접 하지 않고 **per-family integrator(reviewer-note 게이트)** 에 위임한다(no-live-write 영구).
 
 핵심 원칙(품질 저하 방지):
-  · family-specific 재검증을 **통과한 family 만 통합 가능**(F1/F2/F3 = 24건). F4/F6/F9/F10(=11건)은 적대검증만 거쳤고
-    family 재검증 전 → **통합 불가(pending)**. (교훈: family 재검증이 F1 stray '1'·F2 철→철 토큰·F3 에티드론산 parse 처럼
-    광역검증이 놓친 family 특이 결함을 잡음 — F4/F6/F9/F10 도 각자 family integrator/재검증 후에만 live.)
+  · family-specific 재검증을 **통과한 family 만 통합 가능**(F1/F2/F3/F9 = 31건). F4/F6/F10(=3건)은 적대검증만 거쳤고
+    family 재검증 전 → **통합 불가(pending)**. (교훈: family 재검증이 F1 stray '1'·F2 철→철 토큰·F3 에티드론산 parse·
+    F9 저신호 이상반응 열거(0245)처럼 광역검증이 놓친 family 특이 결함을 잡음 — F4/F6/F10 도 각자 family integrator/재검증 후에만 live.)
   · 교차 family + live 60 **dedup**: 통합 대상은 (ingredient, counterpart/category) 키로 live·타 family·자기 자신과 중복 금지.
   · 글로벌 도구는 **export 를 절대 쓰지 않음**(planning/dry-run 전용). live 는 per-family `--pm-approved --reviewer-note`.
 
@@ -18,21 +18,22 @@ family map(reviewer-ready 37, 적대검증):
   F1 fluoroquinolone×metal/antacid : 18 (family 재검증 ✅ survives 18 → 통합가능 18)
   F2 tetracycline×metal/antacid     :  5 (family 재검증 ✅ survives 5  → 통합가능 5)
   F3 bisphosphonate×mineral/antacid :  3 (family 재검증 ✅ survives 1·needs_review 2 → 통합가능 1)
+  F9 chronic-depletion×folate/vitD  :  8 (family 재검증 ✅ survives 3·copy_change 4·needs_review 1 → 통합가능 7)
   F4 thyroid×mineral/antacid        :  1 (family 재검증 ⏳ pending → 통합 불가)
   F6 acid-reducer×Fe/B12            :  1 (family 재검증 ⏳ pending → 통합 불가)
-  F9 chronic-depletion×folate/vitD  :  8 (family 재검증 ⏳ pending → 통합 불가)
   F10 azole×antacid                 :  1 (family 재검증 ⏳ pending → 통합 불가)
 
 조합 시나리오(통합 가능분, 모두 disjoint·dedup 0):
-  F1 60→78 · F2 60→65 · F3 60→61 · F1+F2 60→83 · F1+F3 60→79 · F2+F3 60→66 · F1+F2+F3 60→84
+  F1 60→78 · F2 60→65 · F3 60→61 · F9 60→67 · F1+F2 60→83 · F1+F2+F3 60→84 · F1+F2+F3+F9 60→91
 
 사용:
-  python3 scripts/integrate_reviewer_ready_global_batch_v1_4.py                 # (기본) dry-run 계획 — 쓰기 0
-  python3 scripts/integrate_reviewer_ready_global_batch_v1_4.py --families F1,F3  # 부분 family 시나리오
+  python3 scripts/integrate_reviewer_ready_global_batch_v1_4.py                    # (기본) dry-run 계획 — 쓰기 0
+  python3 scripts/integrate_reviewer_ready_global_batch_v1_4.py --families F1,F9     # 부분 family 시나리오
 종료코드: 0 DONE/dry, 1 STOP(불변·dedup·pending 위반).
 """
 import hashlib
 import importlib.util
+import itertools
 import json
 import os
 import re
@@ -60,30 +61,34 @@ def _load(name, rel):
 f1 = _load("f1", "integrate_f1_quinolone_batch_v1_4.py")
 f2 = _load("f2", "integrate_f2_tetracycline_batch_v1_4.py")
 f3 = _load("f3", "integrate_f3_bisphosphonate_batch_v1_4.py")
+f9 = _load("f9", "integrate_f9_chronic_depletion_batch_v1_4.py")
 integ = f1.integ  # 동일 substrate
 
 # family 재검증 완료(통합 가능) family ↔ 모듈.
-FAMILY_MODULES = {"F1": f1, "F2": f2, "F3": f3}
+FAMILY_MODULES = {"F1": f1, "F2": f2, "F3": f3, "F9": f9}
+INTEGRABLE_ORDER = ["F1", "F2", "F3", "F9"]   # 조합 시나리오 정렬용(고정)
+# F3/F9 는 survives+copy_change 만 통합 가능(needs_review 제외); F1/F2 는 전건 survives.
+FAMILY_USES_SURVIVES_SUBSET = {"F3", "F9"}
 # 적대검증 reviewer-ready 지만 family 재검증 전 → 통합 불가.
-FAMILY_PENDING_REVERIFY = {"F4", "F6", "F9", "F10"}
+FAMILY_PENDING_REVERIFY = {"F4", "F6", "F10"}
 FAMILY_NAMES = {
     "F1": "Fluoroquinolone × metal cation / Al·Mg 제산제",
     "F2": "Tetracycline × metal cation / Al·Mg 제산제",
     "F3": "Bisphosphonate × mineral / Al·Mg 제산제",
+    "F9": "Chronic-use depletion × folate/vitD",
     "F4": "Thyroid hormone × mineral/antacid",
     "F6": "Acid-reducer (H2/PPI) × Fe/B12/antacid",
-    "F9": "Chronic-use depletion × folate/vitD",
     "F10": "Azole antifungal × antacid",
 }
+_LOADER = {"F1": "load_f1", "F2": "load_f2", "F3": "load_f3", "F9": "load_f9"}
 
 
 def _family_integrable(fam):
-    """family 모듈의 survives subset entries(projected). (entries, recs, survives_ids)."""
+    """family 모듈의 통합 가능 subset entries(projected). (entries, recs, survives_ids, viol)."""
     mod = FAMILY_MODULES[fam]
-    loader = getattr(mod, {"F1": "load_f1", "F2": "load_f2", "F3": "load_f3"}[fam])
-    recs, _summary = loader()
-    if fam == "F3":
-        survives = mod._survives_ids(recs)
+    recs, _summary = getattr(mod, _LOADER[fam])()
+    if fam in FAMILY_USES_SURVIVES_SUBSET:
+        survives = mod._survives_ids(recs)   # survives + copy_change(needs_review 제외)
     else:
         survives = [r["candidate_id"] for r in recs]  # F1/F2 전건 survives
     exp = json.load(open(EXPORT, encoding="utf-8"))
@@ -112,7 +117,7 @@ def build_plan(requested_families):
     per_family = {}
     integrable_pairs = {}
     all_viol = []
-    for fam in ("F1", "F2", "F3"):
+    for fam in INTEGRABLE_ORDER:
         entries, recs, survives, viol = _family_integrable(fam)
         all_viol += [f"{fam}:{v}" for v in viol]
         per_family[fam] = {
@@ -128,7 +133,7 @@ def build_plan(requested_families):
                                   e["projected_live_relation"]["nutrient"]) for e in entries}
 
     # pending family(통합 불가) — family map 에만 표기.
-    for fam in ("F4", "F6", "F9", "F10"):
+    for fam in ("F4", "F6", "F10"):
         per_family[fam] = {
             "family_name": FAMILY_NAMES[fam],
             "reviewer_ready_adversarial": rr_counts.get(fam, 0),
@@ -151,16 +156,15 @@ def build_plan(requested_families):
     dedup_clean = (all(not v for v in dedup["vs_live"].values())
                    and all(not v for v in dedup["cross_family"].values()))
 
-    # 조합 시나리오(통합 가능분).
-    n = {fam: per_family[fam]["integrable_count"] for fam in ("F1", "F2", "F3")}
-    combos = {
-        "F1": before + n["F1"], "F2": before + n["F2"], "F3": before + n["F3"],
-        "F1+F2": before + n["F1"] + n["F2"], "F1+F3": before + n["F1"] + n["F3"],
-        "F2+F3": before + n["F2"] + n["F3"], "F1+F2+F3": before + n["F1"] + n["F2"] + n["F3"],
-    }
+    # 조합 시나리오(통합 가능분) — 통합 가능 family(F1/F2/F3/F9) 전 부분집합.
+    n = {fam: per_family[fam]["integrable_count"] for fam in INTEGRABLE_ORDER}
+    combos = {}
+    for k in range(1, len(INTEGRABLE_ORDER) + 1):
+        for combo in itertools.combinations(INTEGRABLE_ORDER, k):
+            combos["+".join(combo)] = before + sum(n[f] for f in combo)
 
     # 요청 family 의 통합 가능 entries 합집합 → v0.2 sim(전 통합 가능분 충돌 0 입증).
-    sel = [f for f in requested_families if f in ("F1", "F2", "F3")]
+    sel = [f for f in requested_families if f in INTEGRABLE_ORDER]
     blocked = [f for f in requested_families if f in FAMILY_PENDING_REVERIFY]
     combined_entries, seen = [], set()
     nid = base_max
@@ -194,7 +198,7 @@ def build_plan(requested_families):
 
 # ── 글로벌 reviewer-note 게이트(메타) — live write 는 per-family 위임이지만, 글로벌 승인 노트 형식을 검증/문서화 ──
 GLOBAL_APPROVAL = ("approved", "승인")
-PENDING_ACK_RE = re.compile(r"F4.{0,4}F6.{0,4}F9.{0,4}F10|F9.{0,4}F10|family[ \t]*재검증[ \t]*선행")
+PENDING_ACK_RE = re.compile(r"F4.{0,4}F6.{0,4}F10|F6.{0,4}F10|family[ \t]*재검증[ \t]*선행")
 PER_FAMILY_NOTE_RE = re.compile(r"per-family|per_family|family별|개별 (reviewer[- ]?note|노트)")
 GENERALIZE_PERMIT_RE = re.compile(r"(family|계열)[^\n]{0,12}(일반화|확대)[ \t]*(승인|허용)|(일반화|확대)[ \t]*(승인|허용)")
 
@@ -218,7 +222,7 @@ def check_global_reviewer_note(reviewer_note, selected, blocked):
     if not PER_FAMILY_NOTE_RE.search(note):
         bad.append("per-family reviewer-note 위임 명시 누락(글로벌 노트는 live write 안 함)")
     if not PENDING_ACK_RE.search(note):
-        bad.append("F4/F6/F9/F10 family 재검증 선행 미명시(pending family 통합 불가 확인)")
+        bad.append("F4/F6/F10 family 재검증 선행 미명시(pending family 통합 불가 확인)")
     if blocked:
         bad.append(f"pending family 요청됨(통합 불가): {blocked}")
     if GENERALIZE_PERMIT_RE.search(note):
@@ -234,7 +238,7 @@ def main():
         raw = sys.argv[i + 1] if i + 1 < len(sys.argv) else ""
         requested = [f.strip().upper() for f in raw.split(",") if f.strip()]
     else:
-        requested = ["F1", "F2", "F3"]
+        requested = ["F1", "F2", "F3", "F9"]
 
     with open(EXPORT, "rb") as f:
         sha_before = hashlib.sha256(f.read()).hexdigest()
@@ -247,11 +251,11 @@ def main():
     before = plan["before"]
     print(f"=== 글로벌 reviewer-ready {REVIEWER_READY_TOTAL} 통합 계획 (DRY-RUN · no-live-write) ===")
     print(f"family map(reviewer-ready 적대검증): {plan['rr_counts']}")
-    for fam in ("F1", "F2", "F3", "F4", "F6", "F9", "F10"):
+    for fam in ("F1", "F2", "F3", "F9", "F4", "F6", "F10"):
         pf = plan["per_family"][fam]
         tag = "✅재검증·통합가능 %d" % pf["integrable_count"] if pf["family_reverified"] else "⏳pending(통합불가)"
         print(f"   {fam} {pf['family_name']}: reviewer-ready {pf['reviewer_ready_adversarial']} · {tag}")
-    print(f"통합 가능 합계(F1+F2+F3): {plan['total_integrable']}건 · 조합: {plan['combos']}")
+    print(f"통합 가능 합계(F1+F2+F3+F9): {plan['total_integrable']}건 · 조합: {plan['combos']}")
     print(f"dedup clean(교차 family·live): {plan['dedup_clean']}")
     print(f"요청 family={plan['selected']} · combined 60→{plan['combined_count']} · v0.2 sim PASS={plan['ok_sim']}")
     if plan["blocked"]:
@@ -262,23 +266,25 @@ def main():
             "name": "reviewer_ready_global_plan_v1_4",
             "status": "DRY-RUN PLAN — NOT LIVE / no_live_write=true / live_integration_forbidden=true / "
                       "글로벌 도구는 export 무수정 · live 는 per-family integrator 위임",
-            "purpose": "factory reviewer-ready 37 family map + 통합 가능분(F1/F2/F3) 조합 시나리오 + 교차 dedup + v0.2 sim.",
+            "purpose": "factory reviewer-ready 37 family map + 통합 가능분(F1/F2/F3/F9) 조합 시나리오 + 교차 dedup + v0.2 sim.",
             "confirmed_at": CONFIRMED_AT,
             "reviewer_ready_total": REVIEWER_READY_TOTAL,
             "reviewer_ready_by_family_adversarial": plan["rr_counts"],
-            "family_reverified": ["F1", "F2", "F3"],
+            "family_reverified": list(INTEGRABLE_ORDER),
             "family_pending_reverify": sorted(FAMILY_PENDING_REVERIFY),
             "integrable_total": plan["total_integrable"],
             "pending_total": REVIEWER_READY_TOTAL - plan["total_integrable"]
-                             - sum(len(plan["per_family"][f]["needs_review_ids"]) for f in ("F1", "F2", "F3")),
-            "f3_needs_review": sum(len(plan["per_family"][f].get("needs_review_ids", [])) for f in ("F1", "F2", "F3")),
+                             - sum(len(plan["per_family"][f]["needs_review_ids"]) for f in INTEGRABLE_ORDER),
+            "needs_review_total": sum(len(plan["per_family"][f].get("needs_review_ids", [])) for f in INTEGRABLE_ORDER),
+            "needs_review_by_family": {f: plan["per_family"][f].get("needs_review_ids", []) for f in INTEGRABLE_ORDER},
             "per_family": plan["per_family"],
             "combined_scenarios": {
                 "baseline": before,
-                "F1_only": plan["combos"]["F1"], "F2_only": plan["combos"]["F2"], "F3_only": plan["combos"]["F3"],
-                "F1+F2": plan["combos"]["F1+F2"], "F1+F3": plan["combos"]["F1+F3"], "F2+F3": plan["combos"]["F2+F3"],
-                "F1+F2+F3": plan["combos"]["F1+F2+F3"],
-                "note": "통합 가능분 기준. 모든 family ingredient disjoint(록사신/사이클린/드론산)·교차 dedup 0 → 합산 단순.",
+                **plan["combos"],   # 단건/모든 부분집합 조합(F1..F1+F2+F3+F9)
+                "F1_only": plan["combos"]["F1"], "F2_only": plan["combos"]["F2"],
+                "F3_only": plan["combos"]["F3"], "F9_only": plan["combos"]["F9"],
+                "note": "통합 가능분 기준. 모든 family ingredient disjoint(록사신/사이클린/드론산/만성depletion약)·교차 dedup 0 → 합산 단순. "
+                        "현행 헤드라인: F1+F2+F3 60→84(F1/F2/F3 live) · F1+F2+F3+F9 60→91.",
             },
             "dedup": plan["dedup"], "dedup_clean": plan["dedup_clean"],
             "duplicate_policy": "통합 대상은 (ingredient, counterpart/category) 키로 live 60·타 family·자기 배치와 중복 금지. "
@@ -289,21 +295,21 @@ def main():
             "v0_2_sim_combined": {"selected_families": plan["selected"], "combined_count": plan["combined_count"],
                                   "sim_passed": plan["ok_sim"], "sim_tail": plan["sim_tail"]},
             "reviewer_note_gate": {
-                "delegation": "글로벌 도구는 live write 안 함 — live 통합은 per-family integrator(F1/F2/F3) 의 "
+                "delegation": "글로벌 도구는 live write 안 함 — live 통합은 per-family integrator(F1/F2/F3/F9) 의 "
                               "--pm-approved --reviewer-note(각 family 게이트) 로만. 글로벌 노트는 family 선택·순서·pending 확인용.",
                 "requires": "승인 토큰 · 통합 family 전건 명시 · per-family reviewer-note 위임 명시 · "
-                            "F4/F6/F9/F10 family 재검증 선행 확인 · family/계열 일반화·clinical=true 금지.",
+                            "F4/F6/F10 family 재검증 선행 확인 · family/계열 일반화·clinical=true 금지.",
             },
             "factory_v1_5_recommendation": {
                 "run_now": False,
-                "reason": "신규 harvest/family 확장은 (a) 통합 가능 24건(F1·F2·F3)의 reviewer note·live PR 미완, "
-                          "(b) F4/F6/F9/F10 family 재검증 미수행(품질 게이트 미통과), (c) F9 needs_review 4·F3 needs_review 2 등 "
+                "reason": "신규 harvest/family 확장은 (a) 통합 가능 31건(F1·F2·F3·F9)의 reviewer note·live PR 미완, "
+                          "(b) F4/F6/F10 family 재검증 미수행(품질 게이트 미통과), (c) F3 needs_review 2·F9 needs_review 1 등 "
                           "기존 backlog 정리 우선. 신규 후보 추가는 backlog 부풀림·중복 위험.",
-                "preconditions_to_run": ["F1/F2/F3 reviewer note 확보 + live PR(60→84 경로)",
-                                         "F4/F6/F9/F10 family 재검증 + per-family integrator",
-                                         "F9 needs_review 5·F3 needs_review 2 재검색/정리",
+                "preconditions_to_run": ["F1/F2/F3/F9 reviewer note 확보 + live PR(60→91 경로)",
+                                         "F4/F6/F10 family 재검증 + per-family integrator",
+                                         "F3 needs_review 2·F9 needs_review 1 재검색/정리",
                                          "factory dedup 키(ingredient,counterpart/category) 표준화"],
-                "recommended_timing": "위 4 선행조건 중 최소 reviewer note 트랙(F1/F2/F3 live) 가동 후.",
+                "recommended_timing": "위 4 선행조건 중 최소 reviewer note 트랙(F1/F2/F3/F9 live) 가동 후.",
             },
             "note": "본 산출물은 계획/드라이런이며 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 "
                     "의미하지 않는다. live 통합은 per-family integrator + 별도 PM + clinical reviewer note + 별도 PR.",

@@ -1,0 +1,561 @@
+{
+ "meta": {
+  "name": "f9_chronic_depletion_live_dryrun_v1_4",
+  "status": "DRY-RUN — NOT LIVE / do_not_implement_yet=true / live_integration_forbidden=true",
+  "purpose": "F9 통합 예상 산출물(드라이런). 실제 export/full index/aliases/src 무수정. validate_f9_chronic_depletion_dryrun_v1_4.py 가 안전·계약을 검증.",
+  "requested_scope": "integrable",
+  "baseline_relations": 60,
+  "baseline_max_id": 61,
+  "expected_relation_count_before": 60,
+  "expected_relation_count_after": 67,
+  "expected_relation_count_after_integrable": 67,
+  "expected_relation_count_after_survives": 63,
+  "expected_relation_count_after_copy_change": 64,
+  "expected_relation_count_after_conditional_full": 68,
+  "expected_ids": [
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68
+  ],
+  "included_candidate_ids": [
+   "RF-F9-0269",
+   "RF-F9-0246",
+   "RF-F9-0272",
+   "RF-F9-0252",
+   "RF-F9-0242",
+   "RF-F9-0243",
+   "RF-F9-0255"
+  ],
+  "all_f9_reviewer_ready_ids": [
+   "RF-F9-0269",
+   "RF-F9-0245",
+   "RF-F9-0246",
+   "RF-F9-0272",
+   "RF-F9-0252",
+   "RF-F9-0242",
+   "RF-F9-0243",
+   "RF-F9-0255"
+  ],
+  "integrable_ids": [
+   "RF-F9-0269",
+   "RF-F9-0246",
+   "RF-F9-0272",
+   "RF-F9-0252",
+   "RF-F9-0242",
+   "RF-F9-0243",
+   "RF-F9-0255"
+  ],
+  "survives_ids": [
+   "RF-F9-0269",
+   "RF-F9-0246",
+   "RF-F9-0272"
+  ],
+  "copy_change_ids": [
+   "RF-F9-0252",
+   "RF-F9-0242",
+   "RF-F9-0243",
+   "RF-F9-0255"
+  ],
+  "needs_review_ids": [
+   "RF-F9-0245"
+  ],
+  "scope_scenarios": {
+   "recommended": "by-nutrient 2-wave: folate 3(60→63) → vitd 4(63→67). 또는 integrable 7 한 번에(60→67). 0245(카르바마제핀×엽산)은 저신호 이상반응 열거 → needs_review, reviewer standalone 근거 확정 전까지 통합 불가.",
+   "integrable": {
+    "count": 7,
+    "expected_count": 67,
+    "expected_ids": [
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68
+    ],
+    "candidate_ids": [
+     "RF-F9-0269",
+     "RF-F9-0246",
+     "RF-F9-0272",
+     "RF-F9-0252",
+     "RF-F9-0242",
+     "RF-F9-0243",
+     "RF-F9-0255"
+    ]
+   },
+   "survives": {
+    "count": 3,
+    "expected_count": 63,
+    "expected_ids": [
+     62,
+     63,
+     64
+    ],
+    "candidate_ids": [
+     "RF-F9-0269",
+     "RF-F9-0246",
+     "RF-F9-0272"
+    ]
+   },
+   "copy_change": {
+    "count": 4,
+    "expected_count": 64,
+    "expected_ids": [
+     62,
+     63,
+     64,
+     65
+    ],
+    "candidate_ids": [
+     "RF-F9-0252",
+     "RF-F9-0242",
+     "RF-F9-0243",
+     "RF-F9-0255"
+    ]
+   },
+   "folate": {
+    "count": 3,
+    "expected_count": 63,
+    "expected_ids": [
+     62,
+     63,
+     64
+    ],
+    "candidate_ids": [
+     "RF-F9-0269",
+     "RF-F9-0272",
+     "RF-F9-0242"
+    ]
+   },
+   "vitd": {
+    "count": 4,
+    "expected_count": 64,
+    "expected_ids": [
+     62,
+     63,
+     64,
+     65
+    ],
+    "candidate_ids": [
+     "RF-F9-0246",
+     "RF-F9-0252",
+     "RF-F9-0243",
+     "RF-F9-0255"
+    ]
+   },
+   "conditional_if_0245_resolved": {
+    "candidate_ids": [
+     "RF-F9-0245"
+    ],
+    "expected_count_added": 1,
+    "expected_count_after_with_integrable": 68,
+    "note": "reviewer 가 카르바마제핀 라벨 전문에서 엽산 저하 standalone 근거를 확정하면 0245 통합 가능 → integrable 7 + 1 = 8 → 60→68. 현재는 needs_review 라 통합 대상 아님(저신호 열거)."
+   },
+   "scenario_on_f1f2f3_true_base": {
+    "baseline": 84,
+    "expected_after_integrable": 91,
+    "expected_after_conditional_full": 92,
+    "note": "F1 18 + F2 5 + F3 1 모두 live(60→84) 면 F9 integrable 7 은 84→91(conditional 0245 포함 84→92). runtime max+1 자동 조정."
+   },
+   "base_count_override": null,
+   "id_rule": "id 는 runtime max+1. 단독/순차 통합 시 그 시점 max+1 부터. F1/F2/F3 먼저면 자동 조정."
+  },
+  "reverify_counts": {
+   "survives": 3,
+   "survives_with_copy_change": 4,
+   "needs_review": 1,
+   "hold": 0,
+   "reject": 0
+  },
+  "live_write_performed": false,
+  "live_promotion": 0,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "data_url": "v0.2 (불변)",
+  "export_sha_before": "62df92844faf1bcc47e0e6ace1b0cd1307222b0461a6b819122b6ffab5030144",
+  "export_sha_after_same": true,
+  "reviewer_note_required": true,
+  "reviewer_note_interlock": {
+   "required": true,
+   "approval_tokens": [
+    "approved",
+    "승인"
+   ],
+   "candidate_ids_all_of_scope": true,
+   "scope_decision_required": true,
+   "grouping_decision_required": true,
+   "nutrient_target_decision": "엽산/비타민D(영양소 monitoring·약물 category 없음)",
+   "monitoring_tone_decision_required": true,
+   "chronic_framing_decision_required": true,
+   "needs_review_ack_required": "RF-F9-0245(카르바마제핀×엽산) needs_review 인지",
+   "verified_reference_consent_required": true,
+   "rejects": "SAMPLE/placeholder/빈 노트 · 토큰/candidate_id(scope 전건)/scope/grouping/영양소/모니터링톤/장기framing/0245 ack/verified_reference 누락 · clinical_reviewed=true·제품추천·엽산/비타민D 보충 권유·검사/처방 지시·소아/골/치아·family/효소유도제 계열 일반화 허용",
+   "template": "docs/MediStack_reviewer_package_f9_chronic_depletion_v1_4.md §reviewer-note"
+  },
+  "guard_checks": {
+   "guard_projected_violations": [],
+   "all_product_link_false": true,
+   "all_potassium_card_false": true,
+   "all_requires_clinical_review_false": true,
+   "no_reviewed_by": true,
+   "no_draft_only_leak": true,
+   "all_source_itemseq": true,
+   "ids_disjoint_from_live": true,
+   "all_depletion_mechanism": true,
+   "all_monitoring_action": true,
+   "all_nutrient_no_category": true,
+   "all_nutrient_folate_or_vitd": true,
+   "no_needs_review_integrated": true,
+   "no_display_pediatric_bone": true
+  },
+  "duplicate_summary": {
+   "exact_dup_with_live": [],
+   "note": "F9 약물(설파살라진/카르바마제핀/트리메토프림/항전간제)·영양소(엽산/비타민D)는 live 60 에 미존재 → exact dup 0. 엽산/비타민D 는 live 신규 nutrient(기존: 칼슘/철분/아연/마그네슘/칼륨/B12/제산제)."
+  },
+  "conflict_summary": {
+   "live_60": "exact dup 0(F9 성분·영양소 전부 신규). depletion/monitoring 렌더는 live 메트포르민×B12(id12) 선례.",
+   "f1_quinolone_18": "퀴놀론(록사신)×광물/제산제 — 성분/관계 다름·충돌 0(F9=만성 depletion).",
+   "f2_tetracycline_5": "사이클린×광물/제산제 — 성분/관계 다름·충돌 0.",
+   "f3_bisphosphonate_1": "비스포×Al/Mg제산제 — 성분/관계 다름·충돌 0.",
+   "penicillamine_2": "성분/counterpart 무관 — 충돌 0.",
+   "theme_map_6": "지용성비타민/세팔로/페니실라민 — F9 무관·충돌 0.",
+   "potassium_4": "이뇨제×칼륨(K-sparing 아님) — F9(엽산/비타민D depletion)와 무관·충돌 0.",
+   "at_fex_1": "펙소페나딘×제산제 — F9 무관·충돌 0.",
+   "carbamazepine_folate_needs_review": "0245(카르바마제핀×엽산)은 저신호 이상반응 열거 → 통합 대상 아님(needs_review). 단 카르바마제핀×비타민D(0246)는 통합 가능(다른 counterpart·strong quote).",
+   "other_factory_families": "F4/F6/F10 reviewer-ready — 성분/관계 다름·충돌 0.",
+   "full_factory_integrator_dedup": "차후 factory 일괄 integrator 는 (ingredient, counterpart/category) 키로 본 F9 통합분을 skip 해야 함(중복 생성 금지)."
+  },
+  "full_index_alias_impact": {
+   "full_index_counts_current": {
+    "total": 17580,
+    "relation_card": 1168,
+    "name_only": 16412
+   },
+   "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+   "per_ingredient": {
+    "설파살라진": {
+     "index_items": 1,
+     "covered_by_relation": 0,
+     "name_only": 1,
+     "in_aliases": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 1
+    },
+    "카르바마제핀": {
+     "index_items": 10,
+     "covered_by_relation": 0,
+     "name_only": 10,
+     "in_aliases": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 10
+    },
+    "트리메토프림": {
+     "index_items": 1,
+     "covered_by_relation": 0,
+     "name_only": 1,
+     "in_aliases": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 1
+    },
+    "페노바르비탈": {
+     "index_items": 0,
+     "covered_by_relation": 0,
+     "name_only": 0,
+     "in_aliases": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 0
+    },
+    "페니토인": {
+     "index_items": 5,
+     "covered_by_relation": 0,
+     "name_only": 5,
+     "in_aliases": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 5
+    },
+    "프리미돈": {
+     "index_items": 1,
+     "covered_by_relation": 0,
+     "name_only": 1,
+     "in_aliases": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 1
+    }
+   },
+   "integrated_ingredients_this_scope": [
+    "설파살라진",
+    "카르바마제핀",
+    "트리메토프림",
+    "페노바르비탈",
+    "페니토인",
+    "프리미돈"
+   ],
+   "automatic_flip_from_relation_integration": 0,
+   "relation_card_flip_required": 0,
+   "relation_card_after": 1168,
+   "name_only_after": 16412,
+   "index_change_required": false,
+   "alias_change_required": false,
+   "latent_flip_if_alias_enriched_this_scope": 18,
+   "latent_flip_if_alias_enriched_all_integrable": 18,
+   "interpretation": "F9 6개 약물(설파살라진/카르바마제핀/트리메토프림/페노바르비탈/페니토인/프리미돈)은 모두 full index sample 에서 name_only·in_aliases=false. full index/aliases 는 export relations 와 decoupled(pool=aliases.verified_item_seqs·런타임 재생성·fail-soft) → relation-only 통합은 자동 flip 0·relation_card 1168/name_only 16412 불변(통합 차단 아님). 통합분을 verified_item_seqs 로 alias-enrich 하면(별도 alias 작업·본 라운드 미수행) 조건부 latent flip (현 scope ≤18 · 통합 가능 전체 ≤18)."
+  },
+  "v0_2_validator_evidence": {
+   "sim_all_passed": true,
+   "sim_all_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================",
+   "interpretation": "depletion/monitoring 영양소(엽산/비타민D·category 생략) 현행 v0.2 validator PASS (live 메트포르민×B12 동일 shape) → 선행조건 0."
+  },
+  "render_safety_summary": "통합 가능 7건 = depletion/monitoring 영양소 카드(메트포르민×B12 렌더 경로). src 변경 불필요. 비타민D copy_change 3건은 골질환 알람어 비노출 display.",
+  "live_integration_prerequisites": [],
+  "validator_result_summary": "sim 전체 v0.2 PASS=True (선행조건 0)",
+  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
+ },
+ "projected_entries": [
+  {
+   "candidate_id": "RF-F9-0269",
+   "projected_id": 62,
+   "counterpart_type": "nutrient",
+   "counterpart": "엽산",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 62,
+    "ingredient": "설파살라진",
+    "nutrient": "엽산",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199803482",
+     "pointer": "식약처 nedrug getItemDetail / 설파살라진 / itemSeq 199803482 / 상호작용 / '엽산과 병용투여 시 엽산의 흡수가 저하되고, 거대적혈모구증, 범혈구감소를 초래하는 엽산결핍증을 일으킬 수 있으므로 엽산결핍증이 의심되는 경우에는 엽산을 보충한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F9-0246",
+   "projected_id": 63,
+   "counterpart_type": "nutrient",
+   "counterpart": "비타민D",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 63,
+    "ingredient": "카르바마제핀",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198401121",
+     "pointer": "식약처 nedrug getItemDetail / 카르바마제핀 / itemSeq 198401121 / 병용투여 / '혈장 칼슘과 혈중25-hydroxy-콜레칼시페롤의 감소와 같은 골대사 장애로 인한 골연화증 및 골다공증' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F9-0272",
+   "projected_id": 64,
+   "counterpart_type": "nutrient",
+   "counterpart": "엽산",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "projected_live_relation": {
+    "id": 64,
+    "ingredient": "트리메토프림",
+    "nutrient": "엽산",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000049",
+     "pointer": "식약처 nedrug getItemDetail / 트리메토프림 / itemSeq 197000049 / 주의사항 / '폴산결핍 또는 대사이상 환자(이미 위적출술을 받은 환자, 다른 폴산대사길항제를 투여받고 있는 환자, 선천성 폴산대사이상 환자 등)(폴산결핍을 악화시켜 거대적아구성빈혈을 일으킬 수 있다.) 4. 이상반응' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F9-0252",
+   "projected_id": 65,
+   "counterpart_type": "nutrient",
+   "counterpart": "비타민D",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "display_reframe",
+    "field": "display_copy",
+    "original": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "cleaned": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "reason": "라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '비타민D 수치 변화'는 source 보다 강함. '비타민D와 관련된 주의 문구'로 reframe(측정치 단정·골질환 알람어 비노출). 관계(효소유도제 vitD depletion)는 유효 → 통합 가능."
+   },
+   "projected_live_relation": {
+    "id": 65,
+    "ingredient": "페노바르비탈",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000212",
+     "pointer": "식약처 nedrug getItemDetail / 페노바르비탈 / itemSeq 197000212 / 주의사항 / '근골격계 : 연용중에 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(혈청 ALP, 혈청칼슘, 무기인의 저하)이 나타나는 경우에는 감량 또는 비타민 D를 섭취하는 등 주의한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F9-0242",
+   "projected_id": 66,
+   "counterpart_type": "nutrient",
+   "counterpart": "엽산",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "quote_trim",
+    "field": "source_quote",
+    "original_full": "기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.). 1",
+    "cleaned": "기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.)",
+    "reason": "원문 끝 stray 섹션 마커 ' 1' 트림(cleaned 는 original_full 의 verbatim 부분문자열·F1 stray '1' 동형). 혈청엽산치 '저하' 명시라 관계 strong."
+   },
+   "projected_live_relation": {
+    "id": 66,
+    "ingredient": "페니토인",
+    "nutrient": "엽산",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000104",
+     "pointer": "식약처 nedrug getItemDetail / 페니토인 / itemSeq 197000104 / 주의사항 / '기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.)' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F9-0243",
+   "projected_id": 67,
+   "counterpart_type": "nutrient",
+   "counterpart": "비타민D",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "display_reframe",
+    "field": "display_copy",
+    "original": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "cleaned": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "reason": "라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '비타민D 수치 변화'는 source 보다 강함. '비타민D와 관련된 주의 문구'로 reframe(측정치 단정·골질환 알람어 비노출). 관계(효소유도제 vitD depletion)는 유효 → 통합 가능."
+   },
+   "projected_live_relation": {
+    "id": 67,
+    "ingredient": "페니토인",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000104",
+     "pointer": "식약처 nedrug getItemDetail / 페니토인 / itemSeq 197000104 / 주의사항 / '근골격계 : 연용에 의해 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(ALP, 혈청 칼슘 저하 및 무기인 저하 등)이 나타나는 경우에는 감량 또는 비타민D를 투여하는 등 적절히 조치한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F9-0255",
+   "projected_id": 68,
+   "counterpart_type": "nutrient",
+   "counterpart": "비타민D",
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "display_reframe",
+    "field": "display_copy",
+    "original": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "cleaned": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "reason": "라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '비타민D 수치 변화'는 source 보다 강함. '비타민D와 관련된 주의 문구'로 reframe(측정치 단정·골질환 알람어 비노출). 관계(효소유도제 vitD depletion)는 유효 → 통합 가능."
+   },
+   "projected_live_relation": {
+    "id": 68,
+    "ingredient": "프리미돈",
+    "nutrient": "비타민D",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "management_ko": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198000160",
+     "pointer": "식약처 nedrug getItemDetail / 프리미돈 / itemSeq 198000160 / 주의사항 / '근골격계 : 연용시 구루병, 골연화증, 치조골형성부전이 나타날 수 있으므로 이상(ALP, 혈청칼슘, 무기질저하 등)이 나타나면 감량 또는 비타민 D를 투여하는 등 적절한 처치를 한다.' / 확인일 2026-06-16"
+    }
+   }
+  }
+ ]
+}

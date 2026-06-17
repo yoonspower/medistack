@@ -1,0 +1,521 @@
+{
+ "meta": {
+  "name": "f9_chronic_depletion_inventory_v1_4",
+  "status": "DRAFT-ONLY — NOT LIVE / live_integration_forbidden=true / 적대검증 reviewer-ready 8 + F9 family 재검증",
+  "purpose": "F9 만성복용 depletion reviewer-ready 8건 감사 + 작업 C family-specific 재검증(16 렌즈·refute-by-default). reviewer package/integrator 의 단일 소스.",
+  "family": "F9 Chronic-use depletion × 엽산/비타민D (mechanism=depletion·action=monitoring)",
+  "audited": 8,
+  "reviewer_ready_adversarial": 8,
+  "reverify_counts": {
+   "survives": 3,
+   "survives_with_copy_change": 4,
+   "needs_review": 1,
+   "hold": 0,
+   "reject": 0
+  },
+  "integrable_count": 7,
+  "integrable_ids": [
+   "RF-F9-0269",
+   "RF-F9-0246",
+   "RF-F9-0272",
+   "RF-F9-0252",
+   "RF-F9-0242",
+   "RF-F9-0243",
+   "RF-F9-0255"
+  ],
+  "survives_ids": [
+   "RF-F9-0269",
+   "RF-F9-0246",
+   "RF-F9-0272"
+  ],
+  "copy_change_ids": [
+   "RF-F9-0252",
+   "RF-F9-0242",
+   "RF-F9-0243",
+   "RF-F9-0255"
+  ],
+  "needs_review_ids": [
+   "RF-F9-0245"
+  ],
+  "counterpart_split_integrable": {
+   "엽산": 3,
+   "비타민D": 4
+  },
+  "ingredients_reviewer_ready": [
+   "설파살라진",
+   "카르바마제핀",
+   "트리메토프림",
+   "페노바르비탈",
+   "페니토인",
+   "프리미돈"
+  ],
+  "ingredients_integrable": [
+   "설파살라진",
+   "카르바마제핀",
+   "트리메토프림",
+   "페노바르비탈",
+   "페니토인",
+   "프리미돈"
+  ],
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "live_integration_forbidden": true,
+  "do_not_implement_yet": true,
+  "confirmed_at": "2026-06-17",
+  "headline_finding_1_low_signal_0245": "카르바마제핀×엽산(0245): quote '드물게 ... 엽산 결핍증' 은 이상반응 열거 안 bare 항목 — 흡수/대사 기전 동사·혈청엽산치 level-direction·연용-remedy framing 모두 없음('드물게' 빈도). F9 저신호 이상반응 열거 → needs_review(reviewer standalone 근거 확정 요). 카르바마제핀은 ×비타민D(0246) 로 coverage 유지.",
+  "headline_finding_2_vitd_remedy_copy_change": "페노바르비탈/페니토인/프리미돈 × 비타민D(0252/0243/0255): 연용 골대사 이상 + 비타민D 섭취/투여(remedy). 라벨은 vitD '수치 저하' 자체 미명시 → display '수치 변화'를 '비타민D와 관련된 주의 문구'로 reframe(copy_change). 효소유도제 vitD depletion 관계는 유효 → 통합 가능.",
+  "headline_finding_3_quote_hygiene_0242": "페니토인×엽산(0242): '혈청엽산치 저하' 명시(strong) — quote 끝 stray ' 1' 트림(copy_change·quote-trim).",
+  "note": "통합 가능 = 자동 적대검증 + F9 family 재검증 통과(survives+copy_change)를 의미하며 임상 검수 완료·식약처 승인·법적 문제 없음 을 의미하지 않는다. live 승격은 별도 PM + clinical reviewer note + 별도 PR."
+ },
+ "candidates": [
+  {
+   "candidate_id": "RF-F9-0269",
+   "relation": "설파살라진 × 엽산",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "엽산",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "199803482",
+   "source_product": null,
+   "source_section": "상호작용",
+   "source_quote": "엽산과 병용투여 시 엽산의 흡수가 저하되고, 거대적혈모구증, 범혈구감소를 초래하는 엽산결핍증을 일으킬 수 있으므로 엽산결핍증이 의심되는 경우에는 엽산을 보충한다.",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives",
+    "flags": [],
+    "reviewer_notes": [
+     "설파살라진×엽산: '엽산의 흡수가 저하되고...엽산결핍증' 명시(흡수 기전 동사). survives. reviewer 는 카드의 '장기간 복용' framing 이 라벨('병용투여 시')과 어긋나지 않는지 확인(설파살라진은 만성 IBD/RA 약)."
+    ]
+   },
+   "copy_change": null,
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0245",
+   "relation": "카르바마제핀 × 엽산",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "엽산",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198401121",
+   "source_product": null,
+   "source_section": "병용투여",
+   "source_quote": "드물게 백혈구 증가, 임파절 장애, 엽산 결핍증",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "fail:저신호 이상반응 열거('드물게' + 기전/level-direction/연용-remedy 없음) — 모니터링 카드 근거 취약(reviewer standalone 근거 확정 요)",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "needs_review",
+    "flags": [],
+    "reviewer_notes": [
+     "needs_review(작업 C 강등). 카르바마제핀×엽산: 소스 quote('드물게 ... 엽산 결핍증')는 이상반응 열거 안 bare 항목 — 흡수/대사 기전 동사, 혈청엽산치 'level-direction', 연용-remedy framing 모두 없음('드물게' 빈도). F9 저신호 이상반응 열거(adversarial 옥스카르바제핀 강등 패턴 동형) → needs_review. reviewer 가 카르바마제핀 라벨 전문에서 엽산 저하 standalone 근거를 확정해야 통합 가능. (카르바마제핀은 ×비타민D 0246 으로 coverage 유지.)"
+    ]
+   },
+   "copy_change": null,
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0246",
+   "relation": "카르바마제핀 × 비타민D",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "비타민D",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198401121",
+   "source_product": null,
+   "source_section": "병용투여",
+   "source_quote": "혈장 칼슘과 혈중25-hydroxy-콜레칼시페롤의 감소와 같은 골대사 장애로 인한 골연화증 및 골다공증",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives",
+    "flags": [],
+    "reviewer_notes": [
+     "카르바마제핀×비타민D: '혈중25-hydroxy-콜레칼시페롤의 감소' 명시(vitD 직접 저하). survives. quote 가 표(table) 추출이라 reviewer 가 라벨 원문 대조 권장."
+    ]
+   },
+   "copy_change": null,
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0272",
+   "relation": "트리메토프림 × 엽산",
+   "drug_ingredient": "트리메토프림",
+   "counterpart": "엽산",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "197000049",
+   "source_product": null,
+   "source_section": "주의사항",
+   "source_quote": "폴산결핍 또는 대사이상 환자(이미 위적출술을 받은 환자, 다른 폴산대사길항제를 투여받고 있는 환자, 선천성 폴산대사이상 환자 등)(폴산결핍을 악화시켜 거대적아구성빈혈을 일으킬 수 있다.) 4. 이상반응",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives",
+    "flags": [],
+    "reviewer_notes": [
+     "트리메토프림×엽산: '폴산결핍을 악화시켜 거대적아구성빈혈' + '폴산대사길항제'(DHFR 억제 기전) 명시. survives. quote 가 폴산결핍 특수군 caution 이나 길항 기전은 약물 본연(코트리목사졸 포함)이라 일반화 아님."
+    ]
+   },
+   "copy_change": null,
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0252",
+   "relation": "페노바르비탈 × 비타민D",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "비타민D",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "197000212",
+   "source_product": null,
+   "source_section": "주의사항",
+   "source_quote": "근골격계 : 연용중에 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(혈청 ALP, 혈청칼슘, 무기인의 저하)이 나타나는 경우에는 감량 또는 비타민 D를 섭취하는 등 주의한다.",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives_with_copy_change",
+    "flags": [
+     "copy_change:display_reframe"
+    ],
+    "reviewer_notes": [
+     "페노바르비탈×비타민D: 라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '수치 변화'를 '비타민D와 관련된 주의 문구'로 reframe(copy_change). 효소유도제 vitD depletion 기전은 유효 → 통합 가능. reviewer 는 카드가 골연화증/구루병 알람으로 읽히지 않는지 확인."
+    ]
+   },
+   "copy_change": {
+    "kind": "display_reframe",
+    "field": "display_copy",
+    "original": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "cleaned": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "reason": "라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '비타민D 수치 변화'는 source 보다 강함. '비타민D와 관련된 주의 문구'로 reframe(측정치 단정·골질환 알람어 비노출). 관계(효소유도제 vitD depletion)는 유효 → 통합 가능."
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0242",
+   "relation": "페니토인 × 엽산",
+   "drug_ingredient": "페니토인",
+   "counterpart": "엽산",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "197000104",
+   "source_product": null,
+   "source_section": "주의사항",
+   "source_quote": "기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.)",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 엽산 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "copy_change:quote stray marker trimmed",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives_with_copy_change",
+    "flags": [
+     "copy_change:quote_trim"
+    ],
+    "reviewer_notes": [
+     "페니토인×엽산: '혈청엽산치 저하' 명시. quote 끝 stray ' 1' 트림(copy_change·quote-trim). survives_with_copy_change."
+    ]
+   },
+   "copy_change": {
+    "kind": "quote_trim",
+    "field": "source_quote",
+    "original_full": "기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.). 1",
+    "cleaned": "기타 : 결절성 동맥주위염, 다발성 관절증, 과혈당, 드물게 발열, 갑상샘기능검사치(혈청 T3, T4치 등)이상, 다모, 혈청엽산치 저하가 나타날 수 있다(경구제에 한함.)",
+    "reason": "원문 끝 stray 섹션 마커 ' 1' 트림(cleaned 는 original_full 의 verbatim 부분문자열·F1 stray '1' 동형). 혈청엽산치 '저하' 명시라 관계 strong."
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0243",
+   "relation": "페니토인 × 비타민D",
+   "drug_ingredient": "페니토인",
+   "counterpart": "비타민D",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "197000104",
+   "source_product": null,
+   "source_section": "주의사항",
+   "source_quote": "근골격계 : 연용에 의해 구루병, 골연화증, 치아형성부전 등이 나타날 수 있으므로 관찰을 충분히 하고 이상(ALP, 혈청 칼슘 저하 및 무기인 저하 등)이 나타나는 경우에는 감량 또는 비타민D를 투여하는 등 적절히 조치한다.",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives_with_copy_change",
+    "flags": [
+     "copy_change:display_reframe"
+    ],
+    "reviewer_notes": [
+     "페니토인×비타민D: 라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '수치 변화'를 '비타민D와 관련된 주의 문구'로 reframe(copy_change). 효소유도제 vitD depletion 기전은 유효 → 통합 가능. reviewer 는 카드가 골연화증/구루병 알람으로 읽히지 않는지 확인."
+    ]
+   },
+   "copy_change": {
+    "kind": "display_reframe",
+    "field": "display_copy",
+    "original": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "cleaned": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "reason": "라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '비타민D 수치 변화'는 source 보다 강함. '비타민D와 관련된 주의 문구'로 reframe(측정치 단정·골질환 알람어 비노출). 관계(효소유도제 vitD depletion)는 유효 → 통합 가능."
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F9-0255",
+   "relation": "프리미돈 × 비타민D",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "비타민D",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198000160",
+   "source_product": null,
+   "source_section": "주의사항",
+   "source_quote": "근골격계 : 연용시 구루병, 골연화증, 치조골형성부전이 나타날 수 있으므로 이상(ALP, 혈청칼슘, 무기질저하 등)이 나타나면 감량 또는 비타민 D를 투여하는 등 적절한 처치를 한다.",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "mixed",
+   "display_copy": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_copy": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_nutrient_depletion_support": "pass",
+     "L4_not_low_signal_enumeration": "pass",
+     "L5_depletion_direction": "pass",
+     "L6_no_special_population_only": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_nutrient_counterpart": "pass"
+    },
+    "verdict": "survives_with_copy_change",
+    "flags": [
+     "copy_change:display_reframe"
+    ],
+    "reviewer_notes": [
+     "프리미돈×비타민D: 라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '수치 변화'를 '비타민D와 관련된 주의 문구'로 reframe(copy_change). 효소유도제 vitD depletion 기전은 유효 → 통합 가능. reviewer 는 카드가 골연화증/구루병 알람으로 읽히지 않는지 확인."
+    ]
+   },
+   "copy_change": {
+    "kind": "display_reframe",
+    "field": "display_copy",
+    "original": "이 약을 장기간 복용할 때 비타민D 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+    "cleaned": "이 약을 장기간 복용할 때 비타민D와 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+    "reason": "라벨은 연용(장기) 골대사 이상 + 비타민D 섭취/투여(remedy)를 적시하나 비타민D '수치 저하' 자체는 명시 안 함 → display 의 '비타민D 수치 변화'는 source 보다 강함. '비타민D와 관련된 주의 문구'로 reframe(측정치 단정·골질환 알람어 비노출). 관계(효소유도제 vitD depletion)는 유효 → 통합 가능."
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  }
+ ]
+}

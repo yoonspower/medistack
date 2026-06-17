@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "name": "f9_chronic_depletion_index_impact_v1_4",
+  "status": "ANALYSIS — read-only / no index/alias write",
+  "purpose": "F9 통합 시 full index/relation_card/name_only/aliases 영향 분석.",
+  "confirmed_at": "2026-06-17"
+ },
+ "impact": {
+  "full_index_counts_current": {
+   "total": 17580,
+   "relation_card": 1168,
+   "name_only": 16412
+  },
+  "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+  "per_ingredient": {
+   "설파살라진": {
+    "index_items": 1,
+    "covered_by_relation": 0,
+    "name_only": 1,
+    "in_aliases": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 1
+   },
+   "카르바마제핀": {
+    "index_items": 10,
+    "covered_by_relation": 0,
+    "name_only": 10,
+    "in_aliases": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 10
+   },
+   "트리메토프림": {
+    "index_items": 1,
+    "covered_by_relation": 0,
+    "name_only": 1,
+    "in_aliases": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 1
+   },
+   "페노바르비탈": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 0
+   },
+   "페니토인": {
+    "index_items": 5,
+    "covered_by_relation": 0,
+    "name_only": 5,
+    "in_aliases": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 5
+   },
+   "프리미돈": {
+    "index_items": 1,
+    "covered_by_relation": 0,
+    "name_only": 1,
+    "in_aliases": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 1
+   }
+  },
+  "integrated_ingredients_this_scope": [
+   "설파살라진",
+   "카르바마제핀",
+   "트리메토프림",
+   "페노바르비탈",
+   "페니토인",
+   "프리미돈"
+  ],
+  "automatic_flip_from_relation_integration": 0,
+  "relation_card_flip_required": 0,
+  "relation_card_after": 1168,
+  "name_only_after": 16412,
+  "index_change_required": false,
+  "alias_change_required": false,
+  "latent_flip_if_alias_enriched_this_scope": 18,
+  "latent_flip_if_alias_enriched_all_integrable": 18,
+  "interpretation": "F9 6개 약물(설파살라진/카르바마제핀/트리메토프림/페노바르비탈/페니토인/프리미돈)은 모두 full index sample 에서 name_only·in_aliases=false. full index/aliases 는 export relations 와 decoupled(pool=aliases.verified_item_seqs·런타임 재생성·fail-soft) → relation-only 통합은 자동 flip 0·relation_card 1168/name_only 16412 불변(통합 차단 아님). 통합분을 verified_item_seqs 로 alias-enrich 하면(별도 alias 작업·본 라운드 미수행) 조건부 latent flip (현 scope ≤18 · 통합 가능 전체 ≤18)."
+ }
+}
