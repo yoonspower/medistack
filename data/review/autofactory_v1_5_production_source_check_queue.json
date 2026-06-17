@@ -1,0 +1,1486 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_production_source_check_queue",
+  "count": 164,
+  "source_confirmed": 17,
+  "source_pending": 147
+ },
+ "queue": [
+  {
+   "raw_id": "AFP-F1-시프로플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "시프로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "199400540",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-목시플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "목시플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "200908567",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-목시플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "목시플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "200908567",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-노르플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "198500810",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-페플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "199202246",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-페플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "199202246",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-로메플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "철분",
+   "item_seq": "200403774",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-로메플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "200403774",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-로메플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "200403774",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-로메플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "아연",
+   "item_seq": "200403774",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-발로플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "철분",
+   "item_seq": "199300319",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-발로플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "199300319",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-발로플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "199300319",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-발로플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "아연",
+   "item_seq": "199300319",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-자보플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "201501455",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-프룰리플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-프룰리플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-프룰리플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-프룰리플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-프룰리플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-게미플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-게미플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-게미플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-게미플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-게미플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-스파르플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-스파르플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-스파르플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-스파르플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-스파르플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가티플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "철분",
+   "item_seq": "200500973",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가티플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "200500973",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가티플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "200500973",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가티플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "아연",
+   "item_seq": "200500973",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가티플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "200500973",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-토수플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "200501778",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F1-토수플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "아연",
+   "item_seq": "200501778",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플루메퀸-fe",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플루메퀸-ca",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플루메퀸-mg",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플루메퀸-zn",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플루메퀸-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-에녹사신-fe",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-에녹사신-ca",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-에녹사신-mg",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-에녹사신-zn",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-에녹사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플레록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플레록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플레록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플레록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-플레록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-루플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-루플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-루플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-루플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-루플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가레녹사신-fe",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가레녹사신-ca",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가레녹사신-mg",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가레녹사신-zn",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-가레녹사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-시노플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-시노플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-시노플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-시노플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F1-시노플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-테트라사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "칼슘",
+   "item_seq": "196000001",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F2-테트라사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "마그네슘",
+   "item_seq": "196000001",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F2-옥시테트라사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "철분",
+   "item_seq": "200008819",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-옥시테트라사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "칼슘",
+   "item_seq": "200008819",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-옥시테트라사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "마그네슘",
+   "item_seq": "200008819",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-옥시테트라사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "아연",
+   "item_seq": "200008819",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-옥시테트라사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "200008819",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-데메클로사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-데메클로사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-데메클로사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-데메클로사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-데메클로사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-메타사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-메타사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-메타사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-메타사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-메타사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-티게사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-티게사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-티게사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-티게사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "아연",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F2-티게사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "철분",
+   "item_seq": "199800180",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "199800180",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "199800180",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F3-리세드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "리세드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "200713889",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-에티드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "칼슘",
+   "item_seq": "198802519",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-에티드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "철분",
+   "item_seq": "198802519",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-에티드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "198802519",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-에티드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "198802519",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-클로드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-클로드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-클로드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-클로드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-파미드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "칼슘",
+   "item_seq": "199502670",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-파미드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "철분",
+   "item_seq": "199502670",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-파미드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "199502670",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-파미드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "199502670",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-졸레드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "칼슘",
+   "item_seq": "201110420",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-졸레드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "철분",
+   "item_seq": "201110420",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-졸레드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "201110420",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-졸레드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "201110420",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-미노드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-미노드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-미노드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-미노드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-인카드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "칼슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-인카드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "철분",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-인카드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "마그네슘",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F3-인카드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "",
+   "label_fetched": false,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F4-레보티록신-mg",
+   "family": "F4",
+   "drug_ingredient": "레보티록신",
+   "counterpart": "마그네슘",
+   "item_seq": "197400278",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F4-레보티록신-al_mg_antacid",
+   "family": "F4",
+   "drug_ingredient": "레보티록신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "197400278",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F4-리오티로닌-mg",
+   "family": "F4",
+   "drug_ingredient": "리오티로닌",
+   "counterpart": "마그네슘",
+   "item_seq": "201503196",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F4-리오티로닌-al_mg_antacid",
+   "family": "F4",
+   "drug_ingredient": "리오티로닌",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "201503196",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-파모티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "파모티딘",
+   "counterpart": "철분",
+   "item_seq": "199501743",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-파모티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "파모티딘",
+   "counterpart": "비타민B12",
+   "item_seq": "199501743",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-시메티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "시메티딘",
+   "counterpart": "철분",
+   "item_seq": "197800085",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-시메티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "시메티딘",
+   "counterpart": "비타민B12",
+   "item_seq": "197800085",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-니자티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "니자티딘",
+   "counterpart": "철분",
+   "item_seq": "200000919",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-니자티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "니자티딘",
+   "counterpart": "비타민B12",
+   "item_seq": "200000919",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-라푸티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "라푸티딘",
+   "counterpart": "철분",
+   "item_seq": "201302935",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-라푸티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "라푸티딘",
+   "counterpart": "비타민B12",
+   "item_seq": "201302935",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-록사티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "록사티딘",
+   "counterpart": "철분",
+   "item_seq": "200100602",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-록사티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "록사티딘",
+   "counterpart": "비타민B12",
+   "item_seq": "200100602",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-오메프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "오메프라졸",
+   "counterpart": "철분",
+   "item_seq": "201308928",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-에스오메프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "에스오메프라졸",
+   "counterpart": "철분",
+   "item_seq": "201308928",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-란소프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "란소프라졸",
+   "counterpart": "철분",
+   "item_seq": "200401591",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-판토프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "판토프라졸",
+   "counterpart": "철분",
+   "item_seq": "200702870",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F6-라베프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "라베프라졸",
+   "counterpart": "철분",
+   "item_seq": "200607667",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-페니토인-b12",
+   "family": "F9",
+   "drug_ingredient": "페니토인",
+   "counterpart": "비타민B12",
+   "item_seq": "197000104",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-카르바마제핀-folate",
+   "family": "F9",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "엽산",
+   "item_seq": "198401121",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F9-카르바마제핀-b12",
+   "family": "F9",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "비타민B12",
+   "item_seq": "198401121",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-발프로산-folate",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "엽산",
+   "item_seq": "198900925",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F9-발프로산-vitd",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "비타민D",
+   "item_seq": "198900925",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-발프로산-b12",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "비타민B12",
+   "item_seq": "198900925",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-페노바르비탈-folate",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "엽산",
+   "item_seq": "197000212",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F9-페노바르비탈-b12",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "비타민B12",
+   "item_seq": "197000212",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-프리미돈-folate",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "엽산",
+   "item_seq": "198000160",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F9-프리미돈-b12",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "비타민B12",
+   "item_seq": "198000160",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-옥스카르바제핀-folate",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "엽산",
+   "item_seq": "200008776",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F9-옥스카르바제핀-vitd",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "비타민D",
+   "item_seq": "200008776",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-옥스카르바제핀-b12",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "비타민B12",
+   "item_seq": "200008776",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-라모트리진-folate",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "엽산",
+   "item_seq": "200209641",
+   "label_fetched": true,
+   "source_status": "source_confirmed"
+  },
+  {
+   "raw_id": "AFP-F9-라모트리진-vitd",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "비타민D",
+   "item_seq": "200209641",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-라모트리진-b12",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "비타민B12",
+   "item_seq": "200209641",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-토피라메이트-folate",
+   "family": "F9",
+   "drug_ingredient": "토피라메이트",
+   "counterpart": "엽산",
+   "item_seq": "200503065",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-토피라메이트-vitd",
+   "family": "F9",
+   "drug_ingredient": "토피라메이트",
+   "counterpart": "비타민D",
+   "item_seq": "200503065",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-토피라메이트-b12",
+   "family": "F9",
+   "drug_ingredient": "토피라메이트",
+   "counterpart": "비타민B12",
+   "item_seq": "200503065",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-조니사미드-folate",
+   "family": "F9",
+   "drug_ingredient": "조니사미드",
+   "counterpart": "엽산",
+   "item_seq": "199000165",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-조니사미드-vitd",
+   "family": "F9",
+   "drug_ingredient": "조니사미드",
+   "counterpart": "비타민D",
+   "item_seq": "199000165",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-조니사미드-b12",
+   "family": "F9",
+   "drug_ingredient": "조니사미드",
+   "counterpart": "비타민B12",
+   "item_seq": "199000165",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-설파살라진-vitd",
+   "family": "F9",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "비타민D",
+   "item_seq": "199803482",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-설파살라진-b12",
+   "family": "F9",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "비타민B12",
+   "item_seq": "199803482",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-트리메토프림-vitd",
+   "family": "F9",
+   "drug_ingredient": "트리메토프림",
+   "counterpart": "비타민D",
+   "item_seq": "197000049",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F9-트리메토프림-b12",
+   "family": "F9",
+   "drug_ingredient": "트리메토프림",
+   "counterpart": "비타민B12",
+   "item_seq": "197000049",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F10-케토코나졸-al_mg_antacid",
+   "family": "F10",
+   "drug_ingredient": "케토코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "199101243",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  },
+  {
+   "raw_id": "AFP-F10-포사코나졸-al_mg_antacid",
+   "family": "F10",
+   "drug_ingredient": "포사코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "item_seq": "200711475",
+   "label_fetched": true,
+   "source_status": "source_pending_no_quote"
+  }
+ ]
+}

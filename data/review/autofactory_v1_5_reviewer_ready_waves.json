@@ -1,0 +1,26 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_reviewer_ready_waves",
+  "new_reviewer_ready": 0,
+  "existing_prepared": 33
+ },
+ "package": {
+  "existing_prepared_total": 33,
+  "new_reviewer_ready_total": 0,
+  "new_reviewer_ready_ids": [],
+  "packaged_waves": [
+   "f1_nutrient10",
+   "f1_antacid8",
+   "f1_all18",
+   "f2_all5",
+   "f3_single",
+   "f9_all7",
+   "f4_f6_small2",
+   "antibiotic23",
+   "chronic8",
+   "all33"
+  ],
+  "reviewer_note_required_for_all": true,
+  "needs_review_quarantined": true
+ }
+}

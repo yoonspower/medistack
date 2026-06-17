@@ -1,0 +1,9 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_cleanup_reviewer_ready_waves",
+  "cleanup_new_ready": 0,
+  "note": "cleanup 재harvest 결과 신규 reviewer-ready 0 — 16 quote 후보 전부 auditor HOLD 확정(0 false-demotion)."
+ },
+ "waves": {},
+ "candidates": []
+}

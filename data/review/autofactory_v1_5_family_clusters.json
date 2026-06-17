@@ -1,0 +1,35 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_family_clusters"
+ },
+ "high_confidence": [
+  "antibiotic23",
+  "f1_all18"
+ ],
+ "medium": [
+  "chronic8",
+  "f9_all7",
+  "f1_nutrient10"
+ ],
+ "small_risky": [
+  "f3_single",
+  "f4_f6_small2",
+  "f1_antacid8",
+  "f2_all5"
+ ],
+ "all_in_one_not_recommended": [
+  "all33"
+ ],
+ "wave_counts": {
+  "f1_nutrient10": 10,
+  "f1_antacid8": 8,
+  "f1_all18": 18,
+  "f2_all5": 5,
+  "f3_single": 1,
+  "f9_all7": 7,
+  "f4_f6_small2": 2,
+  "antibiotic23": 23,
+  "chronic8": 8,
+  "all33": 33
+ }
+}

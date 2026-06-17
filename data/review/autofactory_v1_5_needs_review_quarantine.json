@@ -1,0 +1,691 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_needs_review_quarantine",
+  "genuine": 4,
+  "source_pending": 120
+ },
+ "genuine_quarantine": [
+  {
+   "candidate_id": "RF-F3-0148",
+   "family": "F3",
+   "reason": "source parse 미해소(quote 경계)",
+   "resolve_when": "에티드론산 라벨 인용 파싱·기전동사 확정",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  },
+  {
+   "candidate_id": "RF-F3-0149",
+   "family": "F3",
+   "reason": "source parse 미해소",
+   "resolve_when": "동일 — 에티드론산 parse",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  },
+  {
+   "candidate_id": "RF-F9-0245",
+   "family": "F9",
+   "reason": "저신호 이상반응 열거('드물게')·기전/level-direction/연용-remedy 부재",
+   "resolve_when": "흡수/대사 기전 또는 혈청엽산치 방향 인용 확보 시 재평가",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  },
+  {
+   "candidate_id": "RF-F10-0275",
+   "family": "F10",
+   "reason": "route/availability 강등(경구 품목 위장 불가)",
+   "resolve_when": "route 근거 재확인·display 재작성",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  }
+ ],
+ "source_pending_recheck_candidates": [
+  {
+   "raw_id": "AF-F3-클로드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F6-록사티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "록사티딘",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F6-니자티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "니자티딘",
+   "counterpart": "비타민B12",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-라모트리진-b12",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "비타민B12",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-fe",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F4-리오티로닌-mg",
+   "family": "F4",
+   "drug_ingredient": "리오티로닌",
+   "counterpart": "마그네슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-옥스카르바제핀-vitd",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "비타민D",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F3-에티드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "마그네슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-페노바르비탈-vitd",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "비타민D",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-zn",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-발프로산-b12",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "비타민B12",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F3-에티드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "마그네슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-ca",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-프리미돈-folate",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "엽산",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-발로플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-페노바르비탈-b12",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "비타민B12",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F6-니자티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "니자티딘",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F3-인카드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "마그네슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F10-포사코나졸-al_mg_antacid",
+   "family": "F10",
+   "drug_ingredient": "포사코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F9-설파살라진-folate",
+   "family": "F9",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "엽산",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-목시플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "목시플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-자보플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-목시플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "목시플록사신",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F3-알렌드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "마그네슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F4-리오티로닌-al_mg_antacid",
+   "family": "F4",
+   "drug_ingredient": "리오티로닌",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-페플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "아연",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F3-미노드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "칼슘",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F2-옥시테트라사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "철분",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "verdict": "needs_review",
+   "needs_review_reason": "source_pending_no_network",
+   "scores": {
+    "source_strength_score": 0,
+    "overall_confidence": 0
+   }
+  }
+ ]
+}

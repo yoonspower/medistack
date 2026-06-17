@@ -1,0 +1,43 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_cleanup_dashboard",
+  "run_date": "2026-06-17",
+  "status": "NO-LIVE-WRITE · real MFDS re-harvest · 0 new reviewer-ready"
+ },
+ "cleanup": {
+  "reviewed": 167,
+  "source_confirmed_quotes": 17,
+  "still_needs_review": 167,
+  "reviewer_ready_new": 0,
+  "verdict_reason_dist": {
+   "counterpart_not_standalone_supplement(F3_lesson)": 9,
+   "no_absorption_mechanism_verb": 1,
+   "pregnancy_context_not_drug_depletion(F9_lesson)": 7,
+   "no_supporting_quote_after_multi_label_search": 150
+  }
+ },
+ "audit": {
+  "production_decision": "AUDIT_PASS",
+  "cleanup_audited": 16,
+  "cleanup_holds_confirmed": 16,
+  "cleanup_false_demotions": 0
+ },
+ "scenario": {
+  "existing_prepared": 33,
+  "production_audited_ready": 1,
+  "cleanup_new_ready": 0,
+  "new_ready_total": 1,
+  "combined_future": "60→93→94 (existing 33 + audited production 1; reviewer note 후·live write 0)"
+ },
+ "source_fidelity": {
+  "official_source_ratio": "100% (nedrug.mfds.go.kr)",
+  "mineral_antacid_confusion_blocked": 9,
+  "folate_pregnancy_context_blocked": 7,
+  "false_demotions_found_by_independent_audit": 0
+ },
+ "next": {
+  "recommended_next_live_wave": "PR-1 antibiotic23(기존 60→83) reviewer note 확보 최우선 + 시프로×제산제 add-on(+1)",
+  "factory_v1_6_needed": false,
+  "factory_v1_6_reason": "방어가능 신규관계 희소 재확인(cleanup 0 new)·source_pending 다수는 한국완제 미존재/임신맥락. reviewer note·live PR 트랙이 병목."
+ }
+}

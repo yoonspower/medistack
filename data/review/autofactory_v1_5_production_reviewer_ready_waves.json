@@ -1,0 +1,50 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_production_reviewer_ready_waves",
+  "new_reviewer_ready": 1,
+  "existing_prepared": 33,
+  "independent_audit_pending": true
+ },
+ "waves": {
+  "prod_F1_1": {
+   "family": "F1",
+   "candidate_ids": [
+    "AFP-F1-시프로플록사신-al_mg_antacid"
+   ],
+   "delta": 1,
+   "independent_audit_pending": true
+  }
+ },
+ "candidates": [
+  {
+   "raw_id": "AFP-F1-시프로플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "시프로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_canon": "al_mg_antacid",
+   "counterpart_type": "drug",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "auto_pass",
+   "verdict_reason": "antacid_absorption",
+   "source": {
+    "type": "허가사항",
+    "title": "로프신정250mg(시프로플록사신염산염수화물)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400540",
+    "pointer": "식약처 nedrug getItemDetail / 시프로플록사신 / itemSeq 199400540 / 상호작용 / '3) 알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가' / 확인일 2026-06-17",
+    "quote": "3) 알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가",
+    "claim_scope": "label_interaction"
+   },
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "requires_clinical_review": false,
+   "independent_audit_pending": true,
+   "live_promotion_requires": [
+    "independent_adversarial_audit",
+    "clinical_reviewer_note"
+   ]
+  }
+ ]
+}
