@@ -1,0 +1,26 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_dryrun_summary",
+  "live_write": false
+ },
+ "rehearsal": {
+  "antibiotic23": {
+   "planned_count": 83,
+   "delta": 23,
+   "pass": true,
+   "live_write": false
+  },
+  "chronic8": {
+   "planned_count": 68,
+   "delta": 8,
+   "pass": true,
+   "live_write": false
+  },
+  "all33": {
+   "planned_count": 93,
+   "delta": 33,
+   "pass": true,
+   "live_write": false
+  }
+ }
+}
