@@ -1,0 +1,1038 @@
+{
+ "meta": {
+  "name": "pr1_antibiotic24_live_dryrun_v1_4",
+  "status": "DRY-RUN — live 무수정 예상 산출물",
+  "wave": "antibiotic24",
+  "mode": "DRY-RUN",
+  "baseline_relation_count": 60,
+  "expected_relation_count_after": 84,
+  "delta": 24,
+  "new_ids": [
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85
+  ],
+  "candidate_ids": [
+   "RF-F1-0021",
+   "RF-F1-0022",
+   "RF-F1-0024",
+   "RF-F1-0041",
+   "RF-F1-0042",
+   "RF-F1-0044",
+   "RF-F1-0066",
+   "RF-F1-0067",
+   "RF-F1-0026",
+   "RF-F1-0029",
+   "RF-F1-0025",
+   "RF-F1-0010",
+   "RF-F1-0035",
+   "RF-F1-0040",
+   "RF-F1-0020",
+   "RF-F1-0045",
+   "RF-F1-0070",
+   "RF-F1-0030",
+   "RF-F2-0105",
+   "RF-F2-0110",
+   "RF-F2-0111",
+   "RF-F2-0114",
+   "RF-F2-0115",
+   "AFP-F1-시프로플록사신-al_mg_antacid"
+  ],
+  "v0_2_sim_passed": true,
+  "export_sha_before": "62df92844faf1bcc47e0e6ace1b0cd1307222b0461a6b819122b6ffab5030144",
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)",
+  "non_target_protected_snapshot": {
+   ".github/workflows/deploy.yml": "cc193f2247e655ce4fe7da882def014210248955276941a333d9b4113036fe24",
+   ".github/workflows/harvest.yml": "ee52ef74a1a4a4d0843286282bd25335f5688abb5a99b579754167cde4a4e7af",
+   ".github/workflows/validate.yml": "cd068cae25d20b9cf800bc22fc6a28b18af40083042c55e21510f95723a38a4a",
+   "data/full_drug_name_index_sample_v1_0.csv": "d6f5b0daeab1cabacd0c6e4f59da24826c2f1ddb68bce7f5cdbd3330eed2c96a",
+   "data/full_drug_name_index_sample_v1_0.json": "d329b2ddd3cdd05e3c4a96a11107d1db792d1df3e2c2fddf5a1a8e042e162fdb",
+   "data/medistack_v0.1_beta_export.json": "e9994f017995591365fc1ae333d288ea15af20ada2fe322e7e509c94be8d99a9",
+   "data/medistack_v0.3_aliases.json": "ee25aed084a8a35f2d7336ea84b771fa70c608885ecf19c1338de2df4ce17039",
+   "data/medistack_v0.3_aliases.sample.json": "7c18dbe096a45fdb8bd9a546a53ab97fdc496093ced7afd43be0fc3315698940",
+   "index.html": "e9fe8abf9ddeb894252eb2da100f8b6b75d330c40bc7d9649b90dbb6cf4ba5ea",
+   "medistack_sdk/__init__.py": "998d863b1267fb2d8c33b4f524e37677ce99aac02e1a0d5926756f7f11a3e75f",
+   "medistack_sdk/fixtures/make_fixtures.py": "bd06e070ea40ad3bbc89240dd65d64e28fbc5cab8b26fdd3e8331d4427652a02",
+   "medistack_sdk/nedrug_client.py": "079af2ecf3e4e5ddce5f2e59253dc8db6fda6b16e74ef29ed7f94945e3d6a440",
+   "medistack_sdk/test_nedrug_client_dryrun.py": "a5c864484e10bb39a4caac30586c1241143cf36c32b69249cc60e2074ae912e7",
+   "scripts/validate_alias_surface_forms.py": "e38dc628cd28a7e26da1861de57f7b54f9c44eb9f8183f22a04b66be801bcf1d",
+   "scripts/validate_antacid_fex_dryrun_v1_2.py": "59abb21bdfb37bc2482631bc38fbec5a152991a4f26e447795dd8c8a5d0fcaf8",
+   "scripts/validate_antacid_interaction_v1_2.py": "38de7e56863a7f475cd97bc84a64d49742c977415b973398048693179fc9d57f",
+   "scripts/validate_antacid_itz_integration_v1_2.py": "dd19390ac8cc72123b3e878f1cfac0130999625056a7d44ef6624126b8509914",
+   "scripts/validate_bulk_alias_candidates.py": "fa427b9c5a9d6ca7e43d8718f8ffee7d898bcd877f0959cd9f413d1d559336f1",
+   "scripts/validate_combo_approved_ready.py": "177569b7b0dfa3a742330afd01a6491ecd6dfd3ec7d2602ede44c04ac26eaab6",
+   "scripts/validate_coverage_kpi_reclass_v1_2.py": "ea4575d0415c2ffea8d2840a6f7cdaeda77ca8c35ea0f34cdb61fa217983ec72",
+   "scripts/validate_coverage_queue_cqf02_integration_v1_2.py": "5cf43aacaf1af59b366b1387a4f01c540875985af8e0246020349cc0788acee5",
+   "scripts/validate_coverage_queue_draft_batch3_v1_2.py": "b282b8c29557663e65c51fc56a52281bd397d2adf07ce12ebb3f7c1e05ddd1ed",
+   "scripts/validate_coverage_queue_draft_batch4_v1_2.py": "494be20e4b429866a2b686ab10f546620289d2a71aef68cdf3ce5e6be2c2f657",
+   "scripts/validate_coverage_queue_draft_batch_v1_2.py": "60b20686f4d1b19cd0fd7b634bf5964f23f67f767a25e7157a36d443abfcb4d4",
+   "scripts/validate_coverage_queue_integration_v1_2.py": "b18de4f88e2c3246efbc79dd00e8fe224cfb53db02ad9f5ffc71f56196acc286",
+   "scripts/validate_f1_quinolone_dryrun_v1_4.py": "8e95bc07063ec0ffee5498738fa176fd83bb0d9447686aff0a1c1dc8e4f87f16",
+   "scripts/validate_f2_tetracycline_dryrun_v1_4.py": "3281d0504384c7bec2666ce4fd7da6cb8a2da27d9679d97b4f7be53413f48d41",
+   "scripts/validate_f3_bisphosphonate_dryrun_v1_4.py": "401823c8b4c45d70e840c52a9e62b49208f39bf36484bd766e4b849bba91cf02",
+   "scripts/validate_f4_f6_f10_small_family_dryrun_v1_4.py": "772df0d3809f6b4df0bc2beb06f759dba05aa50ce34afa9a5b75783a9e66deb1",
+   "scripts/validate_f9_chronic_depletion_dryrun_v1_4.py": "d1784ee05be77c17cb0ce6a77d0dcae7134fcace0240ad3a29f91ae73eaced80",
+   "scripts/validate_factory_draft_batch_v1_2.py": "19d24ce92ec880974fe144ddd09d8e69d68ea7e14a40a5d6e4a6e429ff285ded",
+   "scripts/validate_factory_integration_v1_2.py": "7ea3be8f5cfd06106b8d84a99e928d5285f7e6a1b6bcf70ac02a7ffc6ca5ffe4",
+   "scripts/validate_forbidden_phrases_v1_2.py": "b73d39d00363a32711f2b0c00f6d85fd215fd32f762f7a44aff6d512b665e34e",
+   "scripts/validate_full_drug_name_index.py": "39d0d58ff34e7a5e300eb7bb9f846483f154ea53b99023005cf2833c6d645b7d",
+   "scripts/validate_global_reviewer_ready_dryrun_v1_4.py": "f337e8e0ca2503dca5957b38916660d35297bddb36f22413990332c0d368c5fa",
+   "scripts/validate_harvest_queue_v1_3.py": "158d6f18906b47219d0d736b21c92956f3a5464d5d5059bea43cdb384cde97d2",
+   "scripts/validate_harvester_schedule_safety_v1_3.py": "659cf6d51b85500cb06cdb167f9b1e16462c5cd1748e713b69ee8d02e7a97e9d",
+   "scripts/validate_harvester_theme_map_v1_3.py": "bf2f67cab76830f7ea204ce542cbbf9ac98b22701c4a5754cd73cdba42bab6bd",
+   "scripts/validate_live_pr_readiness_v1_4.py": "abf31ca99e8685a95359462539e617e5d1490b55d576d076471814f417ef844a",
+   "scripts/validate_live_pr_wave_rehearsal_v1_4.py": "4757b43f7a20dbf3e54e32a627e0d72f1c0162723fd26b3f29460a942d51e7a7",
+   "scripts/validate_medistack_v0_1_export.js": "b9807db8af5e1fe4197dc32de0c3fd6455cc5883fccecfb993a99b73bb8710b2",
+   "scripts/validate_medistack_v0_1_export.py": "4131dcc8d4684faefcbabe3b5e38a5b32cc55e5da589aff0b9cdd190dd7da786",
+   "scripts/validate_medistack_v0_2_export.js": "c380383d516b99381331613cc99be799d5c197f8f207b2ae9b7bcdd3c44feeec",
+   "scripts/validate_medistack_v0_2_export.py": "99aa0ce28989f7e3bebf33081c7eb41685cd17d2d35aa8c2701b79428005b7f1",
+   "scripts/validate_medistack_v0_3_aliases.py": "e08a1b9a0fbd3a6e6ab1908a9d2f04180a6600a7ac8df482b15f2138f5e32b8c",
+   "scripts/validate_needs_review_quarantine_v1_4.py": "d79f4ae0969f8215ed2a5082c4431d00b716bd00931a541048adfff9758ab30c",
+   "scripts/validate_penicillamine_subset_dryrun_v1_3.py": "f2c1b414658b78f73ae40cd30d6dbc27f2bb3aea194425e4c533dca4230bbbef",
+   "scripts/validate_potassium_dryrun_v1_2.py": "e9600320a82bd837ef6d1122f2ab5c55d2a096a52d81b35e1789229bec73b86c",
+   "scripts/validate_potassium_name_only_policy.py": "12ac458e6beaf6eb1d7d7814033768f1ea36f3e8e6271e375b775c2567f299f2",
+   "scripts/validate_potassium_pm_ready_v1_2.py": "cfc29e407ed315ac975aa4bf80a548261097544120b76362c9bfa03ae30616ab",
+   "scripts/validate_pr1_antibiotic24_post_integration_v1_4.py": "2898dd2cf78c0feba4ca265221e2ae7c66a6c5479685f679c5430fbe8691714e",
+   "scripts/validate_prednisolone_draft_recheck_v1_3.py": "fc55f2e02d9ea8f7368744ea4296f51b0ed3d2e6be4a8a7cd42ea47c6d29c9ae",
+   "scripts/validate_relation_draft_v1_2.py": "1a706da5d7def7e11c887f7499188608b58682af94338dbc1b710fc90db306a3",
+   "scripts/validate_relation_expansion_draft_v1_1.py": "ba21c0f61795f11559c9bdb438e8bebec1dda06a271fd98cbae15b15da245acc",
+   "scripts/validate_relation_factory_batch_v1_4.py": "d97787ced79efdd6c595dd7b63263b8a3c657d908546a0fd97481171478f60ac",
+   "scripts/validate_search_empty_state_copy_v1_2.py": "b600f11180080f40b5b27044af847044a37990aa460d3732d326b26a790a3203",
+   "scripts/validate_theme_map_expansion_v1_3.py": "6c9f7eede9c49b3cfb175dad88d3e7f6e61bb2c26261e693adc75cb620172030",
+   "scripts/validate_theme_map_live_dryrun_v1_3.py": "a74e93ad82e17e60481bd02cc33d22574260dc329dbe741ceb8068ed69ef1a5d",
+   "src/css/styles.css": "038bfbe9a558457c876cafddd475fcb3027407a88cec1a3095b7a66fc2bbed12",
+   "src/js/app.js": "a4f755be986abdbabbeeb47265f4de9c8045a9cac2fed4b96891ba4ed85969bb",
+   "src/js/data.js": "aee4f8888c0e1e01142731bbca5ebd026fe9e40ea1a227e0591e5a8466123b5c",
+   "src/js/guards.js": "05fb495b29f99949a67848650c59a40546be2a9e773c2796a652d582efd9c7eb",
+   "src/js/render.js": "fdaae5a8b3d10ee4b60eeb12b9c77ccf789da94f8dea93660ce690f778f413b1",
+   "src/js/states.js": "7d80107edf0fa2f5c5d82e2cdc8615f313409cc5ee455deed0cc37ea54e0aa6b"
+  }
+ },
+ "projected_entries": [
+  {
+   "candidate_id": "RF-F1-0021",
+   "projected_id": 62,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 62,
+    "ingredient": "노르플록사신",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198500810",
+     "pointer": "식약처 nedrug getItemDetail / 노르플록사신 / itemSeq 198500810 / 병용투여 / '아연 또는 철분이 함유된 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0022",
+   "projected_id": 63,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 63,
+    "ingredient": "노르플록사신",
+    "nutrient": "칼슘",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "칼슘과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198500810",
+     "pointer": "식약처 nedrug getItemDetail / 노르플록사신 / itemSeq 198500810 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0024",
+   "projected_id": 64,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 64,
+    "ingredient": "노르플록사신",
+    "nutrient": "아연",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "아연과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198500810",
+     "pointer": "식약처 nedrug getItemDetail / 노르플록사신 / itemSeq 198500810 / 병용투여 / '아연 또는 철분이 함유된 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0041",
+   "projected_id": 65,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 65,
+    "ingredient": "자보플록사신",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201501455",
+     "pointer": "식약처 nedrug getItemDetail / 자보플록사신 / itemSeq 201501455 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0042",
+   "projected_id": 66,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 66,
+    "ingredient": "자보플록사신",
+    "nutrient": "칼슘",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "칼슘과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201501455",
+     "pointer": "식약처 nedrug getItemDetail / 자보플록사신 / itemSeq 201501455 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0044",
+   "projected_id": 67,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 67,
+    "ingredient": "자보플록사신",
+    "nutrient": "아연",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "아연과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201501455",
+     "pointer": "식약처 nedrug getItemDetail / 자보플록사신 / itemSeq 201501455 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0066",
+   "projected_id": 68,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 68,
+    "ingredient": "토수플록사신",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200501778",
+     "pointer": "식약처 nedrug getItemDetail / 토수플록사신 / itemSeq 200501778 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0067",
+   "projected_id": 69,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 69,
+    "ingredient": "토수플록사신",
+    "nutrient": "칼슘",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "칼슘과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200501778",
+     "pointer": "식약처 nedrug getItemDetail / 토수플록사신 / itemSeq 200501778 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0026",
+   "projected_id": 70,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 70,
+    "ingredient": "페플록사신",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199202246",
+     "pointer": "식약처 nedrug getItemDetail / 페플록사신 / itemSeq 199202246 / 병용투여 / '철분 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0029",
+   "projected_id": 71,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 71,
+    "ingredient": "페플록사신",
+    "nutrient": "아연",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "아연과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199202246",
+     "pointer": "식약처 nedrug getItemDetail / 페플록사신 / itemSeq 199202246 / 병용투여 / '철분 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0025",
+   "projected_id": 72,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 72,
+    "ingredient": "노르플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198500810",
+     "pointer": "식약처 nedrug getItemDetail / 노르플록사신 / itemSeq 198500810 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0010",
+   "projected_id": 73,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 73,
+    "ingredient": "레보플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199901759",
+     "pointer": "식약처 nedrug getItemDetail / 레보플록사신 / itemSeq 199901759 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 수크랄페이트, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0035",
+   "projected_id": 74,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 74,
+    "ingredient": "로메플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199903690",
+     "pointer": "식약처 nedrug getItemDetail / 로메플록사신 / itemSeq 199903690 / 병용투여 / '수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제와 병용 시 킬레이트 복합체를 형성하면서 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0040",
+   "projected_id": 75,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "avoid",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용을 피하는 것이 바람직하다고 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 75,
+    "ingredient": "발로플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용을 피하는 것이 바람직하다고 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199300319",
+     "pointer": "식약처 nedrug getItemDetail / 발로플록사신 / itemSeq 199300319 / 상호작용 / '알루미늄 또는 마그네슘을 함유하는 제산제와의 병용에 의해 이 약의 흡수가 저하되고 효과가 감소되는 경우가 있으므로 병용을 피하는 것이 바람직하다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0020",
+   "projected_id": 76,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "field": "source_quote",
+    "cleaned": "수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다(단, 경구제에 한함).",
+    "reason": "원문 끝 stray footnote marker ' 1' 제거(verbatim 부분문자열). '(단, 경구제에 한함)' 경구 한정 — display copy '함께 복용'(경구)과 정합 → reviewer 경구 scope note."
+   },
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 76,
+    "ingredient": "오플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198900665",
+     "pointer": "식약처 nedrug getItemDetail / 오플록사신 / itemSeq 198900665 / 병용투여 / '수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다(단, 경구제에 한함).' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0045",
+   "projected_id": 77,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 77,
+    "ingredient": "자보플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201501455",
+     "pointer": "식약처 nedrug getItemDetail / 자보플록사신 / itemSeq 201501455 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0070",
+   "projected_id": 78,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 78,
+    "ingredient": "토수플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200501778",
+     "pointer": "식약처 nedrug getItemDetail / 토수플록사신 / itemSeq 200501778 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F1-0030",
+   "projected_id": 79,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F1",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 79,
+    "ingredient": "페플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199202246",
+     "pointer": "식약처 nedrug getItemDetail / 페플록사신 / itemSeq 199202246 / 병용투여 / '알루미늄 또는 마그네슘 함유 제산제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0105",
+   "projected_id": 80,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F2",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 80,
+    "ingredient": "독시사이클린",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198000105",
+     "pointer": "식약처 nedrug getItemDetail / 독시사이클린 / itemSeq 198000105 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0110",
+   "projected_id": 81,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F2",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 81,
+    "ingredient": "미노사이클린",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198501028",
+     "pointer": "식약처 nedrug getItemDetail / 미노사이클린 / itemSeq 198501028 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무스(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0111",
+   "projected_id": 82,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F2",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 82,
+    "ingredient": "테트라사이클린",
+    "nutrient": "철분",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+     "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0114",
+   "projected_id": 83,
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F2",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 83,
+    "ingredient": "테트라사이클린",
+    "nutrient": "아연",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "아연과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+     "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "candidate_id": "RF-F2-0115",
+   "projected_id": 84,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F2",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 84,
+    "ingredient": "테트라사이클린",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+     "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 병용투여 / '칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "AFP-F1-시프로플록사신-al_mg_antacid",
+   "projected_id": 85,
+   "_family": "F1_addon",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "reverify_verdict": "audit_pass_5_5",
+   "_display_copy_change": {
+    "kind": "fact",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨에 없는 separation-guidance 단정 제거(원문 충실)"
+   },
+   "projected_live_relation": {
+    "id": 85,
+    "ingredient": "시프로플록사신",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400540",
+     "pointer": "식약처 nedrug getItemDetail / 시프로플록사신 / itemSeq 199400540 / 상호작용 / '알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전 1 ～ 2시간 및 투여 후 4시간 이내에는 병용하지 않는 것이 바람직하다' / 확인일 2026-06-17"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  }
+ ]
+}

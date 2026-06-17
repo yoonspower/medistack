@@ -1,0 +1,546 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_audit_cleanup_auditor_results",
+  "run_date": "2026-06-17",
+  "method": "independent multi-skeptic refute-by-default (workflow wf_ef5c28bc-745, 53 agents)",
+  "note": "production 1건 5렌즈 / cleanup 16건 각 3렌즈. quote 만 근거(no fetch)."
+ },
+ "production": {
+  "id": "AFP-F1-시프로플록사신-al_mg_antacid",
+  "verdicts": [
+   {
+    "verdict": "AUDIT_PASS",
+    "supports_relation": true,
+    "counterpart_is_standalone_entity": true,
+    "mechanism_supported": true,
+    "disqualifying_context": false,
+    "reasoning": "렌즈(source-supports-claim) 적용 결과 모든 검증을 통과합니다.\n\n1. counterpart_is_standalone_entity=TRUE: counterpart 는 '알루미늄 또는 마그네슘 함유 제산제'(al_mg_antacid)입니다. 핵심 규칙 1에 따라 Al/Mg 함유 제산제는 그 자체가 standalone 약물 카테고리 counterpart 로 유효합니다. 여기서 결정적인 것은, 인용에서 '제산제'가 독립된 약물 항목으로 명시되고 그 뒤에 '철분 함유 제제, 칼슘 함유 제제'가 별도 항목으로 따로 열거된다는 점입니다. 즉 마그네슘이 다른 제제(제산제)의 구성성분(cation)으로만 종속 등장하는 F3 에티드론산 패턴('알루미늄 또는 마그네슘 함유 제산제'를 미네랄 보충제 근거로 오용)과 다릅니다. 본 후보의 counterpart 는 미네랄(마그네슘/칼슘)이 아니라 '제산제'라는 약물 카테고리 자체이므로 cation-as-component 함정에 걸리지 않습니다.\n\n2. supports_relation=TRUE: 문장 구조상 '알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제 ... 와(과)의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는' — 제산제가 흡수저하의 원인 주체(병용 대상)로 명시되고, '이 약'(시프로플록사신)이 흡수저하의 대상으로 명시됩니다. 약물×제산제 흡수저하 관계를 직접 지지합니다.\n\n3. mechanism_supported=TRUE: mechanism=absorption. 인용에 '이 약의 흡수가 저하되어 효과가 저하되는'이라는 흡수저하 명시 동사 + level-direction 이 존재합니다. action=separation(복용 시점 분리)은 quote 자체에 명시되지는 않으나, 흡수저하 기전이 명확하므로 mechanism 은 충분히 지지됩니다.\n\n4. disqualifying_context=FALSE: 임신/기형 맥락 없음, 첨가제/성분정보 표 아님(상호작용 병용주의 문구), 이상반응 열거 아님. genuine drug-interaction statement 입니다.\n\ndisplay/management 카피 검토: 'Al/Mg 함유 제산제와 함께 복용하면 흡수가 줄어 효과 감소', '복용 시점 분리, 약사/의사 상담' — source 보다 강한 표현·제품/구매/추천·복용허용/안전단정·published/clinical 승격 없음. counterpart 명칭도 라벨의 '제산제' 카테고리에 정확히 대응. 카피 reframe 불필요.\n\n결론: refute-by-default 기준에서도 모든 게이트를 통과하는 명확한 케이스로 AUDIT_PASS."
+   },
+   {
+    "verdict": "AUDIT_PASS",
+    "supports_relation": true,
+    "counterpart_is_standalone_entity": true,
+    "mechanism_supported": true,
+    "disqualifying_context": false,
+    "reasoning": "Counterpart-type lens: The counterpart is \"Al/Mg 함유 제산제\" — the antacid DRUG category itself, not a mineral. The quote names \"알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제\" (Al/Mg-containing antacid as a cationic preparation). Per the rules, an Al/Mg-containing antacid is explicitly VALID as a standalone drug counterpart. This is distinct from the F3 etidronate trap, where Mg/Ca was a mineral cation inside the antacid being mis-extracted as a standalone mineral supplement; here the canonical entity (al_mg_antacid) IS the antacid drug, correctly identified — counterpart_is_standalone_entity=true.\n\nMechanism: The quote states \"이 약의 흡수가 저하되어 효과가 저하되는 경우가\" — ciprofloxacin's absorption is reduced and efficacy decreases when co-administered with these cationic preparations including the Al/Mg antacid. This directly supports the absorption mechanism (mechanism_supported=true) and the proposed drug×counterpart relation (supports_relation=true).\n\nDisqualifying context: None. This is a genuine 병용(co-administration) drug-interaction statement, not pregnancy/teratogenic, not an adverse-event enumeration, not an excipient/ingredient table — disqualifying_context=false.\n\nCopy note: Display claims absorption reduction and efficacy decrease (supported verbatim) and adds dose-time separation advice. The separation timing is not literally in this quote fragment but is conservative, consult-gated (\"약사 또는 의사와 상담\"), does not over-claim safety, does not recommend products/purchases, and does not elevate to published/clinical. This is the canonical F1 quinolone × cationic-preparation absorption-separation case. Verdict: AUDIT_PASS."
+   },
+   {
+    "verdict": "AUDIT_PASS",
+    "supports_relation": true,
+    "counterpart_is_standalone_entity": true,
+    "mechanism_supported": true,
+    "disqualifying_context": false,
+    "reasoning": "개별성분 렌즈 통과: quote는 시프로플록사신 자체 라벨(itemSeq=199400540, '이 약')의 문구로, 퀴놀론 계열 일반화가 아니라 이 약 고유 흡수 기전을 명시함. (1) 관계 지지: '알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제...와의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하' — 시프로플록사신×Al/Mg 제산제 직접 상호작용 문구. (2) standalone entity: counterpart는 '알루미늄 또는 마그네슘 함유 제산제'라는 약물 카테고리(제산제) 자체이며 canon=al_mg_antacid. 규칙1에 따라 Al/Mg 함유 제산제는 약물 counterpart로 유효한 케이스. F3 에티드론산 함정(마그네슘/칼슘이 제산제 구성성분으로만 등장해 미네랄 보충제로 잘못 잡히는 경우)과 구분됨 — 여기서는 제산제(약물)를 counterpart로 정확히 잡았고 미네랄을 보충제로 승격하지 않음. (3) 기전: '흡수가 저하되어 효과가 저하' = absorption reduction 명시. (4) disqualifying 없음: 임신/기형·이상반응 열거·첨가제표 아님, 병용 상호작용 정문. display는 흡수감소 단정 회피('할 수 있습니다')+separation 조건부 권고+약사상담으로 source 이내 보수표현, 제품/안전단정·승격 없음. 따라서 AUDIT_PASS."
+   },
+   {
+    "verdict": "AUDIT_PASS",
+    "supports_relation": true,
+    "counterpart_is_standalone_entity": true,
+    "mechanism_supported": true,
+    "disqualifying_context": false,
+    "reasoning": "Quote verbatim: \"알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제... 와의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가\". \n\n1) counterpart_is_standalone_entity = true. 핵심 규칙 1의 명시적 예외에 해당. '알루미늄 또는 마그네슘 함유 제산제(Al/Mg antacid)'는 약물 카테고리 자체로서 유효한 standalone counterpart 다. F3 에티드론산 강등 교훈은 '마그네슘/칼슘' 같은 미네랄이 제산제의 구성성분(cation)으로만 등장할 때 standalone 미네랄 보충제 근거로 잘못 쓰는 경우를 막는 것이다. 본 후보의 counterpart_canon 은 al_mg_antacid(제산제=약물)이지 미네랄(magnesium/calcium 보충제)이 아니다. 즉 제산제를 '제산제 약물'로 정확히 결속하고 있으므로 cation→제산제 결속 정합성 만족.\n\n2) mechanism_supported = true. quote 가 '이 약의 흡수가 저하되어 효과가 저하' 라고 흡수 저하 기전(absorption)을 직접 명시. action=separation 도 mechanism 으로 함의됨(병용 회피/분리 안내의 근거).\n\n3) disqualifying_context = false. 임신/기형 맥락 아님, 첨가제/성분정보 표 아님(상호작용 병용 문구). 정상적인 약물상호작용 진술.\n\n4) dedup-policy 렌즈(핵심 판정): live 에 시프로플록사신×철/칼슘/마그네슘/아연(미네랄 보충제)이 이미 존재. 본 후보는 그와 별개의 정당한 새 관계인가? — 예. \n   - live 미네랄 관계들은 'standalone 미네랄 보충제(철분 함유 제제·칼슘 함유 제제·아연/철 함유 종합비타민제)' 와의 관계다.\n   - 본 후보는 'Al/Mg 함유 제산제' 라는 별개의 약물 카테고리 counterpart 다. quote 자체가 둘을 별개 항목으로 열거한다(\"...제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제...\") — 즉 제산제와 미네랄 보충제가 원문에서 서로 다른 entity 로 구분되어 있다.\n   - 따라서 중복이 아니라 coverage 보완(약물 카테고리 추가). 단 사용자 혼동 방지를 위해 display 가 'Al/Mg 함유 제산제(약물)'로 명확히 약물 카테고리임을 표기하는지 확인 필요 → display/management 모두 'Al/Mg 함유 제산제(약물)' 라벨을 유지하므로 미네랄 보충제와 혼동 없음.\n\n5) display/management 검토: '흡수가 줄어 효과가 감소' = quote('흡수가 저하되어 효과가 저하')와 일치, source 보다 강하지 않음. '복용 시점 분리' 안내 = quote 의 병용 흡수저하 근거에서 보수적으로 도출(separation), 제품/구매/안전단정/복용허용 승격 없음. published/clinical 승격 없음.\n\n결론: standalone 약물 counterpart + 명확한 absorption 기전 + disqualifying 없음 + live 미네랄 관계와 별개의 정당한 약물 카테고리 관계. AUDIT_PASS. (copy_change 불요 — 라벨/카피가 이미 보수적이고 source 와 정합.)"
+   },
+   {
+    "verdict": "PASS_WITH_COPY_CHANGE",
+    "supports_relation": true,
+    "counterpart_is_standalone_entity": true,
+    "mechanism_supported": true,
+    "disqualifying_context": false,
+    "reasoning": "Counterpart: quote names \"알루미늄 또는 마그네슘 함유 제산제\" directly as a cation-preparation drug category. Per rule 1, the Al/Mg-containing antacid is itself a valid drug counterpart (canon al_mg_antacid). This is NOT the F3 etidronate trap — there the issue was magnesium/calcium being claimed as STANDALONE mineral supplements while only appearing as antacid components. Here the entity claimed IS the antacid drug category, which the quote names verbatim. counterpart_is_standalone_entity=true.\n\nMechanism: quote states verbatim \"...과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는\" — explicit drug-attributed absorption reduction (F1 absorption mechanism). mechanism_supported=true. supports_relation=true.\n\nDisqualifying context: none. Not pregnancy/teratogenic, not an adverse-event enumeration, not an excipient/ingredient table. It is a genuine 병용(co-administration) interaction statement. disqualifying_context=false.\n\nCopy-conservatism flag (why not AUDIT_PASS): the verbatim quote is truncated at the absorption-reduction fact (\"...효과가 저하되는 경우가\") and does NOT contain any dosing-separation/timing instruction. Yet the display asserts the 허가사항 \"복용 시점을 분리하도록 안내하고 있으니\" (the label guides you to separate dosing) and management recommends \"복용 시간을 분리.\" Separation is the standard/correct conservative handling of a chelation absorption interaction, but attributing that specific guidance to the label exceeds what THIS quote shows. The copy is otherwise appropriately hedged (할 수 있습니다 / 좋을 수 있습니다, no product/purchase/safety-guarantee/prescription directive, defers to pharmacist/physician). Refute-by-default on the source-fidelity lens => PASS_WITH_COPY_CHANGE: keep the relation, but reframe display/management to state only the absorption-reduction fact supported by the quote (e.g., \"흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다\") and present dosing-time separation as general advice / \"약사·의사와 상담\" rather than as something the label explicitly instructs."
+   }
+  ],
+  "pass_votes": 5,
+  "total": 5,
+  "decision": "AUDIT_PASS"
+ },
+ "cleanup": [
+  {
+   "id": "노르플록사신×마그네슘",
+   "family": "F1",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "페플록사신×마그네슘",
+   "family": "F1",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "로메플록사신×마그네슘",
+   "family": "F1",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 1,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "PASS_WITH_COPY_CHANGE",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "발로플록사신×마그네슘",
+   "family": "F1",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "자보플록사신×마그네슘",
+   "family": "F1",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 1,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "PASS_WITH_COPY_CHANGE",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "토수플록사신×마그네슘",
+   "family": "F1",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "테트라사이클린×칼슘",
+   "family": "F2",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "테트라사이클린×마그네슘",
+   "family": "F2",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": false,
+     "mech": true,
+     "disq": false
+    }
+   ]
+  },
+  {
+   "id": "알렌드론산×마그네슘",
+   "family": "F3",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "REJECT",
+     "standalone": false,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": false,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": false,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "알렌드론산×Al/Mg제산제",
+   "family": "F3",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "no_absorption_mechanism_verb",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "REJECT",
+     "standalone": false,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": false,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": false,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "카르바마제핀×엽산",
+   "family": "F9",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "발프로산×엽산",
+   "family": "F9",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "페노바르비탈×엽산",
+   "family": "F9",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "프리미돈×엽산",
+   "family": "F9",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": true,
+     "disq": true
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "옥스카르바제핀×엽산",
+   "family": "F9",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  },
+  {
+   "id": "라모트리진×엽산",
+   "family": "F9",
+   "mechanical_verdict": "needs_review",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "auditor_pass_votes": 0,
+   "auditor_total": 3,
+   "auditor_decision": "HOLD",
+   "false_demotion": false,
+   "verdicts": [
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "REJECT",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    },
+    {
+     "verdict": "NEEDS_REVIEW",
+     "standalone": true,
+     "mech": false,
+     "disq": true
+    }
+   ]
+  }
+ ],
+ "false_demotions": [],
+ "summary": {
+  "production_decision": "AUDIT_PASS",
+  "cleanup_audited": 16,
+  "cleanup_holds_confirmed": 16,
+  "cleanup_false_demotions": 0
+ },
+ "production_copy_note": "1 auditor 가 quote truncation 으로 separation 절 미포함 → PASS_WITH_COPY_CHANGE 제기. 전체 라벨 재확인 결과 '이 약 투여 전 1～2시간 및 투여 후 4시간 이내에는 병용하지 않는 것이 바람직하다' 존재 확인 → fuller quote 채택, display(분리 안내) source-backed → AUDIT_PASS 확정."
+}
