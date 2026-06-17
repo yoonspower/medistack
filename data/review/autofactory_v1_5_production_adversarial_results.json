@@ -1,0 +1,76 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_production_adversarial_results",
+  "method": "refute-by-default machine self-audit (independent auditor agent 후속 필수)"
+ },
+ "auto_pass": [
+  "AFP-F1-시프로플록사신-al_mg_antacid"
+ ],
+ "copy_change": [],
+ "demoted_needs_review": [
+  {
+   "raw_id": "AFP-F1-노르플록사신-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F1-페플록사신-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F1-로메플록사신-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F1-발로플록사신-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F1-자보플록사신-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F1-토수플록사신-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F2-테트라사이클린-ca",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F2-테트라사이클린-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-mg",
+   "reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-al_mg_antacid",
+   "reason": "no_absorption_mechanism_verb"
+  },
+  {
+   "raw_id": "AFP-F9-카르바마제핀-folate",
+   "reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "raw_id": "AFP-F9-발프로산-folate",
+   "reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "raw_id": "AFP-F9-페노바르비탈-folate",
+   "reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "raw_id": "AFP-F9-프리미돈-folate",
+   "reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "raw_id": "AFP-F9-옥스카르바제핀-folate",
+   "reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "raw_id": "AFP-F9-라모트리진-folate",
+   "reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  }
+ ]
+}

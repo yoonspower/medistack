@@ -1,0 +1,374 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_production_source_confirmed",
+  "count": 17
+ },
+ "confirmed": [
+  {
+   "raw_id": "AFP-F1-시프로플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "시프로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_canon": "al_mg_antacid",
+   "counterpart_type": "drug",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "auto_pass",
+   "verdict_reason": "antacid_absorption",
+   "source": {
+    "type": "허가사항",
+    "title": "로프신정250mg(시프로플록사신염산염수화물)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400540",
+    "pointer": "식약처 nedrug getItemDetail / 시프로플록사신 / itemSeq 199400540 / 상호작용 / '3) 알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가' / 확인일 2026-06-17",
+    "quote": "3) 알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가",
+    "claim_scope": "label_interaction"
+   },
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "requires_clinical_review": false,
+   "independent_audit_pending": true,
+   "live_promotion_requires": [
+    "independent_adversarial_audit",
+    "clinical_reviewer_note"
+   ]
+  },
+  {
+   "raw_id": "AFP-F1-노르플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "뉴사달정100mg(노르플록사신)(수출용)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198500810",
+    "pointer": "식약처 nedrug getItemDetail / 노르플록사신 / itemSeq 198500810 / 상호작용 / '2) 알루미늄 또는 마그네슘 함유 제산제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-17",
+    "quote": "2) 알루미늄 또는 마그네슘 함유 제산제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F1-페플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "키신달정(메탄설폰산페플록사신)(수출용)(수출명1:키시정,수출명2:씨피케이페플록사신정)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199202246",
+    "pointer": "식약처 nedrug getItemDetail / 페플록사신 / itemSeq 199202246 / 상호작용 / '4) 알루미늄 또는 마그네슘 함유 제산제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-17",
+    "quote": "4) 알루미늄 또는 마그네슘 함유 제산제와의 병용에 의해 흡수가 저해되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 4시간 이내에는 병용하지 않는 것이 바람직하다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F1-로메플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "코러스염산로메플록사신정(수출용)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200403774",
+    "pointer": "식약처 nedrug getItemDetail / 로메플록사신 / itemSeq 200403774 / 상호작용 / '3) 수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제와 병용 시 킬레이트 복합체를 형성하면서 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-17",
+    "quote": "3) 수크랄페이트, 알루미늄 또는 마그네슘 함유 제산제와 병용 시 킬레이트 복합체를 형성하면서 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F1-발로플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "큐록신정100밀리그램(발로플록사신)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199300319",
+    "pointer": "식약처 nedrug getItemDetail / 발로플록사신 / itemSeq 199300319 / 상호작용 / '6. 상호작용 1) 알루미늄 또는 마그네슘을 함유하는 제산제와의 병용에 의해 이 약의 흡수가 저하되고 효과가 감소되는 경우가 있으므로 병용을 피하는 것이 바람직하다.' / 확인일 2026-06-17",
+    "quote": "6. 상호작용 1) 알루미늄 또는 마그네슘을 함유하는 제산제와의 병용에 의해 이 약의 흡수가 저하되고 효과가 감소되는 경우가 있으므로 병용을 피하는 것이 바람직하다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F1-자보플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "자보란테정(자보플록사신D-아스파르트산염수화물)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201501455",
+    "pointer": "식약처 nedrug getItemDetail / 자보플록사신 / itemSeq 201501455 / 상호작용 / '3) 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다.' / 확인일 2026-06-17",
+    "quote": "3) 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 3시간 이내에는 병용하지 않는다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F1-토수플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "오젝스정(토수플록사신토실산염수화물)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200501778",
+    "pointer": "식약처 nedrug getItemDetail / 토수플록사신 / itemSeq 200501778 / 상호작용 / '3) 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.' / 확인일 2026-06-17",
+    "quote": "3) 알루미늄 또는 마그네슘 함유 제산제, 철분 함유 제제, 칼슘 함유 제제와의 병용에 의해 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전후 2시간 이내에는 병용하지 않는 것이 바람직하다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F2-테트라사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "칼슘",
+   "counterpart_canon": "ca",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "테라싸이클린캅셀250밀리그람(염산테트라싸이클린)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+    "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 상호작용 / '4) 칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-17",
+    "quote": "4) 칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F2-테트라사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "테라싸이클린캅셀250밀리그람(염산테트라싸이클린)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196000001",
+    "pointer": "식약처 nedrug getItemDetail / 테트라사이클린 / itemSeq 196000001 / 상호작용 / '4) 칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.' / 확인일 2026-06-17",
+    "quote": "4) 칼슘, 마그네슘, 알루미늄을 함유하는 제산제 또는 이들 양이온을 함유하는 다른 약물들, 철ㆍ아연을 함유하고 있는 제제와 약용탄, 카올린, 펙틴 또는 비스무트(bismuth)염 제제에 의해 테트라사이클린계 약물의 흡수가 저하되어 효과가 저하될 수 있다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "마그네슘",
+   "counterpart_canon": "mg",
+   "counterpart_type": "nutrient",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "counterpart_not_standalone_supplement(F3_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "마빌정10밀리그람(알렌드론산나트륨)(수출명:유니크정)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199800180",
+    "pointer": "식약처 nedrug getItemDetail / 알렌드론산 / itemSeq 199800180 / 상호작용 / '제공 순번 성분명 분량 단위 규격 성분정보 비교 1 알렌드론산나트륨수화물 13.05 밀리그램 EP 알렌드론산으로서10mg 첨가제 : 스테아르산마그네슘,셀락토오스,크로스카멜로오스나트륨,콜로이드성이산화규소 첨가제 주의 관련 성분: 셀락토오스 --> --> 첨가제주의사항 효능효과 효능효과 폴딩 버튼 PDF다운로드 XML다운로드 HTML다운로드 변경이력 * 10 mg 1. 폐경 후 여성의 골다공증 치료 2. 남성의 골다공증 치료 3' / 확인일 2026-06-17",
+    "quote": "제공 순번 성분명 분량 단위 규격 성분정보 비교 1 알렌드론산나트륨수화물 13.05 밀리그램 EP 알렌드론산으로서10mg 첨가제 : 스테아르산마그네슘,셀락토오스,크로스카멜로오스나트륨,콜로이드성이산화규소 첨가제 주의 관련 성분: 셀락토오스 --> --> 첨가제주의사항 효능효과 효능효과 폴딩 버튼 PDF다운로드 XML다운로드 HTML다운로드 변경이력 * 10 mg 1. 폐경 후 여성의 골다공증 치료 2. 남성의 골다공증 치료 3",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F3-알렌드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_canon": "al_mg_antacid",
+   "counterpart_type": "drug",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "no_absorption_mechanism_verb",
+   "source": {
+    "type": "허가사항",
+    "title": "마빌정10밀리그람(알렌드론산나트륨)(수출명:유니크정)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199800180",
+    "pointer": "식약처 nedrug getItemDetail / 알렌드론산 / itemSeq 199800180 / 상호작용 / '제공 순번 성분명 분량 단위 규격 성분정보 비교 1 알렌드론산나트륨수화물 13.05 밀리그램 EP 알렌드론산으로서10mg 첨가제 : 스테아르산마그네슘,셀락토오스,크로스카멜로오스나트륨,콜로이드성이산화규소 첨가제 주의 관련 성분: 셀락토오스 --> --> 첨가제주의사항 효능효과 효능효과 폴딩 버튼 PDF다운로드 XML다운로드 HTML다운로드 변경이력 * 10 mg 1. 폐경 후 여성의 골다공증 치료 2. 남성의 골다공증 치료 3' / 확인일 2026-06-17",
+    "quote": "제공 순번 성분명 분량 단위 규격 성분정보 비교 1 알렌드론산나트륨수화물 13.05 밀리그램 EP 알렌드론산으로서10mg 첨가제 : 스테아르산마그네슘,셀락토오스,크로스카멜로오스나트륨,콜로이드성이산화규소 첨가제 주의 관련 성분: 셀락토오스 --> --> 첨가제주의사항 효능효과 효능효과 폴딩 버튼 PDF다운로드 XML다운로드 HTML다운로드 변경이력 * 10 mg 1. 폐경 후 여성의 골다공증 치료 2. 남성의 골다공증 치료 3",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F9-카르바마제핀-folate",
+   "family": "F9",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "엽산",
+   "counterpart_canon": "folate",
+   "counterpart_type": "nutrient",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "카르마인정(카르바마제핀)(수출용)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198401121",
+    "pointer": "식약처 nedrug getItemDetail / 카르바마제핀 / itemSeq 198401121 / 상호작용 / '9) 임신 중에는 엽산 결핍이 일어난다고 알려져 있다.' / 확인일 2026-06-17",
+    "quote": "9) 임신 중에는 엽산 결핍이 일어난다고 알려져 있다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F9-발프로산-folate",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "엽산",
+   "counterpart_canon": "folate",
+   "counterpart_type": "nutrient",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "발핀연질캡슐250mg(발프로산)(수출용)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198900925",
+    "pointer": "식약처 nedrug getItemDetail / 발프로산 / itemSeq 198900925 / 상호작용 / '발프로산을 투여받는 환자들에게 임신 전 및 임신 중 모두 일상적으로 엽산 식이 보충을 권장해야 한다.' / 확인일 2026-06-17",
+    "quote": "발프로산을 투여받는 환자들에게 임신 전 및 임신 중 모두 일상적으로 엽산 식이 보충을 권장해야 한다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F9-페노바르비탈-folate",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "엽산",
+   "counterpart_canon": "folate",
+   "counterpart_type": "nutrient",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "하나페노바르비탈정",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197000212",
+    "pointer": "식약처 nedrug getItemDetail / 페노바르비탈 / itemSeq 197000212 / 상호작용 / '4) 임신중의 투여에 의해 엽산 저하가 생긴다는 보고가 있다.' / 확인일 2026-06-17",
+    "quote": "4) 임신중의 투여에 의해 엽산 저하가 생긴다는 보고가 있다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F9-프리미돈-folate",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "엽산",
+   "counterpart_canon": "folate",
+   "counterpart_type": "nutrient",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "대웅프리미돈정",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198000160",
+    "pointer": "식약처 nedrug getItemDetail / 프리미돈 / itemSeq 198000160 / 상호작용 / '2) 임신중의 투여에 의해 엽산저하가 생긴다는 보고가 있다.' / 확인일 2026-06-17",
+    "quote": "2) 임신중의 투여에 의해 엽산저하가 생긴다는 보고가 있다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F9-옥스카르바제핀-folate",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "엽산",
+   "counterpart_canon": "folate",
+   "counterpart_type": "nutrient",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "트리렙탈필름코팅정150밀리그램(옥스카르바제핀)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200008776",
+    "pointer": "식약처 nedrug getItemDetail / 옥스카르바제핀 / itemSeq 200008776 / 상호작용 / '엽산결핍은 태아 기형의 발생율을 증가시킬 수 있다.' / 확인일 2026-06-17",
+    "quote": "엽산결핍은 태아 기형의 발생율을 증가시킬 수 있다.",
+    "claim_scope": "label_interaction"
+   }
+  },
+  {
+   "raw_id": "AFP-F9-라모트리진-folate",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "엽산",
+   "counterpart_canon": "folate",
+   "counterpart_type": "nutrient",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "verdict": "needs_review",
+   "verdict_reason": "pregnancy_context_not_drug_depletion(F9_lesson)",
+   "source": {
+    "type": "허가사항",
+    "title": "라믹탈정25밀리그램,50밀리그램,100밀리그램(라모트리진)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200209641",
+    "pointer": "식약처 nedrug getItemDetail / 라모트리진 / itemSeq 200209641 / 상호작용 / '(6) 이 약은 디히드로폴레이트 환원효소의 약한 억제제이며 랫트에서의 시험은 임신 중 엽산의 감소를 제시하였다.' / 확인일 2026-06-17",
+    "quote": "(6) 이 약은 디히드로폴레이트 환원효소의 약한 억제제이며 랫트에서의 시험은 임신 중 엽산의 감소를 제시하였다.",
+    "claim_scope": "label_interaction"
+   }
+  }
+ ]
+}

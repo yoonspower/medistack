@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_production_dashboard",
+  "run_date": "2026-06-17",
+  "mode": "online",
+  "status": "NO-LIVE-WRITE · real-source · machine-classified(independent audit pending)",
+  "live_write_performed": false,
+  "elapsed_seconds": 0.8,
+  "drugs_fetched": 62,
+  "labels_with_text": 47
+ },
+ "harvest": {
+  "raw": 301,
+  "source_check_queue": 164,
+  "source_confirmed_new": 17,
+  "source_pending": 147,
+  "hold": 67,
+  "reject": 38,
+  "existing_prepared": 32
+ },
+ "auto_review": {
+  "auto_pass": 1,
+  "copy_change": 0,
+  "needs_review": 16,
+  "hold": 67,
+  "reject": 38,
+  "reviewer_ready_new": 1
+ },
+ "source_fidelity": {
+  "source_pointer_coverage": "17/164 (queue 중 실인용 보유)",
+  "quote_coverage": 17,
+  "official_source_ratio": "100% (식약처 nedrug 허가사항만)",
+  "weak_source_excluded": "비공식/블로그/쇼핑몰 source 0건 사용(SDK 게이트웨이 단일 출처)",
+  "family_generalization_blocked": "계열 일반화 0 — 약물별 라벨 직접 인용만 승격"
+ },
+ "scenario": {
+  "existing_prepared": 33,
+  "new_reviewer_ready": 1,
+  "combined_future_scenario": "60→93 (existing) + new_ready(1)",
+  "duplicate_vs_live": 0,
+  "duplicate_vs_existing33": 0,
+  "needs_review_exclusion_from_ready": true
+ },
+ "guards": {
+  "live_write": false,
+  "protected_hash_unchanged": true,
+  "forbidden_phrase_hits": [],
+  "ready_live_dup": [],
+  "ready_existing33_dup": [],
+  "all_ready_independent_audit_pending": true
+ },
+ "clusters": {
+  "by_family": {
+   "F1": 1
+  }
+ },
+ "next": {
+  "hand_to_auditor": "autofactory_v1_5_production_auto_reviewed.json / autofactory_v1_5_production_adversarial_results.json",
+  "needs_review_cleanup": 163,
+  "recommended_next_live_wave": "auditor 통과분 + reviewer note 확보 후 per-family integrator",
+  "factory_v1_6_needed": true
+ }
+}
