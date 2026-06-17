@@ -1,0 +1,13 @@
+# 테스트 fixture — 형식 유효 예시(실제 검토자 승인 아님). gate 회귀 검증 전용.
+검수자: RPH-LIVEPR-001 (PM 승인 근거 첨부)   검토일 2026-07-01
+검토 패키지: per_family_live_pr_readiness v1.4 / commit 56f6ddf
+scope(wave=antibiotic23) 승인(approved): 아래 candidate 전건을 verified_reference 노출로 live 통합 승인.
+승인 candidate_id 전건: RF-F1-0021, RF-F1-0022, RF-F1-0024, RF-F1-0041, RF-F1-0042, RF-F1-0044, RF-F1-0066, RF-F1-0067, RF-F1-0026, RF-F1-0029, RF-F1-0025, RF-F1-0010, RF-F1-0035, RF-F1-0040, RF-F1-0020, RF-F1-0045, RF-F1-0070, RF-F1-0030, RF-F2-0105, RF-F2-0110, RF-F2-0111, RF-F2-0114, RF-F2-0115.
+relation delta: +23 (60 → 83, 신규 id = runtime max+1).
+grouping 승인: 본 wave 단위 한 번에 통합.
+출처(source) fidelity: 식약처 허가사항 인용과 일치 보존 확인.
+관리 문구(management copy): 참고·상담 톤 보수성 유지 확인(분리복용/정기확인 문의, 지시 아님).
+published=false 유지 승인. clinical_reviewed=false 유지 승인. reviewed_by 공란 유지 승인.
+제품·구매·제휴 UI 추가 없음 확인. schedule 비활성(inactive) 유지 확인.
+needs_review RF-F3-0148, RF-F3-0149, RF-F9-0245, RF-F10-0275 는 본 승인에서 제외 확인.
+rollback 가능(wave 단위 git revert) 확인.

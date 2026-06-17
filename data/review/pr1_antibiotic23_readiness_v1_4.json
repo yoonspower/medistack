@@ -1,0 +1,68 @@
+{
+ "meta": {
+  "name": "pr1_antibiotic23_readiness_v1_4",
+  "status": "NO-LIVE-WRITE — reviewer note 실물 미확보",
+  "wave": "antibiotic23",
+  "commit_base": "3294aae"
+ },
+ "scope": {
+  "families": [
+   "F1",
+   "F2"
+  ],
+  "candidate_count": 23,
+  "F1": [
+   "RF-F1-0021",
+   "RF-F1-0022",
+   "RF-F1-0024",
+   "RF-F1-0041",
+   "RF-F1-0042",
+   "RF-F1-0044",
+   "RF-F1-0066",
+   "RF-F1-0067",
+   "RF-F1-0026",
+   "RF-F1-0029",
+   "RF-F1-0025",
+   "RF-F1-0010",
+   "RF-F1-0035",
+   "RF-F1-0040",
+   "RF-F1-0020",
+   "RF-F1-0045",
+   "RF-F1-0070",
+   "RF-F1-0030"
+  ],
+  "F2": [
+   "RF-F2-0105",
+   "RF-F2-0110",
+   "RF-F2-0111",
+   "RF-F2-0114",
+   "RF-F2-0115"
+  ],
+  "needs_review_excluded": [
+   "RF-F3-0148",
+   "RF-F3-0149",
+   "RF-F9-0245",
+   "RF-F10-0275"
+  ],
+  "delta": 23,
+  "expected_relation_count": 83,
+  "internal_duplicate": false,
+  "live_exact_duplicate": 0
+ },
+ "reviewer_note": {
+  "draft_created": true,
+  "actual_reviewer_note_obtained": false,
+  "draft_blocked_by_checker": true,
+  "draft_block_reasons": [
+   "금지: placeholder 날짜",
+   "reviewer 식별 토큰 없음(예: RPH-001)",
+   "검토일(YYYY-MM-DD 실날짜) 없음",
+   "commit 해시 없음"
+  ],
+  "valid_fixture_passes": true
+ },
+ "next": {
+  "actual_command": "reviewer 가 DRAFT 를 채워 checker 통과 시 per-family integrator(F1+F2)로 live PR",
+  "expected": "60→83"
+ }
+}
