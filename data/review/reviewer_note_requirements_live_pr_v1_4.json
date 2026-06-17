@@ -1,0 +1,242 @@
+{
+ "meta": {
+  "name": "reviewer_note_requirements_live_pr_v1_4",
+  "status": "NO-LIVE-WRITE PLAN",
+  "rule": "아래 required_fields 전건 + candidate_ids 전건 일치 + delta 일치 시에만 PASS. needs_review 포함 시 FAIL."
+ },
+ "required_fields": [
+  "reviewer_id",
+  "reviewed_date",
+  "reviewed_package_version_commit",
+  "family_or_wave_scope",
+  "candidate_ids_full",
+  "relation_count_delta",
+  "grouping_approval",
+  "source_fidelity_approval",
+  "management_copy_conservatism",
+  "published_false_kept",
+  "clinical_reviewed_false_kept",
+  "reviewed_by_blank_kept",
+  "no_product_purchase_affiliate_ui",
+  "schedule_inactive",
+  "needs_review_excluded",
+  "rollback_feasible"
+ ],
+ "forbidden_in_note": [
+  "clinical_reviewed=true 요구",
+  "published=true 요구",
+  "제품 추천 허용",
+  "영양제 구매 권유",
+  "복용해도 된다",
+  "안전하다",
+  "진단/처방/치료 지시",
+  "reviewer 실명/면허번호 강제 입력 요구"
+ ],
+ "templates": {
+  "f1_nutrient10": {
+   "wave": "f1_nutrient10",
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029"
+   ],
+   "delta": 10,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "f1_antacid8": {
+   "wave": "f1_antacid8",
+   "candidate_ids": [
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ],
+   "delta": 8,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "f2_all5": {
+   "wave": "f2_all5",
+   "candidate_ids": [
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "delta": 5,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "f3_single": {
+   "wave": "f3_single",
+   "candidate_ids": [
+    "RF-F3-0147"
+   ],
+   "delta": 1,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "f9_all7": {
+   "wave": "f9_all7",
+   "candidate_ids": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255"
+   ],
+   "delta": 7,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "f4_f6_small2": {
+   "wave": "f4_f6_small2",
+   "candidate_ids": [
+    "RF-F4-0173",
+    "RF-F6-0201"
+   ],
+   "delta": 2,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "antibiotic23": {
+   "wave": "antibiotic23",
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030",
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "delta": 23,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "chronic8": {
+   "wave": "chronic8",
+   "candidate_ids": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255",
+    "RF-F6-0201"
+   ],
+   "delta": 8,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  },
+  "all33": {
+   "wave": "all33",
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030",
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115",
+    "RF-F3-0147",
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255",
+    "RF-F4-0173",
+    "RF-F6-0201"
+   ],
+   "delta": 33,
+   "needs_review_excluded": [
+    "RF-F3-0148",
+    "RF-F3-0149",
+    "RF-F9-0245",
+    "RF-F10-0275"
+   ]
+  }
+ }
+}

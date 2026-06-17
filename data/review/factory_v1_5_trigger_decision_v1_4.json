@@ -1,0 +1,17 @@
+{
+ "meta": {
+  "name": "factory_v1_5_trigger_decision_v1_4",
+  "decided_at": "2026-06-17"
+ },
+ "inputs": {
+  "integration_ready": 33,
+  "live_pr_done": 0,
+  "reviewer_note_received": 0,
+  "needs_review": 4,
+  "remaining_unpackaged": 0
+ },
+ "packaging_condition": "충족(33 ready·unpackaged 0·wave 분할안/검증/rehearsal 완비)",
+ "run_now": false,
+ "reason": "packaging 은 끝났으나 live PR 0·reviewer note 0·needs_review 4 미해소 → 신규 후보 양산(Factory v1.5)은 검토 backlog 만 키움. 최소 1~2 live PR wave 가 reviewer note 와 함께 반영되어 파이프라인이 흐른 뒤 재검토.",
+ "recheck_when": "live PR wave 1~2건(예: option_B PR-1 antibiotic23 등) 실제 통합 + needs_review 4 중 일부 해소 후"
+}

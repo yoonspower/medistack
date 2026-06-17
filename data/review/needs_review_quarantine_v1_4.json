@@ -1,0 +1,49 @@
+{
+ "meta": {
+  "name": "needs_review_quarantine_v1_4",
+  "total": 4,
+  "rule": "아래 4건은 true scenario·reviewer note template·actual integration command·all33 전부 제외. conditional scenario 에만 표기."
+ },
+ "items": [
+  {
+   "id": "RF-F3-0148",
+   "family": "F3",
+   "desc": "에티드론산 × 칼슘",
+   "reason": "source parse 미해소(quote 경계)",
+   "resolve_when": "에티드론산 라벨 인용 파싱·기전동사 확정"
+  },
+  {
+   "id": "RF-F3-0149",
+   "family": "F3",
+   "desc": "에티드론산 × 철분",
+   "reason": "source parse 미해소",
+   "resolve_when": "동일 — 에티드론산 parse"
+  },
+  {
+   "id": "RF-F9-0245",
+   "family": "F9",
+   "desc": "카르바마제핀 × 엽산",
+   "reason": "저신호 이상반응 열거('드물게')·기전/level-direction/연용-remedy 부재",
+   "resolve_when": "흡수/대사 기전 또는 혈청엽산치 방향 인용 확보 시 재평가"
+  },
+  {
+   "id": "RF-F10-0275",
+   "family": "F10",
+   "desc": "케토코나졸 × 제산제",
+   "reason": "route/availability 강등(경구 품목 위장 불가)",
+   "resolve_when": "route 근거 재확인·display 재작성"
+  }
+ ],
+ "excluded_from": [
+  "all waves",
+  "true scenario",
+  "reviewer note templates",
+  "actual integration commands"
+ ],
+ "conditional_scenarios_only": {
+  "F3_with_etidronate": "60→63(+에티드론산 2)",
+  "F9_with_0245": "60→68(+0245 1)",
+  "F10_with_0275": "60→61(+0275 1)",
+  "note": "위 conditional 은 reviewer 가 needs_review 해소 note 를 별도 제공할 때만. 본 live PR wave 와 격리."
+ }
+}

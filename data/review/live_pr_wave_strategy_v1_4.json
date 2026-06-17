@@ -1,0 +1,231 @@
+{
+ "meta": {
+  "name": "live_pr_wave_strategy_v1_4",
+  "status": "NO-LIVE-WRITE PLAN",
+  "baseline": 60,
+  "rule": "reviewer note 실물 없이는 어떤 wave 도 통합 금지. needs_review 4 전 wave 제외."
+ },
+ "option_A_conservative": {
+  "label": "보수적 small wave (5 PR)",
+  "prs": [
+   {
+    "pr": "PR-1",
+    "wave": "f1_nutrient10",
+    "ids": [
+     "RF-F1-0021",
+     "RF-F1-0022",
+     "RF-F1-0024",
+     "RF-F1-0041",
+     "RF-F1-0042",
+     "RF-F1-0044",
+     "RF-F1-0066",
+     "RF-F1-0067",
+     "RF-F1-0026",
+     "RF-F1-0029"
+    ],
+    "delta": 10,
+    "expected": 70
+   },
+   {
+    "pr": "PR-2",
+    "wave": "f1_antacid8",
+    "ids": [
+     "RF-F1-0025",
+     "RF-F1-0010",
+     "RF-F1-0035",
+     "RF-F1-0040",
+     "RF-F1-0020",
+     "RF-F1-0045",
+     "RF-F1-0070",
+     "RF-F1-0030"
+    ],
+    "delta": 8,
+    "expected": "누적 +8"
+   },
+   {
+    "pr": "PR-3",
+    "wave": "f2_all5",
+    "ids": [
+     "RF-F2-0105",
+     "RF-F2-0110",
+     "RF-F2-0111",
+     "RF-F2-0114",
+     "RF-F2-0115"
+    ],
+    "delta": 5,
+    "expected": "누적 +5"
+   },
+   {
+    "pr": "PR-4",
+    "wave": "f3_single+f4_f6_small2",
+    "ids": [
+     "RF-F3-0147",
+     "RF-F4-0173",
+     "RF-F6-0201"
+    ],
+    "delta": 3,
+    "expected": "누적 +3"
+   },
+   {
+    "pr": "PR-5",
+    "wave": "f9_all7",
+    "ids": [
+     "RF-F9-0269",
+     "RF-F9-0246",
+     "RF-F9-0272",
+     "RF-F9-0252",
+     "RF-F9-0242",
+     "RF-F9-0243",
+     "RF-F9-0255"
+    ],
+    "delta": 7,
+    "expected": "누적 +7"
+   }
+  ],
+  "eval": {
+   "reviewer_burden": "family·subset별 분리 — note 부담 최대 5건",
+   "rollback_ease": "최상(작은 단위 revert)",
+   "baseline_update": "wave마다 baseline 재계산(count 기반)",
+   "smoke_scope": "PR마다 family smoke",
+   "source_family_risk": "subset별 source 1종",
+   "ui_regression_risk": "최소(소규모)",
+   "index_alias_impact": "relation-only flip 0",
+   "recommended": "family별 note 분리 시 추천"
+  }
+ },
+ "option_B_medium": {
+  "label": "중간 크기 wave (3 PR) — 기본 추천",
+  "prs": [
+   {
+    "pr": "PR-1",
+    "wave": "antibiotic23",
+    "ids": [
+     "RF-F1-0021",
+     "RF-F1-0022",
+     "RF-F1-0024",
+     "RF-F1-0041",
+     "RF-F1-0042",
+     "RF-F1-0044",
+     "RF-F1-0066",
+     "RF-F1-0067",
+     "RF-F1-0026",
+     "RF-F1-0029",
+     "RF-F1-0025",
+     "RF-F1-0010",
+     "RF-F1-0035",
+     "RF-F1-0040",
+     "RF-F1-0020",
+     "RF-F1-0045",
+     "RF-F1-0070",
+     "RF-F1-0030",
+     "RF-F2-0105",
+     "RF-F2-0110",
+     "RF-F2-0111",
+     "RF-F2-0114",
+     "RF-F2-0115"
+    ],
+    "delta": 23,
+    "expected": 83
+   },
+   {
+    "pr": "PR-2",
+    "wave": "chronic8",
+    "ids": [
+     "RF-F9-0269",
+     "RF-F9-0246",
+     "RF-F9-0272",
+     "RF-F9-0252",
+     "RF-F9-0242",
+     "RF-F9-0243",
+     "RF-F9-0255",
+     "RF-F6-0201"
+    ],
+    "delta": 8,
+    "expected": "누적 +8"
+   },
+   {
+    "pr": "PR-3",
+    "wave": "f3_single+f4(remaining)",
+    "ids": [
+     "RF-F3-0147",
+     "RF-F4-0173"
+    ],
+    "delta": 2,
+    "expected": "누적 +2",
+    "note": "F6-0201 은 PR-2(chronic8)에 포함 → 잔여는 F3 1 + F4 1"
+   }
+  ],
+  "eval": {
+   "reviewer_burden": "wave 3건 — 묶음 note",
+   "rollback_ease": "양호(wave 단위 revert)",
+   "baseline_update": "wave 3회 재계산",
+   "smoke_scope": "wave별 다중 family smoke",
+   "source_family_risk": "wave당 family 2종",
+   "ui_regression_risk": "중(23건 한 번)",
+   "index_alias_impact": "relation-only flip 0",
+   "recommended": "기본 추천(reviewer 묶음 note 제공 시)"
+  }
+ },
+ "option_C_single": {
+  "label": "최대 단일 wave (1 PR all33) — 비추천/조건부",
+  "prs": [
+   {
+    "pr": "PR-1",
+    "wave": "all33",
+    "ids": [
+     "RF-F1-0021",
+     "RF-F1-0022",
+     "RF-F1-0024",
+     "RF-F1-0041",
+     "RF-F1-0042",
+     "RF-F1-0044",
+     "RF-F1-0066",
+     "RF-F1-0067",
+     "RF-F1-0026",
+     "RF-F1-0029",
+     "RF-F1-0025",
+     "RF-F1-0010",
+     "RF-F1-0035",
+     "RF-F1-0040",
+     "RF-F1-0020",
+     "RF-F1-0045",
+     "RF-F1-0070",
+     "RF-F1-0030",
+     "RF-F2-0105",
+     "RF-F2-0110",
+     "RF-F2-0111",
+     "RF-F2-0114",
+     "RF-F2-0115",
+     "RF-F3-0147",
+     "RF-F9-0269",
+     "RF-F9-0246",
+     "RF-F9-0272",
+     "RF-F9-0252",
+     "RF-F9-0242",
+     "RF-F9-0243",
+     "RF-F9-0255",
+     "RF-F4-0173",
+     "RF-F6-0201"
+    ],
+    "delta": 33,
+    "expected": 93
+   }
+  ],
+  "eval": {
+   "reviewer_burden": "단일 note 이지만 33건 전수 검토 부담 집중",
+   "rollback_ease": "최악(전체 revert·부분 rollback 불가)",
+   "baseline_update": "1회(60→93)",
+   "smoke_scope": "전 family smoke 동시",
+   "source_family_risk": "6 family 동시 노출",
+   "ui_regression_risk": "최대(60→93 한 번)",
+   "index_alias_impact": "relation-only flip 0",
+   "recommended": "비추천 — reviewer 가 all33 명시 note + gate 통과 시에만 조건부"
+  }
+ },
+ "final_recommendation": {
+  "default": "option_B_medium",
+  "if_reviewer_per_family_note": "option_A_conservative",
+  "if_reviewer_all33_note_and_gate_pass": "option_C_single (조건부·비추천)",
+  "reason": "B = reviewer 부담(3 note)·rollback 단위(wave)·baseline 재계산 횟수(3)의 균형. A 는 rollback 안전성 최상이나 note 5건. C 는 단일 note 편의 대비 rollback/blast-radius 최악이라 비추천."
+ }
+}

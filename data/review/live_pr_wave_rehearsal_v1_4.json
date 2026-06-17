@@ -1,0 +1,417 @@
+{
+ "meta": {
+  "name": "live_pr_wave_rehearsal_v1_4",
+  "base_count": 60,
+  "live_write": false,
+  "live_relations": 60,
+  "protected_unchanged": true,
+  "live_export_unchanged": true,
+  "waves_rehearsed": [
+   "f1_nutrient10",
+   "f1_antacid8",
+   "f1_all18",
+   "f2_all5",
+   "f3_single",
+   "f9_all7",
+   "f4_f6_small2",
+   "antibiotic23",
+   "chronic8",
+   "all33"
+  ]
+ },
+ "results": [
+  {
+   "wave": "f1_nutrient10",
+   "families": [
+    "F1"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029"
+   ],
+   "checks": {
+    "planned_count": 70,
+    "candidate_count": 10,
+    "delta": 10,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "f1_antacid8",
+   "families": [
+    "F1"
+   ],
+   "candidate_ids": [
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ],
+   "checks": {
+    "planned_count": 68,
+    "candidate_count": 8,
+    "delta": 8,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "f1_all18",
+   "families": [
+    "F1"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ],
+   "checks": {
+    "planned_count": 78,
+    "candidate_count": 18,
+    "delta": 18,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "f2_all5",
+   "families": [
+    "F2"
+   ],
+   "candidate_ids": [
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "checks": {
+    "planned_count": 65,
+    "candidate_count": 5,
+    "delta": 5,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "f3_single",
+   "families": [
+    "F3"
+   ],
+   "candidate_ids": [
+    "RF-F3-0147"
+   ],
+   "checks": {
+    "planned_count": 61,
+    "candidate_count": 1,
+    "delta": 1,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "f9_all7",
+   "families": [
+    "F9"
+   ],
+   "candidate_ids": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255"
+   ],
+   "checks": {
+    "planned_count": 67,
+    "candidate_count": 7,
+    "delta": 7,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "f4_f6_small2",
+   "families": [
+    "F4",
+    "F6"
+   ],
+   "candidate_ids": [
+    "RF-F4-0173",
+    "RF-F6-0201"
+   ],
+   "checks": {
+    "planned_count": 62,
+    "candidate_count": 2,
+    "delta": 2,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "antibiotic23",
+   "families": [
+    "F1",
+    "F2"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030",
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "checks": {
+    "planned_count": 83,
+    "candidate_count": 23,
+    "delta": 23,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "chronic8",
+   "families": [
+    "F9",
+    "F6"
+   ],
+   "candidate_ids": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255",
+    "RF-F6-0201"
+   ],
+   "checks": {
+    "planned_count": 68,
+    "candidate_count": 8,
+    "delta": 8,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  },
+  {
+   "wave": "all33",
+   "families": [
+    "F1",
+    "F2",
+    "F3",
+    "F9",
+    "F4",
+    "F6"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030",
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115",
+    "RF-F3-0147",
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255",
+    "RF-F4-0173",
+    "RF-F6-0201"
+   ],
+   "checks": {
+    "planned_count": 93,
+    "candidate_count": 33,
+    "delta": 33,
+    "internal_duplicate": false,
+    "live_exact_duplicate": [],
+    "needs_review_in_wave": [],
+    "reviewer_note_required": true,
+    "reviewer_note_present": false,
+    "delta_consistent": true,
+    "index_relation_card_delta": 0,
+    "index_name_only_delta": 0,
+    "index_auto_flip": 0,
+    "alias_enrichment_in_scope": false,
+    "command_plan_present": true,
+    "command_has_no_run_guard": true,
+    "live_write": false
+   },
+   "pass": true
+  }
+ ]
+}

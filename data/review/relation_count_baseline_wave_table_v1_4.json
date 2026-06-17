@@ -1,0 +1,28 @@
+{
+ "meta": {
+  "name": "relation_count_baseline_wave_table_v1_4",
+  "current": 60,
+  "policy": "expected = runtime current_count + len(approved_new_ids). 신규 id = max(existing_id)+1.. (id 비연속 주의). validator 는 절대값 하드코드 대신 (직전 count, delta) 로 계산.",
+  "baseline_max_id": 61
+ },
+ "standalone_from_60": {
+  "f1_nutrient10": 70,
+  "f1_antacid8": 68,
+  "f1_all18": 78,
+  "f2_all5": 65,
+  "f3_single": 61,
+  "f9_all7": 67,
+  "f4_f6_small2": 62
+ },
+ "cumulative_true": {
+  "F1+F2": 83,
+  "F1+F2+F3": 84,
+  "F1+F2+F3+F9": 91,
+  "F1+F2+F3+F9+F4+F6": 93
+ },
+ "wave_aggregates": {
+  "antibiotic23": 83,
+  "chronic8": 68,
+  "all33": 93
+ }
+}

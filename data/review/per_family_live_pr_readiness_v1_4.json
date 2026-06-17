@@ -1,0 +1,393 @@
+{
+ "meta": {
+  "name": "per_family_live_pr_readiness_v1_4",
+  "status": "NO-LIVE-WRITE PLAN — live_integration_forbidden=true · reviewer note 없이는 통합 금지",
+  "derived_from": [
+   "reviewer_ready_global_plan_v1_4.json",
+   "f1_quinolone_inventory_v1_4.json",
+   "medistack_v0.2_beta_export.json"
+  ],
+  "confirmed_at": "2026-06-17",
+  "live_baseline": {
+   "relation_count": 60,
+   "max_relation_id": 61,
+   "note": "id 비연속(count 60·max 61) → 신규 id = runtime max(existing)+1, count 기반 검증"
+  },
+  "protected_hashes": {
+   "medistack_v0.1_beta_export.json": "e9994f017995591365fc1ae333d288ea15af20ada2fe322e7e509c94be8d99a9",
+   "medistack_v0.2_beta_export.json": "62df92844faf1bcc47e0e6ace1b0cd1307222b0461a6b819122b6ffab5030144",
+   "medistack_v0.3_aliases.json": "ee25aed084a8a35f2d7336ea84b771fa70c608885ecf19c1338de2df4ce17039",
+   "full_drug_name_index_sample_v1_0.json": "d329b2ddd3cdd05e3c4a96a11107d1db792d1df3e2c2fddf5a1a8e042e162fdb"
+  },
+  "index_invariants": {
+   "total": 17580,
+   "relation_card": 1168,
+   "name_only": 16412,
+   "auto_flip_on_relation_only_integration": 0,
+   "note": "relation-only 통합은 full index relation_card/name_only 자동 flip 없음. alias enrichment 별도 작업."
+  },
+  "data_url": "./data/medistack_v0.2_beta_export.json",
+  "published": false,
+  "clinical_reviewed": false
+ },
+ "integration_ready": {
+  "total": 33,
+  "by_family": {
+   "F1": 18,
+   "F2": 5,
+   "F3": 1,
+   "F9": 7,
+   "F4": 1,
+   "F6": 1
+  },
+  "f1_split": {
+   "nutrient10": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029"
+   ],
+   "antacid8": [
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ]
+  },
+  "ids": {
+   "F1": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ],
+   "F2": [
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "F3": [
+    "RF-F3-0147"
+   ],
+   "F9": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255"
+   ],
+   "F4": [
+    "RF-F4-0173"
+   ],
+   "F6": [
+    "RF-F6-0201"
+   ]
+  },
+  "combined_true_scenario": {
+   "baseline": 60,
+   "all33": 93,
+   "F1+F2+F3+F9": 91,
+   "F1+F2+F3+F9+F4+F6": 93
+  },
+  "remaining_unpackaged": 0,
+  "live_exact_duplicate": 0,
+  "cross_family_duplicate": 0,
+  "mixed_with_needs_review": 0
+ },
+ "needs_review_quarantine": {
+  "total": 4,
+  "items": [
+   {
+    "id": "RF-F3-0148",
+    "family": "F3"
+   },
+   {
+    "id": "RF-F3-0149",
+    "family": "F3"
+   },
+   {
+    "id": "RF-F9-0245",
+    "family": "F9"
+   },
+   {
+    "id": "RF-F10-0275",
+    "family": "F10"
+   }
+  ],
+  "ids": [
+   "RF-F3-0148",
+   "RF-F3-0149",
+   "RF-F9-0245",
+   "RF-F10-0275"
+  ],
+  "excluded_from": [
+   "all waves",
+   "true scenario",
+   "reviewer note templates",
+   "actual integration commands"
+  ]
+ },
+ "waves": {
+  "f1_nutrient10": {
+   "wave": "f1_nutrient10",
+   "families": [
+    "F1"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029"
+   ],
+   "delta": 10,
+   "expected_count_from_baseline": 70,
+   "desc": "퀴놀론 × 미네랄(철/칼슘/아연) 흡수저하 — 분리복용 안내"
+  },
+  "f1_antacid8": {
+   "wave": "f1_antacid8",
+   "families": [
+    "F1"
+   ],
+   "candidate_ids": [
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ],
+   "delta": 8,
+   "expected_count_from_baseline": 68,
+   "desc": "퀴놀론 × Al/Mg 제산제(약물) 흡수저하 — 분리복용 안내"
+  },
+  "f1_all18": {
+   "wave": "f1_all18",
+   "families": [
+    "F1"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030"
+   ],
+   "delta": 18,
+   "expected_count_from_baseline": 78,
+   "desc": "F1 전건(미네랄10+제산제8)"
+  },
+  "f2_all5": {
+   "wave": "f2_all5",
+   "families": [
+    "F2"
+   ],
+   "candidate_ids": [
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "delta": 5,
+   "expected_count_from_baseline": 65,
+   "desc": "테트라사이클린 × 금속양이온/제산제"
+  },
+  "f3_single": {
+   "wave": "f3_single",
+   "families": [
+    "F3"
+   ],
+   "candidate_ids": [
+    "RF-F3-0147"
+   ],
+   "delta": 1,
+   "expected_count_from_baseline": 61,
+   "desc": "비스포스포네이트 × mineral (true 1건; 에티드론산 2건 needs_review 제외)"
+  },
+  "f9_all7": {
+   "wave": "f9_all7",
+   "families": [
+    "F9"
+   ],
+   "candidate_ids": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255"
+   ],
+   "delta": 7,
+   "expected_count_from_baseline": 67,
+   "desc": "만성복용 depletion × 엽산/비타민D (0245 needs_review 제외)"
+  },
+  "f4_f6_small2": {
+   "wave": "f4_f6_small2",
+   "families": [
+    "F4",
+    "F6"
+   ],
+   "candidate_ids": [
+    "RF-F4-0173",
+    "RF-F6-0201"
+   ],
+   "delta": 2,
+   "expected_count_from_baseline": 62,
+   "desc": "레보티록신×Al제산제(F4) + 에스오메프라졸×B12(F6)"
+  },
+  "antibiotic23": {
+   "wave": "antibiotic23",
+   "families": [
+    "F1",
+    "F2"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030",
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115"
+   ],
+   "delta": 23,
+   "expected_count_from_baseline": 83,
+   "desc": "항생제×금속/제산제 wave = F1 18 + F2 5"
+  },
+  "chronic8": {
+   "wave": "chronic8",
+   "families": [
+    "F9",
+    "F6"
+   ],
+   "candidate_ids": [
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255",
+    "RF-F6-0201"
+   ],
+   "delta": 8,
+   "expected_count_from_baseline": 68,
+   "desc": "만성/depletion wave = F9 7 + F6 1"
+  },
+  "all33": {
+   "wave": "all33",
+   "families": [
+    "F1",
+    "F2",
+    "F3",
+    "F9",
+    "F4",
+    "F6"
+   ],
+   "candidate_ids": [
+    "RF-F1-0021",
+    "RF-F1-0022",
+    "RF-F1-0024",
+    "RF-F1-0041",
+    "RF-F1-0042",
+    "RF-F1-0044",
+    "RF-F1-0066",
+    "RF-F1-0067",
+    "RF-F1-0026",
+    "RF-F1-0029",
+    "RF-F1-0025",
+    "RF-F1-0010",
+    "RF-F1-0035",
+    "RF-F1-0040",
+    "RF-F1-0020",
+    "RF-F1-0045",
+    "RF-F1-0070",
+    "RF-F1-0030",
+    "RF-F2-0105",
+    "RF-F2-0110",
+    "RF-F2-0111",
+    "RF-F2-0114",
+    "RF-F2-0115",
+    "RF-F3-0147",
+    "RF-F9-0269",
+    "RF-F9-0246",
+    "RF-F9-0272",
+    "RF-F9-0252",
+    "RF-F9-0242",
+    "RF-F9-0243",
+    "RF-F9-0255",
+    "RF-F4-0173",
+    "RF-F6-0201"
+   ],
+   "delta": 33,
+   "expected_count_from_baseline": 93,
+   "desc": "전체 단일 wave 60→93 (비추천)"
+  }
+ }
+}
