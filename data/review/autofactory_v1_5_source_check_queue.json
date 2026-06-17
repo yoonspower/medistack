@@ -1,0 +1,1885 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_source_check_queue",
+  "count": 196
+ },
+ "prefiltered": {
+  "live_duplicate": [
+   "AF-F2-미노사이클린-fe",
+   "AF-F3-리세드론산-ca",
+   "AF-F1-시프로플록사신-ca",
+   "AF-F3-이반드론산-mg",
+   "AF-F6-판토프라졸-b12",
+   "AF-F2-독시사이클린-mg",
+   "AF-F1-목시플록사신-mg",
+   "AF-F1-오플록사신-ca",
+   "AF-F1-오플록사신-zn",
+   "AF-F1-시프로플록사신-fe",
+   "AF-F2-미노사이클린-zn",
+   "AF-F3-리세드론산-fe",
+   "AF-F1-레보플록사신-zn",
+   "AF-F1-목시플록사신-zn",
+   "AF-F2-독시사이클린-fe",
+   "AF-F1-목시플록사신-fe",
+   "AF-F1-오플록사신-fe",
+   "AF-F1-레보플록사신-ca",
+   "AF-F1-레보플록사신-mg",
+   "AF-F6-란소프라졸-b12",
+   "AF-F2-미노사이클린-mg",
+   "AF-F2-미노사이클린-ca",
+   "AF-F1-시프로플록사신-zn",
+   "AF-F1-시프로플록사신-mg",
+   "AF-F3-리세드론산-mg",
+   "AF-F3-이반드론산-fe",
+   "AF-F2-독시사이클린-ca",
+   "AF-F1-레보플록사신-fe",
+   "AF-F3-이반드론산-ca",
+   "AF-F10-이트라코나졸-al_mg_antacid",
+   "AF-F3-알렌드론산-ca",
+   "AF-F6-라베프라졸-b12",
+   "AF-F2-독시사이클린-zn",
+   "AF-F6-오메프라졸-b12",
+   "AF-F1-오플록사신-mg"
+  ],
+  "hold_family": [
+   "AF-F11-메토트렉세이트-k",
+   "AF-F8-덱사메타손-na",
+   "AF-F11-와파린-folate",
+   "AF-F8-에타크린산-na",
+   "AF-F5-데페리프론-zn",
+   "AF-F8-수산화마그네슘-mg",
+   "AF-F8-비사코딜-mg",
+   "AF-F5-데페라시록스-ca",
+   "AF-F8-베타메타손-mg",
+   "AF-F8-에타크린산-k",
+   "AF-F7-콜레스티폴-folate",
+   "AF-F5-데페리프론-ca",
+   "AF-F11-레날리도마이드-folate",
+   "AF-F8-부메타니드-k",
+   "AF-F8-아세타졸아미드-mg",
+   "AF-F5-트리엔틴-ca",
+   "AF-F11-사이클로스포린-k",
+   "AF-F8-부메타니드-mg",
+   "AF-F5-데페록사민-fe",
+   "AF-F11-피리메타민-k",
+   "AF-F7-콜레스티폴-fatsol_vit",
+   "AF-F5-데페록사민-ca",
+   "AF-F8-베타메타손-na",
+   "AF-F5-데페리프론-fe",
+   "AF-F11-타크로리무스-b6",
+   "AF-F11-와파린-b6",
+   "AF-F8-에타크린산-mg",
+   "AF-F5-데페라시록스-fe",
+   "AF-F8-센나-mg",
+   "AF-F8-덱사메타손-k",
+   "AF-F11-피리메타민-b6",
+   "AF-F11-레날리도마이드-k",
+   "AF-F8-아조세미드-mg",
+   "AF-F11-타크로리무스-k",
+   "AF-F11-메토트렉세이트-b6",
+   "AF-F8-아세타졸아미드-k",
+   "AF-F8-센나-k",
+   "AF-F5-데페록사민-zn",
+   "AF-F8-아조세미드-k",
+   "AF-F8-아세타졸아미드-na",
+   "AF-F11-이소니아지드-k",
+   "AF-F11-피리메타민-folate",
+   "AF-F7-콜레세벨람-fatsol_vit",
+   "AF-F8-아조세미드-na",
+   "AF-F8-수산화마그네슘-na",
+   "AF-F11-레보도파-b6",
+   "AF-F11-레날리도마이드-b6",
+   "AF-F5-데페라시록스-zn",
+   "AF-F11-타크로리무스-folate",
+   "AF-F8-센나-na",
+   "AF-F8-부메타니드-na",
+   "AF-F5-트리엔틴-fe",
+   "AF-F11-레보도파-k",
+   "AF-F8-비사코딜-k",
+   "AF-F8-덱사메타손-mg",
+   "AF-F5-트리엔틴-zn",
+   "AF-F7-콜레세벨람-folate",
+   "AF-F11-사이클로스포린-b6",
+   "AF-F11-이소니아지드-b6",
+   "AF-F11-이소니아지드-folate",
+   "AF-F11-사이클로스포린-folate",
+   "AF-F11-메토트렉세이트-folate",
+   "AF-F11-와파린-k",
+   "AF-F8-비사코딜-na",
+   "AF-F11-레보도파-folate",
+   "AF-F8-베타메타손-k",
+   "AF-F8-수산화마그네슘-k"
+  ],
+  "reject_direction": [
+   "AF-F8-스피로노락톤-k",
+   "AF-F8-스피로노락톤-mg",
+   "AF-F8-스피로노락톤-na"
+  ]
+ },
+ "queue": [
+  {
+   "raw_id": "AF-F3-클로드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-록사티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "록사티딘",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-니자티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "니자티딘",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-라모트리진-b12",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-fe",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F4-리오티로닌-mg",
+   "family": "F4",
+   "drug_ingredient": "리오티로닌",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-옥스카르바제핀-vitd",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-에티드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-페노바르비탈-vitd",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-zn",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-발프로산-b12",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-에티드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-ca",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-프리미돈-folate",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-발로플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-페노바르비탈-b12",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-니자티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "니자티딘",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-인카드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F10-포사코나졸-al_mg_antacid",
+   "family": "F10",
+   "drug_ingredient": "포사코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-설파살라진-folate",
+   "family": "F9",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-목시플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "목시플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-자보플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-목시플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "목시플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-알렌드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F4-리오티로닌-al_mg_antacid",
+   "family": "F4",
+   "drug_ingredient": "리오티로닌",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-페플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-미노드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-옥시테트라사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-자보플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플레록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-설파살라진-b12",
+   "family": "F9",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-페플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-페플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-시노플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-에녹사신-zn",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-시노플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-라모트리진-folate",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가레녹사신-fe",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-시프로플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "시프로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-페노바르비탈-folate",
+   "family": "F9",
+   "drug_ingredient": "페노바르비탈",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-미노사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "미노사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-옥스카르바제핀-b12",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F10-케토코나졸-al_mg_antacid",
+   "family": "F10",
+   "drug_ingredient": "케토코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-시노플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-클로드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-스파르플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-카르바마제핀-b12",
+   "family": "F9",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-미노드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-페니토인-folate",
+   "family": "F9",
+   "drug_ingredient": "페니토인",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-파미드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-라푸티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "라푸티딘",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-페플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-파미드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-메타사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-프리미돈-b12",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-레보플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "레보플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-발로플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-자보플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-에티드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-스파르플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-이반드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "이반드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-에녹사신-mg",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-자보플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-졸레드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-설파살라진-vitd",
+   "family": "F9",
+   "drug_ingredient": "설파살라진",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-파모티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "파모티딘",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-오플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "오플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-조니사미드-b12",
+   "family": "F9",
+   "drug_ingredient": "조니사미드",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-스파르플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-스파르플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-카르바마제핀-folate",
+   "family": "F9",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-페플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "페플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-에스오메프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "에스오메프라졸",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-메타사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가레녹사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플레록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-라베프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "라베프라졸",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-메타사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-록사티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "록사티딘",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-발프로산-folate",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-조니사미드-folate",
+   "family": "F9",
+   "drug_ingredient": "조니사미드",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-독시사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "독시사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-인카드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-mg",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-카르바마제핀-vitd",
+   "family": "F9",
+   "drug_ingredient": "카르바마제핀",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-테트라사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "테트라사이클린",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-졸레드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-미노드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-프리미돈-vitd",
+   "family": "F9",
+   "drug_ingredient": "프리미돈",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-조니사미드-vitd",
+   "family": "F9",
+   "drug_ingredient": "조니사미드",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플레록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-옥시테트라사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-프룰리플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "프룰리플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-데메클로사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-에스오메프라졸-b12",
+   "family": "F6",
+   "drug_ingredient": "에스오메프라졸",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-토피라메이트-b12",
+   "family": "F9",
+   "drug_ingredient": "토피라메이트",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-메타사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가레녹사신-mg",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-클로드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-발로플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-티게사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "티게사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-졸레드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플레록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-발로플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-토피라메이트-folate",
+   "family": "F9",
+   "drug_ingredient": "토피라메이트",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-로메플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "로메플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-페니토인-vitd",
+   "family": "F9",
+   "drug_ingredient": "페니토인",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-미노드론산-mg",
+   "family": "F3",
+   "drug_ingredient": "미노드론산",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-졸레드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "졸레드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-알렌드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F4-레보티록신-al_mg_antacid",
+   "family": "F4",
+   "drug_ingredient": "레보티록신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-메타사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "메타사이클린",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플레록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "플레록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-발로플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "발로플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-클로드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "클로드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-에녹사신-fe",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가티플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "가티플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-라푸티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "라푸티딘",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-발프로산-vitd",
+   "family": "F9",
+   "drug_ingredient": "발프로산",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-데메클로사이클린-al_mg_antacid",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-시메티딘-fe",
+   "family": "F6",
+   "drug_ingredient": "시메티딘",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-옥시테트라사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-자보플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "자보플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-토수플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "토수플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-트리메토프림-folate",
+   "family": "F9",
+   "drug_ingredient": "트리메토프림",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-판토프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "판토프라졸",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-데메클로사이클린-fe",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-데메클로사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-인카드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-트리메토프림-b12",
+   "family": "F9",
+   "drug_ingredient": "트리메토프림",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-인카드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "인카드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-오메프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "오메프라졸",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-알렌드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "알렌드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-에녹사신-ca",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-옥시테트라사이클린-zn",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-플루메퀸-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "플루메퀸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-시노플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-옥스카르바제핀-folate",
+   "family": "F9",
+   "drug_ingredient": "옥스카르바제핀",
+   "counterpart": "엽산",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-옥시테트라사이클린-ca",
+   "family": "F2",
+   "drug_ingredient": "옥시테트라사이클린",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-에티드론산-fe",
+   "family": "F3",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-페니토인-b12",
+   "family": "F9",
+   "drug_ingredient": "페니토인",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-시메티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "시메티딘",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-라모트리진-vitd",
+   "family": "F9",
+   "drug_ingredient": "라모트리진",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-토피라메이트-vitd",
+   "family": "F9",
+   "drug_ingredient": "토피라메이트",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-파미드론산-ca",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가레녹사신-zn",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-ca",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-노르플록사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "노르플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-리세드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "리세드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-시노플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "시노플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-가레녹사신-ca",
+   "family": "F1",
+   "drug_ingredient": "가레녹사신",
+   "counterpart": "칼슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-란소프라졸-fe",
+   "family": "F6",
+   "drug_ingredient": "란소프라졸",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F4-레보티록신-mg",
+   "family": "F4",
+   "drug_ingredient": "레보티록신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-게미플록사신-zn",
+   "family": "F1",
+   "drug_ingredient": "게미플록사신",
+   "counterpart": "아연",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-스파르플록사신-mg",
+   "family": "F1",
+   "drug_ingredient": "스파르플록사신",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F3-파미드론산-al_mg_antacid",
+   "family": "F3",
+   "drug_ingredient": "파미드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F6-파모티딘-b12",
+   "family": "F6",
+   "drug_ingredient": "파모티딘",
+   "counterpart": "비타민B12",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-에녹사신-al_mg_antacid",
+   "family": "F1",
+   "drug_ingredient": "에녹사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F2-데메클로사이클린-mg",
+   "family": "F2",
+   "drug_ingredient": "데메클로사이클린",
+   "counterpart": "마그네슘",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F1-루플록사신-fe",
+   "family": "F1",
+   "drug_ingredient": "루플록사신",
+   "counterpart": "철분",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  },
+  {
+   "raw_id": "AF-F9-트리메토프림-vitd",
+   "family": "F9",
+   "drug_ingredient": "트리메토프림",
+   "counterpart": "비타민D",
+   "expected_label_section": "약물상호작용/사용상의 주의",
+   "source_pointer_required": true,
+   "source_status": "source_pending_no_network"
+  }
+ ]
+}

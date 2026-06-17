@@ -1,0 +1,124 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_adversarial_results",
+  "auto_pass": 33,
+  "genuine_needs_review": 4
+ },
+ "auto_pass_ids": [
+  "RF-F1-0021",
+  "RF-F1-0022",
+  "RF-F1-0024",
+  "RF-F1-0025",
+  "RF-F1-0010",
+  "RF-F1-0035",
+  "RF-F1-0040",
+  "RF-F1-0020",
+  "RF-F1-0041",
+  "RF-F1-0042",
+  "RF-F1-0044",
+  "RF-F1-0045",
+  "RF-F1-0066",
+  "RF-F1-0067",
+  "RF-F1-0070",
+  "RF-F1-0026",
+  "RF-F1-0029",
+  "RF-F1-0030",
+  "RF-F2-0105",
+  "RF-F2-0110",
+  "RF-F2-0111",
+  "RF-F2-0114",
+  "RF-F2-0115",
+  "RF-F3-0147",
+  "RF-F9-0269",
+  "RF-F9-0246",
+  "RF-F9-0272",
+  "RF-F9-0252",
+  "RF-F9-0242",
+  "RF-F9-0243",
+  "RF-F9-0255",
+  "RF-F4-0173",
+  "RF-F6-0201"
+ ],
+ "genuine_needs_review": [
+  {
+   "candidate_id": "RF-F3-0148",
+   "family": "F3",
+   "reason": "source parse 미해소(quote 경계)",
+   "resolve_when": "에티드론산 라벨 인용 파싱·기전동사 확정",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  },
+  {
+   "candidate_id": "RF-F3-0149",
+   "family": "F3",
+   "reason": "source parse 미해소",
+   "resolve_when": "동일 — 에티드론산 parse",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  },
+  {
+   "candidate_id": "RF-F9-0245",
+   "family": "F9",
+   "reason": "저신호 이상반응 열거('드물게')·기전/level-direction/연용-remedy 부재",
+   "resolve_when": "흡수/대사 기전 또는 혈청엽산치 방향 인용 확보 시 재평가",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  },
+  {
+   "candidate_id": "RF-F10-0275",
+   "family": "F10",
+   "reason": "route/availability 강등(경구 품목 위장 불가)",
+   "resolve_when": "route 근거 재확인·display 재작성",
+   "verdict": "needs_review",
+   "scores": {
+    "source_strength_score": 2,
+    "ingredient_specificity_score": 4,
+    "counterpart_specificity_score": 3,
+    "mechanism_support_score": 1,
+    "management_copy_safety_score": 4,
+    "duplicate_risk_score": 5,
+    "regulatory_safety_score": 4,
+    "overall_confidence": 66
+   },
+   "existing_prepared": true,
+   "source_status": "source_confirmed",
+   "needs_review_reason": "genuine_quarantine"
+  }
+ ]
+}

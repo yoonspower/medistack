@@ -1,0 +1,20 @@
+{
+ "name": "autofactory_v1_5_run_config",
+ "run_date": "2026-06-17",
+ "seed": 1,
+ "no_live_write": true,
+ "dry_run": true,
+ "strict_source_fidelity": true,
+ "fail_on_protected_change": true,
+ "targets": {
+  "raw": 1200,
+  "source_check": 600,
+  "source_confirmed": 200,
+  "reviewer_ready": 100,
+  "max_needs_review": 120
+ },
+ "families_filter": [],
+ "exclude_families": [],
+ "batch_size": 50,
+ "max_runtime_minutes": 30
+}

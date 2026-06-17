@@ -1,0 +1,147 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_dashboard",
+  "run_date": "2026-06-17",
+  "status": "NO-LIVE-WRITE — actual integration 0 · 미검증 source 승격 0",
+  "no_live_write": true,
+  "live_write_performed": false
+ },
+ "preflight": {
+  "live_relation_count": 60,
+  "live_max_id": 61,
+  "data_url": "./data/medistack_v0.2_beta_export.json",
+  "published": false,
+  "clinical_reviewed": false,
+  "schedule_active": false,
+  "product_ui": 0,
+  "existing_integration_ready": 33,
+  "existing_needs_review": 4,
+  "no_live_write": true
+ },
+ "funnel": {
+  "raw": 301,
+  "source_check_queue": 196,
+  "prefiltered": {
+   "live_duplicate": 35,
+   "hold_family": 67,
+   "reject_direction": 3
+  },
+  "source_confirmed_existing": 33,
+  "auto_pass": 33,
+  "copy_change": 0,
+  "genuine_needs_review": 4,
+  "source_pending_needs_review": 120,
+  "overflow": 76,
+  "hold": 67,
+  "reject": 38,
+  "new_reviewer_ready": 0,
+  "existing_prepared": 33
+ },
+ "achievement_vs_target": {
+  "raw": {
+   "target": 1200,
+   "generated": 301,
+   "rate": 25
+  },
+  "source_check": {
+   "target": 600,
+   "generated": 196,
+   "rate": 33
+  },
+  "source_confirmed": {
+   "target": 200,
+   "actual_new": 0,
+   "existing": 33,
+   "note": "신규 확정 0 — 실제 source harvest(network) 필요"
+  },
+  "reviewer_ready": {
+   "target": 100,
+   "new": 0,
+   "existing_prepared": 33
+  },
+  "needs_review": {
+   "genuine_existing": 4,
+   "source_pending_bucket": 120,
+   "overflow": 76
+  }
+ },
+ "clusters": {
+  "high_confidence": [
+   "antibiotic23",
+   "f1_all18"
+  ],
+  "medium": [
+   "chronic8",
+   "f9_all7",
+   "f1_nutrient10"
+  ],
+  "small_risky": [
+   "f3_single",
+   "f4_f6_small2",
+   "f1_antacid8",
+   "f2_all5"
+  ],
+  "all_in_one_not_recommended": [
+   "all33"
+  ],
+  "wave_counts": {
+   "f1_nutrient10": 10,
+   "f1_antacid8": 8,
+   "f1_all18": 18,
+   "f2_all5": 5,
+   "f3_single": 1,
+   "f9_all7": 7,
+   "f4_f6_small2": 2,
+   "antibiotic23": 23,
+   "chronic8": 8,
+   "all33": 33
+  }
+ },
+ "dry_run": {
+  "antibiotic23": {
+   "planned_count": 83,
+   "delta": 23,
+   "pass": true,
+   "live_write": false
+  },
+  "chronic8": {
+   "planned_count": 68,
+   "delta": 8,
+   "pass": true,
+   "live_write": false
+  },
+  "all33": {
+   "planned_count": 93,
+   "delta": 33,
+   "pass": true,
+   "live_write": false
+  }
+ },
+ "combined_future_scenario": {
+  "baseline": 60,
+  "existing_all33": 93,
+  "new_ready": 0,
+  "projected_after_reviewer_note": 93,
+  "note": "60→93 은 existing_prepared 33; 신규 ready 0 → 변동 없음."
+ },
+ "guards": {
+  "protected_hash_unchanged": true,
+  "live_write_performed": false,
+  "data_url_unchanged": true,
+  "published_false": true,
+  "clinical_reviewed_false": true,
+  "schedule_inactive": true,
+  "product_ui_zero": true,
+  "forbidden_phrase_hits": [],
+  "new_reviewer_ready_unsourced": [],
+  "needs_review_leak_into_autopass": [],
+  "strict_source_fidelity": true
+ },
+ "guard_ok": true,
+ "bottleneck": "실제 source harvest(식약처 라벨 직접 인용·network) — 오프라인 orchestrator 는 신규 source 확정 0. 33 existing_prepared 의 reviewer note 실물 확보가 다음 병목.",
+ "factory_v1_6_recommendation": {
+  "run_now": false,
+  "reason": "신규 source 확정 0 — 실제 harvest(network) 트랙과 reviewer note 실물이 선행. 오프라인 대량 생성은 backlog(source_pending) 만 키움.",
+  "next_production_run": "network harvest 활성 + reviewer note 트랙 가동 후 --target-raw 800~1200 로 실행."
+ }
+}
