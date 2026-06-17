@@ -7,11 +7,11 @@ integrate_reviewer_ready_global_batch_v1_4.py(dry-run)의 계획 산출물 + che
 
 검사:
   0) 안전: live export 무변경(relations==60·meta 60·published/clinical=false·sha 불변).
-  1) family map: 37 = F1 18 + F2 5 + F3 3 + F9 8 + F4 1 + F6 1 + F10 1. family_reverified=[F1,F2,F3,F9]·pending=[F4,F6,F10].
-  2) integrable: F1 18·F2 5·F3 1·F9 7 = 31 · F3 needs_review 2·F9 needs_review 1 · pending 3.
-  3) 조합 시나리오: F1 78·F2 65·F3 61·F9 67·F1+F2 83·F1+F2+F3 84·F1+F2+F3+F9 91(disjoint·dedup 0).
-  4) dedup_clean=true(교차 family·live 중복 0) · combined v0.2 sim PASS(재실행, 60→91) · no_live_write=true.
-  5) reviewer-note 게이트: pending family(F4) 요청 거부·per-family 위임 누락 거부·family 일반화 거부·승인 없음 거부 + valid 통과.
+  1) family map: 37 = F1 18 + F2 5 + F3 3 + F9 8 + F4 1 + F6 1 + F10 1. family_reverified=[F1,F2,F3,F9,F4,F6,F10]·pending=[](전부 재검증).
+  2) integrable: F1 18·F2 5·F3 1·F9 7·F4 1·F6 1 = 33 · needs_review 4(F3 0148/0149·F9 0245·F10 0275) · F10 통합 가능 0.
+  3) 조합 시나리오: F1 78·F4 61·F6 61·F1+F2+F3 84·F1+F2+F3+F9 91·F1+F2+F3+F9+F4+F6 93(disjoint·dedup 0).
+  4) dedup_clean=true(교차 family·live 중복 0) · combined v0.2 sim PASS(재실행, 60→93) · no_live_write=true.
+  5) reviewer-note 게이트: 통합 가능 0 family(F10) 요청 거부·per-family 위임 누락 거부·needs_review backlog 미명시 거부·family 일반화 거부·승인 없음 거부 + valid 통과.
   6) 결함주입 → 전건 검출.
 사용: python3 scripts/validate_global_reviewer_ready_dryrun_v1_4.py
 종료코드: 0 PASS, 1 FAIL.
@@ -31,12 +31,13 @@ PLAN = os.path.join(DATA, "review", "reviewer_ready_global_plan_v1_4.json")
 LIVE_RELATIONS = 60
 RR_TOTAL = 37
 EXPECTED_RR = {"F1": 18, "F2": 5, "F3": 3, "F4": 1, "F6": 1, "F9": 8, "F10": 1}
-EXPECTED_COMBOS = {"F1_only": 78, "F2_only": 65, "F3_only": 61, "F9_only": 67,
-                   "F1+F2": 83, "F1+F3": 79, "F2+F3": 66, "F3+F9": 68, "F1+F9": 85,
-                   "F1+F2+F3": 84, "F1+F2+F3+F9": 91}
-INTEGRABLE_TOTAL = 31
-COMBINED_COUNT = 91
-COMBINED_ENTRIES = 31
+EXPECTED_COMBOS = {"F1_only": 78, "F2_only": 65, "F3_only": 61, "F9_only": 67, "F4_only": 61, "F6_only": 61,
+                   "F1+F2": 83, "F1+F3": 79, "F2+F3": 66, "F3+F9": 68, "F1+F9": 85, "F4+F6": 62,
+                   "F1+F2+F3": 84, "F1+F2+F3+F9": 91, "F1+F2+F3+F9+F4+F6": 93}
+INTEGRABLE_TOTAL = 33
+COMBINED_COUNT = 93
+COMBINED_ENTRIES = 33
+REVERIFIED_EXPECTED = ["F1", "F2", "F3", "F9", "F4", "F6", "F10"]
 
 fails = []
 
@@ -75,10 +76,10 @@ def validate_plan(art, exp):
         bad.append(f"family map != 기대 ({rr})")
     if sum(rr.values()) != RR_TOTAL:
         bad.append(f"family map 합 != {RR_TOTAL}")
-    if meta.get("family_reverified") != ["F1", "F2", "F3", "F9"]:
-        bad.append("family_reverified != [F1,F2,F3,F9]")
-    if sorted(meta.get("family_pending_reverify", [])) != ["F10", "F4", "F6"]:
-        bad.append("family_pending_reverify != [F4,F6,F10]")
+    if meta.get("family_reverified") != REVERIFIED_EXPECTED:
+        bad.append(f"family_reverified != {REVERIFIED_EXPECTED} ({meta.get('family_reverified')})")
+    if sorted(meta.get("family_pending_reverify", [])) != []:
+        bad.append(f"family_pending_reverify != [] (모두 재검증 완료) ({meta.get('family_pending_reverify')})")
     pf = meta.get("per_family", {})
     if pf.get("F1", {}).get("integrable_count") != 18:
         bad.append("F1 integrable != 18")
@@ -88,17 +89,28 @@ def validate_plan(art, exp):
         bad.append("F3 integrable != 1")
     if pf.get("F9", {}).get("integrable_count") != 7:
         bad.append("F9 integrable != 7")
+    if pf.get("F4", {}).get("integrable_count") != 1:
+        bad.append("F4 integrable != 1")
+    if pf.get("F6", {}).get("integrable_count") != 1:
+        bad.append("F6 integrable != 1")
     if sorted(pf.get("F3", {}).get("needs_review_ids", [])) != ["RF-F3-0148", "RF-F3-0149"]:
         bad.append("F3 needs_review != [0148,0149]")
     if pf.get("F9", {}).get("needs_review_ids", []) != ["RF-F9-0245"]:
         bad.append("F9 needs_review != [0245]")
+    if pf.get("F10", {}).get("needs_review_ids", []) != ["RF-F10-0275"]:
+        bad.append("F10 needs_review != [0275]")
+    # F4/F6/F10 은 이제 재검증 완료(pending 아님). F10 은 통합 가능 0(전건 needs_review).
     for fam in ("F4", "F6", "F10"):
-        if pf.get(fam, {}).get("family_reverified") is not False or pf.get(fam, {}).get("integrable_count") != 0:
-            bad.append(f"{fam} pending 표기 오류")
+        if pf.get(fam, {}).get("family_reverified") is not True:
+            bad.append(f"{fam} family_reverified != True(재검증 완료여야)")
+    if pf.get("F4", {}).get("integrable_count") != 1 or pf.get("F6", {}).get("integrable_count") != 1:
+        bad.append("F4/F6 integrable != 1")
+    if pf.get("F10", {}).get("integrable_count") != 0:
+        bad.append("F10 integrable != 0(전건 needs_review)")
     if meta.get("integrable_total") != INTEGRABLE_TOTAL:
         bad.append(f"integrable_total != {INTEGRABLE_TOTAL} ({meta.get('integrable_total')})")
-    if meta.get("needs_review_total") != 3:
-        bad.append(f"needs_review_total != 3 ({meta.get('needs_review_total')})")
+    if meta.get("needs_review_total") != 4:
+        bad.append(f"needs_review_total != 4 ({meta.get('needs_review_total')})")
     combos = meta.get("combined_scenarios", {})
     for k, v in EXPECTED_COMBOS.items():
         if combos.get(k) != v:
@@ -116,7 +128,7 @@ def validate_plan(art, exp):
     if len(ents) != COMBINED_ENTRIES:
         bad.append(f"combined_projected_entries != {COMBINED_ENTRIES} ({len(ents)})")
     fams = {e.get("family") for e in ents}
-    if not fams <= {"F1", "F2", "F3", "F9"}:
+    if not fams <= {"F1", "F2", "F3", "F9", "F4", "F6"}:
         bad.append(f"combined entries 에 통합 불가 family 포함 {fams}")
     pairs = [(e["projected_live_relation"]["ingredient"], e["projected_live_relation"]["nutrient"]) for e in ents]
     if len(set(pairs)) != len(pairs):
@@ -157,10 +169,10 @@ def _note(tmp, text):
 
 def test_gate(tmp):
     print("--- 글로벌 reviewer-note 게이트 ---")
-    VALID = ("승인(approved): F1, F2, F3, F9 통합 가능분을 per-family integrator(개별 reviewer-note 위임)로 진행 승인.\n"
-             "F4/F6/F10 은 family 재검증 선행 필요(본 글로벌 노트로 통합 불가).\n"
+    VALID = ("승인(approved): F1, F2, F3, F9, F4, F6 통합 가능분을 per-family integrator(개별 reviewer-note 위임)로 진행 승인.\n"
+             "needs_review backlog(F3 0148/0149·F9 0245·F10 0275)는 통합 제외(별도 재검색).\n"
              "글로벌 노트는 family 선택·순서용이며 live write 는 per-family integrator 가 수행.\n")
-    cn = lambda txt, sel=("F1", "F2", "F3", "F9"), blk=(): g.check_global_reviewer_note(_note(tmp, txt), list(sel), list(blk))
+    cn = lambda txt, sel=("F1", "F2", "F3", "F9", "F4", "F6"), blk=(): g.check_global_reviewer_note(_note(tmp, txt), list(sel), list(blk))
 
     def er(label, bad, must=None):
         ok = len(bad) > 0 and (must is None or any(must in b for b in bad))
@@ -176,13 +188,14 @@ def test_gate(tmp):
 
     er("빈 노트 거부", cn("")[1], "비공란")
     er("승인 토큰 없음 거부", cn(VALID.replace("승인", "검토").replace("approved", "review"))[1], "승인 표기")
-    er("family 명시 누락 거부", cn(VALID.replace("F1, F2, F3", "F1, F2"))[1], "F3 family 명시 누락")
+    er("family 명시 누락 거부", cn(VALID.replace("F9, F4, F6", "F9, F6"))[1], "F4 family 명시 누락")
     er("per-family 위임 누락 거부",
        cn(VALID.replace("per-family integrator(개별 reviewer-note 위임)", "글로벌 일괄").replace(
            "live write 는 per-family integrator 가 수행", "live write 진행"))[1], "per-family")
-    er("pending 선행 미명시 거부",
-       cn(VALID.replace("F4/F6/F10 은 family 재검증 선행 필요(본 글로벌 노트로 통합 불가).\n", ""))[1], "재검증 선행")
-    er("pending family 요청 거부", cn(VALID, sel=("F1", "F4"), blk=("F4",))[1], "pending family")
+    er("needs_review backlog 미명시 거부",
+       cn(VALID.replace("needs_review backlog(F3 0148/0149·F9 0245·F10 0275)는 통합 제외(별도 재검색).\n", ""))[1],
+       "needs_review backlog")
+    er("통합 가능 0 family(F10) 요청 거부", cn(VALID, sel=("F1",), blk=("F10",))[1], "통합 가능 0 family")
     er("family 일반화 허용 거부", cn(VALID + "\nfamily 계열 일반화 승인.")[1], "일반화")
     er("clinical=true 승격 거부", cn(VALID + "\nclinical_reviewed=true 승격.")[1], "clinical")
     ea("valid 글로벌 노트 통과", cn(VALID)[1])
@@ -233,28 +246,30 @@ def main():
     inject("family map 변조(F3 5)", lambda a: a["meta"]["reviewer_ready_by_family_adversarial"].update(F3=5))
     inject("F3 integrable 위조(3)", lambda a: a["meta"]["per_family"]["F3"].update(integrable_count=3))
     inject("F9 integrable 위조(8)", lambda a: a["meta"]["per_family"]["F9"].update(integrable_count=8))
-    inject("pending family 통합가능 위조(F4)",
-           lambda a: a["meta"]["per_family"]["F4"].update(family_reverified=True, integrable_count=1))
-    inject("combo 위조(F1+F2+F3+F9=90)", lambda a: a["meta"]["combined_scenarios"].update({"F1+F2+F3+F9": 90}))
+    inject("F10 통합가능 위조(integrable 1)",
+           lambda a: a["meta"]["per_family"]["F10"].update(integrable_count=1))
+    inject("F4 integrable 위조(2)", lambda a: a["meta"]["per_family"]["F4"].update(integrable_count=2))
+    inject("combo 위조(F1+F2+F3+F9+F4+F6=92)", lambda a: a["meta"]["combined_scenarios"].update({"F1+F2+F3+F9+F4+F6": 92}))
     inject("integrable_total 위조(37)", lambda a: a["meta"].update(integrable_total=37))
+    inject("needs_review_total 위조(3)", lambda a: a["meta"].update(needs_review_total=3))
     inject("dedup_clean 위조(중복 주입)",
            lambda a: a["meta"]["dedup"]["cross_family"].update({"F1∩F2": ["x×y"]}))
-    inject("combined entries 에 pending family(F4) 주입",
-           lambda a: a["combined_projected_entries"].append({"family": "F4", "candidate_id": "RF-F4-XXXX",
-                                                             "projected_live_relation": {"ingredient": "x", "nutrient": "y"}}))
+    inject("combined entries 에 통합불가 family(F10) 주입",
+           lambda a: a["combined_projected_entries"].append({"family": "F10", "candidate_id": "RF-F10-0275",
+                                                             "projected_live_relation": {"ingredient": "케토코나졸", "nutrient": "알루미늄 함유 제산제(약물)"}}))
     fails.extend(inj_fail)
 
     print(f"=== 글로벌 reviewer-ready 37 계획 검증: live relations {len(exp['relations'])}(불변) · "
-          f"integrable 31(F1 18·F2 5·F3 1·F9 7) · pending 3(F4/F6/F10) · F3 needs_review 2·F9 needs_review 1 · "
-          f"F1+F2+F3 60→84·F1+F2+F3+F9 60→91 ===")
+          f"integrable 33(F1 18·F2 5·F3 1·F9 7·F4 1·F6 1) · pending 0 · needs_review 4(F3 0148/0149·F9 0245·F10 0275) · "
+          f"F1+F2+F3+F9 60→91·+F4+F6 60→93 ===")
     for f in fails:
         print(f"[FAIL] {f}")
     if fails:
         print(f"RESULT: FAIL — {len(fails)}건")
         return 1
-    print("RESULT: PASS — family map 37(F1 18/F2 5/F3 3/F9 8/F4 1/F6 1/F10 1) · integrable 31 · pending 3 · "
-          "조합 시나리오(F1 78/F2 65/F3 61/F9 67/F1+F2+F3 84/F1+F2+F3+F9 91) · dedup_clean · combined v0.2 PASS(60→91) · "
-          "no_live_write · 게이트(pending/위임/일반화/승인) · 결함주입 검출 · 라이브 무수정")
+    print("RESULT: PASS — family map 37(F1 18/F2 5/F3 3/F9 8/F4 1/F6 1/F10 1) · integrable 33 · pending 0 · "
+          "needs_review 4(F3 2/F9 1/F10 1) · 조합 시나리오(F1 78/F4 61/F6 61/F1+F2+F3+F9 91/F1+F2+F3+F9+F4+F6 93) · "
+          "dedup_clean · combined v0.2 PASS(60→93) · no_live_write · 게이트(backlog/위임/일반화/승인/통합가능0) · 결함주입 검출 · 라이브 무수정")
     return 0
 
 

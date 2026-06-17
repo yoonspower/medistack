@@ -1,0 +1,264 @@
+{
+ "meta": {
+  "name": "f4_f6_f10_small_family_inventory_v1_4",
+  "status": "DRAFT-ONLY — NOT LIVE / live_integration_forbidden=true / 적대검증 reviewer-ready 3 + family 재검증",
+  "purpose": "F4/F6/F10 small-family bundle reviewer-ready 3건 감사 + 작업 B/C family-specific 재검증(16 렌즈·refute-by-default). reviewer package/integrator 단일 소스.",
+  "families": [
+   "F4",
+   "F6",
+   "F10"
+  ],
+  "audited": 3,
+  "reviewer_ready_adversarial": 3,
+  "reverify_counts": {
+   "survives": 0,
+   "survives_with_copy_change": 2,
+   "needs_review": 1,
+   "hold": 0,
+   "reject": 0
+  },
+  "integrable_count": 2,
+  "integrable_ids": [
+   "RF-F4-0173",
+   "RF-F6-0201"
+  ],
+  "survives_ids": [],
+  "copy_change_ids": [
+   "RF-F4-0173",
+   "RF-F6-0201"
+  ],
+  "needs_review_ids": [
+   "RF-F10-0275"
+  ],
+  "ingredients_reviewer_ready": [
+   "레보티록신",
+   "에스오메프라졸",
+   "케토코나졸"
+  ],
+  "ingredients_integrable": [
+   "레보티록신",
+   "에스오메프라졸"
+  ],
+  "counterpart_split_integrable": {
+   "al_mg_antacid(약물)": 1,
+   "비타민B12(영양소)": 1
+  },
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "live_integration_forbidden": true,
+  "do_not_implement_yet": true,
+  "confirmed_at": "2026-06-17",
+  "headline_finding_1_route_0275": "케토코나졸×제산제(0275): 소스 더마졸정 수출용 oral tablet 이나 국내 색인 케토코나졸 10품목 전부 외용(액/크림) → 경구 흡수×제산제 카드를 ingredient 에 붙이면 외용 제품 오부착. 광역 L8(소스가 tablet→pass)이 놓친 것을 family L6_route_domestic_availability 가 fail → needs_review. live 선례 id61(이트라코나졸)은 국내 제품 사용.",
+  "headline_finding_2_aluminum_only_0173": "레보티록신×제산제(0173): 라벨은 '알루미늄 함유 제산제'만 명시(Mg 미명시) → al_mg_antacid display 의 Mg 단정은 source 보다 강함. counterpart/display 를 '알루미늄 함유 제산제'로 좁히고 Mg 비단정 + '효과 감소'→'흡수 지연/감소' reframe(copy_change). live id61 도 동일 일반화(reviewer surface).",
+  "headline_finding_3_ppi_b12_template_0201": "에스오메프라졸×B12(0201): 오메프라졸(id13) S-거울상 → PPI×B12 5건 + 메트포르민 live 계열 합류. display 를 draft('수치 변화')→live PPI×B12 표준 템플릿으로 reframe(copy_change·톤 정합). 소스는 복합제(낙소졸정) → 단일성분 source 보강 reviewer note.",
+  "note": "통합 가능 = 자동 적대검증 + family 재검증 통과(survives+copy_change)를 의미하며 임상 검수 완료·식약처 승인·법적 문제 없음 을 의미하지 않는다. live 승격은 별도 PM + clinical reviewer note + 별도 PR."
+ },
+ "candidates": [
+  {
+   "candidate_id": "RF-F4-0173",
+   "family": "F4",
+   "relation": "레보티록신 × 알루미늄 함유 제산제(약물)",
+   "drug_ingredient": "레보티록신",
+   "counterpart": "알루미늄 함유 제산제(약물)",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "itemSeq": "197400278",
+   "source_product": "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
+   "source_section": "병용투여",
+   "source_quote": "콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "known_safe",
+   "display_copy": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요.",
+   "management_copy": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_mechanism_support": "pass",
+     "L4_direction": "pass",
+     "L5_category_clarity": "pass",
+     "L6_route_domestic_availability": "pass:국내 oral 제품 존재({'oral': 17})",
+     "L7_no_directive": "pass",
+     "L8_no_dosing_detail_in_display": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_mechanism_action_enum": "pass"
+    },
+    "verdict": "survives_with_copy_change",
+    "flags": [
+     "copy_change:display_reframe"
+    ],
+    "reviewer_notes": [
+     "레보티록신×제산제: '알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소' 명시(흡수 기전). survives_with_copy_change(Al-only). reviewer 는 (a)al_mg_antacid bucket 재사용 vs 'Al 함유 제산제' 한정 표기 결정, (b)live id61(이트라코나졸)도 수산화알루미늄→'Al/Mg' 일반화한 점 함께 검토(동일 latent)."
+    ]
+   },
+   "copy_change": {
+    "kind": "display_reframe",
+    "reason": "라벨('씬지로이드정')은 '알루미늄 함유 제산제'만 명시(Mg 미명시) → al_mg_antacid category/display 의 '마그네슘' 단정은 source 보다 강함. counterpart/display 를 '알루미늄 함유 제산제'로 좁히고 Mg 비단정 + '효과 감소' → '흡수 지연/감소'(라벨 '흡수가 지연 또는 감소' 충실)로 reframe. category bucket(al_mg_antacid)은 id61 선례대로 유지하되 reviewer 가 Al-only display vs bucket 재사용 결정(live id61 도 수산화알루미늄→Al/Mg 일반화·동일 latent).",
+    "fields": {
+     "counterpart": {
+      "original": "Al/Mg 함유 제산제(약물)",
+      "cleaned": "알루미늄 함유 제산제(약물)"
+     },
+     "display_copy": {
+      "original": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+      "cleaned": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요."
+     },
+     "management_copy": {
+      "original": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+      "cleaned": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요."
+     }
+    }
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F6-0201",
+   "family": "F6",
+   "relation": "에스오메프라졸 × 비타민B12",
+   "drug_ingredient": "에스오메프라졸",
+   "counterpart": "비타민B12",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "201308928",
+   "source_product": "낙소졸정500/20밀리그램(나프록센,에스오메프라졸)",
+   "source_section": "병용투여",
+   "source_quote": "⑥ 에스오메프라졸은 저위산증 또는 무위산증으로 인한 비타민 B12(시아노코발라민)의 흡수를 감소시킬 수 있으므로, 장기간 치료에서 비타민 B12 흡수를 감소시키는 위험 인자 또는 체내 저장이 감소된 환자는 충분한 주의가 요구된다.",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "monitoring",
+   "display_copy": "에스오메프라졸을(를) 장기간 복용하는 경우 비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다.",
+   "management_copy": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_mechanism_support": "pass",
+     "L4_direction": "pass",
+     "L5_category_clarity": "pass",
+     "L6_route_domestic_availability": "pass:비경구흡수 relation(N/A)",
+     "L7_no_directive": "pass",
+     "L8_no_dosing_detail_in_display": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_mechanism_action_enum": "pass"
+    },
+    "verdict": "survives_with_copy_change",
+    "flags": [
+     "copy_change:display_reframe"
+    ],
+    "reviewer_notes": [
+     "에스오메프라졸×B12: '저위산증/무위산증으로 인한 비타민 B12 흡수 감소...장기간 치료' 명시(depletion·monitoring). 오메프라졸(id13) S-거울상 → PPI×B12 5건 live 계열 합류. survives_with_copy_change(live 템플릿 톤 정합). reviewer 는 (a)복합제(낙소졸정) source 대신 단일성분 에스오메프라졸 라벨로 근거 보강 가능 여부, (b)evidence_level 확정."
+    ]
+   },
+   "copy_change": {
+    "kind": "display_reframe",
+    "reason": "에스오메프라졸=오메프라졸(id13 live)의 S-거울상 → PPI×B12 5건 + 메트포르민(id12) live 계열 합류. display 를 draft('수치 변화와 관련된 문구') → live PPI×B12 표준 템플릿('비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다')로 reframe(톤 정합·장기복용+상태확인 조건 보존·측정치 단정 회피). 소스는 복합제(낙소졸정=나프록센+에스오메프라졸·quote 가 에스오메프라졸 명시) → reviewer 가 단일성분 source 확인 권장.",
+    "fields": {
+     "display_copy": {
+      "original": "이 약을 장기간 복용할 때 비타민B12 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+      "cleaned": "에스오메프라졸을(를) 장기간 복용하는 경우 비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다."
+     },
+     "management_copy": {
+      "original": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+      "cleaned": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다."
+     }
+    }
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F10-0275",
+   "family": "F10",
+   "relation": "케토코나졸 × Al/Mg 함유 제산제(약물)",
+   "drug_ingredient": "케토코나졸",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "itemSeq": "199101243",
+   "source_product": "더마졸정(케토코나졸)(수출용)",
+   "source_section": "병용투여",
+   "source_quote": "이 약의 흡수에는 적당한 위산분비가 필요하므로 위산분비를 억제하는 약인 제산제, 항콜린제, H2-차단제를 병용투여해야 하는 환자는 이 약 투여 후 최소한 2시간 경과 후에 투여하거나, 이 약을 콜라와 함께 복용하도록 한다.",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "known_safe",
+   "display_copy": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_copy": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_mechanism_support": "pass",
+     "L4_direction": "pass",
+     "L5_category_clarity": "pass",
+     "L6_route_domestic_availability": "fail:국내 색인 케토코나졸 10품목 전부 비경구({'topical': 10}) — 경구 흡수×제산제 relation 오부착 위험 (소스 수출용 oral tablet·route/availability mismatch·reviewer formulation-scoping 요)",
+     "L7_no_directive": "pass",
+     "L8_no_dosing_detail_in_display": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass",
+     "L15_display_no_pediatric_bone": "pass",
+     "L16_mechanism_action_enum": "pass"
+    },
+    "verdict": "needs_review",
+    "flags": [],
+    "reviewer_notes": [
+     "needs_review(작업 C 강등·route/availability). 소스 더마졸정 **수출용** oral tablet 이나 국내 색인 케토코나졸 10품목 전부 외용(액/크림) → 경구 흡수×제산제 카드를 ingredient 에 붙이면 외용 제품 오부착. reviewer 가 (a)국내 oral 케토코나졸 존재 여부, (b)formulation-scoping(경구 한정 카드), (c)수출용 source 수용 여부 확정 후에만 통합."
+    ]
+   },
+   "copy_change": null,
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  }
+ ],
+ "f10_family_context": {
+  "RF-F10-0276": {
+   "relation": "포사코나졸 × Al/Mg 함유 제산제(약물)",
+   "status": "hold",
+   "reason": "소스 quote 가 'H2 수용체 억제제'만 언급(Al/Mg 제산제 미명시·주어 불일치) → al_mg_antacid 매핑 불가. acid_reducing_drug(H2/PPI) category 설계 트랙으로 이관(hold)."
+  },
+  "RF-F10-0277": {
+   "relation": "이트라코나졸 × Al/Mg 함유 제산제(약물)",
+   "status": "reject_duplicate_live",
+   "reason": "이미 live(id61). duplicate_live → REJECT_PRECHECK(중복 생성 금지)."
+  }
+ }
+}

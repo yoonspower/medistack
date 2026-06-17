@@ -1,0 +1,65 @@
+{
+ "meta": {
+  "name": "f4_f6_f10_small_family_index_impact_v1_4",
+  "status": "ANALYSIS — read-only / no index/alias write",
+  "purpose": "small-family 통합 시 full index/relation_card/name_only/aliases 영향 분석.",
+  "confirmed_at": "2026-06-17"
+ },
+ "impact": {
+  "full_index_counts_current": {
+   "total": 17580,
+   "relation_card": 1168,
+   "name_only": 16412
+  },
+  "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+  "per_ingredient": {
+   "레보티록신": {
+    "index_items": 17,
+    "covered_by_relation": 17,
+    "name_only": 0,
+    "in_aliases": true,
+    "formulations": {
+     "oral": 17
+    },
+    "oral_present": true,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 0
+   },
+   "에스오메프라졸": {
+    "index_items": 0,
+    "covered_by_relation": 0,
+    "name_only": 0,
+    "in_aliases": true,
+    "formulations": {},
+    "oral_present": false,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 0
+   },
+   "케토코나졸": {
+    "index_items": 10,
+    "covered_by_relation": 0,
+    "name_only": 10,
+    "in_aliases": false,
+    "formulations": {
+     "topical": 10
+    },
+    "oral_present": false,
+    "integrated_in_this_scope": false,
+    "latent_flip_if_alias_enriched": 0
+   }
+  },
+  "integrated_ingredients_this_scope": [
+   "레보티록신",
+   "에스오메프라졸"
+  ],
+  "automatic_flip_from_relation_integration": 0,
+  "relation_card_flip_required": 0,
+  "relation_card_after": 1168,
+  "name_only_after": 16412,
+  "index_change_required": false,
+  "alias_change_required": false,
+  "latent_flip_if_alias_enriched_this_scope": 0,
+  "latent_flip_if_alias_enriched_all_integrable": 0,
+  "interpretation": "레보티록신(relation_card 17·이미 Fe/Ca relation 보유)·에스오메프라졸(색인 0·복합제 내에만)·케토코나졸(외용 10·경구 0). full index/aliases 는 export relations 와 decoupled(pool=aliases.verified_item_seqs) → relation-only 통합 자동 flip 0·relation_card 1168/name_only 16412 불변. 케토코나졸은 needs_review 라 미통합 + 외용 전용이라 경구 흡수 relation alias-enrich 대상 아님(latent 0)."
+ }
+}

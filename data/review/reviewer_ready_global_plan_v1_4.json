@@ -2,7 +2,7 @@
  "meta": {
   "name": "reviewer_ready_global_plan_v1_4",
   "status": "DRY-RUN PLAN — NOT LIVE / no_live_write=true / live_integration_forbidden=true / 글로벌 도구는 export 무수정 · live 는 per-family integrator 위임",
-  "purpose": "factory reviewer-ready 37 family map + 통합 가능분(F1/F2/F3/F9) 조합 시나리오 + 교차 dedup + v0.2 sim.",
+  "purpose": "factory reviewer-ready 37 family map + 통합 가능분(F1/F2/F3/F9/F4/F6) 조합 시나리오 + 교차 dedup + v0.2 sim.",
   "confirmed_at": "2026-06-17",
   "reviewer_ready_total": 37,
   "reviewer_ready_by_family_adversarial": {
@@ -18,25 +18,28 @@
    "F1",
    "F2",
    "F3",
-   "F9"
-  ],
-  "family_pending_reverify": [
-   "F10",
+   "F9",
    "F4",
-   "F6"
+   "F6",
+   "F10"
   ],
-  "integrable_total": 31,
-  "pending_total": 3,
-  "needs_review_total": 3,
+  "family_pending_reverify": [],
+  "family_no_integrable": [
+   "F10"
+  ],
+  "integrable_total": 33,
+  "pending_total": 0,
+  "needs_review_total": 4,
   "needs_review_by_family": {
-   "F1": [],
-   "F2": [],
    "F3": [
     "RF-F3-0148",
     "RF-F3-0149"
    ],
    "F9": [
     "RF-F9-0245"
+   ],
+   "F10": [
+    "RF-F10-0275"
    ]
   },
   "per_family": {
@@ -119,26 +122,39 @@
    "F4": {
     "family_name": "Thyroid hormone × mineral/antacid",
     "reviewer_ready_adversarial": 1,
-    "family_reverified": false,
-    "integrable_count": 0,
-    "blocked_reason": "family-specific 재검증 미수행 → 통합 불가(per-family integrator/재검증 선행 필요).",
-    "expected_count_standalone": null
+    "family_reverified": true,
+    "integrable_count": 1,
+    "integrable_ids": [
+     "RF-F4-0173"
+    ],
+    "needs_review_ids": [],
+    "expected_count_standalone": 61,
+    "reverified_via": "small-family bundle(integrate_f4_f6_f10_small_family_batch_v1_4)"
    },
    "F6": {
     "family_name": "Acid-reducer (H2/PPI) × Fe/B12/antacid",
     "reviewer_ready_adversarial": 1,
-    "family_reverified": false,
-    "integrable_count": 0,
-    "blocked_reason": "family-specific 재검증 미수행 → 통합 불가(per-family integrator/재검증 선행 필요).",
-    "expected_count_standalone": null
+    "family_reverified": true,
+    "integrable_count": 1,
+    "integrable_ids": [
+     "RF-F6-0201"
+    ],
+    "needs_review_ids": [],
+    "expected_count_standalone": 61,
+    "reverified_via": "small-family bundle(integrate_f4_f6_f10_small_family_batch_v1_4)"
    },
    "F10": {
     "family_name": "Azole antifungal × antacid",
     "reviewer_ready_adversarial": 1,
-    "family_reverified": false,
+    "family_reverified": true,
     "integrable_count": 0,
-    "blocked_reason": "family-specific 재검증 미수행 → 통합 불가(per-family integrator/재검증 선행 필요).",
-    "expected_count_standalone": null
+    "integrable_ids": [],
+    "needs_review_ids": [
+     "RF-F10-0275"
+    ],
+    "expected_count_standalone": 60,
+    "reverified_via": "small-family bundle(integrate_f4_f6_f10_small_family_batch_v1_4)",
+    "no_integrable_reason": "전건 needs_review(0275 케토코나졸 route/availability) → 통합 가능 0."
    }
   },
   "combined_scenarios": {
@@ -147,37 +163,105 @@
    "F2": 65,
    "F3": 61,
    "F9": 67,
+   "F4": 61,
+   "F6": 61,
    "F1+F2": 83,
    "F1+F3": 79,
    "F1+F9": 85,
+   "F1+F4": 79,
+   "F1+F6": 79,
    "F2+F3": 66,
    "F2+F9": 72,
+   "F2+F4": 66,
+   "F2+F6": 66,
    "F3+F9": 68,
+   "F3+F4": 62,
+   "F3+F6": 62,
+   "F9+F4": 68,
+   "F9+F6": 68,
+   "F4+F6": 62,
    "F1+F2+F3": 84,
    "F1+F2+F9": 90,
+   "F1+F2+F4": 84,
+   "F1+F2+F6": 84,
    "F1+F3+F9": 86,
+   "F1+F3+F4": 80,
+   "F1+F3+F6": 80,
+   "F1+F9+F4": 86,
+   "F1+F9+F6": 86,
+   "F1+F4+F6": 80,
    "F2+F3+F9": 73,
+   "F2+F3+F4": 67,
+   "F2+F3+F6": 67,
+   "F2+F9+F4": 73,
+   "F2+F9+F6": 73,
+   "F2+F4+F6": 67,
+   "F3+F9+F4": 69,
+   "F3+F9+F6": 69,
+   "F3+F4+F6": 63,
+   "F9+F4+F6": 69,
    "F1+F2+F3+F9": 91,
+   "F1+F2+F3+F4": 85,
+   "F1+F2+F3+F6": 85,
+   "F1+F2+F9+F4": 91,
+   "F1+F2+F9+F6": 91,
+   "F1+F2+F4+F6": 85,
+   "F1+F3+F9+F4": 87,
+   "F1+F3+F9+F6": 87,
+   "F1+F3+F4+F6": 81,
+   "F1+F9+F4+F6": 87,
+   "F2+F3+F9+F4": 74,
+   "F2+F3+F9+F6": 74,
+   "F2+F3+F4+F6": 68,
+   "F2+F9+F4+F6": 74,
+   "F3+F9+F4+F6": 70,
+   "F1+F2+F3+F9+F4": 92,
+   "F1+F2+F3+F9+F6": 92,
+   "F1+F2+F3+F4+F6": 86,
+   "F1+F2+F9+F4+F6": 92,
+   "F1+F3+F9+F4+F6": 88,
+   "F2+F3+F9+F4+F6": 75,
+   "F1+F2+F3+F9+F4+F6": 93,
    "F1_only": 78,
    "F2_only": 65,
    "F3_only": 61,
    "F9_only": 67,
-   "note": "통합 가능분 기준. 모든 family ingredient disjoint(록사신/사이클린/드론산/만성depletion약)·교차 dedup 0 → 합산 단순. 현행 헤드라인: F1+F2+F3 60→84(F1/F2/F3 live) · F1+F2+F3+F9 60→91."
+   "F4_only": 61,
+   "F6_only": 61,
+   "note": "통합 가능분 기준. family ingredient disjoint(록사신/사이클린/드론산/만성depletion약/레보티록신/에스오메프라졸)·교차 dedup 0 → 합산 단순. 현행 헤드라인: F1+F2+F3 60→84 · F1+F2+F3+F9 60→91 · +small-family F4·F6 = F1+F2+F3+F4+F6+F9 60→93. F10(케토코나졸 0275)은 route/availability needs_review → 통합 0."
   },
   "dedup": {
    "vs_live": {
     "F1": [],
     "F2": [],
     "F3": [],
-    "F9": []
+    "F9": [],
+    "F4": [],
+    "F6": [],
+    "F10": []
    },
    "cross_family": {
     "F1∩F2": [],
     "F1∩F3": [],
     "F1∩F9": [],
+    "F1∩F4": [],
+    "F1∩F6": [],
+    "F1∩F10": [],
     "F2∩F3": [],
     "F2∩F9": [],
-    "F3∩F9": []
+    "F2∩F4": [],
+    "F2∩F6": [],
+    "F2∩F10": [],
+    "F3∩F9": [],
+    "F3∩F4": [],
+    "F3∩F6": [],
+    "F3∩F10": [],
+    "F9∩F4": [],
+    "F9∩F6": [],
+    "F9∩F10": [],
+    "F4∩F6": [],
+    "F4∩F10": [],
+    "F6∩F10": []
    }
   },
   "dedup_clean": true,
@@ -196,26 +280,28 @@
     "F1",
     "F2",
     "F3",
-    "F9"
+    "F9",
+    "F4",
+    "F6"
    ],
-   "combined_count": 91,
+   "combined_count": 93,
    "sim_passed": true,
    "sim_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================"
   },
   "reviewer_note_gate": {
-   "delegation": "글로벌 도구는 live write 안 함 — live 통합은 per-family integrator(F1/F2/F3/F9) 의 --pm-approved --reviewer-note(각 family 게이트) 로만. 글로벌 노트는 family 선택·순서·pending 확인용.",
-   "requires": "승인 토큰 · 통합 family 전건 명시 · per-family reviewer-note 위임 명시 · F4/F6/F10 family 재검증 선행 확인 · family/계열 일반화·clinical=true 금지."
+   "delegation": "글로벌 도구는 live write 안 함 — live 통합은 per-family integrator(F1/F2/F3/F9) + small-family bundle(F4/F6/F10) 의 --pm-approved --reviewer-note(각 게이트) 로만. 글로벌 노트는 family 선택·순서·needs_review backlog 확인용.",
+   "requires": "승인 토큰 · 통합 family 전건 명시 · per-family reviewer-note 위임 명시 · needs_review backlog(F3 0148/0149·F9 0245·F10 0275) 제외 인지 · family/계열 일반화·clinical=true 금지."
   },
   "factory_v1_5_recommendation": {
    "run_now": false,
-   "reason": "신규 harvest/family 확장은 (a) 통합 가능 31건(F1·F2·F3·F9)의 reviewer note·live PR 미완, (b) F4/F6/F10 family 재검증 미수행(품질 게이트 미통과), (c) F3 needs_review 2·F9 needs_review 1 등 기존 backlog 정리 우선. 신규 후보 추가는 backlog 부풀림·중복 위험.",
+   "reason": "신규 harvest/family 확장은 (a) 통합 가능 33건(F1·F2·F3·F9·F4·F6)의 reviewer note·live PR 미완(packaging 조건은 충족 — remaining unpackaged 0이나 live PR 병목), (b) needs_review backlog 4건(F3 0148/0149·F9 0245·F10 0275) 미정리. 신규 후보 추가는 backlog 부풀림·중복 위험.",
+   "packaging_precondition_status": "충족(remaining unpackaged 0 — reviewer-ready 37 = integrable 33 + needs_review 4 전부 패키징/triage 완료)",
    "preconditions_to_run": [
-    "F1/F2/F3/F9 reviewer note 확보 + live PR(60→91 경로)",
-    "F4/F6/F10 family 재검증 + per-family integrator",
-    "F3 needs_review 2·F9 needs_review 1 재검색/정리",
+    "F1/F2/F3/F9/F4/F6 reviewer note 확보 + live PR(60→93 경로)",
+    "needs_review backlog 4건 재검색/정리(F3 에티드론산 parse·F9 카르바마제핀×엽산·F10 케토코나졸 route)",
     "factory dedup 키(ingredient,counterpart/category) 표준화"
    ],
-   "recommended_timing": "위 4 선행조건 중 최소 reviewer note 트랙(F1/F2/F3/F9 live) 가동 후."
+   "recommended_timing": "위 선행조건 중 최소 reviewer note 트랙(per-family/small-family live PR) 가동 후."
   },
   "note": "본 산출물은 계획/드라이런이며 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 통합은 per-family integrator + 별도 PM + clinical reviewer note + 별도 PR."
  },
@@ -911,6 +997,51 @@
      "type": "허가사항",
      "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198000160",
      "pointer": "식약처 nedrug getItemDetail / 프리미돈 / itemSeq 198000160 / 주의사항 / '근골격계 : 연용시 구루병, 골연화증, 치조골형성부전이 나타날 수 있으므로 이상(ALP, 혈청칼슘, 무기질저하 등)이 나타나면 감량 또는 비타민 D를 투여하는 등 적절한 처치를 한다.' / 확인일 2026-06-16"
+    }
+   }
+  },
+  {
+   "family": "F4",
+   "candidate_id": "RF-F4-0173",
+   "projected_live_relation": {
+    "id": 93,
+    "ingredient": "레보티록신",
+    "nutrient": "알루미늄 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요.",
+    "management_ko": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197400278",
+     "pointer": "식약처 nedrug getItemDetail / 레보티록신 / itemSeq 197400278 / 병용투여 / '콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "family": "F6",
+   "candidate_id": "RF-F6-0201",
+   "projected_live_relation": {
+    "id": 94,
+    "ingredient": "에스오메프라졸",
+    "nutrient": "비타민B12",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "에스오메프라졸을(를) 장기간 복용하는 경우 비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다.",
+    "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201308928",
+     "pointer": "식약처 nedrug getItemDetail / 에스오메프라졸 / itemSeq 201308928 / 병용투여 / '⑥ 에스오메프라졸은 저위산증 또는 무위산증으로 인한 비타민 B12(시아노코발라민)의 흡수를 감소시킬 수 있으므로, 장기간 치료에서 비타민 B12 흡수를 감소시키는 위험 인자 또는 체내 저장이 감소된 환자는 충분한 주의가 요구된다.' / 확인일 2026-06-16"
     }
    }
   }

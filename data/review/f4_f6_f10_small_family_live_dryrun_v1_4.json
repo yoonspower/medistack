@@ -1,0 +1,341 @@
+{
+ "meta": {
+  "name": "f4_f6_f10_small_family_live_dryrun_v1_4",
+  "status": "DRY-RUN — NOT LIVE / do_not_implement_yet=true / live_integration_forbidden=true",
+  "purpose": "small-family 통합 예상 산출물(드라이런). 실제 export/full index/aliases/src 무수정. validate_f4_f6_f10_small_family_dryrun_v1_4.py 가 안전·계약 검증.",
+  "requested_scope": "integrable",
+  "baseline_relations": 60,
+  "baseline_max_id": 61,
+  "expected_relation_count_before": 60,
+  "expected_relation_count_after": 62,
+  "expected_relation_count_after_integrable": 62,
+  "expected_ids": [
+   62,
+   63
+  ],
+  "included_candidate_ids": [
+   "RF-F4-0173",
+   "RF-F6-0201"
+  ],
+  "all_reviewer_ready_ids": [
+   "RF-F4-0173",
+   "RF-F6-0201",
+   "RF-F10-0275"
+  ],
+  "integrable_ids": [
+   "RF-F4-0173",
+   "RF-F6-0201"
+  ],
+  "survives_ids": [],
+  "copy_change_ids": [
+   "RF-F4-0173",
+   "RF-F6-0201"
+  ],
+  "needs_review_ids": [
+   "RF-F10-0275"
+  ],
+  "scope_scenarios": {
+   "recommended": "integrable 2(F4 1 + F6 1) 한 번에(60→62) 또는 family별(F4 60→61·F6 60→61). F10(케토코나졸 0275)은 route/availability mismatch → needs_review, reviewer 확정 전까지 통합 불가.",
+   "integrable": {
+    "count": 2,
+    "expected_count": 62,
+    "expected_ids": [
+     62,
+     63
+    ],
+    "candidate_ids": [
+     "RF-F4-0173",
+     "RF-F6-0201"
+    ]
+   },
+   "all_reviewer_ready": {
+    "count": 3,
+    "expected_count": 63,
+    "expected_ids": [
+     62,
+     63,
+     64
+    ],
+    "candidate_ids": [
+     "RF-F4-0173",
+     "RF-F6-0201",
+     "RF-F10-0275"
+    ]
+   },
+   "family_F4": {
+    "count": 1,
+    "expected_count": 61,
+    "expected_ids": [
+     62
+    ],
+    "candidate_ids": [
+     "RF-F4-0173"
+    ]
+   },
+   "family_F6": {
+    "count": 1,
+    "expected_count": 61,
+    "expected_ids": [
+     62
+    ],
+    "candidate_ids": [
+     "RF-F6-0201"
+    ]
+   },
+   "family_F10": {
+    "count": 0,
+    "candidate_ids": [
+     "RF-F10-0275"
+    ],
+    "note": "0275 needs_review(route/availability·국내 외용 전용·수출용 source) → 통합 0(STOP)."
+   },
+   "conditional_if_0275_resolved": {
+    "candidate_ids": [
+     "RF-F10-0275"
+    ],
+    "expected_count_added": 1,
+    "expected_count_after_with_integrable": 63,
+    "note": "reviewer 가 국내 oral 케토코나졸 확인 또는 formulation-scoping 결정하면 0275 통합 가능 → integrable 2 + 1 = 3 → 60→63. 현재는 needs_review(통합 대상 아님)."
+   },
+   "scenario_on_f1f2f3f9_true_base": {
+    "baseline": 91,
+    "expected_after_integrable": 93,
+    "expected_after_conditional_full": 94,
+    "note": "F1 18+F2 5+F3 1+F9 7 모두 live(60→91)면 small-family integrable 2 는 91→93(conditional 0275 포함 91→94). runtime max+1 자동 조정."
+   },
+   "base_count_override": null,
+   "id_rule": "id 는 runtime max+1. 단독/순차 통합 시 그 시점 max+1 부터. F1/F2/F3/F9 먼저면 자동 조정."
+  },
+  "reverify_counts": {
+   "survives": 0,
+   "survives_with_copy_change": 2,
+   "needs_review": 1,
+   "hold": 0,
+   "reject": 0
+  },
+  "live_write_performed": false,
+  "live_promotion": 0,
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "data_url": "v0.2 (불변)",
+  "export_sha_before": "62df92844faf1bcc47e0e6ace1b0cd1307222b0461a6b819122b6ffab5030144",
+  "export_sha_after_same": true,
+  "reviewer_note_required": true,
+  "reviewer_note_interlock": {
+   "required": true,
+   "approval_tokens": [
+    "approved",
+    "승인"
+   ],
+   "candidate_ids_all_of_scope": true,
+   "scope_decision_required": true,
+   "grouping_decision_required": true,
+   "antacid_category_decision": "al_mg_antacid(F4 레보티록신·알루미늄 함유 제산제·Al-only display)",
+   "nutrient_target_decision": "비타민B12(F6 에스오메프라졸·depletion/monitoring·약물 category 없음)",
+   "mechanism_action_decision_required": true,
+   "aluminum_only_ack_required": "RF-F4-0173 aluminum-only(Mg 미명시) copy_change 인지",
+   "needs_review_ack_required": "RF-F10-0275(케토코나졸) needs_review(route/availability·외용 전용·수출용) 인지",
+   "verified_reference_consent_required": true,
+   "rejects": "SAMPLE/placeholder/빈 노트 · 토큰/candidate_id(scope 전건)/scope/grouping/category/영양소/mechanism/Al-only ack/0275 ack/verified_reference 누락 · clinical_reviewed=true·제품추천·B12 보충 권유·검사/처방 지시·소아/골·아졸 계열·외용→경구 일반화 허용",
+   "template": "docs/MediStack_reviewer_package_f4_f6_f10_small_family_v1_4.md §reviewer-note"
+  },
+  "guard_checks": {
+   "guard_projected_violations": [],
+   "all_product_link_false": true,
+   "all_potassium_card_false": true,
+   "all_requires_clinical_review_false": true,
+   "no_reviewed_by": true,
+   "no_draft_only_leak": true,
+   "all_source_itemseq": true,
+   "ids_disjoint_from_live": true,
+   "mechanism_in_allowed": true,
+   "action_in_allowed": true,
+   "antacid_only_al_mg": true,
+   "b12_no_category": true,
+   "no_needs_review_integrated": true,
+   "no_dosing_detail_in_display": true,
+   "no_pediatric_bone_in_display": true,
+   "f4_no_magnesium_assertion": true
+  },
+  "duplicate_summary": {
+   "exact_dup_with_live": [],
+   "note": "레보티록신×제산제·에스오메프라졸×B12 는 live 60 에 미존재 → exact dup 0. al_mg_antacid 렌더는 id61(이트라코나졸) 선례·B12 depletion 은 id12/id13 선례."
+  },
+  "conflict_summary": {
+   "live_60": "exact dup 0(레보티록신/에스오메프라졸 신규 pair). al_mg_antacid=id61·B12 depletion=id12/13 렌더 선례.",
+   "f1_quinolone_18": "퀴놀론×광물/제산제 — 성분 다름·충돌 0.",
+   "f2_tetracycline_5": "사이클린×광물/제산제 — 성분 다름·충돌 0.",
+   "f3_bisphosphonate_1": "비스포×Al/Mg제산제 — 성분 다름·충돌 0.",
+   "f9_chronic_depletion_7": "만성복용약×엽산/비타민D — 성분/영양소 다름·충돌 0(에스오메프라졸×B12 는 별개 pair).",
+   "ketoconazole_needs_review": "0275(케토코나졸×제산제)은 route/availability mismatch → 통합 대상 아님(needs_review). live 선례 id61(이트라코나졸)과 동일 mechanism 이나 케토코나졸은 국내 외용 전용.",
+   "f10_hold_reject_context": "0276(포사코나졸) hold(H2-blocker 주어 불일치·al_mg_antacid 매핑 불가) · 0277(이트라코나졸) reject(=live id61 중복). 둘 다 reviewer-ready 3 밖.",
+   "full_factory_integrator_dedup": "차후 factory 일괄 integrator 는 (ingredient, counterpart/category) 키로 본 통합분 skip."
+  },
+  "full_index_alias_impact": {
+   "full_index_counts_current": {
+    "total": 17580,
+    "relation_card": 1168,
+    "name_only": 16412
+   },
+   "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+   "per_ingredient": {
+    "레보티록신": {
+     "index_items": 17,
+     "covered_by_relation": 17,
+     "name_only": 0,
+     "in_aliases": true,
+     "formulations": {
+      "oral": 17
+     },
+     "oral_present": true,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 0
+    },
+    "에스오메프라졸": {
+     "index_items": 0,
+     "covered_by_relation": 0,
+     "name_only": 0,
+     "in_aliases": true,
+     "formulations": {},
+     "oral_present": false,
+     "integrated_in_this_scope": true,
+     "latent_flip_if_alias_enriched": 0
+    },
+    "케토코나졸": {
+     "index_items": 10,
+     "covered_by_relation": 0,
+     "name_only": 10,
+     "in_aliases": false,
+     "formulations": {
+      "topical": 10
+     },
+     "oral_present": false,
+     "integrated_in_this_scope": false,
+     "latent_flip_if_alias_enriched": 0
+    }
+   },
+   "integrated_ingredients_this_scope": [
+    "레보티록신",
+    "에스오메프라졸"
+   ],
+   "automatic_flip_from_relation_integration": 0,
+   "relation_card_flip_required": 0,
+   "relation_card_after": 1168,
+   "name_only_after": 16412,
+   "index_change_required": false,
+   "alias_change_required": false,
+   "latent_flip_if_alias_enriched_this_scope": 0,
+   "latent_flip_if_alias_enriched_all_integrable": 0,
+   "interpretation": "레보티록신(relation_card 17·이미 Fe/Ca relation 보유)·에스오메프라졸(색인 0·복합제 내에만)·케토코나졸(외용 10·경구 0). full index/aliases 는 export relations 와 decoupled(pool=aliases.verified_item_seqs) → relation-only 통합 자동 flip 0·relation_card 1168/name_only 16412 불변. 케토코나졸은 needs_review 라 미통합 + 외용 전용이라 경구 흡수 relation alias-enrich 대상 아님(latent 0)."
+  },
+  "v0_2_validator_evidence": {
+   "sim_all_passed": true,
+   "sim_all_tail": "================================================================\n\n모든 검증 통과.\n\nRESULT: PASS  (16/16 checks passed)\n================================================================",
+   "interpretation": "absorption/separation·al_mg_antacid(id61 동형) + depletion/monitoring·B12(id12/13 동형) 현행 v0.2 validator PASS → 선행조건 0."
+  },
+  "render_safety_summary": "통합 가능 2건 = al_mg_antacid 흡수 카드(id61 경로) + B12 depletion 카드(id12/13 경로). src 변경 불필요. F4 display Mg 비단정·0275 의 2시간/콜라 dosing display 비노출.",
+  "live_integration_prerequisites": [],
+  "validator_result_summary": "sim 전체 v0.2 PASS=True (선행조건 0)",
+  "note": "본 산출물은 드라이런 예상치일 뿐 source_confirmed 최종확정·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다. live 승격은 --pm-approved + --reviewer-note + 별도 PM + clinical reviewer."
+ },
+ "projected_entries": [
+  {
+   "candidate_id": "RF-F4-0173",
+   "family": "F4",
+   "projected_id": 62,
+   "counterpart_type": "drug",
+   "counterpart": "알루미늄 함유 제산제(약물)",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "mechanism": "absorption",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "display_reframe",
+    "reason": "라벨('씬지로이드정')은 '알루미늄 함유 제산제'만 명시(Mg 미명시) → al_mg_antacid category/display 의 '마그네슘' 단정은 source 보다 강함. counterpart/display 를 '알루미늄 함유 제산제'로 좁히고 Mg 비단정 + '효과 감소' → '흡수 지연/감소'(라벨 '흡수가 지연 또는 감소' 충실)로 reframe. category bucket(al_mg_antacid)은 id61 선례대로 유지하되 reviewer 가 Al-only display vs bucket 재사용 결정(live id61 도 수산화알루미늄→Al/Mg 일반화·동일 latent).",
+    "fields": {
+     "counterpart": {
+      "original": "Al/Mg 함유 제산제(약물)",
+      "cleaned": "알루미늄 함유 제산제(약물)"
+     },
+     "display_copy": {
+      "original": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+      "cleaned": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요."
+     },
+     "management_copy": {
+      "original": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+      "cleaned": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요."
+     }
+    }
+   },
+   "projected_live_relation": {
+    "id": 62,
+    "ingredient": "레보티록신",
+    "nutrient": "알루미늄 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요.",
+    "management_ko": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197400278",
+     "pointer": "식약처 nedrug getItemDetail / 레보티록신 / itemSeq 197400278 / 병용투여 / '콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F6-0201",
+   "family": "F6",
+   "projected_id": 63,
+   "counterpart_type": "nutrient",
+   "counterpart": "비타민B12",
+   "counterpart_category": null,
+   "recommended_action": "monitoring",
+   "mechanism": "depletion",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "display_reframe",
+    "reason": "에스오메프라졸=오메프라졸(id13 live)의 S-거울상 → PPI×B12 5건 + 메트포르민(id12) live 계열 합류. display 를 draft('수치 변화와 관련된 문구') → live PPI×B12 표준 템플릿('비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다')로 reframe(톤 정합·장기복용+상태확인 조건 보존·측정치 단정 회피). 소스는 복합제(낙소졸정=나프록센+에스오메프라졸·quote 가 에스오메프라졸 명시) → reviewer 가 단일성분 source 확인 권장.",
+    "fields": {
+     "display_copy": {
+      "original": "이 약을 장기간 복용할 때 비타민B12 수치 변화와 관련된 허가사항 문구가 있습니다. 증상이나 수치가 걱정되면 약사 또는 의사와 상담하세요.",
+      "cleaned": "에스오메프라졸을(를) 장기간 복용하는 경우 비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다."
+     },
+     "management_copy": {
+      "original": "정기적인 확인이 필요할 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+      "cleaned": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다."
+     }
+    }
+   },
+   "projected_live_relation": {
+    "id": 63,
+    "ingredient": "에스오메프라졸",
+    "nutrient": "비타민B12",
+    "mechanism": "depletion",
+    "recommended_action": "monitoring",
+    "evidence_level": "moderate",
+    "display_text_ko": "에스오메프라졸을(를) 장기간 복용하는 경우 비타민 B12 상태에 영향이 있을 수 있다는 보고가 있어, 상태 확인이 필요할 수 있습니다.",
+    "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201308928",
+     "pointer": "식약처 nedrug getItemDetail / 에스오메프라졸 / itemSeq 201308928 / 병용투여 / '⑥ 에스오메프라졸은 저위산증 또는 무위산증으로 인한 비타민 B12(시아노코발라민)의 흡수를 감소시킬 수 있으므로, 장기간 치료에서 비타민 B12 흡수를 감소시키는 위험 인자 또는 체내 저장이 감소된 환자는 충분한 주의가 요구된다.' / 확인일 2026-06-16"
+    }
+   }
+  }
+ ]
+}
