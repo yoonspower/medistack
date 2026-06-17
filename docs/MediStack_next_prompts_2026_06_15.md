@@ -4,6 +4,8 @@
 
 이 문서는 다음 두 작업의 **실행 프롬프트 초안**이다. 둘 다 **별도 PM 승인 + clinical reviewer 가 전제**이며, 이번 라운드에서 실행하지 않는다. 현재 라이브 상태(2026-06-15): main HEAD = clinical reviewer 핸드오프 준비 커밋, relations 60(AT-ITZ id61 live), AT-FEX 미통합, 칼륨 PM-ready 6건 미승격(3건 통합 드라이런 완료), published/clinical_reviewed=false, DATA_URL v0.2, 제품/제휴 UI 0.
 
+> **갱신(2026-06-17, F3 비스포스포네이트 + 글로벌 reviewer-ready 계획 라운드)**: factory reviewer-ready 37 중 **F3 비스포스포네이트 3건**을 family-specific 재검증(작업 C·14 렌즈·refute-by-default) → **survives 1 · needs_review 2 · copy_change 0**. 🔑 **헤드라인 발견 2건**: ①**에티드론산 0148/0149 강등** — 인용 "칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제"는 문법상 양이온이 **제산제에 결속**(제산제 함유 성분)이라 standalone 칼슘/철분 **보충제** 근거 취약(L3 fail) + 병용금기 **목록 fragment**라 흡수기전 동사 없음(L5 fail) → needs_review. live 알렌/리세/이반×칼슘 선례는 **타 약물 라벨** 근거라 적용 시 **계열 일반화(금지)**. ②**이반드론산 0147**(통합 가능 1건)은 live 에 ×칼슘(id41)/철분(id51)/마그네슘(id52) 이미 존재 → Al/Mg 제산제(약물·al_mg_antacid·id61 선례) 추가는 exact dup 0이나 정보가치 vs 중복 reviewer 판단. **F3 통합 가능 = 1건(0147)·60→61**. index: 이반드론산 covered(자동 flip 0·현 scope latent 0·relation_card 1168/name_only 16412 불변), 에티드론산 조건부 latent 1. 신규: `scripts/integrate_f3_bisphosphonate_batch_v1_4.py`(dry-run·`--scope survives/antacid1`·needs_review STOP·`--pm-approved --reviewer-note` 전제) → `data/review/f3_bisphosphonate_{inventory,live_dryrun,index_impact}_v1_4.json` · `validate_f3_bisphosphonate_dryrun_v1_4.py`(결함주입 12·needs_review 통합 차단) · `test_f3_bisphosphonate_reviewer_note_gate_v1_4.py`(temp write 60→61·needs_review block·idempotency·live sha 불변) · `smoke_f3_bisphosphonate_dryrun_v1_4.py`(1 카드) · docs `MediStack_f3_bisphosphonate_{inventory,grouping_strategy,index_impact}_v1_4.md`·`reviewer_package_f3_bisphosphonate_v1_4.md`. **+글로벌 reviewer-ready 37 계획**: `scripts/integrate_reviewer_ready_global_batch_v1_4.py`(no-live-write planner·`--families`) + `validate_global_reviewer_ready_dryrun_v1_4.py` → `data/review/reviewer_ready_global_plan_v1_4.json` · doc `MediStack_reviewer_ready_global_plan_v1_4.md`. **family map**: F1 18✅/F2 5✅/F3 3→1✅/F4 1⏳/F6 1⏳/F9 8⏳/F10 1⏳ = **통합 가능 24 · pending 11**(F4/F6/F9/F10 family 재검증 선행). **조합 시나리오**(disjoint·dedup 0): F1 60→78·F2 60→65·F3 60→61·F1+F2 60→83·F1+F3 60→79·F2+F3 60→66·**F1+F2+F3 60→84**(combined v0.2 sim PASS). **Factory v1.5 = 보류 권장**(통합 가능 24 reviewer note·live PR 미완 + pending family 재검증 미수행 + backlog 미정리). 프롬프트 23(F2)·**26~28** 신설(F3 live·글로벌 wave·F4/F6/F9/F10 family 재검증). ↓이전:
+>
 > **갱신(2026-06-17, F2 테트라사이클린 reviewer-gated 통합 준비 라운드)**: factory reviewer-ready 37 중 **F2 테트라사이클린 5건**(survives 5/5)을 reviewer-gated subset 으로 분리해 통합 준비 완료(live 0). split = nutrient 2(테트라사이클린×철분·아연) + al_mg_antacid 3(독시·미노·테트라사이클린 × Al/Mg 제산제). **작업 C family 재검증**(12+3 렌즈·refute-by-default): **survives 5 · copy_change 0 · 강등 0**. 🔑 family 차이: ①원문 '철ㆍ아연'이라 **철분→토큰 '철' 매핑**(F1 은 '철분' 리터럴). ②**독시/미노사이클린은 live 에 ×칼슘/철분/마그네슘/아연(영양소) 이미 존재** → Al/Mg 제산제(약물) relation 추가는 별도 counterpart(al_mg_antacid·id61 선례)로 **exact dup 0**이나 "정보 가치 vs 중복"은 **headline reviewer 결정**(gate 강제). ③**테트라사이클린 1건 index name_only 존재** → relation-only 통합 **자동 flip 0**(pool=aliases 와 decoupled·relation_card 1168/name_only 16412 불변), alias 등록 시에만 latent flip 1(1169/16411·별도 작업). **선행조건 0**(양 렌더 경로 live 검증: 독시/미노×광물·id61). 신규: `scripts/integrate_f2_tetracycline_batch_v1_4.py`(dry-run·`--scope all5/nutrient2/antacid3/top2/top3`·`--pm-approved --reviewer-note` 전제) → `data/review/f2_tetracycline_{inventory,live_dryrun,index_impact}_v1_4.json`(60→65·id 62~66·sha 불변·F1 후 78→83) · `test_f2_tetracycline_reviewer_note_gate_v1_4.py`(temp write all5/nutrient2/antacid3·idempotency·live sha 불변) · `validate_f2_tetracycline_dryrun_v1_4.py`(결함주입 12·재실행 reverify) · `smoke_f2_tetracycline_dryrun_v1_4.py`(5 카드) · docs `MediStack_f2_tetracycline_inventory_v1_4.md`·`_grouping_strategy_v1_4.md`·`reviewer_package_f2_tetracycline_v1_4.md`·`_index_impact_v1_4.md`. 권고 grouping = **all5 once(60→65)** 또는 overlap 격리 시 **by-counterpart 2-wave**(nutrient2 60→62 → antacid3 62→65). 프롬프트 20 완료·**23~25** 신설(F2 live 통합·F1+F2 antibiotic-mineral wave·F3 비스포스포네이트 package). ↓이전:
 >
 > **갱신(2026-06-16, F1 퀴놀론 reviewer-gated 통합 준비 라운드)**: factory reviewer-ready 37 중 **F1 플루오로퀴놀론 18건**(survives 18/18)을 reviewer-gated subset 으로 분리해 통합 준비 완료(live 0). **작업 C family 재검증**: 17 survives + **1 copy_change**(RF-F1-0020 오플록사신 끝 stray '1' 트림=verbatim 부분문자열) · 강등 0. **선행조건 0**(al_mg_antacid=id61 선례·일반 영양소=live FQ×광물 둘 다 현행 v0.2+src 지원) · **index/alias 무변경**(레보/오플 covered·신규 6 성분 sample 부재 → relation_card 1168/name_only 16412 불변). 신규: `scripts/integrate_f1_quinolone_batch_v1_4.py`(dry-run·`--scope all18/nutrient10/antacid8`·`--pm-approved --reviewer-note` 전제) → `data/review/f1_quinolone_{inventory,live_dryrun,index_impact}_v1_4.json`(60→78·id 62~79·sha 불변) · `test_f1_quinolone_reviewer_note_gate_v1_4.py`(temp write all18/nutrient10/antacid8·idempotency·live sha 불변) · `validate_f1_quinolone_dryrun_v1_4.py`(결함주입 12) · `smoke_f1_quinolone_dryrun_v1_4.py`(18 카드) · docs `MediStack_f1_quinolone_inventory_v1_4.md`·`_grouping_strategy_v1_4.md`·`reviewer_package_f1_quinolone_v1_4.md`·`_index_impact_v1_4.md`. 권고 grouping = **by-counterpart 2-wave**(nutrient10 60→70 → antacid8 70→78). 아래 **프롬프트 17~19** 신설. ↓이전:
@@ -350,10 +352,30 @@ factory 43 draft → 적대검증(refute-by-default) → **reviewer-ready 37**(s
 >
 > **금지**: 프롬프트 18·23 과 동일. 두 family 의 reviewer note 를 교차/혼용 금지(각자 scope 전건).
 
-## 프롬프트 25 — F3 비스포스포네이트 3건 reviewer package (draft-only · 승격 아님)
+## 프롬프트 25 — F3 비스포스포네이트 3건 reviewer package (draft-only · 승격 아님) → **실행 완료(2026-06-17)**
 
-> **작업**: factory reviewer-ready F3 3건(비스포스포네이트 family·survives 3/3)을 F1/F2 패턴으로 reviewer package + dry-run integrator + gate/validator/smoke + inventory 작성(통합 0). dedup: live 리세드론산/알렌드론산/이반드론산 ×광물 존재 여부 선검사 → 신규 성분/counterpart 만 projected. al_mg_antacid·일반 영양소 분기·index/alias decoupling 동일 점검.
+> **작업**: factory reviewer-ready F3 3건(비스포스포네이트 family)을 F1/F2 패턴으로 reviewer package + dry-run integrator + gate/validator/smoke + inventory 작성(통합 0). dedup: live 리세드론산/알렌드론산/이반드론산 ×광물 존재 여부 선검사 → 신규 성분/counterpart 만 projected.
 >
-> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화.
+> **결과**: family 재검증 **survives 1 · needs_review 2**(에티드론산 0148/0149 standalone parse 취약·계열 일반화 금지). 통합 가능 1(이반드론산×al_mg_antacid·60→61). 산출물 전부 생성·전수 검증 PASS. **금지 준수**: 통합·published/clinical=true·제품 UI·계열 일반화 0.
 
-> 기존 트랙 병행 유지: 페니실라민(14·15)·theme map(10~13·16·11)·칼륨(2)·AT-FEX(1)·F1(17~19)·F2(20b·23) — 전부 reviewer note 전제.
+## 프롬프트 26 — F3 이반드론산(0147) live 통합 (reviewer note 실물 전제)
+
+> **선행**: ①clinical reviewer note(`docs/MediStack_reviewer_package_f3_bisphosphonate_v1_4.md §7`) — **이반드론산 nutrient-overlap 판단**(기존 ×칼슘/철분/마그네슘 vs Al/Mg제산제 정보가치) 포함 · ②국내 품목(itemSeq 201207007) 매칭 확정.
+>
+> **작업**: `python3 scripts/integrate_f3_bisphosphonate_batch_v1_4.py --pm-approved --reviewer-note <노트> --scope survives` → relations 60→61(id runtime max+1·al_mg_antacid). relation-count 하드코딩 validator 60→61 갱신 + F3 integration validator + v0.2(16/16) + 전수 smoke/guard/deploy 게이트 + live 200 + git clean.
+>
+> **금지**: 에티드론산 0148/0149(needs_review) 동시 통합·계열 일반화·published/clinical=true·제품 UI.
+
+## 프롬프트 27 — 글로벌 antibiotic/bisphosphonate-mineral wave (F1+F2+F3, reviewer note 전제)
+
+> **작업**: reviewer note 확보 후 통합 가능 24건(F1 18·F2 5·F3 1)을 per-family integrator 로 순차/wave 통합. 계획 = `docs/MediStack_reviewer_ready_global_plan_v1_4.md`(조합 60→84·dedup 0·combined v0.2 PASS). 글로벌 도구는 planning 전용(live write 안 함) — 각 family integrator 의 reviewer-note 게이트로만 기록. nutrient wave(F1 10+F2 2=12) / antacid wave(F1 8+F2 3+F3 1=12) 분할 가능.
+>
+> **금지**: pending family(F4/F6/F9/F10) 동시 통합·글로벌 도구 직접 live write·계열 일반화.
+
+## 프롬프트 28 — F4/F6/F9/F10 family 재검증 + per-family integrator (draft-only · 승격 아님)
+
+> **작업**: pending 11건(F4 thyroid 1·F6 acid-reducer 1·F9 chronic-depletion 8·F10 azole 1)을 F1/F2/F3 패턴의 family-specific 재검증(refute-by-default) + per-family integrator/gate/validator/smoke 로 처리. F9 needs_review 4·F3 needs_review 2(에티드론산 parse) 재검색 병행. **family 재검증 전 통합 절대 금지**(품질 게이트).
+>
+> **금지**: 통합·published/clinical=true·제품 UI·계열 일반화·factory v1.5 신규 harvest(보류 권장).
+
+> 기존 트랙 병행 유지: 페니실라민(14·15)·theme map(10~13·16·11)·칼륨(2)·AT-FEX(1)·F1(17~19)·F2(20b·23)·F3(26)·글로벌(27)·pending family(28) — 전부 reviewer note 전제.

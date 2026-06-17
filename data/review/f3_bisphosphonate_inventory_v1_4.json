@@ -1,0 +1,227 @@
+{
+ "meta": {
+  "name": "f3_bisphosphonate_inventory_v1_4",
+  "status": "DRAFT-ONLY — NOT LIVE / live_integration_forbidden=true / 적대검증 reviewer-ready 3 + F3 family 재검증",
+  "purpose": "F3 비스포스포네이트 reviewer-ready 3건 감사 + 작업 C family-specific 재검증(14 렌즈·refute-by-default). reviewer package/integrator 의 단일 소스.",
+  "family": "F3 Bisphosphonate × mineral / Al·Mg 함유 제산제(absorption/separation)",
+  "audited": 4,
+  "reviewer_ready_adversarial": 3,
+  "reverify_counts": {
+   "survives": 1,
+   "survives_with_copy_change": 0,
+   "needs_review": 2,
+   "hold": 0,
+   "reject": 0
+  },
+  "survives_count": 1,
+  "survives_ids": [
+   "RF-F3-0147"
+  ],
+  "needs_review_ids": [
+   "RF-F3-0148",
+   "RF-F3-0149"
+  ],
+  "counterpart_split_reviewer_ready": {
+   "nutrient": 2,
+   "al_mg_antacid": 1
+  },
+  "ingredients_reviewer_ready": [
+   "에티드론산",
+   "이반드론산"
+  ],
+  "ingredients_integrable": [
+   "이반드론산"
+  ],
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "live_integration_forbidden": true,
+  "do_not_implement_yet": true,
+  "confirmed_at": "2026-06-17",
+  "headline_finding_1_etidronate_parse": "에티드론산 0148/0149: 소스 quote 의 양이온 목록이 '…고농도로 함유된 제산제'에 결속(제산제 함유 성분) → standalone 칼슘/철분 보충제 근거 취약. 별도 standalone 항목은 '미네랄 첨가 비타민제'(종합비타민)뿐. live(타 약물 라벨) 선례 적용은 계열 일반화(금지) → needs_review(reviewer 가 에티드론산 라벨 parse 확정 요).",
+  "headline_finding_2_ibandronate_overlap": "이반드론산 0147: live 에 ×칼슘(id41)/철분(id51)/마그네슘(id52) 이미 존재 → Al/Mg 제산제(약물) relation 추가가 정보 가치 vs 중복인지 reviewer 판단(id61·F2 선례). exact dup 아님.",
+  "live_bisphosphonate_context": {
+   "리세드론산": [
+    "마그네슘",
+    "철분",
+    "칼슘"
+   ],
+   "알렌드론산": [
+    "칼슘"
+   ],
+   "이반드론산": [
+    "마그네슘",
+    "철분",
+    "칼슘"
+   ]
+  },
+  "note": "survives = 자동 적대검증 + F3 family 재검증 통과를 의미하며 임상 검수 완료·식약처 승인·법적 문제 없음 을 의미하지 않는다. live 승격은 별도 PM + clinical reviewer note + 별도 PR."
+ },
+ "candidates": [
+  {
+   "candidate_id": "RF-F3-0148",
+   "relation": "에티드론산 × 칼슘",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "칼슘",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198802519",
+   "source_product": null,
+   "source_section": "병용금기",
+   "source_quote": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "known_safe",
+   "display_copy": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_copy": "칼슘과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_standalone_nutrient_support": "fail:칼슘 양이온이 '…함유된 제산제'에 결속(제산제 함유 성분) — standalone 보충제 근거 없음. 별도 standalone 항목은 '미네랄 첨가 비타민제'(종합비타민)뿐 → 계열 일반화 금지·reviewer parse 확정 요",
+     "L4_antacid_vs_mg_nutrient": "pass",
+     "L5_direction": "fail:방향 불명",
+     "L6_no_pediatric_bone": "pass",
+     "L7_quote_boundary": "copy_change:heading fragment trimmed",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass"
+    },
+    "verdict": "needs_review",
+    "flags": [
+     "copy_change"
+    ],
+    "reviewer_notes": [
+     "needs_review(작업 C 강등). 에티드론산 라벨 quote 의 '칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제'는 문법상 양이온이 제산제 함유 성분(제산제 결속)을 의미 → standalone 칼슘 보충제 근거 취약. 별도 standalone 항목은 '미네랄 첨가 비타민제'(종합비타민)뿐. live(타 약물 라벨) 선례 적용은 계열 일반화(금지). reviewer 가 에티드론산 라벨 전문에서 standalone 칼슘 근거를 확정해야 통합 가능(현재 needs_review)."
+    ]
+   },
+   "copy_change": {
+    "field": "source_quote",
+    "original_full": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제 ○ 파제트병",
+    "cleaned": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제",
+    "reason": "원문 끝 '○ 파제트병'(파제트병=적응증 항목 머리) 섹션 헤딩 fragment 제거(cleaned 는 original_full 의 verbatim 부분문자열). ⚠️ 별개로 standalone 칼슘 nutrient parse 취약(L3) → needs_review."
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F3-0149",
+   "relation": "에티드론산 × 철분",
+   "drug_ingredient": "에티드론산",
+   "counterpart": "철분",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "itemSeq": "198802519",
+   "source_product": null,
+   "source_section": "병용금기",
+   "source_quote": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "known_safe",
+   "display_copy": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_copy": "철분과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_standalone_nutrient_support": "fail:철분 양이온이 '…함유된 제산제'에 결속(제산제 함유 성분) — standalone 보충제 근거 없음. 별도 standalone 항목은 '미네랄 첨가 비타민제'(종합비타민)뿐 → 계열 일반화 금지·reviewer parse 확정 요",
+     "L4_antacid_vs_mg_nutrient": "pass",
+     "L5_direction": "fail:방향 불명",
+     "L6_no_pediatric_bone": "pass",
+     "L7_quote_boundary": "copy_change:heading fragment trimmed",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass"
+    },
+    "verdict": "needs_review",
+    "flags": [
+     "copy_change"
+    ],
+    "reviewer_notes": [
+     "needs_review(작업 C 강등). 에티드론산 라벨 quote 의 '칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제'는 문법상 양이온이 제산제 함유 성분(제산제 결속)을 의미 → standalone 철분 보충제 근거 취약. 별도 standalone 항목은 '미네랄 첨가 비타민제'(종합비타민)뿐. live(타 약물 라벨) 선례 적용은 계열 일반화(금지). reviewer 가 에티드론산 라벨 전문에서 standalone 철분 근거를 확정해야 통합 가능(현재 needs_review)."
+    ]
+   },
+   "copy_change": {
+    "field": "source_quote",
+    "original_full": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제 ○ 파제트병",
+    "cleaned": "미네랄이 첨가된 비타민제나 칼슘, 아연, 철분, 마그네슘 또는 알루미늄이 고농도로 함유된 제산제",
+    "reason": "원문 끝 '○ 파제트병' 섹션 헤딩 fragment 제거(verbatim 부분문자열). ⚠️ 별개로 standalone 철분 nutrient parse 취약(L3) → needs_review."
+   },
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  },
+  {
+   "candidate_id": "RF-F3-0147",
+   "relation": "이반드론산 × Al/Mg 함유 제산제(약물)",
+   "drug_ingredient": "이반드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "itemSeq": "201207007",
+   "source_product": null,
+   "source_section": "상호작용",
+   "source_quote": "칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할 수 있다.",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "risk_level": "known_safe",
+   "display_copy": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_copy": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "adversarial_verdict": "survives",
+   "reverify": {
+    "lens_results": {
+     "L1_source_fidelity": "pass",
+     "L2_direct_cooccurrence": "pass",
+     "L3_standalone_nutrient_support": "n/a:약물 counterpart",
+     "L4_antacid_vs_mg_nutrient": "pass",
+     "L5_direction": "pass",
+     "L6_no_pediatric_bone": "pass",
+     "L7_quote_boundary": "pass",
+     "L8_no_directive": "pass",
+     "L9_product_supplement": "pass",
+     "L10_no_live_dup": "pass",
+     "L11_no_other_family_overlap": "pass",
+     "L12_forbidden_phrase": "pass",
+     "L13_consult_tone": "pass",
+     "L14_negation_anticoag": "pass"
+    },
+    "verdict": "survives",
+    "flags": [],
+    "reviewer_notes": [
+     "이반드론산×Al/Mg제산제: al_mg_antacid(id61 선례)·이반드론산 신규 counterpart. live 에 이반드론산 ×칼슘(id41)/철분(id51)/마그네슘(id52) 이미 존재 → Al/Mg 제산제(약물·al_mg_antacid) relation 추가가 정보 가치(제산제 제품 맥락) vs 중복인지 reviewer 판단(id61·F2 독시/미노 선례). 카드 렌더는 약물 counterpart kicker 로 영양소와 구분.",
+     "이반드론산은 신규 성분 아님(live ×칼슘/철분/마그네슘) — F3 통합 가능분은 본 1건뿐."
+    ]
+   },
+   "copy_change": null,
+   "live_integration_forbidden": true,
+   "published": false,
+   "clinical_reviewed": false,
+   "reviewed_by": ""
+  }
+ ]
+}

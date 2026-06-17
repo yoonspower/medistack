@@ -1,0 +1,46 @@
+{
+ "meta": {
+  "name": "f3_bisphosphonate_index_impact_v1_4",
+  "status": "ANALYSIS — read-only / no index/alias write",
+  "purpose": "F3 통합 시 full index/relation_card/name_only/aliases 영향 분석.",
+  "confirmed_at": "2026-06-17"
+ },
+ "impact": {
+  "full_index_counts_current": {
+   "total": 17580,
+   "relation_card": 1168,
+   "name_only": 16412
+  },
+  "index_pool_source": "data/medistack_v0.3_aliases.json · verified_item_seqs/product_aliases (export relations 와 decoupled)",
+  "per_ingredient": {
+   "에티드론산": {
+    "index_items": 1,
+    "covered_by_relation": 0,
+    "name_only": 1,
+    "in_aliases": false,
+    "integrated_in_this_scope": false,
+    "latent_flip_if_alias_enriched": 1
+   },
+   "이반드론산": {
+    "index_items": 73,
+    "covered_by_relation": 73,
+    "name_only": 0,
+    "in_aliases": true,
+    "integrated_in_this_scope": true,
+    "latent_flip_if_alias_enriched": 0
+   }
+  },
+  "integrated_ingredients_this_scope": [
+   "이반드론산"
+  ],
+  "automatic_flip_from_relation_integration": 0,
+  "relation_card_flip_required": 0,
+  "relation_card_after": 1168,
+  "name_only_after": 16412,
+  "index_change_required": false,
+  "alias_change_required": false,
+  "latent_flip_if_alias_enriched_this_scope": 0,
+  "latent_flip_if_etidronate_resolved_and_enriched": 1,
+  "interpretation": "이반드론산(통합 가능분 0147)은 이미 covered_by_relation(73 relation_card·verified_item_seqs 등록·in_aliases) → relation 추가해도 index 영향 0(latent 0). 에티드론산(0148/0149)은 index sample 1건 name_only(in_aliases=false)지만 본 scope 에서 needs_review 라 통합 대상 아님 → 현 통합분 latent flip 0. reviewer 가 에티드론산 parse 확정 후 0148/0149 통합 + 에티드론산을 verified_item_seqs 등록(별도 alias 작업)하면 1건 flip(1169/16411·조건부). full index/aliases 는 export relations 와 decoupled(런타임 재생성·fail-soft) → relation-only 통합은 자동 flip 0·relation_card 1168/name_only 16412 불변. 통합 차단 아님."
+ }
+}

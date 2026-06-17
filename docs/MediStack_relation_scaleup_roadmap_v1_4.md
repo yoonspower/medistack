@@ -4,6 +4,8 @@
 > 정본 데이터: `data/review/relation_factory_*_v1_4.*` · draft `data/drafts/relation_factory_draft_batch_v1_4.json`.
 >
 > **F1 퀴놀론 18건 통합 준비(2026-06-16, live 0):** 첫 reviewer-gated 통합 후보 = **F1 18건**(60→78). by-counterpart 2-wave 권고(nutrient10 60→70 → antacid8 70→78). 선행조건 0·index/alias 무변경. `scripts/integrate_f1_quinolone_batch_v1_4.py` + docs `MediStack_f1_quinolone_*_v1_4.md`. 1,000 경로의 첫 가시적 진척.
+> **F3 비스포스포네이트 + 글로벌 reviewer-ready 계획(2026-06-17, live 0):** F3 3건 family 재검증 → **survives 1·needs_review 2**(에티드론산 0148/0149 인용 양이온이 제산제에 결속·계열 일반화 금지 → 강등). 통합 가능 = 이반드론산×al_mg_antacid 1건(60→61·overlap reviewer 판단). 글로벌 family map: F1 18✅/F2 5✅/F3 1✅/F4 1⏳/F6 1⏳/F9 8⏳/F10 1⏳ = **통합 가능 24·pending 11**. 조합(disjoint): F1+F2+F3 **60→84**(combined v0.2 PASS). Factory v1.5 = **보류 권장**. `scripts/integrate_f3_bisphosphonate_batch_v1_4.py`·`integrate_reviewer_ready_global_batch_v1_4.py`(no-live-write planner) + docs `MediStack_f3_bisphosphonate_*_v1_4.md`·`MediStack_reviewer_ready_global_plan_v1_4.md`. ↓이전:
+>
 > **F2 테트라사이클린 5건 통합 준비(2026-06-17, live 0):** 두 번째 후보 = **F2 5건**(survives 5/5·60→65, F1 후 78→83). nutrient 2(테트라×철분·아연)+al_mg_antacid 3(독시·미노·테트라×제산제). 선행조건 0·index 자동 flip 0(테트라 latent 1·alias decoupled). all5 once 또는 by-counterpart 2-wave(60→62→65). F1+F2 antibiotic-mineral wave 가능. `scripts/integrate_f2_tetracycline_batch_v1_4.py` + docs `MediStack_f2_tetracycline_*_v1_4.md`.
 
 ## 1. 현재 위치

@@ -5,6 +5,8 @@
 > 정본 데이터: `data/drafts/relation_factory_reviewer_ready_batch_v1_4.json` · 판정 근거 `data/review/relation_factory_adversarial_verify_v1_4.json`.
 >
 > **F1 퀴놀론 18건 reviewer-gated 통합 준비(2026-06-16):** reviewer-ready 의 **F1 18건**(survives)을 전용 패키지 `docs/MediStack_reviewer_package_f1_quinolone_v1_4.md` 로 분리(작업 C family 재검증: 17 survives + 1 copy_change[RF-F1-0020]·강등 0). dry-run integrator `scripts/integrate_f1_quinolone_batch_v1_4.py`(`--scope all18/nutrient10/antacid8`)·선행조건 0·index/alias 무변경(60→78). F1 reviewer note 는 그 패키지 §6 사용. F2~F10 은 본 패키지 유지.
+> **F3 비스포스포네이트 + 글로벌 계획(2026-06-17):** reviewer-ready 의 **F3 3건** family 재검증 → survives 1·needs_review 2(에티드론산 0148/0149 standalone parse 취약·계열 일반화 금지). 전용 패키지 `docs/MediStack_reviewer_package_f3_bisphosphonate_v1_4.md`(통합 가능 = 이반드론산×al_mg_antacid 1건·60→61·overlap 판단). F3 reviewer note 는 그 패키지 §7. **글로벌 reviewer-ready 37 계획**(`docs/MediStack_reviewer_ready_global_plan_v1_4.md`): family map(통합 가능 24·pending 11)·조합 60→84·Factory v1.5 보류 권장. F4/F6/F9/F10 은 본 패키지 유지(family 재검증 선행). ↓이전:
+>
 > **F2 테트라사이클린 5건 reviewer-gated 통합 준비(2026-06-17):** reviewer-ready 의 **F2 5건**(survives 5/5)을 전용 패키지 `docs/MediStack_reviewer_package_f2_tetracycline_v1_4.md` 로 분리(작업 C family 재검증: survives 5·copy_change 0·강등 0). dry-run integrator `scripts/integrate_f2_tetracycline_batch_v1_4.py`(`--scope all5/nutrient2/antacid3/top2/top3`)·선행조건 0·index 자동 flip 0(60→65). headline = 독시/미노 nutrient-overlap reviewer 판단. F2 reviewer note 는 그 패키지 §6 사용. F3~F10 은 본 패키지 유지.
 >
 > ⚠️ **`reviewer_ready` 는 자동 검증 렌즈 통과를 의미하며 `clinical_reviewed=true`·식약처 승인·약사 검수 완료·법적 문제 없음 을 의미하지 않는다.**
