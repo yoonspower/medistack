@@ -1,0 +1,56 @@
+{
+ "name": "pr2_chronic8_pm_reviewed_note_v1_4",
+ "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)",
+ "reviewer": "PM-LIVEPR-002",
+ "reviewed_at": "2026-06-18",
+ "reviewed_time_kst": "2026-06-18 09:20 KST",
+ "base_commit": "1a354d0",
+ "target_branch": "live/pr2-chronic8",
+ "wave": "PR-2 chronic8",
+ "pm_approval_tokens": [
+  "PM_REVIEWED_VERIFIED_REFERENCE_ONLY",
+  "NO_CLINICAL_REVIEW_CLAIM",
+  "NO_PRODUCT_UI",
+  "NO_SCHEDULE",
+  "PR2_CHRONIC8_84_TO_92"
+ ],
+ "scope": {
+  "total": 8,
+  "f9": 7,
+  "f9_folate": 3,
+  "f9_vitd": 4,
+  "f6": 1,
+  "candidate_ids": [
+   "RF-F9-0269",
+   "RF-F9-0272",
+   "RF-F9-0242",
+   "RF-F9-0246",
+   "RF-F9-0252",
+   "RF-F9-0243",
+   "RF-F9-0255",
+   "RF-F6-0201"
+  ]
+ },
+ "relation_count": {"before": 84, "after": 92, "delta": 8, "new_ids": "86..93 (runtime max+1)"},
+ "copy_change": {
+  "principle": "수치 저하 단정 회피(원문이 직접 말하지 않으면) · 골질환 alarm 비노출 · 모니터링 톤 · 영양제 복용 권유 아님",
+  "f9_display_uniform_reframe": "7건 display '수치 변화/수치가 걱정되면' → '관련된 허가사항 주의 문구/증상이 걱정되면'",
+  "f9_management_uniform": "7건 management → '장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다'",
+  "f6_display": "live PPI×B12 표준 템플릿(상태 영향·상태 확인) 유지",
+  "record": "data/review/pr2_chronic8_display_copy_change_v1_4.json"
+ },
+ "protected_state": {
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "product_purchase_affiliate_ui": "none (추가 없음)",
+  "schedule": "inactive",
+  "rollback": "wave 단위 git revert 또는 pre-live tag reset 가능"
+ },
+ "exclusions": {
+  "needs_review": ["RF-F9-0245", "RF-F10-0275", "RF-F3-0148", "RF-F3-0149"],
+  "family_excluded_in_pr2": ["F1", "F2", "F3", "F4", "F10"],
+  "f3_f4_note": "PR-3 small2(92→94)에서 별도 처리",
+  "pr1_candidates": "이미 live (F1/F2/add-on) → 재추가/재통합 금지(중복 0)"
+ }
+}
