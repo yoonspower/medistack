@@ -1,0 +1,158 @@
+{
+ "meta": {
+  "name": "autofactory_v1_5_audit_cleanup_candidate_decisions",
+  "run_date": "2026-06-17",
+  "status": "NO-LIVE-WRITE · live integration 0 · reviewer note 전 live 금지"
+ },
+ "final_reviewer_ready": [
+  {
+   "id": "AFP-F1-시프로플록사신-al_mg_antacid",
+   "drug": "시프로플록사신",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_canon": "al_mg_antacid",
+   "family": "F1",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "source": {
+    "type": "허가사항",
+    "title": "시프로플록사신 (itemSeq 199400540)",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400540",
+    "pointer": "식약처 nedrug getItemDetail / 시프로플록사신 / itemSeq 199400540 / 상호작용 / '알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전 1 ～ 2시간 및 투여 후 4시간 이내에는 병용하지 않는 것이 바람직하다' / 확인일 2026-06-17",
+    "quote": "알루미늄 또는 마그네슘 함유 제산제와 같은 양이온 제제, 철분 함유 제제, 칼슘 함유 제제, 아연 또는 철분이 함유된 종합비타민제제, 포스페이트 결합제(예, 세벨라머, 탄산란탄), 수크랄페이트, 항레트로바이러스제, 디다노신과의 병용에 의해 이 약의 흡수가 저하되어 효과가 저하되는 경우가 있으므로 이 약 투여 전 1 ～ 2시간 및 투여 후 4시간 이내에는 병용하지 않는 것이 바람직하다",
+    "claim_scope": "label_interaction"
+   },
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "requires_clinical_review": false,
+   "independent_audit": "passed",
+   "audit_votes": "AUDIT_PASS 5/5 (4 AUDIT_PASS + 1 PASS_WITH_COPY_CHANGE → fuller quote 로 해소)",
+   "origin": "production",
+   "live_promotion_requires": [
+    "clinical_reviewer_note"
+   ]
+  }
+ ],
+ "held": [
+  {
+   "id": "노르플록사신×마그네슘",
+   "family": "F1",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "페플록사신×마그네슘",
+   "family": "F1",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "로메플록사신×마그네슘",
+   "family": "F1",
+   "decision": "HOLD",
+   "auditor_votes": "1/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "발로플록사신×마그네슘",
+   "family": "F1",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "자보플록사신×마그네슘",
+   "family": "F1",
+   "decision": "HOLD",
+   "auditor_votes": "1/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "토수플록사신×마그네슘",
+   "family": "F1",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "테트라사이클린×칼슘",
+   "family": "F2",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "테트라사이클린×마그네슘",
+   "family": "F2",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "알렌드론산×마그네슘",
+   "family": "F3",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "counterpart_not_standalone_supplement(F3_lesson)"
+  },
+  {
+   "id": "알렌드론산×Al/Mg제산제",
+   "family": "F3",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "no_absorption_mechanism_verb"
+  },
+  {
+   "id": "카르바마제핀×엽산",
+   "family": "F9",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "id": "발프로산×엽산",
+   "family": "F9",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "id": "페노바르비탈×엽산",
+   "family": "F9",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "id": "프리미돈×엽산",
+   "family": "F9",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "id": "옥스카르바제핀×엽산",
+   "family": "F9",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  },
+  {
+   "id": "라모트리진×엽산",
+   "family": "F9",
+   "decision": "HOLD",
+   "auditor_votes": "0/3",
+   "mechanical_reason": "pregnancy_context_not_drug_depletion(F9_lesson)"
+  }
+ ],
+ "scenario": {
+  "existing_prepared": 33,
+  "production_audited_ready": 1,
+  "cleanup_new_ready": 0,
+  "new_ready_total": 1,
+  "combined_future": "60→93→94 (existing 33 + audited production 1; reviewer note 후·live write 0)"
+ }
+}

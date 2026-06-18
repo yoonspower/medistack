@@ -1,0 +1,91 @@
+{
+ "name": "pr1_antibiotic24_pm_reviewed_note_v1_4",
+ "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)",
+ "reviewer": "PM-LIVEPR-001",
+ "reviewer_kind": "PM (별도 AI PM 세션)",
+ "review_date": "2026-06-18",
+ "review_datetime": "2026-06-18 07:38 KST",
+ "base_commit": "9267740",
+ "target_branch": "live/pr1-antibiotic24",
+ "wave": "antibiotic24",
+ "pm_approval_tokens": [
+  "PM_REVIEWED_VERIFIED_REFERENCE_ONLY",
+  "NO_CLINICAL_REVIEW_CLAIM",
+  "NO_PRODUCT_UI",
+  "NO_SCHEDULE",
+  "PR1_ANTIBIOTIC24_60_TO_84"
+ ],
+ "scope": {
+  "f1": 18,
+  "f2": 5,
+  "addon": 1,
+  "total": 24
+ },
+ "candidate_ids": [
+  "RF-F1-0021",
+  "RF-F1-0022",
+  "RF-F1-0024",
+  "RF-F1-0041",
+  "RF-F1-0042",
+  "RF-F1-0044",
+  "RF-F1-0066",
+  "RF-F1-0067",
+  "RF-F1-0026",
+  "RF-F1-0029",
+  "RF-F1-0025",
+  "RF-F1-0010",
+  "RF-F1-0035",
+  "RF-F1-0040",
+  "RF-F1-0020",
+  "RF-F1-0045",
+  "RF-F1-0070",
+  "RF-F1-0030",
+  "RF-F2-0105",
+  "RF-F2-0110",
+  "RF-F2-0111",
+  "RF-F2-0114",
+  "RF-F2-0115",
+  "AFP-F1-시프로플록사신-al_mg_antacid"
+ ],
+ "relation_delta": 24,
+ "before": 60,
+ "after": 84,
+ "needs_review_excluded": [
+  "RF-F3-0148",
+  "RF-F3-0149",
+  "RF-F9-0245",
+  "RF-F10-0275"
+ ],
+ "family_excluded": [
+  "F3",
+  "F9",
+  "F4",
+  "F6",
+  "F10"
+ ],
+ "source_fidelity": {
+  "official_ratio": "100% nedrug.mfds.go.kr",
+  "fuller_quote_applied": true,
+  "audit_cleanup_reflected": true,
+  "addon_audit": "AUDIT_PASS 5/5"
+ },
+ "protected_state": {
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "product_ui": false,
+  "schedule": "inactive",
+  "ceiling": "verified_reference"
+ },
+ "rollback": "wave 단위 git revert 또는 pre-live tag reset",
+ "clinical_review_claim": false,
+ "display_copy_change": {
+  "applied": true,
+  "total": 24,
+  "avoid": 1,
+  "fact": 23,
+  "rule": "display 는 라벨귀속 separation 안내 단정 없음; separation=management(hedged)/상담 위임",
+  "adversarial_verify": "3차 CLEAR_TO_APPLY (48 lenses, refutation 0)",
+  "record": "data/review/pr1_antibiotic24_display_copy_change_v1_4.json"
+ }
+}
