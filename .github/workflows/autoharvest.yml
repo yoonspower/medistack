@@ -1,0 +1,127 @@
+name: autoharvest-v1.7-online
+
+# MediStack AutoFactory v1.7 ONLINE harvest — PM review 산출물 전용(dry-run · no-live-write).
+#
+# ⚠️ 이 워크플로우는 live relation 을 만들지도 배포하지도 않는다.
+#    보호셋(v0.1/v0.2 export · full index · aliases · app.js · data.js · index.html · styles.css)을
+#    한 줄도 수정하지 않는다. 3중 방어:
+#      (1) orchestrator --no-live-write(기본 True) + --fail-on-protected-change(기본 True)
+#      (2) 실행 후 git-status 기반 보호경로 무수정 강제(이 job)
+#      (3) live export/full-index validator 재검증(deploy 게이트 동일 대상)
+#    reviewer-ready 후보는 data/review/ 패키지로만 산출 — live-promote step 없음.
+#    PM 이 산출물을 GitHub 에서 까서 source-fidelity 전수 적대검증 후 live-PR 갈 것만 선별.
+#
+# 트리거: 수동(workflow_dispatch) + 주 1회 schedule(KST 월 03:00 = UTC 일 18:00).
+#   schedule 은 default 브랜치(main)에 있을 때만 발동 — 머지 전까지(이 브랜치) 비활성.
+# 산출: 기본 = artifact 업로드(main 무오염). commit=true 옵트인(수동만) 시 전용 브랜치 + PR(자동 머지 금지).
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "dryrun 패키지를 전용 브랜치 + PR 로 push(자동 머지 안 함). 기본 false=artifact 만."
+        type: boolean
+        default: false
+  schedule:
+    # KST 월요일 03:00 = UTC 일요일 18:00. 주 1회 보수 시작(과다 실행·nedrug 부하 방지). 안정화 후 조정.
+    - cron: "0 18 * * 0"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: autoharvest-v17
+  cancel-in-progress: false
+
+jobs:
+  autoharvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      # ── 사전 게이트(네트워크 0 · fixture/캐시) : v1.7 머신 무결성 ──
+      - name: SDK / online client dry-run test (네트워크 0)
+        run: |
+          python3 medistack_sdk/test_nedrug_client_dryrun.py
+          python3 scripts/test_nedrug_online_client_v1_7.py
+
+      - name: GOLD self-check 3/3 (재현 실패 시 job FAIL)
+        run: python3 scripts/test_extract_gold_v1_7.py
+
+      - name: B1~B8 orchestrator guard test
+        run: python3 scripts/test_autofactory_orchestrator_guards_v1_7.py
+
+      - name: validate (dryrun 패키지 구조 · source-fidelity)
+        run: python3 scripts/validate_autofactory_orchestrator_v1_7.py
+
+      - name: smoke (렌더-safe · 출처분리)
+        run: python3 scripts/smoke_autofactory_orchestrator_v1_7.py
+
+      - name: 보호셋 sha256 스냅샷(before · 기존 no-live-write 가드)
+        run: python3 scripts/guard_no_live_write_v1_3.py
+
+      # ── ONLINE harvest (no-live-write · dry-run · protected-change FAIL · raw ≤ 300) ──
+      - name: v1.7 ONLINE harvest (dry-run · no-live-write · raw≤300)
+        run: |
+          python3 scripts/run_medistack_autofactory_orchestrator_v1_7.py \
+            --online --cap-raw 300 \
+            --no-live-write --dry-run \
+            --strict-source-fidelity --fail-on-protected-change
+
+      # ── 보호셋 불변 재검증(독립 · git 기반) ──
+      - name: no-live-write 검증(보호 경로 무수정 강제)
+        run: |
+          PROT="data/medistack_v0.1_beta_export.json data/medistack_v0.2_beta_export.json data/medistack_v0.3_aliases.json data/full_drug_name_index_sample_v1_0.json src/js/app.js src/js/data.js index.html src/css/styles.css"
+          CHANGED=$(git status --porcelain -- $PROT)
+          if [ -n "$CHANGED" ]; then
+            echo "STOP: 보호셋 수정 감지 — live-write 위반:"; echo "$CHANGED"; exit 1
+          fi
+          echo "보호셋 무수정 확인 OK (live export/index/alias/src 불변)"
+
+      - name: live export / full-index 재검증(deploy 게이트 동일 검증대상)
+        run: |
+          python3 scripts/validate_medistack_v0_2_export.py data/medistack_v0.2_beta_export.json
+          python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sample_v1_0.json
+
+      # ── 산출(기본 artifact · main 무오염) ──
+      - name: dryrun 패키지 artifact 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: autofactory-v1.7-dryrun-package
+          path: |
+            data/review/autofactory_v1_7_*.json
+            docs/MediStack_autofactory_v1_7_run_report.md
+
+      # ── 옵트인(수동 commit=true): 전용 브랜치 + PR(직접 main push 금지 · 자동 머지 금지) ──
+      - name: write-scope 최종 확인(data/review/ 밖 staged 차단)
+        if: ${{ inputs.commit }}
+        run: |
+          git add data/review/autofactory_v1_7_*.json
+          OUT_OF_SCOPE=$(git diff --cached --name-only | grep -v '^data/review/autofactory_v1_7_' || true)
+          if [ -n "$OUT_OF_SCOPE" ]; then
+            echo "STOP: data/review/ 밖 staged 변경 감지 — 커밋 중단:"; echo "$OUT_OF_SCOPE"; exit 1
+          fi
+
+      - name: 패키지 커밋 → 전용 브랜치 + PR(직접 main push 금지 · 자동 머지 금지)
+        if: ${{ inputs.commit }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "medistack-autofactory-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then echo "변경 없음 — 커밋 생략"; exit 0; fi
+          BR="agent/autofactory-auto-${{ github.run_id }}"
+          git checkout -b "$BR"
+          git commit -m "chore(autofactory): v1.7 dryrun package refresh [bot]
+
+          AutoFactory v1.7 online harvest 산출(dry-run · no-live-write). live relation/배포 0.
+          PM source-fidelity 적대검증 후 별도 live-PR 선별."
+          git push origin "$BR"
+          gh pr create --base "${{ github.ref_name }}" --head "$BR" \
+            --title "AutoFactory v1.7 dryrun package refresh [bot]" \
+            --body "v1.7 online harvest 자동 산출. **live 승격/배포 0**. data/review/ 만 변경. PM source-fidelity 검증용." \
+            || echo "(PR 생성 스킵 — 권한/중복)"
