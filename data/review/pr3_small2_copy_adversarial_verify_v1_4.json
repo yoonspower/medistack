@@ -1,0 +1,15 @@
+{
+ "meta": {
+  "name": "pr3_small2_copy_adversarial_verify_v1_4",
+  "wave": "small2",
+  "method": "독립 적대검증 workflow(refute-by-default · 2 카드 × 3 다렌즈[separation_overclaim/counterpart_fidelity/directive_product] = 6 verdicts)",
+  "scope": "PR-3 reframe 후 2건 display/management 를 source 인용(허가사항 verbatim)에 비추어 평가. 인라인 카피만 평가(파일 미열람).",
+  "verdict": "CLEAR_TO_APPLY",
+  "confirmed_major_cards": [],
+  "any_major_cards": [],
+  "minor_cards": [],
+  "total_verdicts": 6,
+  "hold_threshold": "카드당 3렌즈 중 2렌즈 이상 major 면 HOLD. 0 카드 → CLEAR."
+ },
+ "note": "0 violation. id94(이반드론산) FACT reframe 으로 라벨귀속 분리-안내 단정 제거됨(인용 흡수저하 FACT-only). id95(레보티록신) Al-only(Mg 미명시)+인용 '투여간격 주의' 근거로 복용 시점 분리 상담 유도 적합. PR-1/PR-2 의 source-fidelity 적대검증 규율 승계."
+}

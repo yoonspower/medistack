@@ -1,0 +1,44 @@
+{
+ "name": "pr3_small2_pm_reviewed_note_v1_4",
+ "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)",
+ "reviewer": "PM-LIVEPR-003",
+ "reviewed_at": "2026-06-18",
+ "reviewed_time_kst": "2026-06-18 10:00 KST",
+ "base_commit": "3200edc",
+ "target_branch": "live/pr3-small2",
+ "wave": "PR-3 small2",
+ "pm_approval_tokens": [
+  "PM_REVIEWED_VERIFIED_REFERENCE_ONLY",
+  "NO_CLINICAL_REVIEW_CLAIM",
+  "NO_PRODUCT_UI",
+  "NO_SCHEDULE",
+  "PR3_SMALL2_92_TO_94"
+ ],
+ "scope": {
+  "total": 2,
+  "f3": 1,
+  "f4": 1,
+  "candidate_ids": ["RF-F3-0147", "RF-F4-0173"],
+  "all_al_mg_antacid": true,
+  "mechanism_action": "absorption/separation"
+ },
+ "relation_count": {"before": 92, "after": 94, "delta": 2, "new_ids": "94..95 (runtime max+1)"},
+ "copy_change": {
+  "RF-F3-0147": "이반드론산 display FACT reframe — 인용 흡수저하 FACT-only(타이밍 미명시) → 라벨귀속 '분리하도록 안내' 단정 제거, '복용 시점에 대해 약사 또는 의사와 상담' 유도(PR-1 live al_mg_antacid 선례 동형)",
+  "RF-F4-0173": "레보티록신 Al-only(Mg 미명시) — counterpart='알루미늄 함유 제산제'·인용 '투여간격에 주의' 있어 복용 시점 분리 상담 유도 유지(F4 prep reframe)",
+  "record": "data/review/pr3_small2_display_copy_change_v1_4.json"
+ },
+ "protected_state": {
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "product_purchase_affiliate_ui": "none",
+  "schedule": "inactive",
+  "rollback": "wave 단위 git revert 또는 pre-live tag reset 가능"
+ },
+ "exclusions": {
+  "needs_review": ["RF-F3-0148", "RF-F3-0149", "RF-F9-0245", "RF-F10-0275"],
+  "family_excluded_in_pr3": ["F1", "F2", "F6", "F9", "F10"],
+  "pr1_pr2_candidates": "이미 live (PR-1 F1/F2/add-on · PR-2 F9/F6) → 재추가/재통합 금지(중복 0)"
+ }
+}

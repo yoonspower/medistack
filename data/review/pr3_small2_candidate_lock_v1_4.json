@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "name": "pr3_small2_candidate_lock_v1_4",
+  "status": "LIVE-PR CANDIDATE LOCK — authoritative source for PR-3 small2 (checker + integrator 공유)",
+  "wave": "small2",
+  "purpose": "PR-3 small2 live 통합 대상 2건 잠금(F3 이반드론산 + F4 레보티록신 × Al 제산제). 범위 외·needs_review·PR-1/PR-2 재추가 차단.",
+  "generated_from": {
+   "f3_package": "integrate_f3_bisphosphonate_batch_v1_4.build_subset (survives = RF-F3-0147)",
+   "f4_package": "integrate_f4_f6_f10_small_family_batch_v1_4.build_subset (family:F4 = RF-F4-0173)"
+  },
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)"
+ },
+ "total": 2,
+ "f3_existing": 1,
+ "f4_existing": 1,
+ "candidate_ids": [
+  "RF-F3-0147",
+  "RF-F4-0173"
+ ],
+ "baseline_relation_count": 92,
+ "baseline_max_id": 93,
+ "expected_relation_count_before": 92,
+ "expected_relation_count_after": 94,
+ "relation_delta": 2,
+ "expected_ids": [
+  94,
+  95
+ ],
+ "id_rule": "runtime max+1 (현 max 93 → 94..95·F3 → F4 순). 선행 통합(PR-1 60→84·PR-2 84→92) 반영 자동 조정.",
+ "live_exact_duplicate": 0,
+ "existing_prepared_duplicate": 0,
+ "internal_duplicate": 0,
+ "pr1_pr2_duplicate": 0,
+ "needs_review_exclusion": [
+  "RF-F3-0148",
+  "RF-F3-0149",
+  "RF-F9-0245",
+  "RF-F10-0275"
+ ],
+ "family_exclusion": [
+  "F1",
+  "F2",
+  "F6",
+  "F9",
+  "F10"
+ ],
+ "family_exclusion_note": "PR-3 는 F3(이반드론산×Al/Mg제산제) + F4(레보티록신×Al제산제)만. F1/F2 = PR-1 live · F6/F9 = PR-2 live(재추가 금지). F10(케토코나졸 0275) = route/availability needs_review. F3 0148/0149(에티드론산) = cation 결속 needs_review.",
+ "relation_card_name_only_auto_flip": 0,
+ "alias_enrichment": "separate task (통합 전제 아님)",
+ "copy_principle": "absorption/separation·al_mg_antacid(drug counterpart). display 는 라벨이 분리-안내를 제공하지 않으면 '분리하도록 안내' 단정 비노출(FACT-only는 복용 시점 상담 유도). 레보티록신은 라벨 Al-only(Mg 미명시) → counterpart 'Al 함유 제산제' 한정. separation 구체 안내는 management(hedged)·약사 상담. record: data/review/pr3_small2_display_copy_change_v1_4.json.",
+ "candidates": [
+  {
+   "candidate_id": "RF-F3-0147",
+   "family": "F3",
+   "drug_ingredient": "이반드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "itemSeq": "201207007",
+   "source_section": "상호작용",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "has_source": true,
+   "origin": "f3_bisphosphonate_v1_4",
+   "copy_change": "display FACT reframe(라벨귀속 '분리하도록 안내' 단정 제거 → 복용 시점 상담 유도·PR-1 live 선례 동형). quote=흡수저하 FACT-only(타이밍 미명시)."
+  },
+  {
+   "candidate_id": "RF-F4-0173",
+   "family": "F4",
+   "drug_ingredient": "레보티록신",
+   "counterpart": "알루미늄 함유 제산제(약물)",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "itemSeq": "197400278",
+   "source_section": "병용투여",
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify_verdict": "survives_with_copy_change",
+   "has_source": true,
+   "origin": "f4_f6_f10_small_family_v1_4 (family:F4 only)",
+   "copy_change": "F4 prep 단계 Al-only display_reframe(counterpart=알루미늄 함유 제산제·Mg 비단정). quote=흡수 지연/감소+투여간격 주의(타이밍 라벨 근거 있음) → '복용 시점 분리에 대해 확인' 유지."
+  }
+ ]
+}
