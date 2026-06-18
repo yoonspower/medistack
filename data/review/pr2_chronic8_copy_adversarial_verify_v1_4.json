@@ -1,0 +1,34 @@
+{
+ "meta": {
+  "name": "pr2_chronic8_copy_adversarial_verify_v1_4",
+  "wave": "chronic8",
+  "method": "독립 적대검증 workflow(refute-by-default · 8 카드 × 3 다렌즈[overclaim/alarm/directive] = 24 verdicts)",
+  "scope": "PR-2 reframe 후 8건 display/management 카피를 source 인용(허가사항 verbatim)에 비추어 평가. 인라인 카피만 평가(파일 미열람).",
+  "verdict": "CLEAR_TO_APPLY",
+  "confirmed_major_cards": [],
+  "any_major_cards": [],
+  "total_verdicts": 24,
+  "hold_threshold": "카드당 3렌즈 중 2렌즈 이상이 major 면 HOLD. 0 카드 → CLEAR."
+ },
+ "accepted_minors": [
+  {
+   "card_id": 90,
+   "pair": "페니토인 × 엽산",
+   "lens": "overclaim",
+   "severity": "minor",
+   "finding": "display 의 '장기간 복용할 때' 시점 한정이 해당 카드 source quote('기타 : ...혈청엽산치 저하가 나타날 수 있다(경구제에 한함.)')에 명시 없음. '경구제에 한함' 제한 미반영.",
+   "decision": "ACCEPT (수정 안 함)",
+   "rationale": "①'장기간 복용할 때'는 F9(만성복용 depletion) family 의 통일 카드 템플릿 frame 이며 라벨귀속 단정이 아님(관련 주의 문구가 '있습니다' 수준). ②카드 전체가 under-claim(혈청엽산치 '저하' 명시 source 보다 약하게 '관련 주의 문구'로 진술)이라 원문보다 강하지 않음(CLAUDE.md '원문보다 강하면 금지' 미위반). ③페니토인은 만성 항전간제로 장기복용 맥락이 임상 표준. ④단일 렌즈·minor. 7건 F9 통일 템플릿을 1건만 깨면 일관성 저하. formulation-scoping(경구 한정)은 harvester/factory follow-up 으로 이관."
+  },
+  {
+   "card_id": 93,
+   "pair": "에스오메프라졸 × 비타민B12",
+   "lens": "directive",
+   "severity": "minor",
+   "finding": "display '상태 확인이 필요할 수 있습니다' 가 monitoring tone 으로 살짝 기움(source verbatim='충분한 주의가 요구된다'). 누구의 판단으로 '필요'한지 display 에 미명시.",
+   "decision": "ACCEPT (수정 안 함)",
+   "rationale": "①이 문구는 **기존 live PPI×B12 표준 템플릿**(오메프라졸 id13 등 5건이 production 에서 동일 문구 사용)이며, 사용자 지시(F6 를 live PPI×B12 템플릿으로 정합)를 따른 결과. ②이중 헤지('필요할 수 있습니다')라 명령형 검사 지시 아님. ③management 가 '문의해볼 수 있습니다' 로 판단 주체(전문가 상담)를 보강. ④단일 렌즈·minor. id93 만 바꾸면 live PPI×B12 5건과 불일치 발생."
+  }
+ ],
+ "note": "CLEAR_TO_APPLY(major 0). 위 2건은 minor·단일 렌즈로 reviewer-accepted(수정 사유 기록). PR-1 의 source-fidelity 적대검증 규율 승계."
+}
