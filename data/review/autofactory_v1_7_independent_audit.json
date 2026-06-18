@@ -1,0 +1,119 @@
+{
+ "meta": {
+  "name": "autofactory_v1_7_independent_audit",
+  "run_date": "2026-06-18",
+  "method": "refute-by-default Workflow (Ultracode)",
+  "status": "CLEAR_TO_PACKAGE after fix"
+ },
+ "round1": {
+  "verdict": "HOLD",
+  "note": "source-fidelity-NEW refuted: alendronate counterpart overclaim (generic 제산제 → Al/Mg)",
+  "lens_verdicts": [
+   {
+    "lens": "source-fidelity-NEW",
+    "refuted": true,
+    "confidence": "high",
+    "findings": [
+     "H7-F3-001 (리세드론산, itemSeq 200713889): CLEAN on all 5 criteria. (a) source_quote is VERBATIM in detail_200713889.html at idx 296530; (b) enclosing <p class=\"title\"> is '6. 상호작용' (next title '7. 임부 및 수유부에 대한 투여') — a true INTERACTION section; (c) the quote is the COMPLETE content of its <p> (ends '...방해한다.</p>'), no mid-cut, no embedded newline, no glued label; (d) direction = '이 약의 흡수를 방해한다' = this drug's absorption lowered; (e) the sentence explicitly names BOTH '제산제' and '다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)' — Al AND Mg are literally in the source — so al_mg_antacid is fully justified.",
+     "H7-F3-002 (알렌드론산, itemSeq 199800180): criteria (a)-(d) pass but criterion (e) FAILS — this is the refutation. (a) quote VERBATIM at idx 370976; (b) section '5. 상호작용' (next '6. 임부...') OK; (c) quote ends '...알려져 있다.' = complete sentence (the 30-min separation guidance is the SEPARATE next sentence in the same <p>, not included, so no mid-cut); (d) '이 약의 흡수를 방해' = this drug lowered OK.",
+     "REFUTING DEFECT (H7-F3-002, criterion e — overclaim, 원문보다 강하면 금지): the source quote and the ENTIRE alendronate label say only generic '제산제'. Grepping the whole 418KB label: 알루미늄=0, 다가=0, 수산화=0, 수크랄=0; the ONLY 마그네슘 occurrence is '스테아르산마그네슘' (magnesium-stearate excipient in 첨가제), irrelevant to the antacid interaction. Yet the candidate sets counterpart='Al/Mg 함유 제산제(약물)' / counterpart_category='al_mg_antacid', and this Al/Mg-specific label is USER-FACING (render.js line 33/129 renders rel.nutrient in the list pair and detail <h2>, and display_text_ko/management_ko repeat 'Al/Mg 함유 제산제(약물)'). This narrows a generic 제산제 to an Al/Mg-specific subtype the label never names = shows something stronger/more specific than the 원문.",
+     "Precedent contrast confirms it's a defect, not a benign convention: every LIVE al_mg_antacid relation has source text that literally names Al/Mg — 이트라코나졸 (pointer cites '수산화알루미늄과 같은 위산중화제'), 레보플록사신 (pointer cites '알루미늄 또는 마그네슘 함유 제산제'). H7-F3-001 likewise names Al/Mg in-source. H7-F3-002 is the lone case where the Al/Mg label has NO source support.",
+     "The v1.7 fidelity audit (autofactory_v1_7_fidelity_audit.json /harvested_results[1]) marks H7-F3-002 verdict='reviewer_ready', audit_pass=true, false_auto_pass=false — but it only verified quote REPRODUCTION in section '5. 상호작용'; it never tested whether the al_mg_antacid counterpart narrowing is justified by the label, so this overclaim slipped through. H7-F3-002 should be demoted to needs_review (relabel counterpart to generic 제산제, or quarantine) before any reviewer-ready/live promotion."
+    ]
+   },
+   {
+    "lens": "source-fidelity-EXISTING",
+    "refuted": false,
+    "confidence": "high",
+    "findings": [
+     "(a) VERBATIM re-derivation CONFIRMED. Running scripts/extract_label_interaction_v1_7.py on the committed fixtures yields complete, untruncated label sentences. detail_201207007.html (이반드론산) -> '칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할 수 있다.' (direction=this_drug_lowered, action=separation). detail_197400278.html (레보티록신) -> '콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.' Both quotes are byte-present in the stripped fixture text (present=True).",
+     "(b) DEDUP CORRECT, NO DOUBLE-COUNTING. source_check.json lists new_confirmed=4 (리세드론산 200713889, 알렌드론산 199800180, 이반드론산 201207007, 레보티록신 197400278). The dryrun package correctly identifies 201207007 (H7-F3-003) and 197400278 (H7-F4-004) as 'harvested_cross_validated_existing' with note '기존 corpus reviewer-ready 와 동일 relation ... 중복 승급 제외' and EXCLUDES them from reviewer_ready_lock. reviewer_ready_lock contains only RF-F3-0147, RF-F4-0173 (existing_corpus) + H7-F3-001 (리세드론산), H7-F3-002 (알렌드론산) (harvested_new). Arithmetic: existing(2)+harvested_new(2)=reviewer_ready_total(4) MATCH. Neither cross-val item_seq (201207007/197400278) leaked into reviewer_ready_lock (lock item_seqs are null for existing-corpus, 200713889/199800180 for harvested). So the 2 re-derived dupes were NOT double-counted.",
+     "(c) Al-ONLY SCOPE CORRECT for RF-F4-0173. The 197400278 label sentence names ONLY '알루미늄 함유 제산제' (Al-only). Scan of stripped fixture: '마그네슘 함유 제산제'=0, '알루미늄 함유 제산제'=1. The single 마그네슘 token in the whole label is in 첨가제(excipient) '스테아르산마그네슘'(magnesium stearate) — unrelated to the interaction. RF-F4-0173 relation/counterpart/display/management/source_pointer all carry ZERO Mg references (counterpart='알루미늄 함유 제산제(약물)'). NOT over-expanded to Al/Mg.",
+     "CONTRAST CONFIRMS SCOPE IS PER-LABEL, not blanket: RF-F3-0147 (이반드론산) correctly uses 'Al/Mg 함유 제산제(약물)' because its label sentence explicitly enumerates 다가 양이온(알루미늄, 마그네슘, 철). So Al-only vs Al/Mg is assigned from each label's actual text, not mis-assigned.",
+     "MINOR (non-blocking): the harvested levothyroxine record (H7-F4-004) carries internal counterpart_category='al_mg_antacid' (a mechanism bucket from _CP_RULES where '제산제' maps to al_mg_antacid), but its reviewer-facing counterpart string, source_quote, and display_text_ko are all strictly Al-only with zero Mg leakage. Since this record is DEDUPED (never promoted), and the existing-corpus RF-F4-0173 that IS promoted is Al-only throughout, there is no fidelity exposure. The category bucket is internal and does not surface to the reviewer.",
+     "Guards corroborate: forbidden_phrase_hits=[], reviewer_ready_lock_copy_clean=true, false_auto_pass_zero=true, published/clinical_reviewed=false, reviewed_by absent, live_write_performed=false, protected_hash_unchanged=true. Dry-run discipline intact."
+    ]
+   },
+   {
+    "lens": "copy-fidelity",
+    "refuted": false,
+    "confidence": "high",
+    "findings": [
+     "copy_lint (scripts/fix_harvester_display_template_v1_6.py) on all 8 strings (display+management of all 4 items) = CLEAN; exhaustive token scan (forbidden_extra + overexpansion + numeric + lens-named phrases '분리하도록 안내'/'수치 변화'/'안전'/'반드시 복용'/'검사하세요'/'처방을 변경'/'모든 제산제'/'모든 미네랄') = 0 hits across all 8 strings.",
+     "3 of 4 items (RF-F3-0147, H7-F3-001, H7-F3-002) are BYTE-IDENTICAL to live id72 display+management AND to safe_app_copy('Al/Mg 함유 제산제(약물)','separation') output — confirmed via direct string equality.",
+     "RF-F4-0173 (레보티록신) is NOT byte-identical to id72 (origin=existing_corpus, copy_corrected=false, F4 family, '알루미늄 함유 제산제' counterpart, bespoke wording '복용 시점 분리에 대해 약사 또는 의사에게 확인하세요'). It was NOT in the audit's 28 copy_corrections — counted among the 5 reviewer_ready_clean.",
+     "RF-F4-0173's bespoke phrasing is fidelity-clean: it does NOT use the forbidden active label-attribution form '분리하도록 안내'; '확인하세요' is not a forbidden token (only '검사하세요'/'검사를 받으세요' are); separation IS source-grounded (label 197400278: '흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다'); and the '약사 또는 의사에게 확인하세요' pattern is already live in id61 (이트라코나졸 × Al/Mg, absorption/separation).",
+     "Not-stronger-than-label confirmed against committed fixtures: 리세드론산(200713889 '흡수를 방해한다'), 알렌드론산(199800180 '흡수를 방해...30분 간격'), 이반드론산(201207007), 레보티록신(197400278). All copy hedges with '수 있다'/'좋을 수 있습니다' — weaker than label.",
+     "No live write: live export still 92 relations (meta=92); no al_mg-antacid relation injected for any of the 4 candidate drugs (레보티록신 live ids only [10,11]). All 4 items: published=false, clinical_reviewed=false, reviewed_by='', product_link_allowed=false, live_integration_forbidden=true, do_not_implement_yet=true.",
+     "Project test suite scripts/test_harvester_copy_lint_v1_6.py = PASS 38/38, incl 'live 전체(92) copy_lint 위반 0' and fix_harvester self-check OK.",
+     "NOTE (non-blocking observation, not a violation): RF-F4-0173 was not normalized to the id72 template like the other three; it relies on the bespoke (but lint-clean, source-grounded, live-precedented) phrasing. A reviewer may prefer it normalized to the SEP_DISPLAY/SEP_MGMT template for consistency, but as-is it does not exceed the label."
+    ]
+   },
+   {
+    "lens": "funnel-honesty",
+    "refuted": false,
+    "confidence": "high",
+    "findings": [
+     "(a) PASS: All 4 raw candidates (H7-F3-001/002/003, H7-F4-004) have a REAL itemSeq, a non-null source_pointer, and a source_quote. I verified each quote is VERBATIM present in its committed fixture HTML (tests/fixtures/nedrug/detail_<seq>.html, tag/whitespace-normalized) -- QUOTE_FOUND=True for all 4. No source_pointer=null, no fabricated citations.",
+     "(b) PASS: absorption_findings log is internally consistent -- sum over the 12 attempt rows = 18, which equals dashboard funnel.absorption_findings = 18.",
+     "(c) PASS: PPI (F6: omeprazole/esomeprazole/lansoprazole/pantoprazole/rabeprazole) and diuretic (FD: furosemide/HCTZ) families WERE attempted -- all 7 appear in the attempts/harvest_attempts log with mech_hint='depletion' and findings counts, none promoted to candidates (candidate families are only F3/F4). I independently re-extracted the 6 cached PPI/diuretic labels: ZERO yielded absorption-directional al_mg_antacid candidates. They are honestly reported as out-of-scope for the absorption-directional extractor (bottleneck text says so explicitly), NOT silently dropped.",
+     "(d) PASS: dry-run math 92->96 = base 92 + 4 reviewer-ready. Base 92 independently confirmed against the live export data/medistack_v0.2_beta_export.json (relations count = 92, meta.relation_count = 92). base+rr = 96 = projected.",
+     "(e) PASS: reviewer-ready 4 = 2 existing (RF-F3-0147=ibandronate, RF-F4-0173=levothyroxine; trace to global_plan_v1_4 33-entry corpus with real itemSeqs 201207007/197400278) + 2 harvested-new (H7-F3-001 risedronate, H7-F3-002 alendronate). The 2 cross-validated-excluded (H7-F3-003 ibandronate, H7-F4-004 levothyroxine) are the SAME relations/ingredients as the 2 existing reviewer-ready, correctly excluded to avoid double-counting. Counts add up: 2+2=4 promoted, 2 excluded, 4 raw total.",
+     "REPRODUCIBILITY: Re-running scripts/run_medistack_autofactory_orchestrator_v1_7.py --online reproduces the committed artifacts EXACTLY from cache (network=0, cache=27): raw=4, absorption_findings=18, confirmed=4, audit_pass=37/37, false_auto_pass=0, reviewer-ready=4 (2 existing+2 new), 92->96, protected_hash_unchanged=True, forbidden_phrase_hits=[]. NOTE: running the script WITHOUT --online yields raw=1 / 92->95 because offline mode only sees the 2 committed fixtures, not the 26-entry online cache. This is the documented online-vs-cache distinction (orchestrator header: --online = real harvest, no-flag = cache/offline reproduction), NOT inflation. My initial offline run overwrote the artifacts; I restored them via --online and verified byte-equivalence of the key values.",
+     "No violation found: every count is honest, every citation is real and quote-verified, and the attempted PPI/diuretic families are transparently logged rather than hidden. Strict-source-fidelity holds for the 4 candidates."
+    ]
+   },
+   {
+    "lens": "guards-safety",
+    "refuted": false,
+    "confidence": "high",
+    "findings": [
+     "(a) PASS — `python3 scripts/run_medistack_autofactory_orchestrator_v1_7.py --allow-live-write` prints 'FAIL: --allow-live-write 는 이 도구에서 지원되지 않습니다 (no-live-write 강제).' and exits 1. The flag is wired as dest=no_live_write store_false (line 383) and rejected at lines 392-394 before any work.",
+     "(b) PASS — all 8 PROTECTED files byte-identical to git main (git diff --stat main returns empty for each): v0.1 export, v0.2 export, v0.3 aliases, full_drug_name_index_sample_v1_0.json, src/js/app.js, src/js/data.js, index.html, src/css/styles.css.",
+     "(c) PASS — every reviewer_ready_lock item (all 4: RF-F3-0147, RF-F4-0173, H7-F3-001, H7-F3-002) has live_integration_forbidden=true, published=false, clinical_reviewed=false, reviewed_by=\"\", product_link_allowed=false, requires_clinical_review=false. The orchestrator guard `all_new_candidate_safety_flags` (lines 363-366) enforces these across the whole lock list, not just per-item hardcode.",
+     "(d) PASS — full-text scan of the package found 0 hits for purchase/affiliate/buy_/add_to_cart/price/product_url/coupon/checkout/schedule fields. Guards report product_ui_zero=true and schedule_inactive=true.",
+     "(e) PASS — v0.2 export meta.relation_count still 92 (len(relations)=92); the export was NOT written. dry_run_projection shows base=92, projected=96, live_write=false. The committed package projects new items as not-live notes only.",
+     "B7/B8 CATCHES planted defects — confirmed two ways. Planted fabricated quote ('비타민C와 병용 시 흡수가 90% 증가...반드시 함께 복용') against real fixture detail_200713889.html returned verdict=audit_fail_quote_not_reproduced, audit_pass=False, false_auto_pass=TRUE. Planted copy-overreach ('반드시 4시간 이상 분리...동시 복용은 금기입니다') with a real reproduced quote returned verdict=audit_fail_copy, false_auto_pass=TRUE (copy_lint flagged '복용하세요'). Positive control with the genuine reproduced quote + clean copy returned reviewer_ready, false_auto_pass=FALSE — proving the audit discriminates rather than rubber-stamps.",
+     "Modified non-artifact files are benign and NOT protected: .gitignore adds data/harvest_cache_v1_7/ ignore line; medistack_sdk/nedrug_client.py adds a read-only get_detail_html() fetch helper. No live app-data write occurred — git status shows changes only under data/review/ (output artifacts), scripts/, tests/, plus those 2 helpers.",
+     "Strict source fidelity verified for harvested items: source quotes for H7-F3-001 (seq 200713889) and H7-F3-002 (seq 199800180) appear verbatim in the committed fixtures. Committed fidelity_audit: total_audited=37, audit_pass=37, false_auto_pass=0, batch_recheck_required=false. run_config confirms no_live_write=true, dry_run=true, strict_source_fidelity=true, fail_on_protected_change=true.",
+     "Normal dry-run (cache mode) exits 0 with live_write=False; protected_unchanged=True. Note: committed online-mode package has 4 reviewer-ready items while a cache-mode rerun yields 3 — expected, since fixtures harvest fewer items than the recorded online run; not a defect."
+    ]
+   }
+  ]
+ },
+ "round2_after_fix": {
+  "verdict": "CLEAR_TO_PACKAGE",
+  "lens_verdicts": [
+   {
+    "lens": "scope-fix",
+    "refuted": false,
+    "confidence": "high",
+    "findings": [
+     "REMEDIATED, not relabeled. (a) autofactory_v1_7_dryrun_package.json reviewer_ready_total=3, reviewer_ready_ids=[RF-F3-0147, RF-F4-0173, H7-F3-001] exactly; alendronate (itemSeq 199800180) is NOT in reviewer_ready_lock (verified: 199800180 absent from the lock JSON). Count math holds: base 92 + 3 not-live reviewer-ready = projected 95.",
+     "NOTE on candidate-id shorthand: in the corrected artifacts, candidate_id 'H7-F3-002' is reused for 이반드론산 cross-validation (itemSeq 201207007), NOT alendronate. Alendronate is keyed by raw_id 'H7-F3-알렌드론산-199800180'. The CONTEXT's label 'H7-F3-002 알렌드론산' reflects the prior (pre-fix) pass; it does not appear as 002 here. This is a labeling artifact, not a defect — alendronate is correctly quarantined under its raw_id.",
+     "(b) source_check.json prefiltered.needs_review contains exactly one entry: raw_id H7-F3-알렌드론산-199800180, reason='counterpart_scope_unsupported', detail notes the label names only generic 제산제 (no Al/Mg cation). Same entry mirrored in dryrun_package needs_review.harvest_needs_review.",
+     "(c) Fixture verified: detail_199800180.html antacid quote = '칼슘보충제나 제산제 및 일부 경구용 약물들은 이 약의 흡수를 방해...' — names ONLY generic 제산제. 알루미늄 count=0; the lone 마그네슘 hit is '스테아르산마그네슘' (excipient), unrelated to the interaction. By contrast detail_200713889.html (리세드론산, H7-F3-001) names BOTH 마그네슘 AND 알루미늄 in '다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)' — so its 'Al/Mg 함유 제산제(약물)' counterpart is justified.",
+     "(d) RF-F4-0173 레보티록신 stays Al-only ('알루미늄 함유 제산제(약물)'); its quote names 알루미늄 only — scope_justified=True and antacid_scope_from_quote returns ' 알루미늄 함유 제산제(약물)' exactly.",
+     "REFUTE ATTEMPT 1 (scope check on each promoted item): ran extract_label_interaction_v1_7.counterpart_scope_justified on all 3 reviewer-ready items vs their actual quotes — all True (이반드론산 Al/Mg OK, 레보티록신 Al OK, 리세드론산 Al/Mg OK). Alendronate's claimed Al/Mg returns False (antacid_scope_from_quote=None). No promoted item over-claims.",
+     "REFUTE ATTEMPT 2 (could the over-claim slip past harvest?): fed a synthetic alendronate candidate WITH the Al/Mg counterpart through audit_fidelity_v1_7.audit_harvested against the real cached HTML (199800180). Result: verdict='audit_fail_counterpart_overclaim', audit_pass=False, false_auto_pass=True. The independent audit backstop (lines 79-83) catches it even if harvest is bypassed. Two-layer defense confirmed: input gate (orchestrator stage1 lines 171-183 routes generic-제산제 to scope_needs_review) + audit re-extraction backstop.",
+     "REFUTE ATTEMPT 3 (surfaced anywhere?): grepped all 7 v1_7 artifacts for 199800180/알렌드론산/H7-F3-002. Alendronate appears only in needs_review/quarantine contexts and the dashboard harvest_attempts search log (drug=알렌드론산, item_seqs[0]=199800180) — never as a reviewer-ready or Al/Mg promotion. The dashboard 'reviewer_ready' co-occurrence is in an unrelated section.",
+     "Guards/regression clean: no_live_write=true, live_write_performed=false, false_auto_pass_zero=true, forbidden_phrase_hits=[], protected_hash_unchanged=true. Test suites pass: test_extract_gold_v1_7 (GOLD 3/3), test_autofactory_orchestrator_guards_v1_7 (explicit alendronate assertions: quote is complete sentence, no label-line glue, scope_justified True for Al/Mg vs Al+Mg quote), test_nedrug_online_client_v1_7 (offline network=0)."
+    ]
+   },
+   {
+    "lens": "audit-catches",
+    "refuted": false,
+    "confidence": "high",
+    "findings": [
+     "PLANTED OVERCLAIM CAUGHT: forced alendronate candidate {counterpart='Al/Mg 함유 제산제(약물)', item_seq=199800180, source_quote=real generic-제산제 sentence from detail_199800180.html} + its label HTML → audit_harvested() returned verdict=='audit_fail_counterpart_overclaim', audit_pass==False, false_auto_pass==True. Critically reproduced==True: the quote WAS verbatim-reproduced from cached HTML, so the catch is the independent counterpart-scope check (step 3b, counterpart_scope_justified), not a trivial quote-mismatch. This proves the audit layer catches the overclaim independently of the harvest gate.",
+     "REAL 리세드론산 PASSES: candidate (item_seq=200713889, Al/Mg-naming quote '...다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)...') → audit_pass==True, verdict=='reviewer_ready', false_auto_pass==False, reproduced_section='6. 상호작용'. Confirms no over-catch / false positive.",
+     "Scope check is load-bearing: alendronate fixture quote contains neither '알루미늄' nor '마그네슘' (both False), so counterpart_scope_justified('Al/Mg...', generic-quote)==False; risedronate quote names both cations → ==True. extract_interactions on detail_199800180.html yields exactly the generic-제산제 sentence (terms=['제산제','칼슘','칼슘보충제'], no Al/Mg).",
+     "FULL SUITE PASS (exit 0 all): validate_autofactory_orchestrator_v1_7.py PASS (reviewer-ready=3 ids=[RF-F3-0147, RF-F4-0173, H7-F3-001]; 알렌드론산→needs_review counterpart_scope_unsupported; false_auto_pass=0; audit_pass=36/36; dry-run 92→95). smoke_autofactory_orchestrator_v1_7.py PASS (includes B7 '일반 제산제→Al/Mg 강제→audit_fail_counterpart_overclaim'). test_autofactory_orchestrator_guards_v1_7.py PASS (B7 overclaim + counterpart_scope_justified True/False cases). test_extract_gold_v1_7.py PASS (GOLD 3/3). test_nedrug_online_client_v1_7.py PASS (offline).",
+     "Corrected state matches expected: reviewer-ready=3 = [RF-F3-0147 이반드론산, RF-F4-0173 레보티록신, H7-F3-001 리세드론산]; 알렌드론산 (199800180) in harvest_needs_review with reason counterpart_scope_unsupported; dry-run projection base=92 → projected=95.",
+     "PROTECTED files byte-identical to git main (3200edc): all 8 (v0.1/v0.2/v0.3-aliases/full-index JSON + app.js, data.js, index.html, styles.css) match by git blob hash. v0.2 export still meta.relation_count=92 and len(relations)=92; validate_medistack_v0_2_export.py PASS 16/16. The 95 is a dry-run projection only — live_write_performed=False, no-live-write held.",
+     "No-live-write & guards intact: dryrun_package guards protected_hash_unchanged=True, live_write_performed=False, false_auto_pass_zero=True, forbidden_phrase_hits=[]. DATA_URL still './data/medistack_v0.2_beta_export.json'. Only tracked diffs are .gitignore, medistack_sdk/nedrug_client.py, and two v1.6 scripts — none protected; main untouched."
+    ]
+   }
+  ]
+ }
+}

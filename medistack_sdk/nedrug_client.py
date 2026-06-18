@@ -164,6 +164,11 @@ class NedrugClient:
         d = self.get_item_detail(item_seq)
         return d.label_text, d.url
 
+    def get_detail_html(self, item_seq):
+        """itemSeq → getItemDetail **raw HTML**(태그 보존). 섹션 분할 추출기(extract_label_interaction)용.
+        302 redirect(getItemDetailCache) 는 opener 기본 HTTPRedirectHandler 가 따라간다. 실패 시 ''."""
+        return self._get(DETAIL_URL.format(item_seq), kind="detail", key=str(item_seq))
+
     # ----------------- 표준화(normalize) -----------------
     def _parse_search(self, html_text):
         rows = []

@@ -7,3 +7,4 @@ data/harvest_queue/_sdk/
 
 # theme map expansion 편입(프롬프트 9) 런타임 산출물 — review summary(data/review/)만 커밋
 data/harvest_queue/theme_map_*
+data/harvest_cache_v1_7/

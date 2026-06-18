@@ -1,0 +1,499 @@
+{
+ "meta": {
+  "name": "autofactory_v1_7_dashboard",
+  "run_date": "2026-06-18",
+  "mode": "online",
+  "status": "NO-LIVE-WRITE · online harvest · 신규 source 확정 from 라벨 원문 · B1~B8 통과",
+  "no_live_write": true,
+  "live_write_performed": false,
+  "base_relation_count": 92
+ },
+ "preflight": {
+  "live_relation_count": 92,
+  "live_max_id": 93,
+  "data_url": "./data/medistack_v0.2_beta_export.json",
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by_present": false,
+  "schedule_active": false,
+  "product_ui": 0,
+  "existing_confirmed_corpus": 33
+ },
+ "harvest_attempts": [
+  {
+   "family": "F3",
+   "drug": "알렌드론산",
+   "search_rows": 15,
+   "single_oral_sampled": 2,
+   "item_seqs": [
+    "199800180",
+    "200000363"
+   ],
+   "absorption_findings": 2,
+   "mech_hint": "absorption"
+  },
+  {
+   "family": "F3",
+   "drug": "리세드론산",
+   "search_rows": 15,
+   "single_oral_sampled": 2,
+   "item_seqs": [
+    "200713889",
+    "200801987"
+   ],
+   "absorption_findings": 2,
+   "mech_hint": "absorption"
+  },
+  {
+   "family": "F3",
+   "drug": "미노드론산",
+   "search_rows": 0,
+   "single_oral_sampled": 0,
+   "item_seqs": [],
+   "absorption_findings": 0,
+   "mech_hint": "absorption"
+  },
+  {
+   "family": "F3",
+   "drug": "이반드론산",
+   "search_rows": 15,
+   "single_oral_sampled": 2,
+   "item_seqs": [
+    "201207007",
+    "201306253"
+   ],
+   "absorption_findings": 4,
+   "mech_hint": "absorption"
+  },
+  {
+   "family": "F4",
+   "drug": "레보티록신",
+   "search_rows": 15,
+   "single_oral_sampled": 2,
+   "item_seqs": [
+    "197400278",
+    "200301116"
+   ],
+   "absorption_findings": 2,
+   "mech_hint": "absorption"
+  },
+  {
+   "family": "F6",
+   "drug": "오메프라졸",
+   "search_rows": 15,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "201308928"
+   ],
+   "absorption_findings": 1,
+   "mech_hint": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "에스오메프라졸",
+   "search_rows": 15,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "201308928"
+   ],
+   "absorption_findings": 1,
+   "mech_hint": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "란소프라졸",
+   "search_rows": 15,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "200404034"
+   ],
+   "absorption_findings": 2,
+   "mech_hint": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "판토프라졸",
+   "search_rows": 15,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "200702870"
+   ],
+   "absorption_findings": 1,
+   "mech_hint": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "라베프라졸",
+   "search_rows": 15,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "200607667"
+   ],
+   "absorption_findings": 1,
+   "mech_hint": "depletion"
+  },
+  {
+   "family": "FD",
+   "drug": "푸로세미드",
+   "search_rows": 8,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "196400037"
+   ],
+   "absorption_findings": 1,
+   "mech_hint": "depletion"
+  },
+  {
+   "family": "FD",
+   "drug": "히드로클로로티아지드",
+   "search_rows": 15,
+   "single_oral_sampled": 1,
+   "item_seqs": [
+    "200607692"
+   ],
+   "absorption_findings": 1,
+   "mech_hint": "depletion"
+  }
+ ],
+ "funnel": {
+  "raw": 3,
+  "absorption_findings": 18,
+  "source_confirmed_new": 3,
+  "source_confirmed_existing": 33,
+  "prefiltered": {
+   "live_duplicate": 0,
+   "hold_family": 0,
+   "reject_direction": 0,
+   "guard_quarantine": 0,
+   "needs_review": 1
+  },
+  "audit_pass": 36,
+  "false_auto_pass": 0,
+  "reviewer_ready_not_live": 3,
+  "reviewer_ready_harvested_new": 1,
+  "reviewer_ready_existing": 2,
+  "already_live_deduped": 31,
+  "needs_review_genuine": 4,
+  "needs_review_harvest": 1,
+  "hold": 0,
+  "reject": 0
+ },
+ "clusters": {
+  "high_confidence": [
+   "antibiotic23",
+   "f1_all18"
+  ],
+  "medium": [
+   "chronic8",
+   "f9_all7"
+  ],
+  "small_risky": [
+   "f3_single",
+   "f4_f6_small2"
+  ],
+  "wave_counts": {
+   "f1_nutrient10": 10,
+   "f1_antacid8": 8,
+   "f1_all18": 18,
+   "f2_all5": 5,
+   "f3_single": 1,
+   "f9_all7": 7,
+   "f4_f6_small2": 2,
+   "antibiotic23": 23,
+   "chronic8": 8,
+   "all33": 33
+  }
+ },
+ "dry_run": {
+  "base": 92,
+  "reviewer_ready_not_live": 3,
+  "projected": 95,
+  "live_write": false,
+  "harvested_new": 1,
+  "existing_corpus_not_live": 2
+ },
+ "audit_summary": {
+  "existing": {
+   "total_audited": 33,
+   "audit_pass": 33,
+   "reviewer_ready_clean": 5,
+   "reviewer_ready_corrected": 28,
+   "needs_review": 0,
+   "false_auto_pass": 0,
+   "batch_recheck_required": false,
+   "already_live_count": 31,
+   "not_live_audit_pass": [
+    "RF-F3-0147",
+    "RF-F4-0173"
+   ],
+   "copy_corrections": [
+    {
+     "candidate_id": "RF-F1-0021",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0022",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0024",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0025",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0010",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0035",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0040",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0020",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0041",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0042",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0044",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0045",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0066",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0067",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 칼슘과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0070",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0026",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0029",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F1-0030",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F2-0105",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F2-0110",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F2-0111",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 철분과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F2-0114",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 아연과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F2-0115",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F3-0147",
+     "violations": [
+      "display:분리하도록 안내"
+     ],
+     "corrected_display": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F9-0269",
+     "violations": [
+      "display:numeric_claim_unsourced:수치 변화",
+      "display:numeric_claim_unsourced:수치가 걱정"
+     ],
+     "corrected_display": "이 약을 장기간 복용할 때 엽산과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F9-0246",
+     "violations": [
+      "display:numeric_claim_unsourced:수치 변화",
+      "display:numeric_claim_unsourced:수치가 걱정"
+     ],
+     "corrected_display": "이 약을 장기간 복용할 때 비타민D과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F9-0272",
+     "violations": [
+      "display:numeric_claim_unsourced:수치 변화",
+      "display:numeric_claim_unsourced:수치가 걱정"
+     ],
+     "corrected_display": "이 약을 장기간 복용할 때 엽산과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요."
+    },
+    {
+     "candidate_id": "RF-F9-0242",
+     "violations": [
+      "display:numeric_claim_unsourced:수치 변화",
+      "display:numeric_claim_unsourced:수치가 걱정"
+     ],
+     "corrected_display": "이 약을 장기간 복용할 때 엽산과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요."
+    }
+   ]
+  },
+  "harvested": {
+   "total_audited": 3,
+   "audit_pass": 3,
+   "reviewer_ready_corrected": 0,
+   "false_auto_pass": 0,
+   "batch_recheck_required": false
+  },
+  "total_audited": 36,
+  "audit_pass": 36,
+  "false_auto_pass": 0,
+  "batch_recheck_required": false,
+  "new_reviewer_ready_corrected": 0
+ },
+ "guards": {
+  "protected_hash_unchanged": true,
+  "live_write_performed": false,
+  "published_false": true,
+  "clinical_reviewed_false": true,
+  "reviewed_by_absent": true,
+  "schedule_inactive": true,
+  "product_ui_zero": true,
+  "data_url_v0_2": true,
+  "reviewer_ready_lock_copy_clean": true,
+  "false_auto_pass_zero": true,
+  "all_new_candidate_safety_flags": true,
+  "forbidden_phrase_hits": []
+ },
+ "guard_ok": true,
+ "bottleneck": "nedrug --online harvest 가 작동(흡수-방향성 비스포스포네이트/레보티록신×제산제 신규 확정). PPI×B12·이뇨제×미네랄은 depletion 기전 — 흡수-방향성 추출기 scope 밖(별도 depletion-mode 추출기 필요). 추가 scale 은 universe 확장(약물군 큐레이션)이 게이트.",
+ "next_live_pr_recommendation": {
+  "candidates": [
+   "RF-F3-0147",
+   "RF-F4-0173",
+   "H7-F3-001"
+  ],
+  "harvested_new": [
+   {
+    "candidate_id": "H7-F3-001",
+    "family": "F3",
+    "relation": "리세드론산 × Al/Mg 함유 제산제(약물)",
+    "ingredient": "리세드론산",
+    "counterpart": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "source_pointer": "식약처 nedrug getItemDetail / 리세드론산 / itemSeq 200713889 / 6. 상호작용 / '칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여...'",
+    "origin": "harvested_online",
+    "item_seq": "200713889",
+    "source_section": "6. 상호작용",
+    "copy_corrected": false,
+    "corrected_display_text_ko": null,
+    "effective_display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "effective_management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "audit_verdict": "reviewer_ready",
+    "live_integration_forbidden": true,
+    "do_not_implement_yet": true,
+    "published": false,
+    "clinical_reviewed": false,
+    "reviewed_by": "",
+    "product_link_allowed": false,
+    "requires_clinical_review": false,
+    "potassium_safety_card": false,
+    "pm_approval_required": true
+   }
+  ],
+  "status": "신규 harvested confirmed 는 PM 적대검증 후 별도 live-PR. 기존 2건(RF-F3-0147·RF-F4-0173)은 PR-3."
+ }
+}

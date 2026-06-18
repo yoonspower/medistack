@@ -1,0 +1,84 @@
+{
+ "name": "autofactory_v1_7_run_config",
+ "run_date": "2026-06-18",
+ "mode": "online",
+ "no_live_write": true,
+ "dry_run": true,
+ "strict_source_fidelity": true,
+ "fail_on_protected_change": true,
+ "cap_raw": 300,
+ "harvest_targets": [
+  {
+   "family": "F3",
+   "drug": "알렌드론산",
+   "max_items": 2,
+   "mech": "absorption"
+  },
+  {
+   "family": "F3",
+   "drug": "리세드론산",
+   "max_items": 2,
+   "mech": "absorption"
+  },
+  {
+   "family": "F3",
+   "drug": "미노드론산",
+   "max_items": 2,
+   "mech": "absorption"
+  },
+  {
+   "family": "F3",
+   "drug": "이반드론산",
+   "max_items": 2,
+   "mech": "absorption"
+  },
+  {
+   "family": "F4",
+   "drug": "레보티록신",
+   "max_items": 2,
+   "mech": "absorption"
+  },
+  {
+   "family": "F6",
+   "drug": "오메프라졸",
+   "max_items": 1,
+   "mech": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "에스오메프라졸",
+   "max_items": 1,
+   "mech": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "란소프라졸",
+   "max_items": 1,
+   "mech": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "판토프라졸",
+   "max_items": 1,
+   "mech": "depletion"
+  },
+  {
+   "family": "F6",
+   "drug": "라베프라졸",
+   "max_items": 1,
+   "mech": "depletion"
+  },
+  {
+   "family": "FD",
+   "drug": "푸로세미드",
+   "max_items": 1,
+   "mech": "depletion"
+  },
+  {
+   "family": "FD",
+   "drug": "히드로클로로티아지드",
+   "max_items": 1,
+   "mech": "depletion"
+  }
+ ]
+}
