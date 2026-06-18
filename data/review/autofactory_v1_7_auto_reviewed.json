@@ -23,7 +23,7 @@
    "source_quote": "칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여는 이 약의 흡수를 방해한다.",
    "source_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200713889",
    "source_pointer": "식약처 nedrug getItemDetail / 리세드론산 / itemSeq 200713889 / 6. 상호작용 / '칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여...'",
-   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 흡수가 저하될 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
    "live_exact_duplicate": false,
    "candidate_id": "H7-F3-001",

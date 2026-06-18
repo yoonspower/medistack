@@ -86,7 +86,7 @@
     "source_section": "6. 상호작용",
     "copy_corrected": false,
     "corrected_display_text_ko": null,
-    "effective_display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "effective_display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 흡수가 저하될 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
     "effective_management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
     "audit_verdict": "reviewer_ready",
     "live_integration_forbidden": true,
