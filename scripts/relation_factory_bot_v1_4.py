@@ -472,7 +472,7 @@ def source_check(cands, max_n, p0_only):
 # ───────────────────────── draft / PM queue emit ─────────────────────────
 def app_copy(drug, counterpart, ctype, action):
     if action == "separation":
-        disp = (f"이 약은 {counterpart}과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 "
+        disp = (f"이 약은 {counterpart}과(와) 함께 복용하면 흡수가 저하될 수 있다는 "
                 f"허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, "
                 f"약사 또는 의사와 상담하세요.")
         mng = f"{counterpart}과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요."
