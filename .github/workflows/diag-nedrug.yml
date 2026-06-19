@@ -1,0 +1,35 @@
+name: diag-nedrug-reachability
+
+# 진단 전용(일회성) — autoharvest online raw 0 규명: CI 러너의 nedrug 도달성/검색 결과를 1차 자료로 수집.
+# ⚠️ 데이터/export/보호파일 수정 0 · git push/commit 0 · 판정/추출 없음. 로그 + 진단 요약 artifact 만.
+# schedule 없음 → 자동 발동 0(트리거해야만 돈다).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: diag-nedrug
+  cancel-in-progress: false
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: nedrug 도달성 진단(CI 러너 IP·검색A/B·상세·client 경유)
+        run: python3 scripts/diag_nedrug_reachability.py
+
+      - name: 진단 요약 artifact 업로드
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: diag-nedrug-summary
+          path: diag_nedrug_summary.json
+          if-no-files-found: warn
