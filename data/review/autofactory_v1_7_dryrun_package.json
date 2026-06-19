@@ -8,11 +8,10 @@
   "mode": "online"
  },
  "reviewer_ready": {
-  "reviewer_ready_total": 3,
+  "reviewer_ready_total": 2,
   "reviewer_ready_ids": [
    "RF-F3-0147",
-   "RF-F4-0173",
-   "H7-F3-001"
+   "RF-F4-0173"
   ],
   "reviewer_ready_lock": [
    {
@@ -70,62 +69,21 @@
     "requires_clinical_review": false,
     "potassium_safety_card": false,
     "pm_approval_required": true
-   },
-   {
-    "candidate_id": "H7-F3-001",
-    "family": "F3",
-    "relation": "리세드론산 × Al/Mg 함유 제산제(약물)",
-    "ingredient": "리세드론산",
-    "counterpart": "Al/Mg 함유 제산제(약물)",
-    "mechanism": "absorption",
-    "recommended_action": "separation",
-    "evidence_level": "moderate",
-    "source_pointer": "식약처 nedrug getItemDetail / 리세드론산 / itemSeq 200713889 / 6. 상호작용 / '칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여...'",
-    "origin": "harvested_online",
-    "item_seq": "200713889",
-    "source_section": "6. 상호작용",
-    "copy_corrected": false,
-    "corrected_display_text_ko": null,
-    "effective_display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 흡수가 저하될 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
-    "effective_management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
-    "audit_verdict": "reviewer_ready",
-    "live_integration_forbidden": true,
-    "do_not_implement_yet": true,
-    "published": false,
-    "clinical_reviewed": false,
-    "reviewed_by": "",
-    "product_link_allowed": false,
-    "requires_clinical_review": false,
-    "potassium_safety_card": false,
-    "pm_approval_required": true
    }
   ],
   "existing_corpus_ready": 2,
-  "harvested_new_ready": 1,
-  "harvested_cross_validated_existing": [
-   {
-    "candidate_id": "H7-F3-002",
-    "relation": "이반드론산 × Al/Mg 함유 제산제(약물)",
-    "item_seq": "201207007",
-    "note": "기존 corpus reviewer-ready 와 동일 relation — harvest 가 라벨 원문에서 독립 재확인(cross-validation). 중복 승급 제외."
-   },
-   {
-    "candidate_id": "H7-F4-003",
-    "relation": "레보티록신 × 알루미늄 함유 제산제(약물)",
-    "item_seq": "197400278",
-    "note": "기존 corpus reviewer-ready 와 동일 relation — harvest 가 라벨 원문에서 독립 재확인(cross-validation). 중복 승급 제외."
-   }
-  ],
+  "harvested_new_ready": 0,
+  "harvested_cross_validated_existing": [],
   "copy_corrected_count": 1,
   "already_live_deduped": 31,
-  "projected_after_reviewer_note": 95
+  "projected_after_reviewer_note": 94
  },
  "dry_run_projection": {
   "base": 92,
-  "reviewer_ready_not_live": 3,
-  "projected": 95,
+  "reviewer_ready_not_live": 2,
+  "projected": 94,
   "live_write": false,
-  "harvested_new": 1,
+  "harvested_new": 0,
   "existing_corpus_not_live": 2
  },
  "needs_review": {
@@ -159,18 +117,8 @@
     "resolve_when": "route 근거 재확인·display 재작성"
    }
   ],
-  "harvest_needs_review": [
-   {
-    "raw_id": "H7-F3-알렌드론산-199800180",
-    "family": "F3",
-    "drug_ingredient": "알렌드론산",
-    "item_seq": "199800180",
-    "reason": "counterpart_scope_unsupported",
-    "detail": "라벨이 일반 '제산제'만 명명(Al/Mg 양이온 미명명) — Al/Mg-specific counterpart 로 좁힐 수 없음",
-    "source_quote": "칼슘보충제나 제산제 및 일부 경구용 약물들은 이 약의 흡수를 방해하는 것으로 알려져 있다."
-   }
-  ],
-  "total": 5
+  "harvest_needs_review": [],
+  "total": 4
  },
  "guards": {
   "protected_hash_unchanged": true,

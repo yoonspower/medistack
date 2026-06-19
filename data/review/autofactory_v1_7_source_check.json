@@ -1,94 +1,14 @@
 {
  "meta": {
   "name": "autofactory_v1_7_source_check",
-  "new_confirmed": 3
+  "new_confirmed": 0
  },
  "prefiltered": {
   "live_duplicate": [],
   "hold_family": [],
   "reject_direction": [],
   "guard_quarantine": [],
-  "needs_review": [
-   {
-    "raw_id": "H7-F3-알렌드론산-199800180",
-    "family": "F3",
-    "drug_ingredient": "알렌드론산",
-    "item_seq": "199800180",
-    "reason": "counterpart_scope_unsupported",
-    "detail": "라벨이 일반 '제산제'만 명명(Al/Mg 양이온 미명명) — Al/Mg-specific counterpart 로 좁힐 수 없음",
-    "source_quote": "칼슘보충제나 제산제 및 일부 경구용 약물들은 이 약의 흡수를 방해하는 것으로 알려져 있다."
-   }
-  ]
+  "needs_review": []
  },
- "new_confirmed": [
-  {
-   "raw_id": "H7-F3-리세드론산-200713889",
-   "family": "F3",
-   "drug_ingredient": "리세드론산",
-   "ingredient": "리세드론산",
-   "item_seq": "200713889",
-   "item_name": "리골다정35밀리그램(리세드론산나트륨2.5수화물)",
-   "counterpart": "Al/Mg 함유 제산제(약물)",
-   "counterpart_category": "al_mg_antacid",
-   "mechanism": "absorption",
-   "action": "separation",
-   "recommended_action": "separation",
-   "evidence_level": "moderate",
-   "direction": "this_drug_lowered",
-   "source_section": "6. 상호작용",
-   "source_quote": "칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여는 이 약의 흡수를 방해한다.",
-   "source_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200713889",
-   "source_pointer": "식약처 nedrug getItemDetail / 리세드론산 / itemSeq 200713889 / 6. 상호작용 / '칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여...'",
-   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
-   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
-   "live_exact_duplicate": false,
-   "candidate_id": "H7-F3-001"
-  },
-  {
-   "raw_id": "H7-F3-이반드론산-201207007",
-   "family": "F3",
-   "drug_ingredient": "이반드론산",
-   "ingredient": "이반드론산",
-   "item_seq": "201207007",
-   "item_name": "드로반정150밀리그램(이반드론산나트륨일수화물)",
-   "counterpart": "Al/Mg 함유 제산제(약물)",
-   "counterpart_category": "al_mg_antacid",
-   "mechanism": "absorption",
-   "action": "separation",
-   "recommended_action": "separation",
-   "evidence_level": "moderate",
-   "direction": "this_drug_lowered",
-   "source_section": "5. 상호작용",
-   "source_quote": "칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할 수 있다.",
-   "source_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201207007",
-   "source_pointer": "식약처 nedrug getItemDetail / 이반드론산 / itemSeq 201207007 / 5. 상호작용 / '칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할...'",
-   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
-   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
-   "live_exact_duplicate": false,
-   "candidate_id": "H7-F3-002"
-  },
-  {
-   "raw_id": "H7-F4-레보티록신-197400278",
-   "family": "F4",
-   "drug_ingredient": "레보티록신",
-   "ingredient": "레보티록신",
-   "item_seq": "197400278",
-   "item_name": "씬지로이드정0.1밀리그램(레보티록신나트륨수화물)",
-   "counterpart": "알루미늄 함유 제산제(약물)",
-   "counterpart_category": "al_mg_antacid",
-   "mechanism": "absorption",
-   "action": "separation",
-   "recommended_action": "separation",
-   "evidence_level": "moderate",
-   "direction": "this_drug_lowered",
-   "source_section": "6. 상호작용",
-   "source_quote": "콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.",
-   "source_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197400278",
-   "source_pointer": "식약처 nedrug getItemDetail / 레보티록신 / itemSeq 197400278 / 6. 상호작용 / '콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투...'",
-   "display_text_ko": "이 약은 알루미늄 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
-   "management_ko": "알루미늄 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
-   "live_exact_duplicate": false,
-   "candidate_id": "H7-F4-003"
-  }
- ]
+ "new_confirmed": []
 }
