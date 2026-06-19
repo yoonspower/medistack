@@ -2,9 +2,13 @@ name: diag-nedrug-reachability
 
 # 진단 전용(일회성) — autoharvest online raw 0 규명: CI 러너의 nedrug 도달성/검색 결과를 1차 자료로 수집.
 # ⚠️ 데이터/export/보호파일 수정 0 · git push/commit 0 · 판정/추출 없음. 로그 + 진단 요약 artifact 만.
-# schedule 없음 → 자동 발동 0(트리거해야만 돈다).
+# 트리거: 이 진단 브랜치로의 push(=CI 1회 실행) + workflow_dispatch. schedule 없음(자동 주기 발동 0).
+#   workflow_dispatch 는 default 브랜치에만 등록되므로, main 무변경 유지를 위해 push 트리거로 이 브랜치에서만 1회 실행.
 
 on:
+  push:
+    branches:
+      - agent/diag-online-raw0
   workflow_dispatch:
 
 permissions:
