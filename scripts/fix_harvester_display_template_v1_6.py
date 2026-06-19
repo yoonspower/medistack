@@ -121,6 +121,8 @@ def reframe_display(old, action=None):
                  r"\1과(와) 관련된 허가사항 주의 문구가 있습니다.", new)
     new = new.replace("증상이나 수치가 걱정되면", "증상이 걱정되면")
     new = new.replace("수치가 걱정되면", "증상이 걱정되면")
+    # A0: head 효과감소 과확장 제거(source-additive) — SEP_DISPLAY 정정과 동일 기준.
+    new = new.replace("약의 흡수가 줄어 효과가 감소할 수 있다는", "흡수가 저하될 수 있다는")
     # A1: 분리 능동 register 제거 — fact 마커 뒤를 비지시 tail 로 치환.
     if "분리하도록 안내" in new:
         marker = _FACT_MARKER_FFACT if _FACT_MARKER_FFACT in new else None
@@ -130,6 +132,7 @@ def reframe_display(old, action=None):
             new = head + tail
     assert "분리하도록 안내" not in new, "reframe 후에도 라벨귀속 분리-안내 단정 잔존"
     assert "수치 변화" not in new and "수치가 걱정" not in new, "reframe 후에도 수치 단정 잔존"
+    assert "효과가 감소" not in new, "reframe 후에도 효과감소 과확장 잔존"
     return new
 
 
