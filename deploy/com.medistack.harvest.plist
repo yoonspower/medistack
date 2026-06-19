@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  MediStack AutoFactory v1.7 harvest — Mac Mini launchd 주기 실행(한국 IP).
+  GitHub-hosted 러너(Azure IP)는 nedrug 차단으로 raw 0 → 한국 IP 로 실행 위치 이전.
+  설치: 이 파일을 ~/Library/LaunchAgents/com.medistack.harvest.plist 로 복사 후
+        launchctl unload(있으면) → launchctl load -w ~/Library/LaunchAgents/com.medistack.harvest.plist
+  주기: 매주 월요일 03:00 (시스템 로컬시간 = KST). 래퍼 자체가 모든 가드/no-live-write 강제.
+  ⚠️ 경로는 이 Mac Mini 절대경로(repo: /Users/mac/AI work/medistack). 다른 환경 설치 시 경로 수정.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.medistack.harvest</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/mac/AI work/medistack/scripts/run_harvest_macmini.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>1</integer>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/mac/AI work/medistack/logs/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/mac/AI work/medistack/logs/launchd.err.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>

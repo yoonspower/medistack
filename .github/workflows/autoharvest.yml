@@ -11,8 +11,10 @@ name: autoharvest-v1.7-online
 #    reviewer-ready 후보는 data/review/ 패키지로만 산출 — live-promote step 없음.
 #    PM 이 산출물을 GitHub 에서 까서 source-fidelity 전수 적대검증 후 live-PR 갈 것만 선별.
 #
-# 트리거: 수동(workflow_dispatch) + 주 1회 schedule(KST 월 03:00 = UTC 일 18:00).
-#   schedule 은 default 브랜치(main)에 있을 때만 발동 — 머지 전까지(이 브랜치) 비활성.
+# 트리거: 수동(workflow_dispatch)만 — 비상/수동 점검용. (schedule 비활성)
+#   ⚠️ schedule 비활성 사유: GitHub-hosted 러너(Azure IP)는 nedrug 네트워크단 차단(connection timeout)으로
+#      online raw 0 (진단 2회 확정). 주기 harvest 는 한국 IP(Mac Mini launchd cron)로 이전
+#      (scripts/run_harvest_macmini.sh + deploy/com.medistack.harvest.plist). Azure 러너의 raw-0 빈run 방지.
 # 산출: 기본 = artifact 업로드(main 무오염). commit=true 옵트인(수동만) 시 전용 브랜치 + PR(자동 머지 금지).
 
 on:
@@ -22,9 +24,9 @@ on:
         description: "dryrun 패키지를 전용 브랜치 + PR 로 push(자동 머지 안 함). 기본 false=artifact 만."
         type: boolean
         default: false
-  schedule:
-    # KST 월요일 03:00 = UTC 일요일 18:00. 주 1회 보수 시작(과다 실행·nedrug 부하 방지). 안정화 후 조정.
-    - cron: "0 18 * * 0"
+  # schedule 비활성(Azure IP nedrug 차단으로 raw 0) — 주기 harvest 는 Mac Mini launchd cron 으로 이전.
+  # schedule:
+  #   - cron: "0 18 * * 0"   # KST 월 03:00 = UTC 일 18:00
 
 permissions:
   contents: write
