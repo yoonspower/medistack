@@ -47,19 +47,56 @@ echo "보호셋 무수정 OK"
 python3 scripts/validate_medistack_v0_2_export.py data/medistack_v0.2_beta_export.json
 python3 scripts/validate_full_drug_name_index.py data/full_drug_name_index_sample_v1_0.json
 
-# ── 산출: 전용 브랜치 push (write-scope 한정 · main push 0 · 자동 머지 0) ──
+# ── absorption 산출: 전용 브랜치 push (write-scope 한정 · main push 0 · 자동 머지 0) ──
+#    (no-change 라도 종료하지 않고 depletion 단계로 진행 — 두 harvest 독립)
 git add data/review/autofactory_v1_7_*.json
 OUT="$(git diff --cached --name-only | grep -v '^data/review/autofactory_v1_7_' || true)"
 if [ -n "$OUT" ]; then echo "STOP: data/review/ 밖 staged 변경"; echo "$OUT"; exit 1; fi
 if git diff --cached --quiet; then
-  echo "변경 없음 — 커밋·push 생략(raw 0 또는 신규 0)"; echo "== done $(date -u +%FT%TZ) =="; exit 0
-fi
-BR="agent/autofactory-auto-$(date +%Y%m%d-%H%M%S)"
-git checkout -b "$BR"
-git -c user.name=medistack-autofactory-bot -c user.email=bot@local commit -q -m "chore(autofactory): v1.7 dryrun package refresh [mac-cron]
+  echo "absorption 변경 없음 — 커밋·push 생략(raw 0 또는 신규 0)"
+else
+  BR="agent/autofactory-auto-$(date +%Y%m%d-%H%M%S)"
+  git checkout -b "$BR"
+  git -c user.name=medistack-autofactory-bot -c user.email=bot@local commit -q -m "chore(autofactory): v1.7 dryrun package refresh [mac-cron]
 
 AutoFactory v1.7 online harvest(한국 IP·dry-run·no-live-write). live relation/배포 0.
 PM source-fidelity 적대검증 후 별도 live-PR 선별."
-git push origin "$BR"
-echo "PUSHED: $BR"
+  git push origin "$BR"
+  echo "PUSHED(absorption): $BR"
+  git checkout main                              # depletion 단계 위해 main 복귀
+fi
+
+# ════════════ DEPLETION harvest (v1.8) — absorption 과 독립(각자 가드 유지) ════════════
+# ── depletion 사전 게이트(네트워크 0) ──
+python3 scripts/test_extract_depletion_gold_v1_8.py            # depletion GOLD 3/3
+python3 scripts/test_depletion_promotion_guard_v1_8.py        # DB1~DB7 + 🔑칼륨 invariant
+
+# ── DEPLETION ONLINE harvest (한국 IP) ──
+#    모듈 내장 기본값 = online·dry-run·no-live-write·cap-raw 300·🔑칼륨 invariant·B2 가드·copy-lint
+#    (인자 없음 — 검증분 v1.8 모듈 무개조. 산출은 data/review/depletion_extractor_*.{json,md} 한정).
+python3 scripts/run_depletion_harvest_dryrun_v1_8.py
+
+# ── depletion 산출 보호셋 불변 재검 + write-scope ──
+CHANGED="$(git status --porcelain -- $PROT || true)"
+if [ -n "$CHANGED" ]; then echo "STOP: depletion 단계서 보호셋 수정 — live-write 위반"; echo "$CHANGED"; exit 1; fi
+echo "보호셋 무수정 OK(depletion)"
+
+# ── depletion 산출: 전용 브랜치 push (write-scope 한정 · main push 0 · 자동 머지 0) ──
+git add data/review/depletion_extractor_*
+ODEP="$(git diff --cached --name-only | grep -v -E '^data/review/depletion_extractor_' || true)"
+if [ -n "$ODEP" ]; then echo "STOP: depletion data/review 밖 staged"; echo "$ODEP"; exit 1; fi
+if git diff --cached --quiet; then
+  echo "depletion 변경 없음 — 생략"
+else
+  BRD="agent/depletion-auto-$(date +%Y%m%d-%H%M%S)"
+  git checkout -b "$BRD"
+  git -c user.name=medistack-autofactory-bot -c user.email=bot@local commit -q -m "chore(depletion): v1.8 dryrun package refresh [mac-cron]
+
+depletion online harvest(한국 IP·dry-run·no-live-write·🔑칼륨 invariant·B2 가드). live 0.
+PM source-fidelity 적대검증 후 별도 live-PR."
+  git push origin "$BRD"
+  echo "PUSHED(depletion): $BRD"
+  git checkout main
+fi
+
 echo "== done $(date -u +%FT%TZ) =="
