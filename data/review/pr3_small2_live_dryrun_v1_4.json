@@ -1,0 +1,186 @@
+{
+ "meta": {
+  "name": "pr3_small2_live_dryrun_v1_4",
+  "status": "DRY-RUN — live 무수정 예상 산출물",
+  "wave": "small2",
+  "mode": "DRY-RUN",
+  "baseline_relation_count": 92,
+  "expected_relation_count_after": 94,
+  "delta": 2,
+  "new_ids": [
+   94,
+   95
+  ],
+  "candidate_ids": [
+   "RF-F3-0147",
+   "RF-F4-0173"
+  ],
+  "v0_2_sim_passed": true,
+  "export_sha_before": "aacacb18455c28387b3b5a9b54896ce62362ee192307d30e8dfa866ad17befc9",
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)",
+  "copy_change_field_count": 1,
+  "non_target_protected_snapshot": {
+   ".github/workflows/deploy.yml": "cc193f2247e655ce4fe7da882def014210248955276941a333d9b4113036fe24",
+   ".github/workflows/harvest.yml": "ee52ef74a1a4a4d0843286282bd25335f5688abb5a99b579754167cde4a4e7af",
+   ".github/workflows/validate.yml": "cd068cae25d20b9cf800bc22fc6a28b18af40083042c55e21510f95723a38a4a",
+   "data/full_drug_name_index_sample_v1_0.csv": "d6f5b0daeab1cabacd0c6e4f59da24826c2f1ddb68bce7f5cdbd3330eed2c96a",
+   "data/full_drug_name_index_sample_v1_0.json": "d329b2ddd3cdd05e3c4a96a11107d1db792d1df3e2c2fddf5a1a8e042e162fdb",
+   "data/medistack_v0.1_beta_export.json": "e9994f017995591365fc1ae333d288ea15af20ada2fe322e7e509c94be8d99a9",
+   "data/medistack_v0.3_aliases.json": "ee25aed084a8a35f2d7336ea84b771fa70c608885ecf19c1338de2df4ce17039",
+   "data/medistack_v0.3_aliases.sample.json": "7c18dbe096a45fdb8bd9a546a53ab97fdc496093ced7afd43be0fc3315698940",
+   "index.html": "e9fe8abf9ddeb894252eb2da100f8b6b75d330c40bc7d9649b90dbb6cf4ba5ea",
+   "medistack_sdk/__init__.py": "998d863b1267fb2d8c33b4f524e37677ce99aac02e1a0d5926756f7f11a3e75f",
+   "medistack_sdk/fixtures/make_fixtures.py": "bd06e070ea40ad3bbc89240dd65d64e28fbc5cab8b26fdd3e8331d4427652a02",
+   "medistack_sdk/nedrug_client.py": "079af2ecf3e4e5ddce5f2e59253dc8db6fda6b16e74ef29ed7f94945e3d6a440",
+   "medistack_sdk/test_nedrug_client_dryrun.py": "a5c864484e10bb39a4caac30586c1241143cf36c32b69249cc60e2074ae912e7",
+   "scripts/validate_alias_surface_forms.py": "e38dc628cd28a7e26da1861de57f7b54f9c44eb9f8183f22a04b66be801bcf1d",
+   "scripts/validate_antacid_fex_dryrun_v1_2.py": "59abb21bdfb37bc2482631bc38fbec5a152991a4f26e447795dd8c8a5d0fcaf8",
+   "scripts/validate_antacid_interaction_v1_2.py": "38de7e56863a7f475cd97bc84a64d49742c977415b973398048693179fc9d57f",
+   "scripts/validate_antacid_itz_integration_v1_2.py": "dd19390ac8cc72123b3e878f1cfac0130999625056a7d44ef6624126b8509914",
+   "scripts/validate_bulk_alias_candidates.py": "fa427b9c5a9d6ca7e43d8718f8ffee7d898bcd877f0959cd9f413d1d559336f1",
+   "scripts/validate_combo_approved_ready.py": "177569b7b0dfa3a742330afd01a6491ecd6dfd3ec7d2602ede44c04ac26eaab6",
+   "scripts/validate_coverage_kpi_reclass_v1_2.py": "ea4575d0415c2ffea8d2840a6f7cdaeda77ca8c35ea0f34cdb61fa217983ec72",
+   "scripts/validate_coverage_queue_cqf02_integration_v1_2.py": "5cf43aacaf1af59b366b1387a4f01c540875985af8e0246020349cc0788acee5",
+   "scripts/validate_coverage_queue_draft_batch3_v1_2.py": "b282b8c29557663e65c51fc56a52281bd397d2adf07ce12ebb3f7c1e05ddd1ed",
+   "scripts/validate_coverage_queue_draft_batch4_v1_2.py": "494be20e4b429866a2b686ab10f546620289d2a71aef68cdf3ce5e6be2c2f657",
+   "scripts/validate_coverage_queue_draft_batch_v1_2.py": "60b20686f4d1b19cd0fd7b634bf5964f23f67f767a25e7157a36d443abfcb4d4",
+   "scripts/validate_coverage_queue_integration_v1_2.py": "b18de4f88e2c3246efbc79dd00e8fe224cfb53db02ad9f5ffc71f56196acc286",
+   "scripts/validate_f1_quinolone_dryrun_v1_4.py": "8e95bc07063ec0ffee5498738fa176fd83bb0d9447686aff0a1c1dc8e4f87f16",
+   "scripts/validate_f2_tetracycline_dryrun_v1_4.py": "3281d0504384c7bec2666ce4fd7da6cb8a2da27d9679d97b4f7be53413f48d41",
+   "scripts/validate_f3_bisphosphonate_dryrun_v1_4.py": "401823c8b4c45d70e840c52a9e62b49208f39bf36484bd766e4b849bba91cf02",
+   "scripts/validate_f4_f6_f10_small_family_dryrun_v1_4.py": "772df0d3809f6b4df0bc2beb06f759dba05aa50ce34afa9a5b75783a9e66deb1",
+   "scripts/validate_f9_chronic_depletion_dryrun_v1_4.py": "d1784ee05be77c17cb0ce6a77d0dcae7134fcace0240ad3a29f91ae73eaced80",
+   "scripts/validate_factory_draft_batch_v1_2.py": "19d24ce92ec880974fe144ddd09d8e69d68ea7e14a40a5d6e4a6e429ff285ded",
+   "scripts/validate_factory_integration_v1_2.py": "7ea3be8f5cfd06106b8d84a99e928d5285f7e6a1b6bcf70ac02a7ffc6ca5ffe4",
+   "scripts/validate_forbidden_phrases_v1_2.py": "b73d39d00363a32711f2b0c00f6d85fd215fd32f762f7a44aff6d512b665e34e",
+   "scripts/validate_full_drug_name_index.py": "f50f1e83071d82884fd0a7de51eec996780d44c131e79eff9368743ef06c05c4",
+   "scripts/validate_global_reviewer_ready_dryrun_v1_4.py": "f337e8e0ca2503dca5957b38916660d35297bddb36f22413990332c0d368c5fa",
+   "scripts/validate_harvest_queue_v1_3.py": "158d6f18906b47219d0d736b21c92956f3a5464d5d5059bea43cdb384cde97d2",
+   "scripts/validate_harvester_schedule_safety_v1_3.py": "659cf6d51b85500cb06cdb167f9b1e16462c5cd1748e713b69ee8d02e7a97e9d",
+   "scripts/validate_harvester_theme_map_v1_3.py": "bf2f67cab76830f7ea204ce542cbbf9ac98b22701c4a5754cd73cdba42bab6bd",
+   "scripts/validate_live_pr_readiness_v1_4.py": "abf31ca99e8685a95359462539e617e5d1490b55d576d076471814f417ef844a",
+   "scripts/validate_live_pr_wave_rehearsal_v1_4.py": "4757b43f7a20dbf3e54e32a627e0d72f1c0162723fd26b3f29460a942d51e7a7",
+   "scripts/validate_medistack_v0_1_export.js": "b9807db8af5e1fe4197dc32de0c3fd6455cc5883fccecfb993a99b73bb8710b2",
+   "scripts/validate_medistack_v0_1_export.py": "4131dcc8d4684faefcbabe3b5e38a5b32cc55e5da589aff0b9cdd190dd7da786",
+   "scripts/validate_medistack_v0_2_export.js": "c380383d516b99381331613cc99be799d5c197f8f207b2ae9b7bcdd3c44feeec",
+   "scripts/validate_medistack_v0_2_export.py": "99aa0ce28989f7e3bebf33081c7eb41685cd17d2d35aa8c2701b79428005b7f1",
+   "scripts/validate_medistack_v0_3_aliases.py": "e08a1b9a0fbd3a6e6ab1908a9d2f04180a6600a7ac8df482b15f2138f5e32b8c",
+   "scripts/validate_needs_review_quarantine_v1_4.py": "d79f4ae0969f8215ed2a5082c4431d00b716bd00931a541048adfff9758ab30c",
+   "scripts/validate_penicillamine_subset_dryrun_v1_3.py": "f2c1b414658b78f73ae40cd30d6dbc27f2bb3aea194425e4c533dca4230bbbef",
+   "scripts/validate_potassium_dryrun_v1_2.py": "e9600320a82bd837ef6d1122f2ab5c55d2a096a52d81b35e1789229bec73b86c",
+   "scripts/validate_potassium_name_only_policy.py": "12ac458e6beaf6eb1d7d7814033768f1ea36f3e8e6271e375b775c2567f299f2",
+   "scripts/validate_potassium_pm_ready_v1_2.py": "cfc29e407ed315ac975aa4bf80a548261097544120b76362c9bfa03ae30616ab",
+   "scripts/validate_pr1_antibiotic24_post_integration_v1_4.py": "2898dd2cf78c0feba4ca265221e2ae7c66a6c5479685f679c5430fbe8691714e",
+   "scripts/validate_pr2_chronic8_post_integration_v1_4.py": "a303d41ef36da26a7a0b3c07830eed78c897f945ca2ca0c3ce908e25b78fa862",
+   "scripts/validate_prednisolone_draft_recheck_v1_3.py": "fc55f2e02d9ea8f7368744ea4296f51b0ed3d2e6be4a8a7cd42ea47c6d29c9ae",
+   "scripts/validate_relation_draft_v1_2.py": "1a706da5d7def7e11c887f7499188608b58682af94338dbc1b710fc90db306a3",
+   "scripts/validate_relation_expansion_draft_v1_1.py": "ba21c0f61795f11559c9bdb438e8bebec1dda06a271fd98cbae15b15da245acc",
+   "scripts/validate_relation_factory_batch_v1_4.py": "d97787ced79efdd6c595dd7b63263b8a3c657d908546a0fd97481171478f60ac",
+   "scripts/validate_search_empty_state_copy_v1_2.py": "b600f11180080f40b5b27044af847044a37990aa460d3732d326b26a790a3203",
+   "scripts/validate_theme_map_expansion_v1_3.py": "6c9f7eede9c49b3cfb175dad88d3e7f6e61bb2c26261e693adc75cb620172030",
+   "scripts/validate_theme_map_live_dryrun_v1_3.py": "a74e93ad82e17e60481bd02cc33d22574260dc329dbe741ceb8068ed69ef1a5d",
+   "src/css/styles.css": "038bfbe9a558457c876cafddd475fcb3027407a88cec1a3095b7a66fc2bbed12",
+   "src/js/app.js": "a4f755be986abdbabbeeb47265f4de9c8045a9cac2fed4b96891ba4ed85969bb",
+   "src/js/data.js": "aee4f8888c0e1e01142731bbca5ebd026fe9e40ea1a227e0591e5a8466123b5c",
+   "src/js/guards.js": "05fb495b29f99949a67848650c59a40546be2a9e773c2796a652d582efd9c7eb",
+   "src/js/render.js": "fdaae5a8b3d10ee4b60eeb12b9c77ccf789da94f8dea93660ce690f778f413b1",
+   "src/js/states.js": "7d80107edf0fa2f5c5d82e2cdc8615f313409cc5ee455deed0cc37ea54e0aa6b"
+  }
+ },
+ "projected_entries": [
+  {
+   "candidate_id": "RF-F3-0147",
+   "projected_id": 94,
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "copy_change": null,
+   "_family": "F3",
+   "_copy_change": {
+    "kind": "fact_reframe",
+    "field": "display_text_ko",
+    "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+    "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "reason": "라벨귀속 '분리하도록 안내' 단정 제거(인용 흡수저하 FACT-only·PR-1 선례)"
+   },
+   "projected_live_relation": {
+    "id": 94,
+    "ingredient": "이반드론산",
+    "nutrient": "Al/Mg 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+    "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201207007",
+     "pointer": "식약처 nedrug getItemDetail / 이반드론산 / itemSeq 201207007 / 상호작용 / '칼슘보조제, 제산제, 다가 양이온(알루미늄, 마그네슘, 철)을 포함한 경구투여 약물은 이 약의 흡수를 저해할 수 있다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  },
+  {
+   "candidate_id": "RF-F4-0173",
+   "family": "F4",
+   "projected_id": 95,
+   "counterpart_type": "drug",
+   "counterpart": "알루미늄 함유 제산제(약물)",
+   "counterpart_category": "al_mg_antacid",
+   "recommended_action": "separation",
+   "mechanism": "absorption",
+   "evidence_level": "moderate",
+   "confidence": "moderate",
+   "adversarial_verdict": "survives_with_copy_change",
+   "reverify_verdict": "survives_with_copy_change",
+   "copy_change": {
+    "kind": "display_reframe",
+    "reason": "라벨('씬지로이드정')은 '알루미늄 함유 제산제'만 명시(Mg 미명시) → al_mg_antacid category/display 의 '마그네슘' 단정은 source 보다 강함. counterpart/display 를 '알루미늄 함유 제산제'로 좁히고 Mg 비단정 + '효과 감소' → '흡수 지연/감소'(라벨 '흡수가 지연 또는 감소' 충실)로 reframe. category bucket(al_mg_antacid)은 id61 선례대로 유지하되 reviewer 가 Al-only display vs bucket 재사용 결정(live id61 도 수산화알루미늄→Al/Mg 일반화·동일 latent).",
+    "fields": {
+     "counterpart": {
+      "original": "Al/Mg 함유 제산제(약물)",
+      "cleaned": "알루미늄 함유 제산제(약물)"
+     },
+     "display_copy": {
+      "original": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+      "cleaned": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요."
+     },
+     "management_copy": {
+      "original": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+      "cleaned": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요."
+     }
+    }
+   },
+   "_family": "F4",
+   "projected_live_relation": {
+    "id": 95,
+    "ingredient": "레보티록신",
+    "nutrient": "알루미늄 함유 제산제(약물)",
+    "mechanism": "absorption",
+    "recommended_action": "separation",
+    "evidence_level": "moderate",
+    "display_text_ko": "이 약은 알루미늄 함유 제산제(약물)와 함께 복용할 때 약물 흡수가 지연되거나 감소될 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점 분리에 대해 약사 또는 의사에게 확인하세요.",
+    "management_ko": "알루미늄 함유 제산제(약물)와는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+    "product_link_allowed": false,
+    "potassium_safety_card": false,
+    "requires_clinical_review": false,
+    "source": {
+     "type": "허가사항",
+     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197400278",
+     "pointer": "식약처 nedrug getItemDetail / 레보티록신 / itemSeq 197400278 / 병용투여 / '콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.' / 확인일 2026-06-16"
+    },
+    "counterpart_category": "al_mg_antacid"
+   }
+  }
+ ]
+}

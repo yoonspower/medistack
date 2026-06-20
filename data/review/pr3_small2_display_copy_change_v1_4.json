@@ -1,0 +1,24 @@
+{
+ "meta": {
+  "name": "pr3_small2_display_copy_change_v1_4",
+  "wave": "small2",
+  "mode": "APPLY(LIVE)",
+  "principle": "라벨귀속 '분리하도록 안내' 단정 제거(FACT-only) · 레보티록신 Al-only(Mg 미명시)",
+  "f3_fact_reframe": [
+   "RF-F3-0147"
+  ],
+  "f4_note": "RF-F4-0173 = F4 prep 단계 Al-only display_reframe 유지(투여간격 라벨 근거)·PR-3 추가 변경 없음",
+  "count_field_changes": 1
+ },
+ "changes": [
+  {
+   "candidate_id": "RF-F3-0147",
+   "id": 94,
+   "ingredient": "이반드론산",
+   "kind": "fact_reframe",
+   "field": "display_text_ko",
+   "before": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용해야 하는 경우 복용 시점을 분리하도록 안내하고 있으니, 약사 또는 의사와 상담하세요.",
+   "after": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 약의 흡수가 줄어 효과가 감소할 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요."
+  }
+ ]
+}
