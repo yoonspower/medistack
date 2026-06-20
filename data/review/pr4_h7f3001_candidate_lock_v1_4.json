@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "name": "pr4_h7f3001_candidate_lock_v1_4",
+  "status": "LIVE-PR CANDIDATE LOCK — authoritative source for PR-4 H7-F3-001 (checker + integrator 공유)",
+  "wave": "h7f3001",
+  "purpose": "PR-4 H7-F3-001 live 통합 대상 1건 잠금(F3 리세드론산 × Al/Mg 함유 제산제). 범위 외·needs_review·PR-1/PR-2/PR-3 재추가·항생제 minor(id67/71/75) 차단.",
+  "generated_from": {
+   "harvest": "autofactory v1.7 online harvest (한국 IP·2026-06-19) — H7-F3-001 = 리세드론산 × Al/Mg 함유 제산제. copy 는 main(7f07df4) fix된 safe_app_copy 로 재생성(오염 산출 브랜치 미사용).",
+   "source_fidelity_review": "51-agent 독립 적대검증(2 렌즈) + PM 재검 → H7-F3-001 CLEAR/PR-4 ready"
+  },
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)"
+ },
+ "total": 1,
+ "f3_existing": 1,
+ "candidate_ids": [
+  "H7-F3-001"
+ ],
+ "baseline_relation_count": 94,
+ "baseline_max_id": 95,
+ "expected_relation_count_before": 94,
+ "expected_relation_count_after": 95,
+ "relation_delta": 1,
+ "expected_ids": [
+  96
+ ],
+ "id_rule": "runtime max+1 (현 max 95 → 96). 선행 통합(PR-1 60→84·PR-2 84→92·PR-3 92→94) 반영 자동 조정.",
+ "live_exact_duplicate": 0,
+ "existing_prepared_duplicate": 0,
+ "internal_duplicate": 0,
+ "pr1_pr2_pr3_duplicate": 0,
+ "needs_review_exclusion": [
+  "RF-F3-0148",
+  "RF-F3-0149",
+  "RF-F9-0245",
+  "RF-F10-0275"
+ ],
+ "family_exclusion": [
+  "F1",
+  "F2",
+  "F4",
+  "F6",
+  "F9",
+  "F10"
+ ],
+ "family_exclusion_note": "PR-4 는 F3(리세드론산 × Al/Mg 함유 제산제) 단건만. F1/F2 = PR-1 live · F6/F9 = PR-2 live · F3 이반드론산(RF-F3-0147)/F4 레보티록신(RF-F4-0173) = PR-3 live(재추가 금지). F10 = route/availability needs_review. RF-F3-0148/0149(에티드론산) = cation 결속 needs_review. 항생제 minor 3건(id67/71/75)은 별도 copyfix 대상이라 PR-4 비포함.",
+ "antibiotic_minor_exclusion": [
+  67,
+  71,
+  75
+ ],
+ "relation_card_name_only_auto_flip": 0,
+ "alias_enrichment": "separate task (통합 전제 아님)",
+ "copy_principle": "absorption/separation · al_mg_antacid(drug counterpart). 리세드론산 라벨은 흡수 방해만 명시(효과 미언급) → display 는 흡수 저하 FACT-only('흡수가 저하될 수 있다')·'효과가 감소' 비노출·'분리하도록 안내' 비노출. separation 구체 안내는 management(hedged)·약사 상담. copy 는 main fix된 safe_app_copy('Al/Mg 함유 제산제(약물)','separation') 로 생성(오염 산출 미사용). record: data/review/pr4_h7f3001_display_copy_change_v1_4.json.",
+ "candidates": [
+  {
+   "candidate_id": "H7-F3-001",
+   "family": "F3",
+   "drug_ingredient": "리세드론산",
+   "counterpart": "Al/Mg 함유 제산제(약물)",
+   "counterpart_type": "drug",
+   "counterpart_category": "al_mg_antacid",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "itemSeq": "200713889",
+   "source_section": "6. 상호작용",
+   "source_quote": "칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여는 이 약의 흡수를 방해한다.",
+   "source_checked_at": "2026-06-19",
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 흡수가 저하될 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "adversarial_verdict": "survives",
+   "reverify_verdict": "survives",
+   "has_source": true,
+   "origin": "autofactory_v1_7_online_harvest",
+   "copy_change": "신규 생성(오염 산출 미사용). 리세드론산 라벨 흡수-방해 FACT-only(효과 미언급) → display '흡수가 저하될 수 있다'·효과감소 0·분리안내 0(생성기 fix 후 safe_app_copy 출력). counterpart Al/Mg 정당(라벨이 칼슘·마그네슘·철·알루미늄 verbatim 명시 → 과확장 아님)."
+  }
+ ]
+}
