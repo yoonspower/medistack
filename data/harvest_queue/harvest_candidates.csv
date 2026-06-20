@@ -76,3 +76,4 @@ H-KSPAR-04,nutrient,트리암테렌,칼륨,,rise,,high,carry_forward:wrong_direc
 H-WARN-01,nutrient,스피로노락톤(+ACEi/ARB 병용),칼륨,,rise,,high,carry_forward:drug_drug_out_of_scope,sensitive_hold,약-약 상호작용(칼륨 상승) — 약-영양소 고갈 factory 범위 밖. PM 분류.,true
 AT-LVX-01,antacid,레보플록사신,Al/Mg 제산제(약물),antacid_interaction,antacid_interaction,antacid,low,antacid_track,already_covered,이미 relation 보유 — 재후보화 불필요.,true
 AT-FEX-01,antacid,펙소페나딘,Al/Mg 제산제(약물),antacid_interaction,antacid_interaction,antacid,low,antacid_track,source_check_candidate,grounded theme(라벨 직접 동거어 검증 대상). 외용/주사제 trap 은 source-fetch 경구필터가 차단.,true
+AT-MXF-01,antacid,목시플록사신,Al/Mg 제산제(약물),antacid_interaction,antacid_interaction,antacid,low,antacid_track,source_check_candidate,universe-probe 확인: 라벨 6.상호작용에 마그네슘·알루미늄·제산제가 이 약 흡수 감소 명시(this_drug_lowered). live 미보유(철/Mg/Zn만). itemSeq 검증분.,true
