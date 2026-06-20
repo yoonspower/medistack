@@ -30,7 +30,7 @@ python3 medistack_sdk/test_nedrug_client_dryrun.py
 python3 scripts/test_nedrug_online_client_v1_7.py
 python3 scripts/test_extract_gold_v1_7.py                       # GOLD 3/3
 python3 scripts/test_autofactory_orchestrator_guards_v1_7.py    # B1~B8
-python3 scripts/validate_autofactory_orchestrator_v1_7.py
+# (cron 제외) validate_autofactory_orchestrator_v1_7 = 특정 run 스냅샷(raw=3·audit=36·RR id·92→95) 검증이라 주간 cron 에선 매번 FAIL. 안전성은 아래 guard_no_live_write + 보호셋 git-status + B1~B8 + GOLD 로 run-invariant 하게 보장. (개발용 일회성 검증으로 파일은 보존)
 python3 scripts/smoke_autofactory_orchestrator_v1_7.py
 python3 scripts/guard_no_live_write_v1_3.py                     # 보호셋 sha 스냅샷(before)
 
