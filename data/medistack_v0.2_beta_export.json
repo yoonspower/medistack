@@ -5,11 +5,11 @@
   "generated_at": "2026-06-07",
   "source_basis": "식약처 의약품통합정보시스템(nedrug) 허가사항 원문",
   "lifecycle_status_included": "verified_reference",
-  "relation_count": 94,
+  "relation_count": 95,
   "excluded_count": 1,
   "published": false,
   "clinical_reviewed": false,
-  "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음. | v1.1 relation 확장 통합(2026-06-13): source_confirmed 7후보 11건(ids 32-42, 허가사항 출처) 추가. relation 30→41. | v1.2 draft relation 통합(2026-06-14): source_confirmed 14건(ids 43-56, 허가사항 출처) 추가. FQ/테트라×아연·비스포×철/Mg enrichment + 치아지드유사(클로르탈리돈·인다파미드)×칼륨/Mg. relation 41→55. | factory draft batch DF06·DF07 통합(2026-06-14): 리오티로닌(테트로닌정 단일제)×칼슘·철분 absorption/separation 2건(ids 57·58, 허가사항 상호작용 출처·적대적 검증 통과). relation 55→57. DF01-05(칼륨)은 보류. | coverage-queue draft batch CQF01 통합(2026-06-14): 알마게이트(제산제 단일제)×철분 absorption/separation 1건(id 59, 허가사항 상호작용 출처·적대적 검증 통과). relation 57→58. 알마게이트 단일성분 54품목 full index relation_card flip. | coverage-queue draft batch3 CQF02 통합(2026-06-14): 테고프라잔(P-CAB 단일제)×철분 absorption/separation 1건(id 60, 허가사항 상호작용 출처·적대적 검증 통과). relation 58→59. 테고프라잔 단일성분 37품목 full index relation_card flip. | antacid_interaction 첫 live relation 통합(2026-06-15): AT-05 이트라코나졸 × Al/Mg 함유 제산제(약물) absorption/separation 1건(id 61, 허가사항 출처·적대검증 survives). relation 59→60. 상대=제산제(약물 카테고리·counterpart_category=al_mg_antacid)이며 영양소 relation 아님 (getFacets 가 영양소 facet 에서 제외). full index/aliases 무변경(이트라코나졸 name_only 유지). published/clinical_reviewed=false·reviewed_by 미기재 유지. | PR-1 antibiotic24 PM-reviewed verified-reference 통합: F1 퀴놀론 18 + F2 테트라사이클린 5 + 시프로플록사신 × Al/Mg 함유 제산제 add-on 1 = 24건. relation 60→84. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장). | PR-2 chronic8 PM-reviewed verified-reference 통합: F9 만성복용 depletion 7 (엽산 3 + 비타민D 4) + F6 에스오메프라졸 × 비타민B12 1 = 8건. relation 84→92. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장). | PR-3 small2 PM-reviewed verified-reference 통합: F3 이반드론산 × Al/Mg 함유 제산제 1 + F4 레보티록신 × 알루미늄 함유 제산제 1 = 2건. relation 92→94. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장)."
+  "note": "v0.2: v0.1 verified_reference 19건 + Phase 2-B 신규 11건(플루오로퀴놀론·테트라사이클린·비스포스포네이트·루프이뇨제, 식약처 허가사항 원문 검증) = 30건. 15행(에스오메프라졸×B12)은 excluded 유지. published/clinical_reviewed 봉인 유지. 제품 UI/필드 없음. | v1.1 relation 확장 통합(2026-06-13): source_confirmed 7후보 11건(ids 32-42, 허가사항 출처) 추가. relation 30→41. | v1.2 draft relation 통합(2026-06-14): source_confirmed 14건(ids 43-56, 허가사항 출처) 추가. FQ/테트라×아연·비스포×철/Mg enrichment + 치아지드유사(클로르탈리돈·인다파미드)×칼륨/Mg. relation 41→55. | factory draft batch DF06·DF07 통합(2026-06-14): 리오티로닌(테트로닌정 단일제)×칼슘·철분 absorption/separation 2건(ids 57·58, 허가사항 상호작용 출처·적대적 검증 통과). relation 55→57. DF01-05(칼륨)은 보류. | coverage-queue draft batch CQF01 통합(2026-06-14): 알마게이트(제산제 단일제)×철분 absorption/separation 1건(id 59, 허가사항 상호작용 출처·적대적 검증 통과). relation 57→58. 알마게이트 단일성분 54품목 full index relation_card flip. | coverage-queue draft batch3 CQF02 통합(2026-06-14): 테고프라잔(P-CAB 단일제)×철분 absorption/separation 1건(id 60, 허가사항 상호작용 출처·적대적 검증 통과). relation 58→59. 테고프라잔 단일성분 37품목 full index relation_card flip. | antacid_interaction 첫 live relation 통합(2026-06-15): AT-05 이트라코나졸 × Al/Mg 함유 제산제(약물) absorption/separation 1건(id 61, 허가사항 출처·적대검증 survives). relation 59→60. 상대=제산제(약물 카테고리·counterpart_category=al_mg_antacid)이며 영양소 relation 아님 (getFacets 가 영양소 facet 에서 제외). full index/aliases 무변경(이트라코나졸 name_only 유지). published/clinical_reviewed=false·reviewed_by 미기재 유지. | PR-1 antibiotic24 PM-reviewed verified-reference 통합: F1 퀴놀론 18 + F2 테트라사이클린 5 + 시프로플록사신 × Al/Mg 함유 제산제 add-on 1 = 24건. relation 60→84. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장). | PR-2 chronic8 PM-reviewed verified-reference 통합: F9 만성복용 depletion 7 (엽산 3 + 비타민D 4) + F6 에스오메프라졸 × 비타민B12 1 = 8건. relation 84→92. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장). | PR-3 small2 PM-reviewed verified-reference 통합: F3 이반드론산 × Al/Mg 함유 제산제 1 + F4 레보티록신 × 알루미늄 함유 제산제 1 = 2건. relation 92→94. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장). | PR-4 H7-F3-001 PM-reviewed verified-reference 통합: F3 리세드론산 × Al/Mg 함유 제산제 1건. relation 94→95. published/clinical_reviewed=false·reviewed_by 미기재 유지(verified_reference 천장)."
  },
  "disclaimers": {
   "common": "이 정보는 식약처 허가사항 등을 바탕으로 정리한 참고 정보입니다. 진단, 처방, 복약 지시가 아니며, 실제 복용 여부나 시간 간격은 의사 또는 약사와 상담하세요.",
@@ -1723,6 +1723,25 @@
     "type": "허가사항",
     "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197400278",
     "pointer": "식약처 nedrug getItemDetail / 레보티록신 / itemSeq 197400278 / 병용투여 / '콜레스티라민, 철분제제, 알루미늄 함유 제산제와 병용투여시 이 약의 흡수가 지연 또는 감소될 수 있으므로 투여간격에 주의하며 신중히 투여한다.' / 확인일 2026-06-16"
+   },
+   "counterpart_category": "al_mg_antacid"
+  },
+  {
+   "id": 96,
+   "ingredient": "리세드론산",
+   "nutrient": "Al/Mg 함유 제산제(약물)",
+   "mechanism": "absorption",
+   "recommended_action": "separation",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 흡수가 저하될 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "product_link_allowed": false,
+   "potassium_safety_card": false,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200713889",
+    "pointer": "식약처 nedrug getItemDetail / 리세드론산 / itemSeq 200713889 / 6. 상호작용 / '칼슘보충제, 제산제 및 다가 양이온(칼슘, 마그네슘, 철, 알루미늄 등)을 함유한 경구투여 약물의 병용 투여는 이 약의 흡수를 방해한다.' / 확인일 2026-06-19"
    },
    "counterpart_category": "al_mg_antacid"
   }

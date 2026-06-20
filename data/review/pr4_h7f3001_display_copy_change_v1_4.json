@@ -1,0 +1,21 @@
+{
+ "meta": {
+  "name": "pr4_h7f3001_display_copy_change_v1_4",
+  "wave": "h7f3001",
+  "mode": "APPLY(LIVE)",
+  "principle": "main fix된 safe_app_copy 로 신규 생성(오염 미사용). 리세드론산 라벨 흡수-방해만 → '효과가 감소' 비노출 · '분리하도록 안내' 비노출.",
+  "count_field_changes": 1
+ },
+ "changes": [
+  {
+   "candidate_id": "H7-F3-001",
+   "id": 96,
+   "ingredient": "리세드론산",
+   "kind": "generated_clean",
+   "field": "display_text_ko/management_ko",
+   "display_text_ko": "이 약은 Al/Mg 함유 제산제(약물)과(와) 함께 복용하면 흡수가 저하될 수 있다는 허가사항 문구가 있습니다. 함께 복용하는 경우 복용 시점에 대해 약사 또는 의사와 상담하세요.",
+   "management_ko": "Al/Mg 함유 제산제(약물)과(와)는 복용 시간을 분리하는 것이 좋을 수 있습니다. 자세한 사항은 약사 또는 의사와 상담하세요.",
+   "reason": "main fix된 safe_app_copy 로 신규 생성(오염 산출 미사용). 라벨 흡수-방해만 명시 → '효과가 감소' 비노출."
+  }
+ ]
+}
