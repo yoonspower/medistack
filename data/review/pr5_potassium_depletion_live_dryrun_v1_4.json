@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "name": "pr5_potassium_depletion_live_dryrun_v1_4",
+  "status": "DRY-RUN — live 무수정 예상 산출물",
+  "wave": "potassium_depletion",
+  "mode": "DRY-RUN",
+  "baseline_relation_count": 95,
+  "expected_relation_count_after": 101,
+  "delta": 6,
+  "new_ids": [
+   97,
+   98,
+   99,
+   100,
+   101,
+   102
+  ],
+  "candidate_ids": [
+   "D-CORT-03",
+   "D-CORT-04",
+   "D-CORT-05",
+   "D-CORT-06",
+   "D-CA-01",
+   "D-LOOP-04"
+  ],
+  "v0_2_sim_passed": true,
+  "export_sha_before": "694f767a234bbed92586e13b8fb1058d04116e1edf7045794f7685cdd05d1b26",
+  "potassium_invariant": "6/6 kcard=true·plink=false",
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "integration_class": "PM-reviewed verified-reference integration (NOT clinical review)",
+  "non_target_protected_snapshot_count": 69
+ },
+ "projected_relations": [
+  {
+   "id": 97,
+   "ingredient": "메틸프레드니솔론",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약을 장기간 복용할 때 칼륨과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199800324",
+    "pointer": "식약처 허가사항(nedrug getItemDetail) / 메틸프레드니솔론(메니솔론정4밀리그램(메틸프레드니솔론)) / itemSeq 199800324 / 3. 부작용 / '체액ㆍ전해질 : 부종, 나트륨저류, 칼륨손실, 체액저류, 저칼륨성 알칼리혈증, 감수성 환자에 있어서 울혈성 심부전, 고혈압 등이 나타날 수 있다.' / 확인일 2026-06-20"
+   },
+   "counterpart_category": null
+  },
+  {
+   "id": 98,
+   "ingredient": "덱사메타손",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약을 장기간 복용할 때 칼륨과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196300064",
+    "pointer": "식약처 허가사항(nedrug getItemDetail) / 덱사메타손(부광덱사메타손정) / itemSeq 196300064 / 3. 부작용 / '체액ㆍ전해질 : 부종, 고혈압, 혈압상승, 저칼륨성 알칼리혈증, 나트륨저류, 체액저류, 종양용해증후군 등이 나타날 수 있다.' / 확인일 2026-06-20"
+   },
+   "counterpart_category": null
+  },
+  {
+   "id": 99,
+   "ingredient": "히드로코르티손",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약을 장기간 복용할 때 칼륨과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200703172",
+    "pointer": "식약처 허가사항(nedrug getItemDetail) / 히드로코르티손(래피손정(히드로코르티손)) / itemSeq 200703172 / 3. 부작용 / '체액ㆍ전해질 : 부종, 혈압상승, 칼륨손실, 저칼륨성 알칼리혈증, 나트륨 저류, 체액 저류, 감수성 환자에 있어서 울혈성 심부전 등이 나타날 수 있다.' / 확인일 2026-06-20"
+   },
+   "counterpart_category": null
+  },
+  {
+   "id": 100,
+   "ingredient": "플루드로코르티손",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약을 장기간 복용할 때 칼륨과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199907231",
+    "pointer": "식약처 허가사항(nedrug getItemDetail) / 플루드로코르티손(플로리네프정(미분화플루드로코르티손아세테이트)) / itemSeq 199907231 / 4. 일반적주의 / '상용량 및 고용량의 히드로코르티손 또는 코르티손으로 혈압상승, 염 및 수분의 저류를 일으킬 수 있으며, 칼륨의 배설을 증가시킨다.' / 확인일 2026-06-20"
+   },
+   "counterpart_category": null
+  },
+  {
+   "id": 101,
+   "ingredient": "아세타졸아미드",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약을 장기간 복용할 때 칼륨과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201403403",
+    "pointer": "식약처 허가사항(nedrug getItemDetail) / 아세타졸아미드(아세타졸정(아세타졸아미드)) / itemSeq 201403403 / 4. 이상반응 / '대사 : 때때로 저칼륨혈증, 저나트륨혈증을 포함한 대사성 산증 등의 전해질평형실조, 장기치료로 인한 골연화증, 고혈당/저혈당이 나타날 수 있다.' / 확인일 2026-06-20"
+   },
+   "counterpart_category": null
+  },
+  {
+   "id": 102,
+   "ingredient": "아조세미드",
+   "nutrient": "칼륨",
+   "mechanism": "depletion",
+   "recommended_action": "monitoring",
+   "evidence_level": "moderate",
+   "display_text_ko": "이 약을 장기간 복용할 때 칼륨과(와) 관련된 허가사항 주의 문구가 있습니다. 증상이 걱정되면 약사 또는 의사와 상담하세요.",
+   "management_ko": "장기 복용 중이라면 정기 진료나 복약 상담 시 해당 영양소 상태 확인이 필요한지 문의해볼 수 있습니다.",
+   "product_link_allowed": false,
+   "potassium_safety_card": true,
+   "requires_clinical_review": false,
+   "source": {
+    "type": "허가사항",
+    "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199001306",
+    "pointer": "식약처 허가사항(nedrug getItemDetail) / 아조세미드(유레틴정(아조세미드)) / itemSeq 199001306 / 3. 부작용 / '대사 : 때때로 저칼륨혈증, 저나트륨혈증, 저염소혈증성 알칼리증 등의 전해질평형실조, 고뇨산혈증, BUN·혈청크레아티닌의 상승, 드물게 고혈당이 나타날 수 있으므로 충분히 관찰하고 이상이 인정되는 경우는 감량 또는 휴약 등 적절한 처치를 한다.' / 확인일 2026-06-20"
+   },
+   "counterpart_category": null
+  }
+ ]
+}
