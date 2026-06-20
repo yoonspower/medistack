@@ -181,7 +181,7 @@ def validate(doc, pool, inv):
     ck("불변: ingredient_aliases 38", inv["ingredient"] == 38, str(inv["ingredient"]))
     ck("불변: verified_item_seqs 1155/24 (… CQF01 +54/알마게이트 → CQF02 +37/테고프라잔)",
        inv["vis_total"] == 1155 and inv["vis_ing"] == 24, f"{inv['vis_total']}/{inv['vis_ing']}")
-    ck("불변: relations 95 (… PR-3 small2 92→94 → PR-4 H7-F3-001 리세드론산×Al/Mg제산제 1 = 94→95)", inv["relations"] == 95, str(inv["relations"]))
+    ck("불변: relations 101 (… PR-4 94→95 → PR-5 칼륨 depletion 6(스테로이드·이뇨제×칼륨) = 95→101)", inv["relations"] == 101, str(inv["relations"]))
     ck("불변: DATA_URL", inv["data_url"] == EXPECT_DATA_URL, str(inv["data_url"]))
     ck("불변: published=false", inv["published"] is False, str(inv["published"]))
     ck("불변: clinical_reviewed=false", inv["clinical_reviewed"] is False, str(inv["clinical_reviewed"]))
