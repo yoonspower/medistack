@@ -1,0 +1,17 @@
+{
+ "meta": {
+  "name": "depletion_extractor_reviewer_ready_v1_8",
+  "status": "REVIEWER-READY(미live) — live_integration_forbidden=true. 승격은 PM 승인+clinical reviewer note+별도 PR.",
+  "track": "depletion(칼륨/마그네슘) — extract_label_depletion_v1_8 online harvest",
+  "confirmed_at": "2026-06-20",
+  "copy_source": "fix_harvester_display_template_v1_6.safe_app_copy(depletion) — live 86-93 선례 동형(보충/수치 단정 0)",
+  "potassium_policy": "🔑 칼륨 행 potassium_safety_card=true·product_link_allowed=false 강제(invariant). 보충 권유 0·결핍 단정 0.",
+  "evidence_level_note": "reviewer-ready 보수 기본값=moderate. 선행 적대패키지(potassium_depletion_pm_ready_v1_2)는 동일 약물 high — reviewer 가 확정.",
+  "published": false,
+  "clinical_reviewed": false,
+  "reviewed_by": "",
+  "count": 0,
+  "potassium_invariant_ok": true
+ },
+ "candidates": []
+}
