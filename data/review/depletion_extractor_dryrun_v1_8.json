@@ -1,0 +1,519 @@
+{
+ "meta": {
+  "name": "depletion_extractor_dryrun_v1_8",
+  "status": "DRY-RUN — live/보호 무수정. write-scope=data/review/.",
+  "confirmed_at": "2026-06-20",
+  "extractor": "extract_label_depletion_v1_8",
+  "audit": "audit_depletion_fidelity_v1_8",
+  "gold": [
+   "메틸프레드니솔론 199800324",
+   "아조세미드 199001306",
+   "아세타졸아미드 201403403"
+  ],
+  "live_baseline_relations": 101,
+  "live_max_id": 102,
+  "funnel": {
+   "raw_detail_fetched": 1,
+   "raw_cap": 300,
+   "queue_depletion_candidates": 16,
+   "reviewer_ready": 0,
+   "needs_review": 0,
+   "rejected": 16,
+   "false_auto_pass": 0,
+   "reject_reason_breakdown": {
+    "no_single_oral_exact": 1,
+    "already_live": 6,
+    "not_reachable": 8,
+    "no_마그네슘_deficiency_in_label": 1
+   }
+  },
+  "potassium_invariant_ok": true,
+  "potassium_invariant_violations": [],
+  "false_auto_pass": []
+ },
+ "reviewer_ready_projected": [],
+ "candidates_all": [
+  {
+   "candidate_id": "D-CORT-01",
+   "queue_drug": "프레드니솔론",
+   "drug_ingredient": "프레드니솔론",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "search_rows": 30,
+   "single_oral_exact": 0,
+   "harvest_verdict": "reject",
+   "reject_reason": "no_single_oral_exact(주성분 정확매칭 경구 0)",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-CORT-03",
+   "queue_drug": "메틸프레드니솔론",
+   "drug_ingredient": "메틸프레드니솔론",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "already_live",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-CORT-04",
+   "queue_drug": "덱사메타손",
+   "drug_ingredient": "덱사메타손",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "already_live",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-CORT-05",
+   "queue_drug": "하이드로코르티손",
+   "drug_ingredient": "히드로코르티손",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "already_live",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-CORT-06",
+   "queue_drug": "플루드로코르티손",
+   "drug_ingredient": "플루드로코르티손",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "already_live",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-CA-01",
+   "queue_drug": "아세타졸아미드",
+   "drug_ingredient": "아세타졸아미드",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "already_live",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-LOOP-01",
+   "queue_drug": "부메타니드",
+   "drug_ingredient": "부메타니드",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-LOOP-02",
+   "queue_drug": "부메타니드",
+   "drug_ingredient": "부메타니드",
+   "nutrient": "마그네슘",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "low",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-LOOP-03",
+   "queue_drug": "피레타니드",
+   "drug_ingredient": "피레타니드",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-LOOP-04",
+   "queue_drug": "아조세미드",
+   "drug_ingredient": "아조세미드",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "already_live",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-LOOP-05",
+   "queue_drug": "아조세미드",
+   "drug_ingredient": "아조세미드",
+   "nutrient": "마그네슘",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "low",
+   "search_rows": 2,
+   "single_oral_exact": 1,
+   "harvest_verdict": "reject",
+   "reject_reason": "no_마그네슘_deficiency_in_label(라벨 마그네슘 결핍 명시 없음/임부·상호작용 only)",
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-THZ-01",
+   "queue_drug": "메토라존",
+   "drug_ingredient": "메토라존",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-THZ-02",
+   "queue_drug": "메토라존",
+   "drug_ingredient": "메토라존",
+   "nutrient": "마그네슘",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "low",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-THZ-03",
+   "queue_drug": "트리클로르메티아지드",
+   "drug_ingredient": "트리클로르메티아지드",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-THZ-04",
+   "queue_drug": "트리클로르메티아지드",
+   "drug_ingredient": "트리클로르메티아지드",
+   "nutrient": "마그네슘",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "low",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  },
+  {
+   "candidate_id": "D-THZ-05",
+   "queue_drug": "벤드로플루메티아지드",
+   "drug_ingredient": "벤드로플루메티아지드",
+   "nutrient": "칼륨",
+   "counterpart_type": "nutrient",
+   "counterpart_category": null,
+   "risk_level": "moderate",
+   "harvest_verdict": "reject",
+   "reject_reason": "not_reachable(국내 미유통/검색0)",
+   "search_rows": 0,
+   "audit": {
+    "verdict": "reject",
+    "lenses": {
+     "A1_source_fidelity": "fail:itemSeq/section/verbatim",
+     "A2_quote_complete": "fail:불완전/잘림",
+     "A3_scope_inscope": "fail:off-scope()",
+     "A4_direction_depletion": "fail:방향/영양소 불일치(None,None)",
+     "A5_b2_no_preg": "pass",
+     "A6_nutrient_defined": "pass",
+     "A7_potassium_invariant": "fail:['비칼륨(None)인데 potassium_safety_card!=false']",
+     "A8_copy_fidelity": "pass",
+     "A9_no_live_dup": "pass",
+     "A10_explicit_deficiency": "fail:결핍 kind 없음",
+     "A11_no_product_clinical": "fail:flag"
+    },
+    "flags": []
+   },
+   "final_verdict": "reject"
+  }
+ ],
+ "audit_counts": {
+  "reviewer_ready": 0,
+  "needs_review": 0,
+  "reject": 16
+ },
+ "live_dedup_note": "live (ingredient,nutrient) 중복은 already_live reject. 신규 projected id=runtime max+1."
+}
